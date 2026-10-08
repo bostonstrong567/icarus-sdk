@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ResReadNotification
-// size 0x18, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/ReadNotificationCallbackProxyGen.generated.h
+// size 0x18, declared in Icarus/Source/IcarusGenerated/Public/Struct/ResReadNotification.h
 
 USTRUCT()
 struct FResReadNotification

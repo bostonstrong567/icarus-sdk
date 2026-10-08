@@ -1,6 +1,6 @@
 // /Game/ASS/CHA/PHX/Customization/WB_ChaCustom_Shape.WB_ChaCustom_Shape_C
 // Derives from: UUserWidget > UWidget > UVisual > UObject
-// size 0x2B5, a blueprint class, widget
+// size 0x2C8, a blueprint class, widget
 
 UCLASS(EditInlineNew, Config=Engine)
 class UWB_ChaCustom_Shape_C : public UUserWidget
@@ -25,10 +25,12 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool RightEnable;  // 0x02B2, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool LeftEnable;  // 0x02B3, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool ExaggerateEnable;  // 0x02B4, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FMouseMoved MouseMoved;  // 0x02B8, size 0x10
 
     UFUNCTION(BlueprintCallable) void ActiveControlsCheck(bool Top, bool Left, bool Bottom, bool Right, float& Scaled, float& AbsClamp, float& Baseline);  // parameters 0x10
     UFUNCTION(BlueprintCallable) void CursorIndicatorReset();
     UFUNCTION() void ExecuteUbergraph_WB_ChaCustom_Shape(int32 EntryPoint);  // parameters 0x4
+    UFUNCTION(BlueprintCallable) void MouseMoved__DelegateSignature();
     UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent) FEventReply OnMouseButtonDown(FGeometry MyGeometry, const FPointerEvent& MouseEvent);  // parameters 0x160
     UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent) FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);  // parameters 0x160
     UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent) FEventReply OnMouseMove(FGeometry MyGeometry, const FPointerEvent& MouseEvent);  // parameters 0x160

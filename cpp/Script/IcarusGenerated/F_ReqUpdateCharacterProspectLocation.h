@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ReqUpdateCharacterProspectLocation
-// size 0x28, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/UpdateCharacterProspectLocationCallbackProxyGen.generated.h
+// size 0x28, declared in Icarus/Source/IcarusGenerated/Public/Struct/ReqUpdateCharacterProspectLocation.h
 
 USTRUCT()
 struct FReqUpdateCharacterProspectLocation

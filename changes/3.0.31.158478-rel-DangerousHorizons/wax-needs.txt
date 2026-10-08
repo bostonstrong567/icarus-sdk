@@ -1,0 +1,36 @@
+Classes from the model of build f8a8fc7d39e2431f9f2454bb7bb2c74f-1, made 2026-10-08 23:10, tables as read on 2026-10-08 22:46.
+Game objects (game): fine, 25 names
+Function libraries (libraries): fine, 5 names
+Actor tracking (tracking): fine, 7 names
+Watching values (watch): fine, 2 names
+Objects that are gone (handles): fine, 3 names
+Creatures (creatures): fine, 24 names
+Creature facts (creature): fine, 54 names
+What the host does with creatures (creature-act): fine, 43 names
+Players (players): fine, 8 names
+Characters (character): fine, 61 names
+Items and inventories (items): fine, 54 names
+Stats and modifiers (stats): fine, 33 names
+Time, weather and the prospect (session): fine, 50 names
+What the host does to a character (actions): fine, 37 names
+What the game tells by itself (events): fine, 18 names
+Outlines (highlight): fine, 31 names
+Game tables (tables): fine, 8 names
+Curves in game tables (curves): fine, 8 names
+Changing game tables (patch): fine, 18 names
+Recipes at a bench (crafting): fine, 66 names
+Changing recipes (recipes): fine, 45 names
+Research (research): fine, 41 names
+Store (workshop): fine, 76 names
+Store changes (workshop-write): fine, 37 names
+Room beside the game's screens (fit): fine, 25 names
+Menu and input (menu): fine, 59 names
+Dragging into order (drag): fine, 23 names
+Clipboard (clipboard): fine, 2 names
+Game version (version): fine, 4 names
+Prospector's Codex (recipe-browser): fine, 192 names
+3D model view (model): fine, 129 names
+Assets (assets): fine, 37 names
+Blueprints (blueprints): fine, 41 names
+Game content of mods (content): fine, 11 names
+All 34 parts are fine (1277 names).

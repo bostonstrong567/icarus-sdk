@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ReqBackToHab
-// size 0x48, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/BackToHabCallbackProxyGen.generated.h
+// size 0x48, declared in Icarus/Source/IcarusGenerated/Public/Struct/ReqBackToHab.h
 
 USTRUCT()
 struct FReqBackToHab

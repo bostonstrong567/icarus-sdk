@@ -1,5 +1,5 @@
 // /Script/Icarus.ConfirmationPopupDetails
-// size 0x98, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/Icarus/IcarusJoinSession.generated.h
+// size 0x98, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/Icarus/IcarusPlayerControllerSurvival.generated.h
 
 USTRUCT()
 struct FConfirmationPopupDetails

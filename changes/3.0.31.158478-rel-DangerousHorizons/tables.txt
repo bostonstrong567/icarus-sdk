@@ -1,0 +1,20 @@
+~ Audio/D_AIAudioData.json: +0 -0 ~2
+    ~ Crab
+    ~ Crab_Small
+~ Items/D_ItemRewards.json: +0 -0 ~1
+    ~ SandScuttle_Carcass_Loot
+~ Items/D_ItemsStatic.json: +0 -0 ~1
+    ~ Spoiled_Plants
+~ Modifiers/D_ModifierStates.json: +0 -0 ~6
+    ~ Cooked_Spinach
+    ~ Spinach_Omelette
+    ~ Creamed_Spinach
+    ~ Spinach_Salad
+    ~ Spinach_Pie
+    ~ Ginger_Tea
+~ Prospects/D_Atmospheres.json: +0 -0 ~1
+    ~ Coastal
+~ Tools/D_FirearmData.json: +0 -0 ~1
+    ~ Legendary_Launcher
+~ Traits/D_Meshable.json: +0 -0 ~1
+    ~ Mesh_Lead_Ore

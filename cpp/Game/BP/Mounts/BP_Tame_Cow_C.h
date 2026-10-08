@@ -9,7 +9,6 @@ public:
     UPROPERTY(Transient) FPointerToUberGraphFrame UberGraphFrame;  // 0x0F50, size 0x8
     UPROPERTY(Instanced, BlueprintReadWrite) UFillableComponent* Fillable;  // 0x0F58, size 0x8
 
-    UFUNCTION(BlueprintCallable, NetMulticast, Reliable) void DebugText();
     UFUNCTION() void ExecuteUbergraph_BP_Tame_Cow(int32 EntryPoint);  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintImplementableEvent) FVector GetDamageSourceLocation(UAnimMontage* Montage, FName SectionName);  // parameters 0x1C
     UFUNCTION(BlueprintImplementableEvent) void IcarusBeginPlay();

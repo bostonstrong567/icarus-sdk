@@ -120,7 +120,7 @@ public:
     UFUNCTION(Client, Reliable, BlueprintNativeEvent) void Client_Request_MetaInventory();
     UFUNCTION(Client, Reliable, BlueprintNativeEvent) void Client_Request_MetaResources();
     UFUNCTION(Client, Reliable, BlueprintNativeEvent) void Client_Request_ModifyDropship(int32 Index, FDropshipModification Dropship);  // parameters 0x30
-    UFUNCTION(Client, Reliable, BlueprintNativeEvent) void Client_Request_PackageLoadout_WithCharacter(FOnlineProfileCharacter OnlineProfileCharacter);  // parameters 0xD0
+    UFUNCTION(Client, Reliable, BlueprintNativeEvent) void Client_Request_PackageLoadout_WithCharacter(FOnlineProfileCharacter OnlineProfileCharacter);  // parameters 0xF0
     UFUNCTION(Client, Reliable, BlueprintNativeEvent) void Client_Request_PrepareDropship(int32 Index);  // parameters 0x4
     UFUNCTION(Client, Reliable, BlueprintNativeEvent) void Client_Request_PrepareEnvirosuit(UInventory* Inventory, int32 Slot);  // parameters 0xC
     UFUNCTION(Client, Reliable, BlueprintNativeEvent) void Client_Request_PreparedLoadout();
@@ -169,7 +169,7 @@ public:
     UFUNCTION() void OnFactionMissionProgressUpdated(const FResUpdateFactionMissionProgress& Response);  // parameters 0x1
     UFUNCTION() void OnGetAllProspectsFailure(const FResGetAllProspects& Response);  // parameters 0x18
     UFUNCTION() void OnGetAllProspectsSuccess(const FResGetAllProspects& Response);  // parameters 0x18
-    UFUNCTION() void OnGetCharacterProfile(const FResGetCharacterProfile& Response);  // parameters 0xD8
+    UFUNCTION() void OnGetCharacterProfile(const FResGetCharacterProfile& Response);  // parameters 0xF8
     UFUNCTION() void OnGetCreditsRequestFailure(const FResGetCredits& Response);  // parameters 0x8
     UFUNCTION() void OnGetCreditsRequestSuccess(const FResGetCredits& Response);  // parameters 0x8
     UFUNCTION() void OnGetDropshipsRequestFailure(const FResGetDropships& Response);  // parameters 0x18
@@ -258,7 +258,7 @@ public:
     UFUNCTION(Server, Reliable, BlueprintNativeEvent) void Request_MetaResources();
     UFUNCTION(BlueprintCallable, Server, Reliable, BlueprintNativeEvent) void Request_ModifyDropship(int32 Index, FDropshipModification Dropship);  // parameters 0x30
     UFUNCTION(BlueprintCallable, Server, Reliable, BlueprintNativeEvent) void Request_PackageLoadout();
-    UFUNCTION(BlueprintCallable, Server, Reliable, BlueprintNativeEvent) void Request_PackageLoadout_WithCharacter(FOnlineProfileCharacter OnlineProfileCharacter);  // parameters 0xD0
+    UFUNCTION(BlueprintCallable, Server, Reliable, BlueprintNativeEvent) void Request_PackageLoadout_WithCharacter(FOnlineProfileCharacter OnlineProfileCharacter);  // parameters 0xF0
     UFUNCTION(Server, Reliable, BlueprintNativeEvent) void Request_PrepareDropship(int32 Index);  // parameters 0x4
     UFUNCTION(Server, Reliable, BlueprintNativeEvent) void Request_PrepareEnvirosuit(UInventory* Inventory, int32 Slot);  // parameters 0xC
     UFUNCTION(BlueprintCallable, Server, Reliable, BlueprintNativeEvent) void Request_PreparedLoadout();
@@ -292,7 +292,7 @@ public:
     UFUNCTION(Server, Reliable, BlueprintNativeEvent) void Response_DeleteNotification(FResDeleteNotification Response);  // parameters 0x18
     UFUNCTION(Server, Reliable, BlueprintNativeEvent) void Response_Dropships(FResGetDropships Response);  // parameters 0x18
     UFUNCTION(Server, Reliable, BlueprintNativeEvent) void Response_ExchangeCurrency(FResExchangeCurrency Response);  // parameters 0x18
-    UFUNCTION(Server, Reliable, BlueprintNativeEvent) void Response_GetCharacterProfile(FResGetCharacterProfile Response);  // parameters 0xD8
+    UFUNCTION(Server, Reliable, BlueprintNativeEvent) void Response_GetCharacterProfile(FResGetCharacterProfile Response);  // parameters 0xF8
     UFUNCTION(Server, Reliable, BlueprintNativeEvent) void Response_GetNotifications(FResGetNotifications Response);  // parameters 0x18
     UFUNCTION(Server, Reliable, BlueprintNativeEvent) void Response_GetUserProfile(FResGetUserProfile Response);  // parameters 0x50
     UFUNCTION(Server, Reliable, BlueprintNativeEvent) void Response_LeaveProspectByDropship(FResBackToHab Response);  // parameters 0x1

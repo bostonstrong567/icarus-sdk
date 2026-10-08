@@ -1,22 +1,22 @@
 // /Game/BP/Systems/BP_IcarusPlayerState.BP_IcarusPlayerState_C
 // Derives from: AIcarusPlayerState > APlayerState > AInfo > AActor > UObject
-// size 0x559, a blueprint class, blueprint
+// size 0x579, a blueprint class, blueprint
 
 UCLASS(NotPlaceable, Config=Engine)
 class ABP_IcarusPlayerState_C : public AIcarusPlayerState
 {
 public:
-    UPROPERTY(Transient) FPointerToUberGraphFrame UberGraphFrame;  // 0x04F0, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) USceneComponent* DefaultSceneRoot;  // 0x04F8, size 0x8
-    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) int32 PlayerIdentityVisual;  // 0x0500, size 0x4
-    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) int32 PlayerMapColorIndex;  // 0x0504, size 0x4
-    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) AIcarusWaypointActor* PersonalWaypoint;  // 0x0508, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float PlayerHealth;  // 0x0510, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool DebugDeployablePlacement;  // 0x0514, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<AIcarusWaypointActor> IcarusWaypointClass;  // 0x0518, size 0x28
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TSubclassOf<UObject> WaypointClass;  // 0x0540, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FPlayerColorSelected PlayerColorSelected;  // 0x0548, size 0x10
-    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) bool DebugDeployableCollisionDisabled;  // 0x0558, size 0x1
+    UPROPERTY(Transient) FPointerToUberGraphFrame UberGraphFrame;  // 0x0510, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) USceneComponent* DefaultSceneRoot;  // 0x0518, size 0x8
+    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) int32 PlayerIdentityVisual;  // 0x0520, size 0x4
+    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) int32 PlayerMapColorIndex;  // 0x0524, size 0x4
+    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) AIcarusWaypointActor* PersonalWaypoint;  // 0x0528, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float PlayerHealth;  // 0x0530, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool DebugDeployablePlacement;  // 0x0534, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<AIcarusWaypointActor> IcarusWaypointClass;  // 0x0538, size 0x28
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TSubclassOf<UObject> WaypointClass;  // 0x0560, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FPlayerColorSelected PlayerColorSelected;  // 0x0568, size 0x10
+    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) bool DebugDeployableCollisionDisabled;  // 0x0578, size 0x1
 
     UFUNCTION() void ExecuteUbergraph_BP_IcarusPlayerState(int32 EntryPoint);  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintImplementableEvent) int32 GetPlayerVisualIdentity() const;  // parameters 0x4

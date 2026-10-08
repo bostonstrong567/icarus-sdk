@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ResCheckProspectExpired
-// size 0x2, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/CheckProspectExpiredCallbackProxyGen.generated.h
+// size 0x2, declared in Icarus/Source/IcarusGenerated/Public/Struct/ResCheckProspectExpired.h
 
 USTRUCT()
 struct FResCheckProspectExpired

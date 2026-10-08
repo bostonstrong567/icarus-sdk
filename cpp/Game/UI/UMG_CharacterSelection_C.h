@@ -1,6 +1,6 @@
 // /Game/UI/UMG_CharacterSelection.UMG_CharacterSelection_C
 // Derives from: UUserWidget > UWidget > UVisual > UObject
-// size 0x648, a blueprint class, widget
+// size 0x668, a blueprint class, widget
 
 UCLASS(EditInlineNew, Config=Engine)
 class UUMG_CharacterSelection_C : public UUserWidget, public ICustomisationWidgetInterface_C
@@ -34,19 +34,19 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 NumColumns;  // 0x0338, size 0x4
     UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FCreateCharacter CreateCharacter;  // 0x0340, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 MaxNumCharacters;  // 0x0350, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FOnlineProfileCharacter SelectedCharacter;  // 0x0358, size 0xD0
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool HasSelectedCharacter;  // 0x0428, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool SelectedCharacterLockedToProspect;  // 0x0429, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FSelectedCharacterUpdated SelectedCharacterUpdated;  // 0x0430, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) ABP_PlayerPreview_HAB_Selection_C* PlayerPreview;  // 0x0440, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FPreviewCameraSettingsEnum CurrentCameraFocus;  // 0x0448, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 ProspectEndTime;  // 0x0458, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FString JoinLobbyName;  // 0x0460, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FProspectServerInfo ProspectInfo;  // 0x0470, size 0x1B0
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UUMG_DeleteCharacterName_C* DeleteCharacterInputField;  // 0x0620, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 RemainingTime;  // 0x0628, size 0x4
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UUMG_DeleteCharacterName_C* AbandonProspectInputField;  // 0x0630, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FOnRequestAbandonProspect OnRequestAbandonProspect;  // 0x0638, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FOnlineProfileCharacter SelectedCharacter;  // 0x0358, size 0xF0
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool HasSelectedCharacter;  // 0x0448, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool SelectedCharacterLockedToProspect;  // 0x0449, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FSelectedCharacterUpdated SelectedCharacterUpdated;  // 0x0450, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) ABP_PlayerPreview_HAB_Selection_C* PlayerPreview;  // 0x0460, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FPreviewCameraSettingsEnum CurrentCameraFocus;  // 0x0468, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 ProspectEndTime;  // 0x0478, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FString JoinLobbyName;  // 0x0480, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FProspectServerInfo ProspectInfo;  // 0x0490, size 0x1B0
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UUMG_DeleteCharacterName_C* DeleteCharacterInputField;  // 0x0640, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 RemainingTime;  // 0x0648, size 0x4
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UUMG_DeleteCharacterName_C* AbandonProspectInputField;  // 0x0650, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FOnRequestAbandonProspect OnRequestAbandonProspect;  // 0x0658, size 0x10
 
     UFUNCTION() void BndEvt__DeleteButton_K2Node_ComponentBoundEvent_2_Clicked__DelegateSignature(UUMG_ButtonBase_C* Button);  // parameters 0x8
     UFUNCTION() void BndEvt__PlayButton_K2Node_ComponentBoundEvent_0_Clicked__DelegateSignature(UUMG_ButtonBase_C* Button);  // parameters 0x8
@@ -64,11 +64,11 @@ public:
     UFUNCTION(BlueprintCallable) void CreateCharacter__DelegateSignature();
     UFUNCTION(BlueprintCallable) void DeleteSelectedCharacter();
     UFUNCTION() void ExecuteUbergraph_UMG_CharacterSelection(int32 EntryPoint);  // parameters 0x4
-    UFUNCTION(BlueprintCallable, BlueprintPure) void FindActiveProspectForCharacter(FOnlineProfileCharacter OnlineCharacterProfile, TArray<FProspectInfo>& ProspectArray, FProspectInfo& ProspectInfo);  // parameters 0x180
+    UFUNCTION(BlueprintCallable, BlueprintPure) void FindActiveProspectForCharacter(FOnlineProfileCharacter OnlineCharacterProfile, TArray<FProspectInfo>& ProspectArray, FProspectInfo& ProspectInfo);  // parameters 0x1A0
     UFUNCTION(BlueprintCallable) void GenerateCharacterSelectList(TArray<FOnlineProfileCharacter>& CharacterArray, TArray<FProspectInfo>& ActiveProspectArray);  // parameters 0x20
     UFUNCTION(BlueprintCallable) void GetButtonRowIndex(UWidget* Button, int32& RowIndex, bool& Found);  // parameters 0xD
     UFUNCTION(BlueprintCallable) void GetCameraFocus(FPreviewCameraSettingsEnum& CameraFocus);  // parameters 0x10
-    UFUNCTION(BlueprintCallable) void GetCosmeticData(FCharacterCosmetics& CosmeticData);  // parameters 0x60
+    UFUNCTION(BlueprintCallable) void GetCosmeticData(FCharacterCosmetics& CosmeticData);  // parameters 0x80
     UFUNCTION(BlueprintCallable, BlueprintPure) void GetCreationRowFromItem(FMetaItem Item, FCharacterCreationDataRowHandle& Row);  // parameters 0x58
     UFUNCTION(BlueprintCallable, BlueprintPure) FText Get_DurationTime_Text();  // parameters 0x18
     UFUNCTION(BlueprintCallable) void OnAbandonProspectClicked(UUMG_CharacterProfileSlot_C* Button);  // parameters 0x8
@@ -78,13 +78,13 @@ public:
     UFUNCTION(BlueprintCallable) void OnDeleteCharacterTextMatched();
     UFUNCTION(BlueprintCallable) void OnDeleteCharacterTextUnmatched();
     UFUNCTION(BlueprintCallable) void OnFailure_C114BFB749A23B1B26FC30A1C3BB6795(FErrorCodesEnum Result, FString ExtraErrorInfo);  // parameters 0x20
-    UFUNCTION(BlueprintCallable) void OnRequestAbandonProspect__DelegateSignature(FOnlineProfileCharacter Character, FString ProspectId, bool WillDelete);  // parameters 0xE1
-    UFUNCTION(BlueprintCallable) void OnRequestCharacterDelete__DelegateSignature(FOnlineProfileCharacter Character);  // parameters 0xD0
-    UFUNCTION(BlueprintCallable) void OnRequestCharacterSelect__DelegateSignature(FOnlineProfileCharacter Character);  // parameters 0xD0
+    UFUNCTION(BlueprintCallable) void OnRequestAbandonProspect__DelegateSignature(FOnlineProfileCharacter Character, FString ProspectId, bool WillDelete);  // parameters 0x101
+    UFUNCTION(BlueprintCallable) void OnRequestCharacterDelete__DelegateSignature(FOnlineProfileCharacter Character);  // parameters 0xF0
+    UFUNCTION(BlueprintCallable) void OnRequestCharacterSelect__DelegateSignature(FOnlineProfileCharacter Character);  // parameters 0xF0
     UFUNCTION(BlueprintCallable) void OnSuccess_C114BFB749A23B1B26FC30A1C3BB6795(FErrorCodesEnum Result, FString ExtraErrorInfo);  // parameters 0x20
     UFUNCTION(BlueprintCallable) void PrepareAbandonProspectPopup();
     UFUNCTION(BlueprintCallable) void RemoveCharacterFromProspects();
-    UFUNCTION(BlueprintCallable) void SelectedCharacterUpdated__DelegateSignature(FOnlineProfileCharacter SelectedCharacter);  // parameters 0xD0
+    UFUNCTION(BlueprintCallable) void SelectedCharacterUpdated__DelegateSignature(FOnlineProfileCharacter SelectedCharacter);  // parameters 0xF0
     UFUNCTION(BlueprintCallable) void SetCharacterVoiceParam(FCharacterVoicesRowHandle Voice);  // parameters 0x18
     UFUNCTION(BlueprintCallable) void TogglePlayButtonEnabled();
     UFUNCTION(BlueprintCallable) void UpdateAbandonProspectPrompt();

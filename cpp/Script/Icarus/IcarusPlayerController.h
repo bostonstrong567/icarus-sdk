@@ -123,7 +123,7 @@ public:
     UFUNCTION(BlueprintNativeEvent) void OnPawnLeavingGame();
     UFUNCTION(BlueprintNativeEvent) bool OnPlayerDeath();  // parameters 0x1
     UFUNCTION(BlueprintNativeEvent) void OnRep_IcarusPlayerCharacter();
-    UFUNCTION() void OnServerInitialise_GetPlayerCharacterProfileResult(bool bSuccess, const FOnlineProfileCharacter& InCharacterProfile);  // parameters 0xD8
+    UFUNCTION() void OnServerInitialise_GetPlayerCharacterProfileResult(bool bSuccess, const FOnlineProfileCharacter& InCharacterProfile);  // parameters 0xF8
     UFUNCTION() void OnServerInitialise_GetPlayerUserProfileResult(bool bSuccess, const FOnlineProfileUser& InUserProfile);  // parameters 0x50
     UFUNCTION() void OnServerUpdateAccountFlags(bool bSuccess, const TArray<int32>& Flags);  // parameters 0x18
     UFUNCTION() void OnServerUpdateAccountTalents(bool bSuccess, const TArray<FBackendTalent>& BackendTalents);  // parameters 0x18

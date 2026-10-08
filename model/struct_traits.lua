@@ -3,7 +3,7 @@
 -- "inside": one of its fields holds such a struct by value. A list of either cannot be made longer entry by
 -- entry from Lua, because the new entries are zeroed memory: write the whole list instead.
 -- Keyed by the struct's path as the game's files spell it: look a path up in lower case, on both sides.
--- Build e1ff6f2561214190a02f7d7f332200f3-1: 1447 structs, 1365 own and 82 inside.
+-- Build f8a8fc7d39e2431f9f2454bb7bb2c74f-1: 1447 structs, 1365 own and 82 inside.
 return {
   ["/Game/BP/Objects/World/Items/Deployables/Networks/BPS_FlowMeterData.BPS_FlowMeterData"] = "inside",
   ["/Game/BP/Objects/World/Items/Deployables/ProcessorPreviewData.ProcessorPreviewData"] = "inside",

@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ReqCanJoinProspect
-// size 0x28, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/CanJoinProspectCallbackProxyGen.generated.h
+// size 0x28, declared in Icarus/Source/IcarusGenerated/Public/Struct/ReqCanJoinProspect.h
 
 USTRUCT()
 struct FReqCanJoinProspect

@@ -1,5 +1,5 @@
 // /Script/Icarus.IcarusAtmosphere
-// size 0x120, declared in Icarus/Source/Icarus/Systems/Weather/IcarusAtmospheres.h
+// size 0x148, declared in Icarus/Source/Icarus/Systems/Weather/IcarusAtmospheres.h
 
 USTRUCT()
 struct FIcarusAtmosphere : public FIcarusTableRowBase
@@ -19,4 +19,5 @@ struct FIcarusAtmosphere : public FIcarusTableRowBase
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float DistFogScale;  // 0x00E8, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName MaterialParameterName;  // 0x00EC, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UTextureCube> Cubemap;  // 0x00F8, size 0x28
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UTexture2D> FishingBackground;  // 0x0120, size 0x28
 };

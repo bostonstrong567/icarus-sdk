@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ReqUpdateCharacterLoadout
-// size 0x150, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/UpdateCharacterLoadoutCallbackProxyGen.generated.h
+// size 0x150, declared in Icarus/Source/IcarusGenerated/Public/Struct/ReqUpdateCharacterLoadout.h
 
 USTRUCT()
 struct FReqUpdateCharacterLoadout

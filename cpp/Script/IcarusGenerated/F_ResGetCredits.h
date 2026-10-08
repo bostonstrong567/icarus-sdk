@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ResGetCredits
-// size 0x8, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/GetCreditsCallbackProxyGen.generated.h
+// size 0x8, declared in Icarus/Source/IcarusGenerated/Public/Struct/ResGetCredits.h
 
 USTRUCT()
 struct FResGetCredits

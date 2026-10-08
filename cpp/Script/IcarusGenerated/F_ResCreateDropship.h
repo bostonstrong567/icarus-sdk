@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ResCreateDropship
-// size 0x100, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/CreateDropshipCallbackProxyGen.generated.h
+// size 0x100, declared in Icarus/Source/IcarusGenerated/Public/Struct/ResCreateDropship.h
 
 USTRUCT()
 struct FResCreateDropship

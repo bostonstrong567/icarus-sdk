@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.OnlineProfileCharacter
-// size 0xD0, declared in Icarus/Source/IcarusGenerated/Public/Struct/OnlineProfileCharacter.h
+// size 0xF0, declared in Icarus/Source/IcarusGenerated/Public/Struct/OnlineProfileCharacter.h
 
 USTRUCT()
 struct FOnlineProfileCharacter
@@ -14,7 +14,7 @@ struct FOnlineProfileCharacter
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EProspectLocation Location;  // 0x0030, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<int32> UnlockedFlags;  // 0x0038, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FMetaResource> MetaResources;  // 0x0048, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FCharacterCosmetics Cosmetic;  // 0x0058, size 0x60
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FBackendTalent> Talents;  // 0x00B8, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) int64 TimeLastPlayed;  // 0x00C8, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FCharacterCosmetics Cosmetic;  // 0x0058, size 0x80
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FBackendTalent> Talents;  // 0x00D8, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) int64 TimeLastPlayed;  // 0x00E8, size 0x8
 };

@@ -14,6 +14,7 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 FLODInstanceIndex;  // 0x00D4, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ADeployable* TargetCropPlot;  // 0x00D8, size 0x8
 
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool CheckContextualPreconditions(AIcarusNPCGOAPController* Controller) const;  // parameters 0x9
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool ExecutionComplete(AIcarusNPCGOAPController* Controller);  // parameters 0x9
     UFUNCTION(BlueprintCallable) void GetInteractLocation(AIcarusNPCGOAPController* ForController, FVector& OutLocation, bool& Success);  // parameters 0x15
     UFUNCTION(BlueprintCallable) void LookForCropPlot(AController* Controller, float SearchRadius, TArray<ADeployable*>& CropPlots);  // parameters 0x20

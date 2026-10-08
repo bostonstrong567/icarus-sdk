@@ -1,15 +1,15 @@
 // /Game/BP/Systems/BP_IcarusGameInstance.BP_IcarusGameInstance_C
 // Derives from: UIcarusGameInstance > UGameInstance > UObject
-// size 0x8F8, a blueprint class, blueprint
+// size 0x938, a blueprint class, blueprint
 
 UCLASS(Transient, Config=Game)
 class UBP_IcarusGameInstance_C : public UIcarusGameInstance
 {
 public:
-    UPROPERTY(Transient) FPointerToUberGraphFrame UberGraphFrame;  // 0x08D0, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FRequestErrorEvent RequestErrorEvent;  // 0x08D8, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) ULevelStreamingDynamic* LoadingScreenLevel;  // 0x08E8, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) UTextureRenderTarget2D* RT_LoadingScreen;  // 0x08F0, size 0x8
+    UPROPERTY(Transient) FPointerToUberGraphFrame UberGraphFrame;  // 0x0910, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FRequestErrorEvent RequestErrorEvent;  // 0x0918, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) ULevelStreamingDynamic* LoadingScreenLevel;  // 0x0928, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) UTextureRenderTarget2D* RT_LoadingScreen;  // 0x0930, size 0x8
 
     UFUNCTION(BlueprintCallable) void CreateLoadingScreenRT();
     UFUNCTION() void ExecuteUbergraph_BP_IcarusGameInstance(int32 EntryPoint);  // parameters 0x4

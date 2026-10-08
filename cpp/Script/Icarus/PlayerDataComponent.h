@@ -63,7 +63,7 @@ public:
     UFUNCTION(BlueprintCallable) bool GetAllLoadableProspects(TArray<FAssociatedProspectInfo>& AssociatedProspectInfos);  // parameters 0x11
     UFUNCTION(BlueprintCallable) void GetAllLocalProspectInfos(TArray<FProspectInfo>& ProspectInfos);  // parameters 0x10
     UFUNCTION(BlueprintCallable) int32 GetAvailableMetaResource(FMetaCurrencyRowHandle MetaCurrencyRow);  // parameters 0x1C
-    UFUNCTION(BlueprintCallable) bool GetCharacterProfile(int32 ChrSlot, FOnlineProfileCharacter& CharacterProfile);  // parameters 0xD9
+    UFUNCTION(BlueprintCallable) bool GetCharacterProfile(int32 ChrSlot, FOnlineProfileCharacter& CharacterProfile);  // parameters 0xF9
     UFUNCTION(BlueprintCallable, BlueprintPure) FPlayerLoadoutData GetCurrentLoadout() const;  // parameters 0x3E0
     UFUNCTION(BlueprintCallable, BlueprintPure) int32 GetInsuranceClaimTime() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable) bool GetLastProspect(FAssociatedProspectInfo& AssociatedProspectInfo);  // parameters 0xD9

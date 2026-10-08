@@ -1,5 +1,5 @@
 // /Script/MagicLeapSharedWorld.MagicLeapSharedWorldAlignmentTransforms
-// size 0x10, declared in Engine/Plugins/Lumin/MagicLeapPassableWorld/Source/MagicLeapSharedWorld/Public/MagicLeapSharedWorldTypes.h
+// size 0x10, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/MagicLeapSharedWorld/MagicLeapSharedWorldPlayerController.generated.h
 
 USTRUCT()
 struct FMagicLeapSharedWorldAlignmentTransforms

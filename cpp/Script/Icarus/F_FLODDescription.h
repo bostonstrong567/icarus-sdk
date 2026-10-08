@@ -1,5 +1,5 @@
 // /Script/Icarus.FLODDescription
-// size 0x138, declared in Icarus/Source/Icarus/Systems/FLOD/FLODStructs.h
+// size 0x138, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/Icarus/FLOD.generated.h
 
 USTRUCT()
 struct FFLODDescription : public FIcarusTableRowBase

@@ -1,5 +1,5 @@
 // /Script/Icarus.IcarusTerrain
-// size 0x180, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/Icarus/TerrainsLibrary.generated.h
+// size 0x180, declared in Icarus/Source/Icarus/Systems/Terrains/IcarusTerrain.h
 
 USTRUCT()
 struct FIcarusTerrain : public FIcarusTableRowBase

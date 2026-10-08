@@ -7,12 +7,12 @@ class UAtmospheresLibrary : public URowLibrary
 {
 public:
 
-    UFUNCTION(BlueprintCallable) static void AddRowToAtmospheresTable(FName Name, FIcarusAtmosphere Data, FAtmospheresRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x141
+    UFUNCTION(BlueprintCallable) static void AddRowToAtmospheresTable(FName Name, FIcarusAtmosphere Data, FAtmospheresRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x169
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakAtmospheresEnum(FAtmospheresEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FAtmospheresRowHandle CastToAtmospheresRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool EqualEqual_EnumEnum(FAtmospheresEnum A, FAtmospheresEnum B);  // parameters 0x21
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool EqualEqual_FAtmospheresRowHandleFAtmospheresRowHandle(FAtmospheresRowHandle RowHandleA, FAtmospheresRowHandle RowHandleB);  // parameters 0x31
-    UFUNCTION(BlueprintCallable) static void GetAtmospheresStruct(FAtmospheresRowHandle RowHandle, FIcarusAtmosphere& Atmospheres, EValid& Paths);  // parameters 0x139
+    UFUNCTION(BlueprintCallable) static void GetAtmospheresStruct(FAtmospheresRowHandle RowHandle, FIcarusAtmosphere& Atmospheres, EValid& Paths);  // parameters 0x161
     UFUNCTION() static FName IntToName(int32 IntValue);  // parameters 0xC
     UFUNCTION(BlueprintCallable, BlueprintPure) static FAtmospheresEnum IntToStruct(int32 IntValue);  // parameters 0x18
     UFUNCTION() static bool IsValidName(FName NameValue);  // parameters 0x9

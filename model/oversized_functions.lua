@@ -4,7 +4,7 @@
 -- blueprint one. Keyed by the function's path as the game's files spell it. The running game may show a name
 -- in another letter case or with a space at its end, so whatever reads this looks a path up in lower case
 -- with spaces at the end dropped, on both sides.
--- Build e1ff6f2561214190a02f7d7f332200f3-1: 316 functions (169 native, 144 blueprint, 3 delegate signatures).
+-- Build f8a8fc7d39e2431f9f2454bb7bb2c74f-1: 317 functions (170 native, 144 blueprint, 3 delegate signatures).
 return {
   ["/Script/Icarus.TalentViewsLibrary:AddRowToTalentViewsTable"] = 7144,
   ["/Script/Icarus.TalentViewsLibrary:GetTalentViewsStruct"] = 7136,
@@ -119,12 +119,12 @@ return {
   ["/Game/BP/Systems/BP_IcarusGameModeFunctionLibrary.BP_IcarusGameModeFunctionLibrary_C:GetAvailableMetaSpawns"] = 856,
   ["/Game/BP/Systems/BP_IcarusGameModeFunctionLibrary.BP_IcarusGameModeFunctionLibrary_C:SelectRandomMetaSpawnsForProspect"] = 840,
   ["/Game/BP/Systems/BP_IcarusGameMode.BP_IcarusGameMode_C:PickProspectMetaSpawns"] = 816,
+  ["/Script/Icarus.IcarusJoinSession:IcarusJoinSession"] = 816,
   ["/Script/Icarus.ProcessorRecipesLibrary:AddRowToProcessorRecipesTable"] = 816,
   ["/Script/Icarus.ArmourLibrary:AddRowToArmourTable"] = 808,
   ["/Script/Icarus.ProcessorRecipesLibrary:GetProcessorRecipesStruct"] = 808,
   ["/Script/Icarus.ArmourLibrary:GetArmourStruct"] = 800,
   ["/Game/BP/Player/BP_IcarusPlayerCharacterSurvival.BP_IcarusPlayerCharacterSurvival_C:GetArmourStructWithOverride"] = 793,
-  ["/Script/Icarus.IcarusJoinSession:IcarusJoinSession"] = 784,
   ["/Script/Icarus.IcarusPlayerCharacter:GetArmourDataForGFurComponent"] = 784,
   ["/Script/Icarus.IcarusPreviewCharacter:FindOrCreateEquipmentComponent"] = 784,
   ["/Script/Icarus.IcarusPreviewCharacter:UpdateEquipmentForSlot"] = 784,
@@ -144,11 +144,11 @@ return {
   ["/Script/Icarus.SessionFunctionLibrary:CreateIcarusSessionFromSession"] = 720,
   ["/Script/Icarus.AISetupLibrary:GetAISetupStruct"] = 712,
   ["/Script/Icarus.InventoryItemLibrary:GetRangedWeaponData"] = 712,
+  ["/Game/BP/Player/BP_IcarusPlayerControllerSpace.BP_IcarusPlayerControllerSpace_C:ExecuteJoinProspect"] = 704,
   ["/Game/BP/Behaviours/Actionable/BP_ActionableBehaviour_DeployableBase.BP_ActionableBehaviour_DeployableBase_C:Server_ValidateAndDeploy"] = 700,
   ["/Script/Icarus.BuildingGridRecorderComponent:AddBuildingToGrid"] = 688,
   ["/Script/Icarus.InventoryItemLibrary:GetBuildableData"] = 688,
   ["/Script/Icarus.InventoryItemLibrary:GetTurretData"] = 688,
-  ["/Game/BP/Player/BP_IcarusPlayerControllerSpace.BP_IcarusPlayerControllerSpace_C:ExecuteJoinProspect"] = 672,
   ["/Script/Icarus.InventoryItemLibrary:GetDeployableData"] = 672,
   ["/Script/Icarus.InventoryItemLibrary:GetConsumableData"] = 664,
   ["/Game/BP/Objects/World/Items/WorldObjects/Missions/PRO_D/BP_Mission_NPC.BP_Mission_NPC_C:ShouldConsume"] = 657,
@@ -302,6 +302,7 @@ return {
   ["/Game/UI/Components/UMG_RecipeElement.UMG_RecipeElement_C:InitMainItemIcon"] = 520,
   ["/Script/Icarus.FarmingFunctionLibrary:UpdateCropPlotModifiers"] = 520,
   ["/Script/Icarus.FishingFunctionLibrary:CatchFish"] = 520,
+  ["/Script/Icarus.IcarusResumeSession:IcarusResumeSession"] = 520,
   ["/Script/Icarus.InventoryItemLibrary:CleanupDestroyedItem"] = 520,
   ["/Script/Icarus.InventoryItemLibrary:GetAnyCookingModifications"] = 520,
   ["/Script/Icarus.InventoryItemLibrary:GetAttachmentSlot"] = 520,

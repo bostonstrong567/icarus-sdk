@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ResRemoveSelectedDropship
-// size 0x8, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/RemoveSelectedDropshipCallbackProxyGen.generated.h
+// size 0x8, declared in Icarus/Source/IcarusGenerated/Public/Struct/ResRemoveSelectedDropship.h
 
 USTRUCT()
 struct FResRemoveSelectedDropship

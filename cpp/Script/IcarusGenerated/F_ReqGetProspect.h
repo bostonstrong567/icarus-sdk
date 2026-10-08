@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ReqGetProspect
-// size 0x30, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/GetProspectCallbackProxyGen.generated.h
+// size 0x30, declared in Icarus/Source/IcarusGenerated/Public/Struct/ReqGetProspect.h
 
 USTRUCT()
 struct FReqGetProspect

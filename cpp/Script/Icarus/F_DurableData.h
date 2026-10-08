@@ -1,5 +1,5 @@
 // /Script/Icarus.DurableData
-// size 0x40, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/Icarus/DurableComponent.generated.h
+// size 0x40, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/Icarus/InventoryItemLibrary.generated.h
 
 USTRUCT()
 struct FDurableData : public FIcarusTableRowBase

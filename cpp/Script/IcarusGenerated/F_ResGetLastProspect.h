@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ResGetLastProspect
-// size 0xB0, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/GetLastProspectCallbackProxyGen.generated.h
+// size 0xB0, declared in Icarus/Source/IcarusGenerated/Public/Struct/ResGetLastProspect.h
 
 USTRUCT()
 struct FResGetLastProspect

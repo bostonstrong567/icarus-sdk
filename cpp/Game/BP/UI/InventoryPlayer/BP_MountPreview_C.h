@@ -1,6 +1,6 @@
 // /Game/BP/UI/InventoryPlayer/BP_MountPreview.BP_MountPreview_C
 // Derives from: ABP_ActorPreview_C > AActor > UObject
-// size 0x2F0, a blueprint class, blueprint
+// size 0x310, a blueprint class, blueprint
 
 UCLASS(Config=Engine)
 class ABP_MountPreview_C : public ABP_ActorPreview_C
@@ -12,8 +12,8 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<USkeletalMeshComponent*> ArmourPieces;  // 0x0268, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool UpdateEquipment;  // 0x0278, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool UseMasterPose;  // 0x0279, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FCharacterCosmetics CosmeticData;  // 0x027C, size 0x60
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FPreviewCameraSettingsEnum CurrentCameraFocus;  // 0x02E0, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FCharacterCosmetics CosmeticData;  // 0x027C, size 0x80
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FPreviewCameraSettingsEnum CurrentCameraFocus;  // 0x0300, size 0x10
 
     UFUNCTION(BlueprintCallable) void ApplyDefaultMaterialOverride(USkeletalMeshComponent* MeshComponent);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void CheckMountMeshes();

@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ReqUpdateCharacterProgress
-// size 0x38, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/UpdateCharacterProgressCallbackProxyGen.generated.h
+// size 0x38, declared in Icarus/Source/IcarusGenerated/Public/Struct/ReqUpdateCharacterProgress.h
 
 USTRUCT()
 struct FReqUpdateCharacterProgress

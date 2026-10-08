@@ -23,6 +23,7 @@ public:
 
     UFUNCTION(BlueprintCallable) void AddItem(FString Name, UUserWidget* Widget);  // parameters 0x18
     UFUNCTION(BlueprintCallable) void ClearChildren();
+    UFUNCTION(BlueprintCallable, BlueprintPure) FString GetSelectedName() const;  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) UUserWidget* GetSelectedWidget() const;  // parameters 0x8
     UFUNCTION(BlueprintCallable) void HideSearchBox(bool bHide);  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsOpen() const;  // parameters 0x1

@@ -52,7 +52,7 @@ public:
     UFUNCTION() void BndEvt__BackButton_K2Node_ComponentBoundEvent_1_Clicked__DelegateSignature(UUMG_ButtonBase_C* Button);  // parameters 0x8
     UFUNCTION() void BndEvt__QuitToDesktopButton_K2Node_ComponentBoundEvent_2_Clicked__DelegateSignature(UUMG_ButtonBase_C* Button);  // parameters 0x8
     UFUNCTION() void BndEvt__UMG_BasicButton_Settings_K2Node_ComponentBoundEvent_0_Clicked__DelegateSignature(UUMG_ButtonBase_C* Button);  // parameters 0x8
-    UFUNCTION(BlueprintCallable) void CharacterCosmeticsUpdate(bool Success, FOnlineProfileCharacter UpdatedCharacter);  // parameters 0xD8
+    UFUNCTION(BlueprintCallable) void CharacterCosmeticsUpdate(bool Success, FOnlineProfileCharacter UpdatedCharacter);  // parameters 0xF8
     UFUNCTION(BlueprintCallable) void CharacterCreationResult(bool Success);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void CheckIfAccountRetrieved();
     UFUNCTION(BlueprintCallable) void ConnectionTimeout();
@@ -66,30 +66,30 @@ public:
     UFUNCTION(BlueprintCallable) void HideSettings();
     UFUNCTION(BlueprintCallable) void Initialise();
     UFUNCTION(BlueprintCallable) void MoveToHAB();
-    UFUNCTION(BlueprintCallable) void NewCharacterSelected(FOnlineProfileCharacter SelectedCharacter);  // parameters 0xD0
-    UFUNCTION(BlueprintCallable) void OnAbandonProspectRequest(FOnlineProfileCharacter Character, FString ProspectId, bool WillDelete);  // parameters 0xE1
+    UFUNCTION(BlueprintCallable) void NewCharacterSelected(FOnlineProfileCharacter SelectedCharacter);  // parameters 0xF0
+    UFUNCTION(BlueprintCallable) void OnAbandonProspectRequest(FOnlineProfileCharacter Character, FString ProspectId, bool WillDelete);  // parameters 0x101
     UFUNCTION(BlueprintCallable) void OnCharacterChanged__DelegateSignature();
-    UFUNCTION(BlueprintCallable) void OnCharacterDeletionRequest(FOnlineProfileCharacter Character);  // parameters 0xD0
-    UFUNCTION(BlueprintCallable) void OnCharacterSelected(FOnlineProfileCharacter Character);  // parameters 0xD0
+    UFUNCTION(BlueprintCallable) void OnCharacterDeletionRequest(FOnlineProfileCharacter Character);  // parameters 0xF0
+    UFUNCTION(BlueprintCallable) void OnCharacterSelected(FOnlineProfileCharacter Character);  // parameters 0xF0
     UFUNCTION(BlueprintCallable) void OnConnectMessageEvent(bool Success);  // parameters 0x1
-    UFUNCTION(BlueprintCallable) void OnCosmeticUpdateRequest(FReqUpdateCosmetics Request, int32 Retries);  // parameters 0x7C
-    UFUNCTION(BlueprintCallable) void OnCreateCharacterRequest(FReqCreateCharacter CharacterName, int32 NumRetries, bool SelectNewCharacter);  // parameters 0x75
-    UFUNCTION(BlueprintCallable) void OnFail_16D5FF39449681E05656E5AEB0E4B6EC(const FResCreateCharacter& Response);  // parameters 0xD8
+    UFUNCTION(BlueprintCallable) void OnCosmeticUpdateRequest(FReqUpdateCosmetics Request, int32 Retries);  // parameters 0x9C
+    UFUNCTION(BlueprintCallable) void OnCreateCharacterRequest(FReqCreateCharacter CharacterName, int32 NumRetries, bool SelectNewCharacter);  // parameters 0x95
+    UFUNCTION(BlueprintCallable) void OnFail_16D5FF39449681E05656E5AEB0E4B6EC(const FResCreateCharacter& Response);  // parameters 0xF8
     UFUNCTION(BlueprintCallable) void OnFail_49458CA04D20AEFC814952AE4F767256(const FResGetCharacters& Response);  // parameters 0x18
     UFUNCTION(BlueprintCallable) void OnFail_5EFAF01E48E09C992CF2528296819869(const FResAbandonProspect& Response);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void OnFail_8DEB61DF48DB1B1A9300A098DF26F53D(const FResDeleteCharacter& Response);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void OnFail_A199ABC24AC7A7F27C5A65A9B3F9E898(const FResGetAllProspects& Response);  // parameters 0x18
     UFUNCTION(BlueprintCallable) void OnFail_AA2196B04AC3B92C0431BDB2754010AC(const FResGetCharacters& Response);  // parameters 0x18
     UFUNCTION(BlueprintCallable) void OnFail_BEC856464A75D4A166FC988B8C7226EC(const FResGetUserProfile& Response);  // parameters 0x50
-    UFUNCTION(BlueprintCallable) void OnFail_F77B8CB74F4AF05825B964AC18481892(const FResUpdateCosmetics& Response);  // parameters 0xD8
-    UFUNCTION(BlueprintCallable) void OnSuccess_16D5FF39449681E05656E5AEB0E4B6EC(const FResCreateCharacter& Response);  // parameters 0xD8
+    UFUNCTION(BlueprintCallable) void OnFail_F77B8CB74F4AF05825B964AC18481892(const FResUpdateCosmetics& Response);  // parameters 0xF8
+    UFUNCTION(BlueprintCallable) void OnSuccess_16D5FF39449681E05656E5AEB0E4B6EC(const FResCreateCharacter& Response);  // parameters 0xF8
     UFUNCTION(BlueprintCallable) void OnSuccess_49458CA04D20AEFC814952AE4F767256(const FResGetCharacters& Response);  // parameters 0x18
     UFUNCTION(BlueprintCallable) void OnSuccess_5EFAF01E48E09C992CF2528296819869(const FResAbandonProspect& Response);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void OnSuccess_8DEB61DF48DB1B1A9300A098DF26F53D(const FResDeleteCharacter& Response);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void OnSuccess_A199ABC24AC7A7F27C5A65A9B3F9E898(const FResGetAllProspects& Response);  // parameters 0x18
     UFUNCTION(BlueprintCallable) void OnSuccess_AA2196B04AC3B92C0431BDB2754010AC(const FResGetCharacters& Response);  // parameters 0x18
     UFUNCTION(BlueprintCallable) void OnSuccess_BEC856464A75D4A166FC988B8C7226EC(const FResGetUserProfile& Response);  // parameters 0x50
-    UFUNCTION(BlueprintCallable) void OnSuccess_F77B8CB74F4AF05825B964AC18481892(const FResUpdateCosmetics& Response);  // parameters 0xD8
+    UFUNCTION(BlueprintCallable) void OnSuccess_F77B8CB74F4AF05825B964AC18481892(const FResUpdateCosmetics& Response);  // parameters 0xF8
     UFUNCTION(BlueprintCallable) void QuitGame();
     UFUNCTION(BlueprintCallable) void QuitToDesktopCancelled();
     UFUNCTION(BlueprintCallable) void RefreshCharacterList();
@@ -98,10 +98,10 @@ public:
     UFUNCTION(BlueprintCallable) void RetrieveActiveProspects();
     UFUNCTION(BlueprintCallable) void RetrieveCharacters();
     UFUNCTION(BlueprintCallable) void RetrieveUserProfile();
-    UFUNCTION(BlueprintCallable) void SelectCharacter(FOnlineProfileCharacter SelectedCharacter);  // parameters 0xD0
+    UFUNCTION(BlueprintCallable) void SelectCharacter(FOnlineProfileCharacter SelectedCharacter);  // parameters 0xF0
     UFUNCTION(BlueprintCallable) void SetContentState(TEnumAsByte<ECharacterCreationMenus> State);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void ShowSettings();
     UFUNCTION(BlueprintCallable) void SwapToCharacterCreate();
-    UFUNCTION(BlueprintCallable) void UpdateCharacterPreview(FCharacterCosmetics CosmeticData);  // parameters 0x60
+    UFUNCTION(BlueprintCallable) void UpdateCharacterPreview(FCharacterCosmetics CosmeticData);  // parameters 0x80
     UFUNCTION(BlueprintCallable) void UpdateConnectingProgress();
 };

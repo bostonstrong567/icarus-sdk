@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ReqAbandonProspect
-// size 0x18, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/AbandonProspectCallbackProxyGen.generated.h
+// size 0x18, declared in Icarus/Source/IcarusGenerated/Public/Struct/ReqAbandonProspect.h
 
 USTRUCT()
 struct FReqAbandonProspect

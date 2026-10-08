@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ReqClaimNotificationAttachments
-// size 0x20, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/ClaimNotificationAttachmentsCallbackProxyGen.generated.h
+// size 0x20, declared in Icarus/Source/IcarusGenerated/Public/Struct/ReqClaimNotificationAttachments.h
 
 USTRUCT()
 struct FReqClaimNotificationAttachments

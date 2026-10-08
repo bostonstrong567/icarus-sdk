@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ReqExchangeCurrency
-// size 0x30, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/ExchangeCurrencyCallbackProxyGen.generated.h
+// size 0x30, declared in Icarus/Source/IcarusGenerated/Public/Struct/ReqExchangeCurrency.h
 
 USTRUCT()
 struct FReqExchangeCurrency

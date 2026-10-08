@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ResHostCandidate
-// size 0x38, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/HostCandidateCallbackProxyGen.generated.h
+// size 0x38, declared in Icarus/Source/IcarusGenerated/Public/Struct/ResHostCandidate.h
 
 USTRUCT()
 struct FResHostCandidate

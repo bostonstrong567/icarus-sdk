@@ -1,39 +1,39 @@
 // /Game/BP/Objects/World/Items/Deployables/BP_Gravestone.BP_Gravestone_C
 // Derives from: AGravestoneBase > AIcarusCorpse > ASkeletalItem > AIcarusItem > AIcarusActor > AActor > UObject
-// size 0x8D5, a blueprint class, blueprint
+// size 0x915, a blueprint class, blueprint
 
 UCLASS(Config=Engine)
 class ABP_Gravestone_C : public AGravestoneBase, public IBP_TooltipWidgetInterface_C
 {
 public:
-    UPROPERTY(Transient) FPointerToUberGraphFrame UberGraphFrame;  // 0x06B0, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UBP_UIProjectionComponent_GraveStone_C* BP_UIProjectionComponent_GraveStoneProxyMesh;  // 0x06B8, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* GraveStoneProxyMesh;  // 0x06C0, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UAudioContextComponent* AudioContext;  // 0x06C8, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UBP_UIProjectionLocation_C* BP_UIProjectionLocation;  // 0x06D0, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UBP_UIProjectionComponent_GraveStone_C* BP_UIProjectionComponent_GraveStone;  // 0x06D8, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UVocalisationComponent* Vocalisation;  // 0x06E0, size 0x8
-    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) FName UserId;  // 0x06E8, size 0x8
-    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) bool IsMale;  // 0x06F0, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FPlayerStateUpdated PlayerStateUpdated;  // 0x06F8, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimerHandle SettleTimer;  // 0x0708, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float MaxCorpseSettleTime;  // 0x0710, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FPoseSnapshot RagdollPose;  // 0x0718, size 0x38
-    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) FPoseSnapshot NetworkedPose;  // 0x0750, size 0x38
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool NeedsArmourUpdate;  // 0x0788, size 0x1
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UHighlightableComponent* HighlightableComponent;  // 0x0790, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FGravestoneData TempData;  // 0x0798, size 0xC0
-    UPROPERTY(EditAnywhere, BlueprintReadOnly) FVocalisationsRowHandle DeathVocalisation;  // 0x0858, size 0x18
-    UPROPERTY(EditAnywhere, BlueprintReadOnly) UFMODEvent* RagdollAudioEvent;  // 0x0870, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadOnly) float RagdollAudioUpdateFrequency;  // 0x0878, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimerHandle RagdollAudioUpdateTimer;  // 0x0880, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadOnly) FName RagdollAudioSocket;  // 0x0888, size 0x8
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UFMODAudioComponent* RagdollAudioComponent;  // 0x0890, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float RagdollAudioLastCollisionTime;  // 0x0898, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadOnly) float RagdollAudioNoCollisionTimeoutLength;  // 0x089C, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<USkeletalMesh> TPMeshSoftReference;  // 0x08A0, size 0x28
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector CachedBagPosition;  // 0x08C8, size 0xC
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool StartedRagDollNoAnchor;  // 0x08D4, size 0x1
+    UPROPERTY(Transient) FPointerToUberGraphFrame UberGraphFrame;  // 0x06D0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UBP_UIProjectionComponent_GraveStone_C* BP_UIProjectionComponent_GraveStoneProxyMesh;  // 0x06D8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* GraveStoneProxyMesh;  // 0x06E0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UAudioContextComponent* AudioContext;  // 0x06E8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UBP_UIProjectionLocation_C* BP_UIProjectionLocation;  // 0x06F0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UBP_UIProjectionComponent_GraveStone_C* BP_UIProjectionComponent_GraveStone;  // 0x06F8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UVocalisationComponent* Vocalisation;  // 0x0700, size 0x8
+    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) FName UserId;  // 0x0708, size 0x8
+    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) bool IsMale;  // 0x0710, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FPlayerStateUpdated PlayerStateUpdated;  // 0x0718, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimerHandle SettleTimer;  // 0x0728, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float MaxCorpseSettleTime;  // 0x0730, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FPoseSnapshot RagdollPose;  // 0x0738, size 0x38
+    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) FPoseSnapshot NetworkedPose;  // 0x0770, size 0x38
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool NeedsArmourUpdate;  // 0x07A8, size 0x1
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UHighlightableComponent* HighlightableComponent;  // 0x07B0, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FGravestoneData TempData;  // 0x07B8, size 0xE0
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) FVocalisationsRowHandle DeathVocalisation;  // 0x0898, size 0x18
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) UFMODEvent* RagdollAudioEvent;  // 0x08B0, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) float RagdollAudioUpdateFrequency;  // 0x08B8, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimerHandle RagdollAudioUpdateTimer;  // 0x08C0, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) FName RagdollAudioSocket;  // 0x08C8, size 0x8
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UFMODAudioComponent* RagdollAudioComponent;  // 0x08D0, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float RagdollAudioLastCollisionTime;  // 0x08D8, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) float RagdollAudioNoCollisionTimeoutLength;  // 0x08DC, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<USkeletalMesh> TPMeshSoftReference;  // 0x08E0, size 0x28
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector CachedBagPosition;  // 0x0908, size 0xC
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool StartedRagDollNoAnchor;  // 0x0914, size 0x1
 
     UFUNCTION(BlueprintCallable) void Apply_Cosmetics();  // named "Apply Cosmetics"
     UFUNCTION(BlueprintCallable) void AttachProjectiles(USceneComponent* CharacterRoot, AActor* ProjectileOwnerToIgnore);  // parameters 0x10
@@ -44,7 +44,7 @@ public:
     UFUNCTION(BlueprintCallable) void DoPoseSnapshot();
     UFUNCTION() void ExecuteUbergraph_BP_Gravestone(int32 EntryPoint);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void ForceSettle();
-    UFUNCTION(BlueprintCallable) void GetGravestoneData(FGravestoneData& Data);  // parameters 0xC0
+    UFUNCTION(BlueprintCallable) void GetGravestoneData(FGravestoneData& Data);  // parameters 0xE0
     UFUNCTION(BlueprintCallable, BlueprintPure) void GetGravestoneInventory(UInventory*& Inventory);  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintImplementableEvent) FPoseSnapshot GetRagdollPose();  // parameters 0x38
     UFUNCTION(BlueprintCallable) void GetTooltipClassOverride(TSoftClassPtr<UHuntingWidget>& ClassOverride);  // parameters 0x28

@@ -1,5 +1,5 @@
 // /Script/Icarus.FirearmData
-// size 0x690, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/Icarus/InventoryItemLibrary.generated.h
+// size 0x690, declared in Icarus/Source/Icarus/DataStructs/Tools/FirearmData.h
 
 USTRUCT()
 struct FFirearmData : public FIcarusTableRowBase

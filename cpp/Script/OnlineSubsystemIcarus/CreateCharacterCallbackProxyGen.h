@@ -1,6 +1,6 @@
 // /Script/OnlineSubsystemIcarus.CreateCharacterCallbackProxyGen
 // Derives from: UOnlineBlueprintCallProxyBase > UBlueprintAsyncActionBase > UObject
-// size 0xC0, declared in Icarus/Plugins/OnlineSubsystemIcarus/Source/OnlineSubsystemIcarus/Public/IcarusGenerated/CallbackProxy/CreateCharacterCallbackProxyGen.h
+// size 0xE0, declared in Icarus/Plugins/OnlineSubsystemIcarus/Source/OnlineSubsystemIcarus/Public/IcarusGenerated/CallbackProxy/CreateCharacterCallbackProxyGen.h
 
 UCLASS()
 class UCreateCharacterCallbackProxyGen : public UOnlineBlueprintCallProxyBase
@@ -12,5 +12,5 @@ public:
     // Not reflected: the engine's scripting cannot see these.
     FReqCreateCharacter ReqCreateCharacter;  // 0x0050, private
 
-    UFUNCTION(BlueprintCallable) static UCreateCharacterCallbackProxyGen* CreateCharacter(const FReqCreateCharacter& Request);  // parameters 0x78
+    UFUNCTION(BlueprintCallable) static UCreateCharacterCallbackProxyGen* CreateCharacter(const FReqCreateCharacter& Request);  // parameters 0x98
 };

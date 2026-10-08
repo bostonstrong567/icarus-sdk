@@ -1,6 +1,6 @@
 // /Game/UI/Windows/UMG_SpaceMenus_TopLevel.UMG_SpaceMenus_TopLevel_C
 // Derives from: UUserWidget > UWidget > UVisual > UObject
-// size 0x54C, a blueprint class, widget
+// size 0x56C, a blueprint class, widget
 
 UCLASS(EditInlineNew, Config=Engine)
 class UUMG_SpaceMenus_TopLevel_C : public UUserWidget
@@ -66,11 +66,11 @@ public:
     UPROPERTY(Instanced, BlueprintReadWrite) UUMG_ProspectTracker_C* UMG_ProspectTracker;  // 0x0428, size 0x8
     UPROPERTY(Instanced, BlueprintReadWrite) UUMG_SettledProspectTracker_C* UMG_SettledProspectTracker;  // 0x0430, size 0x8
     UPROPERTY(Instanced, BlueprintReadWrite) UWidgetSwitcher* WidgetSwitcher_PlayerProgression;  // 0x0438, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FOnlineProfileCharacter CachedActiveCharacter;  // 0x0440, size 0xD0
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FCurrencyConversionsRowHandle ConverstionRow;  // 0x0510, size 0x18
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UUMG_ConfirmationPopup_C* ConfirmationPopup;  // 0x0528, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool IsShowingNewOptions;  // 0x0530, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FAccountFlagsRowHandle NewGameTutorialAccountFlag;  // 0x0534, size 0x18
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FOnlineProfileCharacter CachedActiveCharacter;  // 0x0440, size 0xF0
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FCurrencyConversionsRowHandle ConverstionRow;  // 0x0530, size 0x18
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UUMG_ConfirmationPopup_C* ConfirmationPopup;  // 0x0548, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool IsShowingNewOptions;  // 0x0550, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FAccountFlagsRowHandle NewGameTutorialAccountFlag;  // 0x0554, size 0x18
 
     UFUNCTION() void BndEvt__Button_ReturnFromPlayerProgression_K2Node_ComponentBoundEvent_4_Clicked__DelegateSignature(UUMG_ButtonBase_C* Button);  // parameters 0x8
     UFUNCTION() void BndEvt__CustomizeButton_K2Node_ComponentBoundEvent_5_Clicked__DelegateSignature();
@@ -91,7 +91,7 @@ public:
     UFUNCTION() void BndEvt__UMG_SpaceMenus_TopLevel_TechTreeIcon_K2Node_ComponentBoundEvent_14_Clicked__DelegateSignature();
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent) void Construct();
     UFUNCTION(BlueprintCallable) void ContractUpdated();
-    UFUNCTION(BlueprintCallable) void CustomisationComplete(bool Success, FOnlineProfileCharacter NewCharacterInfo);  // parameters 0xD8
+    UFUNCTION(BlueprintCallable) void CustomisationComplete(bool Success, FOnlineProfileCharacter NewCharacterInfo);  // parameters 0xF8
     UFUNCTION() void ExecuteUbergraph_UMG_SpaceMenus_TopLevel(int32 EntryPoint);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void InitCharacterData();
     UFUNCTION(BlueprintCallable) void OnClose();

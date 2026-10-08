@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ReqDeleteNotification
-// size 0x20, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/DeleteNotificationCallbackProxyGen.generated.h
+// size 0x20, declared in Icarus/Source/IcarusGenerated/Public/Struct/ReqDeleteNotification.h
 
 USTRUCT()
 struct FReqDeleteNotification

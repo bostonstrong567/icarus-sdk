@@ -126,9 +126,9 @@ public:
     UFUNCTION(BlueprintCallable, Server, Reliable) void GotoPlayer(APlayerState* Player);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void ItemsToReturnValidated__DelegateSignature(const TArray<FLaunchItemReturnInfo>& OwnedItems, const TArray<FItemData>& NonReturnableItems);  // parameters 0x20
     UFUNCTION(BlueprintCallable) void OnConfirmed();
-    UFUNCTION(BlueprintCallable) void OnFail_AF17C8E247D30AF201771A9111377587(const FResResetCharacter& Response);  // parameters 0xD8
+    UFUNCTION(BlueprintCallable) void OnFail_AF17C8E247D30AF201771A9111377587(const FResResetCharacter& Response);  // parameters 0xF8
     UFUNCTION(BlueprintCallable) void OnRep_DisabledFire();
-    UFUNCTION(BlueprintCallable) void OnSuccess_AF17C8E247D30AF201771A9111377587(const FResResetCharacter& Response);  // parameters 0xD8
+    UFUNCTION(BlueprintCallable) void OnSuccess_AF17C8E247D30AF201771A9111377587(const FResResetCharacter& Response);  // parameters 0xF8
     UFUNCTION(BlueprintCallable, Server, Reliable) void Proxy_AddModifier(AIcarusPlayerCharacter* Player, FModifier ModifierRow);  // parameters 0x28
     UFUNCTION(BlueprintCallable, Server, Reliable) void Proxy_ArcadeMachineEndAction(ABP_Colony_Arcade_Machine_C* ArcadeMachineActor, FArcadeMachineScore ScoreResult);  // parameters 0x38
     UFUNCTION(BlueprintCallable, Server, Reliable) void Proxy_ArmourStandBackpackToggle(ADeployable* ArmourStand, bool SwapBackpacks);  // parameters 0x9

@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.CharacterCosmetics
-// size 0x60, declared in Icarus/Source/IcarusGenerated/Public/Struct/CharacterCosmetics.h
+// size 0x80, declared in Icarus/Source/IcarusGenerated/Public/Struct/CharacterCosmetics.h
 
 USTRUCT()
 struct FCharacterCosmetics
@@ -28,4 +28,12 @@ struct FCharacterCosmetics
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Customization_Rebreather;  // 0x0054, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Customization_Helmet;  // 0x0058, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Customization_Hood;  // 0x005C, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Customization_TopFaceShape;  // 0x0060, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Customization_BottomFaceShape;  // 0x0064, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Customization_LeftFaceShape;  // 0x0068, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Customization_RightFaceShape;  // 0x006C, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float Customization_TopFaceBlendValue;  // 0x0070, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float Customization_BottomFaceBlendValue;  // 0x0074, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float Customization_LeftFaceBlendValue;  // 0x0078, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float Customization_RightFaceBlendValue;  // 0x007C, size 0x4
 };

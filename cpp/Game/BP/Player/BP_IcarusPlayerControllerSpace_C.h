@@ -1,6 +1,6 @@
 // /Game/BP/Player/BP_IcarusPlayerControllerSpace.BP_IcarusPlayerControllerSpace_C
 // Derives from: AIcarusPlayerControllerSpace > AIcarusPlayerController > AIcarusController > APlayerController > AController > AActor > UObject
-// size 0xE68, a blueprint class, blueprint
+// size 0xE88, a blueprint class, blueprint
 
 UCLASS(NotPlaceable, Config=Game)
 class ABP_IcarusPlayerControllerSpace_C : public AIcarusPlayerControllerSpace, public IUIControllerInterface_C
@@ -20,21 +20,21 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ABP_IcarusCharacterDummy_C* DefaultCharacterDummy;  // 0x09E0, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ABP_IcarusCameraPawn_C* CharacterSelectionCamera;  // 0x09E8, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<TEnumAsByte<ESpaceMenuScene>, ABP_SpaceMenuCamera_C*> MenuScreenCameras;  // 0x09F0, size 0x50
-    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) FOnlineProfileCharacter SelectedCharacter;  // 0x0A40, size 0xD0
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) AExponentialHeightFog* FxInteriorFogComponent;  // 0x0B10, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FCharacterLoadout Retrieved_Character_Loadout;  // 0x0B18, size 0x138, named "Retrieved Character Loadout"
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bLoadoutTutorialShown;  // 0x0C50, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool RequiresBackendInitialisation;  // 0x0C51, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FMetaItem> Meta_Inventory;  // 0x0C58, size 0x10, named "Meta Inventory"
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FMetaItem> Loadout_Inventory;  // 0x0C68, size 0x10, named "Loadout Inventory"
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FIcarusSession SessionInvite;  // 0x0C78, size 0x1C0
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FAccountFlagsRowHandle Account_Flag;  // 0x0E38, size 0x18, named "Account Flag"
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FMetaCurrencyRowHandle PassiveRefundRow;  // 0x0E50, size 0x18
+    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) FOnlineProfileCharacter SelectedCharacter;  // 0x0A40, size 0xF0
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) AExponentialHeightFog* FxInteriorFogComponent;  // 0x0B30, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FCharacterLoadout Retrieved_Character_Loadout;  // 0x0B38, size 0x138, named "Retrieved Character Loadout"
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bLoadoutTutorialShown;  // 0x0C70, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool RequiresBackendInitialisation;  // 0x0C71, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FMetaItem> Meta_Inventory;  // 0x0C78, size 0x10, named "Meta Inventory"
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FMetaItem> Loadout_Inventory;  // 0x0C88, size 0x10, named "Loadout Inventory"
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FIcarusSession SessionInvite;  // 0x0C98, size 0x1C0
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FAccountFlagsRowHandle Account_Flag;  // 0x0E58, size 0x18, named "Account Flag"
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FMetaCurrencyRowHandle PassiveRefundRow;  // 0x0E70, size 0x18
 
     UFUNCTION() void AcceptInvite(FIcarusSession SessionToJoin);  // parameters 0x1C0
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void AcceptSessionInvite(FIcarusSession SessionToJoin);  // parameters 0x1C0
     UFUNCTION(BlueprintCallable) void BackendConnection_PostInitialise();
-    UFUNCTION(BlueprintCallable, Server, Reliable) void BackendConnection_SetCharacter(FOnlineProfileCharacter SelectedCharacter);  // parameters 0xD0
+    UFUNCTION(BlueprintCallable, Server, Reliable) void BackendConnection_SetCharacter(FOnlineProfileCharacter SelectedCharacter);  // parameters 0xF0
     UFUNCTION(BlueprintCallable) void BeginInputCapture(UBP_InputCaptureComponent_C* InputCaptureComponent, AActor* CapturedActor);  // parameters 0x10
     UFUNCTION() void BndEvt__BP_IcarusPlayerControllerSpace_PlayerDataComponent_K2Node_ComponentBoundEvent_0_OnMetaInventoryChanged__DelegateSignature();
     UFUNCTION(BlueprintCallable) void CharacterFlagToAccountFlagConversion(AIcarusPlayerState* PlayerState);  // parameters 0x8
@@ -46,9 +46,9 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) UIcarusLinkedActorPanelBase* DisplayDynamicWidget(TSubclassOf<UIcarusLinkedActorPanelBase> WidgetClass, AActor* LinkedActorForWidget);  // parameters 0x18
     UFUNCTION(BlueprintCallable) void DoNothing_Confirmation();
     UFUNCTION(BlueprintCallable) void EndInputCapture();
-    UFUNCTION(BlueprintCallable) void ExecuteClaimLaunchProspect(FProspectInfo Prospect_Info, FOnlineProfileCharacter OnlineProfileCharacter);  // parameters 0x170
-    UFUNCTION(BlueprintCallable) void ExecuteJoinProspect(FIcarusSession IcarusSession, FOnlineProfileCharacter OnlineProfileCharacter, FString ExtraSettings);  // parameters 0x2A0
-    UFUNCTION(BlueprintCallable) void ExecuteResumeProspect(FAssociatedProspectInfo AssociatedProspectInfo, FOnlineProfileCharacter OnlineProfileCharacter);  // parameters 0x1A8
+    UFUNCTION(BlueprintCallable) void ExecuteClaimLaunchProspect(FProspectInfo Prospect_Info, FOnlineProfileCharacter OnlineProfileCharacter);  // parameters 0x190
+    UFUNCTION(BlueprintCallable) void ExecuteJoinProspect(FIcarusSession IcarusSession, FOnlineProfileCharacter OnlineProfileCharacter, FString ExtraSettings);  // parameters 0x2C0
+    UFUNCTION(BlueprintCallable) void ExecuteResumeProspect(FAssociatedProspectInfo AssociatedProspectInfo, FOnlineProfileCharacter OnlineProfileCharacter);  // parameters 0x1C8
     UFUNCTION() void ExecuteUbergraph_BP_IcarusPlayerControllerSpace(int32 EntryPoint);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void Get_End_Of_Drop_Screen_Info();  // named "Get End Of Drop Screen Info"
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintImplementableEvent) UCheatOverlayBase* GetCheatOverlay(UObject* WorldContextObject) const;  // parameters 0x10

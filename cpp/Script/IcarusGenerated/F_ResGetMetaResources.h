@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ResGetMetaResources
-// size 0x18, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/GetMetaResourceCallbackProxyGen.generated.h
+// size 0x18, declared in Icarus/Source/IcarusGenerated/Public/Struct/ResGetMetaResources.h
 
 USTRUCT()
 struct FResGetMetaResources

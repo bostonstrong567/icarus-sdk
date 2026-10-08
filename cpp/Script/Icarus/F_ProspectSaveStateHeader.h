@@ -1,5 +1,5 @@
 // /Script/Icarus.ProspectSaveStateHeader
-// size 0xE8, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/Icarus/ProspectSubsystem.generated.h
+// size 0xE8, declared in Icarus/Source/Icarus/Systems/Prospects/ProspectSaveState.h
 
 USTRUCT()
 struct FProspectSaveStateHeader

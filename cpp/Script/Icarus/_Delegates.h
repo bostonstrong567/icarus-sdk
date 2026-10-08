@@ -127,7 +127,7 @@ DELEGATE() void GeneratorOutOfFuel();
 DELEGATE() void GenericPlayerEvent(FString PlayerID);  // parameters 0x10
 DELEGATE() void GenericWorldEvent(FString PlayerID);  // parameters 0x10
 DELEGATE() void GetCharacterLoadoutResult(bool Success, const FCharacterLoadout& CharacterLoadout);  // parameters 0x140
-DELEGATE() void GetCharacterProfileResult(bool Success, const FOnlineProfileCharacter& CharacterProfile);  // parameters 0xD8
+DELEGATE() void GetCharacterProfileResult(bool Success, const FOnlineProfileCharacter& CharacterProfile);  // parameters 0xF8
 DELEGATE() void GetUserProfileResult(bool Success, const FOnlineProfileUser& CharacterProfile);  // parameters 0x50
 DELEGATE() void GrowthStateUpdated(UCultivation* Cultivation, EPlantGrowthStates GrowthState);  // parameters 0x9
 DELEGATE() void HighlightChangedSignature(UHighlightableComponent* Highlightable, UPrimitiveComponent* Component, bool bHighlighted);  // parameters 0x11

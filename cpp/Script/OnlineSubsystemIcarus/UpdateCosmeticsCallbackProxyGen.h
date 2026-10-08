@@ -1,6 +1,6 @@
 // /Script/OnlineSubsystemIcarus.UpdateCosmeticsCallbackProxyGen
 // Derives from: UOnlineBlueprintCallProxyBase > UBlueprintAsyncActionBase > UObject
-// size 0xC8, declared in Icarus/Plugins/OnlineSubsystemIcarus/Source/OnlineSubsystemIcarus/Public/IcarusGenerated/CallbackProxy/UpdateCosmeticsCallbackProxyGen.h
+// size 0xE8, declared in Icarus/Plugins/OnlineSubsystemIcarus/Source/OnlineSubsystemIcarus/Public/IcarusGenerated/CallbackProxy/UpdateCosmeticsCallbackProxyGen.h
 
 UCLASS()
 class UUpdateCosmeticsCallbackProxyGen : public UOnlineBlueprintCallProxyBase
@@ -12,5 +12,5 @@ public:
     // Not reflected: the engine's scripting cannot see these.
     FReqUpdateCosmetics ReqUpdateCosmetics;  // 0x0050, private
 
-    UFUNCTION(BlueprintCallable) static UUpdateCosmeticsCallbackProxyGen* UpdateCosmetics(const FReqUpdateCosmetics& Request);  // parameters 0x80
+    UFUNCTION(BlueprintCallable) static UUpdateCosmeticsCallbackProxyGen* UpdateCosmetics(const FReqUpdateCosmetics& Request);  // parameters 0xA0
 };

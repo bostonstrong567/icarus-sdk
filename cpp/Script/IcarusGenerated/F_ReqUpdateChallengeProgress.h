@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ReqUpdateChallengeProgress
-// size 0x28, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/UpdateChallengeProgressCallbackProxyGen.generated.h
+// size 0x28, declared in Icarus/Source/IcarusGenerated/Public/Struct/ReqUpdateChallengeProgress.h
 
 USTRUCT()
 struct FReqUpdateChallengeProgress

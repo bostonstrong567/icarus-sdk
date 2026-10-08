@@ -16,5 +16,4 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool CanInteract(AActor* Instigator, FHitResult HitResult);  // parameters 0x91
     UFUNCTION() void ExecuteUbergraph_BP_Interactable_Milk(int32 EntryPoint);  // parameters 0x4
     UFUNCTION(BlueprintImplementableEvent) void Interact(AActor* Instigator, const FHitResult& HitResult);  // parameters 0x90
-    UFUNCTION(BlueprintImplementableEvent) void ReceiveTick(float DeltaSeconds);  // parameters 0x4
 };

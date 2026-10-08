@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ReqSetResourceSplit
-// size 0x38, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/SetResourceSplitCallbackProxyGen.generated.h
+// size 0x38, declared in Icarus/Source/IcarusGenerated/Public/Struct/ReqSetResourceSplit.h
 
 USTRUCT()
 struct FReqSetResourceSplit

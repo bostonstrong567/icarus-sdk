@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ReqUnlockWorkshopItem
-// size 0x20, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/UnlockWorkshopItemCallbackProxyGen.generated.h
+// size 0x20, declared in Icarus/Source/IcarusGenerated/Public/Struct/ReqUnlockWorkshopItem.h
 
 USTRUCT()
 struct FReqUnlockWorkshopItem

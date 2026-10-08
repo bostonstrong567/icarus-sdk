@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ResResumeProspect
-// size 0xF8, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/ResumeProspectCallbackProxyGen.generated.h
+// size 0xF8, declared in Icarus/Source/IcarusGenerated/Public/Struct/ResResumeProspect.h
 
 USTRUCT()
 struct FResResumeProspect

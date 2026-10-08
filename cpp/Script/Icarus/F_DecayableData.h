@@ -1,5 +1,5 @@
 // /Script/Icarus.DecayableData
-// size 0x40, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/Icarus/DecayableComponent.generated.h
+// size 0x40, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/Icarus/InventoryItemLibrary.generated.h
 
 USTRUCT()
 struct FDecayableData : public FIcarusTableRowBase

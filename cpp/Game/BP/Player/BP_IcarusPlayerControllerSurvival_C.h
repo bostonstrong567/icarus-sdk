@@ -1,55 +1,55 @@
 // /Game/BP/Player/BP_IcarusPlayerControllerSurvival.BP_IcarusPlayerControllerSurvival_C
 // Derives from: AIcarusPlayerControllerSurvival > AIcarusPlayerController > AIcarusController > APlayerController > AController > AActor > UObject
-// size 0xD34, a blueprint class, blueprint
+// size 0xD54, a blueprint class, blueprint
 
 UCLASS(NotPlaceable, Config=Game)
 class ABP_IcarusPlayerControllerSurvival_C : public AIcarusPlayerControllerSurvival, public IUIControllerInterface_C, public IBP_SpawnTetherInterface_C
 {
 public:
-    UPROPERTY(Transient) FPointerToUberGraphFrame UberGraphFrame;  // 0x0A48, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UBP_SurvivalMetaController_C* BP_SurvivalMetaController;  // 0x0A50, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UBP_NetworkProxyComponentSurvival_C* BP_NetworkProxyComponent;  // 0x0A58, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UBP_HuntingManager_C* BP_HuntingManager;  // 0x0A60, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UBP_CriticalHitComponent_C* BP_CriticalHitComponent;  // 0x0A68, size 0x8
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UUMG_UserInterface_C* UserInterface;  // 0x0A70, size 0x8
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UInventory* EnvirosuitInventoryReference;  // 0x0A78, size 0x8
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UInventory* BackpackInventoryReference;  // 0x0A80, size 0x8
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UInventory* QuickbarInventoryReference;  // 0x0A88, size 0x8
-    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) bool FocusedOnObject;  // 0x0A90, size 0x1
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UInventory* EquipmentInventoryReference;  // 0x0A98, size 0x8
-    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) int32 CurrentSessionEndTime;  // 0x0AA0, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FChatMessageArrived ChatMessageArrived;  // 0x0AA8, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FLocalMessageArrived LocalMessageArrived;  // 0x0AB8, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float CharacterProgressionUpdateDelay;  // 0x0AC8, size 0x4
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UInventory* UpgradeInventoryRef;  // 0x0AD0, size 0x8
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UInventory* VisionInventoryRef;  // 0x0AD8, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) ABP_SpectatorActor_C* SpectatorActor;  // 0x0AE0, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float DBNOHoldLength;  // 0x0AE8, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float DBNOHoldTimestamp;  // 0x0AEC, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FCharacterLoadout LastLoadout;  // 0x0AF0, size 0x138
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector LastCameraLocation;  // 0x0C28, size 0xC
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool DebugCameraLocationChanges;  // 0x0C34, size 0x1
-    UPROPERTY(EditAnywhere, Replicated, BlueprintAssignable, BlueprintReadWrite) FOnRevived OnRevived;  // 0x0C38, size 0x10
-    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) float OutOfBoundsTimestamp;  // 0x0C48, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float OutOfBoundsMaxTime;  // 0x0C4C, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimerHandle OutOfBoundsTimerHandle;  // 0x0C50, size 0x8
-    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) bool IsRunningUnStuckEQS;  // 0x0C58, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimerHandle HeatmapBoundsTimer;  // 0x0C60, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FServerMessage ServerMessage;  // 0x0C68, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FModifierStatesRowHandle SoloRespawnModifier;  // 0x0C78, size 0x18
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float SoloRespawnBuffLength;  // 0x0C90, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 SoloRespawnBuffUID;  // 0x0C94, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimerHandle InventoryFullMessageCooldown;  // 0x0C98, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) ABP_PhotoCamera_C* PhotoCamera;  // 0x0CA0, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 DelayedTargetFocusedSlot;  // 0x0CA8, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimerHandle DelayedFocusSlotTimer;  // 0x0CB0, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool DelayedForceFocusSlot;  // 0x0CB8, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool CanDoDBNOInput;  // 0x0CB9, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool WasThirdPersonBeforePhotoMode;  // 0x0CBA, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FOnLootAll OnLootAll;  // 0x0CC0, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TSet<FChallengesRowHandle> InitialChallengeNotificationsShown;  // 0x0CD0, size 0x50
-    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FOnHotbarPressed OnHotbarPressed;  // 0x0D20, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 SlotToSelect;  // 0x0D30, size 0x4
+    UPROPERTY(Transient) FPointerToUberGraphFrame UberGraphFrame;  // 0x0A68, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UBP_SurvivalMetaController_C* BP_SurvivalMetaController;  // 0x0A70, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UBP_NetworkProxyComponentSurvival_C* BP_NetworkProxyComponent;  // 0x0A78, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UBP_HuntingManager_C* BP_HuntingManager;  // 0x0A80, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UBP_CriticalHitComponent_C* BP_CriticalHitComponent;  // 0x0A88, size 0x8
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UUMG_UserInterface_C* UserInterface;  // 0x0A90, size 0x8
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UInventory* EnvirosuitInventoryReference;  // 0x0A98, size 0x8
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UInventory* BackpackInventoryReference;  // 0x0AA0, size 0x8
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UInventory* QuickbarInventoryReference;  // 0x0AA8, size 0x8
+    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) bool FocusedOnObject;  // 0x0AB0, size 0x1
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UInventory* EquipmentInventoryReference;  // 0x0AB8, size 0x8
+    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) int32 CurrentSessionEndTime;  // 0x0AC0, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FChatMessageArrived ChatMessageArrived;  // 0x0AC8, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FLocalMessageArrived LocalMessageArrived;  // 0x0AD8, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float CharacterProgressionUpdateDelay;  // 0x0AE8, size 0x4
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UInventory* UpgradeInventoryRef;  // 0x0AF0, size 0x8
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UInventory* VisionInventoryRef;  // 0x0AF8, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) ABP_SpectatorActor_C* SpectatorActor;  // 0x0B00, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float DBNOHoldLength;  // 0x0B08, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float DBNOHoldTimestamp;  // 0x0B0C, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FCharacterLoadout LastLoadout;  // 0x0B10, size 0x138
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector LastCameraLocation;  // 0x0C48, size 0xC
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool DebugCameraLocationChanges;  // 0x0C54, size 0x1
+    UPROPERTY(EditAnywhere, Replicated, BlueprintAssignable, BlueprintReadWrite) FOnRevived OnRevived;  // 0x0C58, size 0x10
+    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) float OutOfBoundsTimestamp;  // 0x0C68, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float OutOfBoundsMaxTime;  // 0x0C6C, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimerHandle OutOfBoundsTimerHandle;  // 0x0C70, size 0x8
+    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) bool IsRunningUnStuckEQS;  // 0x0C78, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimerHandle HeatmapBoundsTimer;  // 0x0C80, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FServerMessage ServerMessage;  // 0x0C88, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FModifierStatesRowHandle SoloRespawnModifier;  // 0x0C98, size 0x18
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float SoloRespawnBuffLength;  // 0x0CB0, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 SoloRespawnBuffUID;  // 0x0CB4, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimerHandle InventoryFullMessageCooldown;  // 0x0CB8, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) ABP_PhotoCamera_C* PhotoCamera;  // 0x0CC0, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 DelayedTargetFocusedSlot;  // 0x0CC8, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimerHandle DelayedFocusSlotTimer;  // 0x0CD0, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool DelayedForceFocusSlot;  // 0x0CD8, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool CanDoDBNOInput;  // 0x0CD9, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool WasThirdPersonBeforePhotoMode;  // 0x0CDA, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FOnLootAll OnLootAll;  // 0x0CE0, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TSet<FChallengesRowHandle> InitialChallengeNotificationsShown;  // 0x0CF0, size 0x50
+    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FOnHotbarPressed OnHotbarPressed;  // 0x0D40, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 SlotToSelect;  // 0x0D50, size 0x4
 
     UFUNCTION(BlueprintCallable) void AClicked();
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void ActivateHotbarSlot(int32 NewSelection, bool bForce, bool bQuickCraft, bool bDelayedActivate);  // parameters 0x7

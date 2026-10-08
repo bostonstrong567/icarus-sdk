@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ReqDeleteCharacter
-// size 0x4, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/DeleteCharacterCallbackProxyGen.generated.h
+// size 0x4, declared in Icarus/Source/IcarusGenerated/Public/Struct/ReqDeleteCharacter.h
 
 USTRUCT()
 struct FReqDeleteCharacter

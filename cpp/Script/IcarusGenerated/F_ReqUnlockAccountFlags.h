@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ReqUnlockAccountFlags
-// size 0x20, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/UnlockAccountFlagsCallbackProxyGen.generated.h
+// size 0x20, declared in Icarus/Source/IcarusGenerated/Public/Struct/ReqUnlockAccountFlags.h
 
 USTRUCT()
 struct FReqUnlockAccountFlags

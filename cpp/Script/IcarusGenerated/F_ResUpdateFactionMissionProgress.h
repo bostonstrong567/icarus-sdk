@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ResUpdateFactionMissionProgress
-// size 0x1, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/UpdateFactionMissionProgressCallbackProxyGen.generated.h
+// size 0x1, declared in Icarus/Source/IcarusGenerated/Public/Struct/ResUpdateFactionMissionProgress.h
 
 USTRUCT()
 struct FResUpdateFactionMissionProgress

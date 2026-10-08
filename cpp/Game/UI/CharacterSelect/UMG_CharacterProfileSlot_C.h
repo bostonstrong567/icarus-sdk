@@ -1,6 +1,6 @@
 // /Game/UI/CharacterSelect/UMG_CharacterProfileSlot.UMG_CharacterProfileSlot_C
 // Derives from: UUserWidget > UWidget > UVisual > UObject
-// size 0x4F0, a blueprint class, widget
+// size 0x510, a blueprint class, widget
 
 UCLASS(EditInlineNew, Config=Engine)
 class UUMG_CharacterProfileSlot_C : public UUserWidget
@@ -25,14 +25,14 @@ public:
     UPROPERTY(Instanced, BlueprintReadWrite) UUMG_AbandonProspectButton_C* UMG_AbandonProspectButton;  // 0x02E0, size 0x8
     UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FButtonClicked ButtonClicked;  // 0x02E8, size 0x10
     UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FDeleteCharacter DeleteCharacter;  // 0x02F8, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FOnlineProfileCharacter Character;  // 0x0308, size 0xD0
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FProspectInfo ActiveProspect;  // 0x03D8, size 0xA0
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FSlateColor TextColour_Default;  // 0x0478, size 0x28
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FSlateColor TextColour_Hovered;  // 0x04A0, size 0x28
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool Is_Selected;  // 0x04C8, size 0x1, named "Is Selected"
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) UMaterialInstanceDynamic* IconMaterial;  // 0x04D0, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) UTextureRenderTarget2D* IconRenderTarget;  // 0x04D8, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FAbandonButtonClicked AbandonButtonClicked;  // 0x04E0, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FOnlineProfileCharacter Character;  // 0x0308, size 0xF0
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FProspectInfo ActiveProspect;  // 0x03F8, size 0xA0
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FSlateColor TextColour_Default;  // 0x0498, size 0x28
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FSlateColor TextColour_Hovered;  // 0x04C0, size 0x28
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool Is_Selected;  // 0x04E8, size 0x1, named "Is Selected"
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) UMaterialInstanceDynamic* IconMaterial;  // 0x04F0, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) UTextureRenderTarget2D* IconRenderTarget;  // 0x04F8, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FAbandonButtonClicked AbandonButtonClicked;  // 0x0500, size 0x10
 
     UFUNCTION(BlueprintCallable) void AbandonButtonClicked__DelegateSignature(UUMG_CharacterProfileSlot_C* Slot);  // parameters 0x8
     UFUNCTION() void BndEvt__ButtonBase_K2Node_ComponentBoundEvent_3_OnButtonHoverEvent__DelegateSignature();
@@ -44,6 +44,6 @@ public:
     UFUNCTION(BlueprintCallable) void DeleteCharacter__DelegateSignature(UUMG_CharacterProfileSlot_C* Delete);  // parameters 0x8
     UFUNCTION() void ExecuteUbergraph_UMG_CharacterProfileSlot(int32 EntryPoint);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void GenerateIcon();
-    UFUNCTION(BlueprintCallable) void Initialize(FOnlineProfileCharacter Character, FProspectInfo CurrentActiveProspect);  // parameters 0x170
+    UFUNCTION(BlueprintCallable) void Initialize(FOnlineProfileCharacter Character, FProspectInfo CurrentActiveProspect);  // parameters 0x190
     UFUNCTION(BlueprintCallable) void SetSelectedState(bool IsSelected);  // parameters 0x1
 };

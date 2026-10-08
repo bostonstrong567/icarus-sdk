@@ -1,5 +1,5 @@
 // /Script/Icarus.InventoryContainerData
-// size 0x38, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/Icarus/InventoryContainerComponent.generated.h
+// size 0x38, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/Icarus/InventoryItemLibrary.generated.h
 
 USTRUCT()
 struct FInventoryContainerData : public FIcarusTableRowBase

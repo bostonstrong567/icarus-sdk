@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ResPreparedLoadout
-// size 0x50, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/GetPreparedLoadoutCallbackProxyGen.generated.h
+// size 0x50, declared in Icarus/Source/IcarusGenerated/Public/Struct/ResPreparedLoadout.h
 
 USTRUCT()
 struct FResPreparedLoadout

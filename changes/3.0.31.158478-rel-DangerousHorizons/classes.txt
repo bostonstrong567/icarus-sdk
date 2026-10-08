@@ -1,0 +1,162 @@
+Old: the model of build e1ff6f2561214190a02f7d7f332200f3-1 written 2026-10-08 14:53
+New: the model of build f8a8fc7d39e2431f9f2454bb7bb2c74f-1 written 2026-10-08 23:10
+Classes: 3 added, 0 removed, 0 renamed, 12 changed
+Structs: 0 added, 0 removed, 0 renamed, 2 changed
+Enums: 2 added, 0 removed, 0 renamed, 0 changed
++ class /Game/UI/Components/UMG_FaceIcon.UMG_FaceIcon_C : UserWidget
++ class /Game/UI/UMG_CharacterBlending_DropBox.UMG_CharacterBlending_DropBox_C : UserWidget
++ class /Script/Icarus.RadiationFxSphere : Actor
+~ class /Game/ASS/CHA/PHX/Customization/WB_ChaCustom_Shape.WB_ChaCustom_Shape_C
+    + property MouseMoved: MulticastInlineDelegate<MouseMoved__DelegateSignature>
+    + function MouseMoved__DelegateSignature()
+~ class /Game/ASS/VFX/ENV/Radiation/BP_Radiation_Sphere_01.BP_Radiation_Sphere_01_C
+    ~ parent Actor -> RadiationFxSphere
+    + property NS_StaticVertRad: Object<NiagaraComponent>
+    + property NS_MovingRad: Object<NiagaraComponent>
+    + property Floor_GasClouds_Opacity_NewTrack_0_54C091024A5D801AC49B7E91740A48AA: Float
+    + property Floor_GasClouds_Opacity__Direction_54C091024A5D801AC49B7E91740A48AA: Byte<ETimelineDirection>
+    + property Floor_GasClouds_Opacity: Object<TimelineComponent>
+    + property Vertical_Rad_Opacity_NewTrack_0_AE03D4E442C1833B1DAD40897141D057: Float
+    + property Vertical_Rad_Opacity__Direction_AE03D4E442C1833B1DAD40897141D057: Byte<ETimelineDirection>
+    + property Vertical_Rad_Opacity: Object<TimelineComponent>
+    + property Timeline_0_NightTimeIntensity_2FF0E41A4814726681E2ED942E4AA4E9: Float
+    + property Timeline_0_DayTimeIntensity_2FF0E41A4814726681E2ED942E4AA4E9: Float
+    + property Timeline_0__Direction_2FF0E41A4814726681E2ED942E4AA4E9: Byte<ETimelineDirection>
+    + property Timeline_0: Object<TimelineComponent>
+    + property bDebug: Bool
+    + property FakeVolumetricTimer: Struct<TimerHandle>
+    + property PP Radiation: Object<PostProcessComponent>
+    + property SmallFloorRadius: Float
+    + property MediumFloorRadius: Float
+    + property LargeFloorRadius: Float
+    + property RingSpacing: Float
+    + property MinInnerRadius: Float
+    + property InnerMeshSpacing: Float
+    + property HeightLevels: Array<Float>
+    + property PPMatOverlay: Object<MaterialInstanceDynamic>
+    + property PPMatOverlayPersistent: Object<MaterialInstanceDynamic>
+    + property IsFadingOut: Bool
+    + property StaticRangeHandle: Struct<TimerHandle>
+    + property CurrentCharacter: Object<Character>
+    + property LastTransform: Struct<Transform>
+    + property BlendInTimer: Struct<TimerHandle>
+    + property EffectRadiusDebug: Int
+    - property Niagara: Object<NiagaraComponent>
+    - property SM_Radiation_Sphere_01: Object<StaticMeshComponent>
+    - property DefaultSceneRoot: Object<SceneComponent>
+    - property OPacity_NewTrack_0_5BAC778644436C310C7B15A254278562: Float
+    - property OPacity__Direction_5BAC778644436C310C7B15A254278562: Byte<ETimelineDirection>
+    - property OPacity: Object<TimelineComponent>
+    + function GenerateDebugPreview()
+    + function BndEvt__BP_Radiation_Sphere_01_Edit_SphereComponent_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature(OverlappedComponent: Object<PrimitiveComponent>, OtherActor: Object<Actor>, OtherComp: Object<PrimitiveComponent>, OtherBodyIndex: Int)
+    + function BndEvt__BP_Radiation_Sphere_01_Edit_SphereComponent_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature(OverlappedComponent: Object<PrimitiveComponent>, OtherActor: Object<Actor>, OtherComp: Object<PrimitiveComponent>, OtherBodyIndex: Int, bFromSweep: Bool, SweepResult: Struct<HitResult>)
+    + function ReceiveBeginPlay()
+    + function BlendPPOverlayEnd(CameraComponent: Object<CameraComponent>)
+    + function BlendPPOverlayBegin()
+    + function ReceiveDestroyed()
+    + function IsMovableInit()
+    + function Floor_GasClouds_Opacity__UpdateFunc()
+    + function Floor_GasClouds_Opacity__FinishedFunc()
+    + function Timeline_0__UpdateFunc()
+    + function Timeline_0__FinishedFunc()
+    + function InitClouds()
+    + function GenerateInstanceData(Transforms: Array<Struct<Transform>>, Locations: Array<Struct<Vector>>)
+    + function TryPopulateFloorVolumetricClouds()
+    + function PopulateFloorVolumetricClouds(bGenerated: Bool)
+    + function PopulateVertRads(TargetArray: Array<Struct<Vector>>)
+    + function StaticRangeIntensity()
+    + function OnPawnOverlappedBegin(Pawn: Object<Pawn>)
+    + function OnPawnOverlappedEnd(Pawn: Object<Pawn>)
+    + function SetSphereScale()
+    + function RegenerateInstanceData(): Bool
+    - function SetIsMoving(isMoving: Bool)
+    - function SetEffectSize(Radius: Int)
+    > function OPacity__UpdateFunc -> Vertical_Rad_Opacity__UpdateFunc() (similar name)
+    > function OPacity__FinishedFunc -> Vertical_Rad_Opacity__FinishedFunc() (similar name)
+~ class /Game/BP/AI/GOAP/Actions/BP_IcarusGOAPAction_EatPlantFood.BP_IcarusGOAPAction_EatPlantFood_C
+    + function CheckContextualPreconditions(Controller: Object<IcarusNPCGOAPController>): Bool
+~ class /Game/BP/Behaviours/Interactable/BP_Interactable_Milk.BP_Interactable_Milk_C
+    - function ReceiveTick(DeltaSeconds: Float)
+~ class /Game/BP/Behaviours/Modifiers/BP_Modifier_Aura_Radioactive.BP_Modifier_Aura_Radioactive_C
+    + property RadiationEffectActor: Object<Actor>
+    - property RadiationEffect: Object<BP_Radiation_Sphere_01_C>
+~ class /Game/BP/Mounts/BP_Tame_Cow.BP_Tame_Cow_C
+    - function DebugText()
+~ class /Game/BP/Objects/World/Items/Deployables/WaterPurifier/BP_Water_Purifier_T4.BP_Water_Purifier_T4_C
+    + property BP_IcarusPointLight3: Object<BP_IcarusPointLight_C>
+    + property BP_IcarusPointLight2: Object<BP_IcarusPointLight_C>
+    + property BP_IcarusPointLight1: Object<BP_IcarusPointLight_C>
+    + property BP_IcarusPointLight: Object<BP_IcarusPointLight_C>
+    + property Scene_Lights: Object<SceneComponent>
+    - property WaterUnitsPerTick: Int
+    - property DividedFlowRate: Float
+    > property Niagara_0 -> Scene_Niagara: Object<SceneComponent> (similar name)
+~ class /Game/BP/Quests/Elysium/Story/Story5/BPQ_ELY_Story_5_Draw_Sandworm.BPQ_ELY_Story_5_Draw_Sandworm_C
+    + property SpawnLocation: Struct<Vector>
+    + function GetDescription(InDescription: Text, OutDescription: Text, bOutComplete: Bool)
+~ class /Game/BP/Settlement/UMG/UMG_SettlementBuilding_VariantInfo.UMG_SettlementBuilding_VariantInfo_C
+    - property RetainerBox_0: Object<RetainerBox>
+~ class /Game/UI/UMG_CharacterCreation.UMG_CharacterCreation_C
+    + property BlendShape: Object<WB_ChaCustom_Shape_C>
+    + property Border_17: Object<Border>
+    + property BottomDropBox: Object<UMG_CharacterBlending_DropBox_C>
+    + property CustomizationOptions_2: Object<WidgetSwitcher>
+    + property Divider_4: Object<Image>
+    + property Divider_5: Object<Image>
+    + property ExaggerateBlending: Object<CheckBox>
+    + property LeftDropBox: Object<UMG_CharacterBlending_DropBox_C>
+    + property Overlay_V2_Head: Object<Overlay>
+    + property Preset_1: Object<UMG_BasicButton_2_C>
+    + property Preset_2: Object<UMG_BasicButton_2_C>
+    + property Preset_3: Object<UMG_BasicButton_2_C>
+    + property Preset_4: Object<UMG_BasicButton_2_C>
+    + property Preset_5: Object<UMG_BasicButton_2_C>
+    + property RightDropBox: Object<UMG_CharacterBlending_DropBox_C>
+    + property TopDropBox: Object<UMG_CharacterBlending_DropBox_C>
+    + property OldTopFaceShape: Byte<EFaceShapes>
+    + property OldBottomFaceShape: Byte<EFaceShapes>
+    + property OldLeftFaceShape: Byte<EFaceShapes>
+    + property OldRightFaceShape: Byte<EFaceShapes>
+    + property EnabledFaceShapes: Int
+    + property IsSwappingOption: Bool
+    + function OnMouseMoved()
+    + function OnRightItemChanged(NameString: Str, Widget: Object<UserWidget>)
+    + function OnLeftItemChanged(NameString: Str, Widget: Object<UserWidget>)
+    + function OnBotItemChanged(NameString: Str, Widget: Object<UserWidget>)
+    + function OnTopItemChanged(NameString: Str, Widget: Object<UserWidget>)
+    + function BndEvt__UMG_CharacterCreation_Preset_5_K2Node_ComponentBoundEvent_7_Clicked__DelegateSignature(Button: Object<UMG_ButtonBase_C>)
+    + function BndEvt__UMG_CharacterCreation_Preset_4_K2Node_ComponentBoundEvent_6_Clicked__DelegateSignature(Button: Object<UMG_ButtonBase_C>)
+    + function BndEvt__UMG_CharacterCreation_Preset_3_K2Node_ComponentBoundEvent_5_Clicked__DelegateSignature(Button: Object<UMG_ButtonBase_C>)
+    + function BndEvt__UMG_CharacterCreation_Preset_2_K2Node_ComponentBoundEvent_4_Clicked__DelegateSignature(Button: Object<UMG_ButtonBase_C>)
+    + function BndEvt__UMG_CharacterCreation_Preset_1_K2Node_ComponentBoundEvent_3_Clicked__DelegateSignature(Button: Object<UMG_ButtonBase_C>)
+    + function BndEvt__UMG_CharacterCreation_ExaggerateBlending_K2Node_ComponentBoundEvent_2_OnCheckBoxComponentStateChanged__DelegateSignature(bIsChecked: Bool)
+    + function SetControlSelect()
+    + function TopItemChanged(Object: Object<UserWidget>)
+    + function BotItemChanged(Object: Object<UserWidget>)
+    + function LeftItemChanged(Object: Object<UserWidget>)
+    + function RightItemChanged(Object: Object<UserWidget>)
+    + function TopSwapCheck(ChosenFaceShape: Byte<EFaceShapes>)
+    + function BottomSwapCheck(ChosenFaceShape: Byte<EFaceShapes>)
+    + function LeftSwapCheck(ChosenFaceShape: Byte<EFaceShapes>)
+    + function RightSwapCheck(ChosenFaceShape: Byte<EFaceShapes>)
+~ class /Script/Icarus.CustomComboBox
+    + function GetSelectedName(): Str
+~ class /Script/Icarus.RadiationManager
+    + property RadiationFxSpheres: Array<Object<RadiationFxSphere>>
+    + property TimerHandle_ProcessRebuilds: Struct<TimerHandle>
+    + function GetCullingSpheres(Sphere: Object<RadiationFxSphere>): Array<Object<RadiationFxSphere>>
+    + function IsPointInsideAnySphere(WorldPoint: Struct<Vector>, Spheres: Array<Object<RadiationFxSphere>>): Bool
+    + function MarkSphereDirty(Sphere: Object<RadiationFxSphere>)
+~ struct /Script/Icarus.IcarusAtmosphere
+    + property FishingBackground: SoftObject<Texture2D>
+~ struct /Script/IcarusGenerated.CharacterCosmetics
+    + property Customization_TopFaceShape: Int
+    + property Customization_BottomFaceShape: Int
+    + property Customization_LeftFaceShape: Int
+    + property Customization_RightFaceShape: Int
+    + property Customization_TopFaceBlendValue: Float
+    + property Customization_BottomFaceBlendValue: Float
+    + property Customization_LeftFaceBlendValue: Float
+    + property Customization_RightFaceBlendValue: Float
++ enum /Game/UI/EFaceShapes.EFaceShapes
++ enum /Niagara/Enums/ENiagara_IDAttributes.ENiagara_IDAttributes

@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ReqGetChallenges
-// size 0x10, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/GetChallengesCallbackProxyGen.generated.h
+// size 0x10, declared in Icarus/Source/IcarusGenerated/Public/Struct/ReqGetChallenges.h
 
 USTRUCT()
 struct FReqGetChallenges

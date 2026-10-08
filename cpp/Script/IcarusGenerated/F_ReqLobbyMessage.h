@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ReqLobbyMessage
-// size 0x40, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/LobbyMessageCallbackProxyGen.generated.h
+// size 0x40, declared in Icarus/Source/IcarusGenerated/Public/Struct/ReqLobbyMessage.h
 
 USTRUCT()
 struct FReqLobbyMessage
