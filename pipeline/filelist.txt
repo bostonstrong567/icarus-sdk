@@ -1,0 +1,3 @@
+regex:^Icarus/Binaries/Win64/IcarusServer-Win64-Shipping\.(exe|pdb)$
+regex:^Icarus/Content/Data/data\.pak$
+regex:^Icarus/Content/Paks/[^/]+\.pak$

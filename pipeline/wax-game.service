@@ -1,0 +1,11 @@
+[Unit]
+Description=Icarus SDK: make it again when Steam has a new build of the game
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStartPre=-/usr/bin/git -C @BASE@/sdk pull -q --ff-only
+ExecStart=/bin/bash @BASE@/sdk/pipeline/update.sh
+Nice=10
+IOSchedulingClass=idle
+TimeoutStartSec=4h
