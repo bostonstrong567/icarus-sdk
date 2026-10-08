@@ -86,28 +86,6 @@ rm -rf "$STATE/changes"; mkdir -p "$STATE/changes"
 [ -d game-data/previous ] && python3 scripts/exmod.py changes -v > "$STATE/changes/tables.txt" 2>&1 || true
 python3 scripts/gameindex.py needs > "$STATE/changes/wax-needs.txt" 2>&1 || echo "CHECK: Wax uses names this build does not have (changes/wax-needs.txt)"
 
-say "Mods"
-mods() {
-    local out="$BASE/mods-out" report="$STATE/changes/mods.txt" dir name exmod stage
-    rm -rf "$out"; mkdir -p "$out"
-    for dir in "$REPO"/mods/*/; do
-        name="$(basename "$dir")"; exmod="$dir$name.EXMOD"
-        [ -f "$exmod" ] || continue
-        if ! python3 scripts/exmod.py check "$exmod" >> "$report" 2>&1; then echo "$name: does not fit this build" >> "$report"; continue; fi
-        stage="$out/_stage/$name"; mkdir -p "$stage"
-        python3 scripts/exmod.py apply "$exmod" "$stage/data" >> "$report" 2>&1
-        [ -d "$dir/content" ] && cp -r "$dir/content/." "$stage/"
-        cp "$exmod" "$stage/"
-        "$repak" pack --quiet --version V11 --compression Zlib --mount-point ../../../Icarus/Content/ "$stage" "$out/${name}_P.pak"
-        python3 scripts/exmod.py package "$dir" "$out/$name.EXMODZ" >> "$report" 2>&1
-        echo "$name: built" >> "$report"
-    done
-    rm -rf "$out/_stage"
-    [ -f "$report" ] && cat "$report"
-    return 0
-}
-mods || echo "FAILED (going on): mods"
-
 say "SDK repository"
 mkdir -p "$REPO/model"
 rm -rf "$REPO/cpp"
@@ -127,12 +105,6 @@ if [ "${PUSH:-1}" = 1 ]; then
         "${GIT[@]}" commit -q -m "Game build $name"
         "${GIT[@]}" push -q origin HEAD
         echo "pushed $(git rev-parse --short HEAD)"
-    fi
-    # The mods built for this build of the game are the files of one release that is written over each time.
-    if ls "$BASE"/mods-out/* > /dev/null 2>&1; then
-        gh release view mods -R $OWNER/icarus-sdk > /dev/null 2>&1 || gh release create mods -R $OWNER/icarus-sdk --prerelease --title "Mods for the newest build" --notes "Built for $name"
-        gh release upload mods "$BASE"/mods-out/* --clobber -R $OWNER/icarus-sdk
-        gh release edit mods -R $OWNER/icarus-sdk --notes "Built for game build $name on $(date -u +%Y-%m-%d)"
     fi
     cd "$WS"
 fi
