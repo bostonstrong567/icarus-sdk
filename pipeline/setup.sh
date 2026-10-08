@@ -1,6 +1,6 @@
 #!/bin/bash
 # One-time set-up beside a clone of this repository (the clone is <base>/sdk): the tools and the timer.
-# Needs python3, dotnet 8, node, git, gh (signed in), curl, unzip, xz.
+# Needs python3, dotnet 8, node, git, gh (signed in), gcc, curl, unzip, xz.
 set -euo pipefail
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
 BASE="$(dirname "$REPO")"
@@ -23,6 +23,13 @@ get https://github.com/CrystalFerrai/Ue4Export/releases/download/$UE4EXPORT/Ue4E
 rm -rf ue; unzip -oq ue.zip -d ue; cp -r ue/Ue4Export/. "$T/assets/Ue4Export/"
 printf '#!/bin/sh\nexec dotnet "$(dirname "$0")/Ue4Export.dll" "$@"\n' > "$T/assets/Ue4Export/Ue4Export.exe"
 chmod +x "$T/assets/Ue4Export/Ue4Export.exe"
+# The exporter opens three Windows libraries by name, so the same libraries for Linux go under those names.
+# The texture one is never used for class data: it is an empty stand-in.
+OODLE=2026-06-04-1357
+get https://github.com/NotOfficer/Zlib-ng.NET/releases/download/1.0.0/libz-ng.so "$T/assets/Ue4Export/zlib-ng2.dll"
+get https://github.com/WorkingRobot/OodleUE/releases/download/$OODLE/gcc-x64-release.zip oodle.zip
+rm -rf oodle; unzip -oq oodle.zip -d oodle; cp oodle/lib/liboodle-data-shared.so "$T/assets/Ue4Export/oo2core_9_win64.dll"
+echo 'int detexDecompressTextureLinear(void *a, void *b, unsigned int c) { return 0; }' | gcc -shared -fPIC -x c -o "$T/assets/Ue4Export/Detex.dll" -
 
 asset="$(curl -s https://api.github.com/repos/trumank/kismet-analyzer/releases/tags/latest | sed -n 's/.*"browser_download_url": "\(.*linux-x64.zip\)".*/\1/p' | head -1)"
 get "$asset" ka.zip
