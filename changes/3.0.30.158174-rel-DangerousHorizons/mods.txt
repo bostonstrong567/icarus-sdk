@@ -1,0 +1,6 @@
+  Traits-D_Itemable.json: 1 existing row(s) changed, 0 new
+0 error(s), 0 warning(s)
+  Traits/D_Itemable.json: 1 changed, 0 added
+1 table(s) written to /home/ubuntu/sites/wax-game/mods-out/_stage/Example_Wood_Stack/data
+wrote /home/ubuntu/sites/wax-game/mods-out/Example_Wood_Stack.EXMODZ (2 entries)
+Example_Wood_Stack: built

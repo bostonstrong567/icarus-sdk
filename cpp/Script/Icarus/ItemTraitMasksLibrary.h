@@ -1,0 +1,34 @@
+// /Script/Icarus.ItemTraitMasksLibrary
+// Derives from: URowLibrary > UBlueprintFunctionLibrary > UObject
+// size 0x28, declared in Icarus/Source/Icarus/IcarusGenerated/ItemTraitMasks/ItemTraitMasksLibrary.h
+
+UCLASS()
+class UItemTraitMasksLibrary : public URowLibrary
+{
+public:
+
+    UFUNCTION(BlueprintCallable) static void AddRowToItemTraitMasksTable(FName Name, FItemTraitMask Data, FItemTraitMasksRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x61
+    UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakItemTraitMasksEnum(FItemTraitMasksEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
+    UFUNCTION(BlueprintCallable) static FItemTraitMasksRowHandle CastToItemTraitMasksRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34
+    UFUNCTION(BlueprintCallable, BlueprintPure) static bool EqualEqual_EnumEnum(FItemTraitMasksEnum A, FItemTraitMasksEnum B);  // parameters 0x21
+    UFUNCTION(BlueprintCallable, BlueprintPure) static bool EqualEqual_FItemTraitMasksRowHandleFItemTraitMasksRowHandle(FItemTraitMasksRowHandle RowHandleA, FItemTraitMasksRowHandle RowHandleB);  // parameters 0x31
+    UFUNCTION(BlueprintCallable) static void GetItemTraitMasksStruct(FItemTraitMasksRowHandle RowHandle, FItemTraitMask& ItemTraitMasks, EValid& Paths);  // parameters 0x59
+    UFUNCTION() static FName IntToName(int32 IntValue);  // parameters 0xC
+    UFUNCTION(BlueprintCallable, BlueprintPure) static FItemTraitMasksEnum IntToStruct(int32 IntValue);  // parameters 0x18
+    UFUNCTION() static bool IsValidName(FName NameValue);  // parameters 0x9
+    UFUNCTION(BlueprintCallable, BlueprintPure) static FItemTraitMasksRowHandle MakeItemTraitMasks(FName RowName);  // parameters 0x20
+    UFUNCTION(BlueprintCallable, BlueprintPure) static FItemTraitMasksEnum MakeItemTraitMasksEnum(FItemTraitMasksEnum Enum);  // parameters 0x20
+    UFUNCTION(BlueprintCallable, BlueprintPure) static FItemTraitMasksRowHandle MakeItemTraitMasksFromIndex(int32 Index);  // parameters 0x1C
+    UFUNCTION(BlueprintCallable, BlueprintPure) static FItemTraitMasksRowHandle MakeLiteralItemTraitMasks(FItemTraitMasksRowHandle RowHandle);  // parameters 0x30
+    UFUNCTION() static int32 NameToInt(FName NameValue);  // parameters 0xC
+    UFUNCTION(BlueprintCallable, BlueprintPure) static FItemTraitMasksEnum NameToStruct(FName NameValue);  // parameters 0x18
+    UFUNCTION(BlueprintCallable, BlueprintPure) static bool NotEqual_EnumEnum(FItemTraitMasksEnum A, FItemTraitMasksEnum B);  // parameters 0x21
+    UFUNCTION(BlueprintCallable, BlueprintPure) static bool NotEqual_EnumName(FItemTraitMasksEnum A, FName B);  // parameters 0x19
+    UFUNCTION(BlueprintCallable, BlueprintPure) static int32 NumRows();  // parameters 0x4
+    UFUNCTION() static void RefreshConstants();
+    UFUNCTION(BlueprintCallable) static void RemoveRowFromItemTraitMasksTable(FName Name);  // parameters 0x8
+    UFUNCTION(BlueprintCallable, BlueprintPure) static FItemTraitMasksEnum RowHandleToStruct(FItemTraitMasksRowHandle RowHandle);  // parameters 0x28
+    UFUNCTION(BlueprintCallable, BlueprintPure) static int32 StructToInt(FItemTraitMasksEnum EnumValue);  // parameters 0x14
+    UFUNCTION(BlueprintCallable, BlueprintPure) static FName StructToName(FItemTraitMasksEnum EnumValue);  // parameters 0x18
+    UFUNCTION(BlueprintCallable, BlueprintPure) static FItemTraitMasksRowHandle StructToRowHandle(FItemTraitMasksEnum EnumValue);  // parameters 0x28
+};

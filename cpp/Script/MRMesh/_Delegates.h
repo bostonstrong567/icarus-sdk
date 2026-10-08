@@ -1,0 +1,1 @@
+DELEGATE() void OnMockDataMeshTrackerUpdated(int32 Index, const TArray<FVector>& Vertices, const TArray<int32>& Triangles, const TArray<FVector>& Normals, const TArray<float>& Confidence);  // parameters 0x48

@@ -1,0 +1,9 @@
+// /Script/ControlRig.RigUnit_Harmonics_TargetItem
+// size 0x10, declared in Engine/Plugins/Experimental/ControlRig/Source/ControlRig/Private/Units/Highlevel/Harmonics/RigUnit_BoneHarmonics.h
+
+USTRUCT()
+struct FRigUnit_Harmonics_TargetItem
+{
+    UPROPERTY() FRigElementKey Item;  // 0x0000, size 0xC
+    UPROPERTY() float Ratio;  // 0x000C, size 0x4
+};

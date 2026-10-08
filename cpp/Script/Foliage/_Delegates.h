@@ -1,0 +1,2 @@
+DELEGATE() void InstancePointDamageSignature(int32 InstanceIndex, float Damage, AController* InstigatedBy, FVector HitLocation, FVector ShotFromDirection, UDamageType* DamageType, AActor* DamageCauser);  // parameters 0x38
+DELEGATE() void InstanceRadialDamageSignature(const TArray<int32>& Instances, const TArray<float>& Damages, AController* InstigatedBy, FVector Origin, float MaxRadius, UDamageType* DamageType, AActor* DamageCauser);  // parameters 0x48

@@ -1,0 +1,9 @@
+// /Script/ControlRig.RigUnit_ToRigSpace_Rotation
+// size 0x30, declared in Engine/Plugins/Experimental/ControlRig/Source/ControlRig/Private/Units/Hierarchy/RigUnit_WorldSpace.h
+
+USTRUCT()
+struct FRigUnit_ToRigSpace_Rotation : public FRigUnit
+{
+    UPROPERTY() FQuat Rotation;  // 0x0010, size 0x10
+    UPROPERTY() FQuat Global;  // 0x0020, size 0x10
+};

@@ -1,0 +1,27 @@
+// /Game/BP/Quests/Olympus/Forest/Scan/BPQ_Oly_Forest_Scan_Location_1.BPQ_Oly_Forest_Scan_Location_1_C
+// Derives from: ABPQ_Scan_C > AQuest > AIcarusActor > AActor > UObject
+// size 0x557, a blueprint class, blueprint
+
+UCLASS(Config=Engine)
+class ABPQ_Oly_Forest_Scan_Location_1_C : public ABPQ_Scan_C
+{
+public:
+    UPROPERTY(Transient) FPointerToUberGraphFrame UberGraphFrame;  // 0x04F8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UBPQC_AnimalSwarm_Local_C* BPQC_AnimalSwarm_Local;  // 0x0500, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UBPQC_AdvancedAnimalSwarm_C* BPQC_AdvancedAnimalSwarm;  // 0x0508, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UBPQC_AnimalSwarm_C* BPQC_LargeCreatureSpawn;  // 0x0510, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UBPQC_AnimalSwarm_C* BPQC_AnimalSwarm;  // 0x0518, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool ScanInProgress;  // 0x0520, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FBiomesRowHandle Biome;  // 0x0524, size 0x18
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FWeatherEventsRowHandle Event;  // 0x053C, size 0x18
+    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, SaveGame, BlueprintReadWrite) bool SetRadarActiveatable;  // 0x0554, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool IsRadarActiveatable;  // 0x0555, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool RadarScanEnabled;  // 0x0556, size 0x1
+
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable) void CastRadarInteractable();
+    UFUNCTION() void ExecuteUbergraph_BPQ_Oly_Forest_Scan_Location_1(int32 EntryPoint);  // parameters 0x4
+    UFUNCTION(BlueprintCallable) void OnRep_SetRadarActiveatable();
+    UFUNCTION(BlueprintImplementableEvent) void RunFlow();
+    UFUNCTION(BlueprintImplementableEvent) void RunOperations(float DeltaSeconds);  // parameters 0x4
+    UFUNCTION(BlueprintImplementableEvent) void Setup(bool bFirstTime);  // parameters 0x1
+};

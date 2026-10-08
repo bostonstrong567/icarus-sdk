@@ -1,0 +1,10 @@
+// /Script/Engine.PredictProjectilePathPointData
+// size 0x1C, declared in Engine/Source/Runtime/Engine/Classes/Kismet/GameplayStaticsTypes.h
+
+USTRUCT()
+struct FPredictProjectilePathPointData
+{
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) FVector Location;  // 0x0000, size 0xC
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) FVector Velocity;  // 0x000C, size 0xC
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) float Time;  // 0x0018, size 0x4
+};

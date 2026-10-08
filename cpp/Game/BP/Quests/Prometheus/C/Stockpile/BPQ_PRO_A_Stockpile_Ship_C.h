@@ -1,0 +1,15 @@
+// /Game/BP/Quests/Prometheus/C/Stockpile/BPQ_PRO_A_Stockpile_Ship.BPQ_PRO_A_Stockpile_Ship_C
+// Derives from: ABPQ_Stockpile_ShipContainer_C > AQuest > AIcarusActor > AActor > UObject
+// size 0x480, a blueprint class, blueprint
+
+UCLASS(Config=Engine)
+class ABPQ_PRO_A_Stockpile_Ship_C : public ABPQ_Stockpile_ShipContainer_C
+{
+public:
+    UPROPERTY(Transient) FPointerToUberGraphFrame UberGraphFrame;  // 0x0478, size 0x8
+
+    UFUNCTION() void ExecuteUbergraph_BPQ_PRO_A_Stockpile_Ship(int32 EntryPoint);  // parameters 0x4
+    UFUNCTION(BlueprintImplementableEvent) void ReceiveQuestAbandoned();
+    UFUNCTION(BlueprintImplementableEvent) void RunFlow();
+    UFUNCTION(BlueprintImplementableEvent) void Setup(bool bFirstTime);  // parameters 0x1
+};

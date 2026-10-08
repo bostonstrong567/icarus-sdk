@@ -1,0 +1,32 @@
+// /Game/BP/Quests/Elysium/Story/Story4/BPQ_ELY_Story_4_Outpost_Survive.BPQ_ELY_Story_4_Outpost_Survive_C
+// Derives from: AQuest > AIcarusActor > AActor > UObject
+// size 0x4B8, a blueprint class, blueprint
+
+UCLASS(Config=Engine)
+class ABPQ_ELY_Story_4_Outpost_Survive_C : public AQuest
+{
+public:
+    UPROPERTY(Transient) FPointerToUberGraphFrame UberGraphFrame;  // 0x0460, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) USceneComponent* DefaultSceneRoot;  // 0x0468, size 0x8
+    UPROPERTY(EditAnywhere, Replicated, SaveGame, BlueprintReadWrite) int32 KillCount;  // 0x0470, size 0x4
+    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) int32 NearbyPlayers;  // 0x0474, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 BaseDronesPerSpawner;  // 0x0478, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float MaxPlayerDistance;  // 0x047C, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 BaseTotalDrones;  // 0x0480, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FQuestQueriesRowHandle> DroneSpawnLocations;  // 0x0488, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<ABP_Faction_Mission_Spawner_C*> DroneSpawners;  // 0x0498, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<AActor*> AI;  // 0x04A8, size 0x10
+
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool Check();  // parameters 0x1
+    UFUNCTION() void ExecuteUbergraph_BPQ_ELY_Story_4_Outpost_Survive(int32 EntryPoint);  // parameters 0x4
+    UFUNCTION(BlueprintCallable, BlueprintPure) void FindCharacter(AActor*& Target);  // parameters 0x8
+    UFUNCTION(BlueprintCallable, BlueprintPure) void GetCount(int32& Count);  // parameters 0x4
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void GetDescription(const FText& InDescription, FText& OutDescription, bool& bOutComplete);  // parameters 0x31
+    UFUNCTION(BlueprintCallable) void OnCreatureKilled(AIcarusPlayerCharacter* Player, AIcarusActor* Causer, AActor* Creature, APawn* KillingBlowFromPawn);  // parameters 0x20
+    UFUNCTION(BlueprintCallable) void OnDroneSpawned(AActor* SpawnedActor);  // parameters 0x8
+    UFUNCTION(BlueprintImplementableEvent) void ReceiveQuestEnded(bool bWasAbandoned);  // parameters 0x1
+    UFUNCTION(BlueprintImplementableEvent) void ReceiveQuestStarted();
+    UFUNCTION(BlueprintImplementableEvent) void RunOperations(float DeltaSeconds);  // parameters 0x4
+    UFUNCTION(BlueprintImplementableEvent) void Setup(bool bFirstTime);  // parameters 0x1
+    UFUNCTION(BlueprintCallable) void TriggerAttack();
+};

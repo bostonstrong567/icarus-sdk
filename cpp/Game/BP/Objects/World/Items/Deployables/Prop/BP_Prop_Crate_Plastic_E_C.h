@@ -1,0 +1,9 @@
+// /Game/BP/Objects/World/Items/Deployables/Prop/BP_Prop_Crate_Plastic_E.BP_Prop_Crate_Plastic_E_C
+// Derives from: ABP_DeployableContainerBase_C > ABP_DeployableBase_C > ADeployable > AIcarusItem > AIcarusActor > AActor > UObject
+// size 0x750, a blueprint class, blueprint
+
+UCLASS(Config=Engine)
+class ABP_Prop_Crate_Plastic_E_C : public ABP_DeployableContainerBase_C
+{
+public:
+};

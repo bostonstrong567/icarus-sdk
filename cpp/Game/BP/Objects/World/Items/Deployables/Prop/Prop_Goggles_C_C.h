@@ -1,0 +1,9 @@
+// /Game/BP/Objects/World/Items/Deployables/Prop/Prop_Goggles_C.Prop_Goggles_C_C
+// Derives from: ABP_DeployableBase_C > ADeployable > AIcarusItem > AIcarusActor > AActor > UObject
+// size 0x722, a blueprint class, blueprint
+
+UCLASS(Config=Engine)
+class AProp_Goggles_C_C : public ABP_DeployableBase_C
+{
+public:
+};

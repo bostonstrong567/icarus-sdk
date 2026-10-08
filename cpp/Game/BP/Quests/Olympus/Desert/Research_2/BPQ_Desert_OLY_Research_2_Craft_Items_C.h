@@ -1,0 +1,18 @@
+// /Game/BP/Quests/Olympus/Desert/Research_2/BPQ_Desert_OLY_Research_2_Craft_Items.BPQ_Desert_OLY_Research_2_Craft_Items_C
+// Derives from: AQuest > AIcarusActor > AActor > UObject
+// size 0x488, a blueprint class, blueprint
+
+UCLASS(Config=Engine)
+class ABPQ_Desert_OLY_Research_2_Craft_Items_C : public AQuest
+{
+public:
+    UPROPERTY(Transient) FPointerToUberGraphFrame UberGraphFrame;  // 0x0460, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) USceneComponent* DefaultSceneRoot;  // 0x0468, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FAccountFlagsRowHandle Account_Flag;  // 0x0470, size 0x18, named "Account Flag"
+
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool Check();  // parameters 0x1
+    UFUNCTION() void ExecuteUbergraph_BPQ_Desert_OLY_Research_2_Craft_Items(int32 EntryPoint);  // parameters 0x4
+    UFUNCTION(BlueprintCallable) void GrantFlag(const FConnectedPlayer& ConnectedPlayer);  // parameters 0x38
+    UFUNCTION(BlueprintImplementableEvent) void RunFlow();
+    UFUNCTION(BlueprintImplementableEvent) void Setup(bool bFirstTime);  // parameters 0x1
+};

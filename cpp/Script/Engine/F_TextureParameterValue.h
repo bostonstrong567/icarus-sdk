@@ -1,0 +1,10 @@
+// /Script/Engine.TextureParameterValue
+// size 0x28, declared in Engine/Source/Runtime/Engine/Classes/Materials/MaterialInstance.h
+
+USTRUCT()
+struct FTextureParameterValue
+{
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FMaterialParameterInfo ParameterInfo;  // 0x0000, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) UTexture* ParameterValue;  // 0x0010, size 0x8
+    UPROPERTY() FGuid ExpressionGUID;  // 0x0018, size 0x10
+};

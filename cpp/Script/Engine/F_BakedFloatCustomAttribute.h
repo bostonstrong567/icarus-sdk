@@ -1,0 +1,9 @@
+// /Script/Engine.BakedFloatCustomAttribute
+// size 0x90, declared in Engine/Source/Runtime/Engine/Classes/Animation/CustomAttributes.h
+
+USTRUCT()
+struct FBakedFloatCustomAttribute
+{
+    UPROPERTY(EditAnywhere) FName AttributeName;  // 0x0000, size 0x8
+    UPROPERTY(EditAnywhere) FSimpleCurve FloatCurve;  // 0x0008, size 0x88
+};

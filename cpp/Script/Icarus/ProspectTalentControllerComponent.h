@@ -1,0 +1,9 @@
+// /Script/Icarus.ProspectTalentControllerComponent
+// Derives from: UTalentControllerComponent > UActorComponent > UObject
+// size 0xF8, declared in Icarus/Source/Icarus/Talents/Controller/ProspectTalentControllerComponent.h
+
+UCLASS(Config=Engine)
+class UProspectTalentControllerComponent : public UTalentControllerComponent
+{
+public:
+};

@@ -1,0 +1,16 @@
+// /Script/Engine.ExponentialHeightFog
+// Derives from: AInfo > AActor > UObject
+// size 0x230, declared in Engine/Source/Runtime/Engine/Classes/Engine/ExponentialHeightFog.h
+
+UCLASS(MinimalAPI, Config=Engine)
+class AExponentialHeightFog : public AInfo
+{
+public:
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UExponentialHeightFogComponent* Component;  // 0x0220, size 0x8
+    UPROPERTY(Replicated, ReplicatedUsing) uint8 bEnabled : 1;  // 0x0228, mask 0x01
+
+    UFUNCTION() void OnRep_bEnabled();
+
+    // Virtual functions that start here:
+    //   OnRep_bEnabled
+};

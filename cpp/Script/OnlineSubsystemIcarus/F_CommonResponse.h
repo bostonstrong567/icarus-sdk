@@ -1,0 +1,9 @@
+// /Script/OnlineSubsystemIcarus.CommonResponse
+// size 0x18, declared in Icarus/Plugins/OnlineSubsystemIcarus/Source/OnlineSubsystemIcarus/Public/OnlineSubsystemIcarusTypes.h
+
+USTRUCT()
+struct FCommonResponse
+{
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool Result;  // 0x0000, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FString Reason;  // 0x0008, size 0x10
+};

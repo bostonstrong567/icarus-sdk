@@ -1,0 +1,16 @@
+// /Game/BP/AI/Bosses/BT/BTTask_AbortMontage.BTTask_AbortMontage_C
+// Derives from: UBTTask_BlueprintBase > UBTTaskNode > UBTNode > UObject
+// size 0xC8, a blueprint class, blueprint
+
+UCLASS(Config=Game)
+class UBTTask_AbortMontage_C : public UBTTask_BlueprintBase
+{
+public:
+    UPROPERTY(Transient) FPointerToUberGraphFrame UberGraphFrame;  // 0x00A8, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) AAIController* ControllerRef;  // 0x00B0, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) AIcarusCharacter* IcarusCharacterRef;  // 0x00B8, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) AIcarusPawn* IcarusPawnRef;  // 0x00C0, size 0x8
+
+    UFUNCTION() void ExecuteUbergraph_BTTask_AbortMontage(int32 EntryPoint);  // parameters 0x4
+    UFUNCTION(BlueprintImplementableEvent) void ReceiveExecuteAI(AAIController* OwnerController, APawn* ControlledPawn);  // parameters 0x10
+};

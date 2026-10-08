@@ -1,0 +1,9 @@
+// /Script/Icarus.AmmoTypesTable
+// Derives from: UIcarusDataTable > UDataTable > UObject
+// size 0xB8, declared in Icarus/Source/Icarus/IcarusGenerated/AmmoTypes/AmmoTypesTable.h
+
+UCLASS()
+class UAmmoTypesTable : public UIcarusDataTable
+{
+public:
+};

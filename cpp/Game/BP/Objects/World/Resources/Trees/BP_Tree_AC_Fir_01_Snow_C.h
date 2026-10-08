@@ -1,0 +1,103 @@
+// /Game/BP/Objects/World/Resources/Trees/BP_Tree_AC_Fir_01_Snow.BP_Tree_AC_Fir_01_Snow_C
+// Derives from: ABP_TreePrefab_Snow_C > ABP_TreePrefab_C > ATreePrefab > AActor > UObject
+// size 0x7B0, a blueprint class, blueprint
+
+UCLASS(Config=Engine)
+class ABP_Tree_AC_Fir_01_Snow_C : public ABP_TreePrefab_Snow_C
+{
+public:
+    UPROPERTY(Transient) FPointerToUberGraphFrame UberGraphFrame;  // 0x04D0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_T1_T1_T1_L;  // 0x04D8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_T1_T1_T1;  // 0x04E0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_T1_T1_B5_L;  // 0x04E8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_T1_T1_B5;  // 0x04F0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_T1_T1_B4_L;  // 0x04F8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_T1_T1_B4;  // 0x0500, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_T1_T1_B3_L;  // 0x0508, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_T1_T1_B3;  // 0x0510, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_T1_T1_B2_L;  // 0x0518, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_T1_T1_B2;  // 0x0520, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_T1_T1_B1_L;  // 0x0528, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_T1_T1_B1;  // 0x0530, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_T1_T1;  // 0x0538, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_T1_B8_L;  // 0x0540, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_T1_B8;  // 0x0548, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_T1_B7_L;  // 0x0550, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_T1_B7;  // 0x0558, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_T1_B6_L;  // 0x0560, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_T1_B6;  // 0x0568, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_T1_B5_L;  // 0x0570, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_T1_B5;  // 0x0578, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_T1_B4_L;  // 0x0580, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_T1_B4;  // 0x0588, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_T1_B3_L;  // 0x0590, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_T1_B3;  // 0x0598, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_T1_B2_L;  // 0x05A0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_T1_B2;  // 0x05A8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_T1_B1_L;  // 0x05B0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_T1_B1;  // 0x05B8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_T1;  // 0x05C0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_B6_L;  // 0x05C8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_B6;  // 0x05D0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_B5_L;  // 0x05D8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_B5;  // 0x05E0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_B4_L;  // 0x05E8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_B4;  // 0x05F0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_B3_L;  // 0x05F8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_B3;  // 0x0600, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_B2_L;  // 0x0608, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_B2;  // 0x0610, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_B1_L;  // 0x0618, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1_B1;  // 0x0620, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_T1;  // 0x0628, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_B9_L;  // 0x0630, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_B9;  // 0x0638, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_B8_L;  // 0x0640, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_B8;  // 0x0648, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_B7_L;  // 0x0650, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_B7;  // 0x0658, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_B6_L;  // 0x0660, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_B6;  // 0x0668, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_B5_L;  // 0x0670, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_B5;  // 0x0678, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_B4_L;  // 0x0680, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_B4;  // 0x0688, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_B3_L;  // 0x0690, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_B3;  // 0x0698, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_B2_L;  // 0x06A0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_B2;  // 0x06A8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_B1_L;  // 0x06B0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_B10_L;  // 0x06B8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_B10;  // 0x06C0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1_B1;  // 0x06C8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_T1;  // 0x06D0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_B6_L;  // 0x06D8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_B6;  // 0x06E0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_B5_L;  // 0x06E8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_B5;  // 0x06F0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_B4_L;  // 0x06F8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_B4;  // 0x0700, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_B3_L;  // 0x0708, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_B3;  // 0x0710, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_B2_L;  // 0x0718, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_B2;  // 0x0720, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_B1_L;  // 0x0728, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1_B1;  // 0x0730, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_T1;  // 0x0738, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_B5_L;  // 0x0740, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_B5;  // 0x0748, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_B4_L;  // 0x0750, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_B4;  // 0x0758, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_B3_L;  // 0x0760, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_B3;  // 0x0768, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_B2_L;  // 0x0770, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_B2;  // 0x0778, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_B1_L;  // 0x0780, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1_B1;  // 0x0788, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_T1;  // 0x0790, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1_L1;  // 0x0798, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R_T1;  // 0x07A0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_AC_Fir_01_Snow_R;  // 0x07A8, size 0x8
+
+    UFUNCTION() void ExecuteUbergraph_BP_Tree_AC_Fir_01_Snow(int32 EntryPoint);  // parameters 0x4
+};

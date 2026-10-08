@@ -1,0 +1,9 @@
+// /Script/Icarus.DynamicQuestRewardsTable
+// Derives from: UIcarusDataTable > UDataTable > UObject
+// size 0xB8, declared in Icarus/Source/Icarus/IcarusGenerated/DynamicQuestRewards/DynamicQuestRewardsTable.h
+
+UCLASS()
+class UDynamicQuestRewardsTable : public UIcarusDataTable
+{
+public:
+};
