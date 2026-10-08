@@ -29,7 +29,8 @@ done
 
 say "Workspace"
 mkdir -p "$WS/build" "$WS/game-data"
-ln -sfn "$REPO/pipeline/scripts" "$WS/scripts"
+# A copy, not a link: the readers find the workspace from where their own files are.
+rm -rf "$WS/scripts"; cp -r "$REPO/pipeline/scripts" "$WS/scripts"
 if [ -d "$BASE/icarus-wax/.git" ]; then
     git -C "$BASE/icarus-wax" fetch -q --depth 1 origin main && git -C "$BASE/icarus-wax" reset -q --hard origin/main
 else
