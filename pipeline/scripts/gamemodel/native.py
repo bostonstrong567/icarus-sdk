@@ -51,7 +51,8 @@ FROM = {
     "property": {"name": "tables", "kind": "tables", "flags": "tables", "dim": "tables", "repnotify": "tables",
                  "offset": "tables", "element_size": "tables", "native_bool": "tables", "mask": "code",
                  "class": "tables", "meta_class": "tables", "struct": "tables", "enum": "tables",
-                 "interface": "tables", "signature": "tables", "size": "rule", "cpp": "pdb", "bits": "pdb"},
+                 "interface": "tables", "signature": "tables", "size": "rule", "cpp": "pdb", "bits": "pdb",
+                 "access": "pdb"},
     "member": {"name": "pdb", "offset": "pdb", "cpp": "pdb", "access": "pdb", "bits": "pdb"},
     "notes": {
         "tables": "the header tool's tables in the exe",
@@ -64,6 +65,7 @@ FROM = {
         "size": "of a property: bytes of one element; a whole property takes size times dim",
         "parms_size": "where the last parameter ends, which is what the engine copies on a call",
         "table, native": "addresses relative to the image base",
+        "access": "C++ public, protected or private from the PDB, and only when it is not public",
     },
 }
 
@@ -190,6 +192,9 @@ class Joiner:
             one["cpp"] = text
             if field is not None:
                 one["bits"] = field
+            access = pdbfile.ACCESS[member[0]]
+            if access not in (None, "public"):
+                one["access"] = access
             where = "%s.%s: tables %s, pdb %s" % (what, one["name"], one["offset"], offset)
             if one["kind"] == "BoolProperty":
                 if one["offset"] is None:

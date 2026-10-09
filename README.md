@@ -11,7 +11,7 @@ each time the game is updated. It is what [Wax](https://github.com/bostonstrong5
 | `build.json` | Game version, Steam manifest, date, counts |
 | `model/model.json.gz` | The whole model: every class with its parent chain back to `Object`, its C++ name, size, properties (type, flags, offset), functions (parameters, flags, size of the parameter block), structs, enums, delegates |
 | `model/index.json.gz` | The same in the shorter shape the editor definitions are written from |
-| `cpp/` | Every class and struct as a C++ header to read: what it derives from, each variable with its place, each function with its parameters, and for native classes the members the engine's scripting cannot see. Enums and delegates are in `_Enums.h` and `_Delegates.h` of their module. For reading and searching, not for compiling |
+| `cpp/` | Every class and struct as a C++ header to read: what it derives from, each variable with its place, each function with its parameters, and for native classes the members the engine's scripting cannot see. Native variables are grouped `public`, `protected` and `private`. `EditAnywhere` and `Instanced` are editor flags, not access. A `UPROPERTY` stays visible to Lua and Blueprints either way. Enums and delegates are in `_Enums.h` and `_Delegates.h` of their module. For reading and searching, not for compiling |
 | `types/icarus/` | Definitions for the Lua language server: each game class extends its parent, so members complete in the editor |
 | `model/oversized_functions.lua` | Functions whose parameters take more than 512 bytes |
 | `model/struct_traits.lua` | Structs that carry a vtable pointer |

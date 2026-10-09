@@ -27,6 +27,9 @@ FUNCTION_WORDS = (("Exec", "Exec"), ("BlueprintCallable", "BlueprintCallable"), 
                   ("NetReliable", "Reliable"), ("BlueprintAuthorityOnly", "BlueprintAuthorityOnly"),
                   ("BlueprintCosmetic", "BlueprintCosmetic"))
 CLASS_WORDS = ("Abstract", "Transient", "Const", "NotPlaceable", "EditInlineNew", "MinimalAPI")
+SECTIONS = ("public", "protected", "private")
+ACCESS_NOTE = ("    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting "
+               "either way.")
 
 
 class Writer:
@@ -125,6 +128,34 @@ class Writer:
             note += '%s named "%s"' % ("," if note else "  //", function["name"])
         return "    %s(%s) %s%s" % (macro, ", ".join(words), text, note)
 
+    def layout(self, props, members, macro):
+        """Variables under public, protected and private. Public is omitted from the model, so a missing access is public."""
+        rows = []
+        for prop in props:
+            rows.append((prop.get("offset") or 0, prop.get("mask") or 0, 0, shown_access(prop), self.variable(prop, macro)))
+        for member in members:
+            line = "    %s %s;  // 0x%04X, not reflected" % (member.get("cpp", "?"), member["name"], member.get("offset") or 0)
+            rows.append((member.get("offset") or 0, 0, 1, shown_access(member), line))
+        groups = {name: [] for name in SECTIONS}
+        for _offset, _mask, _kind, access, line in sorted(rows):
+            groups[access].append(line)
+        lines = []
+        if any(shown_access(prop) != "public" for prop in props):
+            lines.append(ACCESS_NOTE)
+        for name in SECTIONS:
+            if not groups[name]:
+                continue
+            lines.append(name + ":")
+            lines.extend(groups[name])
+        return lines
+
+    def last_section(self, lines):
+        found = None
+        for line in lines:
+            if line in ("public:", "protected:", "private:"):
+                found = line
+        return found
+
     def file_for(self, path, name=None):
         package, _, leaf = path.partition(".")
         parts = [clean(part) for part in package.strip("/").split("/")]
@@ -162,19 +193,16 @@ class Writer:
         if about:
             lines.append("// " + ", ".join(about))
         lines += ["", "UCLASS(%s)" % ", ".join(words), "class %s%s" % (name, " : " + ", ".join(bases) if bases else ""),
-                  "{", "public:"]
-        for prop in sorted(entry.get("properties", ()), key=lambda prop: (prop.get("offset", 0), prop.get("mask", 0))):
-            lines.append(self.variable(prop, "UPROPERTY"))
-        hidden = entry.get("members") or ()
-        if hidden:
-            lines += ["", "    // Not reflected: the engine's scripting cannot see these."]
-            for member in sorted(hidden, key=lambda member: member.get("offset", 0)):
-                lines.append("    %s %s;  // 0x%04X%s" % (member.get("cpp", "?"), member["name"], member.get("offset", 0),
-                                                         ", " + member["access"] if member.get("access") else ""))
+                  "{"]
+        body = self.layout(entry.get("properties", ()), entry.get("members") or (), "UPROPERTY")
         functions = sorted(entry.get("functions", ()), key=lambda function: function["name"])
         if functions:
-            lines.append("")
-            lines += [self.function(function) for function in functions]
+            if self.last_section(body) != "public:":
+                body.append("public:")
+            else:
+                body.append("")
+            body += [self.function(function) for function in functions]
+        lines += body
         if entry.get("introduces"):
             lines += ["", "    // Virtual functions that start here:"]
             lines += wrapped(sorted(entry["introduces"]), "    //   ")
@@ -189,14 +217,8 @@ class Writer:
             about.append("declared in " + entry["header"])
         lines = ["// " + entry["path"]] + (["// " + ", ".join(about)] if about else [])
         lines += ["", "USTRUCT()", "struct %s%s" % (name, parent), "{"]
-        for field in sorted(entry.get("fields", ()), key=lambda field: (field.get("offset", 0), field.get("mask", 0))):
-            shown = dict(field, name=field.get("label") or field["name"])
-            lines.append(self.variable(shown, "UPROPERTY"))
-        hidden = entry.get("members") or ()
-        if hidden:
-            lines += ["", "    // Not reflected:"]
-            for member in sorted(hidden, key=lambda member: member.get("offset", 0)):
-                lines.append("    %s %s;  // 0x%04X" % (member.get("cpp", "?"), member["name"], member.get("offset", 0)))
+        shown = [dict(field, name=field.get("label") or field["name"]) for field in entry.get("fields", ())]
+        lines += self.layout(shown, entry.get("members") or (), "UPROPERTY")
         lines.append("};")
         self.files[self.file_for(entry["path"], "F_" + entry["name"] if entry["origin"] == "native" else None)] = lines
 
@@ -230,6 +252,11 @@ class Writer:
         for package, lines in grouped.items():
             self.files[self.file_for(package + "._Delegates")] = sorted(lines)
         return self.files
+
+
+def shown_access(item):
+    access = item.get("access") or "public"
+    return access if access in SECTIONS else "public"
 
 
 def identifier(name):
