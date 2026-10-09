@@ -6,7 +6,6 @@ UCLASS()
 class UNationalFlagsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToNationalFlagsTable(FName Name, FNationalFlag Data, FNationalFlagsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x79
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakNationalFlagsEnum(FNationalFlagsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FNationalFlagsRowHandle CastToNationalFlagsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

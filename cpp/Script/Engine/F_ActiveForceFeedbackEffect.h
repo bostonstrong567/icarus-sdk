@@ -4,9 +4,8 @@
 USTRUCT()
 struct FActiveForceFeedbackEffect
 {
+public:
     UPROPERTY() UForceFeedbackEffect* ForceFeedbackEffect;  // 0x0000, size 0x8
-
-    // Not reflected:
-    FForceFeedbackParameters Parameters;  // 0x0008
-    float PlayTime;  // 0x0014
+    FForceFeedbackParameters Parameters;  // 0x0008, not reflected
+    float PlayTime;  // 0x0014, not reflected
 };

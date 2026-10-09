@@ -6,7 +6,6 @@ UCLASS()
 class UFoliageStatistics : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static int32 FoliageOverlappingBoxCount(UObject* WorldContextObject, UStaticMesh* StaticMesh, FBox Box);  // parameters 0x30
     UFUNCTION(BlueprintCallable) static int32 FoliageOverlappingSphereCount(UObject* WorldContextObject, UStaticMesh* StaticMesh, FVector CenterPosition, float Radius);  // parameters 0x24
 };

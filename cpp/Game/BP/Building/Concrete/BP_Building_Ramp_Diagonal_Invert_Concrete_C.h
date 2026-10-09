@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Building_Ramp_Diagonal_Invert_Concrete_C : public ABP_Building_Ramp_Diagonal_Invert_C
 {
-public:
 };

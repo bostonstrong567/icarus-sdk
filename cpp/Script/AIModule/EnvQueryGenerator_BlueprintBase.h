@@ -9,10 +9,9 @@ public:
     UPROPERTY(EditAnywhere) FText GeneratorsActionDescription;  // 0x0050, size 0x18
     UPROPERTY(EditAnywhere) TSubclassOf<UEnvQueryContext> Context;  // 0x0068, size 0x8
     UPROPERTY(EditAnywhere) TSubclassOf<UEnvQueryItemType> GeneratedItemType;  // 0x0070, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FEnvQueryInstance * CachedQueryInstance;  // 0x0078, private
-
+private:
+    FEnvQueryInstance * CachedQueryInstance;  // 0x0078, not reflected
+public:
     UFUNCTION(BlueprintCallable) void AddGeneratedActor(AActor* GeneratedActor) const;  // parameters 0x8
     UFUNCTION(BlueprintCallable) void AddGeneratedVector(FVector GeneratedVector) const;  // parameters 0xC
     UFUNCTION(BlueprintImplementableEvent) void DoItemGeneration(const TArray<FVector>& ContextLocations) const;  // parameters 0x10

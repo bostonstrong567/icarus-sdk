@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UBP_CaveAISpawnInterface_C : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable) void OnAdditionalActorSpawned(AActor* SpawnedActor);  // parameters 0x8
 };

@@ -4,5 +4,6 @@
 USTRUCT()
 struct FFLODRecorderRecord
 {
+public:
     UPROPERTY(SaveGame) int32 NumTiles;  // 0x0000, size 0x4
 };

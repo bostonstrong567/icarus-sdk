@@ -15,7 +15,5 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bUsePreviewValueAsDefault : 1;  // 0x00A0, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 SortPriority;  // 0x00A4, size 0x4
     UPROPERTY(Transient) uint8 bCompilingFunctionPreview : 1;  // 0x00A8, mask 0x01
-
-    // Not reflected: the engine's scripting cannot see these.
-    FExpressionInput EffectivePreviewDuringCompile;  // 0x00AC
+    FExpressionInput EffectivePreviewDuringCompile;  // 0x00AC, not reflected
 };

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_OLY_Forest_Recon_Knife_C : public ABPQ_Collect_Item_With_Tag_C
 {
-public:
 };

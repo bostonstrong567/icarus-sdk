@@ -21,10 +21,9 @@ public:
     UPROPERTY(EditAnywhere) EVirtualKeyboardDismissAction VirtualKeyboardDismissAction;  // 0x043E, size 0x1
     UPROPERTY(BlueprintAssignable) FOnMultiLineEditableTextChangedEvent OnTextChanged;  // 0x0440, size 0x10
     UPROPERTY(BlueprintAssignable) FOnMultiLineEditableTextCommittedEvent OnTextCommitted;  // 0x0450, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SMultiLineEditableText,0> MyMultiLineEditableText;  // 0x0460, protected
-
+protected:
+    TSharedPtr<SMultiLineEditableText,0> MyMultiLineEditableText;  // 0x0460, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) FText GetHintText() const;  // parameters 0x18
     UFUNCTION(BlueprintCallable, BlueprintPure) FText GetText() const;  // parameters 0x18
     UFUNCTION(BlueprintCallable) void SetHintText(FText InHintText);  // parameters 0x18

@@ -5,5 +5,4 @@
 UCLASS(Abstract, NotPlaceable, Config=Engine)
 class AIcarusActorMacroLibrary_C : public AActor
 {
-public:
 };

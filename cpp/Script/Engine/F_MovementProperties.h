@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMovementProperties
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bCanCrouch : 1;  // 0x0000, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bCanJump : 1;  // 0x0000, mask 0x02
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bCanWalk : 1;  // 0x0000, mask 0x04

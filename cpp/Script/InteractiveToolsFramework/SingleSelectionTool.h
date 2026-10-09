@@ -5,10 +5,8 @@
 UCLASS(Transient)
 class USingleSelectionTool : public UInteractiveTool
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TUniquePtr<FPrimitiveComponentTarget,TDefaultDelete<FPrimitiveComponentTarget> > ComponentTarget;  // 0x0080, protected
+protected:
+    TUniquePtr<FPrimitiveComponentTarget,TDefaultDelete<FPrimitiveComponentTarget> > ComponentTarget;  // 0x0080, not reflected
 
     // Virtual functions that start here:
     //   AreAllTargetsValid

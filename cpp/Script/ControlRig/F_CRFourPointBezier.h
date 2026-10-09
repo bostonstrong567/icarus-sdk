@@ -4,6 +4,7 @@
 USTRUCT()
 struct FCRFourPointBezier
 {
+public:
     UPROPERTY() FVector A;  // 0x0000, size 0xC
     UPROPERTY() FVector B;  // 0x000C, size 0xC
     UPROPERTY() FVector C;  // 0x0018, size 0xC

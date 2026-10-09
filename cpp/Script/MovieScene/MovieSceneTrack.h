@@ -5,16 +5,17 @@
 UCLASS(Abstract, MinimalAPI)
 class UMovieSceneTrack : public UMovieSceneSignedObject
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere) FMovieSceneTrackEvalOptions EvalOptions;  // 0x0050, size 0x4
+protected:
+    FMovieSceneBlendTypeField SupportedBlendTypes;  // 0x0054, not reflected
     UPROPERTY() bool bIsEvalDisabled;  // 0x0055, size 0x1
     UPROPERTY() TArray<int32> RowsDisabled;  // 0x0058, size 0x10
+    UMovieSceneTrack::ETreePopulationMode BuiltInTreePopulationMode;  // 0x0068, not reflected
+private:
     UPROPERTY() FGuid EvaluationFieldGuid;  // 0x006C, size 0x10
     UPROPERTY() FMovieSceneTrackEvaluationField EvaluationField;  // 0x0080, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FMovieSceneBlendTypeField SupportedBlendTypes;  // 0x0054, protected
-    UMovieSceneTrack::ETreePopulationMode BuiltInTreePopulationMode;  // 0x0068, protected
 
     // Virtual functions that start here:
     //   AddSection, CreateNewSection, GetAllSections, GetEvaluationFieldVersion, GetRowSegmentBlender

@@ -6,7 +6,5 @@ UCLASS(NotPlaceable, MinimalAPI, Config=Engine)
 class ALandscapeGizmoActiveActor : public ALandscapeGizmoActor
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<FIntPoint,FGizmoSelectData,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FIntPoint,FGizmoSelectData,0> > SelectedData;  // 0x0220
+    TMap<FIntPoint,FGizmoSelectData,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FIntPoint,FGizmoSelectData,0> > SelectedData;  // 0x0220, not reflected
 };

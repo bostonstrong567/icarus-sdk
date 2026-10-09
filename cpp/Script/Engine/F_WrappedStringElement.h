@@ -4,6 +4,7 @@
 USTRUCT()
 struct FWrappedStringElement
 {
+public:
     UPROPERTY() FString Value;  // 0x0000, size 0x10
     UPROPERTY() FVector2D LineExtent;  // 0x0010, size 0x8
 };

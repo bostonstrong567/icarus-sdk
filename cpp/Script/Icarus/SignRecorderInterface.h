@@ -6,7 +6,6 @@ UCLASS(Abstract, MinimalAPI)
 class USignRecorderInterface : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintNativeEvent) FLinearColor GetSignColor() const;  // parameters 0x10
     UFUNCTION(BlueprintNativeEvent) FItemableRowHandle GetSignIconRow() const;  // parameters 0x18
     UFUNCTION(BlueprintNativeEvent) FText GetSignText() const;  // parameters 0x18

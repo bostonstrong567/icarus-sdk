@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_HAV_TU_Sapling_B_Var5_C : public ABP_DestructableHarvest_C
 {
-public:
 };

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Rustic_Table_C : public ABP_DeployableBase_C
 {
-public:
 };

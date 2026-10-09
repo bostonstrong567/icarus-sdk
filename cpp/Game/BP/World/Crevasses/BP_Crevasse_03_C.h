@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Crevasse_03_C : public ABP_Crevasse_C
 {
-public:
 };

@@ -5,7 +5,8 @@
 UCLASS(Config=Engine)
 class UStreamingSettings : public UDeveloperSettings
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, Config) uint8 AsyncLoadingThreadEnabled : 1;  // 0x0038, mask 0x01
     UPROPERTY(EditAnywhere, Config) uint8 WarnIfTimeLimitExceeded : 1;  // 0x0038, mask 0x02
     UPROPERTY(EditAnywhere, Config) float TimeLimitExceededMultiplier;  // 0x003C, size 0x4

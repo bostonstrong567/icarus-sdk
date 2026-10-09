@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_STYX_C_Fishing_Fish_1_C : public ABPQ_Common_CatchFish_C
 {
-public:
 };

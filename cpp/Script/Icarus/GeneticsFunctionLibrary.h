@@ -6,7 +6,6 @@ UCLASS()
 class UGeneticsFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static bool GenerateChildGenetics(AActor* Mother, AActor* Father);  // parameters 0x11
     UFUNCTION(BlueprintCallable) static bool GenerateWildCreatureGenetics(AActor* Creature);  // parameters 0x9
     UFUNCTION(BlueprintCallable) static int32 GetGeneticValue(UGeneticsComponent* Genetics, FGeneticValuesRowHandle Value);  // parameters 0x24

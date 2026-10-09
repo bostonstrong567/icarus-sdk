@@ -4,6 +4,8 @@
 USTRUCT()
 struct FNavAgentSelector
 {
+public:
+    uint32 PackedBits;  // 0x0000, not reflected
     UPROPERTY(EditAnywhere) uint8 bSupportsAgent0 : 1;  // 0x0000, mask 0x01
     UPROPERTY(EditAnywhere) uint8 bSupportsAgent1 : 1;  // 0x0000, mask 0x02
     UPROPERTY(EditAnywhere) uint8 bSupportsAgent2 : 1;  // 0x0000, mask 0x04
@@ -20,7 +22,4 @@ struct FNavAgentSelector
     UPROPERTY(EditAnywhere) uint8 bSupportsAgent13 : 1;  // 0x0001, mask 0x20
     UPROPERTY(EditAnywhere) uint8 bSupportsAgent14 : 1;  // 0x0001, mask 0x40
     UPROPERTY(EditAnywhere) uint8 bSupportsAgent15 : 1;  // 0x0001, mask 0x80
-
-    // Not reflected:
-    uint32 PackedBits;  // 0x0000
 };

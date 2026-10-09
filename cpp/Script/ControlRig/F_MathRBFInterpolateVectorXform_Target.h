@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMathRBFInterpolateVectorXform_Target
 {
+public:
     UPROPERTY() FVector Target;  // 0x0000, size 0xC
     UPROPERTY() FTransform Value;  // 0x0010, size 0x30
 };

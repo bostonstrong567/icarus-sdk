@@ -5,5 +5,4 @@
 UCLASS()
 class UMeshableTable : public UIcarusDataTable
 {
-public:
 };

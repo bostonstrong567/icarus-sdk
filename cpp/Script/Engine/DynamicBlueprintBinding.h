@@ -5,7 +5,6 @@
 UCLASS(Abstract)
 class UDynamicBlueprintBinding : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   BindDynamicDelegates, UnbindDynamicDelegates, UnbindDynamicDelegatesForProperty

@@ -5,5 +5,4 @@
 UCLASS()
 class USteamAuthComponentModuleInterface : public UHandlerComponentFactory
 {
-public:
 };

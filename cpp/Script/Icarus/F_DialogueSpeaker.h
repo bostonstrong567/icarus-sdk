@@ -4,5 +4,6 @@
 USTRUCT()
 struct FDialogueSpeaker : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText Speaker;  // 0x0018, size 0x18
 };

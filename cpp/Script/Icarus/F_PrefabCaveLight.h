@@ -4,6 +4,7 @@
 USTRUCT()
 struct FPrefabCaveLight
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FTransform Transform;  // 0x0000, size 0x30
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ECaveLightType LightType;  // 0x0030, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bTrackSun;  // 0x0031, size 0x1

@@ -6,9 +6,7 @@ UCLASS(MinimalAPI)
 class UTestMovieSceneEvalHookSection : public UMovieSceneHookSection
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    int32 StartValue;  // 0x0100
-    int32 EndValue;  // 0x0104
-    TArray<FFrameNumber,TSizedDefaultAllocator<32> > TriggerTimes;  // 0x0108
+    int32 StartValue;  // 0x0100, not reflected
+    int32 EndValue;  // 0x0104, not reflected
+    TArray<FFrameNumber,TSizedDefaultAllocator<32> > TriggerTimes;  // 0x0108, not reflected
 };

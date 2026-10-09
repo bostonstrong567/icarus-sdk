@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class ABaseLevelTeleport : public AIcarusActor
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, Instanced) UStaticMeshComponent* BaseMesh;  // 0x02C0, size 0x8
     UPROPERTY(EditAnywhere, Instanced) USceneComponent* ArrowComponent;  // 0x02C8, size 0x8
@@ -15,19 +16,19 @@ public:
     UPROPERTY(EditAnywhere, Replicated, Instanced) UHighlightableComponent* HighlightableComponent;  // 0x02F0, size 0x8
     UPROPERTY(EditAnywhere) TSubclassOf<ABaseLevelTeleport> ClassToSpawn;  // 0x02F8, size 0x8
     UPROPERTY(EditAnywhere, Instanced) UIcarusMapIconComponent* ExitMapIcon;  // 0x0300, size 0x8
-    UPROPERTY(Replicated, ReplicatedUsing) bool bIsInstancedTeleport;  // 0x0308, size 0x1
-    UPROPERTY(Replicated, ReplicatedUsing) FBaseLevelTeleportRepInfo MeshRepInfo;  // 0x0310, size 0x80
-    UPROPERTY(Replicated) float CooldownCompletionTime;  // 0x0390, size 0x4
-    UPROPERTY(Replicated) int32 NumRetrievableRecorders;  // 0x0394, size 0x4
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) bool bTeleportActive;  // 0x0398, size 0x1
     UPROPERTY(BlueprintAssignable) FTeleportStateChangedEvent OnTeleportStateChangedEvent;  // 0x0399, size 0x1
     UPROPERTY(BlueprintAssignable) FTeleportInteracted OnTeleportInteracted;  // 0x039A, size 0x1
     UPROPERTY(BlueprintAssignable) FBaseLevelTeleportCooldownStateChanged OnCooldownStateChanged;  // 0x03A0, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FTimerHandle CooldownTickTimerHandle;  // 0x03B0, private
-    FTimerHandle RetrievableRecorderUpdateHandle;  // 0x03B8, private
-
+protected:
+    UPROPERTY(Replicated, ReplicatedUsing) bool bIsInstancedTeleport;  // 0x0308, size 0x1
+    UPROPERTY(Replicated, ReplicatedUsing) FBaseLevelTeleportRepInfo MeshRepInfo;  // 0x0310, size 0x80
+    UPROPERTY(Replicated) float CooldownCompletionTime;  // 0x0390, size 0x4
+    UPROPERTY(Replicated) int32 NumRetrievableRecorders;  // 0x0394, size 0x4
+private:
+    FTimerHandle CooldownTickTimerHandle;  // 0x03B0, not reflected
+    FTimerHandle RetrievableRecorderUpdateHandle;  // 0x03B8, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) bool CanRetrieveRecorders() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) bool CanUseTeleporter() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable) void DupeTeleportInternals(AInstancedCaveEntrance* CopyFrom);  // parameters 0x8

@@ -5,8 +5,9 @@
 UCLASS(Config=Engine)
 class UAudioOcclusionSocketTraceComponent : public UAudioOcclusionComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FAudioOcclusionSocketTracePoint> TracePointDefinitions;  // 0x0270, size 0x10
-
+public:
     UFUNCTION(BlueprintCallable) void SetTracePointTargets(USceneComponent* TargetComponent);  // parameters 0x8
 };

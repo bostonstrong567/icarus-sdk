@@ -5,7 +5,8 @@
 UCLASS(EditInlineNew)
 class ULiveLinkTransformAxisSwitchPreProcessor : public ULiveLinkFramePreProcessor
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere) ELiveLinkAxis FrontAxis;  // 0x0028, size 0x1
     UPROPERTY(EditAnywhere) ELiveLinkAxis RightAxis;  // 0x0029, size 0x1
     UPROPERTY(EditAnywhere) ELiveLinkAxis UpAxis;  // 0x002A, size 0x1
@@ -13,7 +14,5 @@ public:
     UPROPERTY(EditAnywhere) bool bUseOffsetOrientation;  // 0x002C, size 0x1
     UPROPERTY(EditAnywhere) FVector OffsetPosition;  // 0x0030, size 0xC
     UPROPERTY(EditAnywhere) FRotator OffsetOrientation;  // 0x003C, size 0xC
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<ULiveLinkTransformAxisSwitchPreProcessor::FLiveLinkTransformAxisSwitchPreProcessorWorker,1> Instance;  // 0x0048, protected
+    TSharedPtr<ULiveLinkTransformAxisSwitchPreProcessor::FLiveLinkTransformAxisSwitchPreProcessorWorker,1> Instance;  // 0x0048, not reflected
 };

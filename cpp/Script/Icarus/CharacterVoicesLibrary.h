@@ -6,7 +6,6 @@ UCLASS()
 class UCharacterVoicesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToCharacterVoicesTable(FName Name, FCharacterVoiceData Data, FCharacterVoicesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x59
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakCharacterVoicesEnum(FCharacterVoicesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FCharacterVoicesRowHandle CastToCharacterVoicesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class AAbstractNavData : public ANavigationData
 {
-public:
 };

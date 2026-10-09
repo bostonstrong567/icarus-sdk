@@ -5,5 +5,4 @@
 UCLASS()
 class UCraftingAudioDataTable : public UIcarusDataTable
 {
-public:
 };

@@ -6,7 +6,6 @@ UCLASS()
 class URangedWeaponDataLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToRangedWeaponDataTable(FName Name, FRangedWeaponData Data, FRangedWeaponDataRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xF1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakRangedWeaponDataEnum(FRangedWeaponDataEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FRangedWeaponDataRowHandle CastToRangedWeaponDataRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

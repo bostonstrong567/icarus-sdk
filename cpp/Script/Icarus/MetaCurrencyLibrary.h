@@ -6,7 +6,6 @@ UCLASS()
 class UMetaCurrencyLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToMetaCurrencyTable(FName Name, FMetaCurrency Data, FMetaCurrencyRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xD9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakMetaCurrencyEnum(FMetaCurrencyEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FMetaCurrencyRowHandle CastToMetaCurrencyRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

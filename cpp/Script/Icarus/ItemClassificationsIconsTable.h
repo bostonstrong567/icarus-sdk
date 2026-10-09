@@ -5,5 +5,4 @@
 UCLASS()
 class UItemClassificationsIconsTable : public UIcarusDataTable
 {
-public:
 };

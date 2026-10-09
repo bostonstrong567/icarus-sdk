@@ -5,9 +5,11 @@
 UCLASS(Config=Engine)
 class AQuest : public AIcarusActor
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintAssignable) FOnQuestStarted OnQuestStarted;  // 0x02C0, size 0x1
     UPROPERTY(BlueprintAssignable) FOnQuestEnded OnQuestEnded;  // 0x02C1, size 0x1
+protected:
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) FQuestsRowHandle QuestData;  // 0x02C4, size 0x18
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) TArray<FQuestActor> RelevantActors;  // 0x02E0, size 0x10
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) TArray<FQuestCharacter> RelevantCharacters;  // 0x02F0, size 0x10
@@ -18,14 +20,12 @@ public:
     UPROPERTY() float CachedDeltaSeconds;  // 0x0338, size 0x4
     UPROPERTY(Replicated) bool bArtificiallyComplete;  // 0x033C, size 0x1
     UPROPERTY() bool bReloaded;  // 0x033D, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSet<FSoftObjectPath,DefaultKeyFuncs<FSoftObjectPath,0>,FDefaultSetAllocator> SubQuestsPendingLoad;  // 0x0340, protected
-    TSet<TSubclassOf<AQuest>,DefaultKeyFuncs<TSubclassOf<AQuest>,0>,FDefaultSetAllocator> LoadedQuestClasses;  // 0x0390, protected
-    FText CachedQuestInfo;  // 0x03E0, protected
-    FText CachedQuestDesc;  // 0x03F8, protected
-    TMap<TWeakObjectPtr<APrebuiltStructure,FWeakObjectPtr>,FString,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<TWeakObjectPtr<APrebuiltStructure,FWeakObjectPtr>,FString,0> > EnsuredStructureNames;  // 0x0410, protected
-
+    TSet<FSoftObjectPath,DefaultKeyFuncs<FSoftObjectPath,0>,FDefaultSetAllocator> SubQuestsPendingLoad;  // 0x0340, not reflected
+    TSet<TSubclassOf<AQuest>,DefaultKeyFuncs<TSubclassOf<AQuest>,0>,FDefaultSetAllocator> LoadedQuestClasses;  // 0x0390, not reflected
+    FText CachedQuestInfo;  // 0x03E0, not reflected
+    FText CachedQuestDesc;  // 0x03F8, not reflected
+    TMap<TWeakObjectPtr<APrebuiltStructure,FWeakObjectPtr>,FString,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<TWeakObjectPtr<APrebuiltStructure,FWeakObjectPtr>,FString,0> > EnsuredStructureNames;  // 0x0410, not reflected
+public:
     UFUNCTION(BlueprintCallable) void AbandonQuest();
     UFUNCTION() void AddActiveQuest(AQuest* Quest);  // parameters 0x8
     UFUNCTION() void ArtificiallyComplete();

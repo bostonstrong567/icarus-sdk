@@ -5,20 +5,19 @@
 UCLASS()
 class UAccoladeSubsystem : public UWorldSubsystem
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY(BlueprintAssignable) FOnAccoladeCompleted OnAccoladeCompleted;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FOnAccoladeUpdated OnAccoladeUpdated;  // 0x0040, size 0x10
+    TArray<FName,TSizedDefaultAllocator<32> > PendingAchievementUnlocks;  // 0x0050, not reflected
+    TArray<FName,TSizedDefaultAllocator<32> > InProgressAchievementUnlocks;  // 0x0060, not reflected
+    TSharedPtr<FOnlineAchievementsWrite,1> AchievementsWriteObject;  // 0x0070, not reflected
+    int32 WriteAchievementsAttemptCount;  // 0x0080, not reflected
+    const int32 MAX_WRITE_ACHIEVEMENTS_ATTEMPTS;  // 0x0084, not reflected
     UPROPERTY(SaveGame) TArray<FAccoladeCompletedState> CompletedAccolades;  // 0x0088, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<FName,TSizedDefaultAllocator<32> > PendingAchievementUnlocks;  // 0x0050, private
-    TArray<FName,TSizedDefaultAllocator<32> > InProgressAchievementUnlocks;  // 0x0060, private
-    TSharedPtr<FOnlineAchievementsWrite,1> AchievementsWriteObject;  // 0x0070, private
-    int32 WriteAchievementsAttemptCount;  // 0x0080, private
-    const int32 MAX_WRITE_ACHIEVEMENTS_ATTEMPTS;  // 0x0084, private
-    bool bInitialized;  // 0x0098, private
-    TMultiMap<TSoftClassPtr<UAccoladeImpl>,FAccoladesRowHandle,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<TSoftClassPtr<UAccoladeImpl>,FAccoladesRowHandle,1> > AccoladeToTypeMap;  // 0x00A0, private
-
+    bool bInitialized;  // 0x0098, not reflected
+    TMultiMap<TSoftClassPtr<UAccoladeImpl>,FAccoladesRowHandle,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<TSoftClassPtr<UAccoladeImpl>,FAccoladesRowHandle,1> > AccoladeToTypeMap;  // 0x00A0, not reflected
+public:
     UFUNCTION() void CheckAgainstCompletedAccolades();
     UFUNCTION(BlueprintCallable) bool DeleteAccoladeSave(const FPlayerCharacterID& PlayerCharacterID);  // parameters 0x19
     UFUNCTION(BlueprintCallable) bool GetAccoladeProgress(const FAccoladesRowHandle& AccoladeRow, int32& CurrentValue, int32& MaxValue, FDateTime& TimeCompleted);  // parameters 0x29

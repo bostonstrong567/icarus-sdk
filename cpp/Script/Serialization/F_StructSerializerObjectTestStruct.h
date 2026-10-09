@@ -4,6 +4,7 @@
 USTRUCT()
 struct FStructSerializerObjectTestStruct
 {
+public:
     UPROPERTY() TSubclassOf<UObject> Class;  // 0x0000, size 0x8
     UPROPERTY() TSubclassOf<UMetaData> SubClass;  // 0x0008, size 0x8
     UPROPERTY() TSoftClassPtr<UMetaData> SoftClass;  // 0x0010, size 0x28

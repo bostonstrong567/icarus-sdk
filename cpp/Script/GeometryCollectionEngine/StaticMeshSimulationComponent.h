@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class UStaticMeshSimulationComponent : public UActorComponent, public IChaosNotifyHandlerInterface
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool Simulating;  // 0x00B8, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bNotifyCollisions;  // 0x00B9, size 0x1
@@ -21,12 +22,11 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) UChaosPhysicalMaterial* PhysicalMaterial;  // 0x00F0, size 0x8
     UPROPERTY(EditAnywhere) AChaosSolverActor* ChaosSolverActor;  // 0x00F8, size 0x8
     UPROPERTY(BlueprintAssignable) FOnChaosPhysicsCollision OnChaosPhysicsCollision;  // 0x0100, size 0x10
+private:
+    TArray<FStaticMeshPhysicsProxy *,TSizedDefaultAllocator<32> > PhysicsProxies;  // 0x0110, not reflected
     UPROPERTY() TArray<UPrimitiveComponent*> SimulatedComponents;  // 0x0120, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<FStaticMeshPhysicsProxy *,TSizedDefaultAllocator<32> > PhysicsProxies;  // 0x0110, private
-    TUniquePtr<Chaos::FChaosPhysicsMaterial,TDefaultDelete<Chaos::FChaosPhysicsMaterial> > ChaosMaterial;  // 0x0130, private
-
+    TUniquePtr<Chaos::FChaosPhysicsMaterial,TDefaultDelete<Chaos::FChaosPhysicsMaterial> > ChaosMaterial;  // 0x0130, not reflected
+public:
     UFUNCTION(BlueprintCallable) void ForceRecreatePhysicsState();
     UFUNCTION(BlueprintImplementableEvent) void ReceivePhysicsCollision(const FChaosPhysicsCollisionInfo& CollisionInfo);  // parameters 0x70
 };

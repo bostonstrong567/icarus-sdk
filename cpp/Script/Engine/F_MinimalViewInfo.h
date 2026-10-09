@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMinimalViewInfo
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector Location;  // 0x0000, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FRotator Rotation;  // 0x000C, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float FOV;  // 0x0018, size 0x4
@@ -18,7 +19,5 @@ struct FMinimalViewInfo
     UPROPERTY(BlueprintReadWrite) float PostProcessBlendWeight;  // 0x0038, size 0x4
     UPROPERTY(BlueprintReadWrite) FPostProcessSettings PostProcessSettings;  // 0x0040, size 0x560
     UPROPERTY(EditAnywhere, Transient, BlueprintReadWrite) FVector2D OffCenterProjectionOffset;  // 0x05A0, size 0x8
-
-    // Not reflected:
-    TOptional<FTransform> PreviousViewTransform;  // 0x05B0
+    TOptional<FTransform> PreviousViewTransform;  // 0x05B0, not reflected
 };

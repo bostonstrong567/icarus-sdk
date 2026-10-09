@@ -12,10 +12,9 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float TickFrequency;  // 0x0240, size 0x4
     UPROPERTY(BlueprintReadOnly) TArray<AActor*> TargetActors;  // 0x0248, size 0x10
     UPROPERTY(BlueprintAssignable) FScriptedEventFinishedSignature OnScriptedEventFinished;  // 0x0258, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FTimerHandle EventTimeoutTimer;  // 0x0268, private
-
+private:
+    FTimerHandle EventTimeoutTimer;  // 0x0268, not reflected
+public:
     UFUNCTION(BlueprintCallable) void AbortScriptedEvent();
     UFUNCTION(BlueprintNativeEvent) bool CanPerformEvent();  // parameters 0x1
     UFUNCTION(BlueprintNativeEvent) TArray<AActor*> DetermineTargetActors();  // parameters 0x10

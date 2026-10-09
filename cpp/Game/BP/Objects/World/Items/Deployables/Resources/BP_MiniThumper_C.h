@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class ABP_MiniThumper_C : public ABP_Thumper_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void CompleteThumperEvent();
     UFUNCTION(BlueprintCallable) void GetTooltipClassOverride(TSoftClassPtr<UHuntingWidget>& ClassOverride);  // parameters 0x28
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetTotalEventTime();  // parameters 0x4

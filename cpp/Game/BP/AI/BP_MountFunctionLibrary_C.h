@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UBP_MountFunctionLibrary_C : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void CanBeFertilized(AActor* Male, AActor* PotentialFemale, UObject* __WorldContext, bool& CanFertilize);  // parameters 0x19
     UFUNCTION(BlueprintCallable) static void CanEvolve(AIcarusCharacter* Character, FItemData Item, UObject* __WorldContext, bool& bCanInject);  // parameters 0x201
     UFUNCTION(BlueprintCallable) static void CanFeedSerum(AIcarusCharacter* Character, FItemData Item, UObject* __WorldContext, bool& bCanFeed);  // parameters 0x201

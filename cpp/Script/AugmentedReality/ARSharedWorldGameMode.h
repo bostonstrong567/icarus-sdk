@@ -7,12 +7,11 @@ class AARSharedWorldGameMode : public AGameMode
 {
 public:
     UPROPERTY(EditAnywhere, Config, BlueprintReadWrite) int32 BufferSizePerChunk;  // 0x0308, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bShouldSendSharedWorldData;  // 0x030C, private
-    TMap<AARSharedWorldPlayerController *,FARSharedWorldReplicationState,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<AARSharedWorldPlayerController *,FARSharedWorldReplicationState,0> > PlayerToReplicationStateMap;  // 0x0310, private
-    TArray<unsigned char,TSizedDefaultAllocator<32> > SendBuffer;  // 0x0360, private
-
+private:
+    bool bShouldSendSharedWorldData;  // 0x030C, not reflected
+    TMap<AARSharedWorldPlayerController *,FARSharedWorldReplicationState,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<AARSharedWorldPlayerController *,FARSharedWorldReplicationState,0> > PlayerToReplicationStateMap;  // 0x0310, not reflected
+    TArray<unsigned char,TSizedDefaultAllocator<32> > SendBuffer;  // 0x0360, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) AARSharedWorldGameState* GetARSharedWorldGameState();  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) void SetARSharedWorldData(TArray<uint8> ARWorldData);  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) void SetARWorldSharingIsReady();

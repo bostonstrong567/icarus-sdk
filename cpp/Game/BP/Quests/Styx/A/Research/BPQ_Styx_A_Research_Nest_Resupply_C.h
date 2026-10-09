@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_Styx_A_Research_Nest_Resupply_C : public ABPQ_Common_RequestResupply_C
 {
-public:
 };

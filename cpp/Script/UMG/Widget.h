@@ -5,6 +5,7 @@
 UCLASS(Abstract)
 class UWidget : public UVisual
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UPanelSlot* Slot;  // 0x0028, size 0x8
     UPROPERTY() FGetBool bIsEnabledDelegate;  // 0x0030, size 0x10
@@ -19,20 +20,20 @@ public:
     UPROPERTY(Transient) uint8 bCreatedByConstructionScript : 1;  // 0x00B4, mask 0x02
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bIsEnabled : 1;  // 0x00B4, mask 0x04
     UPROPERTY(EditAnywhere) uint8 bOverride_Cursor : 1;  // 0x00B4, mask 0x08
-    UPROPERTY(Instanced) USlateAccessibleWidgetData* AccessibleWidgetData;  // 0x00B8, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bIsVolatile : 1;  // 0x00C0, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<EMouseCursor> Cursor;  // 0x00C1, size 0x1
     UPROPERTY(EditAnywhere) EWidgetClipping Clipping;  // 0x00C2, size 0x1
     UPROPERTY(EditAnywhere) ESlateVisibility Visibility;  // 0x00C3, size 0x1
     UPROPERTY(EditAnywhere) float RenderOpacity;  // 0x00C4, size 0x4
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UWidgetNavigation* Navigation;  // 0x00C8, size 0x8
     UPROPERTY(EditAnywhere) EFlowDirectionPreference FlowDirectionPreference;  // 0x00D0, size 0x1
+protected:
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bIsVolatile : 1;  // 0x00C0, mask 0x01
+    TWeakPtr<SWidget,0> MyWidget;  // 0x00D8, not reflected
+    TWeakPtr<SObjectWidget,0> MyGCWidget;  // 0x00E8, not reflected
     UPROPERTY(Transient) TArray<UPropertyBinding*> NativeBindings;  // 0x00F8, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TWeakPtr<SWidget,0> MyWidget;  // 0x00D8, protected
-    TWeakPtr<SObjectWidget,0> MyGCWidget;  // 0x00E8, protected
-
+private:
+    UPROPERTY(Instanced) USlateAccessibleWidgetData* AccessibleWidgetData;  // 0x00B8, size 0x8
+public:
     UFUNCTION(BlueprintCallable) void ForceLayoutPrepass();
     UFUNCTION(BlueprintCallable) void ForceVolatile(bool bForce);  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) FText GetAccessibleSummaryText() const;  // parameters 0x18

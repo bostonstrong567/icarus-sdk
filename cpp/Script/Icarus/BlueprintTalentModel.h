@@ -5,5 +5,4 @@
 UCLASS()
 class UBlueprintTalentModel : public UTalentModelInterface
 {
-public:
 };

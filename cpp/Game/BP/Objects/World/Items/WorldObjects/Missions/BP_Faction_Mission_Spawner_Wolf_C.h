@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Faction_Mission_Spawner_Wolf_C : public ABP_Faction_Mission_Spawner_C
 {
-public:
 };

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Building_Roof_Peak_Cap_Stone_C : public ABP_Building_Roof_Peak_Cap_C
 {
-public:
 };

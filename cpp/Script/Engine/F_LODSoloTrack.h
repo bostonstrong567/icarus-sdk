@@ -4,5 +4,6 @@
 USTRUCT()
 struct FLODSoloTrack
 {
+public:
     UPROPERTY(Transient) TArray<uint8> SoloEnableSetting;  // 0x0000, size 0x10
 };

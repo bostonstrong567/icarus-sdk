@@ -5,13 +5,10 @@
 UCLASS(MinimalAPI, Config=Engine)
 class AIcarusItem : public AIcarusActor
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
-    UPROPERTY(Instanced) UInventory* ItemInventory;  // 0x02C0, size 0x8
-    UPROPERTY() int32 ItemInventoryLocation;  // 0x02C8, size 0x4
-    UPROPERTY() bool HasLink;  // 0x02CC, size 0x1
     UPROPERTY(BlueprintAssignable) FPickedUp PickedUp;  // 0x02CD, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<UTraitComponent*> TraitComponents;  // 0x02D0, size 0x10
-    UPROPERTY(Replicated, ReplicatedUsing, BlueprintReadWrite) FItemData ItemData;  // 0x02E0, size 0x1F0
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) FIcarusItemConstructionParameters ConstructionParameters;  // 0x04D0, size 0x28
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) EIcarusItemContext SpawnedContext;  // 0x04F8, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FItemTemplateRowHandle OverrideInstanceItemTemplate;  // 0x04FC, size 0x18
@@ -19,7 +16,13 @@ public:
     UPROPERTY(BlueprintReadWrite) bool bSkipAttachmentReplication;  // 0x0520, size 0x1
     UPROPERTY() FTransform ConstructionTransfrom;  // 0x0530, size 0x30
     UPROPERTY(BlueprintAssignable) FDynamicDataUpdatedSignature DynamicDataUpdated;  // 0x0560, size 0x10
-
+protected:
+    UPROPERTY(Replicated, ReplicatedUsing, BlueprintReadWrite) FItemData ItemData;  // 0x02E0, size 0x1F0
+private:
+    UPROPERTY(Instanced) UInventory* ItemInventory;  // 0x02C0, size 0x8
+    UPROPERTY() int32 ItemInventoryLocation;  // 0x02C8, size 0x4
+    UPROPERTY() bool HasLink;  // 0x02CC, size 0x1
+public:
     UFUNCTION() void ActionableUpdated();
     UFUNCTION() void DecayableDataUpdated();
     UFUNCTION(BlueprintCallable) void DeserializeItemData(const FItemData& InItemData);  // parameters 0x1F0

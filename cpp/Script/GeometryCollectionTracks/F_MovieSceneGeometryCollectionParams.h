@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMovieSceneGeometryCollectionParams
 {
+public:
     UPROPERTY(EditAnywhere) FSoftObjectPath GeometryCollectionCache;  // 0x0008, size 0x18
     UPROPERTY(EditAnywhere) FFrameNumber StartFrameOffset;  // 0x0020, size 0x4
     UPROPERTY(EditAnywhere) FFrameNumber EndFrameOffset;  // 0x0024, size 0x4

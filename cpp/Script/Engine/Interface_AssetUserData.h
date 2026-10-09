@@ -5,5 +5,4 @@
 UCLASS(Abstract, MinimalAPI)
 class UInterface_AssetUserData : public UInterface
 {
-public:
 };

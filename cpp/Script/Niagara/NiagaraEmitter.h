@@ -5,6 +5,7 @@
 UCLASS(MinimalAPI)
 class UNiagaraEmitter : public UObject
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere) bool bLocalSpace;  // 0x0028, size 0x1
     UPROPERTY(EditAnywhere) bool bDeterminism;  // 0x0029, size 0x1
@@ -34,19 +35,18 @@ public:
     UPROPERTY(EditAnywhere) uint8 bSimulationStagesEnabled : 1;  // 0x0168, mask 0x01
     UPROPERTY(EditAnywhere) uint8 bDeprecatedShaderStagesEnabled : 1;  // 0x0168, mask 0x02
     UPROPERTY(EditAnywhere) uint8 bLimitDeltaTime : 1;  // 0x0168, mask 0x04
+protected:
+    bool bFullyLoaded;  // 0x016C, not reflected
     UPROPERTY() FString UniqueEmitterName;  // 0x0170, size 0x10
     UPROPERTY() TArray<UNiagaraRendererProperties*> RendererProperties;  // 0x0180, size 0x10
     UPROPERTY(EditAnywhere) TArray<FNiagaraEventScriptProperties> EventHandlerScriptProps;  // 0x0190, size 0x10
     UPROPERTY() TArray<UNiagaraSimulationStageBase*> SimulationStages;  // 0x01A0, size 0x10
     UPROPERTY() UNiagaraScript* GPUComputeScript;  // 0x01B0, size 0x8
     UPROPERTY() TArray<FName> SharedEventGeneratorIds;  // 0x01B8, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bFullyLoaded;  // 0x016C, protected
-    uint32 : 1 bRequiresViewUniformBuffer;  // 0x01C8, protected
-    uint32 MaxInstanceCount;  // 0x01CC, protected
-    TArray<TUniquePtr<FNiagaraBoundsCalculator,TDefaultDelete<FNiagaraBoundsCalculator> >,TInlineAllocator<1,TSizedDefaultAllocator<32> > > BoundsCalculators;  // 0x01D0, protected
-    MemoryRuntimeEstimation RuntimeEstimation;  // 0x01E8, protected
-    FWindowsCriticalSection EstimationCriticalSection;  // 0x0240, protected
-    FNiagaraEmitterScalabilitySettings CurrentScalabilitySettings;  // 0x0268, protected
+    uint32 : 1 bRequiresViewUniformBuffer;  // 0x01C8, not reflected
+    uint32 MaxInstanceCount;  // 0x01CC, not reflected
+    TArray<TUniquePtr<FNiagaraBoundsCalculator,TDefaultDelete<FNiagaraBoundsCalculator> >,TInlineAllocator<1,TSizedDefaultAllocator<32> > > BoundsCalculators;  // 0x01D0, not reflected
+    MemoryRuntimeEstimation RuntimeEstimation;  // 0x01E8, not reflected
+    FWindowsCriticalSection EstimationCriticalSection;  // 0x0240, not reflected
+    FNiagaraEmitterScalabilitySettings CurrentScalabilitySettings;  // 0x0268, not reflected
 };

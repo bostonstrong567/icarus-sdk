@@ -4,5 +4,6 @@
 USTRUCT()
 struct FRigUnit_AimConstraint_WorkData
 {
+public:
     UPROPERTY() TArray<FConstraintData> ConstraintData;  // 0x0000, size 0x10
 };

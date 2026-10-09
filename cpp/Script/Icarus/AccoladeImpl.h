@@ -6,7 +6,6 @@ UCLASS()
 class UAccoladeImpl : public UObject
 {
 public:
-
     UFUNCTION(BlueprintNativeEvent) int32 GetAccoladeMaxProgressValue(UWorld* WorldContext, FAccoladesRowHandle Accolade);  // parameters 0x24
     UFUNCTION(BlueprintNativeEvent) bool GetAccoladeProgress(UWorld* WorldContext, FAccoladesRowHandle Accolade, int32& OutProgress);  // parameters 0x25
     UFUNCTION(BlueprintNativeEvent) bool RunAccolade(UWorld* WorldContext, FAccoladesRowHandle Accolade);  // parameters 0x21

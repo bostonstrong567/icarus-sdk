@@ -4,5 +4,6 @@
 USTRUCT()
 struct FDatasmithRetessellationOptions : public FDatasmithTessellationOptions
 {
+public:
     UPROPERTY(EditAnywhere, Config, BlueprintReadWrite) EDatasmithCADRetessellationRule RetessellationRule;  // 0x0010, size 0x1
 };

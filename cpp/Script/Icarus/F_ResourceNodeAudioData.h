@@ -4,6 +4,7 @@
 USTRUCT()
 struct FResourceNodeAudioData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UFMODEvent> HarvestSound;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UFMODEvent> NodeDepletedSound;  // 0x0040, size 0x28
 };

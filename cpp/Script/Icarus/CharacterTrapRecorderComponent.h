@@ -5,7 +5,8 @@
 UCLASS(Config=Engine)
 class UCharacterTrapRecorderComponent : public UDeployableRecorderComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, SaveGame) int32 TrappedCharacterUID;  // 0x0290, size 0x4
     UPROPERTY(EditAnywhere, SaveGame) TArray<int32> TrappedCharacterUIDs;  // 0x0298, size 0x10
 };

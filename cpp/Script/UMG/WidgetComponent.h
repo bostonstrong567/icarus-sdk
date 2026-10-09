@@ -5,7 +5,8 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UWidgetComponent : public UMeshComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere) EWidgetSpace Space;  // 0x0478, size 0x1
     UPROPERTY(EditAnywhere) EWidgetTimingPolicy TimingPolicy;  // 0x0479, size 0x1
     UPROPERTY(EditAnywhere) TSubclassOf<UUserWidget> WidgetClass;  // 0x0480, size 0x8
@@ -13,6 +14,7 @@ public:
     UPROPERTY(EditAnywhere) bool bManuallyRedraw;  // 0x0490, size 0x1
     UPROPERTY() bool bRedrawRequested;  // 0x0491, size 0x1
     UPROPERTY(EditAnywhere) float RedrawTime;  // 0x0494, size 0x4
+    double LastWidgetRenderTime;  // 0x0498, not reflected
     UPROPERTY() FIntPoint CurrentDrawSize;  // 0x04A0, size 0x8
     UPROPERTY(EditAnywhere) bool bDrawAtDesiredSize;  // 0x04A8, size 0x1
     UPROPERTY(EditAnywhere) FVector2D Pivot;  // 0x04AC, size 0x8
@@ -43,18 +45,16 @@ public:
     UPROPERTY(EditAnywhere) EWidgetGeometryMode GeometryMode;  // 0x0540, size 0x1
     UPROPERTY(EditAnywhere) float CylinderArcAngle;  // 0x0544, size 0x4
     UPROPERTY(EditAnywhere) ETickMode TickMode;  // 0x0548, size 0x1
+    TSharedPtr<SVirtualWindow,0> SlateWindow;  // 0x0550, not reflected
+    FVector2D LastLocalHitLocation;  // 0x0560, not reflected
+    FWidgetRenderer * WidgetRenderer;  // 0x0568, not reflected
+private:
     UPROPERTY(Transient, Instanced) UUserWidget* Widget;  // 0x0570, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    double LastWidgetRenderTime;  // 0x0498, protected
-    TSharedPtr<SVirtualWindow,0> SlateWindow;  // 0x0550, protected
-    FVector2D LastLocalHitLocation;  // 0x0560, protected
-    FWidgetRenderer * WidgetRenderer;  // 0x0568, protected
-    TSharedPtr<SWidget,0> SlateWidget;  // 0x0578, private
-    TWeakPtr<SWidget,0> CurrentSlateWidget;  // 0x0588, private
-    bool bRenderCleared;  // 0x0598, private
-    bool bOnWidgetVisibilityChangedRegistered;  // 0x0599, private
-
+    TSharedPtr<SWidget,0> SlateWidget;  // 0x0578, not reflected
+    TWeakPtr<SWidget,0> CurrentSlateWidget;  // 0x0588, not reflected
+    bool bRenderCleared;  // 0x0598, not reflected
+    bool bOnWidgetVisibilityChangedRegistered;  // 0x0599, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) FVector2D GetCurrentDrawSize() const;  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetCylinderArcAngle() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) bool GetDrawAtDesiredSize() const;  // parameters 0x1

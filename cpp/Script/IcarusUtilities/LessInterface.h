@@ -6,6 +6,5 @@ UCLASS(Abstract)
 class ULessInterface : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) bool LessThan(UObject* Other) const;  // parameters 0x9
 };

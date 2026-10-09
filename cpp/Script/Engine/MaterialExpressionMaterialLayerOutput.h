@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UMaterialExpressionMaterialLayerOutput : public UMaterialExpressionFunctionOutput
 {
-public:
 };

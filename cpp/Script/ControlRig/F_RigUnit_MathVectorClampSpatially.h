@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_MathVectorClampSpatially : public FRigUnit_MathVectorBase
 {
+public:
     UPROPERTY() FVector Value;  // 0x0008, size 0xC
     UPROPERTY() TEnumAsByte<EAxis> Axis;  // 0x0014, size 0x1
     UPROPERTY() TEnumAsByte<EControlRigClampSpatialMode> Type;  // 0x0015, size 0x1

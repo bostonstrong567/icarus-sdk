@@ -5,6 +5,7 @@
 UCLASS()
 class UTextBlock : public UTextLayoutWidget
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere) FText Text;  // 0x0128, size 0x18
     UPROPERTY() FGetText TextDelegate;  // 0x0140, size 0x10
@@ -19,11 +20,10 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bWrapWithInvalidationPanel;  // 0x0294, size 0x1
     UPROPERTY(Deprecated) bool bAutoWrapText;  // 0x0295, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) ETextTransformPolicy TextTransformPolicy;  // 0x0296, size 0x1
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bSimpleTextMode;  // 0x0297, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<STextBlock,0> MyTextBlock;  // 0x0298, protected
-
+    TSharedPtr<STextBlock,0> MyTextBlock;  // 0x0298, not reflected
+public:
     UFUNCTION(BlueprintCallable) UMaterialInstanceDynamic* GetDynamicFontMaterial();  // parameters 0x8
     UFUNCTION(BlueprintCallable) UMaterialInstanceDynamic* GetDynamicOutlineMaterial();  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) FText GetText() const;  // parameters 0x18

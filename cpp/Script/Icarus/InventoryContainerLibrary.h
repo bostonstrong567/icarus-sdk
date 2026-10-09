@@ -6,7 +6,6 @@ UCLASS()
 class UInventoryContainerLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToInventoryContainerTable(FName Name, FInventoryContainerData Data, FInventoryContainerRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x59
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakInventoryContainerEnum(FInventoryContainerEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FInventoryContainerRowHandle CastToInventoryContainerRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

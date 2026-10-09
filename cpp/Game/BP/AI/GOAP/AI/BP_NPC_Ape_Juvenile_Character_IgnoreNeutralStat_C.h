@@ -6,6 +6,5 @@ UCLASS(Config=Game)
 class ABP_NPC_Ape_Juvenile_Character_IgnoreNeutralStat_C : public ABP_NPC_Ape_Juvenile_Character_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) FAIRelationshipsRowHandle CheckForStatBasedAIRelationshipChange(const FAIRelationshipsRowHandle& PreviousRelationship);  // parameters 0x30
 };

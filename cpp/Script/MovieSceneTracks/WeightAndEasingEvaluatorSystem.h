@@ -5,8 +5,6 @@
 UCLASS()
 class UWeightAndEasingEvaluatorSystem : public UMovieSceneEntitySystem
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSparseArray<UE::MovieScene::FHierarchicalEasingChannelData,FDefaultSparseArrayAllocator> EasingChannels;  // 0x0040, private
+private:
+    TSparseArray<UE::MovieScene::FHierarchicalEasingChannelData,FDefaultSparseArrayAllocator> EasingChannels;  // 0x0040, not reflected
 };

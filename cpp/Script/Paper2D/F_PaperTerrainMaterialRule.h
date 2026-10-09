@@ -4,6 +4,7 @@
 USTRUCT()
 struct FPaperTerrainMaterialRule
 {
+public:
     UPROPERTY(EditAnywhere) UPaperSprite* StartCap;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) TArray<UPaperSprite*> Body;  // 0x0008, size 0x10
     UPROPERTY(EditAnywhere) UPaperSprite* EndCap;  // 0x0018, size 0x8

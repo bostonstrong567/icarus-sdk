@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAtmospherePrecomputeParameters
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float DensityHeight;  // 0x0000, size 0x4
     UPROPERTY(Deprecated) float DecayHeight;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 MaxScatteringOrder;  // 0x0008, size 0x4

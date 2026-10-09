@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSpinBoxStyle : public FSlateWidgetStyle
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSlateBrush BackgroundBrush;  // 0x0008, size 0x88
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSlateBrush HoveredBackgroundBrush;  // 0x0090, size 0x88
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSlateBrush ActiveFillBrush;  // 0x0118, size 0x88

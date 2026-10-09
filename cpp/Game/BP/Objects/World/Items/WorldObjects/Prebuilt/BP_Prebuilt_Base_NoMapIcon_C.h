@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Prebuilt_Base_NoMapIcon_C : public ABP_Prebuilt_Base_C
 {
-public:
 };

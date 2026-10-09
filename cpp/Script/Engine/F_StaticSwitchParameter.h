@@ -4,5 +4,6 @@
 USTRUCT()
 struct FStaticSwitchParameter : public FStaticParameterBase
 {
+public:
     UPROPERTY() bool Value;  // 0x0024, size 0x1
 };

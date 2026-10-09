@@ -4,6 +4,7 @@
 USTRUCT()
 struct FEngineServiceNotification
 {
+public:
     UPROPERTY(EditAnywhere) FString Text;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere) double TimeSeconds;  // 0x0010, size 0x8
 };

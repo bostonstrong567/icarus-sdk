@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class UMotionControllerComponent : public UPrimitiveComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 PlayerIndex;  // 0x0450, size 0x4
     UPROPERTY(Deprecated, BlueprintReadWrite) EControllerHand Hand;  // 0x0454, size 0x1
@@ -15,18 +16,18 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName DisplayModelSource;  // 0x0468, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UStaticMesh* CustomDisplayMesh;  // 0x0470, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<UMaterialInterface*> DisplayMeshMaterialOverrides;  // 0x0478, size 0x10
+protected:
+    IMotionController * InUseMotionController;  // 0x0488, not reflected
+private:
+    bool bTracked;  // 0x0490, not reflected
+    bool bHasAuthority;  // 0x0491, not reflected
+    FTransform RenderThreadRelativeTransform;  // 0x04A0, not reflected
+    FVector RenderThreadComponentScale;  // 0x04D0, not reflected
+    TSharedPtr<UMotionControllerComponent::FViewExtension,1> ViewExtension;  // 0x04E0, not reflected
     UPROPERTY(Transient, Instanced, BlueprintReadOnly) UPrimitiveComponent* DisplayComponent;  // 0x04F0, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    IMotionController * InUseMotionController;  // 0x0488, protected
-    bool bTracked;  // 0x0490, private
-    bool bHasAuthority;  // 0x0491, private
-    FTransform RenderThreadRelativeTransform;  // 0x04A0, private
-    FVector RenderThreadComponentScale;  // 0x04D0, private
-    TSharedPtr<UMotionControllerComponent::FViewExtension,1> ViewExtension;  // 0x04E0, private
-    UMotionControllerComponent::EModelLoadStatus DisplayModelLoadState;  // 0x04F8, private
-    FXRDeviceId DisplayDeviceId;  // 0x04FC, private
-
+    UMotionControllerComponent::EModelLoadStatus DisplayModelLoadState;  // 0x04F8, not reflected
+    FXRDeviceId DisplayDeviceId;  // 0x04FC, not reflected
+public:
     UFUNCTION(BlueprintCallable) FVector GetHandJointPosition(int32 jointIndex, bool& bValueFound);  // parameters 0x14
     UFUNCTION(BlueprintCallable) float GetParameterValue(FName InName, bool& bValueFound);  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) EControllerHand GetTrackingSource() const;  // parameters 0x1

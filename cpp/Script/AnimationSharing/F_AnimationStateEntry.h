@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAnimationStateEntry
 {
+public:
     UPROPERTY(EditAnywhere) uint8 State;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere) TArray<FAnimationSetup> AnimationSetups;  // 0x0008, size 0x10
     UPROPERTY(EditAnywhere) bool bOnDemand;  // 0x0018, size 0x1

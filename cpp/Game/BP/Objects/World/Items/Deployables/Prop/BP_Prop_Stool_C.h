@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Prop_Stool_C : public ABP_ChairBase_C
 {
-public:
 };

@@ -6,7 +6,6 @@ UCLASS()
 class UFarmingGrowthStatesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToFarmingGrowthStatesTable(FName Name, FFarmingGrowthState Data, FFarmingGrowthStatesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x79
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakFarmingGrowthStatesEnum(FFarmingGrowthStatesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FFarmingGrowthStatesRowHandle CastToFarmingGrowthStatesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -5,6 +5,7 @@
 UCLASS(MinimalAPI)
 class UMovieSceneCameraShakeSourceTriggerSection : public UMovieSceneSection
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() FMovieSceneCameraShakeSourceTriggerChannel Channel;  // 0x00E8, size 0x88
 };

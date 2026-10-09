@@ -5,7 +5,8 @@
 UCLASS()
 class UBTDecorator_Blackboard : public UBTDecorator_BlackboardBase
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere) int32 IntValue;  // 0x0090, size 0x4
     UPROPERTY(EditAnywhere) float FloatValue;  // 0x0094, size 0x4
     UPROPERTY(EditAnywhere) FString StringValue;  // 0x0098, size 0x10

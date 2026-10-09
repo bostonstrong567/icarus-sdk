@@ -5,6 +5,7 @@
 UCLASS(Const, EditInlineNew)
 class UAnimNotify_PlayMontageNotify : public UAnimNotify
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FName NotifyName;  // 0x0038, size 0x8
 };

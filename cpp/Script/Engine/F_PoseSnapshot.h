@@ -4,6 +4,7 @@
 USTRUCT()
 struct FPoseSnapshot
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FTransform> LocalTransforms;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FName> BoneNames;  // 0x0010, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName SkeletalMeshName;  // 0x0020, size 0x8

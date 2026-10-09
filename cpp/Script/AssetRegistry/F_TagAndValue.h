@@ -4,6 +4,7 @@
 USTRUCT()
 struct FTagAndValue
 {
+public:
     UPROPERTY(Transient, BlueprintReadWrite) FName Tag;  // 0x0000, size 0x8
     UPROPERTY(Transient, BlueprintReadWrite) FString Value;  // 0x0008, size 0x10
 };

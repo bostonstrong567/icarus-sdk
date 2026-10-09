@@ -4,6 +4,7 @@
 USTRUCT()
 struct FClothConstraintSetup_Legacy
 {
+public:
     UPROPERTY() float Stiffness;  // 0x0000, size 0x4
     UPROPERTY() float StiffnessMultiplier;  // 0x0004, size 0x4
     UPROPERTY() float StretchLimit;  // 0x0008, size 0x4

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBuildingGridSaveData
 {
+public:
     UPROPERTY(SaveGame, BlueprintReadWrite) FTransform GridTransform;  // 0x0010, size 0x30
     UPROPERTY(SaveGame, BlueprintReadWrite) TArray<FDatabaseBuildingData> BuildingTypes;  // 0x0040, size 0x10
 };

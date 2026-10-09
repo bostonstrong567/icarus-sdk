@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew)
 class UIcarusMapScreenBase : public UUserWidget
 {
-public:
 };

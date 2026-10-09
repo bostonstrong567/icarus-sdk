@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UBP_Modifier_Lava_C : public UBP_Modifier_Base_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool ModifierApplied();  // parameters 0x1
 };

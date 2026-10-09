@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class UCineCameraComponent : public UCameraComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(Deprecated) FCameraFilmbackSettings FilmbackSettings;  // 0x07D0, size 0xC
     UPROPERTY(EditAnywhere, Interp, BlueprintReadWrite) FCameraFilmbackSettings Filmback;  // 0x07DC, size 0xC
@@ -13,6 +14,9 @@ public:
     UPROPERTY(EditAnywhere, Interp, BlueprintReadWrite) float CurrentFocalLength;  // 0x0858, size 0x4
     UPROPERTY(EditAnywhere, Interp, BlueprintReadWrite) float CurrentAperture;  // 0x085C, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float CurrentFocusDistance;  // 0x0860, size 0x4
+protected:
+    float LastFocusDistance;  // 0x0864, not reflected
+    uint8 : 1 bResetInterpolation;  // 0x0868, not reflected
     UPROPERTY(Config) TArray<FNamedFilmbackPreset> FilmbackPresets;  // 0x0870, size 0x10
     UPROPERTY(Config) TArray<FNamedLensPreset> LensPresets;  // 0x0880, size 0x10
     UPROPERTY(Config, Deprecated) FString DefaultFilmbackPresetName;  // 0x0890, size 0x10
@@ -20,11 +24,7 @@ public:
     UPROPERTY(Config) FString DefaultLensPresetName;  // 0x08B0, size 0x10
     UPROPERTY(Config) float DefaultLensFocalLength;  // 0x08C0, size 0x4
     UPROPERTY(Config) float DefaultLensFStop;  // 0x08C4, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    float LastFocusDistance;  // 0x0864, protected
-    uint8 : 1 bResetInterpolation;  // 0x0868, protected
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) FString GetDefaultFilmbackPresetName() const;  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) FString GetFilmbackPresetName() const;  // parameters 0x10
     UFUNCTION(BlueprintCallable) static TArray<FNamedFilmbackPreset> GetFilmbackPresetsCopy();  // parameters 0x10

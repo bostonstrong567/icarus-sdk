@@ -8,9 +8,8 @@ class UUpdateCharacterLoadoutCallbackProxyGen : public UOnlineBlueprintCallProxy
 public:
     UPROPERTY(BlueprintAssignable) FOnUpdateCharacterLoadoutEventSignature OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FOnUpdateCharacterLoadoutEventSignature OnFail;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FReqUpdateCharacterLoadout ReqUpdateCharacterLoadout;  // 0x0050, private
-
+private:
+    FReqUpdateCharacterLoadout ReqUpdateCharacterLoadout;  // 0x0050, not reflected
+public:
     UFUNCTION(BlueprintCallable) static UUpdateCharacterLoadoutCallbackProxyGen* UpdateCharacterLoadout(const FReqUpdateCharacterLoadout& Request);  // parameters 0x158
 };

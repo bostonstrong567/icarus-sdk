@@ -6,7 +6,6 @@ UCLASS()
 class UTalentModelsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToTalentModelsTable(FName Name, FTalentModel Data, FTalentModelsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x61
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakTalentModelsEnum(FTalentModelsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FTalentModelsRowHandle CastToTalentModelsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

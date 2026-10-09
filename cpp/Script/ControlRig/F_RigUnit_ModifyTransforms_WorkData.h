@@ -4,5 +4,6 @@
 USTRUCT()
 struct FRigUnit_ModifyTransforms_WorkData
 {
+public:
     UPROPERTY() TArray<FCachedRigElement> CachedItems;  // 0x0000, size 0x10
 };

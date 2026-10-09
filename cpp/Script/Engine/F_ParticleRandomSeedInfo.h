@@ -4,6 +4,7 @@
 USTRUCT()
 struct FParticleRandomSeedInfo
 {
+public:
     UPROPERTY(EditAnywhere) FName ParameterName;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) uint8 bGetSeedFromInstance : 1;  // 0x0008, mask 0x01
     UPROPERTY(EditAnywhere) uint8 bInstanceSeedIsIndex : 1;  // 0x0008, mask 0x02

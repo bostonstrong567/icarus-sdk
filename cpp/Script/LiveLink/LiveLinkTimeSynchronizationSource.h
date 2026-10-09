@@ -7,11 +7,10 @@ class ULiveLinkTimeSynchronizationSource : public UTimeSynchronizationSource
 {
 public:
     UPROPERTY(EditAnywhere) FLiveLinkSubjectName SubjectName;  // 0x0030, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FLiveLinkClient * LiveLinkClient;  // 0x0038, private
-    ULiveLinkTimeSynchronizationSource::ESyncState State;  // 0x0040, private
-    FLiveLinkSubjectTimeSyncData CachedData;  // 0x0044, private
-    int64 LastUpdateFrame;  // 0x0060, private
-    FLiveLinkSubjectKey SubjectKey;  // 0x0068, private
+private:
+    FLiveLinkClient * LiveLinkClient;  // 0x0038, not reflected
+    ULiveLinkTimeSynchronizationSource::ESyncState State;  // 0x0040, not reflected
+    FLiveLinkSubjectTimeSyncData CachedData;  // 0x0044, not reflected
+    int64 LastUpdateFrame;  // 0x0060, not reflected
+    FLiveLinkSubjectKey SubjectKey;  // 0x0068, not reflected
 };

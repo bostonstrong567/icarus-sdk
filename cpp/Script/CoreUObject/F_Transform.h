@@ -4,6 +4,8 @@
 USTRUCT()
 struct FTransform
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, SaveGame, BlueprintReadWrite) FQuat Rotation;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, SaveGame, BlueprintReadWrite) FVector Translation;  // 0x0010, size 0xC
     UPROPERTY(EditAnywhere, SaveGame, BlueprintReadWrite) FVector Scale3D;  // 0x0020, size 0xC

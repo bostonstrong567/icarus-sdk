@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLiveLinkCameraFrameData : public FLiveLinkTransformFrameData
 {
+public:
     UPROPERTY(EditAnywhere, Interp, BlueprintReadWrite) float FieldOfView;  // 0x00D0, size 0x4
     UPROPERTY(EditAnywhere, Interp, BlueprintReadWrite) float AspectRatio;  // 0x00D4, size 0x4
     UPROPERTY(EditAnywhere, Interp, BlueprintReadWrite) float FocalLength;  // 0x00D8, size 0x4

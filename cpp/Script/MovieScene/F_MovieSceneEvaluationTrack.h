@@ -4,6 +4,8 @@
 USTRUCT()
 struct FMovieSceneEvaluationTrack
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() FGuid ObjectBindingID;  // 0x0000, size 0x10
     UPROPERTY() uint16 EvaluationPriority;  // 0x0010, size 0x2
     UPROPERTY() EEvaluationMethod EvaluationMethod;  // 0x0012, size 0x1

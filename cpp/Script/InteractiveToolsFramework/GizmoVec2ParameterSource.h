@@ -6,7 +6,6 @@ UCLASS(Abstract)
 class UGizmoVec2ParameterSource : public UInterface
 {
 public:
-
     UFUNCTION() void BeginModify();
     UFUNCTION() void EndModify();
     UFUNCTION() FVector2D GetParameter() const;  // parameters 0x8

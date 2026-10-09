@@ -4,6 +4,7 @@
 USTRUCT()
 struct FGameModeRecord
 {
+public:
     UPROPERTY(SaveGame) int32 GameStateSeed;  // 0x0000, size 0x4
     UPROPERTY(SaveGame) float TimeOfDay;  // 0x0004, size 0x4
     UPROPERTY(SaveGame) float ProspectGameTime;  // 0x0008, size 0x4

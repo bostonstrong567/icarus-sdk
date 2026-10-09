@@ -4,5 +4,6 @@
 USTRUCT()
 struct FMovieSceneEvaluationFieldSharedEntityMetaData
 {
+public:
     UPROPERTY() FGuid ObjectBindingID;  // 0x0000, size 0x10
 };

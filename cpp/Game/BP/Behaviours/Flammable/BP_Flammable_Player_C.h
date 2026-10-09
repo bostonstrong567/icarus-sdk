@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UBP_Flammable_Player_C : public UBP_Flammable_SpontaneouslyCombustStuff_C
 {
-public:
 };

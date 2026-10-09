@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_OLY_Omni_Research_2_Graveyard_Collect_C : public ABPQ_Collect_Item_C
 {
-public:
 };

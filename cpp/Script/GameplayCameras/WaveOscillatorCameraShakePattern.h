@@ -17,12 +17,11 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FWaveOscillator Yaw;  // 0x0078, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FWaveOscillator Roll;  // 0x0084, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FWaveOscillator FOV;  // 0x0090, size 0xC
-
-    // Not reflected: the engine's scripting cannot see these.
-    FVector InitialLocationOffset;  // 0x009C, private
-    FVector CurrentLocationOffset;  // 0x00A8, private
-    FVector InitialRotationOffset;  // 0x00B4, private
-    FVector CurrentRotationOffset;  // 0x00C0, private
-    float InitialFOVOffset;  // 0x00CC, private
-    float CurrentFOVOffset;  // 0x00D0, private
+private:
+    FVector InitialLocationOffset;  // 0x009C, not reflected
+    FVector CurrentLocationOffset;  // 0x00A8, not reflected
+    FVector InitialRotationOffset;  // 0x00B4, not reflected
+    FVector CurrentRotationOffset;  // 0x00C0, not reflected
+    float InitialFOVOffset;  // 0x00CC, not reflected
+    float CurrentFOVOffset;  // 0x00D0, not reflected
 };

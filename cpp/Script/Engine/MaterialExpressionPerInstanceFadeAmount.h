@@ -5,5 +5,4 @@
 UCLASS()
 class UMaterialExpressionPerInstanceFadeAmount : public UMaterialExpression
 {
-public:
 };

@@ -6,7 +6,6 @@ UCLASS()
 class UWeatherPoolsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToWeatherPoolsTable(FName Name, FIcarusWeatherPoolData Data, FWeatherPoolsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x59
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakWeatherPoolsEnum(FWeatherPoolsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FWeatherPoolsRowHandle CastToWeatherPoolsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

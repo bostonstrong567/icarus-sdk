@@ -5,12 +5,10 @@
 UCLASS(Abstract, EditInlineNew, Config=Engine)
 class USoundEffectPreset : public UObject
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<TWeakPtr<FSoundEffectBase,1>,TSizedDefaultAllocator<32> > Instances;  // 0x0028, protected
-    FWindowsCriticalSection InstancesMutationCriticalSection;  // 0x0038, protected
-    bool bInitialized;  // 0x0060, protected
+protected:
+    TArray<TWeakPtr<FSoundEffectBase,1>,TSizedDefaultAllocator<32> > Instances;  // 0x0028, not reflected
+    FWindowsCriticalSection InstancesMutationCriticalSection;  // 0x0038, not reflected
+    bool bInitialized;  // 0x0060, not reflected
 
     // Virtual functions that start here:
     //   CanFilter, CreateNewEffect, CreateNewPreset, GetAssetActionName, GetPresetColor, GetSupportedClass

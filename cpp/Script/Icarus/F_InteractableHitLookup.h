@@ -4,6 +4,7 @@
 USTRUCT()
 struct FInteractableHitLookup
 {
+public:
     UPROPERTY() EInteractableHitLookupType Type;  // 0x0000, size 0x1
     UPROPERTY() FReplicatedHitResult Hit;  // 0x0004, size 0x2C
     UPROPERTY() AFLODTile* Tile;  // 0x0030, size 0x8

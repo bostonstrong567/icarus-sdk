@@ -5,26 +5,27 @@
 UCLASS(Config=Engine)
 class AWeatherForecastManager : public AInfo
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintAssignable) FForecastRestoredFromDatabase OnForecastRestoredFromDatabase;  // 0x0220, size 0x10
+protected:
     UPROPERTY(EditAnywhere, Instanced) UWeatherForecastRecorderComponent* ForecastRecorder;  // 0x0230, size 0x8
+private:
+    int32 LastEndTime;  // 0x0238, not reflected
+    int32 DayLength;  // 0x023C, not reflected
+    int32 NumDays;  // 0x0240, not reflected
+    bool bPostProspectInfoFetched;  // 0x0244, not reflected
     UPROPERTY(Instanced) UWeatherForecasting* WeatherForecasting;  // 0x0248, size 0x8
     UPROPERTY(Instanced) UWeatherForecastBarComponent* WeatherForecastBar;  // 0x0250, size 0x8
     UPROPERTY() FProspectForecastRowHandle ForecastRow;  // 0x0258, size 0x18
     UPROPERTY() FProspectForecastRowHandle InitialForecastRow;  // 0x0270, size 0x18
-
-    // Not reflected: the engine's scripting cannot see these.
-    int32 LastEndTime;  // 0x0238, private
-    int32 DayLength;  // 0x023C, private
-    int32 NumDays;  // 0x0240, private
-    bool bPostProspectInfoFetched;  // 0x0244, private
-    TQueue<FWeatherBlock,1> FutureBlocks;  // 0x0290, private
-    TArray<FWeatherBlock,TSizedDefaultAllocator<32> > QueuedBlocks;  // 0x02A0, private
-    TArray<FWeatherBlock,TSizedDefaultAllocator<32> > ForecastBlocks;  // 0x02B0, private
-    FRecordedCurrentWeatherBlock QueuedNowBlock;  // 0x02C0, private
-    TQueue<int,1> BlockEndTimes;  // 0x02F0, private
-    int32 LastNowTick;  // 0x0300, private
-
+    TQueue<FWeatherBlock,1> FutureBlocks;  // 0x0290, not reflected
+    TArray<FWeatherBlock,TSizedDefaultAllocator<32> > QueuedBlocks;  // 0x02A0, not reflected
+    TArray<FWeatherBlock,TSizedDefaultAllocator<32> > ForecastBlocks;  // 0x02B0, not reflected
+    FRecordedCurrentWeatherBlock QueuedNowBlock;  // 0x02C0, not reflected
+    TQueue<int,1> BlockEndTimes;  // 0x02F0, not reflected
+    int32 LastNowTick;  // 0x0300, not reflected
+public:
     UFUNCTION(BlueprintCallable) bool DoTick(int32 Now);  // parameters 0x5
     UFUNCTION(BlueprintCallable) void EnqueueForecast(TMap<FWeatherBiomeGroupsEnum, FWeatherBiomeGroupForecast>& OutBiomeGroupForecast);  // parameters 0x50
     UFUNCTION(BlueprintCallable, BlueprintPure) void GetCurrentForecastInfo(FRecordedCurrentWeatherBlock& NowBlockOut) const;  // parameters 0x30

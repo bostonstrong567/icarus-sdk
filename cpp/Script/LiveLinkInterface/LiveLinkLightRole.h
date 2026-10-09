@@ -5,5 +5,4 @@
 UCLASS()
 class ULiveLinkLightRole : public ULiveLinkTransformRole
 {
-public:
 };

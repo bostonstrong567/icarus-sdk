@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAssetRegistryDependencyOptions
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bIncludeSoftPackageReferences;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bIncludeHardPackageReferences;  // 0x0001, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bIncludeSearchableNames;  // 0x0002, size 0x1

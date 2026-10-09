@@ -5,5 +5,4 @@
 UCLASS()
 class UModificationBehaviour : public UObject
 {
-public:
 };

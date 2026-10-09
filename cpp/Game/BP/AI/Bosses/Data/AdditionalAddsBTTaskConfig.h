@@ -4,6 +4,7 @@
 USTRUCT()
 struct AdditionalAddsBTTaskConfig
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 BaseMaxNumberNearbyAdds;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 ExtraMaxAddsPerConnectedPlayer;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 MinNumberAddsPerExecution;  // 0x0008, size 0x4

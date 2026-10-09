@@ -5,7 +5,6 @@
 UCLASS(Abstract, EditInlineNew)
 class UAIDataProvider : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   BindData, ToString

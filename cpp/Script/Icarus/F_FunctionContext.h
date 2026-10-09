@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFunctionContext
 {
+public:
     UPROPERTY(EditAnywhere) TSubclassOf<UObject> ContextClass;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) FString FunctionToExecute;  // 0x0008, size 0x10
 };

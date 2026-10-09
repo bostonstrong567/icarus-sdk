@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABP_Raptor_Desert_Juvenile_Corpse_C : public ABP_GOAP_Corpse_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void UpdateSkeletalMeshCarryPhysics(USkeletalMeshComponent* SkeletalMeshComponent);  // parameters 0x8
 };

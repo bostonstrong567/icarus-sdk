@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSaddleData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FGameplayTag SaddleTag;  // 0x0018, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FMountsRowHandle> SupportedMount;  // 0x0020, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<USkeletalMesh> SkeletalMesh;  // 0x0030, size 0x28

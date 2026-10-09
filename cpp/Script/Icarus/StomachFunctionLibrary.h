@@ -6,6 +6,5 @@ UCLASS()
 class UStomachFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static bool ResolveStomachComponent(AActor* ActorConsuming, FItemData& ItemConsumed);  // parameters 0x1F9
 };

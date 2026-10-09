@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBPComponentClassOverride
 {
+public:
     UPROPERTY() FName ComponentName;  // 0x0000, size 0x8
     UPROPERTY() TSubclassOf<UObject> ComponentClass;  // 0x0008, size 0x8
 };

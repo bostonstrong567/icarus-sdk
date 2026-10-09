@@ -5,16 +5,15 @@
 UCLASS()
 class UMovieSceneEntitySystem : public UObject
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY() UMovieSceneEntitySystemLinker* Linker;  // 0x0028, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    UE::MovieScene::FComponentTypeID RelevantComponent;  // 0x0030, protected
-    UE::MovieScene::ESystemPhase Phase;  // 0x0032, protected
-    uint16 GraphID;  // 0x0034, protected
-    uint16 GlobalDependencyGraphID;  // 0x0036, protected
-    UE::MovieScene::EEntitySystemContext SystemExclusionContext;  // 0x0038, protected
-    bool bSystemIsEnabled;  // 0x0039, protected
+    UE::MovieScene::FComponentTypeID RelevantComponent;  // 0x0030, not reflected
+    UE::MovieScene::ESystemPhase Phase;  // 0x0032, not reflected
+    uint16 GraphID;  // 0x0034, not reflected
+    uint16 GlobalDependencyGraphID;  // 0x0036, not reflected
+    UE::MovieScene::EEntitySystemContext SystemExclusionContext;  // 0x0038, not reflected
+    bool bSystemIsEnabled;  // 0x0039, not reflected
 
     // Virtual functions that start here:
     //   ConditionalLinkSystemImpl, IsRelevantImpl, OnCleanTaggedGarbage, OnLink, OnRun, OnTagGarbage

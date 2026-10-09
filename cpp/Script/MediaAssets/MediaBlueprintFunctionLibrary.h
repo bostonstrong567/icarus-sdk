@@ -6,7 +6,6 @@ UCLASS()
 class UMediaBlueprintFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void EnumerateAudioCaptureDevices(TArray<FMediaCaptureDevice>& OutDevices, int32 Filter);  // parameters 0x14
     UFUNCTION(BlueprintCallable) static void EnumerateVideoCaptureDevices(TArray<FMediaCaptureDevice>& OutDevices, int32 Filter);  // parameters 0x14
     UFUNCTION(BlueprintCallable) static void EnumerateWebcamCaptureDevices(TArray<FMediaCaptureDevice>& OutDevices, int32 Filter);  // parameters 0x14

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Fish_Wall_Mount_v3_C : public ABP_Fish_Wall_Mount_C
 {
-public:
 };

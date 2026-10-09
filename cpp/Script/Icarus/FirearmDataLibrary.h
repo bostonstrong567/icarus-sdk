@@ -6,7 +6,6 @@ UCLASS()
 class UFirearmDataLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToFirearmDataTable(FName Name, FFirearmData Data, FFirearmDataRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x6B1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakFirearmDataEnum(FFirearmDataEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FFirearmDataRowHandle CastToFirearmDataRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -11,9 +11,8 @@ public:
     UPROPERTY() uint8 bEditable : 1;  // 0x0040, mask 0x01
     UPROPERTY() uint8 bAllowDeletion : 1;  // 0x0040, mask 0x02
     UPROPERTY() uint8 bAllowRenaming : 1;  // 0x0040, mask 0x04
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMulticastDelegate<void __cdecl(FEdGraphEditAction const &),FDefaultDelegateUserPolicy> OnGraphChanged;  // 0x0048, private
+private:
+    TMulticastDelegate<void __cdecl(FEdGraphEditAction const &),FDefaultDelegateUserPolicy> OnGraphChanged;  // 0x0048, not reflected
 
     // Virtual functions that start here:
     //   NotifyGraphChanged

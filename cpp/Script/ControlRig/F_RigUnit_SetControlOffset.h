@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_SetControlOffset : public FRigUnitMutable
 {
+public:
     UPROPERTY() FName Control;  // 0x0068, size 0x8
     UPROPERTY() FTransform Offset;  // 0x0070, size 0x30
     UPROPERTY() EBoneGetterSetterMode Space;  // 0x00A0, size 0x1

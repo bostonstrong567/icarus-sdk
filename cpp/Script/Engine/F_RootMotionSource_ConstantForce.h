@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRootMotionSource_ConstantForce : public FRootMotionSource
 {
+public:
     UPROPERTY() FVector Force;  // 0x0098, size 0xC
     UPROPERTY() UCurveFloat* StrengthOverTime;  // 0x00A8, size 0x8
 };

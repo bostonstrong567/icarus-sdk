@@ -4,5 +4,6 @@
 USTRUCT()
 struct FAssetBundleData
 {
+public:
     UPROPERTY() TArray<FAssetBundleEntry> Bundles;  // 0x0000, size 0x10
 };

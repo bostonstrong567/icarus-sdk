@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_HAV_LC_SucculentTree_Var3_C : public ABP_DestructableHarvest_C
 {
-public:
 };

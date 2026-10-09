@@ -4,6 +4,7 @@
 USTRUCT()
 struct FProcMeshSection
 {
+public:
     UPROPERTY() TArray<FProcMeshVertex> ProcVertexBuffer;  // 0x0000, size 0x10
     UPROPERTY() TArray<uint32> ProcIndexBuffer;  // 0x0010, size 0x10
     UPROPERTY() FBox SectionLocalBox;  // 0x0020, size 0x1C

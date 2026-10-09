@@ -5,5 +5,4 @@
 UCLASS()
 class UWeatherBiomeGroupsTable : public UIcarusDataTable
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSoundSubmixSendInfo
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ESendLevelControlMethod SendLevelControlMethod;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ESubmixSendStage SendStage;  // 0x0001, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) USoundSubmixBase* SoundSubmix;  // 0x0008, size 0x8

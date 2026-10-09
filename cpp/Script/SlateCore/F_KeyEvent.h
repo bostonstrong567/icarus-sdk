@@ -4,9 +4,8 @@
 USTRUCT()
 struct FKeyEvent : public FInputEvent
 {
-
-    // Not reflected:
-    FKey Key;  // 0x0018
-    uint32 CharacterCode;  // 0x0030
-    uint32 KeyCode;  // 0x0034
+private:
+    FKey Key;  // 0x0018, not reflected
+    uint32 CharacterCode;  // 0x0030, not reflected
+    uint32 KeyCode;  // 0x0034, not reflected
 };

@@ -4,7 +4,6 @@
 USTRUCT()
 struct FControlRigExecuteContext : public FRigVMExecuteContext
 {
-
-    // Not reflected:
-    FRigHierarchyContainer * Hierarchy;  // 0x0058
+public:
+    FRigHierarchyContainer * Hierarchy;  // 0x0058, not reflected
 };

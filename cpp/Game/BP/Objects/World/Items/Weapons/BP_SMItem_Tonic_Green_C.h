@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_SMItem_Tonic_Green_C : public AStaticItem
 {
-public:
 };

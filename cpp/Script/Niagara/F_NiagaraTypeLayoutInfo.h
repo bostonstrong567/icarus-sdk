@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNiagaraTypeLayoutInfo
 {
+public:
     UPROPERTY() TArray<uint32> FloatComponentByteOffsets;  // 0x0000, size 0x10
     UPROPERTY() TArray<uint32> FloatComponentRegisterOffsets;  // 0x0010, size 0x10
     UPROPERTY() TArray<uint32> Int32ComponentByteOffsets;  // 0x0020, size 0x10

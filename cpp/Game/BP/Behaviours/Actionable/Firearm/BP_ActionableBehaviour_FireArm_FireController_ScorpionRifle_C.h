@@ -5,5 +5,4 @@
 UCLASS(Transient, Config=Engine)
 class UBP_ActionableBehaviour_FireArm_FireController_ScorpionRifle_C : public UBP_ActionableBehaviour_FireArm_FireController_SemiAuto_C
 {
-public:
 };

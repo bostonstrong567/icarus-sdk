@@ -6,6 +6,5 @@ UCLASS(EditInlineNew, Config=Engine)
 class UCS_GhostCroc_Travel_C : public UMatineeCameraShake
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void BlueprintUpdateCameraShake(float DeltaTime, float Alpha, const FMinimalViewInfo& POV, FMinimalViewInfo& ModifiedPOV);  // parameters 0xBF0
 };

@@ -4,10 +4,9 @@
 USTRUCT()
 struct FAtmospherePrecomputeInstanceData : public FSceneComponentInstanceData
 {
-
-    // Not reflected:
-    FAtmospherePrecomputeParameters PrecomputeParameter;  // 0x00B8
-    FUntypedBulkData2<unsigned char> TransmittanceData;  // 0x00E8
-    FUntypedBulkData2<unsigned char> IrradianceData;  // 0x0110
-    FUntypedBulkData2<unsigned char> InscatterData;  // 0x0138
+public:
+    FAtmospherePrecomputeParameters PrecomputeParameter;  // 0x00B8, not reflected
+    FUntypedBulkData2<unsigned char> TransmittanceData;  // 0x00E8, not reflected
+    FUntypedBulkData2<unsigned char> IrradianceData;  // 0x0110, not reflected
+    FUntypedBulkData2<unsigned char> InscatterData;  // 0x0138, not reflected
 };

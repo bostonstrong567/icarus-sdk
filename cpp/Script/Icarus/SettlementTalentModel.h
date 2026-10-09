@@ -5,5 +5,4 @@
 UCLASS()
 class USettlementTalentModel : public UTalentModelInterface
 {
-public:
 };

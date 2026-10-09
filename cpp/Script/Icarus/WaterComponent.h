@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UWaterComponent : public UResourceNetworkComponent
 {
-public:
 };

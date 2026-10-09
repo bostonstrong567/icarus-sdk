@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class UDatasmithCustomActionBase : public UObject
 {
-public:
 };

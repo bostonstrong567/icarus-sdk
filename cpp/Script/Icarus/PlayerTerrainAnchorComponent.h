@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UPlayerTerrainAnchorComponent : public UTerrainAnchorComponent
 {
-public:
 };

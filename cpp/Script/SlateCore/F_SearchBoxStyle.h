@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSearchBoxStyle : public FSlateWidgetStyle
 {
+public:
     UPROPERTY(EditAnywhere) FEditableTextBoxStyle TextBoxStyle;  // 0x0008, size 0x7F8
     UPROPERTY(EditAnywhere) FSlateFontInfo ActiveFontInfo;  // 0x0800, size 0x58
     UPROPERTY(EditAnywhere) FSlateBrush UpArrowImage;  // 0x0858, size 0x88

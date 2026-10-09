@@ -4,7 +4,6 @@
 USTRUCT()
 struct FRigVMUnaryOp : public FRigVMBaseOp
 {
-
-    // Not reflected:
-    FRigVMOperand Arg;  // 0x0002
+public:
+    FRigVMOperand Arg;  // 0x0002, not reflected
 };

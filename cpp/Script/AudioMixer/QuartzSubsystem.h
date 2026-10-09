@@ -5,14 +5,12 @@
 UCLASS()
 class UQuartzSubsystem : public UTickableWorldSubsystem
 {
+private:
+    Audio::FQuartzClockManager SubsystemClockManager;  // 0x0070, not reflected
+    TArray<UQuartzClockHandle *,TSizedDefaultAllocator<32> > QuartzTickSubscribers;  // 0x00E0, not reflected
+    int32 UpdateIndex;  // 0x00F0, not reflected
+    TMap<FName,enum EQuarztClockManagerType,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,enum EQuarztClockManagerType,0> > ClockManagerTypeMap;  // 0x00F8, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    Audio::FQuartzClockManager SubsystemClockManager;  // 0x0070, private
-    TArray<UQuartzClockHandle *,TSizedDefaultAllocator<32> > QuartzTickSubscribers;  // 0x00E0, private
-    int32 UpdateIndex;  // 0x00F0, private
-    TMap<FName,enum EQuarztClockManagerType,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,enum EQuarztClockManagerType,0> > ClockManagerTypeMap;  // 0x00F8, private
-
     UFUNCTION(BlueprintCallable) UQuartzClockHandle* CreateNewClock(UObject* WorldContextObject, FName ClockName, FQuartzClockSettings InSettings, bool bOverrideSettingsIfClockExists, bool bUseAudioEngineClockManager);  // parameters 0x40
     UFUNCTION(BlueprintCallable) void DeleteClockByHandle(UObject* WorldContextObject, UQuartzClockHandle*& InClockHandle);  // parameters 0x10
     UFUNCTION(BlueprintCallable) void DeleteClockByName(UObject* WorldContextObject, FName ClockName);  // parameters 0x10

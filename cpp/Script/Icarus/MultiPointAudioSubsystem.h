@@ -5,8 +5,6 @@
 UCLASS()
 class UMultiPointAudioSubsystem : public UTickableWorldSubsystem
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TQueue<TWeakObjectPtr<UMultiPointAudioEmitter,FWeakObjectPtr>,1> PendingEmitters;  // 0x0040, private
+private:
+    TQueue<TWeakObjectPtr<UMultiPointAudioEmitter,FWeakObjectPtr>,1> PendingEmitters;  // 0x0040, not reflected
 };

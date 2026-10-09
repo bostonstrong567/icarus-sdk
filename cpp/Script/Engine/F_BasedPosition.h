@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBasedPosition
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) AActor* Base;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector Position;  // 0x0008, size 0xC
     UPROPERTY() FVector CachedBaseLocation;  // 0x0014, size 0xC

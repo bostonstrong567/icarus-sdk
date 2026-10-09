@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBakedIntegerCustomAttribute
 {
+public:
     UPROPERTY(EditAnywhere) FName AttributeName;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) FIntegralCurve IntCurve;  // 0x0008, size 0x80
 };

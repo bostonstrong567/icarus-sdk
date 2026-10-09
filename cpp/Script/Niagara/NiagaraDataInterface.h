@@ -5,12 +5,10 @@
 UCLASS(Abstract, EditInlineNew)
 class UNiagaraDataInterface : public UNiagaraDataInterfaceBase
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TUniquePtr<FNiagaraDataInterfaceProxy,TDefaultDelete<FNiagaraDataInterfaceProxy> > Proxy;  // 0x0028, protected
-    uint32 : 1 bRenderDataDirty;  // 0x0030, protected
-    uint32 : 1 bUsedByGPUEmitter;  // 0x0030, protected
+protected:
+    TUniquePtr<FNiagaraDataInterfaceProxy,TDefaultDelete<FNiagaraDataInterfaceProxy> > Proxy;  // 0x0028, not reflected
+    uint32 : 1 bRenderDataDirty;  // 0x0030, not reflected
+    uint32 : 1 bUsedByGPUEmitter;  // 0x0030, not reflected
 
     // Virtual functions that start here:
     //   CalculateTickGroup, CanExecuteOnTarget, CanExposeVariables, CanRenderVariablesToCanvas

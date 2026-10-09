@@ -5,6 +5,7 @@
 UCLASS()
 class UBTDecorator_IsBBEntryOfClass : public UBTDecorator_BlackboardBase
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere) TSubclassOf<UObject> TestClass;  // 0x0090, size 0x8
 };

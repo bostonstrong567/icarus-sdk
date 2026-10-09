@@ -4,6 +4,7 @@
 USTRUCT()
 struct FOnlineProxyStoreOffer
 {
+public:
     UPROPERTY(BlueprintReadOnly) FString OfferId;  // 0x0000, size 0x10
     UPROPERTY(BlueprintReadOnly) FText Title;  // 0x0010, size 0x18
     UPROPERTY(BlueprintReadOnly) FText Description;  // 0x0028, size 0x18

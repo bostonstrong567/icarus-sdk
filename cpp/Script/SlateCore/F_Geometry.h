@@ -4,12 +4,12 @@
 USTRUCT()
 struct FGeometry
 {
-
-    // Not reflected:
-    const FVector2D Size;  // 0x0000
-    const float Scale;  // 0x0008
-    const FVector2D AbsolutePosition;  // 0x000C
-    const FVector2D Position;  // 0x0014
-    FTransform2D AccumulatedRenderTransform;  // 0x001C
-    const uint8 : 1 bHasRenderTransform;  // 0x0034
+public:
+    const FVector2D Size;  // 0x0000, not reflected
+    const float Scale;  // 0x0008, not reflected
+    const FVector2D AbsolutePosition;  // 0x000C, not reflected
+    const FVector2D Position;  // 0x0014, not reflected
+private:
+    FTransform2D AccumulatedRenderTransform;  // 0x001C, not reflected
+    const uint8 : 1 bHasRenderTransform;  // 0x0034, not reflected
 };

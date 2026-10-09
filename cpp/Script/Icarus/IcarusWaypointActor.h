@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class AIcarusWaypointActor : public AActor
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintImplementableEvent) AIcarusPlayerState* GetOwningPlayerState() const;  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void InitForPlayer(AIcarusPlayerState* OwningPlayerState);  // parameters 0x8
 };

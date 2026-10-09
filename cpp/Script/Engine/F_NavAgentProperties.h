@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNavAgentProperties : public FMovementProperties
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float AgentRadius;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float AgentHeight;  // 0x0008, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float AgentStepHeight;  // 0x000C, size 0x4

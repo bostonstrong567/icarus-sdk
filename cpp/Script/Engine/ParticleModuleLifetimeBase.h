@@ -5,7 +5,6 @@
 UCLASS(Abstract, EditInlineNew)
 class UParticleModuleLifetimeBase : public UParticleModule
 {
-public:
 
     // Virtual functions that start here:
     //   GetLifetimeValue, GetMaxLifetime

@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABP_Building_RoofCorner_L_C : public ABP_Building_RoofCorner_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void GetBlockingBypass(TSubclassOf<ABP_Building_Base_C> BuildingClass, TArray<FVectorPair>& BlockingPreRotate, FTransform GridSpaceTransform, TArray<FVectorPair>& BypassBlocking);  // parameters 0x60
 };

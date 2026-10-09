@@ -4,8 +4,7 @@
 USTRUCT()
 struct FMovieSceneEvaluationHookComponent
 {
+public:
     UPROPERTY() TScriptInterface<IMovieSceneEvaluationHook> Interface;  // 0x0000, size 0x10
-
-    // Not reflected:
-    FGuid ObjectBindingID;  // 0x0010
+    FGuid ObjectBindingID;  // 0x0010, not reflected
 };

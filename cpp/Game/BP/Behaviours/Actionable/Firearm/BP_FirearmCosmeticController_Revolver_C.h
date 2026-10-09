@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UBP_FirearmCosmeticController_Revolver_C : public UBP_FirearmCosmeticController_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) void GetMontageSection(UAnimMontage* InMontage, FName& Section) const;  // parameters 0x10
 };

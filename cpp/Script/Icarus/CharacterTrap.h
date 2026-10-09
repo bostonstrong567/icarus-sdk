@@ -6,7 +6,6 @@ UCLASS(Abstract)
 class UCharacterTrap : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) FVector GetBaitLocation() const;  // parameters 0xC
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) ACharacter* GetCurrentlyTrappedCharacter() const;  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) TArray<ACharacter*> GetCurrentlyTrappedCharacters() const;  // parameters 0x10

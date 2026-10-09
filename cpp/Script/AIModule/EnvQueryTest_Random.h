@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UEnvQueryTest_Random : public UEnvQueryTest
 {
-public:
 };

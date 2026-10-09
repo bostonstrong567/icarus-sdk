@@ -6,7 +6,5 @@ UCLASS()
 class UObjectRedirector : public UObject
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    UObject * DestinationObject;  // 0x0028
+    UObject * DestinationObject;  // 0x0028, not reflected
 };

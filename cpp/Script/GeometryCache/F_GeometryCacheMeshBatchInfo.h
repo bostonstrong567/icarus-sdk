@@ -4,9 +4,8 @@
 USTRUCT()
 struct FGeometryCacheMeshBatchInfo
 {
-
-    // Not reflected:
-    uint32 StartIndex;  // 0x0000
-    uint32 NumTriangles;  // 0x0004
-    uint32 MaterialIndex;  // 0x0008
+public:
+    uint32 StartIndex;  // 0x0000, not reflected
+    uint32 NumTriangles;  // 0x0004, not reflected
+    uint32 MaterialIndex;  // 0x0008, not reflected
 };

@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABP_Hammerhead_Slug_Corpse_C : public ABP_GOAP_Corpse_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void OnSkinnedStateUpdated();
 };

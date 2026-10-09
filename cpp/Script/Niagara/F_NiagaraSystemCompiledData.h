@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNiagaraSystemCompiledData
 {
+public:
     UPROPERTY() FNiagaraParameterStore InstanceParamStore;  // 0x0000, size 0x78
     UPROPERTY() FNiagaraDataSetCompiledData DataSetCompiledData;  // 0x0078, size 0x40
     UPROPERTY() FNiagaraDataSetCompiledData SpawnInstanceParamsDataSetCompiledData;  // 0x00B8, size 0x40

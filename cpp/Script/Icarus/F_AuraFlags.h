@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAuraFlags
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool EffectsSelf;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool EffectsPlayers;  // 0x0001, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool EffectsNPCs;  // 0x0002, size 0x1

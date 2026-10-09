@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UIInputCapture_C : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable) void AltFire(bool Press);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void Jump();
     UFUNCTION(BlueprintCallable) void LookX(float Scale);  // parameters 0x4

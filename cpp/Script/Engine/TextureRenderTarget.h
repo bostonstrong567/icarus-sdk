@@ -7,8 +7,6 @@ class UTextureRenderTarget : public UTexture
 {
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float TargetGamma;  // 0x0178, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint32 : 1 bNeedsTwoCopies;  // 0x017C
-    uint32 : 1 bCanCreateUAV;  // 0x017C
+    uint32 : 1 bCanCreateUAV;  // 0x017C, not reflected
+    uint32 : 1 bNeedsTwoCopies;  // 0x017C, not reflected
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FControlRigComponentMappedCurve
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName Source;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName Target;  // 0x0008, size 0x8
 };

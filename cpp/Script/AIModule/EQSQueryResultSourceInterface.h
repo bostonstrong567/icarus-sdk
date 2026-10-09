@@ -5,5 +5,4 @@
 UCLASS(Abstract, MinimalAPI)
 class UEQSQueryResultSourceInterface : public UInterface
 {
-public:
 };

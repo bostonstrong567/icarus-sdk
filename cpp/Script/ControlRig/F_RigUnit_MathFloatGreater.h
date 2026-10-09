@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_MathFloatGreater : public FRigUnit_MathFloatBase
 {
+public:
     UPROPERTY() float A;  // 0x0008, size 0x4
     UPROPERTY() float B;  // 0x000C, size 0x4
     UPROPERTY() bool Result;  // 0x0010, size 0x1

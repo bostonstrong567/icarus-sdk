@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLivingItemData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FLivingItemUpgradeSlotData> UpgradeSlots;  // 0x0018, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector ItemPreviewOffset;  // 0x0028, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FRotator ItemPreviewRotation;  // 0x0034, size 0xC

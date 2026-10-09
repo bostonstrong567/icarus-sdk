@@ -6,7 +6,6 @@ UCLASS()
 class UFLODDescriptionsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToFLODDescriptionsTable(FName Name, FFLODDescription Data, FFLODDescriptionsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x159
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakFLODDescriptionsEnum(FFLODDescriptionsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FFLODDescriptionsRowHandle CastToFLODDescriptionsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

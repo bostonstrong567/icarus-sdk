@@ -5,8 +5,6 @@
 UCLASS(MinimalAPI)
 class UMovieSceneRestorePreAnimatedStateSystem : public UMovieSceneEntityInstantiatorSystem
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<UE::MovieScene::FPreAnimatedStateExtension,0> PreAnimatedStateRef;  // 0x0040, private
+private:
+    TSharedPtr<UE::MovieScene::FPreAnimatedStateExtension,0> PreAnimatedStateRef;  // 0x0040, not reflected
 };

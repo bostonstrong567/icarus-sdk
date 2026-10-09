@@ -5,5 +5,4 @@
 UCLASS()
 class UNavFilter_AIControllerDefault : public UNavigationQueryFilter
 {
-public:
 };

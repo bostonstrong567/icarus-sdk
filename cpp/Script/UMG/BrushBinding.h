@@ -5,10 +5,8 @@
 UCLASS()
 class UBrushBinding : public UPropertyBinding
 {
+private:
+    TOptional<enum UBrushBinding::EConversion> bConversion;  // 0x0060, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TOptional<enum UBrushBinding::EConversion> bConversion;  // 0x0060, private
-
     UFUNCTION() FSlateBrush GetValue() const;  // parameters 0x88
 };

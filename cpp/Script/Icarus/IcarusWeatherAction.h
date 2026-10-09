@@ -5,18 +5,20 @@
 UCLASS(Config=Engine)
 class UIcarusWeatherAction : public UActorComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintAssignable) FWeatherActionComplete WeatherActionComplete;  // 0x00B0, size 0x1
     UPROPERTY(Replicated, ReplicatedUsing, BlueprintReadOnly) FWeatherEventsRowHandle ParentWeatherEvent;  // 0x00B4, size 0x18
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) FWeatherActionsRowHandle WeatherActionData;  // 0x00CC, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FIcarusWeatherActionData CachedActionData;  // 0x00E8, size 0x6B0
     UPROPERTY(BlueprintAssignable) FActionRowUpdatedSignature ActionRowUpdated;  // 0x0798, size 0x1
+protected:
     UPROPERTY(Replicated, BlueprintReadOnly) float TotalLifeTime;  // 0x079C, size 0x4
     UPROPERTY(BlueprintReadOnly) float CurrentLifeTime;  // 0x07A0, size 0x4
     UPROPERTY(Replicated) uint16 Replicated_CurrentLifeTime;  // 0x07A4, size 0x2
     UPROPERTY(Replicated, BlueprintReadOnly) FBiomesRowHandle BiomeAssigned;  // 0x07A8, size 0x18
     UPROPERTY() bool bIsRunning;  // 0x07C0, size 0x1
-
+public:
     UFUNCTION() void ActionTick_External(float Delta, AWeatherController* WeatherController);  // parameters 0x10
     UFUNCTION() FBiomesRowHandle GetBiomeAssigned();  // parameters 0x18
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetCurrentLifeTime() const;  // parameters 0x4

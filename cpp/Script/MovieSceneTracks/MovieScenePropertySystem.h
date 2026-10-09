@@ -5,10 +5,9 @@
 UCLASS(Abstract)
 class UMovieScenePropertySystem : public UMovieSceneEntitySystem, public IMovieScenePreAnimatedStateSystemInterface
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY() UMovieScenePropertyInstantiatorSystem* InstantiatorSystem;  // 0x0048, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    UE::MovieScene::FCompositePropertyTypeID CompositePropertyID;  // 0x0050, protected
-    UE::MovieScene::FPreAnimatedStorageID PreAnimatedStorageID;  // 0x0054, protected
+    UE::MovieScene::FCompositePropertyTypeID CompositePropertyID;  // 0x0050, not reflected
+    UE::MovieScene::FPreAnimatedStorageID PreAnimatedStorageID;  // 0x0054, not reflected
 };

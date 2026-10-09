@@ -6,7 +6,6 @@ UCLASS()
 class UVoxelMaterialMapLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToVoxelMaterialMapTable(FName Name, FVoxelMaterialMap Data, FVoxelMaterialMapRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xB1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakVoxelMaterialMapEnum(FVoxelMaterialMapEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FVoxelMaterialMapRowHandle CastToVoxelMaterialMapRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

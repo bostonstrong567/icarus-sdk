@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_STYX_A_Extermination_Boss_Carapace_Count_C : public ABPQ_Collect_Item_C
 {
-public:
 };

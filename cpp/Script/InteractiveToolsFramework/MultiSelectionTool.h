@@ -5,10 +5,8 @@
 UCLASS(Transient)
 class UMultiSelectionTool : public UInteractiveTool
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<TUniquePtr<FPrimitiveComponentTarget,TDefaultDelete<FPrimitiveComponentTarget> >,TSizedDefaultAllocator<32> > ComponentTargets;  // 0x0080, protected
+protected:
+    TArray<TUniquePtr<FPrimitiveComponentTarget,TDefaultDelete<FPrimitiveComponentTarget> >,TSizedDefaultAllocator<32> > ComponentTargets;  // 0x0080, not reflected
 
     // Virtual functions that start here:
     //   AreAllTargetsValid

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FDragonData_FootData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName Feet_Bone_Name;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName Knee_Bone_Name;  // 0x0008, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName Thigh_Bone_Name;  // 0x0010, size 0x8

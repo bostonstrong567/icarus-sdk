@@ -5,13 +5,13 @@
 UCLASS(EditInlineNew)
 class USurvivalProgressBar : public UUserWidget
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(BlueprintReadOnly) float CurrentPct;  // 0x0260, size 0x4
     UPROPERTY(BlueprintReadOnly) ESurvivalStatType StatType;  // 0x0264, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    FTimerHandle RetryBindTimer;  // 0x0268, private
-
+private:
+    FTimerHandle RetryBindTimer;  // 0x0268, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetCurrentPct() const;  // parameters 0x4
     UFUNCTION(BlueprintImplementableEvent) void InitStatIcon();
     UFUNCTION() void OnStatUpdated(int32 NewValue);  // parameters 0x4

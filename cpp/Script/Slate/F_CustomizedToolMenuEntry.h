@@ -4,5 +4,6 @@
 USTRUCT()
 struct FCustomizedToolMenuEntry
 {
+public:
     UPROPERTY() ECustomizedToolMenuVisibility Visibility;  // 0x0000, size 0x4
 };

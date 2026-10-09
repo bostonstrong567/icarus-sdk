@@ -4,6 +4,8 @@
 USTRUCT()
 struct FRigVMParameter
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() ERigVMParameterType Type;  // 0x0000, size 0x1
     UPROPERTY() FName Name;  // 0x0004, size 0x8
     UPROPERTY() int32 RegisterIndex;  // 0x000C, size 0x4

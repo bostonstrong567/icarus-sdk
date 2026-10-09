@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLandmassTerrainCarvingSettings
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EBrushBlendType BlendMode;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bInvertShape;  // 0x0001, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FLandmassFalloffSettings FalloffSettings;  // 0x0004, size 0x14

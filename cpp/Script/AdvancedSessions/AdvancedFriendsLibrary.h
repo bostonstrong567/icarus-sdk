@@ -6,7 +6,6 @@ UCLASS()
 class UAdvancedFriendsLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void GetFriend(APlayerController* PlayerController, FBPUniqueNetId FriendUniqueNetId, FBPFriendInfo& Friend);  // parameters 0x90
     UFUNCTION(BlueprintCallable) static void GetStoredFriendsList(APlayerController* PlayerController, TArray<FBPFriendInfo>& FriendsList);  // parameters 0x18
     UFUNCTION(BlueprintCallable) static void GetStoredRecentPlayersList(FBPUniqueNetId UniqueNetId, TArray<FBPOnlineRecentPlayer>& PlayersList);  // parameters 0x30

@@ -5,11 +5,9 @@
 UCLASS(Abstract, EditInlineNew)
 class UMediaSource : public UObject
 {
+private:
+    TMap<FName,FVariant,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,FVariant,0> > MediaOptionsMap;  // 0x0030, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<FName,FVariant,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,FVariant,0> > MediaOptionsMap;  // 0x0030, private
-
     UFUNCTION(BlueprintCallable, BlueprintPure) FString GetUrl() const;  // parameters 0x10
     UFUNCTION(BlueprintCallable) void SetMediaOptionBool(const FName& Key, bool Value);  // parameters 0x9
     UFUNCTION(BlueprintCallable) void SetMediaOptionFloat(const FName& Key, float Value);  // parameters 0xC

@@ -5,7 +5,6 @@
 UCLASS(Abstract, MinimalAPI)
 class UMaterialExpressionCustomOutput : public UMaterialExpression
 {
-public:
 
     // Virtual functions that start here:
     //   GetDisplayName, GetFunctionName, GetNumOutputs

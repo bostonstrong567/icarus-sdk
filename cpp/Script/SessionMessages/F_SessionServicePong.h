@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSessionServicePong
 {
+public:
     UPROPERTY(EditAnywhere) bool Authorized;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere) FString BuildDate;  // 0x0008, size 0x10
     UPROPERTY(EditAnywhere) FString DeviceName;  // 0x0018, size 0x10

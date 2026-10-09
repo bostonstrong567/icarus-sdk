@@ -6,7 +6,6 @@ UCLASS()
 class UKeybindingsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToKeybindingsTable(FName Name, FKeybindData Data, FKeybindingsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x129
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakKeybindingsEnum(FKeybindingsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FKeybindingsRowHandle CastToKeybindingsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

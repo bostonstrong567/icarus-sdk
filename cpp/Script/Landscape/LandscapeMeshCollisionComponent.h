@@ -7,7 +7,5 @@ class ULandscapeMeshCollisionComponent : public ULandscapeHeightfieldCollisionCo
 {
 public:
     UPROPERTY() FGuid MeshGuid;  // 0x0530, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TRefCountPtr<ULandscapeMeshCollisionComponent::FTriMeshGeometryRef> MeshRef;  // 0x0540
+    TRefCountPtr<ULandscapeMeshCollisionComponent::FTriMeshGeometryRef> MeshRef;  // 0x0540, not reflected
 };

@@ -6,7 +6,6 @@ UCLASS()
 class UWorkshopItemsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToWorkshopItemsTable(FName Name, FWorkshopItem Data, FWorkshopItemsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x89
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakWorkshopItemsEnum(FWorkshopItemsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FWorkshopItemsRowHandle CastToWorkshopItemsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

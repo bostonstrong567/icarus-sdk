@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_STYX_B_Research_DummyPod_C : public ABP_Transport_Pod_Base_C
 {
-public:
 };

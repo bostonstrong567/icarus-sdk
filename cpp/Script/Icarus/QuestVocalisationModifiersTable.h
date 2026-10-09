@@ -5,5 +5,4 @@
 UCLASS()
 class UQuestVocalisationModifiersTable : public UIcarusDataTable
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FClothCollisionPrim_Convex
 {
+public:
     UPROPERTY() TArray<FClothCollisionPrim_ConvexFace> Faces;  // 0x0000, size 0x10
     UPROPERTY() TArray<FVector> SurfacePoints;  // 0x0010, size 0x10
     UPROPERTY() int32 BoneIndex;  // 0x0020, size 0x4

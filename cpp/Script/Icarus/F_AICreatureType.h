@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAICreatureType : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText CreatureName;  // 0x0018, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FGameplayTag Tag;  // 0x0030, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVirtualStatsEnum SpawnStat;  // 0x0038, size 0x10

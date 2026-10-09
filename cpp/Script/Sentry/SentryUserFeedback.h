@@ -5,11 +5,9 @@
 UCLASS()
 class USentryUserFeedback : public UObject
 {
+private:
+    TSharedPtr<ISentryUserFeedback,0> UserFeedbackNativeImpl;  // 0x0028, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<ISentryUserFeedback,0> UserFeedbackNativeImpl;  // 0x0028, private
-
     UFUNCTION(BlueprintCallable, BlueprintPure) FString GetComment() const;  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) FString GetEmail() const;  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) FString GetName() const;  // parameters 0x10

@@ -8,9 +8,8 @@ class UResetCharacterProspectStateCallbackProxyGen : public UOnlineBlueprintCall
 public:
     UPROPERTY(BlueprintAssignable) FOnResetCharacterProspectStateEventSignature OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FOnResetCharacterProspectStateEventSignature OnFail;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FReqResetCharacterProspectState ReqResetCharacterProspectState;  // 0x0050, private
-
+private:
+    FReqResetCharacterProspectState ReqResetCharacterProspectState;  // 0x0050, not reflected
+public:
     UFUNCTION(BlueprintCallable) static UResetCharacterProspectStateCallbackProxyGen* ResetCharacterProspectState(const FReqResetCharacterProspectState& Request);  // parameters 0x20
 };

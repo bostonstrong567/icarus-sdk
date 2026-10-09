@@ -5,16 +5,34 @@
 UCLASS(Config=Engine)
 class USceneComponent : public UActorComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
+    const FLevelCollection * CachedLevelCollection;  // 0x00B0, not reflected
+    FBoxSphereBounds Bounds;  // 0x0100, not reflected
+    UPROPERTY() FVector ComponentVelocity;  // 0x0140, size 0xC
+    UPROPERTY(EditAnywhere, Interp, BlueprintReadOnly) uint8 bHiddenInGame : 1;  // 0x014D, mask 0x04
+    UPROPERTY() uint8 bBoundsChangeTriggersStreamingDataRebuild : 1;  // 0x014D, mask 0x08
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bUseAttachParentBound : 1;  // 0x014D, mask 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<EComponentMobility> Mobility;  // 0x014F, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<EDetailMode> DetailMode;  // 0x0150, size 0x1
+    UPROPERTY(BlueprintAssignable) FPhysicsVolumeChanged PhysicsVolumeChangedDelegate;  // 0x0151, size 0x1
+    FTransformUpdated TransformUpdated;  // 0x0158, not reflected
+    FIsRootComponentChanged IsRootComponentChanged;  // 0x01F0, not reflected
+protected:
+    uint8 : 1 bDisableDetachmentUpdateOverlaps;  // 0x014D, not reflected
+    uint8 : 1 bWantsOnUpdateTransform;  // 0x014D, not reflected
+private:
     UPROPERTY(Transient) TWeakObjectPtr<APhysicsVolume> PhysicsVolume;  // 0x00B8, size 0x8
     UPROPERTY(Replicated, ReplicatedUsing, Instanced) USceneComponent* AttachParent;  // 0x00C0, size 0x8
     UPROPERTY(Replicated, ReplicatedUsing) FName AttachSocketName;  // 0x00C8, size 0x8
     UPROPERTY(Replicated, ReplicatedUsing, Transient) TArray<USceneComponent*> AttachChildren;  // 0x00D0, size 0x10
     UPROPERTY(Transient) TArray<USceneComponent*> ClientAttachedChildren;  // 0x00E0, size 0x10
+    FName NetOldAttachSocketName;  // 0x00F0, not reflected
+    USceneComponent * NetOldAttachParent;  // 0x00F8, not reflected
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) FVector RelativeLocation;  // 0x011C, size 0xC
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) FRotator RelativeRotation;  // 0x0128, size 0xC
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, Interp, BlueprintReadOnly) FVector RelativeScale3D;  // 0x0134, size 0xC
-    UPROPERTY() FVector ComponentVelocity;  // 0x0140, size 0xC
+    uint8 : 1 bSkipUpdateOverlaps;  // 0x014C, not reflected
     UPROPERTY(Transient) uint8 bComponentToWorldUpdated : 1;  // 0x014C, mask 0x01
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) uint8 bAbsoluteLocation : 1;  // 0x014C, mask 0x04
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) uint8 bAbsoluteRotation : 1;  // 0x014C, mask 0x08
@@ -22,32 +40,15 @@ public:
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) uint8 bVisible : 1;  // 0x014C, mask 0x20
     UPROPERTY(Replicated, Transient) uint8 bShouldBeAttached : 1;  // 0x014C, mask 0x40
     UPROPERTY(Replicated, Transient) uint8 bShouldSnapLocationWhenAttached : 1;  // 0x014C, mask 0x80
+    uint8 : 1 bNetUpdateTransform;  // 0x014D, not reflected
     UPROPERTY(Replicated, Transient) uint8 bShouldSnapRotationWhenAttached : 1;  // 0x014D, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bShouldUpdatePhysicsVolume : 1;  // 0x014D, mask 0x02
-    UPROPERTY(EditAnywhere, Interp, BlueprintReadOnly) uint8 bHiddenInGame : 1;  // 0x014D, mask 0x04
-    UPROPERTY() uint8 bBoundsChangeTriggersStreamingDataRebuild : 1;  // 0x014D, mask 0x08
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bUseAttachParentBound : 1;  // 0x014D, mask 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<EComponentMobility> Mobility;  // 0x014F, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<EDetailMode> DetailMode;  // 0x0150, size 0x1
-    UPROPERTY(BlueprintAssignable) FPhysicsVolumeChanged PhysicsVolumeChangedDelegate;  // 0x0151, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    const FLevelCollection * CachedLevelCollection;  // 0x00B0
-    FName NetOldAttachSocketName;  // 0x00F0, private
-    USceneComponent * NetOldAttachParent;  // 0x00F8, private
-    FBoxSphereBounds Bounds;  // 0x0100
-    uint8 : 1 bSkipUpdateOverlaps;  // 0x014C, private
-    uint8 : 1 bDisableDetachmentUpdateOverlaps;  // 0x014D, protected
-    uint8 : 1 bWantsOnUpdateTransform;  // 0x014D, protected
-    uint8 : 1 bNetUpdateTransform;  // 0x014D, private
-    uint8 : 1 bNetUpdateAttachment;  // 0x014E, private
-    FTransformUpdated TransformUpdated;  // 0x0158
-    TArray<FScopedMovementUpdate *,TSizedDefaultAllocator<32> > ScopedMovementStack;  // 0x0170, private
-    FRotationConversionCache WorldRotationCache;  // 0x0180, private
-    FRotationConversionCache RelativeRotationCache;  // 0x01A0, private
-    FTransform ComponentToWorld;  // 0x01C0, private
-    FIsRootComponentChanged IsRootComponentChanged;  // 0x01F0
-
+    uint8 : 1 bNetUpdateAttachment;  // 0x014E, not reflected
+    TArray<FScopedMovementUpdate *,TSizedDefaultAllocator<32> > ScopedMovementStack;  // 0x0170, not reflected
+    FRotationConversionCache WorldRotationCache;  // 0x0180, not reflected
+    FRotationConversionCache RelativeRotationCache;  // 0x01A0, not reflected
+    FTransform ComponentToWorld;  // 0x01C0, not reflected
+public:
     UFUNCTION(BlueprintCallable) void DetachFromParent(bool bMaintainWorldPosition, bool bCallModify);  // parameters 0x2
     UFUNCTION(BlueprintCallable, BlueprintPure) bool DoesSocketExist(FName InSocketName) const;  // parameters 0x9
     UFUNCTION(BlueprintCallable, BlueprintPure) TArray<FName> GetAllSocketNames() const;  // parameters 0x10

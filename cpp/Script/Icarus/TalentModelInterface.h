@@ -6,7 +6,6 @@ UCLASS(Abstract)
 class UTalentModelInterface : public UTalentModelInterface_Const
 {
 public:
-
     UFUNCTION(BlueprintCallable) void ResetTalents();
     UFUNCTION(BlueprintCallable) void SetController(const TScriptInterface<ITalentControllerInterface>& InController);  // parameters 0x10
     UFUNCTION(BlueprintCallable) void SetLevel(int32 InLevel);  // parameters 0x4

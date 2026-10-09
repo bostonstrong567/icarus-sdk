@@ -5,7 +5,6 @@
 UCLASS(Abstract)
 class UControlRigValidationPass : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   OnEvent, OnInitialize, OnSubjectChanged

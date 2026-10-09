@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABPQ_OLY_Omni_Research_2_Equipment_Laser_Craft_C : public ABPQ_Retrieve_Item_Pickup_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void GetRequiredEquipment(TArray<FItemTemplateRowHandle>& EquipmentItemArray, FItemTemplateRowHandle& Equipment_Item, int32& Count);  // parameters 0x2C
 };

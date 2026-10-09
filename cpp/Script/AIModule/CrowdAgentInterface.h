@@ -5,5 +5,4 @@
 UCLASS(Abstract, MinimalAPI)
 class UCrowdAgentInterface : public UInterface
 {
-public:
 };

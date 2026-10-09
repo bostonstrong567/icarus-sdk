@@ -5,11 +5,9 @@
 UCLASS()
 class UMovieSceneTrackInstanceInstantiator : public UMovieSceneEntityInstantiatorSystem
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSparseArray<FMovieSceneTrackInstanceEntry,FDefaultSparseArrayAllocator> TrackInstances;  // 0x0040, private
-    TMultiMap<UObject *,int,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<UObject *,int,1> > BoundObjectToInstances;  // 0x0078, private
-    TBitArray<FDefaultBitArrayAllocator> InvalidatedOutputs;  // 0x00C8, private
-    int32 ChildInitializerIndex;  // 0x00E8, private
+private:
+    TSparseArray<FMovieSceneTrackInstanceEntry,FDefaultSparseArrayAllocator> TrackInstances;  // 0x0040, not reflected
+    TMultiMap<UObject *,int,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<UObject *,int,1> > BoundObjectToInstances;  // 0x0078, not reflected
+    TBitArray<FDefaultBitArrayAllocator> InvalidatedOutputs;  // 0x00C8, not reflected
+    int32 ChildInitializerIndex;  // 0x00E8, not reflected
 };

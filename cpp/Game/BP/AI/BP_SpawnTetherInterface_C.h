@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UBP_SpawnTetherInterface_C : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable) void CanSupportNewTetheredAI(bool& CanSupport);  // parameters 0x1
 };

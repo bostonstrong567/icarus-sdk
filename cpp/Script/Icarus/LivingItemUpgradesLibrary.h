@@ -6,7 +6,6 @@ UCLASS()
 class ULivingItemUpgradesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToLivingItemUpgradesTable(FName Name, FLivingItemUpgradeData Data, FLivingItemUpgradesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x71
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakLivingItemUpgradesEnum(FLivingItemUpgradesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FLivingItemUpgradesRowHandle CastToLivingItemUpgradesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

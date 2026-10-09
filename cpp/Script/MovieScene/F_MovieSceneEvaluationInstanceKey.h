@@ -4,7 +4,6 @@
 USTRUCT()
 struct FMovieSceneEvaluationInstanceKey
 {
-
-    // Not reflected:
-    UE::MovieScene::FInstanceHandle InstanceHandle;  // 0x0000
+public:
+    UE::MovieScene::FInstanceHandle InstanceHandle;  // 0x0000, not reflected
 };

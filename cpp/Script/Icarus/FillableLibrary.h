@@ -6,7 +6,6 @@ UCLASS()
 class UFillableLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToFillableTable(FName Name, FFillableData Data, FFillableRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x79
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakFillableEnum(FFillableEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FFillableRowHandle CastToFillableRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -5,21 +5,22 @@
 UCLASS(Config=Engine)
 class UIcarusStateRecorderComponent : public UActorComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bBeginRecordingImmediately;  // 0x00B0, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bRetainOnDestroy;  // 0x00B1, size 0x1
     UPROPERTY(EditAnywhere, SaveGame, BlueprintReadOnly) EStateRecorderOwnerResolvePolicy OwnerResolvePolicy;  // 0x00B2, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bUsesFastActorPathNameMatching;  // 0x00B3, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bCreateMissingRecorderComponent;  // 0x00B4, size 0x1
+protected:
     UPROPERTY(EditAnywhere, SaveGame) FName ActorClassName;  // 0x00B8, size 0x8
     UPROPERTY(EditAnywhere, SaveGame) FString ActorPathName;  // 0x00C0, size 0x10
     UPROPERTY(EditAnywhere, SaveGame) bool bWasMovedToSubLevel;  // 0x00D0, size 0x1
     UPROPERTY(EditAnywhere) bool bIsRecordingGameState;  // 0x00D1, size 0x1
+    bool bIsRuntimeReload;  // 0x00D3, not reflected
+private:
     UPROPERTY(EditAnywhere) bool bHasRecordedValidState;  // 0x00D2, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bIsRuntimeReload;  // 0x00D3, protected
-
+public:
     UFUNCTION(BlueprintCallable) void BeginRecording();
     UFUNCTION(BlueprintCallable) void EndRecording();
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsRecording() const;  // parameters 0x1

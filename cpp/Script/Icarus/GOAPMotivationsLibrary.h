@@ -6,7 +6,6 @@ UCLASS()
 class UGOAPMotivationsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToGOAPMotivationsTable(FName Name, FGOAPMotivation Data, FGOAPMotivationsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x91
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakGOAPMotivationsEnum(FGOAPMotivationsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FGOAPMotivationsRowHandle CastToGOAPMotivationsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

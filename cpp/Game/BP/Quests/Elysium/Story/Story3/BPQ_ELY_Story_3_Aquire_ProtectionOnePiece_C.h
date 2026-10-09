@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_ELY_Story_3_Aquire_ProtectionOnePiece_C : public ABPQ_Collect_Item_C
 {
-public:
 };

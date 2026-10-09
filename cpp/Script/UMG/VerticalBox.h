@@ -5,10 +5,8 @@
 UCLASS()
 class UVerticalBox : public UPanelWidget
 {
+protected:
+    TSharedPtr<SVerticalBox,0> MyVerticalBox;  // 0x0120, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SVerticalBox,0> MyVerticalBox;  // 0x0120, protected
-
     UFUNCTION(BlueprintCallable) UVerticalBoxSlot* AddChildToVerticalBox(UWidget* Content);  // parameters 0x10
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FInteriorSettings
 {
+public:
     UPROPERTY() bool bIsWorldSettings;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float ExteriorVolume;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float ExteriorTime;  // 0x0008, size 0x4

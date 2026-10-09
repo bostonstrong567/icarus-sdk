@@ -5,5 +5,4 @@
 UCLASS()
 class UGOAPMotivationsTable : public UIcarusDataTable
 {
-public:
 };

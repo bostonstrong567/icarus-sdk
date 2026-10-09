@@ -4,6 +4,7 @@
 USTRUCT()
 struct FCanvasUVTri
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector2D V0_Pos;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector2D V0_UV;  // 0x0008, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FLinearColor V0_Color;  // 0x0010, size 0x10

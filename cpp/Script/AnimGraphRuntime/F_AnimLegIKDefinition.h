@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAnimLegIKDefinition
 {
+public:
     UPROPERTY(EditAnywhere) FBoneReference IKFootBone;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere) FBoneReference FKFootBone;  // 0x0010, size 0x10
     UPROPERTY(EditAnywhere) int32 NumBonesInLimb;  // 0x0020, size 0x4

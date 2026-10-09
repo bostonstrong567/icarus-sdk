@@ -4,6 +4,7 @@
 USTRUCT()
 struct FUVMapSettings
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector Size;  // 0x0000, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector2D UVTile;  // 0x000C, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector Position;  // 0x0014, size 0xC

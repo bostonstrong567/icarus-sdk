@@ -6,6 +6,5 @@ UCLASS()
 class UInt32Binding : public UPropertyBinding
 {
 public:
-
     UFUNCTION() int32 GetValue() const;  // parameters 0x4
 };

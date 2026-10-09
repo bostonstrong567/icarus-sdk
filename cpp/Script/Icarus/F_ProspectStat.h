@@ -4,5 +4,6 @@
 USTRUCT()
 struct FProspectStat : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<FWorldStatsEnum, int32> WorldStats;  // 0x0018, size 0x50
 };

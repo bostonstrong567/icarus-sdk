@@ -6,7 +6,6 @@ UCLASS()
 class UCreatureAudioThreatDataLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToCreatureAudioThreatDataTable(FName Name, FCreatureAudioThreatData Data, FCreatureAudioThreatDataRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x89
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakCreatureAudioThreatDataEnum(FCreatureAudioThreatDataEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FCreatureAudioThreatDataRowHandle CastToCreatureAudioThreatDataRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

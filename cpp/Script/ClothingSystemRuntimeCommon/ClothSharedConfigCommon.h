@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class UClothSharedConfigCommon : public UClothConfigCommon
 {
-public:
 };

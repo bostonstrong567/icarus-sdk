@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSpriteGeometryCollection
 {
+public:
     UPROPERTY(EditAnywhere) TArray<FSpriteGeometryShape> Shapes;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere) TEnumAsByte<ESpritePolygonMode> GeometryType;  // 0x0010, size 0x1
     UPROPERTY(EditAnywhere) int32 PixelsPerSubdivisionX;  // 0x0014, size 0x4

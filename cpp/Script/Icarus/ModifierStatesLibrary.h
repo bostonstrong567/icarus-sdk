@@ -6,7 +6,6 @@ UCLASS()
 class UModifierStatesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToModifierStatesTable(FName Name, FModifierStateData Data, FModifierStatesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x289
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakModifierStatesEnum(FModifierStatesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FModifierStatesRowHandle CastToModifierStatesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

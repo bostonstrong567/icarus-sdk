@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLeaderboardsScoreData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FProductUserId UserId;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Score;  // 0x0008, size 0x4
 };

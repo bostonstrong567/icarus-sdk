@@ -4,5 +4,6 @@
 USTRUCT()
 struct FLevelArray : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<TSoftObjectPtr<UWorld>> Levels;  // 0x0018, size 0x10
 };

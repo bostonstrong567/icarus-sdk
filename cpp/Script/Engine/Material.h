@@ -5,6 +5,7 @@
 UCLASS(MinimalAPI)
 class UMaterial : public UMaterialInterface
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere) UPhysicalMaterial* PhysMaterial;  // 0x0088, size 0x8
     UPROPERTY(EditAnywhere) UPhysicalMaterialMask* PhysMaterialMask;  // 0x0090, size 0x8
@@ -19,9 +20,7 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<EBlendMode> BlendMode;  // 0x0151, size 0x1
     UPROPERTY(EditAnywhere) TEnumAsByte<EDecalBlendMode> DecalBlendMode;  // 0x0152, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<EMaterialDecalResponse> MaterialDecalResponse;  // 0x0153, size 0x1
-    UPROPERTY(EditAnywhere) TEnumAsByte<EMaterialShadingModel> ShadingModel;  // 0x0154, size 0x1
     UPROPERTY(EditAnywhere) uint8 bCastDynamicShadowAsMasked : 1;  // 0x0155, mask 0x01
-    UPROPERTY() FMaterialShadingModelField ShadingModels;  // 0x0156, size 0x2
     UPROPERTY(EditAnywhere) float OpacityMaskClipValue;  // 0x0158, size 0x4
     UPROPERTY() FVectorMaterialInput WorldPositionOffset;  // 0x015C, size 0x14
     UPROPERTY() FScalarMaterialInput Refraction;  // 0x0170, size 0x14
@@ -117,13 +116,14 @@ public:
     UPROPERTY(EditAnywhere) float RefractionDepthBias;  // 0x0220, size 0x4
     UPROPERTY() FGuid StateId;  // 0x0224, size 0x10
     UPROPERTY(EditAnywhere) float MaxDisplacement;  // 0x0234, size 0x4
+    FDefaultMaterialInstance * DefaultMaterialInstance;  // 0x0238, not reflected
+private:
+    UPROPERTY(EditAnywhere) TEnumAsByte<EMaterialShadingModel> ShadingModel;  // 0x0154, size 0x1
+    UPROPERTY() FMaterialShadingModelField ShadingModels;  // 0x0156, size 0x2
+    TArray<FMaterialResource,TSizedDefaultAllocator<32> > LoadedMaterialResources;  // 0x0240, not reflected
+    TArray<FMaterialResource *,TSizedDefaultAllocator<32> > MaterialResources;  // 0x0250, not reflected
+    FThreadSafeBool ReleasedByRT;  // 0x0260, not reflected
     UPROPERTY() FMaterialCachedExpressionData CachedExpressionData;  // 0x0268, size 0x1D8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FDefaultMaterialInstance * DefaultMaterialInstance;  // 0x0238
-    TArray<FMaterialResource,TSizedDefaultAllocator<32> > LoadedMaterialResources;  // 0x0240, private
-    TArray<FMaterialResource *,TSizedDefaultAllocator<32> > MaterialResources;  // 0x0250, private
-    FThreadSafeBool ReleasedByRT;  // 0x0260, private
 
     // Virtual functions that start here:
     //   AllocateResource, FlushResourceShaderMaps, IsPostProcessMaterial, IsUIMaterial

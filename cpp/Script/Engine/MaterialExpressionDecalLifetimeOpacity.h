@@ -5,5 +5,4 @@
 UCLASS()
 class UMaterialExpressionDecalLifetimeOpacity : public UMaterialExpression
 {
-public:
 };

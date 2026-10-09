@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSourceEffectBitCrusherSettings
 {
+public:
     UPROPERTY() float CrushedSampleRate;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSoundModulationDestinationSettings SampleRateModulation;  // 0x0008, size 0x10
     UPROPERTY() float CrushedBits;  // 0x0018, size 0x4

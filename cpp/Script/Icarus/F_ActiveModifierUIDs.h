@@ -4,6 +4,7 @@
 USTRUCT()
 struct FActiveModifierUIDs
 {
+public:
     UPROPERTY() FModifierStatesRowHandle ModifierRow;  // 0x0000, size 0x18
     UPROPERTY() TArray<int32> UIDs;  // 0x0018, size 0x10
 };

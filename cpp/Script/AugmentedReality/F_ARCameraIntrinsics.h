@@ -4,6 +4,7 @@
 USTRUCT()
 struct FARCameraIntrinsics
 {
+public:
     UPROPERTY(BlueprintReadOnly) FIntPoint ImageResolution;  // 0x0000, size 0x8
     UPROPERTY(BlueprintReadOnly) FVector2D FocalLength;  // 0x0008, size 0x8
     UPROPERTY(BlueprintReadOnly) FVector2D PrincipalPoint;  // 0x0010, size 0x8

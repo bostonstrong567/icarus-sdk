@@ -5,7 +5,8 @@
 UCLASS(Abstract)
 class UBTDecorator_BlackboardBase : public UBTDecorator
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere) FBlackboardKeySelector BlackboardKey;  // 0x0068, size 0x28
 
     // Virtual functions that start here:

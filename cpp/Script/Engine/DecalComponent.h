@@ -5,8 +5,8 @@
 UCLASS(Config=Engine)
 class UDecalComponent : public USceneComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
-    UPROPERTY(EditAnywhere, BlueprintReadOnly) UMaterialInterface* DecalMaterial;  // 0x01F8, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 SortOrder;  // 0x0200, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float FadeScreenSize;  // 0x0204, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float FadeStartDelay;  // 0x0208, size 0x4
@@ -15,11 +15,11 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float FadeInStartDelay;  // 0x0214, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bDestroyOwnerAfterFade : 1;  // 0x0218, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FVector DecalSize;  // 0x021C, size 0xC
-
-    // Not reflected: the engine's scripting cannot see these.
-    FDeferredDecalProxy * SceneProxy;  // 0x0228
-    FTimerHandle TimerHandle_DestroyDecalComponent;  // 0x0230, protected
-
+    FDeferredDecalProxy * SceneProxy;  // 0x0228, not reflected
+protected:
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) UMaterialInterface* DecalMaterial;  // 0x01F8, size 0x8
+    FTimerHandle TimerHandle_DestroyDecalComponent;  // 0x0230, not reflected
+public:
     UFUNCTION(BlueprintCallable) UMaterialInstanceDynamic* CreateDynamicMaterialInstance();  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) UMaterialInterface* GetDecalMaterial() const;  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetFadeDuration() const;  // parameters 0x4

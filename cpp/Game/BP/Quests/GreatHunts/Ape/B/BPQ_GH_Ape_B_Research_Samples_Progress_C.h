@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_Ape_B_Research_Samples_Progress_C : public ABPQ_Collect_Item_C
 {
-public:
 };

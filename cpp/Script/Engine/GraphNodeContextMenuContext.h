@@ -9,8 +9,6 @@ public:
     UPROPERTY() UBlueprint* Blueprint;  // 0x0028, size 0x8
     UPROPERTY() UEdGraph* Graph;  // 0x0030, size 0x8
     UPROPERTY() UEdGraphNode* Node;  // 0x0038, size 0x8
+    const UEdGraphPin * Pin;  // 0x0040, not reflected
     UPROPERTY() bool bIsDebugging;  // 0x0048, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    const UEdGraphPin * Pin;  // 0x0040
 };

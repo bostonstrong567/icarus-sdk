@@ -6,7 +6,6 @@ UCLASS()
 class UItemTraitMasksLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToItemTraitMasksTable(FName Name, FItemTraitMask Data, FItemTraitMasksRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x61
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakItemTraitMasksEnum(FItemTraitMasksEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FItemTraitMasksRowHandle CastToItemTraitMasksRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

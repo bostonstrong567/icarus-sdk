@@ -4,5 +4,6 @@
 USTRUCT()
 struct FA2Pose
 {
+public:
     UPROPERTY() TArray<FTransform> Bones;  // 0x0000, size 0x10
 };

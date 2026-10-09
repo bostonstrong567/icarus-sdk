@@ -4,6 +4,7 @@
 USTRUCT()
 struct FProjectileFireParams
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float RangedWeaponDamageMultiplier;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bUnbreakable;  // 0x0004, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EProjectileBreakModifier ProjectileBreakModifier;  // 0x0005, size 0x1

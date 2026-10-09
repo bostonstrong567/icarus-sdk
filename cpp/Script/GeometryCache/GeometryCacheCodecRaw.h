@@ -5,6 +5,7 @@
 UCLASS()
 class UGeometryCacheCodecRaw : public UGeometryCacheCodecBase
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY(EditAnywhere) int32 DummyProperty;  // 0x0038, size 0x4
 };

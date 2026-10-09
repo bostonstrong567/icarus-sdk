@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class AIcarusGOAPCorpseBase : public AIcarusCorpse
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void SetupCorpseSettleTime(float NewMaxCorpseSettleTime);  // parameters 0x4
 };

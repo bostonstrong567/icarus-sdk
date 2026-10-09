@@ -4,6 +4,7 @@
 USTRUCT()
 struct FGreatHunt : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FTalentArchetypesRowHandle Hunt;  // 0x0018, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FProspectListRowHandle Prospect;  // 0x0030, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FTalentsRowHandle> ForbiddenTalent;  // 0x0048, size 0x10

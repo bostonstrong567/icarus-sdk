@@ -6,7 +6,6 @@ UCLASS()
 class UUsableLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToUsableTable(FName Name, FUsableData Data, FUsableRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x51
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakUsableEnum(FUsableEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FUsableRowHandle CastToUsableRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -5,5 +5,4 @@
 UCLASS()
 class UInterpFilter_Classes : public UInterpFilter
 {
-public:
 };

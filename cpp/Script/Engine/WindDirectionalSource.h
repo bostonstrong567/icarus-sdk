@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class AWindDirectionalSource : public AInfo
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UWindDirectionalSourceComponent* Component;  // 0x0220, size 0x8
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FPaperSpriteSocket
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FTransform LocalTransform;  // 0x0000, size 0x30
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FName SocketName;  // 0x0030, size 0x8
 };

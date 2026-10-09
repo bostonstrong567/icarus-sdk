@@ -5,5 +5,4 @@
 UCLASS(Abstract, MinimalAPI)
 class UNavLinkHostInterface : public UInterface
 {
-public:
 };

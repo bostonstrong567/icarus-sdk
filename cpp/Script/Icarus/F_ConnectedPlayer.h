@@ -4,6 +4,7 @@
 USTRUCT()
 struct FConnectedPlayer
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FPlayerCharacterID PlayerCharacterID;  // 0x0000, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadOnly) AIcarusPlayerController* PlayerController;  // 0x0018, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) AIcarusPlayerCharacter* PlayerCharacter;  // 0x0020, size 0x8

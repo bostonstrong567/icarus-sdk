@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_STYX_A_Construction_Top_GlassWall_C : public ABPQ_Deploy_Count_C
 {
-public:
 };

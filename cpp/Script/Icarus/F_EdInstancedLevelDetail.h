@@ -4,6 +4,7 @@
 USTRUCT()
 struct FEdInstancedLevelDetail
 {
+public:
     UPROPERTY(BlueprintReadOnly) FInstancedMapData Data;  // 0x0000, size 0x80
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString ShortenedName;  // 0x0080, size 0x10
     UPROPERTY(BlueprintReadOnly) bool bIsUpdate;  // 0x0090, size 0x1

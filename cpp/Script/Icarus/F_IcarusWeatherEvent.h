@@ -4,6 +4,7 @@
 USTRUCT()
 struct FIcarusWeatherEvent : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EIcarusWeatherDifficulty Difficulty;  // 0x0018, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Tier;  // 0x001C, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 DurationSeconds;  // 0x0020, size 0x4

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FExposureSettings
 {
+public:
     UPROPERTY() float FixedEV100;  // 0x0000, size 0x4
     UPROPERTY() bool bFixed;  // 0x0004, size 0x1
 };

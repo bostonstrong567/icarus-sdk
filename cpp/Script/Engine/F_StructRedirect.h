@@ -4,6 +4,7 @@
 USTRUCT()
 struct FStructRedirect
 {
+public:
     UPROPERTY() FName OldStructName;  // 0x0000, size 0x8
     UPROPERTY() FName NewStructName;  // 0x0008, size 0x8
 };

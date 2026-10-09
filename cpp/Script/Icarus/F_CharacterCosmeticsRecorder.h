@@ -4,6 +4,7 @@
 USTRUCT()
 struct FCharacterCosmeticsRecorder
 {
+public:
     UPROPERTY(SaveGame) FString Customization_Head;  // 0x0000, size 0x10
     UPROPERTY(SaveGame) FString Customization_Hair;  // 0x0010, size 0x10
     UPROPERTY(SaveGame) FString Customization_HairColor;  // 0x0020, size 0x10

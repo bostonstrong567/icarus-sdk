@@ -4,6 +4,7 @@
 USTRUCT()
 struct FTalent : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ETalentNodeType TalentType;  // 0x0018, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText DisplayName;  // 0x0020, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText Description;  // 0x0038, size 0x18
@@ -20,7 +21,6 @@ struct FTalent : public FIcarusTableRowBase
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 RequiredLevel;  // 0x0110, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bDefaultUnlocked;  // 0x0114, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ELineDrawMethod DrawMethodOverride;  // 0x0115, size 0x1
-
-    // Not reflected:
-    FTalentModelsRowHandle TalentModelCache;  // 0x0118
+private:
+    FTalentModelsRowHandle TalentModelCache;  // 0x0118, not reflected
 };

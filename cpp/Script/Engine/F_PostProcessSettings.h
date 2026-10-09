@@ -4,6 +4,7 @@
 USTRUCT()
 struct FPostProcessSettings
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bOverride_TemperatureType : 1;  // 0x0000, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bOverride_WhiteTemp : 1;  // 0x0000, mask 0x02
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bOverride_WhiteTint : 1;  // 0x0000, mask 0x04

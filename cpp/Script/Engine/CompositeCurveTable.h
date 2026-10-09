@@ -5,11 +5,10 @@
 UCLASS(MinimalAPI)
 class UCompositeCurveTable : public UCurveTable
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<UCurveTable*> ParentTables;  // 0x00A0, size 0x10
     UPROPERTY(Transient) TArray<UCurveTable*> OldParentTables;  // 0x00B0, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint8 : 1 bIsLoading;  // 0x00C0, protected
-    uint8 : 1 bUpdatingParentTables;  // 0x00C0, protected
+    uint8 : 1 bIsLoading;  // 0x00C0, not reflected
+    uint8 : 1 bUpdatingParentTables;  // 0x00C0, not reflected
 };

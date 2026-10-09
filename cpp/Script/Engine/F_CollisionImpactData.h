@@ -4,6 +4,7 @@
 USTRUCT()
 struct FCollisionImpactData
 {
+public:
     UPROPERTY() TArray<FRigidBodyContactInfo> ContactInfos;  // 0x0000, size 0x10
     UPROPERTY() FVector TotalNormalImpulse;  // 0x0010, size 0xC
     UPROPERTY() FVector TotalFrictionImpulse;  // 0x001C, size 0xC

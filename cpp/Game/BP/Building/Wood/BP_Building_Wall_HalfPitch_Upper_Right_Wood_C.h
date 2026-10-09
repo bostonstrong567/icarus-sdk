@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Building_Wall_HalfPitch_Upper_Right_Wood_C : public ABP_Building_Wall_HalfPitch_Upper_Right_C
 {
-public:
 };

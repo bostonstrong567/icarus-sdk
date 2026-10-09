@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class AAROriginActor : public AActor
 {
-public:
 };

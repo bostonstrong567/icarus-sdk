@@ -4,6 +4,7 @@
 USTRUCT()
 struct FProxyMeshConditionContainerCrafting
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) ECraftingContainerType Type;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<FProcessorRecipesRowHandle> Recipes;  // 0x0008, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<FRecipeSetsRowHandle> RecipeSets;  // 0x0018, size 0x10

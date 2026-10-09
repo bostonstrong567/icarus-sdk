@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class AControlRigControlActor : public AActor
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) AActor* ActorToTrack;  // 0x0220, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSubclassOf<UControlRig> ControlRigClass;  // 0x0228, size 0x8
@@ -13,6 +14,7 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UMaterialInterface* MaterialOverride;  // 0x0238, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString ColorParameter;  // 0x0240, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bCastShadows;  // 0x0250, size 0x1
+private:
     UPROPERTY(Instanced) USceneComponent* ActorRootComponent;  // 0x0258, size 0x8
     UPROPERTY(Transient) UControlRig* ControlRig;  // 0x0260, size 0x8
     UPROPERTY(Transient) TArray<FName> ControlNames;  // 0x0268, size 0x10
@@ -20,10 +22,8 @@ public:
     UPROPERTY(Transient) TArray<UStaticMeshComponent*> Components;  // 0x0288, size 0x10
     UPROPERTY(Transient) TArray<UMaterialInstanceDynamic*> Materials;  // 0x0298, size 0x10
     UPROPERTY(Transient) FName ColorParameterName;  // 0x02A8, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FDelegateHandle OnUnbindDelegate;  // 0x02B0, private
-
+    FDelegateHandle OnUnbindDelegate;  // 0x02B0, not reflected
+public:
     UFUNCTION(BlueprintCallable) void Clear();
     UFUNCTION(BlueprintCallable) void Refresh();
 };

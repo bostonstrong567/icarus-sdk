@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_Ape_D_Camp_AnimalBed_C : public ABPQ_Deploy_Count_C
 {
-public:
 };

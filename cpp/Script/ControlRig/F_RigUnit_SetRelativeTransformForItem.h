@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_SetRelativeTransformForItem : public FRigUnitMutable
 {
+public:
     UPROPERTY() FRigElementKey Child;  // 0x0068, size 0xC
     UPROPERTY() FRigElementKey Parent;  // 0x0074, size 0xC
     UPROPERTY() bool bParentInitial;  // 0x0080, size 0x1

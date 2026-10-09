@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UNavArea_Crevasse_C : public UNavArea
 {
-public:
 };

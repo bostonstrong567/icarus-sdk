@@ -5,5 +5,4 @@
 UCLASS()
 class UTurretTable : public UIcarusDataTable
 {
-public:
 };

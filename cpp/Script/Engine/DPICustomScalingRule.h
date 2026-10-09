@@ -5,7 +5,6 @@
 UCLASS(Abstract)
 class UDPICustomScalingRule : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   GetDPIScaleBasedOnSize

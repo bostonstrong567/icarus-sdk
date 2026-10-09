@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSoundModulationDefaultRoutingSettings : public FSoundModulationDefaultSettings
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EModulationRouting VolumeRouting;  // 0x0040, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EModulationRouting PitchRouting;  // 0x0041, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EModulationRouting HighpassRouting;  // 0x0042, size 0x1

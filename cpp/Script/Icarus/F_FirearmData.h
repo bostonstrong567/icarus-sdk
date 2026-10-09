@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFirearmData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector2D HipAccuracy;  // 0x0018, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector2D AimAccuracy;  // 0x0020, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 LaunchForce;  // 0x0028, size 0x4

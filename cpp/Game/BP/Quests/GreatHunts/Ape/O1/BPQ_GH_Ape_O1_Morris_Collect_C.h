@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_Ape_O1_Morris_Collect_C : public ABPQ_Collect_Note_C
 {
-public:
 };

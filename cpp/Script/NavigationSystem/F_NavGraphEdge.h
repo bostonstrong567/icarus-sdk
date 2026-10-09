@@ -4,10 +4,9 @@
 USTRUCT()
 struct FNavGraphEdge
 {
-
-    // Not reflected:
-    FNavGraphNode * Start;  // 0x0000
-    FNavGraphNode * End;  // 0x0008
-    int32 : 7 Flags;  // 0x0010
-    uint32 : 1 bEnabled;  // 0x0010
+public:
+    FNavGraphNode * Start;  // 0x0000, not reflected
+    FNavGraphNode * End;  // 0x0008, not reflected
+    int32 : 7 Flags;  // 0x0010, not reflected
+    uint32 : 1 bEnabled;  // 0x0010, not reflected
 };

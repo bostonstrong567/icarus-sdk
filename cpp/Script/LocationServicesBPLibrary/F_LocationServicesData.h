@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLocationServicesData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float Timestamp;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float Longitude;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float Latitude;  // 0x0008, size 0x4

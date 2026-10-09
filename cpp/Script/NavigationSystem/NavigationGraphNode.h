@@ -5,5 +5,4 @@
 UCLASS(Abstract, MinimalAPI, Config=Engine)
 class ANavigationGraphNode : public AActor
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FVoiceSettings
 {
+public:
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) USceneComponent* ComponentToAttachTo;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) USoundAttenuation* AttenuationSettings;  // 0x0008, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) USoundEffectSourcePresetChain* SourceEffectChain;  // 0x0010, size 0x8

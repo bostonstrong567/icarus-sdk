@@ -6,42 +6,40 @@ UCLASS()
 class UEditableMesh : public UObject
 {
 public:
+    FMeshDescription * MeshDescription;  // 0x0028, not reflected
+    FMeshDescription OwnedMeshDescription;  // 0x0030, not reflected
+    FEditableMeshSubMeshAddress SubMeshAddress;  // 0x0390, not reflected
+    bool bAllowUndo;  // 0x03A8, not reflected
+    bool bAllowCompact;  // 0x03A9, not reflected
+    TUniquePtr<FCompoundChangeInput,TDefaultDelete<FCompoundChangeInput> > Undo;  // 0x03B0, not reflected
     UPROPERTY() TArray<UEditableMeshAdapter*> Adapters;  // 0x03B8, size 0x10
+    UEditableMeshAdapter * PrimaryAdapter;  // 0x03C8, not reflected
     UPROPERTY(BlueprintReadOnly) int32 TextureCoordinateCount;  // 0x03D0, size 0x4
+    TSet<FPolygonID,DefaultKeyFuncs<FPolygonID,0>,FDefaultSetAllocator> PolygonsPendingNewTangentBasis;  // 0x03D8, not reflected
+    TSet<FPolygonID,DefaultKeyFuncs<FPolygonID,0>,FDefaultSetAllocator> PolygonsPendingFlipTangentBasis;  // 0x0428, not reflected
+    TSet<FPolygonID,DefaultKeyFuncs<FPolygonID,0>,FDefaultSetAllocator> PolygonsPendingTriangulation;  // 0x0478, not reflected
+    TSet<FVertexID,DefaultKeyFuncs<FVertexID,0>,FDefaultSetAllocator> VerticesPendingMerging;  // 0x04C8, not reflected
+    bool bIsBeingModified;  // 0x0518, not reflected
+    EMeshModificationType CurrentModificationType;  // 0x0519, not reflected
+    EMeshTopologyChange CurrentToplogyChange;  // 0x051A, not reflected
     UPROPERTY() int32 PendingCompactCounter;  // 0x051C, size 0x4
     UPROPERTY(BlueprintReadOnly) int32 SubdivisionCount;  // 0x0520, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    FMeshDescription * MeshDescription;  // 0x0028
-    FMeshDescription OwnedMeshDescription;  // 0x0030
-    FEditableMeshSubMeshAddress SubMeshAddress;  // 0x0390
-    bool bAllowUndo;  // 0x03A8
-    bool bAllowCompact;  // 0x03A9
-    TUniquePtr<FCompoundChangeInput,TDefaultDelete<FCompoundChangeInput> > Undo;  // 0x03B0
-    UEditableMeshAdapter * PrimaryAdapter;  // 0x03C8
-    TSet<FPolygonID,DefaultKeyFuncs<FPolygonID,0>,FDefaultSetAllocator> PolygonsPendingNewTangentBasis;  // 0x03D8
-    TSet<FPolygonID,DefaultKeyFuncs<FPolygonID,0>,FDefaultSetAllocator> PolygonsPendingFlipTangentBasis;  // 0x0428
-    TSet<FPolygonID,DefaultKeyFuncs<FPolygonID,0>,FDefaultSetAllocator> PolygonsPendingTriangulation;  // 0x0478
-    TSet<FVertexID,DefaultKeyFuncs<FVertexID,0>,FDefaultSetAllocator> VerticesPendingMerging;  // 0x04C8
-    bool bIsBeingModified;  // 0x0518
-    EMeshModificationType CurrentModificationType;  // 0x0519
-    EMeshTopologyChange CurrentToplogyChange;  // 0x051A
-    TSharedPtr<OpenSubdiv::v3_2_0::Far::TopologyRefiner,0> OsdTopologyRefiner;  // 0x0528
-    TArray<int,TSizedDefaultAllocator<32> > OsdNumVerticesPerFace;  // 0x0538
-    TArray<int,TSizedDefaultAllocator<32> > OsdVertexIndicesPerFace;  // 0x0548
-    TArray<int,TSizedDefaultAllocator<32> > OsdCreaseVertexIndexPairs;  // 0x0558
-    TArray<float,TSizedDefaultAllocator<32> > OsdCreaseWeights;  // 0x0568
-    TArray<int,TSizedDefaultAllocator<32> > OsdCornerVertexIndices;  // 0x0578
-    TArray<float,TSizedDefaultAllocator<32> > OsdCornerWeights;  // 0x0588
-    TArray<int,TSizedDefaultAllocator<32> > OsdFVarIndicesPerFace;  // 0x0598
-    TArray<UEditableMesh::FOsdFVarChannel,TSizedDefaultAllocator<32> > OsdFVarChannels;  // 0x05A8
-    FSubdivisionLimitData SubdivisionLimitData;  // 0x05B8
-    UEditableMesh::FElementIDsRemapped ElementIDsRemappedEvent;  // 0x05E8
-    bool bAllowSpatialDatabase;  // 0x0600
-    TSharedPtr<FEditableMeshOctree,0> Octree;  // 0x0608
-    TMap<FPolygonID,FOctreeElementId2,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FPolygonID,FOctreeElementId2,0> > PolygonIDToOctreeElementIDMap;  // 0x0618
-    TSet<FPolygonID,DefaultKeyFuncs<FPolygonID,0>,FDefaultSetAllocator> DeletedOctreePolygonIDs;  // 0x0668
-    TSet<FPolygonID,DefaultKeyFuncs<FPolygonID,0>,FDefaultSetAllocator> NewOctreePolygonIDs;  // 0x06B8
+    TSharedPtr<OpenSubdiv::v3_2_0::Far::TopologyRefiner,0> OsdTopologyRefiner;  // 0x0528, not reflected
+    TArray<int,TSizedDefaultAllocator<32> > OsdNumVerticesPerFace;  // 0x0538, not reflected
+    TArray<int,TSizedDefaultAllocator<32> > OsdVertexIndicesPerFace;  // 0x0548, not reflected
+    TArray<int,TSizedDefaultAllocator<32> > OsdCreaseVertexIndexPairs;  // 0x0558, not reflected
+    TArray<float,TSizedDefaultAllocator<32> > OsdCreaseWeights;  // 0x0568, not reflected
+    TArray<int,TSizedDefaultAllocator<32> > OsdCornerVertexIndices;  // 0x0578, not reflected
+    TArray<float,TSizedDefaultAllocator<32> > OsdCornerWeights;  // 0x0588, not reflected
+    TArray<int,TSizedDefaultAllocator<32> > OsdFVarIndicesPerFace;  // 0x0598, not reflected
+    TArray<UEditableMesh::FOsdFVarChannel,TSizedDefaultAllocator<32> > OsdFVarChannels;  // 0x05A8, not reflected
+    FSubdivisionLimitData SubdivisionLimitData;  // 0x05B8, not reflected
+    UEditableMesh::FElementIDsRemapped ElementIDsRemappedEvent;  // 0x05E8, not reflected
+    bool bAllowSpatialDatabase;  // 0x0600, not reflected
+    TSharedPtr<FEditableMeshOctree,0> Octree;  // 0x0608, not reflected
+    TMap<FPolygonID,FOctreeElementId2,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FPolygonID,FOctreeElementId2,0> > PolygonIDToOctreeElementIDMap;  // 0x0618, not reflected
+    TSet<FPolygonID,DefaultKeyFuncs<FPolygonID,0>,FDefaultSetAllocator> DeletedOctreePolygonIDs;  // 0x0668, not reflected
+    TSet<FPolygonID,DefaultKeyFuncs<FPolygonID,0>,FDefaultSetAllocator> NewOctreePolygonIDs;  // 0x06B8, not reflected
 
     UFUNCTION(BlueprintCallable, BlueprintPure) bool AnyChangesToUndo() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable) void AssignPolygonsToPolygonGroups(const TArray<FPolygonGroupForPolygon>& PolygonGroupForPolygons, bool bDeleteOrphanedPolygonGroups);  // parameters 0x11

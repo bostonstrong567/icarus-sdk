@@ -4,5 +4,6 @@
 USTRUCT()
 struct FMapRow
 {
+public:
     UPROPERTY(BlueprintReadWrite) TArray<EMapTileRadarFlag> ColumnTiles;  // 0x0000, size 0x10
 };

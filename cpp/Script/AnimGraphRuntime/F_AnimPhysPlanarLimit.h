@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAnimPhysPlanarLimit
 {
+public:
     UPROPERTY(EditAnywhere) FBoneReference DrivingBone;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere) FTransform PlaneTransform;  // 0x0010, size 0x30
 };

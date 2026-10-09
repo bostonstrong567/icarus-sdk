@@ -4,5 +4,6 @@
 USTRUCT()
 struct FMovieSceneEventPayloadVariable
 {
+public:
     UPROPERTY() FString Value;  // 0x0000, size 0x10
 };

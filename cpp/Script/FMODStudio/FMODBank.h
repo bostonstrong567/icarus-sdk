@@ -5,5 +5,4 @@
 UCLASS()
 class UFMODBank : public UFMODAsset
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBroadphaseSettings
 {
+public:
     UPROPERTY(EditAnywhere) bool bUseMBPOnClient;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere) bool bUseMBPOnServer;  // 0x0001, size 0x1
     UPROPERTY(EditAnywhere) bool bUseMBPOuterBounds;  // 0x0002, size 0x1

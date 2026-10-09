@@ -4,5 +4,6 @@
 USTRUCT()
 struct FIcarusSortTypePriority : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FTagQueriesRowHandle> TagPriority;  // 0x0018, size 0x10
 };

@@ -13,9 +13,7 @@ public:
     UPROPERTY() int32 OriginalSubmeshCount;  // 0x0068, size 0x4
     UPROPERTY() TArray<UMaterialInterface*> Materials;  // 0x0070, size 0x10
     UPROPERTY() TArray<FDestructibleChunkParameters> ChunkParameters;  // 0x0080, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    nvidia::apex::DestructibleAssetAuthoring * ApexDestructibleAssetAuthoring;  // 0x0090
-    TArray<nvidia::apex::DestructibleChunkDesc,TSizedDefaultAllocator<32> > ChunkDescs;  // 0x0098
-    TArray<nvidia::apex::DestructibleGeometryDesc,TSizedDefaultAllocator<32> > GeometryDescs;  // 0x00A8
+    nvidia::apex::DestructibleAssetAuthoring * ApexDestructibleAssetAuthoring;  // 0x0090, not reflected
+    TArray<nvidia::apex::DestructibleChunkDesc,TSizedDefaultAllocator<32> > ChunkDescs;  // 0x0098, not reflected
+    TArray<nvidia::apex::DestructibleGeometryDesc,TSizedDefaultAllocator<32> > GeometryDescs;  // 0x00A8, not reflected
 };

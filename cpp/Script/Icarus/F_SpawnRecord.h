@@ -4,5 +4,6 @@
 USTRUCT()
 struct FSpawnRecord
 {
+public:
     UPROPERTY(SaveGame) bool bSpawnedExoticPlants;  // 0x0000, size 0x1
 };

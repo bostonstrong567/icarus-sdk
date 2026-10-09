@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UCS_Ape_Jump_C : public UMatineeCameraShake
 {
-public:
 };

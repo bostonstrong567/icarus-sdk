@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Fish_19_C : public ABP_FishBase_C
 {
-public:
 };

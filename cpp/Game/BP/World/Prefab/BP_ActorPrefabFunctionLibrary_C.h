@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UBP_ActorPrefabFunctionLibrary_C : public UActorPrefabFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) AActor* DeserializeCaveInstance(const TArray<FPrefabTransform>& Volumes, const TArray<FPrefabTransform>& Entrances, const FTransform& Origin);  // parameters 0x58
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) AActor* DeserializePrefabActorClass(const FPrefabActorClass& ActorData, const FTransform& Origin);  // parameters 0x78
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) AActor* DeserializePrefabCaveCreatureSpawns(const TMap<TSubclassOf<AActor>, FCaveSpawnConfig>& CaveSpawnConfig, UActorPrefabAsset* CavePrefab, const FTransform& Origin);  // parameters 0x98

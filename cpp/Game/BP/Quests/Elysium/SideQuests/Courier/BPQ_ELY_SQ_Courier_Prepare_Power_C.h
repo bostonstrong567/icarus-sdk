@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_ELY_SQ_Courier_Prepare_Power_C : public ABPQ_Collect_Any_Item_C
 {
-public:
 };

@@ -6,7 +6,6 @@ UCLASS()
 class UMeshReconstructorBase : public UObject
 {
 public:
-
     UFUNCTION() void ConnectMRMesh(UMRMeshComponent* Mesh);  // parameters 0x8
     UFUNCTION() void DisconnectMRMesh();
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsReconstructionPaused() const;  // parameters 0x1

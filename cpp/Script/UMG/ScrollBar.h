@@ -13,9 +13,8 @@ public:
     UPROPERTY(EditAnywhere) TEnumAsByte<EOrientation> Orientation;  // 0x05E2, size 0x1
     UPROPERTY(EditAnywhere) FVector2D Thickness;  // 0x05E4, size 0x8
     UPROPERTY(EditAnywhere) FMargin Padding;  // 0x05EC, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SScrollBar,0> MyScrollBar;  // 0x0600, protected
-
+protected:
+    TSharedPtr<SScrollBar,0> MyScrollBar;  // 0x0600, not reflected
+public:
     UFUNCTION(BlueprintCallable) void SetState(float InOffsetFraction, float InThumbSizeFraction);  // parameters 0x8
 };

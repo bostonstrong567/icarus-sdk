@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNetworkEmulationProfileDescription
 {
+public:
     UPROPERTY() FString ProfileName;  // 0x0000, size 0x10
     UPROPERTY() FString ToolTip;  // 0x0010, size 0x10
 };

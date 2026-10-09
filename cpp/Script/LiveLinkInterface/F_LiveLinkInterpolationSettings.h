@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLiveLinkInterpolationSettings
 {
+public:
     UPROPERTY(Deprecated) bool bUseInterpolation;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere) float InterpolationOffset;  // 0x0004, size 0x4
 };

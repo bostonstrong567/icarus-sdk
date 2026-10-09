@@ -4,5 +4,6 @@
 USTRUCT()
 struct FAnimNode_BlendSpaceEvaluator : public FAnimNode_BlendSpacePlayer
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float NormalizedTime;  // 0x00E8, size 0x4
 };

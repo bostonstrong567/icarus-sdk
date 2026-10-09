@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigVMStatistics
 {
+public:
     UPROPERTY(EditAnywhere) uint32 BytesForCDO;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere) uint32 BytesPerInstance;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere) FRigVMMemoryStatistics LiteralMemory;  // 0x0008, size 0xC

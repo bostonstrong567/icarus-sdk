@@ -5,5 +5,4 @@
 UCLASS()
 class UAIHotSpotManager : public UObject
 {
-public:
 };

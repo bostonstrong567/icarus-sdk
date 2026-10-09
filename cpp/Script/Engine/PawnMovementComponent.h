@@ -5,9 +5,10 @@
 UCLASS(Abstract, Config=Engine)
 class UPawnMovementComponent : public UNavMovementComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(Transient) APawn* PawnOwner;  // 0x0130, size 0x8
-
+public:
     UFUNCTION(BlueprintCallable) void AddInputVector(FVector WorldVector, bool bForce);  // parameters 0xD
     UFUNCTION(BlueprintCallable) FVector ConsumeInputVector();  // parameters 0xC
     UFUNCTION(BlueprintCallable, BlueprintPure) FVector GetLastInputVector() const;  // parameters 0xC

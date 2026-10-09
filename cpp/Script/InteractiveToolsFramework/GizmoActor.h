@@ -5,5 +5,4 @@
 UCLASS(Transient, Config=Engine)
 class AGizmoActor : public AInternalToolFrameworkActor
 {
-public:
 };

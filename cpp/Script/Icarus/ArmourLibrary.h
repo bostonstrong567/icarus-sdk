@@ -6,7 +6,6 @@ UCLASS()
 class UArmourLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToArmourTable(FName Name, FArmourData Data, FArmourRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x321
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakArmourEnum(FArmourEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FArmourRowHandle CastToArmourRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

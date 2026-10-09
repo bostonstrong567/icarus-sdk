@@ -4,6 +4,7 @@
 USTRUCT()
 struct FGameNameRedirect
 {
+public:
     UPROPERTY() FName OldGameName;  // 0x0000, size 0x8
     UPROPERTY() FName NewGameName;  // 0x0008, size 0x8
 };

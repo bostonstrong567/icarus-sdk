@@ -4,6 +4,7 @@
 USTRUCT()
 struct FWorldCollection : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString CollectionName;  // 0x0018, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<TSoftObjectPtr<UWorld>> HeightmapLevels;  // 0x0028, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UWorld> DeveloperLevel;  // 0x0038, size 0x28

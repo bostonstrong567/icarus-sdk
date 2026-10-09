@@ -4,5 +4,6 @@
 USTRUCT()
 struct FActorCollection
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<AIcarusActor*> Actors;  // 0x0000, size 0x10
 };

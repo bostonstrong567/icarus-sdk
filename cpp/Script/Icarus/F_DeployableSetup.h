@@ -4,6 +4,7 @@
 USTRUCT()
 struct FDeployableSetup : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<AIcarusItem> DeployableBlueprint;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UTexture2D> DeployableIcon;  // 0x0040, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText DeployableName;  // 0x0068, size 0x18

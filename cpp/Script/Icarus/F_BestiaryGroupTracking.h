@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBestiaryGroupTracking
 {
+public:
     UPROPERTY(BlueprintReadWrite) FBestiaryDataRowHandle BestiaryGroup;  // 0x0000, size 0x18
     UPROPERTY(BlueprintReadWrite) int32 NumPoints;  // 0x0018, size 0x4
 };

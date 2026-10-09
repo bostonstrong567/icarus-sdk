@@ -4,7 +4,6 @@
 USTRUCT()
 struct FAnimNode_ResetRoot : public FAnimNode_SkeletalControlBase
 {
-
-    // Not reflected:
-    TArray<FCompactPoseBoneIndex,TSizedDefaultAllocator<32> > RootChildren;  // 0x00C8
+public:
+    TArray<FCompactPoseBoneIndex,TSizedDefaultAllocator<32> > RootChildren;  // 0x00C8, not reflected
 };

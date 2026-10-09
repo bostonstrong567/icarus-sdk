@@ -4,8 +4,7 @@
 USTRUCT()
 struct FRigVMBinaryOp : public FRigVMBaseOp
 {
-
-    // Not reflected:
-    FRigVMOperand ArgA;  // 0x0002
-    FRigVMOperand ArgB;  // 0x0008
+public:
+    FRigVMOperand ArgA;  // 0x0002, not reflected
+    FRigVMOperand ArgB;  // 0x0008, not reflected
 };

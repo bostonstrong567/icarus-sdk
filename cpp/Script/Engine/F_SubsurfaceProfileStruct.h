@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSubsurfaceProfileStruct
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FLinearColor SurfaceAlbedo;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FLinearColor MeanFreePathColor;  // 0x0010, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float MeanFreePathDistance;  // 0x0020, size 0x4

@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABPQ_OLY_Farming_Construction_CropPlot_Water_C : public ABPQ_Deploy_Count_List_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) bool ExtraDeployableChecks(AIcarusActor* Deployable);  // parameters 0x9
 };

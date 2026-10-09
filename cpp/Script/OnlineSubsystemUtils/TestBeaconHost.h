@@ -5,7 +5,6 @@
 UCLASS(Transient, NotPlaceable, Config=Engine)
 class ATestBeaconHost : public AOnlineBeaconHostObject
 {
-public:
 
     // Virtual functions that start here:
     //   Init

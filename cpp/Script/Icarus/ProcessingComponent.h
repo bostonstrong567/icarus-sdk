@@ -5,31 +5,32 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UProcessingComponent : public UTraitComponent, public IResourceInteractionInterface, public IDynamicResourceFlowSource
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
-    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) TArray<FProcessingItem> ProcessingQueue;  // 0x00E0, size 0x10
     UPROPERTY(BlueprintAssignable) FProcessorStateUpdated OnProcessorStateUpdated;  // 0x01A6, size 0x1
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UInventory* Inventory;  // 0x01A8, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) AResourceDeposit* LinkedResource;  // 0x01B0, size 0x8
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) float ProcessingProgress;  // 0x01B8, size 0x4
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) bool bProcessorActive;  // 0x01BC, size 0x1
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) FProcessingItem ProcessingItem;  // 0x01C0, size 0x24
+    FItemData TargetContainer;  // 0x01E8, not reflected
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) FRecipeSet RecipeSetOverride;  // 0x03D8, size 0x78
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 MillijoulesProcessed;  // 0x0450, size 0x4
     UPROPERTY(BlueprintAssignable) FForceStop OnProcessingStopped;  // 0x0454, size 0x1
     UPROPERTY(BlueprintAssignable) FProcessingItemUpdated OnProcessingItemUpdated;  // 0x0455, size 0x1
     UPROPERTY(BlueprintAssignable) FProcessingItemCompleted OnProcessingItemCompleted;  // 0x0456, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bBlockInventoryEvents;  // 0x00F0, protected
-    TMap<FItemsStaticRowHandle,TArray<FProcessorRecipesRowHandle,TSizedDefaultAllocator<32> >,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FItemsStaticRowHandle,TArray<FProcessorRecipesRowHandle,TSizedDefaultAllocator<32> >,0> > ItemToRecipesMap;  // 0x00F8, protected
-    TMap<FTagQueriesRowHandle,TArray<FProcessorRecipesRowHandle,TSizedDefaultAllocator<32> >,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FTagQueriesRowHandle,TArray<FProcessorRecipesRowHandle,TSizedDefaultAllocator<32> >,0> > QueryToRecipesMap;  // 0x0148, protected
-    FTimerHandle RestartAutoProcessingDelayTimer;  // 0x0198, protected
-    float RestartAutoProcessingDelay;  // 0x01A0, protected
-    bool bWantsProcessThisFrame;  // 0x01A4, protected
-    bool bWaterFlowRegistered;  // 0x01A5, protected
-    FItemData TargetContainer;  // 0x01E8
-    float PartialMillijoulesProcessed;  // 0x0458, private
-
+protected:
+    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) TArray<FProcessingItem> ProcessingQueue;  // 0x00E0, size 0x10
+    bool bBlockInventoryEvents;  // 0x00F0, not reflected
+    TMap<FItemsStaticRowHandle,TArray<FProcessorRecipesRowHandle,TSizedDefaultAllocator<32> >,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FItemsStaticRowHandle,TArray<FProcessorRecipesRowHandle,TSizedDefaultAllocator<32> >,0> > ItemToRecipesMap;  // 0x00F8, not reflected
+    TMap<FTagQueriesRowHandle,TArray<FProcessorRecipesRowHandle,TSizedDefaultAllocator<32> >,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FTagQueriesRowHandle,TArray<FProcessorRecipesRowHandle,TSizedDefaultAllocator<32> >,0> > QueryToRecipesMap;  // 0x0148, not reflected
+    FTimerHandle RestartAutoProcessingDelayTimer;  // 0x0198, not reflected
+    float RestartAutoProcessingDelay;  // 0x01A0, not reflected
+    bool bWantsProcessThisFrame;  // 0x01A4, not reflected
+    bool bWaterFlowRegistered;  // 0x01A5, not reflected
+private:
+    float PartialMillijoulesProcessed;  // 0x0458, not reflected
+public:
     UFUNCTION(BlueprintCallable) void AddItem(FItemData Item) const;  // parameters 0x1F0
     UFUNCTION(BlueprintCallable) bool CanProcess();  // parameters 0x1
     UFUNCTION(BlueprintCallable) bool CanQueueItem(FProcessingItem RecipeToQueue, TArray<UInventory*> AdditionalInventories);  // parameters 0x39

@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew)
 class UNiagaraDataInterfaceDebugDraw : public UNiagaraDataInterface
 {
-public:
 };

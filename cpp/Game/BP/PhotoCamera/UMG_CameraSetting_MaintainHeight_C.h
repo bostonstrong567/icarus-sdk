@@ -6,6 +6,5 @@ UCLASS(EditInlineNew, Config=Engine)
 class UUMG_CameraSetting_MaintainHeight_C : public UW_PostProcessEntry_Checkbox_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void UpdatePostProcess(FPostProcessSettings& Settings);  // parameters 0x560
 };

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UBP_WorldBossBehaviour_C : public UWorldBossBehaviour
 {
-public:
 };

@@ -6,7 +6,6 @@ UCLASS()
 class UResourceNodeAudioDataLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToResourceNodeAudioDataTable(FName Name, FResourceNodeAudioData Data, FResourceNodeAudioDataRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x89
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakResourceNodeAudioDataEnum(FResourceNodeAudioDataEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FResourceNodeAudioDataRowHandle CastToResourceNodeAudioDataRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

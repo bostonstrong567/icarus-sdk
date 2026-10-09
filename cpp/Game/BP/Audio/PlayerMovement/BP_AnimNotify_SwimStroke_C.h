@@ -6,6 +6,5 @@ UCLASS(Const, Config=Engine)
 class UBP_AnimNotify_SwimStroke_C : public UAnimNotify
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool Received_Notify(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation) const;  // parameters 0x11
 };

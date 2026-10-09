@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAnimNode_AccelerationWarp : public FAnimNode_Base
 {
+public:
     UPROPERTY(EditAnywhere) FPoseLink InputPose;  // 0x0010, size 0x10
     UPROPERTY(EditAnywhere) float Acceleration;  // 0x0020, size 0x4
     UPROPERTY(EditAnywhere) float Direction;  // 0x0024, size 0x4
@@ -13,8 +14,7 @@ struct FAnimNode_AccelerationWarp : public FAnimNode_Base
     UPROPERTY(EditAnywhere) float MaxTorsoBend;  // 0x003C, size 0x4
     UPROPERTY(EditAnywhere) float Smoothing;  // 0x0040, size 0x4
     UPROPERTY(EditAnywhere) FBoneChain SpineChain;  // 0x0048, size 0x20
-
-    // Not reflected:
-    float CurrentAcceleration;  // 0x0068
-    bool bValidCheckResult;  // 0x006C
+private:
+    float CurrentAcceleration;  // 0x0068, not reflected
+    bool bValidCheckResult;  // 0x006C, not reflected
 };

@@ -5,7 +5,6 @@
 UCLASS(Abstract)
 class UNiagaraConvertInPlaceUtilityBase : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   Convert

@@ -4,5 +4,6 @@
 USTRUCT()
 struct FControlRigSequenceObjectReferences
 {
+public:
     UPROPERTY() TArray<FControlRigSequenceObjectReference> Array;  // 0x0000, size 0x10
 };

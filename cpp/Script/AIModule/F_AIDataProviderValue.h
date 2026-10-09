@@ -4,9 +4,9 @@
 USTRUCT()
 struct FAIDataProviderValue
 {
+public:
     UPROPERTY(EditAnywhere, Instanced) UAIDataProvider* DataBinding;  // 0x0010, size 0x8
     UPROPERTY(EditAnywhere) FName DataField;  // 0x0018, size 0x8
-
-    // Not reflected:
-    FProperty * CachedProperty;  // 0x0008
+private:
+    FProperty * CachedProperty;  // 0x0008, not reflected
 };

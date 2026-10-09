@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Metal_TableDining5_C : public ABP_DeployableBase_C
 {
-public:
 };

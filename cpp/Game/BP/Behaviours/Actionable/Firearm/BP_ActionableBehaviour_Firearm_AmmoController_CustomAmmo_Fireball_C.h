@@ -5,5 +5,4 @@
 UCLASS(Transient, Config=Engine)
 class UBP_ActionableBehaviour_Firearm_AmmoController_CustomAmmo_Fireball_C : public UBP_ActionableBehaviour_Firearm_AmmoController_CustomAmmo_C
 {
-public:
 };

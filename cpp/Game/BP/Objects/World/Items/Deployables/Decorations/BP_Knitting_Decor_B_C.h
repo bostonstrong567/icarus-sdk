@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Knitting_Decor_B_C : public ABP_DeployableBase_C
 {
-public:
 };

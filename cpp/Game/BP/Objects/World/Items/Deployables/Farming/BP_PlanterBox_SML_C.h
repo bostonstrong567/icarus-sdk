@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_PlanterBox_SML_C : public ABP_Crop_Plot_Base_C
 {
-public:
 };

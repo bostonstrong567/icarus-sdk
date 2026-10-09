@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMeshableData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UStreamableRenderAsset> ItemMesh;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<AIcarusItem> ItemActor;  // 0x0040, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UStreamableRenderAsset> EquipHandMesh;  // 0x0068, size 0x28

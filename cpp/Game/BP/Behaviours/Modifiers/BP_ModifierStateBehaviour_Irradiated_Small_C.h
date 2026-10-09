@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UBP_ModifierStateBehaviour_Irradiated_Small_C : public UBP_ModifierStateBehaviour_Irradiated_C
 {
-public:
 };

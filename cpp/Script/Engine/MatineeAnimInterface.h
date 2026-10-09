@@ -5,5 +5,4 @@
 UCLASS(Abstract, MinimalAPI)
 class UMatineeAnimInterface : public UInterface
 {
-public:
 };

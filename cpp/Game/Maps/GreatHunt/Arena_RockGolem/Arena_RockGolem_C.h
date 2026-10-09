@@ -5,5 +5,4 @@
 UCLASS()
 class AArena_RockGolem_C : public ALevelScriptActor
 {
-public:
 };

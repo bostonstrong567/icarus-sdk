@@ -4,7 +4,6 @@
 USTRUCT()
 struct FBlendFilter
 {
-
-    // Not reflected:
-    FFIRFilterTimeBased[3] FilterPerAxis;  // 0x0000
+public:
+    FFIRFilterTimeBased[3] FilterPerAxis;  // 0x0000, not reflected
 };

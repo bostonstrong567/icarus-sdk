@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLiveLinkLightStaticData : public FLiveLinkTransformStaticData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bIsTemperatureSupported;  // 0x0018, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bIsIntensitySupported;  // 0x0019, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bIsLightColorSupported;  // 0x001A, size 0x1

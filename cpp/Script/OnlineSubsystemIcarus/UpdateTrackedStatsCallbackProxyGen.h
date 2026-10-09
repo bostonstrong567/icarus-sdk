@@ -8,9 +8,8 @@ class UUpdateTrackedStatsCallbackProxyGen : public UOnlineBlueprintCallProxyBase
 public:
     UPROPERTY(BlueprintAssignable) FOnUpdateTrackedStatsEventSignature OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FOnUpdateTrackedStatsEventSignature OnFail;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FReqUpdateTrackedStats ReqUpdateTrackedStats;  // 0x0050, private
-
+private:
+    FReqUpdateTrackedStats ReqUpdateTrackedStats;  // 0x0050, not reflected
+public:
     UFUNCTION(BlueprintCallable) static UUpdateTrackedStatsCallbackProxyGen* UpdateTrackedStats(const FReqUpdateTrackedStats& Request);  // parameters 0x40
 };

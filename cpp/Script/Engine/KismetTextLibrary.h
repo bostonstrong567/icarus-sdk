@@ -6,7 +6,6 @@ UCLASS()
 class UKismetTextLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static FText AsCurrencyBase(int32 BaseValue, FString CurrencyCode);  // parameters 0x30
     UFUNCTION(BlueprintCallable, BlueprintPure) static FText AsCurrency_Float(float Value, TEnumAsByte<ERoundingMode> RoundingMode, bool bAlwaysSign, bool bUseGrouping, int32 MinimumIntegralDigits, int32 MaximumIntegralDigits, int32 MinimumFractionalDigits, int32 MaximumFractionalDigits, FString CurrencyCode);  // parameters 0x40
     UFUNCTION(BlueprintCallable, BlueprintPure) static FText AsCurrency_Integer(int32 Value, TEnumAsByte<ERoundingMode> RoundingMode, bool bAlwaysSign, bool bUseGrouping, int32 MinimumIntegralDigits, int32 MaximumIntegralDigits, int32 MinimumFractionalDigits, int32 MaximumFractionalDigits, FString CurrencyCode);  // parameters 0x40

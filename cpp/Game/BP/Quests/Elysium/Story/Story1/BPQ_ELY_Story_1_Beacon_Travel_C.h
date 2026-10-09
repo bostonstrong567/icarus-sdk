@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_ELY_Story_1_Beacon_Travel_C : public ABPQ_Travel_Medium_C
 {
-public:
 };

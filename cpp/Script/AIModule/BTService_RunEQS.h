@@ -5,9 +5,8 @@
 UCLASS()
 class UBTService_RunEQS : public UBTService_BlackboardBase
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere) FEQSParametrizedQueryExecutionRequest EQSRequest;  // 0x0098, size 0x48
-
-    // Not reflected: the engine's scripting cannot see these.
-    TDelegate<void __cdecl(TSharedPtr<FEnvQueryResult,0>),FDefaultDelegateUserPolicy> QueryFinishedDelegate;  // 0x00E0, protected
+    TDelegate<void __cdecl(TSharedPtr<FEnvQueryResult,0>),FDefaultDelegateUserPolicy> QueryFinishedDelegate;  // 0x00E0, not reflected
 };

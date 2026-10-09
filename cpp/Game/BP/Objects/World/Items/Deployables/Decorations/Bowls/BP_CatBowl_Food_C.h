@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_CatBowl_Food_C : public ABP_Pet_Bowl_Food_Base_C
 {
-public:
 };

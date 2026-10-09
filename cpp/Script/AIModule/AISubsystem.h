@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class UAISubsystem : public UObject
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() UAISystem* AISystem;  // 0x0030, size 0x8
 };

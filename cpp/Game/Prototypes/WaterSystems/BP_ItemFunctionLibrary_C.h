@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UBP_ItemFunctionLibrary_C : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static void FillableSupports(UFillableComponent* Target, UFillableComponent* Source, UObject* __WorldContext, bool& Supports);  // parameters 0x19
     UFUNCTION(BlueprintCallable, BlueprintPure) static void FillableTypeToInt(FIcarusResourcesEnum Type, UObject* __WorldContext, int32& Int);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static void Get_Damage_Variation(FItemData Item, bool Melee, UObject* __WorldContext, int32& Minimum, int32& Maximum);  // parameters 0x208, named "Get Damage Variation"

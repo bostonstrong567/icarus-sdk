@@ -7,10 +7,9 @@ class UModularSynthComponent : public USynthComponent
 {
 public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 VoiceCount;  // 0x06C0, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    Audio::FEpicSynth1 EpicSynth1;  // 0x06C8, protected
-
+protected:
+    Audio::FEpicSynth1 EpicSynth1;  // 0x06C8, not reflected
+public:
     UFUNCTION(BlueprintCallable) FPatchId CreatePatch(ESynth1PatchSource PatchSource, const TArray<FSynth1PatchCable>& PatchCables, bool bEnableByDefault);  // parameters 0x20
     UFUNCTION(BlueprintCallable) void NoteOff(float Note, bool bAllNotesOff, bool bKillAllNotes);  // parameters 0x6
     UFUNCTION(BlueprintCallable) void NoteOn(float Note, int32 Velocity, float Duration);  // parameters 0xC

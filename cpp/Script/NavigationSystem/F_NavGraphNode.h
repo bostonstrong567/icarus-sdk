@@ -4,8 +4,7 @@
 USTRUCT()
 struct FNavGraphNode
 {
+public:
     UPROPERTY() UObject* Owner;  // 0x0000, size 0x8
-
-    // Not reflected:
-    TArray<FNavGraphEdge,TSizedDefaultAllocator<32> > Edges;  // 0x0008
+    TArray<FNavGraphEdge,TSizedDefaultAllocator<32> > Edges;  // 0x0008, not reflected
 };

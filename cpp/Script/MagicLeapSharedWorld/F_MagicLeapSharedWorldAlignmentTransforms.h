@@ -4,5 +4,6 @@
 USTRUCT()
 struct FMagicLeapSharedWorldAlignmentTransforms
 {
+public:
     UPROPERTY(BlueprintReadWrite) TArray<FTransform> AlignmentTransforms;  // 0x0000, size 0x10
 };

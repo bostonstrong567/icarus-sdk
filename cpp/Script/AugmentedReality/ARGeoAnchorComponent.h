@@ -5,9 +5,10 @@
 UCLASS(Config=Engine)
 class UARGeoAnchorComponent : public UARComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(Replicated, ReplicatedUsing, BlueprintReadOnly) FARGeoAnchorUpdatePayload ReplicatedPayload;  // 0x0280, size 0x70
-
+public:
     UFUNCTION(BlueprintImplementableEvent) void ReceiveAdd(const FARGeoAnchorUpdatePayload& Payload);  // parameters 0x70
     UFUNCTION(BlueprintImplementableEvent) void ReceiveUpdate(const FARGeoAnchorUpdatePayload& Payload);  // parameters 0x70
     UFUNCTION(Server, Reliable, BlueprintNativeEvent) void ServerUpdatePayload(FARGeoAnchorUpdatePayload NewPayload);  // parameters 0x70

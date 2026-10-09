@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class UModifierStateComponent : public UActorComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) FModifierStatesRowHandle DataRowHandleNew;  // 0x00B4, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) AController* Instigator;  // 0x00D0, size 0x8
@@ -22,17 +23,17 @@ public:
     UPROPERTY(BlueprintAssignable) FOnModifierUpdated OnModifierUpdated;  // 0x012C, size 0x1
     UPROPERTY(BlueprintAssignable) FModifierLifetimeUpdated OnModifierLifetimeUpdated;  // 0x012D, size 0x1
     UPROPERTY(BlueprintAssignable) FOnEffectivenessUpdated OnModifierEffectivenessUpdated;  // 0x0130, size 0x10
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FModifierStateData CachedModifierStateData;  // 0x0140, size 0x268
+private:
+    float LastHighFrequencyTickTime;  // 0x00B0, not reflected
+    FTimerHandle DestroyTimerHandle;  // 0x03A8, not reflected
+    bool HasInitialised;  // 0x03B0, not reflected
+    float CurrentModifierTickTime;  // 0x03B4, not reflected
+    float CurrentEscalationTickTime;  // 0x03B8, not reflected
     UPROPERTY(Replicated, ReplicatedUsing) uint16 ReplicatedRemainingTime;  // 0x03BC, size 0x2
-
-    // Not reflected: the engine's scripting cannot see these.
-    float LastHighFrequencyTickTime;  // 0x00B0, private
-    FTimerHandle DestroyTimerHandle;  // 0x03A8, private
-    bool HasInitialised;  // 0x03B0, private
-    float CurrentModifierTickTime;  // 0x03B4, private
-    float CurrentEscalationTickTime;  // 0x03B8, private
-    FTimerHandle ModifierTickHandle;  // 0x03C0, private
-
+    FTimerHandle ModifierTickHandle;  // 0x03C0, not reflected
+public:
     UFUNCTION(BlueprintNativeEvent) bool CanEsculate();  // parameters 0x1
     UFUNCTION(BlueprintNativeEvent) bool CheckTickConditions();  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) bool DoesMatchTagQuery() const;  // parameters 0x1

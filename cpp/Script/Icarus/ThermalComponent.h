@@ -5,13 +5,12 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UThermalComponent : public UTraitComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) AIcarusGameStateSurvival* GameState;  // 0x00D0, size 0x8
     UPROPERTY(Instanced, BlueprintReadOnly) USphereComponent* NavigationModifier;  // 0x00D8, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    float ThermalStrengthMulti;  // 0x00E0, protected
-
+    float ThermalStrengthMulti;  // 0x00E0, not reflected
+public:
     UFUNCTION(BlueprintCallable) void DestroyThermalComponent();
     UFUNCTION(BlueprintCallable, BlueprintPure) int32 GetTemperatureEffectAtLocation(FVector InLocation, bool& bIsAffecting, AActor* QueryActor, bool bDrawDebug, float DebugDrawDuration, int32 DebugDrawTextOffset) const;  // parameters 0x28
     UFUNCTION(BlueprintCallable, BlueprintPure) bool GetThermalData(FThermalData& OutData) const;  // parameters 0x61

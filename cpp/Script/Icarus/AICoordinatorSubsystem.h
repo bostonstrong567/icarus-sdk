@@ -5,11 +5,12 @@
 UCLASS()
 class UAICoordinatorSubsystem : public UWorldSubsystem
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY() TArray<FActiveEvent> ActiveEvents;  // 0x0030, size 0x10
     UPROPERTY() TMap<FAIEventsEnum, FEventCooldownList> EventsOnCooldown;  // 0x0040, size 0x50
     UPROPERTY() FTimerHandle CheckPendingCooldownsHandle;  // 0x0090, size 0x8
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintAuthorityOnly) bool CanRequestAIEvent(FAIEventsEnum Event) const;  // parameters 0x11
     UFUNCTION() void CheckPendingCooldownTimers();
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) void CleanupActiveEvent(AAIEvent* Event);  // parameters 0x8

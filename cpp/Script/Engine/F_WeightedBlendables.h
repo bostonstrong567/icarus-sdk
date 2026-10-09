@@ -4,5 +4,6 @@
 USTRUCT()
 struct FWeightedBlendables
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FWeightedBlendable> Array;  // 0x0000, size 0x10
 };

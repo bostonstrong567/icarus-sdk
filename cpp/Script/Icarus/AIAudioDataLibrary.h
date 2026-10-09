@@ -6,7 +6,6 @@ UCLASS()
 class UAIAudioDataLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToAIAudioDataTable(FName Name, FAIAudioData Data, FAIAudioDataRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x1F1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakAIAudioDataEnum(FAIAudioDataEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FAIAudioDataRowHandle CastToAIAudioDataRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

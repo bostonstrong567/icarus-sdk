@@ -6,7 +6,6 @@ UCLASS()
 class UWidgetBlueprintLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void CancelDragDrop();
     UFUNCTION(BlueprintCallable, BlueprintPure) static FEventReply CaptureJoystick(FEventReply& Reply, UWidget* CapturingWidget, bool bInAllJoysticks);  // parameters 0x180
     UFUNCTION(BlueprintCallable, BlueprintPure) static FEventReply CaptureMouse(FEventReply& Reply, UWidget* CapturingWidget);  // parameters 0x178

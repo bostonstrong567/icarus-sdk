@@ -5,5 +5,4 @@
 UCLASS()
 class UCreatureTalentModel : public UTalentModelInterface
 {
-public:
 };

@@ -5,7 +5,8 @@
 UCLASS(Abstract, MinimalAPI, Config=Engine)
 class ASceneCapture : public AActor
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY(Instanced, Deprecated) UStaticMeshComponent* MeshComp;  // 0x0220, size 0x8
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) USceneComponent* SceneComponent;  // 0x0228, size 0x8
 };

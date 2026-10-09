@@ -6,7 +6,6 @@ UCLASS()
 class UKismetInputLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void CalibrateTilt();
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool EqualEqual_InputChordInputChord(FInputChord A, FInputChord B);  // parameters 0x41
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool EqualEqual_KeyKey(FKey A, FKey B);  // parameters 0x31

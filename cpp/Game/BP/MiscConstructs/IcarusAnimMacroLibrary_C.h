@@ -5,5 +5,4 @@
 UCLASS(Abstract, Transient, NotPlaceable, Config=Engine)
 class UIcarusAnimMacroLibrary_C : public UAnimInstance
 {
-public:
 };

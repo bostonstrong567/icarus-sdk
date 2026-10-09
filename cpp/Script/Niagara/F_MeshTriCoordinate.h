@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMeshTriCoordinate
 {
+public:
     UPROPERTY(EditAnywhere) int32 Tri;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere) FVector BaryCoord;  // 0x0004, size 0xC
 };

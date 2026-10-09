@@ -6,7 +6,6 @@ UCLASS()
 class UPlayerAccoladeCategoriesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToPlayerAccoladeCategoriesTable(FName Name, FPlayerAccoladeCategory Data, FPlayerAccoladeCategoriesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x51
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakPlayerAccoladeCategoriesEnum(FPlayerAccoladeCategoriesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FPlayerAccoladeCategoriesRowHandle CastToPlayerAccoladeCategoriesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

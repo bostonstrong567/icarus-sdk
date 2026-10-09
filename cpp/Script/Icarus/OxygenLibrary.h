@@ -6,7 +6,6 @@ UCLASS()
 class UOxygenLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToOxygenTable(FName Name, FOxygenData Data, FOxygenRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x81
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakOxygenEnum(FOxygenEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FOxygenRowHandle CastToOxygenRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

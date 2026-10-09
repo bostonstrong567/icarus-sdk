@@ -13,7 +13,5 @@ public:
     UPROPERTY(EditAnywhere) FNDIStaticMeshSectionFilter SectionFilter;  // 0x0058, size 0x10
     UPROPERTY(EditAnywhere) bool bUsePhysicsBodyVelocity;  // 0x0068, size 0x1
     UPROPERTY(EditAnywhere) TArray<FName> FilteredSockets;  // 0x0070, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint32 ChangeId;  // 0x0080
+    uint32 ChangeId;  // 0x0080, not reflected
 };

@@ -6,7 +6,6 @@ UCLASS()
 class UAndroidPermissionFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static UAndroidPermissionCallbackProxy* AcquirePermissions(const TArray<FString>& permissions);  // parameters 0x18
     UFUNCTION(BlueprintCallable) static bool CheckPermission(FString permission);  // parameters 0x11
 };

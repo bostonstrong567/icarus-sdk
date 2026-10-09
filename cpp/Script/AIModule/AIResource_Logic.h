@@ -5,5 +5,4 @@
 UCLASS(Config=Game)
 class UAIResource_Logic : public UGameplayTaskResource
 {
-public:
 };

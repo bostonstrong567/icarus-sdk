@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Trophy_Lava_Viscid_C : public ABP_DeployableBase_C
 {
-public:
 };

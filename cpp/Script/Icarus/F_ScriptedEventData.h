@@ -4,6 +4,7 @@
 USTRUCT()
 struct FScriptedEventData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<AScriptedEvent> EventClass;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText EventName;  // 0x0040, size 0x18
 };

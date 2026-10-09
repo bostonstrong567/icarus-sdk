@@ -5,5 +5,4 @@
 UCLASS(NotPlaceable, Config=Game)
 class ASpectatorPawn : public ADefaultPawn
 {
-public:
 };

@@ -4,5 +4,6 @@
 USTRUCT()
 struct FRigCurve : public FRigElement
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float Value;  // 0x0018, size 0x4
 };

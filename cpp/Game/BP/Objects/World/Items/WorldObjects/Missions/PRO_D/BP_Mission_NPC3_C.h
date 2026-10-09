@@ -5,5 +5,4 @@
 UCLASS(Config=Game)
 class ABP_Mission_NPC3_C : public ABP_Mission_NPC_C
 {
-public:
 };

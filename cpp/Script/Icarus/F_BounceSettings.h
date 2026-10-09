@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBounceSettings
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bBounceAngleAffectsFriction;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float Bounciness;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float Friction;  // 0x0008, size 0x4

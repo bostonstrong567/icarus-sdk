@@ -4,10 +4,9 @@
 USTRUCT()
 struct FSkeletalMeshSamplingRegionBuiltData
 {
-
-    // Not reflected:
-    TArray<int,TSizedDefaultAllocator<32> > TriangleIndices;  // 0x0000
-    TArray<int,TSizedDefaultAllocator<32> > Vertices;  // 0x0010
-    TArray<int,TSizedDefaultAllocator<32> > BoneIndices;  // 0x0020
-    FSkeletalMeshAreaWeightedTriangleSampler AreaWeightedSampler;  // 0x0030
+public:
+    TArray<int,TSizedDefaultAllocator<32> > TriangleIndices;  // 0x0000, not reflected
+    TArray<int,TSizedDefaultAllocator<32> > Vertices;  // 0x0010, not reflected
+    TArray<int,TSizedDefaultAllocator<32> > BoneIndices;  // 0x0020, not reflected
+    FSkeletalMeshAreaWeightedTriangleSampler AreaWeightedSampler;  // 0x0030, not reflected
 };

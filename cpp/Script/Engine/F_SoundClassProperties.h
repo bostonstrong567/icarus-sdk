@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSoundClassProperties
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float Volume;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float Pitch;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float LowPassFilterFrequency;  // 0x0008, size 0x4

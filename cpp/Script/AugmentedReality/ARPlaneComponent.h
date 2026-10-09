@@ -5,9 +5,10 @@
 UCLASS(Config=Engine)
 class UARPlaneComponent : public UARComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(Replicated, ReplicatedUsing, BlueprintReadOnly) FARPlaneUpdatePayload ReplicatedPayload;  // 0x0280, size 0x80
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) static TMap<EARObjectClassification, FLinearColor> GetObjectClassificationDebugColors();  // parameters 0x50
     UFUNCTION(BlueprintImplementableEvent) void ReceiveAdd(const FARPlaneUpdatePayload& Payload);  // parameters 0x80
     UFUNCTION(BlueprintImplementableEvent) void ReceiveUpdate(const FARPlaneUpdatePayload& Payload);  // parameters 0x80

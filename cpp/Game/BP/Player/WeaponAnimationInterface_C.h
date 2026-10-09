@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UWeaponAnimationInterface_C : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable) void WeaponFired(float Power);  // parameters 0x4
 };

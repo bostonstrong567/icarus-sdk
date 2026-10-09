@@ -21,18 +21,18 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float MaxSimulationTimeStep;  // 0x0150, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 MaxSimulationIterations;  // 0x0154, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FInterpControlPoint> ControlPoints;  // 0x0158, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    float CurrentTime;  // 0x0168, protected
-    float TimeMultiplier;  // 0x016C, protected
-    float CurrentDirection;  // 0x0170, protected
-    bool bIsWaiting;  // 0x0174, protected
-    bool bStopped;  // 0x0175, protected
-    bool bContainsActorControlPoints;  // 0x0176, protected
-    float TotalDistance;  // 0x0178, private
-    FVector StartLocation;  // 0x017C, private
-    bool bPointsFinalized;  // 0x0188, private
-
+protected:
+    float CurrentTime;  // 0x0168, not reflected
+    float TimeMultiplier;  // 0x016C, not reflected
+    float CurrentDirection;  // 0x0170, not reflected
+    bool bIsWaiting;  // 0x0174, not reflected
+    bool bStopped;  // 0x0175, not reflected
+    bool bContainsActorControlPoints;  // 0x0176, not reflected
+private:
+    float TotalDistance;  // 0x0178, not reflected
+    FVector StartLocation;  // 0x017C, not reflected
+    bool bPointsFinalized;  // 0x0188, not reflected
+public:
     UFUNCTION(BlueprintCallable) void AddControlPointPosition(FVector Pos, bool bPositionIsRelative);  // parameters 0xD
     UFUNCTION(BlueprintCallable) void FinaliseControlPoints();
     UFUNCTION(BlueprintCallable) void ResetControlPoints();

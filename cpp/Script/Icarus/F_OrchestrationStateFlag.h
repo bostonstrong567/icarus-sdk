@@ -4,5 +4,6 @@
 USTRUCT()
 struct FOrchestrationStateFlag : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString FlagDescriptor;  // 0x0018, size 0x10
 };

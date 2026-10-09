@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_PRO_A_Extraction_Build_Cement_C : public ABPQ_Deploy_Count_C
 {
-public:
 };

@@ -6,6 +6,5 @@ UCLASS(EditInlineNew, Config=Engine)
 class UBP_FocusableBehaviour_Chainsaw_Legendary_C : public UBP_FocusableBehaviour_Chainsaw_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintImplementableEvent) void GetIdleAnim(TSoftObjectPtr<UAnimSequence>& OutFPIdleAnim, TSoftObjectPtr<UAnimSequence>& OutTPStandingIdleAnim, TSoftObjectPtr<UAnimSequence>& OutTPCrouchedIdleAnim);  // parameters 0x78
 };

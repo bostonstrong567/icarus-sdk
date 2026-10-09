@@ -5,6 +5,7 @@
 UCLASS(MinimalAPI, Config=Engine)
 class UBlendSpace : public UBlendSpaceBase
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere) TEnumAsByte<EBlendSpaceAxis> AxisToScaleAnimation;  // 0x0148, size 0x1
 };

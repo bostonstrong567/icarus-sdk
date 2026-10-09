@@ -5,5 +5,4 @@
 UCLASS()
 class UMaterialExpressionAtmosphericLightColor : public UMaterialExpression
 {
-public:
 };

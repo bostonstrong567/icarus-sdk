@@ -6,6 +6,5 @@ UCLASS(Abstract)
 class UInventorySlotChangeListener : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintNativeEvent) void HandleChangedSlots(UInventory* Inventory, const TSet<int32>& ChangedSlotIndices);  // parameters 0x58
 };

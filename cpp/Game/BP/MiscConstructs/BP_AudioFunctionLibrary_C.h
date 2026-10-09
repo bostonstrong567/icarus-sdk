@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UBP_AudioFunctionLibrary_C : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static void GetDamageTypeFMODParam(EIcarusDamageType DamageType, UObject* __WorldContext, EDamageTypeFMODParam& FMODParamValue);  // parameters 0x11
     UFUNCTION(BlueprintCallable, BlueprintPure) static void GetPlayerTypeFMODParam(AIcarusPlayerCharacter* Player, UObject* __WorldContext, EPlayerTypeFMODParam& PlayerTypeFMODParam);  // parameters 0x11
     UFUNCTION(BlueprintCallable, BlueprintPure) static void GetSurfaceFMODParam(TEnumAsByte<EPhysicalSurface> Surface, UObject* __WorldContext, ESurfaceFMODParam& SurfaceFMODParam);  // parameters 0x11

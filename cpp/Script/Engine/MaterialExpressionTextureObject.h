@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UMaterialExpressionTextureObject : public UMaterialExpressionTextureBase
 {
-public:
 };

@@ -6,6 +6,5 @@ UCLASS(Config=Game)
 class ABP_NPC_RockGolem_Juvenile_Character_Arctic_C : public ABP_NPC_RockGolem_Juvenile_Character_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void UpdateArmorVisuals();
 };

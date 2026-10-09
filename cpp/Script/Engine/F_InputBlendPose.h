@@ -4,5 +4,6 @@
 USTRUCT()
 struct FInputBlendPose
 {
+public:
     UPROPERTY(EditAnywhere) TArray<FBranchFilter> BranchFilters;  // 0x0000, size 0x10
 };

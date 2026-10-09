@@ -5,5 +5,4 @@
 UCLASS(Abstract, MinimalAPI, Config=Engine)
 class APlaneReflectionCapture : public AReflectionCapture
 {
-public:
 };

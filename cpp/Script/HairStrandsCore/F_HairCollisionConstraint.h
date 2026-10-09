@@ -4,6 +4,7 @@
 USTRUCT()
 struct FHairCollisionConstraint
 {
+public:
     UPROPERTY(EditAnywhere) bool SolveCollision;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere) bool ProjectCollision;  // 0x0001, size 0x1
     UPROPERTY(EditAnywhere) float StaticFriction;  // 0x0004, size 0x4

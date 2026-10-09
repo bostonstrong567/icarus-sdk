@@ -6,7 +6,6 @@ UCLASS()
 class UTileMapBlueprintLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakTile(FPaperTileInfo Tile, int32& TileIndex, UPaperTileSet*& TileSet, bool& bFlipH, bool& bFlipV, bool& bFlipD);  // parameters 0x23
     UFUNCTION(BlueprintCallable, BlueprintPure) static FTransform GetTileTransform(FPaperTileInfo Tile);  // parameters 0x40
     UFUNCTION(BlueprintCallable, BlueprintPure) static FName GetTileUserData(FPaperTileInfo Tile);  // parameters 0x18

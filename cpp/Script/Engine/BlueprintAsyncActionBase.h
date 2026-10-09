@@ -5,11 +5,9 @@
 UCLASS()
 class UBlueprintAsyncActionBase : public UObject
 {
+protected:
+    TWeakObjectPtr<UGameInstance,FWeakObjectPtr> RegisteredWithGameInstance;  // 0x0028, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TWeakObjectPtr<UGameInstance,FWeakObjectPtr> RegisteredWithGameInstance;  // 0x0028, protected
-
     UFUNCTION(BlueprintCallable) void Activate();
 
     // Virtual functions that start here:

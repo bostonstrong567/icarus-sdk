@@ -4,6 +4,7 @@
 USTRUCT()
 struct FParameterGroupData
 {
+public:
     UPROPERTY(EditAnywhere) FString GroupName;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere) int32 GroupSortPriority;  // 0x0010, size 0x4
 };

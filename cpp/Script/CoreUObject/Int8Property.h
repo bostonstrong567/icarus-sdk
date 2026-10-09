@@ -5,5 +5,4 @@
 UCLASS()
 class UInt8Property : public UNumericProperty
 {
-public:
 };

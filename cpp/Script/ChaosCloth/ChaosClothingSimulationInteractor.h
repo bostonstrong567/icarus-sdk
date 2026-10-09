@@ -5,8 +5,6 @@
 UCLASS()
 class UChaosClothingSimulationInteractor : public UClothingSimulationInteractor
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<TDelegate<void __cdecl(Chaos::FClothingSimulation *,FClothingSimulationContextCommon *),FDefaultDelegateUserPolicy>,TSizedDefaultAllocator<32> > Commands;  // 0x0090, private
+private:
+    TArray<TDelegate<void __cdecl(Chaos::FClothingSimulation *,FClothingSimulationContextCommon *),FDefaultDelegateUserPolicy>,TSizedDefaultAllocator<32> > Commands;  // 0x0090, not reflected
 };

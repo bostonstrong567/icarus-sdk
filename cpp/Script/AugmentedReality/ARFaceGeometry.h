@@ -5,18 +5,18 @@
 UCLASS()
 class UARFaceGeometry : public UARTrackedGeometry
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintReadOnly) FVector LookAtTarget;  // 0x00F8, size 0xC
     UPROPERTY(BlueprintReadOnly) bool bIsTracked;  // 0x0104, size 0x1
+private:
     UPROPERTY() TMap<EARFaceBlendShape, float> BlendShapes;  // 0x0108, size 0x50
+    TArray<FVector,TSizedDefaultAllocator<32> > VertexBuffer;  // 0x0158, not reflected
+    TArray<int,TSizedDefaultAllocator<32> > IndexBuffer;  // 0x0168, not reflected
+    TArray<FVector2D,TSizedDefaultAllocator<32> > UVs;  // 0x0178, not reflected
     UPROPERTY() FTransform LeftEyeTransform;  // 0x0190, size 0x30
     UPROPERTY() FTransform RightEyeTransform;  // 0x01C0, size 0x30
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<FVector,TSizedDefaultAllocator<32> > VertexBuffer;  // 0x0158, private
-    TArray<int,TSizedDefaultAllocator<32> > IndexBuffer;  // 0x0168, private
-    TArray<FVector2D,TSizedDefaultAllocator<32> > UVs;  // 0x0178, private
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetBlendShapeValue(EARFaceBlendShape BlendShape) const;  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) TMap<EARFaceBlendShape, float> GetBlendShapes() const;  // parameters 0x50
     UFUNCTION(BlueprintCallable, BlueprintPure) FTransform GetLocalSpaceEyeTransform(EAREye Eye) const;  // parameters 0x40

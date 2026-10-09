@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class AFishActor : public AIcarusActor
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) USkeletalMeshComponent* Mesh;  // 0x02C0, size 0x8
     UPROPERTY(EditAnywhere, Replicated, Instanced, BlueprintReadWrite) UFishManager* FishManager;  // 0x02C8, size 0x8
@@ -18,11 +19,12 @@ public:
     UPROPERTY(EditAnywhere) float AwarenessTimerInterval;  // 0x0318, size 0x4
     UPROPERTY(EditAnywhere) float AwarenessCooldownLength;  // 0x031C, size 0x4
     UPROPERTY(EditAnywhere) float CorrectionVariance;  // 0x0320, size 0x4
+private:
     UPROPERTY() int32 FindNewTargetAttempts;  // 0x0324, size 0x4
     UPROPERTY() FFishSetup FishSetupData;  // 0x0328, size 0xC8
     UPROPERTY() FTimerHandle AwarenessTimerHandle;  // 0x03F0, size 0x8
     UPROPERTY() float NextAwarenessTimestamp;  // 0x03F8, size 0x4
-
+public:
     UFUNCTION(BlueprintNativeEvent) void AttackPlayer(AIcarusPlayerCharacter* Player);  // parameters 0x8
     UFUNCTION(BlueprintImplementableEvent) void BPOnRep_AttachActor();
     UFUNCTION(BlueprintImplementableEvent) void BPOnRep_Dead();

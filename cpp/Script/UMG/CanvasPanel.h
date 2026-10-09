@@ -5,10 +5,8 @@
 UCLASS()
 class UCanvasPanel : public UPanelWidget
 {
+protected:
+    TSharedPtr<SConstraintCanvas,0> MyCanvas;  // 0x0120, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SConstraintCanvas,0> MyCanvas;  // 0x0120, protected
-
     UFUNCTION(BlueprintCallable) UCanvasPanelSlot* AddChildToCanvas(UWidget* Content);  // parameters 0x10
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FActiveFactionMission
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString FactionMission;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Progress;  // 0x0010, size 0x4
 };

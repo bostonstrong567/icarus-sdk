@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMovieSceneEditorData
 {
+public:
     UPROPERTY() TMap<FString, FMovieSceneExpansionState> ExpansionStates;  // 0x0000, size 0x50
     UPROPERTY() TArray<FString> PinnedNodes;  // 0x0050, size 0x10
     UPROPERTY() double ViewStart;  // 0x0060, size 0x8

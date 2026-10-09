@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMovieSceneEvaluationMetaData
 {
+public:
     UPROPERTY() TArray<FMovieSceneSequenceID> ActiveSequences;  // 0x0000, size 0x10
     UPROPERTY() TArray<FMovieSceneOrderedEvaluationKey> ActiveEntities;  // 0x0010, size 0x10
 };

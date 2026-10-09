@@ -4,5 +4,6 @@
 USTRUCT()
 struct FLiveLinkClearSubject
 {
+public:
     UPROPERTY() FName SubjectName;  // 0x0000, size 0x8
 };

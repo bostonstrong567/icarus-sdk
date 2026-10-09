@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class ABP_AshlandsOutpost_C : public ABP_Prebuilt_Base_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void FillCrates();
     UFUNCTION(BlueprintCallable) void GetChest(AIcarusItem*& Array_Element);  // parameters 0x8
 };

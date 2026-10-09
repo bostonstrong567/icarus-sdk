@@ -6,7 +6,6 @@ UCLASS()
 class UFishingFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void BestiaryTrackFish(UObject* WorldContext, AIcarusPlayerCharacter* PlayerFisher, const FItemData& Fish);  // parameters 0x200
     UFUNCTION(BlueprintCallable) static bool CatchFish(UObject* WorldContext, AActor* Fisher, FItemData& Fish);  // parameters 0x201
     UFUNCTION(BlueprintCallable) static bool CatchFishInZone(AActor* Fisher, FFishSpawnZonesRowHandle SpawnZone, FItemData& Fish);  // parameters 0x211

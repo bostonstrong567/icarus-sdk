@@ -5,28 +5,29 @@
 UCLASS(NotPlaceable, Config=Engine)
 class AAIController : public AController, public IAIPerceptionListenerInterface, public IGameplayTaskOwnerInterface, public IGenericTeamAgentInterface, public IVisualLoggerDebugSnapshotInterface
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bStartAILogicOnPossess : 1;  // 0x02D0, mask 0x01
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bStopAILogicOnUnposses : 1;  // 0x02D0, mask 0x02
     UPROPERTY() uint8 bLOSflag : 1;  // 0x02D0, mask 0x04
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bSkipExtraLOSChecks : 1;  // 0x02D0, mask 0x08
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bAllowStrafe : 1;  // 0x02D0, mask 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bWantsPlayerState : 1;  // 0x02D0, mask 0x20
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bSetControlRotationFromPawnOrientation : 1;  // 0x02D0, mask 0x40
-    UPROPERTY(EditAnywhere, Instanced) UPathFollowingComponent* PathFollowingComponent;  // 0x02D8, size 0x8
     UPROPERTY(Instanced, BlueprintReadWrite) UBrainComponent* BrainComponent;  // 0x02E0, size 0x8
     UPROPERTY(EditAnywhere, Instanced) UAIPerceptionComponent* PerceptionComponent;  // 0x02E8, size 0x8
-    UPROPERTY(Instanced, BlueprintReadOnly) UPawnActionsComponent* ActionsComp;  // 0x02F0, size 0x8
+    UPROPERTY(BlueprintAssignable) FAIMoveCompletedSignature ReceiveMoveCompleted;  // 0x0310, size 0x10
+protected:
+    FFocusKnowledge FocusInformation;  // 0x02C0, not reflected
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bStartAILogicOnPossess : 1;  // 0x02D0, mask 0x01
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bStopAILogicOnUnposses : 1;  // 0x02D0, mask 0x02
     UPROPERTY(Instanced, BlueprintReadOnly) UBlackboardComponent* Blackboard;  // 0x02F8, size 0x8
     UPROPERTY(Instanced) UGameplayTasksComponent* CachedGameplayTasksComponent;  // 0x0300, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSubclassOf<UNavigationQueryFilter> DefaultNavigationFilterClass;  // 0x0308, size 0x8
-    UPROPERTY(BlueprintAssignable) FAIMoveCompletedSignature ReceiveMoveCompleted;  // 0x0310, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FGameplayResourceSet ScriptClaimedResources;  // 0x02B8, private
-    FFocusKnowledge FocusInformation;  // 0x02C0, protected
-    FGenericTeamId TeamID;  // 0x0320, private
-
+private:
+    FGameplayResourceSet ScriptClaimedResources;  // 0x02B8, not reflected
+    UPROPERTY(EditAnywhere, Instanced) UPathFollowingComponent* PathFollowingComponent;  // 0x02D8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadOnly) UPawnActionsComponent* ActionsComp;  // 0x02F0, size 0x8
+    FGenericTeamId TeamID;  // 0x0320, not reflected
+public:
     UFUNCTION(BlueprintCallable) void ClaimTaskResource(TSubclassOf<UGameplayTaskResource> ResourceClass);  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) UAIPerceptionComponent* GetAIPerceptionComponent();  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) FVector GetFocalPoint() const;  // parameters 0xC

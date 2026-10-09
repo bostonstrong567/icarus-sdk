@@ -4,6 +4,7 @@
 USTRUCT()
 struct FInventorySlot : public FFastArraySerializerItem
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FItemData ItemData;  // 0x0010, size 0x1F0
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FTagQueriesRowHandle Query;  // 0x0200, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool Locked;  // 0x0218, size 0x1

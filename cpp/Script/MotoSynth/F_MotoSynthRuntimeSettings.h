@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMotoSynthRuntimeSettings
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bSynthToneEnabled;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float SynthToneVolume;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float SynthToneFilterFrequency;  // 0x0008, size 0x4

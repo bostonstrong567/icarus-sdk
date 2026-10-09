@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSurvivalTriggers : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FModifierTrigger> Food;  // 0x0018, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FModifierTrigger> Water;  // 0x0028, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FModifierTrigger> Oxygen;  // 0x0038, size 0x10

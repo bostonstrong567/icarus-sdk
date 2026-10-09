@@ -4,6 +4,7 @@
 USTRUCT()
 struct FPoseSnapshotRecorder
 {
+public:
     UPROPERTY(SaveGame) TArray<FTransform> LocalTransforms;  // 0x0000, size 0x10
     UPROPERTY(SaveGame) TArray<FName> BoneNames;  // 0x0010, size 0x10
     UPROPERTY(SaveGame) FName SkeletalMeshName;  // 0x0020, size 0x8

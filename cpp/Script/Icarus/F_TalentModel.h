@@ -4,5 +4,6 @@
 USTRUCT()
 struct FTalentModel : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<UTalentModelInterface> ModelClass;  // 0x0018, size 0x28
 };

@@ -5,5 +5,4 @@
 UCLASS()
 class UMaterialExpressionLightmapUVs : public UMaterialExpression
 {
-public:
 };

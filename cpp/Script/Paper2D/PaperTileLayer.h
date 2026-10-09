@@ -5,8 +5,10 @@
 UCLASS()
 class UPaperTileLayer : public UObject
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintReadOnly) FText LayerName;  // 0x0028, size 0x18
+private:
     UPROPERTY(BlueprintReadOnly) int32 LayerWidth;  // 0x0040, size 0x4
     UPROPERTY(BlueprintReadOnly) int32 LayerHeight;  // 0x0044, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bHiddenInGame : 1;  // 0x0048, mask 0x01

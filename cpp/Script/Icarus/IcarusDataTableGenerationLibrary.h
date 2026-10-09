@@ -5,5 +5,4 @@
 UCLASS()
 class UIcarusDataTableGenerationLibrary : public UDataTableValidationLibrary
 {
-public:
 };

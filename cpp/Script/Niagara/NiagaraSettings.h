@@ -5,6 +5,7 @@
 UCLASS(Config=Niagara)
 class UNiagaraSettings : public UDeveloperSettings
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, Config) FSoftObjectPath DefaultEffectType;  // 0x0038, size 0x18
     UPROPERTY(EditAnywhere, Config) TArray<FText> QualityLevels;  // 0x0050, size 0x10
@@ -15,5 +16,6 @@ public:
     UPROPERTY(EditAnywhere, Config) TEnumAsByte<ENDISkelMesh_GpuMaxInfluences> NDISkelMesh_GpuMaxInfluences;  // 0x00B8, size 0x1
     UPROPERTY(EditAnywhere, Config) TEnumAsByte<ENDISkelMesh_GpuUniformSamplingFormat> NDISkelMesh_GpuUniformSamplingFormat;  // 0x00B9, size 0x1
     UPROPERTY(EditAnywhere, Config) TEnumAsByte<ENDISkelMesh_AdjacencyTriangleIndexFormat> NDISkelMesh_AdjacencyTriangleIndexFormat;  // 0x00BA, size 0x1
+private:
     UPROPERTY(Transient) UNiagaraEffectType* DefaultEffectTypePtr;  // 0x00C0, size 0x8
 };

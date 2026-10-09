@@ -5,7 +5,6 @@
 UCLASS(Abstract)
 class ULiveLinkController : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   GetRole, OnRegistered, Tick

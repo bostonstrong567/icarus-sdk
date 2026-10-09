@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSocketStringIDQuery
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString SocketStringID;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector SlotVisualizerScale;  // 0x0010, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UStaticMesh> SlotVisualizerMesh;  // 0x0020, size 0x28

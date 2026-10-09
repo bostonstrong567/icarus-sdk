@@ -5,7 +5,6 @@
 UCLASS(Abstract)
 class UOverlays : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   GetAllOverlays, GetOverlaysForTime

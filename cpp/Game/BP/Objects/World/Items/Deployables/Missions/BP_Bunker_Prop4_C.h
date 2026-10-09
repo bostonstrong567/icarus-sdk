@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Bunker_Prop4_C : public ABP_DeployableBase_C
 {
-public:
 };

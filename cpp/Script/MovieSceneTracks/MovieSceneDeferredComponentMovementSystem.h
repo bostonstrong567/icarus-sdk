@@ -5,8 +5,6 @@
 UCLASS(MinimalAPI)
 class UMovieSceneDeferredComponentMovementSystem : public UMovieSceneEntitySystem
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TChunkedArray<TOptional<UMovieSceneDeferredComponentMovementSystem::FScopedMovementUpdateContainer>,8192> ScopedUpdates;  // 0x0040, private
+private:
+    TChunkedArray<TOptional<UMovieSceneDeferredComponentMovementSystem::FScopedMovementUpdateContainer>,8192> ScopedUpdates;  // 0x0040, not reflected
 };

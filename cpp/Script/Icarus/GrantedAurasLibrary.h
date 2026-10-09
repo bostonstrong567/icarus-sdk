@@ -6,7 +6,6 @@ UCLASS()
 class UGrantedAurasLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToGrantedAurasTable(FName Name, FAuraInfo Data, FGrantedAurasRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x71
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakGrantedAurasEnum(FGrantedAurasEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FGrantedAurasRowHandle CastToGrantedAurasRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -5,5 +5,4 @@
 UCLASS()
 class UValidHitQueriesTable : public UIcarusDataTable
 {
-public:
 };

@@ -6,7 +6,6 @@ UCLASS(Abstract, MinimalAPI)
 class UCollectableNoteInterface : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintNativeEvent) FCollectableNotesRowHandle GetNoteRowHandle();  // parameters 0x18
     UFUNCTION(BlueprintNativeEvent) void SetNoteRowHandle(FCollectableNotesRowHandle& RowHandle);  // parameters 0x18
 };

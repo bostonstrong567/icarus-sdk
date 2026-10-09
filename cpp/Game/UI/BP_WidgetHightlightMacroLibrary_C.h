@@ -5,5 +5,4 @@
 UCLASS(Abstract, NotPlaceable, EditInlineNew, Config=Engine)
 class UBP_WidgetHightlightMacroLibrary_C : public UUserWidget
 {
-public:
 };

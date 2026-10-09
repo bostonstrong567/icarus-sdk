@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSimSpaceSettings
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float MasterAlpha;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float VelocityScaleZ;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float MaxLinearVelocity;  // 0x0008, size 0x4

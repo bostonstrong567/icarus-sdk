@@ -6,6 +6,5 @@ UCLASS()
 class UModularSynthLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddModularSynthPresetToBankAsset(UModularSynthPresetBank* InBank, const FModularSynthPreset& Preset, FString PresetName);  // parameters 0xF8
 };

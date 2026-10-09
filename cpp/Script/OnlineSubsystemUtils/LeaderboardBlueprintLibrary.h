@@ -6,6 +6,5 @@ UCLASS()
 class ULeaderboardBlueprintLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static bool WriteLeaderboardInteger(APlayerController* PlayerController, FName StatName, int32 StatValue);  // parameters 0x15
 };

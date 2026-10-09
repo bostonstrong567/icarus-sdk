@@ -5,7 +5,8 @@
 UCLASS(Transient)
 class UAnimSharingTransitionInstance : public UAnimInstance
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, Transient, Instanced, BlueprintReadOnly) TWeakObjectPtr<USkeletalMeshComponent> FromComponent;  // 0x02B8, size 0x8
     UPROPERTY(EditAnywhere, Transient, Instanced, BlueprintReadOnly) TWeakObjectPtr<USkeletalMeshComponent> ToComponent;  // 0x02C0, size 0x8
     UPROPERTY(EditAnywhere, Transient, BlueprintReadOnly) float BlendTime;  // 0x02C8, size 0x4

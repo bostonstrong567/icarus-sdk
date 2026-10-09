@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UBP_IcarusGOAPAction_InvestigateHostileStimulus_C : public UBP_IcarusGOAPAction_Base_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool CheckContextualPreconditions(AIcarusNPCGOAPController* Controller) const;  // parameters 0x9
 };

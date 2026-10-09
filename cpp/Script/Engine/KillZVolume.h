@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class AKillZVolume : public APhysicsVolume
 {
-public:
 };

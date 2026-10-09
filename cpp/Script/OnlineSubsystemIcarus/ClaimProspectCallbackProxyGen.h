@@ -8,9 +8,8 @@ class UClaimProspectCallbackProxyGen : public UOnlineBlueprintCallProxyBase
 public:
     UPROPERTY(BlueprintAssignable) FOnClaimProspectEventSignature OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FOnClaimProspectEventSignature OnFail;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FReqClaimProspect ReqClaimProspect;  // 0x0050, private
-
+private:
+    FReqClaimProspect ReqClaimProspect;  // 0x0050, not reflected
+public:
     UFUNCTION(BlueprintCallable) static UClaimProspectCallbackProxyGen* ClaimProspect(const FReqClaimProspect& Request);  // parameters 0xD0
 };

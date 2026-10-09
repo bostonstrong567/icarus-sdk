@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_MathIntersectPlane : public FRigUnit_MathVectorBase
 {
+public:
     UPROPERTY() FVector Start;  // 0x0008, size 0xC
     UPROPERTY() FVector Direction;  // 0x0014, size 0xC
     UPROPERTY() FVector PlanePoint;  // 0x0020, size 0xC

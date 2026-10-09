@@ -4,6 +4,7 @@
 USTRUCT()
 struct FEventPayload
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName EventName;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FMovieSceneEventParameters Parameters;  // 0x0008, size 0x28
 };

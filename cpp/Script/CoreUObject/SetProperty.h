@@ -6,8 +6,6 @@ UCLASS()
 class USetProperty : public UProperty
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    UProperty * ElementProp;  // 0x0070
-    FScriptSetLayout SetLayout;  // 0x0078
+    UProperty * ElementProp;  // 0x0070, not reflected
+    FScriptSetLayout SetLayout;  // 0x0078, not reflected
 };

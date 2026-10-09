@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSourceEffectFilterAudioBusModulationSettings
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UAudioBus* AudioBus;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 EnvelopeFollowerAttackTimeMsec;  // 0x0008, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 EnvelopeFollowerReleaseTimeMsec;  // 0x000C, size 0x4

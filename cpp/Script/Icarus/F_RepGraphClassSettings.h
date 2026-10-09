@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRepGraphClassSettings : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere) FString Description;  // 0x0018, size 0x10
     UPROPERTY(EditAnywhere) float DistancePriorityScale;  // 0x0028, size 0x4
     UPROPERTY(EditAnywhere) float StarvationPriorityScale;  // 0x002C, size 0x4

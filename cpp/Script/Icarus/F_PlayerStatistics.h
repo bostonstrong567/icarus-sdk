@@ -4,5 +4,6 @@
 USTRUCT()
 struct FPlayerStatistics
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TMap<FStatisticsRowHandle, int32> StatisticsMap;  // 0x0000, size 0x50
 };

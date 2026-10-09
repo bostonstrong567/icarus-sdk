@@ -5,10 +5,11 @@
 UCLASS(EditInlineNew)
 class USettingsView : public UIcarusWidget
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(BlueprintReadOnly) FName SettingCategory;  // 0x0298, size 0x8
     UPROPERTY(Instanced, BlueprintReadOnly) USettingsMenu* SettingsMenu;  // 0x02A0, size 0x8
-
+public:
     UFUNCTION(BlueprintImplementableEvent) USettingsSection* CreateNewSection();  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void LoadApplySaveSettings(bool bLoadSettings, bool bApplySettings, bool bSaveSettings);  // parameters 0x3
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void OnRefresh();

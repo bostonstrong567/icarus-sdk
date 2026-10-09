@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class UPreviewCollectionInterface : public UInterface
 {
-public:
 };

@@ -6,7 +6,6 @@ UCLASS(Config=Game)
 class UBTTask_PerformAction_FireNPCWeapon_C : public UBTTask_PerformAction_SpitAttack_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void DoAction();
     UFUNCTION(BlueprintCallable) void GetProjectileSourceLocationAndRotation(FVector& OutDamageSource, FRotator& OutCustomLaunchRotation);  // parameters 0x18
     UFUNCTION(BlueprintCallable) void OnProjectileFired(FTransform SpawnTransform);  // parameters 0x30

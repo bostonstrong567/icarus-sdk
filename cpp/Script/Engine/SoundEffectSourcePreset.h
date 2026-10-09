@@ -5,5 +5,4 @@
 UCLASS(Abstract, EditInlineNew, Config=Engine)
 class USoundEffectSourcePreset : public USoundEffectPreset
 {
-public:
 };

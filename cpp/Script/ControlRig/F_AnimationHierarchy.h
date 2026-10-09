@@ -4,5 +4,6 @@
 USTRUCT()
 struct FAnimationHierarchy : public FNodeHierarchyWithUserData
 {
+public:
     UPROPERTY() TArray<FConstraintNodeData> UserData;  // 0x0078, size 0x10
 };

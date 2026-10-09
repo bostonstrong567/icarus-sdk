@@ -5,7 +5,6 @@
 UCLASS(Abstract, EditInlineNew)
 class USoundNodeAssetReferencer : public USoundNode
 {
-public:
 
     // Virtual functions that start here:
     //   ClearAssetReferences, LoadAsset

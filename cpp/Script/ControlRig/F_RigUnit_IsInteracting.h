@@ -4,5 +4,6 @@
 USTRUCT()
 struct FRigUnit_IsInteracting : public FRigUnit
 {
+public:
     UPROPERTY(EditAnywhere, Transient) bool bIsInteracting;  // 0x0008, size 0x1
 };

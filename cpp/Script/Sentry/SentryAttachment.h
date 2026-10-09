@@ -5,11 +5,9 @@
 UCLASS()
 class USentryAttachment : public UObject
 {
+private:
+    TSharedPtr<ISentryAttachment,0> AttachmentNativeImpl;  // 0x0028, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<ISentryAttachment,0> AttachmentNativeImpl;  // 0x0028, private
-
     UFUNCTION(BlueprintCallable, BlueprintPure) FString GetContentType() const;  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) TArray<uint8> GetData() const;  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) FString GetFilename() const;  // parameters 0x10

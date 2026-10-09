@@ -18,10 +18,9 @@ public:
     UPROPERTY() FGetFloat PercentDelegate;  // 0x02D8, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FLinearColor FillColorAndOpacity;  // 0x02E8, size 0x10
     UPROPERTY() FGetLinearColor FillColorAndOpacityDelegate;  // 0x02F8, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SProgressBar,0> MyProgressBar;  // 0x0308, protected
-
+protected:
+    TSharedPtr<SProgressBar,0> MyProgressBar;  // 0x0308, not reflected
+public:
     UFUNCTION(BlueprintCallable) void SetFillColorAndOpacity(FLinearColor InColor);  // parameters 0x10
     UFUNCTION(BlueprintCallable) void SetIsMarquee(bool InbIsMarquee);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void SetPercent(float InPercent);  // parameters 0x4

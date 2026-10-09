@@ -6,7 +6,6 @@ UCLASS()
 class UOptionalResourceFlowsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToOptionalResourceFlowsTable(FName Name, FOptionalResourceFlowData Data, FOptionalResourceFlowsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x69
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakOptionalResourceFlowsEnum(FOptionalResourceFlowsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FOptionalResourceFlowsRowHandle CastToOptionalResourceFlowsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -4,9 +4,8 @@
 USTRUCT()
 struct FMovieSceneSubSequenceTreeEntry
 {
-
-    // Not reflected:
-    FMovieSceneSequenceID SequenceID;  // 0x0000
-    ESectionEvaluationFlags Flags;  // 0x0004
-    FMovieSceneWarpCounter RootToSequenceWarpCounter;  // 0x0008
+public:
+    FMovieSceneSequenceID SequenceID;  // 0x0000, not reflected
+    ESectionEvaluationFlags Flags;  // 0x0004, not reflected
+    FMovieSceneWarpCounter RootToSequenceWarpCounter;  // 0x0008, not reflected
 };

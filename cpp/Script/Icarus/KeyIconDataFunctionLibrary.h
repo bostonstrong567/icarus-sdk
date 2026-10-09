@@ -6,6 +6,5 @@ UCLASS()
 class UKeyIconDataFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void GetIconsForKey(const FKey& Key, EControllerIconSet IconSet, FKeyIconData& OutData);  // parameters 0x80
 };

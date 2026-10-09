@@ -5,5 +5,4 @@
 UCLASS(Transient, Config=Engine)
 class UBP_ActionableBehaviour_Sledgehammer_C : public UBP_ActionableBehaviour_Generic_Melee_C
 {
-public:
 };

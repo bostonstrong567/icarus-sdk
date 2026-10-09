@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UBP_PauseFunctionLibrary_C : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void SetAudioPaused(bool bPaused, UObject* __WorldContext);  // parameters 0x10
 };

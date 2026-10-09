@@ -6,6 +6,5 @@ UCLASS(Abstract)
 class USlotableItem : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) void GetSpawnTransformOffset(FTransform& OutTransformOffset) const;  // parameters 0x30
 };

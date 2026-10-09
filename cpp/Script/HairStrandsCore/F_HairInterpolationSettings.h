@@ -4,6 +4,7 @@
 USTRUCT()
 struct FHairInterpolationSettings
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bOverrideGuides;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float HairToGuideDensity;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EHairInterpolationQuality InterpolationQuality;  // 0x0008, size 0x1

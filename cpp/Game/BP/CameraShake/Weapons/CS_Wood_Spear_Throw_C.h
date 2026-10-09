@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UCS_Wood_Spear_Throw_C : public UMatineeCameraShake
 {
-public:
 };

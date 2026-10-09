@@ -7,9 +7,8 @@ class USpacer : public UWidget
 {
 public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FVector2D Size;  // 0x0108, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SSpacer,0> MySpacer;  // 0x0110, protected
-
+protected:
+    TSharedPtr<SSpacer,0> MySpacer;  // 0x0110, not reflected
+public:
     UFUNCTION(BlueprintCallable) void SetSize(FVector2D InSize);  // parameters 0x8
 };

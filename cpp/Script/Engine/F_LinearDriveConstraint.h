@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLinearDriveConstraint
 {
+public:
     UPROPERTY(EditAnywhere) FVector PositionTarget;  // 0x0000, size 0xC
     UPROPERTY(EditAnywhere) FVector VelocityTarget;  // 0x000C, size 0xC
     UPROPERTY(EditAnywhere) FConstraintDrive XDrive;  // 0x0018, size 0x10

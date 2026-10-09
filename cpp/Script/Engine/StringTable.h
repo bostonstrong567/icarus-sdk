@@ -5,9 +5,7 @@
 UCLASS()
 class UStringTable : public UObject
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<FStringTable,1> StringTable;  // 0x0028, private
-    FName StringTableId;  // 0x0038, private
+private:
+    TSharedPtr<FStringTable,1> StringTable;  // 0x0028, not reflected
+    FName StringTableId;  // 0x0038, not reflected
 };

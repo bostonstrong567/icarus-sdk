@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRadarV3ScanData
 {
+public:
     UPROPERTY(EditAnywhere, SaveGame, BlueprintReadWrite) FVector Location;  // 0x0000, size 0xC
     UPROPERTY(EditAnywhere, SaveGame, BlueprintReadWrite) float SizeInKM;  // 0x000C, size 0x4
     UPROPERTY(EditAnywhere, SaveGame, BlueprintReadWrite) float Direction;  // 0x0010, size 0x4

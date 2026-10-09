@@ -4,10 +4,9 @@
 USTRUCT()
 struct FDebugDisplayProperty
 {
+public:
     UPROPERTY() UObject* Obj;  // 0x0000, size 0x8
     UPROPERTY() TSubclassOf<UObject> WithinClass;  // 0x0008, size 0x8
-
-    // Not reflected:
-    FName PropertyName;  // 0x0010
-    uint32 : 1 bSpecialProperty;  // 0x0018
+    FName PropertyName;  // 0x0010, not reflected
+    uint32 : 1 bSpecialProperty;  // 0x0018, not reflected
 };

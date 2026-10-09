@@ -6,7 +6,6 @@ UCLASS()
 class UGameplayConfigLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToGameplayConfigTable(FName Name, FGameplayConfig Data, FGameplayConfigRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x41
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakGameplayConfigEnum(FGameplayConfigEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FGameplayConfigRowHandle CastToGameplayConfigRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

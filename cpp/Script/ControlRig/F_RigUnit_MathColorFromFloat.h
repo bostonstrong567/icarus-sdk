@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_MathColorFromFloat : public FRigUnit_MathColorBase
 {
+public:
     UPROPERTY() float Value;  // 0x0008, size 0x4
     UPROPERTY() FLinearColor Result;  // 0x000C, size 0x10
 };

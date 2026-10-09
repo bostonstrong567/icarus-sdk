@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSettlementBuildingData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText BuildingName;  // 0x0018, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText BuildingDescription;  // 0x0030, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSubclassOf<ASettlementBuilding> BuildingClass;  // 0x0048, size 0x8

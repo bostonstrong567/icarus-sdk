@@ -4,5 +4,6 @@
 USTRUCT()
 struct FGOAPState
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FGOAPProperty> Properties;  // 0x0000, size 0x10
 };

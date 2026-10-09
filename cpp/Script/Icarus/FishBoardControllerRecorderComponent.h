@@ -5,7 +5,8 @@
 UCLASS(Config=Engine)
 class UFishBoardControllerRecorderComponent : public UActorStateRecorderComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(SaveGame) TArray<FFishBoardRecord> Lengths;  // 0x01C0, size 0x10
     UPROPERTY(SaveGame) TArray<FFishBoardRecord> Weights;  // 0x01D0, size 0x10
 };

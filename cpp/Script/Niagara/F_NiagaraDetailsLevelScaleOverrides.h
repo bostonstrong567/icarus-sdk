@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNiagaraDetailsLevelScaleOverrides
 {
+public:
     UPROPERTY() float Low;  // 0x0000, size 0x4
     UPROPERTY() float Medium;  // 0x0004, size 0x4
     UPROPERTY() float High;  // 0x0008, size 0x4

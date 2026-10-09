@@ -4,5 +4,6 @@
 USTRUCT()
 struct FNodeChain
 {
+public:
     UPROPERTY() TArray<FName> Nodes;  // 0x0000, size 0x10
 };

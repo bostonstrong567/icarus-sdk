@@ -4,6 +4,8 @@
 USTRUCT()
 struct FMovieSceneSequenceHierarchy
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() FMovieSceneSequenceHierarchyNode RootNode;  // 0x0000, size 0x18
     UPROPERTY() FMovieSceneSubSequenceTree Tree;  // 0x0018, size 0x60
     UPROPERTY() TMap<FMovieSceneSequenceID, FMovieSceneSubSequenceData> SubSequences;  // 0x0078, size 0x50

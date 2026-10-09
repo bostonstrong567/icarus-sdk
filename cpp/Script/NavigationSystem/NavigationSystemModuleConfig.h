@@ -5,7 +5,8 @@
 UCLASS(EditInlineNew)
 class UNavigationSystemModuleConfig : public UNavigationSystemConfig
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere) uint8 bStrictlyStatic : 1;  // 0x0050, mask 0x01
     UPROPERTY(EditAnywhere) uint8 bCreateOnClient : 1;  // 0x0050, mask 0x02
     UPROPERTY(EditAnywhere) uint8 bAutoSpawnMissingNavData : 1;  // 0x0050, mask 0x04

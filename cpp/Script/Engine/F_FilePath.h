@@ -4,5 +4,6 @@
 USTRUCT()
 struct FFilePath
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString FilePath;  // 0x0000, size 0x10
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFieldGuideCategories : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSubclassOf<UFieldGuidePageWidgetBase> IndexView;  // 0x0018, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSubclassOf<UFieldGuidePageWidgetBase> DetailView;  // 0x0020, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 DisplayOrder;  // 0x0028, size 0x4

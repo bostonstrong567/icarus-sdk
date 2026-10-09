@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UBP_IcarusGOAPGoal_BeCautious_C : public UIcarusGOAPGoal
 {
-public:
 };

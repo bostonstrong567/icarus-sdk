@@ -4,6 +4,7 @@
 USTRUCT()
 struct FArmourSet : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FArmourSetBonusRowHandle> SetBonus;  // 0x0018, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EPlayerArmourTypeFMODParam FMODParam;  // 0x0028, size 0x1
 };

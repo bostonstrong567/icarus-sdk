@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFireData
 {
+public:
     UPROPERTY() FVector Impulse;  // 0x0000, size 0xC
     UPROPERTY() FVector InstigatorVelocity;  // 0x000C, size 0xC
     UPROPERTY() FProjectileFireParams AdvancedParameters;  // 0x0018, size 0x10

@@ -8,9 +8,8 @@ class UARSaveWorldAsyncTaskBlueprintProxy : public UARBaseAsyncTaskBlueprintProx
 public:
     UPROPERTY(BlueprintAssignable) FARSaveWorldPin OnSuccess;  // 0x0050, size 0x10
     UPROPERTY(BlueprintAssignable) FARSaveWorldPin OnFailed;  // 0x0060, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<FARSaveWorldAsyncTask,1> SaveWorldTask;  // 0x0070, private
-
+private:
+    TSharedPtr<FARSaveWorldAsyncTask,1> SaveWorldTask;  // 0x0070, not reflected
+public:
     UFUNCTION(BlueprintCallable) static UARSaveWorldAsyncTaskBlueprintProxy* ARSaveWorld(UObject* WorldContextObject);  // parameters 0x10
 };

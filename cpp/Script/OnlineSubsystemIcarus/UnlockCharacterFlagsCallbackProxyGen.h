@@ -8,9 +8,8 @@ class UUnlockCharacterFlagsCallbackProxyGen : public UOnlineBlueprintCallProxyBa
 public:
     UPROPERTY(BlueprintAssignable) FOnUnlockCharacterFlagsEventSignature OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FOnUnlockCharacterFlagsEventSignature OnFail;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FReqUnlockCharacterFlags ReqUnlockCharacterFlags;  // 0x0050, private
-
+private:
+    FReqUnlockCharacterFlags ReqUnlockCharacterFlags;  // 0x0050, not reflected
+public:
     UFUNCTION(BlueprintCallable) static UUnlockCharacterFlagsCallbackProxyGen* UnlockCharacterFlags(const FReqUnlockCharacterFlags& Request);  // parameters 0x30
 };

@@ -17,23 +17,22 @@ public:
     UPROPERTY(BlueprintAssignable) FOnChaosCollisionEvents OnCollisionEvents;  // 0x02E8, size 0x10
     UPROPERTY(BlueprintAssignable) FOnChaosBreakingEvents OnBreakingEvents;  // 0x02F8, size 0x10
     UPROPERTY(BlueprintAssignable) FOnChaosTrailingEvents OnTrailingEvents;  // 0x0308, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FThreadSafeCounter TaskState;  // 0x0318, protected
-    TArray<Chaos::FCollidingData,TSizedDefaultAllocator<32> > RawCollisionDataArray;  // 0x0320, protected
-    TArray<Chaos::FBreakingData,TSizedDefaultAllocator<32> > RawBreakingDataArray;  // 0x0330, protected
-    TArray<Chaos::FTrailingData,TSizedDefaultAllocator<32> > RawTrailingDataArray;  // 0x0340, protected
-    FTransform ChaosComponentTransform;  // 0x0350, protected
-    FThreadSafeBool bChanged;  // 0x0380, protected
-    float LastCollisionDataTimeStamp;  // 0x0384, protected
-    float LastBreakingDataTimeStamp;  // 0x0388, protected
-    float LastTrailingDataTimeStamp;  // 0x038C, protected
-    TSet<Chaos::FPBDRigidsSolver *,DefaultKeyFuncs<Chaos::FPBDRigidsSolver *,0>,FDefaultSetAllocator> Solvers;  // 0x0390, protected
-    TArray<FGeometryCollectionPhysicsProxy const *,TSizedDefaultAllocator<32> > GeometryCollectionPhysicsProxies;  // 0x03E0, protected
-    TSharedPtr<FChaosCollisionEventFilter,0> ChaosCollisionFilter;  // 0x03F0, protected
-    TSharedPtr<FChaosBreakingEventFilter,0> ChaosBreakingFilter;  // 0x0400, protected
-    TSharedPtr<FChaosTrailingEventFilter,0> ChaosTrailingFilter;  // 0x0410, protected
-
+protected:
+    FThreadSafeCounter TaskState;  // 0x0318, not reflected
+    TArray<Chaos::FCollidingData,TSizedDefaultAllocator<32> > RawCollisionDataArray;  // 0x0320, not reflected
+    TArray<Chaos::FBreakingData,TSizedDefaultAllocator<32> > RawBreakingDataArray;  // 0x0330, not reflected
+    TArray<Chaos::FTrailingData,TSizedDefaultAllocator<32> > RawTrailingDataArray;  // 0x0340, not reflected
+    FTransform ChaosComponentTransform;  // 0x0350, not reflected
+    FThreadSafeBool bChanged;  // 0x0380, not reflected
+    float LastCollisionDataTimeStamp;  // 0x0384, not reflected
+    float LastBreakingDataTimeStamp;  // 0x0388, not reflected
+    float LastTrailingDataTimeStamp;  // 0x038C, not reflected
+    TSet<Chaos::FPBDRigidsSolver *,DefaultKeyFuncs<Chaos::FPBDRigidsSolver *,0>,FDefaultSetAllocator> Solvers;  // 0x0390, not reflected
+    TArray<FGeometryCollectionPhysicsProxy const *,TSizedDefaultAllocator<32> > GeometryCollectionPhysicsProxies;  // 0x03E0, not reflected
+    TSharedPtr<FChaosCollisionEventFilter,0> ChaosCollisionFilter;  // 0x03F0, not reflected
+    TSharedPtr<FChaosBreakingEventFilter,0> ChaosBreakingFilter;  // 0x0400, not reflected
+    TSharedPtr<FChaosTrailingEventFilter,0> ChaosTrailingFilter;  // 0x0410, not reflected
+public:
     UFUNCTION(BlueprintCallable) void AddChaosSolverActor(AChaosSolverActor* ChaosSolverActor);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void AddGeometryCollectionActor(AGeometryCollectionActor* GeometryCollectionActor);  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsEventListening() const;  // parameters 0x1

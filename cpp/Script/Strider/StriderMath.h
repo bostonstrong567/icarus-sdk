@@ -6,7 +6,6 @@ UCLASS()
 class UStriderMath : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static float AngleBetween(const FVector& A, const FVector& B);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static float CalculateCircleStrafeDirectionDelta(float LastDirection, float Direction, float DeltaTime);  // parameters 0x10
     UFUNCTION(BlueprintCallable) static float CalculatePlayRate(float TotalSpeedScale, float PlaybackWeight, float MinPlayRate, float MaxPlayRate);  // parameters 0x14

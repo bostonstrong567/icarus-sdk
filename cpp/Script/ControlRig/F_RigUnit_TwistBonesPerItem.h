@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_TwistBonesPerItem : public FRigUnit_HighlevelBaseMutable
 {
+public:
     UPROPERTY() FRigElementKeyCollection Items;  // 0x0068, size 0x10
     UPROPERTY() FVector TwistAxis;  // 0x0078, size 0xC
     UPROPERTY() FVector PoleAxis;  // 0x0084, size 0xC

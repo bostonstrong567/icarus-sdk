@@ -6,6 +6,5 @@ UCLASS()
 class UWidgetBinding : public UPropertyBinding
 {
 public:
-
     UFUNCTION() UWidget* GetValue() const;  // parameters 0x8
 };

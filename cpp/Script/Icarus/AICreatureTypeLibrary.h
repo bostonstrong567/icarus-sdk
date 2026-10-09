@@ -6,7 +6,6 @@ UCLASS()
 class UAICreatureTypeLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToAICreatureTypeTable(FName Name, FAICreatureType Data, FAICreatureTypeRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xA9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakAICreatureTypeEnum(FAICreatureTypeEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FAICreatureTypeRowHandle CastToAICreatureTypeRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

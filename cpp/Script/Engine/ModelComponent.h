@@ -7,10 +7,9 @@ class UModelComponent : public UPrimitiveComponent, public IInterface_CollisionD
 {
 public:
     UPROPERTY() UBodySetup* ModelBodySetup;  // 0x0468, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    UModel * Model;  // 0x0458, private
-    int32 ComponentIndex;  // 0x0460, private
-    TArray<unsigned short,TSizedDefaultAllocator<32> > Nodes;  // 0x0470, private
-    TIndirectArray<FModelElement,TSizedDefaultAllocator<32> > Elements;  // 0x0480, private
+private:
+    UModel * Model;  // 0x0458, not reflected
+    int32 ComponentIndex;  // 0x0460, not reflected
+    TArray<unsigned short,TSizedDefaultAllocator<32> > Nodes;  // 0x0470, not reflected
+    TIndirectArray<FModelElement,TSizedDefaultAllocator<32> > Elements;  // 0x0480, not reflected
 };

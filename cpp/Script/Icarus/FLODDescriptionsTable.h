@@ -5,5 +5,4 @@
 UCLASS()
 class UFLODDescriptionsTable : public UIcarusDataTable
 {
-public:
 };

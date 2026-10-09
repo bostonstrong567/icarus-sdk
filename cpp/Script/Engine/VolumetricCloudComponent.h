@@ -21,10 +21,9 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float ShadowReflectionSampleCountScale;  // 0x022C, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float ShadowTracingDistance;  // 0x0230, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float StopTracingTransmittanceThreshold;  // 0x0234, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    FVolumetricCloudSceneProxy * VolumetricCloudSceneProxy;  // 0x0238, private
-
+private:
+    FVolumetricCloudSceneProxy * VolumetricCloudSceneProxy;  // 0x0238, not reflected
+public:
     UFUNCTION(BlueprintCallable) void SetGroundAlbedo(FColor NewValue);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void SetLayerBottomAltitude(float NewValue);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void SetLayerHeight(float NewValue);  // parameters 0x4

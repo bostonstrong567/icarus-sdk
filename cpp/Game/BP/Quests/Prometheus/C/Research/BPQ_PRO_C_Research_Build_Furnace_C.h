@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_PRO_C_Research_Build_Furnace_C : public ABPQ_Deploy_Count_C
 {
-public:
 };

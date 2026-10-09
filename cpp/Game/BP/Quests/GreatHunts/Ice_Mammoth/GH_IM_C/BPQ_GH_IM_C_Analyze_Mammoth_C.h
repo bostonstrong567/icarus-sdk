@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_IM_C_Analyze_Mammoth_C : public ABPQ_GH_IM_C_Analyze_Viscid_C
 {
-public:
 };

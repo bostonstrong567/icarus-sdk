@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_ClayBrick_Fireplace_Cap_Half_C : public ABP_Fireplace_Chimney_Cap_C
 {
-public:
 };

@@ -5,5 +5,4 @@
 UCLASS(NotPlaceable, Config=Engine)
 class ABP_NPC_Kea_Controller_C : public AIcarusNPCController
 {
-public:
 };

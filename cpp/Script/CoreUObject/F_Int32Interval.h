@@ -4,6 +4,7 @@
 USTRUCT()
 struct FInt32Interval
 {
+public:
     UPROPERTY(EditAnywhere) int32 Min;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere) int32 Max;  // 0x0004, size 0x4
 };

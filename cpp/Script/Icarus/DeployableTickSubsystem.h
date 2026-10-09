@@ -5,10 +5,8 @@
 UCLASS()
 class UDeployableTickSubsystem : public UTickableWorldSubsystem
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<TWeakObjectPtr<ADeployable,FWeakObjectPtr>,TSizedDefaultAllocator<32> > DeployablesToTick;  // 0x0040, private
-    TArray<TWeakObjectPtr<UGeneratorComponent,FWeakObjectPtr>,TSizedDefaultAllocator<32> > GeneratorComponents;  // 0x0050, private
-    TArray<TWeakObjectPtr<UProcessingComponent,FWeakObjectPtr>,TSizedDefaultAllocator<32> > ProcessingComponents;  // 0x0060, private
+private:
+    TArray<TWeakObjectPtr<ADeployable,FWeakObjectPtr>,TSizedDefaultAllocator<32> > DeployablesToTick;  // 0x0040, not reflected
+    TArray<TWeakObjectPtr<UGeneratorComponent,FWeakObjectPtr>,TSizedDefaultAllocator<32> > GeneratorComponents;  // 0x0050, not reflected
+    TArray<TWeakObjectPtr<UProcessingComponent,FWeakObjectPtr>,TSizedDefaultAllocator<32> > ProcessingComponents;  // 0x0060, not reflected
 };

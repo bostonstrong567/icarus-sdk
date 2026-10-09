@@ -5,5 +5,4 @@
 UCLASS()
 class UInputVectorAxisDelegateBinding : public UInputAxisKeyDelegateBinding
 {
-public:
 };

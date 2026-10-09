@@ -4,6 +4,7 @@
 USTRUCT()
 struct FOptionalMovieSceneBlendType
 {
+public:
     UPROPERTY(BlueprintReadOnly) EMovieSceneBlendType BlendType;  // 0x0000, size 0x1
     UPROPERTY(BlueprintReadOnly) bool bIsValid;  // 0x0001, size 0x1
 };

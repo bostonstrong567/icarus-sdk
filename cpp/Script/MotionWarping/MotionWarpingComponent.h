@@ -5,13 +5,15 @@
 UCLASS(Config=Engine)
 class UMotionWarpingComponent : public UActorComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bSearchForWindowsInAnimsWithinMontages;  // 0x00B0, size 0x1
     UPROPERTY(BlueprintAssignable) FMotionWarpingPreUpdate OnPreUpdate;  // 0x00B8, size 0x10
+protected:
     UPROPERTY(Transient) TWeakObjectPtr<ACharacter> CharacterOwner;  // 0x00C8, size 0x8
     UPROPERTY(Transient) TArray<URootMotionModifier*> Modifiers;  // 0x00D0, size 0x10
     UPROPERTY(Replicated, Transient) TArray<FMotionWarpingTarget> WarpTargets;  // 0x00E0, size 0x10
-
+public:
     UFUNCTION(BlueprintCallable) void AddOrUpdateWarpTarget(const FMotionWarpingTarget& WarpTarget);  // parameters 0x34
     UFUNCTION(BlueprintCallable) void AddOrUpdateWarpTargetFromComponent(FName WarpTargetName, USceneComponent* Component, FName BoneName, bool bFollowComponent);  // parameters 0x19
     UFUNCTION(BlueprintCallable) void AddOrUpdateWarpTargetFromLocation(FName WarpTargetName, FVector TargetLocation);  // parameters 0x14

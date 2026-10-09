@@ -4,6 +4,8 @@
 USTRUCT()
 struct FPropertyAccessLibrary
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() TArray<FPropertyAccessSegment> PathSegments;  // 0x0000, size 0x10
     UPROPERTY() TArray<FPropertyAccessPath> SrcPaths;  // 0x0010, size 0x10
     UPROPERTY() TArray<FPropertyAccessPath> DestPaths;  // 0x0020, size 0x10
@@ -12,8 +14,6 @@ struct FPropertyAccessLibrary
     UPROPERTY(Transient) TArray<FPropertyAccessIndirectionChain> DestAccesses;  // 0x0080, size 0x10
     UPROPERTY(Transient) TArray<FPropertyAccessIndirection> Indirections;  // 0x0090, size 0x10
     UPROPERTY() TArray<int32> EventAccessIndices;  // 0x00A0, size 0x10
-
-    // Not reflected:
-    bool bHasBeenPostLoaded;  // 0x00B0
-    TArray<FPropertyAccessLibrary::FEventMapping,TSizedDefaultAllocator<32> > EventMappings;  // 0x00B8
+    bool bHasBeenPostLoaded;  // 0x00B0, not reflected
+    TArray<FPropertyAccessLibrary::FEventMapping,TSizedDefaultAllocator<32> > EventMappings;  // 0x00B8, not reflected
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_VisualDebugVectorItemSpace : public FRigUnit_DebugBase
 {
+public:
     UPROPERTY() FVector Value;  // 0x0008, size 0xC
     UPROPERTY() bool bEnabled;  // 0x0014, size 0x1
     UPROPERTY() ERigUnitVisualDebugPointMode Mode;  // 0x0015, size 0x1

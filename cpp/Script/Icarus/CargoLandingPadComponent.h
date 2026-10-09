@@ -5,10 +5,11 @@
 UCLASS(Config=Engine)
 class UCargoLandingPadComponent : public UActorComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY(EditAnywhere) int32 LeftSlotUID;  // 0x00B0, size 0x4
     UPROPERTY(EditAnywhere) int32 RightSlotUID;  // 0x00B4, size 0x4
-
+public:
     UFUNCTION(BlueprintCallable) int32 AssignAvailableSlot(AIcarusActor* Object);  // parameters 0xC
     UFUNCTION(BlueprintCallable) int32 ClearSlot(AIcarusActor* Object);  // parameters 0xC
     UFUNCTION(BlueprintCallable, BlueprintPure) int32 GetLeftSlotUID() const;  // parameters 0x4

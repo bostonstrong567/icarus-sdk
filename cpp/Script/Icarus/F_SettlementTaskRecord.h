@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSettlementTaskRecord
 {
+public:
     UPROPERTY(SaveGame) FGuid TaskId;  // 0x0000, size 0x10
     UPROPERTY(SaveGame) FName TaskTypeRow;  // 0x0010, size 0x8
     UPROPERTY(SaveGame) float Progress;  // 0x0018, size 0x4

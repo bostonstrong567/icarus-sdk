@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UCameraAnimationSequence : public UTemplateSequence
 {
-public:
 };

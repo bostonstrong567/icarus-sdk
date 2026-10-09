@@ -5,5 +5,4 @@
 UCLASS(Transient, NotPlaceable)
 class UVisualLoggerAutomationTests : public UObject
 {
-public:
 };

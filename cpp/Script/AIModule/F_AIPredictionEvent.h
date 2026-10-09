@@ -4,9 +4,8 @@
 USTRUCT()
 struct FAIPredictionEvent
 {
+public:
     UPROPERTY() AActor* Requestor;  // 0x0000, size 0x8
     UPROPERTY() AActor* PredictedActor;  // 0x0008, size 0x8
-
-    // Not reflected:
-    float TimeToPredict;  // 0x0010
+    float TimeToPredict;  // 0x0010, not reflected
 };

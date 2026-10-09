@@ -5,5 +5,4 @@
 UCLASS(Abstract, EditInlineNew)
 class UParticleModuleSubUVBase : public UParticleModule
 {
-public:
 };

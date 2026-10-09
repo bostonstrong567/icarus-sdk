@@ -4,5 +4,6 @@
 USTRUCT()
 struct FMovieSceneTrackDisplayOptions
 {
+public:
     UPROPERTY(EditAnywhere) uint8 bShowVerticalFrames : 1;  // 0x0000, mask 0x01
 };

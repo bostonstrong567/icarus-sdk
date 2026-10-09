@@ -4,5 +4,6 @@
 USTRUCT()
 struct FInventoryData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FInventoryInfoRowHandle> Inventories;  // 0x0018, size 0x10
 };

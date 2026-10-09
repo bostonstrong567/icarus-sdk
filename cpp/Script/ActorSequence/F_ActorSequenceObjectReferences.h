@@ -4,5 +4,6 @@
 USTRUCT()
 struct FActorSequenceObjectReferences
 {
+public:
     UPROPERTY() TArray<FActorSequenceObjectReference> Array;  // 0x0000, size 0x10
 };

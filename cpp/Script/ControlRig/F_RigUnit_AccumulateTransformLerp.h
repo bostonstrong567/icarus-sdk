@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_AccumulateTransformLerp : public FRigUnit_AccumulateBase
 {
+public:
     UPROPERTY() FTransform TargetValue;  // 0x0010, size 0x30
     UPROPERTY() FTransform InitialValue;  // 0x0040, size 0x30
     UPROPERTY() float Blend;  // 0x0070, size 0x4

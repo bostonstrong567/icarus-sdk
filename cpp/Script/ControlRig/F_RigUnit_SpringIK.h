@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_SpringIK : public FRigUnit_HighlevelBaseMutable
 {
+public:
     UPROPERTY() FName StartBone;  // 0x0068, size 0x8
     UPROPERTY() FName EndBone;  // 0x0070, size 0x8
     UPROPERTY() float HierarchyStrength;  // 0x0078, size 0x4

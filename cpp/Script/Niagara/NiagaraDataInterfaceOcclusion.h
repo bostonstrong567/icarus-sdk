@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew)
 class UNiagaraDataInterfaceOcclusion : public UNiagaraDataInterface
 {
-public:
 };

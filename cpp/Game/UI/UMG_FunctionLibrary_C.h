@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UUMG_FunctionLibrary_C : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static void GetButtonState(UButton* Button, UObject* __WorldContext, TEnumAsByte<E_ButtonState>& State);  // parameters 0x11
 };

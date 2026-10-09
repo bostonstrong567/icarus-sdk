@@ -4,5 +4,6 @@
 USTRUCT()
 struct FStatistic : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FText DisplayName;  // 0x0018, size 0x18
 };

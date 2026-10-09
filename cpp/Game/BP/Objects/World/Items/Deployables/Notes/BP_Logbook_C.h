@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Logbook_C : public ABP_Note_C
 {
-public:
 };

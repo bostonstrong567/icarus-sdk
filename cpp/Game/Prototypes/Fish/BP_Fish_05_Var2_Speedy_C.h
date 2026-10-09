@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Fish_05_Var2_Speedy_C : public ABP_Fish_05_Speedy_C
 {
-public:
 };

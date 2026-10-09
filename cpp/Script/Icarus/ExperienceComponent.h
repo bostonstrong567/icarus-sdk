@@ -6,7 +6,6 @@ UCLASS(EditInlineNew, Config=Engine)
 class UExperienceComponent : public UTraitComponent
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) bool GetExperienceData(FExperienceData& OutData) const;  // parameters 0x69
     UFUNCTION(BlueprintCallable) bool TriggerExperienceEvent(EExperienceSource Type, AActor* Target);  // parameters 0x11
 };

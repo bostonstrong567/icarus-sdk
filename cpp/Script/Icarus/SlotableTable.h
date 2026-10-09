@@ -5,5 +5,4 @@
 UCLASS()
 class USlotableTable : public UIcarusDataTable
 {
-public:
 };

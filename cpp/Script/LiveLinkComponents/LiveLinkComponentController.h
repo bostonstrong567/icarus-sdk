@@ -13,8 +13,7 @@ public:
     UPROPERTY(EditAnywhere) FComponentReference ComponentToControl;  // 0x0128, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bDisableEvaluateLiveLinkWhenSpawnable;  // 0x0150, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bEvaluateLiveLink;  // 0x0151, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bIsDirty;  // 0x0152, protected
-    TOptional<bool> bIsSpawnableCache;  // 0x0153, protected
+protected:
+    bool bIsDirty;  // 0x0152, not reflected
+    TOptional<bool> bIsSpawnableCache;  // 0x0153, not reflected
 };

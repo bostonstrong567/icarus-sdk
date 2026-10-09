@@ -10,10 +10,9 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<EStretchDirection> StretchDirection;  // 0x0121, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float UserSpecifiedScale;  // 0x0124, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool IgnoreInheritedScale;  // 0x0128, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SScaleBox,0> MyScaleBox;  // 0x0130, protected
-
+protected:
+    TSharedPtr<SScaleBox,0> MyScaleBox;  // 0x0130, not reflected
+public:
     UFUNCTION(BlueprintCallable) void SetIgnoreInheritedScale(bool bInIgnoreInheritedScale);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void SetStretch(TEnumAsByte<EStretch> InStretch);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void SetStretchDirection(TEnumAsByte<EStretchDirection> InStretchDirection);  // parameters 0x1

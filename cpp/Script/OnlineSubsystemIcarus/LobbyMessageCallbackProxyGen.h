@@ -8,9 +8,8 @@ class ULobbyMessageCallbackProxyGen : public UOnlineBlueprintCallProxyBase
 public:
     UPROPERTY(BlueprintAssignable) FOnLobbyMessageEventSignature OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FOnLobbyMessageEventSignature OnFail;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FReqLobbyMessage ReqLobbyMessage;  // 0x0050, private
-
+private:
+    FReqLobbyMessage ReqLobbyMessage;  // 0x0050, not reflected
+public:
     UFUNCTION(BlueprintCallable) static ULobbyMessageCallbackProxyGen* LobbyMessage(const FReqLobbyMessage& Request);  // parameters 0x48
 };

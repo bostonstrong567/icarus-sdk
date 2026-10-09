@@ -6,7 +6,6 @@ UCLASS()
 class URCONCommandLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToRCONCommandTable(FName Name, FRCONCommandData Data, FRCONCommandRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x81
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakRCONCommandEnum(FRCONCommandEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FRCONCommandRowHandle CastToRCONCommandRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -4,10 +4,9 @@
 USTRUCT()
 struct FCachedKeyToActionInfo
 {
+public:
     UPROPERTY() UPlayerInput* PlayerInput;  // 0x0000, size 0x8
-
-    // Not reflected:
-    uint32 KeyMapBuiltForIndex;  // 0x0008
-    TMap<FKey,TArray<TSharedPtr<FInputActionBinding,0>,TSizedDefaultAllocator<32> >,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FKey,TArray<TSharedPtr<FInputActionBinding,0>,TSizedDefaultAllocator<32> >,0> > KeyToActionMap;  // 0x0010
-    TArray<TSharedPtr<FInputActionBinding,0>,TSizedDefaultAllocator<32> > AnyKeyToActionMap;  // 0x0060
+    uint32 KeyMapBuiltForIndex;  // 0x0008, not reflected
+    TMap<FKey,TArray<TSharedPtr<FInputActionBinding,0>,TSizedDefaultAllocator<32> >,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FKey,TArray<TSharedPtr<FInputActionBinding,0>,TSizedDefaultAllocator<32> >,0> > KeyToActionMap;  // 0x0010, not reflected
+    TArray<TSharedPtr<FInputActionBinding,0>,TSizedDefaultAllocator<32> > AnyKeyToActionMap;  // 0x0060, not reflected
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FDirtMoundModification : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 CropPlotTier;  // 0x0018, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FTagQueriesRowHandle MatchingItemTagQuery;  // 0x001C, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FModifierStatesRowHandle Modifier;  // 0x0034, size 0x18

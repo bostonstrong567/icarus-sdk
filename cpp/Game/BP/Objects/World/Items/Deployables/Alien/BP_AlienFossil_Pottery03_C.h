@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_AlienFossil_Pottery03_C : public ABP_DeployableContainerBase_C
 {
-public:
 };

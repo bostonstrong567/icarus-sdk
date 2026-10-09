@@ -5,5 +5,4 @@
 UCLASS()
 class UBreakableRockDataTable : public UIcarusDataTable
 {
-public:
 };

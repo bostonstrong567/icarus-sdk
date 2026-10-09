@@ -4,6 +4,7 @@
 USTRUCT()
 struct FDatabaseBuildingData
 {
+public:
     UPROPERTY(SaveGame, BlueprintReadWrite) FName BuildableRowName;  // 0x0000, size 0x8
     UPROPERTY(SaveGame, BlueprintReadWrite) FName BuildingItemStaticRowName;  // 0x0008, size 0x8
     UPROPERTY(SaveGame, BlueprintReadWrite) TArray<FBuildingInfo> BuildingInstances;  // 0x0010, size 0x10

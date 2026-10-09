@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Drone_Spawner_Invisible_C : public ABP_Drone_Spawner_Mix_C
 {
-public:
 };

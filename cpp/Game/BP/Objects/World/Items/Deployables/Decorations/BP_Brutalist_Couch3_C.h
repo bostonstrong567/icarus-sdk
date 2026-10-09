@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Brutalist_Couch3_C : public ABP_ChairBase_C
 {
-public:
 };

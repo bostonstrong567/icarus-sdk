@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_HollowTrunk_Mangrove_5_C : public ABP_HollowTrunk_C
 {
-public:
 };

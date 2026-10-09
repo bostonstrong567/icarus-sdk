@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew)
 class UIcarusNavigationSystemConfig : public UNavigationSystemModuleConfig
 {
-public:
 };

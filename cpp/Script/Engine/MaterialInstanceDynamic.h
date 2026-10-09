@@ -6,9 +6,7 @@ UCLASS()
 class UMaterialInstanceDynamic : public UMaterialInstance
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<FName,TArray<FName,TSizedDefaultAllocator<32> >,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,TArray<FName,TSizedDefaultAllocator<32> >,0> > RenamedTextures;  // 0x0310
+    TMap<FName,TArray<FName,TSizedDefaultAllocator<32> >,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,TArray<FName,TSizedDefaultAllocator<32> >,0> > RenamedTextures;  // 0x0310, not reflected
 
     UFUNCTION() void CopyInterpParameters(UMaterialInstance* Source);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void CopyParameterOverrides(UMaterialInstance* MaterialInstance);  // parameters 0x8

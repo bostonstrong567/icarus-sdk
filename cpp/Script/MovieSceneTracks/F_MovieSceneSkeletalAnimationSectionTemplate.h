@@ -4,5 +4,6 @@
 USTRUCT()
 struct FMovieSceneSkeletalAnimationSectionTemplate : public FMovieSceneEvalTemplate
 {
+public:
     UPROPERTY() FMovieSceneSkeletalAnimationSectionTemplateParameters Params;  // 0x0020, size 0xE0
 };

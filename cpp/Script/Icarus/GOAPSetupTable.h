@@ -5,5 +5,4 @@
 UCLASS()
 class UGOAPSetupTable : public UIcarusDataTable
 {
-public:
 };

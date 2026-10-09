@@ -6,7 +6,6 @@ UCLASS()
 class UAssetReferencesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToAssetReferencesTable(FName Name, FAssetReferenceData Data, FAssetReferencesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xA9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakAssetReferencesEnum(FAssetReferencesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FAssetReferencesRowHandle CastToAssetReferencesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

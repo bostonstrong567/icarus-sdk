@@ -5,5 +5,4 @@
 UCLASS()
 class UByteChannelEvaluatorSystem : public UMovieSceneEntitySystem
 {
-public:
 };

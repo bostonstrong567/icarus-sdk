@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class USK_Wood_Bow_CtrlRig_String_Aim_C : public UControlRig
 {
-public:
 };

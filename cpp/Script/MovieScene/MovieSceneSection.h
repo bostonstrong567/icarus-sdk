@@ -5,16 +5,12 @@
 UCLASS(Abstract, MinimalAPI)
 class UMovieSceneSection : public UMovieSceneSignedObject
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere) FMovieSceneSectionEvalOptions EvalOptions;  // 0x0050, size 0x2
     UPROPERTY(EditAnywhere) FMovieSceneEasingSettings Easing;  // 0x0058, size 0x38
     UPROPERTY(EditAnywhere) FMovieSceneFrameRange SectionRange;  // 0x0090, size 0x10
-    UPROPERTY(EditAnywhere) FFrameNumber PreRollFrames;  // 0x00A0, size 0x4
-    UPROPERTY(EditAnywhere) FFrameNumber PostRollFrames;  // 0x00A4, size 0x4
-    UPROPERTY() int32 RowIndex;  // 0x00A8, size 0x4
-    UPROPERTY() int32 OverlapPriority;  // 0x00AC, size 0x4
-    UPROPERTY(EditAnywhere) uint8 bIsActive : 1;  // 0x00B0, mask 0x01
-    UPROPERTY(EditAnywhere) uint8 bIsLocked : 1;  // 0x00B0, mask 0x02
+protected:
     UPROPERTY(Deprecated) float StartTime;  // 0x00B4, size 0x4
     UPROPERTY(Deprecated) float EndTime;  // 0x00B8, size 0x4
     UPROPERTY(Deprecated) float PreRollTime;  // 0x00BC, size 0x4
@@ -22,11 +18,16 @@ public:
     UPROPERTY(Deprecated) uint8 bIsInfinite : 1;  // 0x00C4, mask 0x01
     UPROPERTY() bool bSupportsInfiniteRange;  // 0x00C8, size 0x1
     UPROPERTY() FOptionalMovieSceneBlendType BlendType;  // 0x00C9, size 0x2
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<FMovieSceneChannelProxy,0> ChannelProxy;  // 0x00D0, protected
-    EMovieSceneChannelProxyType ChannelProxyType;  // 0x00E0, protected
-
+    TSharedPtr<FMovieSceneChannelProxy,0> ChannelProxy;  // 0x00D0, not reflected
+    EMovieSceneChannelProxyType ChannelProxyType;  // 0x00E0, not reflected
+private:
+    UPROPERTY(EditAnywhere) FFrameNumber PreRollFrames;  // 0x00A0, size 0x4
+    UPROPERTY(EditAnywhere) FFrameNumber PostRollFrames;  // 0x00A4, size 0x4
+    UPROPERTY() int32 RowIndex;  // 0x00A8, size 0x4
+    UPROPERTY() int32 OverlapPriority;  // 0x00AC, size 0x4
+    UPROPERTY(EditAnywhere) uint8 bIsActive : 1;  // 0x00B0, mask 0x01
+    UPROPERTY(EditAnywhere) uint8 bIsLocked : 1;  // 0x00B0, mask 0x02
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) FOptionalMovieSceneBlendType GetBlendType() const;  // parameters 0x2
     UFUNCTION(BlueprintCallable, BlueprintPure) EMovieSceneCompletionMode GetCompletionMode() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) int32 GetOverlapPriority() const;  // parameters 0x4

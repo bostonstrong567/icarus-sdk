@@ -4,8 +4,7 @@
 USTRUCT()
 struct FLevelSequenceLegacyObjectReference
 {
-
-    // Not reflected:
-    FUniqueObjectGuid ObjectId;  // 0x0000
-    FString ObjectPath;  // 0x0010
+private:
+    FUniqueObjectGuid ObjectId;  // 0x0000, not reflected
+    FString ObjectPath;  // 0x0010, not reflected
 };

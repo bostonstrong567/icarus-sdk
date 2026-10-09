@@ -6,7 +6,6 @@ UCLASS()
 class ULocationServices : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static bool AreLocationServicesEnabled();  // parameters 0x1
     UFUNCTION(BlueprintCallable) static FLocationServicesData GetLastKnownLocation();  // parameters 0x18
     UFUNCTION(BlueprintCallable) static ULocationServicesImpl* GetLocationServicesImpl();  // parameters 0x8

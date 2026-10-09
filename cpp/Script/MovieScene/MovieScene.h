@@ -5,7 +5,8 @@
 UCLASS()
 class UMovieScene : public UMovieSceneSignedObject
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() TArray<FMovieSceneSpawnable> Spawnables;  // 0x0050, size 0x10
     UPROPERTY() TArray<FMovieScenePossessable> Possessables;  // 0x0060, size 0x10
     UPROPERTY() TArray<FMovieSceneBinding> ObjectBindings;  // 0x0070, size 0x10

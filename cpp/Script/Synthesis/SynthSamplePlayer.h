@@ -9,15 +9,14 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) USoundWave* SoundWave;  // 0x06C0, size 0x8
     UPROPERTY(BlueprintAssignable) FOnSampleLoaded OnSampleLoaded;  // 0x06C8, size 0x10
     UPROPERTY(BlueprintAssignable) FOnSamplePlaybackProgress OnSamplePlaybackProgress;  // 0x06D8, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    Audio::FSampleBufferReader SampleBufferReader;  // 0x06E8, protected
-    Audio::TSampleBuffer<short> SampleBuffer;  // 0x0788, protected
-    Audio::FSoundWavePCMLoader SoundWaveLoader;  // 0x07B0, protected
-    float SampleDurationSec;  // 0x07D8, protected
-    float SamplePlaybackProgressSec;  // 0x07DC, protected
-    bool bIsLoaded;  // 0x07E0, protected
-
+protected:
+    Audio::FSampleBufferReader SampleBufferReader;  // 0x06E8, not reflected
+    Audio::TSampleBuffer<short> SampleBuffer;  // 0x0788, not reflected
+    Audio::FSoundWavePCMLoader SoundWaveLoader;  // 0x07B0, not reflected
+    float SampleDurationSec;  // 0x07D8, not reflected
+    float SamplePlaybackProgressSec;  // 0x07DC, not reflected
+    bool bIsLoaded;  // 0x07E0, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetCurrentPlaybackProgressPercent() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetCurrentPlaybackProgressTime() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetSampleDuration() const;  // parameters 0x4

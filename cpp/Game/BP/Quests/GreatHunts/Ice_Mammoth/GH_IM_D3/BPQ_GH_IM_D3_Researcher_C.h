@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_IM_D3_Researcher_C : public ABPQ_Common_MapIconOnArrival_WithBeacon_Subquests_C
 {
-public:
 };

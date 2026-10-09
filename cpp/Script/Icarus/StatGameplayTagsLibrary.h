@@ -6,7 +6,6 @@ UCLASS()
 class UStatGameplayTagsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToStatGameplayTagsTable(FName Name, FStatGameplayTag Data, FStatGameplayTagsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x51
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakStatGameplayTagsEnum(FStatGameplayTagsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FStatGameplayTagsRowHandle CastToStatGameplayTagsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

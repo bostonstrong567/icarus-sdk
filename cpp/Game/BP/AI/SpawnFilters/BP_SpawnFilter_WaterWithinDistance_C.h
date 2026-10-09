@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UBP_SpawnFilter_WaterWithinDistance_C : public UIcarusAISpawnFilter
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool IsSpawnLocationValid(AActor* WorldContext, const FVector& InLocation, const TMap<FString, int32>& FilterParams);  // parameters 0x69
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_MultiFABRIK_EndEffector
 {
+public:
     UPROPERTY() FName Bone;  // 0x0000, size 0x8
     UPROPERTY() FVector Location;  // 0x0008, size 0xC
 };

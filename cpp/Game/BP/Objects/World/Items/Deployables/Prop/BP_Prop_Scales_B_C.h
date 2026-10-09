@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Prop_Scales_B_C : public ABP_Prop_Scales_C
 {
-public:
 };

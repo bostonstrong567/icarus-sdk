@@ -4,6 +4,7 @@
 USTRUCT()
 struct FHairStrandsParameters
 {
+public:
     UPROPERTY(EditAnywhere) EGroomStrandsSize StrandsSize;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere) float StrandsDensity;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere) float StrandsSmoothing;  // 0x0008, size 0x4

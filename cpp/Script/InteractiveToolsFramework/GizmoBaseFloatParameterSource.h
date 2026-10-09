@@ -6,7 +6,5 @@ UCLASS()
 class UGizmoBaseFloatParameterSource : public UObject, public IGizmoFloatParameterSource
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMulticastDelegate<void __cdecl(IGizmoFloatParameterSource *,FGizmoFloatParameterChange),FDefaultDelegateUserPolicy> OnParameterChanged;  // 0x0030
+    TMulticastDelegate<void __cdecl(IGizmoFloatParameterSource *,FGizmoFloatParameterChange),FDefaultDelegateUserPolicy> OnParameterChanged;  // 0x0030, not reflected
 };

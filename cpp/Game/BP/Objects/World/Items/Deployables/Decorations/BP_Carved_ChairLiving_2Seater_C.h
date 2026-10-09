@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Carved_ChairLiving_2Seater_C : public ABP_ChairBase_C
 {
-public:
 };

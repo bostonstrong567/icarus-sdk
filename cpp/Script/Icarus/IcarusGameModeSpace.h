@@ -5,5 +5,4 @@
 UCLASS(Transient, NotPlaceable, Config=Game)
 class AIcarusGameModeSpace : public AIcarusGameModeBase
 {
-public:
 };

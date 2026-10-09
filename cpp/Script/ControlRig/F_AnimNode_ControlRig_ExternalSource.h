@@ -4,5 +4,7 @@
 USTRUCT()
 struct FAnimNode_ControlRig_ExternalSource : public FAnimNode_ControlRigBase
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY(Transient) TWeakObjectPtr<UControlRig> ControlRig;  // 0x0170, size 0x8
 };

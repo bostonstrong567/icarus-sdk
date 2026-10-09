@@ -6,6 +6,5 @@ UCLASS(EditInlineNew, Config=Engine)
 class UUMG_CharacterSetting_Visual_C : public UUMG_CharacterSetting_TextBase_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void GetSelectionDisplayName(FText& DisplayName);  // parameters 0x18
 };

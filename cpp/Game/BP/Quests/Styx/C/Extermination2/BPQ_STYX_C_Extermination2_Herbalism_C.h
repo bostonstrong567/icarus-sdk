@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_STYX_C_Extermination2_Herbalism_C : public ABPQ_Deploy_Count_C
 {
-public:
 };

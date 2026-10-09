@@ -11,10 +11,9 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float FillSpanWhenLessThan;  // 0x004C, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<EHorizontalAlignment> HorizontalAlignment;  // 0x0050, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<EVerticalAlignment> VerticalAlignment;  // 0x0051, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    SWrapBox::FSlot * Slot;  // 0x0058, private
-
+private:
+    SWrapBox::FSlot * Slot;  // 0x0058, not reflected
+public:
     UFUNCTION(BlueprintCallable) void SetFillEmptySpace(bool InbFillEmptySpace);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void SetFillSpanWhenLessThan(float InFillSpanWhenLessThan);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void SetHorizontalAlignment(TEnumAsByte<EHorizontalAlignment> InHorizontalAlignment);  // parameters 0x1

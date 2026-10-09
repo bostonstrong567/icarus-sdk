@@ -4,8 +4,7 @@
 USTRUCT()
 struct FTimedDataChannelSampleTime
 {
-
-    // Not reflected:
-    double PlatformSecond;  // 0x0000
-    FQualifiedFrameTime Timecode;  // 0x0008
+public:
+    double PlatformSecond;  // 0x0000, not reflected
+    FQualifiedFrameTime Timecode;  // 0x0008, not reflected
 };

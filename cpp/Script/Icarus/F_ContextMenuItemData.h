@@ -4,6 +4,7 @@
 USTRUCT()
 struct FContextMenuItemData
 {
+public:
     UPROPERTY(BlueprintReadWrite) FName ItemIdentifier;  // 0x0000, size 0x8
     UPROPERTY(BlueprintReadWrite) int32 ItemPayload;  // 0x0008, size 0x4
     UPROPERTY(BlueprintReadWrite) FContextMenuGroupTypesRowHandle GroupType;  // 0x000C, size 0x18

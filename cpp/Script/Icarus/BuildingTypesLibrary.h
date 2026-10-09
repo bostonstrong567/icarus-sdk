@@ -6,7 +6,6 @@ UCLASS()
 class UBuildingTypesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToBuildingTypesTable(FName Name, FIcarusBuildingType Data, FBuildingTypesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xA1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakBuildingTypesEnum(FBuildingTypesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FBuildingTypesRowHandle CastToBuildingTypesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

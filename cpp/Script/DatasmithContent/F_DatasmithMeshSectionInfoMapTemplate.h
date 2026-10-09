@@ -4,5 +4,6 @@
 USTRUCT()
 struct FDatasmithMeshSectionInfoMapTemplate
 {
+public:
     UPROPERTY() TMap<uint32, FDatasmithMeshSectionInfoTemplate> Map;  // 0x0000, size 0x50
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FChallenge : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText ChallengeName;  // 0x0018, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText ChallengeDescription;  // 0x0030, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EChallengeTypes Type;  // 0x0048, size 0x1

@@ -6,6 +6,5 @@ UCLASS(Abstract)
 class ULoadingScreenInterface : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintImplementableEvent) void InitLoadingScreen(FString LevelName);  // parameters 0x10
 };

@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class ASettlement : public AIcarusActor, public ITalentHandler
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bShowTaskDebug;  // 0x02C8, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FCharacterGrowthRowHandle GrowthRowHandle;  // 0x02CC, size 0x18
@@ -31,7 +32,6 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSubclassOf<ASettlementNPCCharacter> NPCActorClass;  // 0x03D8, size 0x8
     UPROPERTY(Replicated, Transient, BlueprintReadOnly) TArray<ASettlementNPCCharacter*> SpawnedNPCActors;  // 0x03E0, size 0x10
     UPROPERTY(Transient, BlueprintReadOnly) bool bSettlementActorsVirtualised;  // 0x03F0, size 0x1
-    UPROPERTY(Transient, Instanced) UTerrainAnchorComponent* SettlementTerrainAnchor;  // 0x0448, size 0x8
     UPROPERTY(BlueprintReadOnly) TArray<FSettlementNPCTask> TaskPool;  // 0x0450, size 0x10
     UPROPERTY(BlueprintReadOnly) bool bActivityOverrideActive;  // 0x0460, size 0x1
     UPROPERTY(BlueprintReadOnly) ESettlementNPCActivity ActivityOverride;  // 0x0461, size 0x1
@@ -68,7 +68,6 @@ public:
     UPROPERTY(BlueprintAssignable) FOnSettlementNPCAilmentChanged OnNPCAilmentChanged;  // 0x0618, size 0x10
     UPROPERTY(BlueprintAssignable) FOnSettlementNPCIncapacitated OnNPCIncapacitated;  // 0x0628, size 0x10
     UPROPERTY(BlueprintAssignable) FOnSettlementNPCDied OnNPCDied;  // 0x0638, size 0x10
-    UPROPERTY() int32 LastEventEndDay;  // 0x064C, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FRowHandle ActiveQuest;  // 0x0670, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 SurvivalTickGameHour;  // 0x0688, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 RestDecayPerDay;  // 0x068C, size 0x4
@@ -90,30 +89,32 @@ public:
     UPROPERTY(BlueprintAssignable) FOnSettlementNPCDepartureWarning OnNPCDepartureWarning;  // 0x0720, size 0x10
     UPROPERTY(BlueprintAssignable) FOnSettlementNPCDeparted OnNPCDeparted;  // 0x0730, size 0x10
     UPROPERTY(BlueprintAssignable) FOnSettlementPendingVisitorsChanged OnPendingVisitorsChanged;  // 0x0740, size 0x10
-    UPROPERTY() bool bInitialVisitorGranted;  // 0x0750, size 0x1
     UPROPERTY(BlueprintAssignable) FOnSettlementEventStarted OnEventStarted;  // 0x0758, size 0x10
     UPROPERTY(BlueprintAssignable) FOnSettlementEventResolved OnEventResolved;  // 0x0768, size 0x10
     UPROPERTY(BlueprintAssignable) FOnSettlementNPCAdded OnNPCAdded;  // 0x0778, size 0x10
     UPROPERTY(BlueprintAssignable) FOnSettlementNPCRemoved OnNPCRemoved;  // 0x0788, size 0x10
     UPROPERTY(BlueprintAssignable) FOnSettlementNPCTaskingUpdated OnNPCTaskingUpdated;  // 0x0798, size 0x10
     UPROPERTY(BlueprintAssignable) FOnSettlementTaskCompleted OnTaskCompletedEvent;  // 0x07A8, size 0x10
+protected:
+    TMap<FGuid,TSharedPtr<FStatContainer,0>,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FGuid,TSharedPtr<FStatContainer,0>,0> > NPCStatContainers;  // 0x03F8, not reflected
+    UPROPERTY(Transient, Instanced) UTerrainAnchorComponent* SettlementTerrainAnchor;  // 0x0448, size 0x8
+    bool bProximityResolveTriggered;  // 0x0648, not reflected
+    UPROPERTY() int32 LastEventEndDay;  // 0x064C, size 0x4
+    TArray<TTuple<FModifierStatesRowHandle,int>,TSizedDefaultAllocator<32> > AppliedActiveEventModifiers;  // 0x0650, not reflected
+    TArray<FSettlementTimedModifier,TSizedDefaultAllocator<32> > TimedOutcomeModifiers;  // 0x0660, not reflected
+    UPROPERTY() bool bInitialVisitorGranted;  // 0x0750, size 0x1
+    bool bIsPendingSurvivalTick;  // 0x07B8, not reflected
     UPROPERTY() bool bHasInitialised;  // 0x07B9, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<FGuid,TSharedPtr<FStatContainer,0>,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FGuid,TSharedPtr<FStatContainer,0>,0> > NPCStatContainers;  // 0x03F8, protected
-    FTimerHandle TaskUpdateTimer;  // 0x0468, private
-    FTimerHandle TaskProgressTimer;  // 0x0470, private
-    FTimerHandle ActiveBuildingTimer;  // 0x0478, private
-    FTimerHandle EventProximityTimer;  // 0x0480, private
-    TMap<FGuid,FTimerHandle,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FGuid,FTimerHandle,0> > BehaviourOverrideTimers;  // 0x0488, private
-    float LastBuildingTickProspectTime;  // 0x0518, private
-    float LastTaskTickProspectTime;  // 0x051C, private
-    float LastSleepSampleProspectTime;  // 0x0520, private
-    bool bProximityResolveTriggered;  // 0x0648, protected
-    TArray<TTuple<FModifierStatesRowHandle,int>,TSizedDefaultAllocator<32> > AppliedActiveEventModifiers;  // 0x0650, protected
-    TArray<FSettlementTimedModifier,TSizedDefaultAllocator<32> > TimedOutcomeModifiers;  // 0x0660, protected
-    bool bIsPendingSurvivalTick;  // 0x07B8, protected
-
+private:
+    FTimerHandle TaskUpdateTimer;  // 0x0468, not reflected
+    FTimerHandle TaskProgressTimer;  // 0x0470, not reflected
+    FTimerHandle ActiveBuildingTimer;  // 0x0478, not reflected
+    FTimerHandle EventProximityTimer;  // 0x0480, not reflected
+    TMap<FGuid,FTimerHandle,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FGuid,FTimerHandle,0> > BehaviourOverrideTimers;  // 0x0488, not reflected
+    float LastBuildingTickProspectTime;  // 0x0518, not reflected
+    float LastTaskTickProspectTime;  // 0x051C, not reflected
+    float LastSleepSampleProspectTime;  // 0x0520, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) bool AcceptVisitor(const FGuid& VisitorId);  // parameters 0x11
     UFUNCTION(BlueprintNativeEvent) void ActiveEventChanged();
     UFUNCTION(BlueprintCallable) void AddNPC(const FSettlementNPC& NPC);  // parameters 0x110

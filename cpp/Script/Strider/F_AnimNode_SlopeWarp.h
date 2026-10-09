@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAnimNode_SlopeWarp : public FAnimNode_SkeletalControlBase
 {
+public:
     UPROPERTY(EditAnywhere) FVector SlopeNormal;  // 0x00C8, size 0xC
     UPROPERTY(EditAnywhere) FVector SlopePoint;  // 0x00D4, size 0xC
     UPROPERTY(EditAnywhere) ESlopeDetectionMode SlopeDetectionMode;  // 0x00E0, size 0x1
@@ -18,15 +19,14 @@ struct FAnimNode_SlopeWarp : public FAnimNode_SkeletalControlBase
     UPROPERTY(EditAnywhere) FHipAdjustment HipAdjustment;  // 0x0114, size 0x18
     UPROPERTY(EditAnywhere) TArray<FLimbDefinition> Limbs;  // 0x0130, size 0x10
     UPROPERTY(EditAnywhere) TArray<FBoneReference> AdditionalBonesToAdjustWithHips;  // 0x0140, size 0x10
-
-    // Not reflected:
-    FVector LastHipShift;  // 0x0150
-    FVector CurrentSlopeNormal;  // 0x015C
-    FVector CurrentSlopePoint;  // 0x0168
-    FQuat IKRootOffset;  // 0x0180
-    float DeltaTime;  // 0x0190
-    bool bValidCheckResult;  // 0x0194
-    ACharacter * Character;  // 0x0198
-    UCharacterMovementComponent * CharMoveComponent;  // 0x01A0
-    FAnimInstanceProxy * AnimInstanceProxy;  // 0x01A8
+private:
+    FVector LastHipShift;  // 0x0150, not reflected
+    FVector CurrentSlopeNormal;  // 0x015C, not reflected
+    FVector CurrentSlopePoint;  // 0x0168, not reflected
+    FQuat IKRootOffset;  // 0x0180, not reflected
+    float DeltaTime;  // 0x0190, not reflected
+    bool bValidCheckResult;  // 0x0194, not reflected
+    ACharacter * Character;  // 0x0198, not reflected
+    UCharacterMovementComponent * CharMoveComponent;  // 0x01A0, not reflected
+    FAnimInstanceProxy * AnimInstanceProxy;  // 0x01A8, not reflected
 };

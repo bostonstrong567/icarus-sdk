@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class UAppleImageInterface : public UInterface
 {
-public:
 };

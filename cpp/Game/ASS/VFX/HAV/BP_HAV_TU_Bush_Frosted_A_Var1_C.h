@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_HAV_TU_Bush_Frosted_A_Var1_C : public ABP_DestructableHarvest_C
 {
-public:
 };

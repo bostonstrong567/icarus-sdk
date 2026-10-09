@@ -5,7 +5,6 @@
 UCLASS(Abstract, Transient)
 class UReplicationConnectionDriver : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   NotifyActorChannelAdded, NotifyActorChannelCleanedUp, NotifyActorChannelRemoved

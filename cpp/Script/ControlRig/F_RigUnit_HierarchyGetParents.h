@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_HierarchyGetParents : public FRigUnit_HierarchyBase
 {
+public:
     UPROPERTY() FRigElementKey Child;  // 0x0008, size 0xC
     UPROPERTY() bool bIncludeChild;  // 0x0014, size 0x1
     UPROPERTY() bool bReverse;  // 0x0015, size 0x1

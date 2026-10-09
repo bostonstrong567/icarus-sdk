@@ -6,7 +6,6 @@ UCLASS()
 class UQuestEventsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToQuestEventsTable(FName Name, FQuestEvent Data, FQuestEventsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x39
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakQuestEventsEnum(FQuestEventsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FQuestEventsRowHandle CastToQuestEventsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

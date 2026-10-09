@@ -4,5 +4,6 @@
 USTRUCT()
 struct FOutOfBoundsArray
 {
+public:
     UPROPERTY() TArray<AActor*> OverlappedVolumes;  // 0x0000, size 0x10
 };

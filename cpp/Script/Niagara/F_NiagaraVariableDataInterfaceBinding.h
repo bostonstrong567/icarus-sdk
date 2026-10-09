@@ -4,5 +4,6 @@
 USTRUCT()
 struct FNiagaraVariableDataInterfaceBinding
 {
+public:
     UPROPERTY() FNiagaraVariable BoundVariable;  // 0x0000, size 0x20
 };

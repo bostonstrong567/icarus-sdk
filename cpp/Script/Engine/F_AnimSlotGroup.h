@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAnimSlotGroup
 {
+public:
     UPROPERTY() FName GroupName;  // 0x0000, size 0x8
     UPROPERTY() TArray<FName> SlotNames;  // 0x0008, size 0x10
 };

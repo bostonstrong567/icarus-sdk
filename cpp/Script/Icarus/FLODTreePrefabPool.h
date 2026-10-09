@@ -5,6 +5,7 @@
 UCLASS()
 class UFLODTreePrefabPool : public UFLODActorPool
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() ATreePrefab* TreePrefab;  // 0x0048, size 0x8
 };

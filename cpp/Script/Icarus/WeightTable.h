@@ -5,5 +5,4 @@
 UCLASS()
 class UWeightTable : public UIcarusDataTable
 {
-public:
 };

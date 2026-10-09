@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Raptor_Desert_Mount_Corpse_C : public ABP_Raptor_Mount_Corpse_C
 {
-public:
 };

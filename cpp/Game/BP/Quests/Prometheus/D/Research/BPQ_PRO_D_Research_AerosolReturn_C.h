@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_PRO_D_Research_AerosolReturn_C : public ABPQ_Travel_C
 {
-public:
 };

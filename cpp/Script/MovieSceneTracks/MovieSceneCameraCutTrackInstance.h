@@ -5,10 +5,8 @@
 UCLASS(Transient)
 class UMovieSceneCameraCutTrackInstance : public UMovieSceneTrackInstance
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    UMovieSceneCameraCutTrackInstance::FCameraCutCache CameraCutCache;  // 0x0050, private
-    TMap<IMovieScenePlayer *,UMovieSceneCameraCutTrackInstance::FCameraCutUseData,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<IMovieScenePlayer *,UMovieSceneCameraCutTrackInstance::FCameraCutUseData,0> > PlayerUseCounts;  // 0x0058, private
-    TArray<UMovieSceneCameraCutTrackInstance::FCameraCutInputInfo,TSizedDefaultAllocator<32> > SortedInputInfos;  // 0x00A8, private
+private:
+    UMovieSceneCameraCutTrackInstance::FCameraCutCache CameraCutCache;  // 0x0050, not reflected
+    TMap<IMovieScenePlayer *,UMovieSceneCameraCutTrackInstance::FCameraCutUseData,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<IMovieScenePlayer *,UMovieSceneCameraCutTrackInstance::FCameraCutUseData,0> > PlayerUseCounts;  // 0x0058, not reflected
+    TArray<UMovieSceneCameraCutTrackInstance::FCameraCutInputInfo,TSizedDefaultAllocator<32> > SortedInputInfos;  // 0x00A8, not reflected
 };

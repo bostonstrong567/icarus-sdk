@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSolverBreakingFilterSettings
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool FilterEnabled;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float MinMass;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float MinSpeed;  // 0x0008, size 0x4

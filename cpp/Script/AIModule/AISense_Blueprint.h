@@ -5,11 +5,12 @@
 UCLASS(Abstract, Config=Engine)
 class UAISense_Blueprint : public UAISense
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSubclassOf<UUserDefinedStruct> ListenerDataType;  // 0x0080, size 0x8
     UPROPERTY(BlueprintReadOnly) TArray<UAIPerceptionComponent*> ListenerContainer;  // 0x0088, size 0x10
     UPROPERTY() TArray<UAISenseEvent*> UnprocessedEvents;  // 0x0098, size 0x10
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) void GetAllListenerActors(TArray<AActor*>& ListenerActors) const;  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) void GetAllListenerComponents(TArray<UAIPerceptionComponent*>& ListenerComponents) const;  // parameters 0x10
     UFUNCTION(BlueprintImplementableEvent) void K2_OnNewPawn(APawn* NewPawn);  // parameters 0x8

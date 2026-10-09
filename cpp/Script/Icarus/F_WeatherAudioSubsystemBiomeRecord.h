@@ -4,9 +4,8 @@
 USTRUCT()
 struct FWeatherAudioSubsystemBiomeRecord
 {
+public:
     UPROPERTY() TArray<UWeatherAudioComponent*> Components;  // 0x0000, size 0x10
-
-    // Not reflected:
-    bool bWeatherActive;  // 0x0010
-    bool bHasHadInitialStateSet;  // 0x0011
+    bool bWeatherActive;  // 0x0010, not reflected
+    bool bHasHadInitialStateSet;  // 0x0011, not reflected
 };

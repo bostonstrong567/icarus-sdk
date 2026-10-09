@@ -6,7 +6,6 @@ UCLASS(MinimalAPI)
 class UImportanceSamplingLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakImportanceTexture(const FImportanceTexture& ImportanceTexture, UTexture2D*& Texture, TEnumAsByte<EImportanceWeight>& WeightingFunc);  // parameters 0x59
     UFUNCTION(BlueprintCallable, BlueprintPure) static void ImportanceSample(const FImportanceTexture& Texture, const FVector2D& Rand, int32 Samples, float Intensity, FVector2D& SamplePosition, FLinearColor& SampleColor, float& SampleIntensity, float& SampleSize);  // parameters 0x80
     UFUNCTION(BlueprintCallable, BlueprintPure) static FImportanceTexture MakeImportanceTexture(UTexture2D* Texture, TEnumAsByte<EImportanceWeight> WeightingFunc);  // parameters 0x60

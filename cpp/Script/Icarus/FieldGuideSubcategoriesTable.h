@@ -5,5 +5,4 @@
 UCLASS()
 class UFieldGuideSubcategoriesTable : public UIcarusDataTable
 {
-public:
 };

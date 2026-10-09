@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class USkyLightComponent : public ULightComponentBase
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bRealTimeCapture;  // 0x0228, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<ESkyLightSourceType> SourceType;  // 0x0229, size 0x1
@@ -26,22 +27,21 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float CloudAmbientOcclusionMapResolutionScale;  // 0x0278, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float CloudAmbientOcclusionApertureScale;  // 0x027C, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<EOcclusionCombineMode> OcclusionCombineMode;  // 0x0280, size 0x1
+protected:
+    bool bSavedConstructionScriptValuesValid;  // 0x0281, not reflected
+    bool bHasEverCaptured;  // 0x0282, not reflected
+    TRefCountPtr<FSkyTextureCubeResource> ProcessedSkyTexture;  // 0x0288, not reflected
+    TSHVectorRGB<3> IrradianceEnvironmentMap;  // 0x0290, not reflected
+    float AverageBrightness;  // 0x0320, not reflected
+    float BlendFraction;  // 0x0324, not reflected
     UPROPERTY(Transient) UTextureCube* BlendDestinationCubemap;  // 0x0328, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bSavedConstructionScriptValuesValid;  // 0x0281, protected
-    bool bHasEverCaptured;  // 0x0282, protected
-    TRefCountPtr<FSkyTextureCubeResource> ProcessedSkyTexture;  // 0x0288, protected
-    TSHVectorRGB<3> IrradianceEnvironmentMap;  // 0x0290, protected
-    float AverageBrightness;  // 0x0320, protected
-    float BlendFraction;  // 0x0324, protected
-    TRefCountPtr<FSkyTextureCubeResource> BlendDestinationProcessedSkyTexture;  // 0x0330, protected
-    TSHVectorRGB<3> BlendDestinationIrradianceEnvironmentMap;  // 0x0340, protected
-    float BlendDestinationAverageBrightness;  // 0x03D0, protected
-    FRenderCommandFence IrradianceMapFence;  // 0x03D8, protected
-    FRenderCommandFence ReleaseResourcesFence;  // 0x03E8, protected
-    FSkyLightSceneProxy * SceneProxy;  // 0x03F8, protected
-
+    TRefCountPtr<FSkyTextureCubeResource> BlendDestinationProcessedSkyTexture;  // 0x0330, not reflected
+    TSHVectorRGB<3> BlendDestinationIrradianceEnvironmentMap;  // 0x0340, not reflected
+    float BlendDestinationAverageBrightness;  // 0x03D0, not reflected
+    FRenderCommandFence IrradianceMapFence;  // 0x03D8, not reflected
+    FRenderCommandFence ReleaseResourcesFence;  // 0x03E8, not reflected
+    FSkyLightSceneProxy * SceneProxy;  // 0x03F8, not reflected
+public:
     UFUNCTION(BlueprintCallable) void RecaptureSky();
     UFUNCTION(BlueprintCallable) void SetCubemap(UTextureCube* NewCubemap);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void SetCubemapBlend(UTextureCube* SourceCubemap, UTextureCube* DestinationCubemap, float InBlendFraction);  // parameters 0x14

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FHLODISMComponentDesc
 {
+public:
     UPROPERTY() UStaticMesh* StaticMesh;  // 0x0000, size 0x8
     UPROPERTY() UMaterialInterface* Material;  // 0x0008, size 0x8
     UPROPERTY() TArray<FTransform> Instances;  // 0x0010, size 0x10

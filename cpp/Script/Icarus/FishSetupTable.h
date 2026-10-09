@@ -5,5 +5,4 @@
 UCLASS()
 class UFishSetupTable : public UIcarusDataTable
 {
-public:
 };

@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UBP_BallisticBehaviour_DropshipFlare_C : public UBP_BallisticBehaviour_FlareArrow_C
 {
-public:
 };

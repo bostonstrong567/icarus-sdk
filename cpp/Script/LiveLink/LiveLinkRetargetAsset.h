@@ -5,7 +5,6 @@
 UCLASS(Abstract)
 class ULiveLinkRetargetAsset : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   BuildPoseAndCurveFromBaseData, BuildPoseFromAnimationData, Initialize

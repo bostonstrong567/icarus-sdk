@@ -4,6 +4,7 @@
 USTRUCT()
 struct FOrchestrationEventDescription : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSet<FOrchestrationStateFlagsRowHandle> RequiredFlags;  // 0x0018, size 0x50
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FOrchestrationStateFlagsRowHandle StateFlagToSetOnExecute;  // 0x0068, size 0x18
 };

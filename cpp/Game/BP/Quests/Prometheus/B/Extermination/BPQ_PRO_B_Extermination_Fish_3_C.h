@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_PRO_B_Extermination_Fish_3_C : public ABPQ_Common_CatchFish_C
 {
-public:
 };

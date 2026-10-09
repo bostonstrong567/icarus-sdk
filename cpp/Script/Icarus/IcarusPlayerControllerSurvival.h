@@ -5,50 +5,51 @@
 UCLASS(NotPlaceable, Config=Game)
 class AIcarusPlayerControllerSurvival : public AIcarusPlayerController
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FItemPriority> ItemPriorities;  // 0x07C0, size 0x10
     UPROPERTY(BlueprintAssignable) FOnItemBounced OnItemBounced;  // 0x07D0, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TSet<FInventoryIDEnum> AccessibleInventoriesBlacklist;  // 0x07E0, size 0x50
     UPROPERTY(BlueprintAssignable) FOnLivingItemChallengeUpdated OnLivingItemChallengeUpdated;  // 0x0830, size 0x10
     UPROPERTY(BlueprintAssignable) FOnLivingItemChallengeCompleted OnLivingItemChallengeCompleted;  // 0x0840, size 0x10
-    UPROPERTY(Instanced) UProspectAudioComponent* ProspectAudio;  // 0x0850, size 0x8
-    UPROPERTY(EditAnywhere) UScopedViewportBlocker* InitialisationViewportBlocker;  // 0x0858, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bServerHasCharacterLoadout;  // 0x0860, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bServerHasCharacterBestiary;  // 0x0861, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FOnlineProfileCharacter TestProspectCharacter;  // 0x0868, size 0xF0
     UPROPERTY(BlueprintAssignable) FOnClientLeaveProspectSessionComplete OnLeaveProspectSessionComplete;  // 0x0958, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadOnly) ELeaveProspectSessionType ServerPendingLeaveProspectSession;  // 0x0959, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bServerCancelPendingLeaveProspectSession;  // 0x095A, size 0x1
-    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) ELeaveProspectSessionType ReplicatedLeftProspectSession;  // 0x095B, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bServerReturnToHabComplete;  // 0x095C, size 0x1
-    UPROPERTY(EditAnywhere) UScopedViewportBlocker* LeaveProspectViewportBlocker;  // 0x0960, size 0x8
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) AIcarusRocketSpawnBase* AssignedDropshipSpawn;  // 0x0970, size 0x8
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) AIcarusRocket* AssignedDropship;  // 0x0978, size 0x8
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) AGravestoneBase* AssignedGravestone;  // 0x0980, size 0x8
-    UPROPERTY(EditAnywhere, Instanced) UPlayerRecorderComponent* Recorder;  // 0x0988, size 0x8
     UPROPERTY(EditAnywhere) FText ForceRemovePlayerDebugCommandText;  // 0x0990, size 0x18
-    UPROPERTY() UResetCharacterProspectStateCallbackProxyGen* ResetCharacterProspectStateCallback;  // 0x09A8, size 0x8
-    UPROPERTY() EForceRemovePlayerReason ForceRemovePlayerReason;  // 0x09B0, size 0x1
-    UPROPERTY() bool bClientWasKicked;  // 0x09B1, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bDebugCameraLocationChanges;  // 0x09C8, size 0x1
     UPROPERTY(BlueprintAssignable) FPlayerBestiaryProgressed OnPlayerBestiaryProgressed;  // 0x09C9, size 0x1
     UPROPERTY(BlueprintAssignable) FPlayerBestiaryUnlocked OnPlayerBestiaryUnlocked;  // 0x09CA, size 0x1
     UPROPERTY(BlueprintAssignable) FPlayerFishUnlocked OnPlayerFishUnlocked;  // 0x09CB, size 0x1
     UPROPERTY(Replicated, Instanced, BlueprintReadOnly) URemoteUserSettings* RemoteUserSettings;  // 0x09D0, size 0x8
     UPROPERTY(BlueprintAssignable) FOnGetResourceGeneratedAlterationsResponse OnGetResourceGeneratedAlterationsResponse;  // 0x09D8, size 0x10
+protected:
+    UPROPERTY(Instanced) UProspectAudioComponent* ProspectAudio;  // 0x0850, size 0x8
+    UPROPERTY(EditAnywhere) UScopedViewportBlocker* InitialisationViewportBlocker;  // 0x0858, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bServerHasCharacterLoadout;  // 0x0860, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bServerHasCharacterBestiary;  // 0x0861, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FOnlineProfileCharacter TestProspectCharacter;  // 0x0868, size 0xF0
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) ELeaveProspectSessionType ServerPendingLeaveProspectSession;  // 0x0959, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bServerCancelPendingLeaveProspectSession;  // 0x095A, size 0x1
+    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) ELeaveProspectSessionType ReplicatedLeftProspectSession;  // 0x095B, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bServerReturnToHabComplete;  // 0x095C, size 0x1
+    UPROPERTY(EditAnywhere) UScopedViewportBlocker* LeaveProspectViewportBlocker;  // 0x0960, size 0x8
+    FTimerHandle ShowDelayedLeavingPromptHandle;  // 0x0968, not reflected
+    UPROPERTY(EditAnywhere, Instanced) UPlayerRecorderComponent* Recorder;  // 0x0988, size 0x8
+    FTimerHandle UpdateCharacterProspectLocationDelayTimer;  // 0x09B8, not reflected
+    bool bQueuedUpdateCharacterProspectLocation;  // 0x09C0, not reflected
+    int32 FailedUpdateCharacterProspectLocationCount;  // 0x09C4, not reflected
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UResourceNetworkDataRequesterComponent* ResourceNetworkDataRequesterComponent;  // 0x09E8, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FTimerHandle ShowDelayedLeavingPromptHandle;  // 0x0968, protected
-    FTimerHandle UpdateCharacterProspectLocationDelayTimer;  // 0x09B8, protected
-    bool bQueuedUpdateCharacterProspectLocation;  // 0x09C0, protected
-    int32 FailedUpdateCharacterProspectLocationCount;  // 0x09C4, protected
-    TWeakObjectPtr<AActor,FWeakObjectPtr> PendingRequestGeneratedAlterationsCraftingDevice;  // 0x09F0, private
-    TArray<FItemData,TSizedDefaultAllocator<32> > PendingRequestGeneratedAlterationsItemList;  // 0x09F8, private
-    TWeakObjectPtr<UResourceComponent,FWeakObjectPtr> ResourceComponentUpdateTarget;  // 0x0A08, private
-    TSet<enum ERequestResourceComponentDataSource,DefaultKeyFuncs<enum ERequestResourceComponentDataSource,0>,FDefaultSetAllocator> ClientResourceComponentRequests;  // 0x0A10, private
-    bool bRegisteredForResourceNetworkTickComplete;  // 0x0A60, private
-
+private:
+    UPROPERTY() UResetCharacterProspectStateCallbackProxyGen* ResetCharacterProspectStateCallback;  // 0x09A8, size 0x8
+    UPROPERTY() EForceRemovePlayerReason ForceRemovePlayerReason;  // 0x09B0, size 0x1
+    UPROPERTY() bool bClientWasKicked;  // 0x09B1, size 0x1
+    TWeakObjectPtr<AActor,FWeakObjectPtr> PendingRequestGeneratedAlterationsCraftingDevice;  // 0x09F0, not reflected
+    TArray<FItemData,TSizedDefaultAllocator<32> > PendingRequestGeneratedAlterationsItemList;  // 0x09F8, not reflected
+    TWeakObjectPtr<UResourceComponent,FWeakObjectPtr> ResourceComponentUpdateTarget;  // 0x0A08, not reflected
+    TSet<enum ERequestResourceComponentDataSource,DefaultKeyFuncs<enum ERequestResourceComponentDataSource,0>,FDefaultSetAllocator> ClientResourceComponentRequests;  // 0x0A10, not reflected
+    bool bRegisteredForResourceNetworkTickComplete;  // 0x0A60, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void ActivateHotbarSlot(int32 NewSelection, bool bForce, bool bQuickCraft, bool bDelayedActivate);  // parameters 0x7
     UFUNCTION(BlueprintImplementableEvent) void BP_ClientOpenContainer(UInventory* Inventory, bool bShowStoreAll, bool bShowTakeAll);  // parameters 0xA
     UFUNCTION(BlueprintImplementableEvent) void BP_ServerAttemptRevive_Implementation(AGravestoneBase* Gravestone);  // parameters 0x8

@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class ABP_Tame_Dog_B_Corpse_C : public ABP_Tame_Dog_A_Corpse_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void OnSkinnedStateUpdated();
     UFUNCTION(BlueprintCallable) void UpdateCosmeticMaterials();
 };

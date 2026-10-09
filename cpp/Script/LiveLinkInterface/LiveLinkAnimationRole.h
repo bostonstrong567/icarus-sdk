@@ -5,5 +5,4 @@
 UCLASS()
 class ULiveLinkAnimationRole : public ULiveLinkBasicRole
 {
-public:
 };

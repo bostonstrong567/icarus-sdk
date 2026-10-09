@@ -5,7 +5,8 @@
 UCLASS(Config=Engine)
 class UNavLinkCustomComponent : public UNavRelevantComponent, public INavLinkCustomInterface
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY() uint32 NavLinkUserId;  // 0x00E8, size 0x4
     UPROPERTY(EditAnywhere) TSubclassOf<UNavArea> EnabledAreaClass;  // 0x00F0, size 0x8
     UPROPERTY(EditAnywhere) TSubclassOf<UNavArea> DisabledAreaClass;  // 0x00F8, size 0x8
@@ -23,12 +24,10 @@ public:
     UPROPERTY(EditAnywhere) float BroadcastRadius;  // 0x0148, size 0x4
     UPROPERTY(EditAnywhere) float BroadcastInterval;  // 0x014C, size 0x4
     UPROPERTY(EditAnywhere) TEnumAsByte<ECollisionChannel> BroadcastChannel;  // 0x0150, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    TDelegate<void __cdecl(UNavLinkCustomComponent *,TArray<UObject *,TSizedDefaultAllocator<32> > &),FDefaultDelegateUserPolicy> OnBroadcastFilter;  // 0x0158, protected
-    TArray<TWeakObjectPtr<UObject,FWeakObjectPtr>,TSizedDefaultAllocator<32> > MovingAgents;  // 0x0168, protected
-    TDelegate<void __cdecl(UNavLinkCustomComponent *,UObject *,FVector const &),FDefaultDelegateUserPolicy> OnMoveReachedLink;  // 0x0178, protected
-    FTimerHandle TimerHandle_BroadcastStateChange;  // 0x0188, protected
+    TDelegate<void __cdecl(UNavLinkCustomComponent *,TArray<UObject *,TSizedDefaultAllocator<32> > &),FDefaultDelegateUserPolicy> OnBroadcastFilter;  // 0x0158, not reflected
+    TArray<TWeakObjectPtr<UObject,FWeakObjectPtr>,TSizedDefaultAllocator<32> > MovingAgents;  // 0x0168, not reflected
+    TDelegate<void __cdecl(UNavLinkCustomComponent *,UObject *,FVector const &),FDefaultDelegateUserPolicy> OnMoveReachedLink;  // 0x0178, not reflected
+    FTimerHandle TimerHandle_BroadcastStateChange;  // 0x0188, not reflected
 
     // Virtual functions that start here:
     //   GetLinkModifier

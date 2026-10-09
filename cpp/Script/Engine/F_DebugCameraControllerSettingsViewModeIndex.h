@@ -4,5 +4,6 @@
 USTRUCT()
 struct FDebugCameraControllerSettingsViewModeIndex
 {
+public:
     UPROPERTY(EditAnywhere) TEnumAsByte<EViewModeIndex> ViewModeIndex;  // 0x0008, size 0x1
 };

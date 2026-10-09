@@ -5,5 +5,4 @@
 UCLASS()
 class UImageSequenceProtocol_PNG : public UCompressedImageSequenceProtocol
 {
-public:
 };

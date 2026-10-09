@@ -4,6 +4,7 @@
 USTRUCT()
 struct FProcessingData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<UProcessingComponent> Behaviour;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FRecipeSetsRowHandle DefaultRecipeSet;  // 0x0040, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool RequiresEnergy;  // 0x0058, size 0x1

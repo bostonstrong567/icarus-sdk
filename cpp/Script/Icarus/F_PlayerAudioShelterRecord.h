@@ -4,10 +4,9 @@
 USTRUCT()
 struct FPlayerAudioShelterRecord
 {
-
-    // Not reflected:
-    FVector TraceDirection;  // 0x0000
-    float Shelter;  // 0x000C
-    float Distance;  // 0x0010
-    EPhysicalSurface Surface;  // 0x0014
+public:
+    FVector TraceDirection;  // 0x0000, not reflected
+    float Shelter;  // 0x000C, not reflected
+    float Distance;  // 0x0010, not reflected
+    EPhysicalSurface Surface;  // 0x0014, not reflected
 };

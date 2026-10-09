@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_SequenceExecution : public FRigUnit
 {
+public:
     UPROPERTY(EditAnywhere, Transient) FControlRigExecuteContext ExecuteContext;  // 0x0008, size 0x60
     UPROPERTY(EditAnywhere, Transient) FControlRigExecuteContext A;  // 0x0068, size 0x60
     UPROPERTY(EditAnywhere, Transient) FControlRigExecuteContext B;  // 0x00C8, size 0x60

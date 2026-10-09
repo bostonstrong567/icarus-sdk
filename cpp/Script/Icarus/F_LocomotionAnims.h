@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLocomotionAnims
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UAnimSequence> WalkF;  // 0x0000, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UAnimSequence> WalkR;  // 0x0028, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UAnimSequence> WalkB;  // 0x0050, size 0x28

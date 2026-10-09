@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Brutalist_TableRound_C : public ABP_DeployableBase_C
 {
-public:
 };

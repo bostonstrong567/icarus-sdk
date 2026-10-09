@@ -6,7 +6,6 @@ UCLASS()
 class UWeightedListFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static bool AddElement(int32 UID, FWeightedListElement NewElement);  // parameters 0x29
     UFUNCTION(BlueprintCallable) static bool ClearList(int32 UID);  // parameters 0x5
     UFUNCTION(BlueprintCallable) static int32 CreateNewList(const int32& Seed);  // parameters 0x8

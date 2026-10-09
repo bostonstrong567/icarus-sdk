@@ -5,5 +5,4 @@
 UCLASS(Config=Game)
 class UBTTask_PerformAction_SpitAttack_Large_C : public UBTTask_PerformAction_SpitAttack_C
 {
-public:
 };

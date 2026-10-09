@@ -5,10 +5,8 @@
 UCLASS(Transient)
 class UIRGN_PlayerState_FrequencyLimited : public UReplicationGraphNode
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    int32 TargetActorsPerFrame;  // 0x0050, protected
-    TArray<FActorRepListRefView,TSizedDefaultAllocator<32> > ReplicationActorLists;  // 0x0058, protected
-    FActorRepListRefView ForceNetUpdateReplicationActorList;  // 0x0068, protected
+protected:
+    int32 TargetActorsPerFrame;  // 0x0050, not reflected
+    TArray<FActorRepListRefView,TSizedDefaultAllocator<32> > ReplicationActorLists;  // 0x0058, not reflected
+    FActorRepListRefView ForceNetUpdateReplicationActorList;  // 0x0068, not reflected
 };

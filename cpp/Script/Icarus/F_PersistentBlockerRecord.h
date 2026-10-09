@@ -4,6 +4,7 @@
 USTRUCT()
 struct FPersistentBlockerRecord
 {
+public:
     UPROPERTY(SaveGame, BlueprintReadOnly) FString BlockerActorClassName;  // 0x0008, size 0x10
     UPROPERTY(SaveGame, BlueprintReadOnly) int32 BlockerActorIcarusUID;  // 0x0018, size 0x4
 };

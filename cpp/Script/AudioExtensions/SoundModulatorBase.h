@@ -5,7 +5,6 @@
 UCLASS(Abstract, EditInlineNew, Config=Engine)
 class USoundModulatorBase : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   GetOutputParameterName, GetParameter

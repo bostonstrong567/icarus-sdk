@@ -5,5 +5,4 @@
 UCLASS()
 class UMaterialExpressionParticlePositionWS : public UMaterialExpression
 {
-public:
 };

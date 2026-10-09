@@ -5,10 +5,9 @@
 UCLASS(EditInlineNew)
 class UMovieSceneBindingOverrides : public UObject
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY(EditAnywhere) TArray<FMovieSceneBindingOverrideData> BindingData;  // 0x0028, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bLookupDirty;  // 0x0038, private
-    TMultiMap<FGuid,int,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FGuid,int,1> > LookupMap;  // 0x0040, private
+    bool bLookupDirty;  // 0x0038, not reflected
+    TMultiMap<FGuid,int,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FGuid,int,1> > LookupMap;  // 0x0040, not reflected
 };

@@ -6,7 +6,6 @@ UCLASS()
 class UThermalLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToThermalTable(FName Name, FThermalData Data, FThermalRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x81
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakThermalEnum(FThermalEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FThermalRowHandle CastToThermalRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

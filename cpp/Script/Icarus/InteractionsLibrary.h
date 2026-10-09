@@ -6,7 +6,6 @@ UCLASS()
 class UInteractionsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToInteractionsTable(FName Name, FInteractData Data, FInteractionsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xA1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakInteractionsEnum(FInteractionsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FInteractionsRowHandle CastToInteractionsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

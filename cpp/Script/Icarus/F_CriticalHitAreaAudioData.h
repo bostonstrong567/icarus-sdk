@@ -4,6 +4,7 @@
 USTRUCT()
 struct FCriticalHitAreaAudioData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UFMODEvent> PlayerFeedbackSound;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bShouldCritZoneSuppressHitAudio;  // 0x0040, size 0x1
 };

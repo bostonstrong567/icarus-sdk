@@ -4,9 +4,8 @@
 USTRUCT()
 struct FNiagaraDataInterfaceGeneratedFunction
 {
-
-    // Not reflected:
-    FName DefinitionName;  // 0x0000
-    FString InstanceName;  // 0x0008
-    TArray<TTuple<FName,FName>,TSizedDefaultAllocator<32> > Specifiers;  // 0x0018
+public:
+    FName DefinitionName;  // 0x0000, not reflected
+    FString InstanceName;  // 0x0008, not reflected
+    TArray<TTuple<FName,FName>,TSizedDefaultAllocator<32> > Specifiers;  // 0x0018, not reflected
 };

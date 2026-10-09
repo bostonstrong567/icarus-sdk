@@ -10,10 +10,9 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName DynamicMatParamName;  // 0x0268, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<UIcarusCompassIcon*> CompassIcons;  // 0x0270, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSet<UIcarusMapIconComponent*> CompassIconComponents;  // 0x0280, size 0x50
-
-    // Not reflected: the engine's scripting cannot see these.
-    float CurrentMaterialRotation;  // 0x02D0, private
-
+private:
+    float CurrentMaterialRotation;  // 0x02D0, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void AddWaypointComponent(UIcarusMapIconComponent* MapIconComponent);  // parameters 0x8
     UFUNCTION() void OnMapIconVisibilityChanged(UUserWidget* Widget, UIcarusMapIconComponent* Component, bool bNewVisibility);  // parameters 0x11
     UFUNCTION() void OnMapIconsUpdated();

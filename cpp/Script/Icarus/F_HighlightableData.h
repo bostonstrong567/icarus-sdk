@@ -4,6 +4,7 @@
 USTRUCT()
 struct FHighlightableData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<UHighlightableComponent> Behaviour;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText DisplayName;  // 0x0040, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText Description;  // 0x0058, size 0x18

@@ -4,6 +4,8 @@
 USTRUCT()
 struct FAnimUpdateRateParameters
 {
+public:
+    FAnimUpdateRateParameters::EOptimizeMode OptimizeMode;  // 0x0000, not reflected
     UPROPERTY() EUpdateRateShiftBucket ShiftBucket;  // 0x0001, size 0x1
     UPROPERTY() uint8 bInterpolateSkippedFrames : 1;  // 0x0002, mask 0x01
     UPROPERTY() uint8 bShouldUseLodMap : 1;  // 0x0002, mask 0x02
@@ -14,14 +16,11 @@ struct FAnimUpdateRateParameters
     UPROPERTY() int32 EvaluationRate;  // 0x0008, size 0x4
     UPROPERTY(Transient) float TickedPoseOffestTime;  // 0x000C, size 0x4
     UPROPERTY(Transient) float AdditionalTime;  // 0x0010, size 0x4
+    float ThisTickDelta;  // 0x0014, not reflected
     UPROPERTY() int32 BaseNonRenderedUpdateRate;  // 0x0018, size 0x4
     UPROPERTY() int32 MaxEvalRateForInterpolation;  // 0x001C, size 0x4
     UPROPERTY() TArray<float> BaseVisibleDistanceFactorThesholds;  // 0x0020, size 0x10
     UPROPERTY() TMap<int32, int32> LODToFrameSkipMap;  // 0x0030, size 0x50
     UPROPERTY() int32 SkippedUpdateFrames;  // 0x0080, size 0x4
     UPROPERTY() int32 SkippedEvalFrames;  // 0x0084, size 0x4
-
-    // Not reflected:
-    FAnimUpdateRateParameters::EOptimizeMode OptimizeMode;  // 0x0000
-    float ThisTickDelta;  // 0x0014
 };

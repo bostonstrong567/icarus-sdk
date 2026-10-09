@@ -4,6 +4,7 @@
 USTRUCT()
 struct FScreenMessageString
 {
+public:
     UPROPERTY(Transient) uint64 Key;  // 0x0000, size 0x8
     UPROPERTY(Transient) FString ScreenMessage;  // 0x0008, size 0x10
     UPROPERTY(Transient) FColor DisplayColor;  // 0x0018, size 0x4

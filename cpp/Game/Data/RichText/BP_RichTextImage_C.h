@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UBP_RichTextImage_C : public URichTextBlockImageDecorator
 {
-public:
 };

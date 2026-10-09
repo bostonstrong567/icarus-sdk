@@ -5,5 +5,4 @@
 UCLASS()
 class UBlueprintUnlocksTable : public UIcarusDataTable
 {
-public:
 };

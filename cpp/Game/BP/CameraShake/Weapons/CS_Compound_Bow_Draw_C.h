@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UCS_Compound_Bow_Draw_C : public UMatineeCameraShake
 {
-public:
 };

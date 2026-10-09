@@ -5,7 +5,6 @@
 UCLASS(Abstract, MinimalAPI)
 class UClothingAssetCustomData : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   BindToSkeletalMesh

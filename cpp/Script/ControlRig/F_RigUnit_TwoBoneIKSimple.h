@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_TwoBoneIKSimple : public FRigUnit_HighlevelBaseMutable
 {
+public:
     UPROPERTY() FName BoneA;  // 0x0068, size 0x8
     UPROPERTY() FName BoneB;  // 0x0070, size 0x8
     UPROPERTY() FName EffectorBone;  // 0x0078, size 0x8

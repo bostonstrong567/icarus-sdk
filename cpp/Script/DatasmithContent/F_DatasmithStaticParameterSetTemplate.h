@@ -4,5 +4,6 @@
 USTRUCT()
 struct FDatasmithStaticParameterSetTemplate
 {
+public:
     UPROPERTY() TMap<FName, bool> StaticSwitchParameters;  // 0x0000, size 0x50
 };

@@ -6,9 +6,7 @@ UCLASS(Abstract)
 class UDatasmithObjectTemplate : public UObject
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    const bool bIsActorTemplate;  // 0x0028
+    const bool bIsActorTemplate;  // 0x0028, not reflected
 
     // Virtual functions that start here:
     //   Equals, HasSameBase, Load, LoadRebase, UpdateObject

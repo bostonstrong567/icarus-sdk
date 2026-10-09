@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class USequencerAnimationSupport : public UInterface
 {
-public:
 };

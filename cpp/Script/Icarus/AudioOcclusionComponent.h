@@ -7,14 +7,13 @@ class UAudioOcclusionComponent : public USceneComponent
 {
 public:
     UPROPERTY(EditAnywhere) bool bDebug;  // 0x01F8, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    float AverageOcclusion;  // 0x01FC, private
-    TMap<FName const ,FAudioOcclusionTraceResult,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName const ,FAudioOcclusionTraceResult,0> > OcclusionTraceResults;  // 0x0200, private
-    uint64 LastOcclusionUpdateFrame;  // 0x0250, private
-    EAudioOcclusionMode CurrentOcclusionMode;  // 0x0258, private
-    TArray<FAudioOcclusionTracePoint,TSizedDefaultAllocator<32> > SimpleTracePoint;  // 0x0260, private
-
+private:
+    float AverageOcclusion;  // 0x01FC, not reflected
+    TMap<FName const ,FAudioOcclusionTraceResult,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName const ,FAudioOcclusionTraceResult,0> > OcclusionTraceResults;  // 0x0200, not reflected
+    uint64 LastOcclusionUpdateFrame;  // 0x0250, not reflected
+    EAudioOcclusionMode CurrentOcclusionMode;  // 0x0258, not reflected
+    TArray<FAudioOcclusionTracePoint,TSizedDefaultAllocator<32> > SimpleTracePoint;  // 0x0260, not reflected
+public:
     UFUNCTION(BlueprintNativeEvent) TArray<FAudioOcclusionTracePoint> GetTracePoints(const FVector& ListenerLocation);  // parameters 0x20
 
     // Virtual functions that start here:

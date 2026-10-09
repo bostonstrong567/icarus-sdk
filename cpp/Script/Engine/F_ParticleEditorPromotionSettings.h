@@ -4,5 +4,6 @@
 USTRUCT()
 struct FParticleEditorPromotionSettings
 {
+public:
     UPROPERTY(EditAnywhere) FFilePath DefaultParticleAsset;  // 0x0000, size 0x10
 };

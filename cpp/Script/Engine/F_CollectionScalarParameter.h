@@ -4,5 +4,6 @@
 USTRUCT()
 struct FCollectionScalarParameter : public FCollectionParameterBase
 {
+public:
     UPROPERTY(EditAnywhere) float DefaultValue;  // 0x0018, size 0x4
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FHairGroupsProceduralCards
 {
+public:
     UPROPERTY() FHairCardsClusterSettings ClusterSettings;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) FHairCardsGeometrySettings GeometrySettings;  // 0x0008, size 0x1C
     UPROPERTY(EditAnywhere) FHairCardsTextureSettings TextureSettings;  // 0x0024, size 0x10

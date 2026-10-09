@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_STYX_C_Expedition_Collect_Equipment_C : public ABPQ_Retrieve_Item_And_Spawn_Crate_C
 {
-public:
 };

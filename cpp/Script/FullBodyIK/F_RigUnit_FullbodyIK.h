@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_FullbodyIK : public FRigUnit_HighlevelBaseMutable
 {
+public:
     UPROPERTY() FRigElementKey Root;  // 0x0068, size 0xC
     UPROPERTY() TArray<FFBIKEndEffector> Effectors;  // 0x0078, size 0x10
     UPROPERTY(EditAnywhere) TArray<FFBIKConstraintOption> Constraints;  // 0x0088, size 0x10

@@ -4,7 +4,6 @@
 USTRUCT()
 struct FStructReference
 {
-
-    // Not reflected:
-    const void * StructPointer;  // 0x0000
+private:
+    const void * StructPointer;  // 0x0000, not reflected
 };

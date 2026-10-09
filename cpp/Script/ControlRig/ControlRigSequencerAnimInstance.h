@@ -6,9 +6,7 @@ UCLASS(Transient)
 class UControlRigSequencerAnimInstance : public UAnimSequencerInstance
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TWeakObjectPtr<UControlRig,FWeakObjectPtr> CachedControlRig;  // 0x02C0
+    TWeakObjectPtr<UControlRig,FWeakObjectPtr> CachedControlRig;  // 0x02C0, not reflected
 
     // Virtual functions that start here:
     //   SetAnimationAsset

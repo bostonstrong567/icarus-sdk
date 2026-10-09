@@ -6,7 +6,6 @@ UCLASS()
 class UARMeshGeometry : public UARTrackedGeometry
 {
 public:
-
     UFUNCTION(BlueprintCallable) bool GetObjectClassificationAtLocation(const FVector& InWorldLocation, EARObjectClassification& OutClassification, FVector& OutClassificationLocation, float MaxLocationDiff);  // parameters 0x21
 
     // Virtual functions that start here:

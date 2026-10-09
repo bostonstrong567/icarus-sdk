@@ -4,5 +4,6 @@
 USTRUCT()
 struct FPreviewMeshCollectionEntry
 {
+public:
     UPROPERTY(EditAnywhere) TSoftObjectPtr<USkeletalMesh> SkeletalMesh;  // 0x0000, size 0x28
 };

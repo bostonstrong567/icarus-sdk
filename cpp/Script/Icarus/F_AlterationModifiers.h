@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAlterationModifiers : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FAlterationsEnum Alteration;  // 0x0018, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float ModifierDuration;  // 0x0028, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FModifierStatesRowHandle Modifier;  // 0x002C, size 0x18

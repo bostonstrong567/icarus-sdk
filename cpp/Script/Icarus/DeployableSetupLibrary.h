@@ -6,7 +6,6 @@ UCLASS()
 class UDeployableSetupLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToDeployableSetupTable(FName Name, FDeployableSetup Data, FDeployableSetupRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x1B9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakDeployableSetupEnum(FDeployableSetupEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FDeployableSetupRowHandle CastToDeployableSetupRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

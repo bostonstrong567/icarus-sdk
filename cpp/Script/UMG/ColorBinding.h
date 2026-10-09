@@ -5,11 +5,9 @@
 UCLASS()
 class UColorBinding : public UPropertyBinding
 {
+private:
+    TOptional<bool> bNeedsConversion;  // 0x0060, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TOptional<bool> bNeedsConversion;  // 0x0060, private
-
     UFUNCTION() FLinearColor GetLinearValue() const;  // parameters 0x10
     UFUNCTION() FSlateColor GetSlateValue() const;  // parameters 0x28
 };

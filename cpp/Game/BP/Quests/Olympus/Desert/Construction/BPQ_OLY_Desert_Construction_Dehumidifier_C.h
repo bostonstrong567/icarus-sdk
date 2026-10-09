@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_OLY_Desert_Construction_Dehumidifier_C : public ABPQ_Deploy_Count_C
 {
-public:
 };

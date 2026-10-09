@@ -4,5 +4,6 @@
 USTRUCT()
 struct FMovieSceneWarpCounter
 {
+public:
     UPROPERTY() TArray<uint32> WarpCounts;  // 0x0000, size 0x10
 };

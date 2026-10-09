@@ -6,7 +6,6 @@ UCLASS()
 class ULogCategoriesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToLogCategoriesTable(FName Name, FIcarusLogCategory Data, FLogCategoriesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x69
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakLogCategoriesEnum(FLogCategoriesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FLogCategoriesRowHandle CastToLogCategoriesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

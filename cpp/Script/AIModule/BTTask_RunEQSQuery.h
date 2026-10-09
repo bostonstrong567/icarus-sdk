@@ -13,7 +13,5 @@ public:
     UPROPERTY(EditAnywhere) FBlackboardKeySelector EQSQueryBlackboardKey;  // 0x00C8, size 0x28
     UPROPERTY(EditAnywhere) bool bUseBBKey;  // 0x00F0, size 0x1
     UPROPERTY(EditAnywhere) FEQSParametrizedQueryExecutionRequest EQSRequest;  // 0x00F8, size 0x48
-
-    // Not reflected: the engine's scripting cannot see these.
-    TDelegate<void __cdecl(TSharedPtr<FEnvQueryResult,0>),FDefaultDelegateUserPolicy> QueryFinishedDelegate;  // 0x0140
+    TDelegate<void __cdecl(TSharedPtr<FEnvQueryResult,0>),FDefaultDelegateUserPolicy> QueryFinishedDelegate;  // 0x0140, not reflected
 };

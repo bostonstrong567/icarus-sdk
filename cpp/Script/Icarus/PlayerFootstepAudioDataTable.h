@@ -5,5 +5,4 @@
 UCLASS()
 class UPlayerFootstepAudioDataTable : public UIcarusDataTable
 {
-public:
 };

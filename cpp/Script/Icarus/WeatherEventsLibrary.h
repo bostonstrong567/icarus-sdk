@@ -6,7 +6,6 @@ UCLASS()
 class UWeatherEventsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToWeatherEventsTable(FName Name, FIcarusWeatherEvent Data, FWeatherEventsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xC9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakWeatherEventsEnum(FWeatherEventsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FWeatherEventsRowHandle CastToWeatherEventsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

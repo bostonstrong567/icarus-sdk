@@ -5,5 +5,4 @@
 UCLASS(NotPlaceable, Config=Engine)
 class AIcarusNPCPreyController : public AIcarusNPCController
 {
-public:
 };

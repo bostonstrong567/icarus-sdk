@@ -12,14 +12,13 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 WaveTableResolution;  // 0x0040, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<FRuntimeFloatCurve> WaveTable;  // 0x0048, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bNormalizeWaveTables : 1;  // 0x0058, mask 0x01
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<unsigned int,TFunction<void __cdecl(AssetChangeInfo const &)>,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<unsigned int,TFunction<void __cdecl(AssetChangeInfo const &)>,0> > PropertyChangedCallbacks;  // 0x0060, protected
-    TArray<float,TSizedDefaultAllocator<32> > CurveBiDirTangents;  // 0x00B0, protected
-    FRuntimeFloatCurve DefaultCurve;  // 0x00C0, protected
-    int32 CachedGridSize;  // 0x0148, protected
-    int8 : 1 bWasLockedToGrid;  // 0x014C, protected
-    int32 CachedTableResolution;  // 0x0150, protected
-    TArray<FRuntimeFloatCurve,TSizedDefaultAllocator<32> > CachedWaveTable;  // 0x0158, protected
-    uint8 : 1 bCachedNormalizationSetting;  // 0x0168, protected
+protected:
+    TMap<unsigned int,TFunction<void __cdecl(AssetChangeInfo const &)>,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<unsigned int,TFunction<void __cdecl(AssetChangeInfo const &)>,0> > PropertyChangedCallbacks;  // 0x0060, not reflected
+    TArray<float,TSizedDefaultAllocator<32> > CurveBiDirTangents;  // 0x00B0, not reflected
+    FRuntimeFloatCurve DefaultCurve;  // 0x00C0, not reflected
+    int32 CachedGridSize;  // 0x0148, not reflected
+    int8 : 1 bWasLockedToGrid;  // 0x014C, not reflected
+    int32 CachedTableResolution;  // 0x0150, not reflected
+    TArray<FRuntimeFloatCurve,TSizedDefaultAllocator<32> > CachedWaveTable;  // 0x0158, not reflected
+    uint8 : 1 bCachedNormalizationSetting;  // 0x0168, not reflected
 };

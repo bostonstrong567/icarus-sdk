@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Fish_02_Var4_C : public ABP_Fish_02_C
 {
-public:
 };

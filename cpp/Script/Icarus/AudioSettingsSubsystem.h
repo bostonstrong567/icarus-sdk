@@ -6,7 +6,6 @@ UCLASS()
 class UAudioSettingsSubsystem : public UGameInstanceSubsystem
 {
 public:
-
     UFUNCTION() void OnAmbientVolumeChanged(float Volume);  // parameters 0x4
     UFUNCTION() void OnCharacterVoiceVolumeChanged(float Volume);  // parameters 0x4
     UFUNCTION() void OnDialogueVolumeChanged(float Volume);  // parameters 0x4

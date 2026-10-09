@@ -6,7 +6,6 @@ UCLASS()
 class UEquippableLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToEquippableTable(FName Name, FEquippableData Data, FEquippableRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x139
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakEquippableEnum(FEquippableEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FEquippableRowHandle CastToEquippableRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

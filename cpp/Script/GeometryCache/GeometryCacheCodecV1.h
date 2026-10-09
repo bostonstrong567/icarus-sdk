@@ -5,8 +5,6 @@
 UCLASS()
 class UGeometryCacheCodecV1 : public UGeometryCacheCodecBase
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    ICodecDecoder * Decoder;  // 0x0038, private
+private:
+    ICodecDecoder * Decoder;  // 0x0038, not reflected
 };

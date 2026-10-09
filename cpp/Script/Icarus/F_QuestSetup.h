@@ -4,6 +4,7 @@
 USTRUCT()
 struct FQuestSetup : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<AQuest> Class;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Variation;  // 0x0040, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText Description;  // 0x0048, size 0x18

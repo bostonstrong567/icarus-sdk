@@ -6,7 +6,6 @@ UCLASS()
 class URadialOptionsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToRadialOptionsTable(FName Name, FRadialOption Data, FRadialOptionsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x39
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakRadialOptionsEnum(FRadialOptionsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FRadialOptionsRowHandle CastToRadialOptionsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -5,5 +5,4 @@
 UCLASS()
 class URecipeSetsTable : public UIcarusDataTable
 {
-public:
 };

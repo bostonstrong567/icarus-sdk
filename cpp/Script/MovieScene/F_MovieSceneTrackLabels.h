@@ -4,5 +4,6 @@
 USTRUCT()
 struct FMovieSceneTrackLabels
 {
+public:
     UPROPERTY() TArray<FString> Strings;  // 0x0000, size 0x10
 };

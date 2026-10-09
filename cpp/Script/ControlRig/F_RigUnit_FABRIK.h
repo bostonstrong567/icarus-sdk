@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_FABRIK : public FRigUnit_HighlevelBaseMutable
 {
+public:
     UPROPERTY() FName StartBone;  // 0x0068, size 0x8
     UPROPERTY() FName EffectorBone;  // 0x0070, size 0x8
     UPROPERTY() FTransform EffectorTransform;  // 0x0080, size 0x30

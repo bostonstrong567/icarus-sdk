@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMusicTrack : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UFMODEvent> Event;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UCurveFloat* FadeInCurve;  // 0x0040, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UCurveFloat* FadeOutCurve;  // 0x0048, size 0x8

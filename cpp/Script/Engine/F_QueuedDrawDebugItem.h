@@ -4,6 +4,7 @@
 USTRUCT()
 struct FQueuedDrawDebugItem
 {
+public:
     UPROPERTY(Transient) TEnumAsByte<EDrawDebugItemType> ItemType;  // 0x0000, size 0x1
     UPROPERTY(Transient) FVector StartLoc;  // 0x0004, size 0xC
     UPROPERTY(Transient) FVector EndLoc;  // 0x0010, size 0xC

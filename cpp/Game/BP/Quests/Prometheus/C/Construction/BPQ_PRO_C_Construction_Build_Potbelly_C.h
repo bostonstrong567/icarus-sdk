@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_PRO_C_Construction_Build_Potbelly_C : public ABPQ_Deploy_Count_C
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFLODTileRecordRecord
 {
+public:
     UPROPERTY(SaveGame) int32 RecordIndex;  // 0x0000, size 0x4
     UPROPERTY(SaveGame) FName RecorderName;  // 0x0004, size 0x8
     UPROPERTY(SaveGame) TArray<FFLODTileRecordRecordInstance> Instances;  // 0x0010, size 0x10

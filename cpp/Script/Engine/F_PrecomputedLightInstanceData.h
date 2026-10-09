@@ -4,6 +4,7 @@
 USTRUCT()
 struct FPrecomputedLightInstanceData : public FSceneComponentInstanceData
 {
+public:
     UPROPERTY() FTransform Transform;  // 0x00C0, size 0x30
     UPROPERTY() FGuid LightGuid;  // 0x00F0, size 0x10
     UPROPERTY() int32 PreviewShadowMapChannel;  // 0x0100, size 0x4

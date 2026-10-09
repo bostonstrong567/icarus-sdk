@@ -4,6 +4,7 @@
 USTRUCT()
 struct FKeyIconData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FKey> Keys;  // 0x0018, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bHideText;  // 0x0028, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EControllerIconSet IconSet;  // 0x0029, size 0x1

@@ -5,9 +5,10 @@
 UCLASS(Config=Engine)
 class UARImageComponent : public UARComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(Replicated, ReplicatedUsing, BlueprintReadOnly) FARImageUpdatePayload ReplicatedPayload;  // 0x0280, size 0x60
-
+public:
     UFUNCTION(BlueprintImplementableEvent) void ReceiveAdd(const FARImageUpdatePayload& Payload);  // parameters 0x60
     UFUNCTION(BlueprintImplementableEvent) void ReceiveUpdate(const FARImageUpdatePayload& Payload);  // parameters 0x60
     UFUNCTION(Server, Reliable, BlueprintNativeEvent) void ServerUpdatePayload(FARImageUpdatePayload NewPayload);  // parameters 0x60

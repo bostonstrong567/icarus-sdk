@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBuildPromotionOpenAssetSettings
 {
+public:
     UPROPERTY(EditAnywhere, Config) FFilePath BlueprintAsset;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, Config) FFilePath MaterialAsset;  // 0x0010, size 0x10
     UPROPERTY(EditAnywhere, Config) FFilePath ParticleSystemAsset;  // 0x0020, size 0x10

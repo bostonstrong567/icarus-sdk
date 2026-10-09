@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class UWeatherForecastRecorderComponent : public UIcarusStateRecorderComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(SaveGame) FRecordedCurrentWeatherBlock NowBlock;  // 0x00D8, size 0x30
 };

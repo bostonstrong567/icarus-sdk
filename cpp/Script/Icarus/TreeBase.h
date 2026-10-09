@@ -5,10 +5,8 @@
 UCLASS(Config=Engine)
 class ATreeBase : public AIcarusActor
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
-    UPROPERTY(EditAnywhere) bool bHasBeenConstructed;  // 0x02C0, size 0x1
-    UPROPERTY(EditAnywhere) bool bHasSpawnArguments;  // 0x02C1, size 0x1
-    UPROPERTY(EditAnywhere) bool bDefferTreeConstruction;  // 0x02C2, size 0x1
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) bool bHasBeenModified;  // 0x02C3, size 0x1
     UPROPERTY(BlueprintAssignable) FOnModifiedSignature OnHasBeenModifiedUpdated;  // 0x02C8, size 0x10
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UTreePrimitiveComponent* RootPrimitive;  // 0x02D8, size 0x8
@@ -18,7 +16,11 @@ public:
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) TArray<int32> RuntimeTreePrimitivesMask;  // 0x0330, size 0x10
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UFLODActorComponent* FLODActorComponent;  // 0x0340, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bIsResolvingTreeCollision;  // 0x0348, size 0x1
-
+protected:
+    UPROPERTY(EditAnywhere) bool bHasBeenConstructed;  // 0x02C0, size 0x1
+    UPROPERTY(EditAnywhere) bool bHasSpawnArguments;  // 0x02C1, size 0x1
+    UPROPERTY(EditAnywhere) bool bDefferTreeConstruction;  // 0x02C2, size 0x1
+public:
     UFUNCTION(BlueprintCallable) void AddTreePrimitiveToRuntimeMask(UTreePrimitiveComponent* TreePrimitive);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void ConsumeHit(FIcarusDamagePacket& DamagePacket);  // parameters 0xD8
     UFUNCTION(BlueprintCallable) void DebugLogHierarchy() const;

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_OLY_Forest_Construction_Preparation_CopperIngot_C : public ABPQ_Collect_Item_C
 {
-public:
 };

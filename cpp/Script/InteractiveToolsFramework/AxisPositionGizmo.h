@@ -19,8 +19,7 @@ public:
     UPROPERTY() float InteractionStartParameter;  // 0x00BC, size 0x4
     UPROPERTY() float InteractionCurParameter;  // 0x00C0, size 0x4
     UPROPERTY() float ParameterSign;  // 0x00C4, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    FVector LastHitPosition;  // 0x00C8, protected
-    float InitialTargetParameter;  // 0x00D4, protected
+protected:
+    FVector LastHitPosition;  // 0x00C8, not reflected
+    float InitialTargetParameter;  // 0x00D4, not reflected
 };

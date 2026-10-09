@@ -5,8 +5,6 @@
 UCLASS()
 class UMovieScenePiecewiseByteBlenderSystem : public UMovieSceneBlenderSystem
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    UE::MovieScene::TSimpleBlenderSystemImpl<unsigned char> Impl;  // 0x0068, private
+private:
+    UE::MovieScene::TSimpleBlenderSystemImpl<unsigned char> Impl;  // 0x0068, not reflected
 };

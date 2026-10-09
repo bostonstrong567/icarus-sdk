@@ -6,6 +6,5 @@ UCLASS(Abstract)
 class UAudioReflectorInterface : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintNativeEvent) FSurfaceAudioReflectionData GetReflectionValue() const;  // parameters 0xC
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FResourceComponentData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bHasEnergyConnection;  // 0x0018, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FEnergyRowHandle EnergyFlow;  // 0x001C, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bHasWaterConnection;  // 0x0034, size 0x1

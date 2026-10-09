@@ -4,6 +4,7 @@
 USTRUCT()
 struct FGPUSpriteEmitterInfo
 {
+public:
     UPROPERTY() UParticleModuleRequired* RequiredModule;  // 0x0000, size 0x8
     UPROPERTY() UParticleModuleSpawn* SpawnModule;  // 0x0008, size 0x8
     UPROPERTY() UParticleModuleSpawnPerUnit* SpawnPerUnitModule;  // 0x0010, size 0x8
@@ -33,7 +34,5 @@ struct FGPUSpriteEmitterInfo
     UPROPERTY() FRawDistributionFloat DynamicAlpha;  // 0x01C8, size 0x30
     UPROPERTY() FRawDistributionVector DynamicColorScale;  // 0x01F8, size 0x48
     UPROPERTY() FRawDistributionFloat DynamicAlphaScale;  // 0x0240, size 0x30
-
-    // Not reflected:
-    FGPUSpriteResources * Resources;  // 0x0270
+    FGPUSpriteResources * Resources;  // 0x0270, not reflected
 };

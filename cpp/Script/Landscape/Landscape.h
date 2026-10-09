@@ -5,5 +5,4 @@
 UCLASS(NotPlaceable, MinimalAPI, Config=Engine)
 class ALandscape : public ALandscapeProxy
 {
-public:
 };

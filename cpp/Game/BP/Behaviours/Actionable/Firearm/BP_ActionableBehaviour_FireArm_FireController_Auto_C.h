@@ -5,5 +5,4 @@
 UCLASS(Transient, Config=Engine)
 class UBP_ActionableBehaviour_FireArm_FireController_Auto_C : public UBP_ActionableBehaviour_FireArm_FireController_Base_C
 {
-public:
 };

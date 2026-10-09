@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_VerletIntegrateVector : public FRigUnit_SimBase
 {
+public:
     UPROPERTY() FVector Target;  // 0x0008, size 0xC
     UPROPERTY() float Strength;  // 0x0014, size 0x4
     UPROPERTY() float Damp;  // 0x0018, size 0x4

@@ -10,10 +10,9 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FSlateChildSize Size;  // 0x0050, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<EHorizontalAlignment> HorizontalAlignment;  // 0x0058, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<EVerticalAlignment> VerticalAlignment;  // 0x0059, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    SHorizontalBox::FSlot * Slot;  // 0x0038, private
-
+private:
+    SHorizontalBox::FSlot * Slot;  // 0x0038, not reflected
+public:
     UFUNCTION(BlueprintCallable) void SetHorizontalAlignment(TEnumAsByte<EHorizontalAlignment> InHorizontalAlignment);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void SetPadding(FMargin InPadding);  // parameters 0x10
     UFUNCTION(BlueprintCallable) void SetSize(FSlateChildSize InSize);  // parameters 0x8

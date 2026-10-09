@@ -6,7 +6,6 @@ UCLASS()
 class UVocalisationsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToVocalisationsTable(FName Name, FVocalisationData Data, FVocalisationsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x79
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakVocalisationsEnum(FVocalisationsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FVocalisationsRowHandle CastToVocalisationsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

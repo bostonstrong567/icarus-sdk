@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_NameTruncate : public FRigUnit_NameBase
 {
+public:
     UPROPERTY() FName Name;  // 0x0008, size 0x8
     UPROPERTY() int32 Count;  // 0x0010, size 0x4
     UPROPERTY() bool FromEnd;  // 0x0014, size 0x1

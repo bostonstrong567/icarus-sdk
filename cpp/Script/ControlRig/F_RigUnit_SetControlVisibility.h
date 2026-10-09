@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_SetControlVisibility : public FRigUnitMutable
 {
+public:
     UPROPERTY() FRigElementKey Item;  // 0x0068, size 0xC
     UPROPERTY() FString Pattern;  // 0x0078, size 0x10
     UPROPERTY() bool bVisible;  // 0x0088, size 0x1

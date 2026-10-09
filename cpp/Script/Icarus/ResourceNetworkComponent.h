@@ -5,17 +5,17 @@
 UCLASS(Config=Engine)
 class UResourceNetworkComponent : public UActorComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintAssignable) FResourceNetworkUpdated OnResourceNetworkUpdated;  // 0x00B0, size 0x1
+protected:
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) AResourceNetwork* Network;  // 0x00B8, size 0x8
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) AResourceSplineActorBase* Spline;  // 0x00C0, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 LastNetworkFlowRate;  // 0x00C8, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bIsMigratingNetwork;  // 0x00CC, protected
-    TWeakObjectPtr<UResourceComponent,FWeakObjectPtr> ResourceComponent;  // 0x00D0, protected
-    int32 CurrentDesiredFlowRate;  // 0x00D8, protected
-
+    bool bIsMigratingNetwork;  // 0x00CC, not reflected
+    TWeakObjectPtr<UResourceComponent,FWeakObjectPtr> ResourceComponent;  // 0x00D0, not reflected
+    int32 CurrentDesiredFlowRate;  // 0x00D8, not reflected
+public:
     UFUNCTION(BlueprintCallable) bool AddSplineNetworkConnection(AResourceSplineActorBase* SplineActor, AResourceNetwork* NewNetwork);  // parameters 0x11
     UFUNCTION(BlueprintCallable) void CleanupSplineConnections();
     UFUNCTION(BlueprintCallable) void DisconnectFromNetwork(AResourceNetwork* OldNetwork);  // parameters 0x8

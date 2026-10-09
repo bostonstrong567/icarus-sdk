@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNationalFlag : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FItemableRowHandle Item;  // 0x0018, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UTexture2D> FlagTexture;  // 0x0030, size 0x28
 };

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Gold_Fireplace_Ext2_C : public ABP_Fireplace_Chimney_Ext_C
 {
-public:
 };

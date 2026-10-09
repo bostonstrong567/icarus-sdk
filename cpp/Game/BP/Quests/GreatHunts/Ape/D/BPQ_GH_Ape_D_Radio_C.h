@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_Ape_D_Radio_C : public ABPQ_Deploy_Count_C
 {
-public:
 };

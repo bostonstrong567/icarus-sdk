@@ -5,12 +5,12 @@
 UCLASS(Abstract, Config=Engine)
 class UMovementComponent : public UActorComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(Transient, Instanced, BlueprintReadOnly) USceneComponent* UpdatedComponent;  // 0x00B0, size 0x8
     UPROPERTY(Transient, Instanced, BlueprintReadOnly) UPrimitiveComponent* UpdatedPrimitive;  // 0x00B8, size 0x8
+    EMoveComponentFlags MoveComponentFlags;  // 0x00C0, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector Velocity;  // 0x00C4, size 0xC
-    UPROPERTY(EditAnywhere, BlueprintReadOnly) FVector PlaneConstraintNormal;  // 0x00D0, size 0xC
-    UPROPERTY(EditAnywhere, BlueprintReadOnly) FVector PlaneConstraintOrigin;  // 0x00DC, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bUpdateOnlyIfRendered : 1;  // 0x00E8, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bAutoUpdateTickRegistration : 1;  // 0x00E8, mask 0x02
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bTickBeforeOwner : 1;  // 0x00E8, mask 0x04
@@ -19,13 +19,14 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bSnapToPlaneAtStart : 1;  // 0x00E8, mask 0x20
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bAutoRegisterPhysicsVolumeUpdates : 1;  // 0x00E8, mask 0x40
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bComponentShouldUpdatePhysicsVolume : 1;  // 0x00E8, mask 0x80
+protected:
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) FVector PlaneConstraintNormal;  // 0x00D0, size 0xC
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) FVector PlaneConstraintOrigin;  // 0x00DC, size 0xC
+private:
+    bool bInOnRegister;  // 0x00E9, not reflected
+    bool bInInitializeComponent;  // 0x00EA, not reflected
     UPROPERTY(EditAnywhere) EPlaneConstraintAxisSetting PlaneConstraintAxisSetting;  // 0x00EB, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    EMoveComponentFlags MoveComponentFlags;  // 0x00C0
-    bool bInOnRegister;  // 0x00E9, private
-    bool bInInitializeComponent;  // 0x00EA, private
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) FVector ConstrainDirectionToPlane(FVector Direction) const;  // parameters 0x18
     UFUNCTION(BlueprintCallable, BlueprintPure) FVector ConstrainLocationToPlane(FVector Location) const;  // parameters 0x18
     UFUNCTION(BlueprintCallable, BlueprintPure) FVector ConstrainNormalToPlane(FVector Normal) const;  // parameters 0x18

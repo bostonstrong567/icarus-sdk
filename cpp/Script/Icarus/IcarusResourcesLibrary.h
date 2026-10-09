@@ -6,7 +6,6 @@ UCLASS()
 class UIcarusResourcesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToIcarusResourcesTable(FName Name, FIcarusResource Data, FIcarusResourcesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xF1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakIcarusResourcesEnum(FIcarusResourcesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FIcarusResourcesRowHandle CastToIcarusResourcesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -4,6 +4,8 @@
 USTRUCT()
 struct FAnimLinkableElement
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY() UAnimMontage* LinkedMontage;  // 0x0008, size 0x8
     UPROPERTY(EditAnywhere) int32 SlotIndex;  // 0x0010, size 0x4
     UPROPERTY() int32 SegmentIndex;  // 0x0014, size 0x4

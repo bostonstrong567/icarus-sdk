@@ -7,7 +7,6 @@ class ULiveLinkAnimationVirtualSubject : public ULiveLinkVirtualSubject
 {
 public:
     UPROPERTY(EditAnywhere) bool bAppendSubjectNameToBones;  // 0x0161, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bInvalidate;  // 0x0160, protected
+protected:
+    bool bInvalidate;  // 0x0160, not reflected
 };

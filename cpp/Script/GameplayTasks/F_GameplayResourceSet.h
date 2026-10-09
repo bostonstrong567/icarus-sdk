@@ -4,7 +4,6 @@
 USTRUCT()
 struct FGameplayResourceSet
 {
-
-    // Not reflected:
-    uint16 Flags;  // 0x0000
+private:
+    uint16 Flags;  // 0x0000, not reflected
 };

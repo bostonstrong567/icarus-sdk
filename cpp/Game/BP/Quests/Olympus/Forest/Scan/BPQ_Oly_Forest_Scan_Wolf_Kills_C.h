@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABPQ_Oly_Forest_Scan_Wolf_Kills_C : public ABPQ_Common_Hunt_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool Check();  // parameters 0x1
 };

@@ -12,10 +12,9 @@ public:
     UPROPERTY(Deprecated) bool bExplicitWrapWidth;  // 0x0130, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bExplicitWrapSize;  // 0x0131, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<EOrientation> Orientation;  // 0x0132, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SWrapBox,0> MyWrapBox;  // 0x0138, protected
-
+protected:
+    TSharedPtr<SWrapBox,0> MyWrapBox;  // 0x0138, not reflected
+public:
     UFUNCTION(BlueprintCallable) UWrapBoxSlot* AddChildToWrapBox(UWidget* Content);  // parameters 0x10
     UFUNCTION(BlueprintCallable) void SetInnerSlotPadding(FVector2D InPadding);  // parameters 0x8
 };

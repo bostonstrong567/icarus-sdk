@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_ELY_SQ_Fish_Prepare_Lure_C : public ABPQ_Collect_Item_With_Tag_C
 {
-public:
 };

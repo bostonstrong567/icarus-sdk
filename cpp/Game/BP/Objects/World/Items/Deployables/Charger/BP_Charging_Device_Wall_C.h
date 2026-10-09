@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Charging_Device_Wall_C : public ABP_Charging_Device_C
 {
-public:
 };

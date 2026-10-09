@@ -5,14 +5,15 @@
 UCLASS(Abstract, Config=Engine)
 class AAIEvent : public AActor
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) FAIEventsRowHandle AssignedEvent;  // 0x0220, size 0x18
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) AActor* InstigatorActor;  // 0x0238, size 0x8
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float TickInterval;  // 0x0240, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bDidEventCompleteSuccessfully;  // 0x0244, private
-
+private:
+    bool bDidEventCompleteSuccessfully;  // 0x0244, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) bool ArePreconditionsValid(AActor* InInstigatorActor) const;  // parameters 0x9
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly, BlueprintNativeEvent) void CompleteEvent(bool bSuccess);  // parameters 0x1
     UFUNCTION(BlueprintAuthorityOnly, BlueprintNativeEvent) void SetupEvent(FAIEventsRowHandle Event, AActor* EventInstigator);  // parameters 0x20

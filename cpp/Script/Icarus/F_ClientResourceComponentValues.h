@@ -4,6 +4,7 @@
 USTRUCT()
 struct FClientResourceComponentValues
 {
+public:
     UPROPERTY() int32 StorageFlowRate;  // 0x0000, size 0x4
     UPROPERTY() uint32 ConnectionPriorityMask;  // 0x0004, size 0x4
     UPROPERTY() TArray<FClientResourceNetworkComponentValues> ResourceValues;  // 0x0008, size 0x10

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FIcarusVersion
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName Name;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FIcarusBuildVersion Version;  // 0x0008, size 0x20
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FBackendSchemaVersion BackendSchema;  // 0x0028, size 0xC

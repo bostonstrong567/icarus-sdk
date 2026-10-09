@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBlueprintInputKeyDelegateBinding : public FBlueprintInputDelegateBinding
 {
+public:
     UPROPERTY() FInputChord InputChord;  // 0x0008, size 0x20
     UPROPERTY() TEnumAsByte<EInputEvent> InputKeyEvent;  // 0x0028, size 0x1
     UPROPERTY() FName FunctionNameToBind;  // 0x002C, size 0x8

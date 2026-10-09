@@ -4,6 +4,7 @@
 USTRUCT()
 struct ST_Waterfall_Details
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FLinearColor WaterfallColor;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float RVTTopBlend;  // 0x0010, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float FarDistanceBlend;  // 0x0014, size 0x4

@@ -8,11 +8,10 @@ class UARLifeCycleComponent : public USceneComponent
 public:
     UPROPERTY(BlueprintAssignable) FInstanceARActorSpawnedDelegate OnARActorSpawnedDelegate;  // 0x01F8, size 0x10
     UPROPERTY(BlueprintAssignable) FInstanceARActorToBeDestroyedDelegate OnARActorToBeDestroyedDelegate;  // 0x0208, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FDelegateHandle SpawnDelegateHandle;  // 0x0218, private
-    FDelegateHandle DestroyDelegateHandle;  // 0x0220, private
-
+private:
+    FDelegateHandle SpawnDelegateHandle;  // 0x0218, not reflected
+    FDelegateHandle DestroyDelegateHandle;  // 0x0220, not reflected
+public:
     UFUNCTION(Server, Reliable, BlueprintNativeEvent) void ServerDestroyARActor(AARActor* Actor);  // parameters 0x8
     UFUNCTION(Server, Reliable, BlueprintNativeEvent) void ServerSpawnARActor(TSubclassOf<UObject> ComponentClass, FGuid NativeID);  // parameters 0x18
 

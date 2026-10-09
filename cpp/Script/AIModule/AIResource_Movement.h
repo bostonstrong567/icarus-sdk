@@ -5,5 +5,4 @@
 UCLASS(Config=Game)
 class UAIResource_Movement : public UGameplayTaskResource
 {
-public:
 };

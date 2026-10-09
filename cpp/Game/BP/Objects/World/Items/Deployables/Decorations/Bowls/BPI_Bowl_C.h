@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UBPI_Bowl_C : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable) void SetBowlColorIndex(int32 ColorIndex);  // parameters 0x4
 };

@@ -6,7 +6,6 @@ UCLASS()
 class UResourceNetworkFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void GatherFlowMeterValuesForNetwork(AResourceNetwork* ResourceNetwork, int32& TotalSupply, int32& TotalDemand, int32& CurrentStored, int32& MaxStorage);  // parameters 0x18
     UFUNCTION(BlueprintCallable) static bool GatherResourceNetworkData(AResourceNetwork* ResourceNetwork, FResourceNetworkInspectorData& OutNetworkData, const TSet<FName>& InstancesToRequest);  // parameters 0xB9
     UFUNCTION(BlueprintCallable) static FText GetDeviceDisplayName(AIcarusActor* DeviceActor);  // parameters 0x20

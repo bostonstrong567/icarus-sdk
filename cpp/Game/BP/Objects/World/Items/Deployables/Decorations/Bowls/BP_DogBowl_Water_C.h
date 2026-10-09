@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABP_DogBowl_Water_C : public ABP_Pet_Bowl_Water_Base_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void Deployable_Interact(AActor* Interactor);  // parameters 0x8
 };

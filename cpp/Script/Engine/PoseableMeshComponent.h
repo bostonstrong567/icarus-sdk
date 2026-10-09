@@ -6,12 +6,11 @@ UCLASS(EditInlineNew, Config=Engine)
 class UPoseableMeshComponent : public USkinnedMeshComponent
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<FTransform,TSizedDefaultAllocator<32> > BoneSpaceTransforms;  // 0x0698
-    FBoneContainer RequiredBones;  // 0x06A8
-    bool bNeedsRefreshTransform;  // 0x07F8, private
-
+    TArray<FTransform,TSizedDefaultAllocator<32> > BoneSpaceTransforms;  // 0x0698, not reflected
+    FBoneContainer RequiredBones;  // 0x06A8, not reflected
+private:
+    bool bNeedsRefreshTransform;  // 0x07F8, not reflected
+public:
     UFUNCTION(BlueprintCallable) void CopyPoseFromSkeletalComponent(USkeletalMeshComponent* InComponentToCopy);  // parameters 0x8
     UFUNCTION(BlueprintCallable) FVector GetBoneLocationByName(FName BoneName, TEnumAsByte<EBoneSpaces> BoneSpace);  // parameters 0x18
     UFUNCTION(BlueprintCallable) FRotator GetBoneRotationByName(FName BoneName, TEnumAsByte<EBoneSpaces> BoneSpace);  // parameters 0x18

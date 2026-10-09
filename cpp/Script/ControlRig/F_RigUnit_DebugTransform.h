@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_DebugTransform : public FRigUnit_DebugBase
 {
+public:
     UPROPERTY() FTransform Transform;  // 0x0010, size 0x30
     UPROPERTY() ERigUnitDebugTransformMode Mode;  // 0x0040, size 0x1
     UPROPERTY() FLinearColor Color;  // 0x0044, size 0x10

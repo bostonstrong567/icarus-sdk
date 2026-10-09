@@ -6,12 +6,10 @@ UCLASS()
 class UMobilePendingContent : public UMobileInstalledContent
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    FString RemoteManifestURL;  // 0x0048
-    FString CloudURL;  // 0x0058
-    TSharedPtr<IBuildInstaller,1> Installer;  // 0x0068
-    TSharedPtr<IBuildManifest,1> RemoteManifest;  // 0x0078
+    FString RemoteManifestURL;  // 0x0048, not reflected
+    FString CloudURL;  // 0x0058, not reflected
+    TSharedPtr<IBuildInstaller,1> Installer;  // 0x0068, not reflected
+    TSharedPtr<IBuildManifest,1> RemoteManifest;  // 0x0078, not reflected
 
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetDownloadSize();  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetDownloadSpeed();  // parameters 0x4

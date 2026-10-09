@@ -5,7 +5,8 @@
 UCLASS(Config=Engine)
 class UTreeRecorderComponent : public UActorStateRecorderComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(SaveGame) FName TreePrefabClassName;  // 0x01C0, size 0x8
     UPROPERTY(SaveGame) TArray<int32> TreePrimitiveMask;  // 0x01C8, size 0x10
     UPROPERTY(SaveGame) FName RootName;  // 0x01D8, size 0x8

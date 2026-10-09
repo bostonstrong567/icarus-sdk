@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNiagaraScriptHighlight
 {
+public:
     UPROPERTY(EditAnywhere) FLinearColor Color;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere) FText DisplayName;  // 0x0010, size 0x18
 };

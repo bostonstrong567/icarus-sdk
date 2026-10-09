@@ -5,9 +5,8 @@
 UCLASS(Transient)
 class UNiagaraComponentPool : public UObject
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() TMap<UNiagaraSystem*, FNCPool> WorldParticleSystemPools;  // 0x0028, size 0x50
-
-    // Not reflected: the engine's scripting cannot see these.
-    float LastParticleSytemPoolCleanTime;  // 0x0078, private
+    float LastParticleSytemPoolCleanTime;  // 0x0078, not reflected
 };

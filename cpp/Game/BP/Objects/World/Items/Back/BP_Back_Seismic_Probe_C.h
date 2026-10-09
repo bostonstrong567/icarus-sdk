@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Back_Seismic_Probe_C : public ABP_Back_Item_Base_C
 {
-public:
 };

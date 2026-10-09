@@ -4,5 +4,6 @@
 USTRUCT()
 struct FRecordedTransformTrack
 {
+public:
     UPROPERTY() TArray<FRecordedFrame> Records;  // 0x0000, size 0x10
 };

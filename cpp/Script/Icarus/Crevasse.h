@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ACrevasse : public AActor
 {
-public:
 };

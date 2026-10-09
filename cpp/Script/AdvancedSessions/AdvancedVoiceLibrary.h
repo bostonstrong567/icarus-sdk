@@ -6,7 +6,6 @@ UCLASS()
 class UAdvancedVoiceLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static void GetNumLocalTalkers(int32& NumLocalTalkers);  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) static void IsHeadsetPresent(bool& bHasHeadset, uint8 LocalPlayerNum);  // parameters 0x2
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool IsLocalPlayerTalking(uint8 LocalPlayerNum);  // parameters 0x2

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UDynamicRocketSpawnRecorderComponent : public URocketSpawnRecorderComponent
 {
-public:
 };

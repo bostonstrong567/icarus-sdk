@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UCS_SandWorm_Travel_C : public UMatineeCameraShake
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBaseAttenuationSettings
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EAttenuationDistanceModel DistanceAlgorithm;  // 0x0008, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TEnumAsByte<EAttenuationShape> AttenuationShape;  // 0x0009, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float dBAttenuationAtMax;  // 0x000C, size 0x4

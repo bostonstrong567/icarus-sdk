@@ -52,10 +52,9 @@ public:
     UPROPERTY(Transient) FNiagaraVariableAttributeBinding PrevSpriteAlignmentBinding;  // 0x0930, size 0x58
     UPROPERTY(Transient) FNiagaraVariableAttributeBinding PrevCameraOffsetBinding;  // 0x0988, size 0x58
     UPROPERTY(Transient) FNiagaraVariableAttributeBinding PrevPivotOffsetBinding;  // 0x09E0, size 0x58
-
-    // Not reflected: the engine's scripting cannot see these.
-    FNiagaraRendererLayout RendererLayoutWithCustomSort;  // 0x0A38
-    FNiagaraRendererLayout RendererLayoutWithoutCustomSort;  // 0x0A68
-    uint32 MaterialParamValidMask;  // 0x0A98
-    FSubUVDerivedData DerivedData;  // 0x0AA0, private
+    FNiagaraRendererLayout RendererLayoutWithCustomSort;  // 0x0A38, not reflected
+    FNiagaraRendererLayout RendererLayoutWithoutCustomSort;  // 0x0A68, not reflected
+    uint32 MaterialParamValidMask;  // 0x0A98, not reflected
+private:
+    FSubUVDerivedData DerivedData;  // 0x0AA0, not reflected
 };

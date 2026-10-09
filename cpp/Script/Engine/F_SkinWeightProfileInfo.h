@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSkinWeightProfileInfo
 {
+public:
     UPROPERTY(EditAnywhere) FName Name;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) FPerPlatformBool DefaultProfile;  // 0x0008, size 0x1
     UPROPERTY(EditAnywhere) FPerPlatformInt DefaultProfileFromLODIndex;  // 0x000C, size 0x4

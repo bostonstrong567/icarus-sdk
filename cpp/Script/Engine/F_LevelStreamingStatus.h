@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLevelStreamingStatus
 {
+public:
     UPROPERTY() FName PackageName;  // 0x0000, size 0x8
     UPROPERTY() uint8 bShouldBeLoaded : 1;  // 0x0008, mask 0x01
     UPROPERTY() uint8 bShouldBeVisible : 1;  // 0x0008, mask 0x02

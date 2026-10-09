@@ -4,6 +4,7 @@
 USTRUCT()
 struct FGroomAnimationInfo
 {
+public:
     UPROPERTY(EditAnywhere) uint32 NumFrames;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere) float SecondsPerFrame;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere) float Duration;  // 0x0008, size 0x4

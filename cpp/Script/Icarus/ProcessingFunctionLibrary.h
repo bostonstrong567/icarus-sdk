@@ -6,7 +6,6 @@ UCLASS()
 class UProcessingFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static TArray<FItemData> CookItemsBasedOnChance(const TArray<FItemData>& Items, int32 ChancePercent, UObject* WorldContextObject);  // parameters 0x30
     UFUNCTION(BlueprintCallable) static TArray<FProcessorRecipesRowHandle> GetAllRecipeRowsForSet(const FRecipeSetsRowHandle& RecipeSetRow);  // parameters 0x28
     UFUNCTION(BlueprintCallable) static TArray<FProcessorRecipe> GetAllRecipesForSet(const FRecipeSetsRowHandle& RecipeSetRow);  // parameters 0x28

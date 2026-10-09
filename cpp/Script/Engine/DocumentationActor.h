@@ -5,8 +5,6 @@
 UCLASS(Config=Engine)
 class ADocumentationActor : public AActor
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    EDocumentationActorType::Type LinkType;  // 0x0220, private
+private:
+    EDocumentationActorType::Type LinkType;  // 0x0220, not reflected
 };

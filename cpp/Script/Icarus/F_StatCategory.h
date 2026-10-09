@@ -4,5 +4,6 @@
 USTRUCT()
 struct FStatCategory : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText Title;  // 0x0018, size 0x18
 };

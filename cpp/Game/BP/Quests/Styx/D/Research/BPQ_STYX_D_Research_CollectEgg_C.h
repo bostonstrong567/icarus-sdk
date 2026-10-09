@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABPQ_STYX_D_Research_CollectEgg_C : public ABPQ_Retrieve_Item_Pickup_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void GetRequiredEquipment(TArray<FItemTemplateRowHandle>& EquipmentItemArray, FItemTemplateRowHandle& Equipment_Item, int32& Count);  // parameters 0x2C
 };

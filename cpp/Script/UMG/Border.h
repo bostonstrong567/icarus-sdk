@@ -22,10 +22,9 @@ public:
     UPROPERTY(EditAnywhere) FOnPointerEvent OnMouseButtonUpEvent;  // 0x022C, size 0x10
     UPROPERTY(EditAnywhere) FOnPointerEvent OnMouseMoveEvent;  // 0x023C, size 0x10
     UPROPERTY(EditAnywhere) FOnPointerEvent OnMouseDoubleClickEvent;  // 0x024C, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SBorder,0> MyBorder;  // 0x0260, protected
-
+protected:
+    TSharedPtr<SBorder,0> MyBorder;  // 0x0260, not reflected
+public:
     UFUNCTION(BlueprintCallable) UMaterialInstanceDynamic* GetDynamicMaterial();  // parameters 0x8
     UFUNCTION(BlueprintCallable) void SetBrush(const FSlateBrush& InBrush);  // parameters 0x88
     UFUNCTION(BlueprintCallable) void SetBrushColor(FLinearColor InBrushColor);  // parameters 0x10

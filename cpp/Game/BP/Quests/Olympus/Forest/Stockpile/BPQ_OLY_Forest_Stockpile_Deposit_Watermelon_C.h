@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_OLY_Forest_Stockpile_Deposit_Watermelon_C : public ABPQ_Stockpile_Deposit_Item_C
 {
-public:
 };

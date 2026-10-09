@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_OLY_Forest_Research_Deliver_Flora_C : public ABPQ_Common_Deliver_C
 {
-public:
 };

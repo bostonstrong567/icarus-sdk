@@ -5,7 +5,6 @@
 UCLASS(Abstract)
 class UEdGraphSchema : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   ArePinsCompatible, BackwardCompatibilityNodeConversion, BreakNodeLinks, BreakPinLinks

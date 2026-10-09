@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFBIKEndEffector
 {
+public:
     UPROPERTY() FRigElementKey Item;  // 0x0000, size 0xC
     UPROPERTY() FVector Position;  // 0x000C, size 0xC
     UPROPERTY() float PositionAlpha;  // 0x0018, size 0x4

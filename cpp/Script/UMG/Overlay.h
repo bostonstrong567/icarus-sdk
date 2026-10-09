@@ -5,10 +5,8 @@
 UCLASS()
 class UOverlay : public UPanelWidget
 {
+protected:
+    TSharedPtr<SOverlay,0> MyOverlay;  // 0x0120, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SOverlay,0> MyOverlay;  // 0x0120, protected
-
     UFUNCTION(BlueprintCallable) UOverlaySlot* AddChildToOverlay(UWidget* Content);  // parameters 0x10
 };

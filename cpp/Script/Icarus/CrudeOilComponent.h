@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UCrudeOilComponent : public UResourceNetworkComponent
 {
-public:
 };

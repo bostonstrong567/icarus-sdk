@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_AimBoneMath : public FRigUnit_HighlevelBase
 {
+public:
     UPROPERTY() FTransform InputTransform;  // 0x0010, size 0x30
     UPROPERTY() FRigUnit_AimItem_Target Primary;  // 0x0040, size 0x2C
     UPROPERTY() FRigUnit_AimItem_Target Secondary;  // 0x006C, size 0x2C

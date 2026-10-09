@@ -15,9 +15,7 @@ public:
     UPROPERTY(BlueprintAssignable) FOnActorReveal OnReveal;  // 0x00F0, size 0x10
     UPROPERTY(BlueprintAssignable) FOnActorConcealing OnConcealing;  // 0x0100, size 0x10
     UPROPERTY(BlueprintAssignable) FOnActorConceal OnConceal;  // 0x0110, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    UMaterialInterface * CurrentDebugMaterial;  // 0x0120
+    UMaterialInterface * CurrentDebugMaterial;  // 0x0120, not reflected
 
     UFUNCTION(BlueprintCallable) void Conceal();
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) bool ConcealImpl();  // parameters 0x1

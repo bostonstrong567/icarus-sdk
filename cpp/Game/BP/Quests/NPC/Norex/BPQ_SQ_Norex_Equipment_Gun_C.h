@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_SQ_Norex_Equipment_Gun_C : public ABPQ_Collect_Item_C
 {
-public:
 };

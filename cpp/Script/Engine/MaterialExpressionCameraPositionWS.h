@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UMaterialExpressionCameraPositionWS : public UMaterialExpression
 {
-public:
 };

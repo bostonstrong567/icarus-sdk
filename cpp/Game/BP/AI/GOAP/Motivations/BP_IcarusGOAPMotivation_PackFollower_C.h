@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UBP_IcarusGOAPMotivation_PackFollower_C : public UBP_IcarusGOAPMotivation_Base_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool UpdateCost(float Delta, AIcarusNPCGOAPController* Controller);  // parameters 0x11
 };

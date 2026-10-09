@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFactionInfo : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UTexture2D* Icon;  // 0x0018, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText FactionName;  // 0x0020, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText Description;  // 0x0038, size 0x18

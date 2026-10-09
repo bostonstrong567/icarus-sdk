@@ -4,5 +4,6 @@
 USTRUCT()
 struct FItemRewards : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FItemRewardEntry> Rewards;  // 0x0018, size 0x10
 };

@@ -4,5 +4,6 @@
 USTRUCT()
 struct FNiagaraScriptDataUsageInfo
 {
+public:
     UPROPERTY() bool bReadsAttributeData;  // 0x0000, size 0x1
 };

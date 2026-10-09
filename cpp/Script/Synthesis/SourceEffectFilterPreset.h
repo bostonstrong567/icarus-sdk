@@ -6,11 +6,9 @@ UCLASS(EditInlineNew)
 class USourceEffectFilterPreset : public USoundEffectSourcePreset
 {
 public:
+    FWindowsCriticalSection SettingsCritSect;  // 0x0068, not reflected
+    FSourceEffectFilterSettings SettingsCopy;  // 0x0090, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FSourceEffectFilterSettings Settings;  // 0x00B0, size 0x20
-
-    // Not reflected: the engine's scripting cannot see these.
-    FWindowsCriticalSection SettingsCritSect;  // 0x0068
-    FSourceEffectFilterSettings SettingsCopy;  // 0x0090
 
     UFUNCTION(BlueprintCallable) void SetSettings(const FSourceEffectFilterSettings& InSettings);  // parameters 0x20
 };

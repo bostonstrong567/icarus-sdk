@@ -11,6 +11,7 @@ public:
     UPROPERTY(EditAnywhere) float MaxDistanceFadeRange;  // 0x0230, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bUseTemperature : 1;  // 0x0234, mask 0x01
     UPROPERTY(Deprecated) int32 ShadowMapChannel;  // 0x0238, size 0x4
+    int32 PreviewShadowMapChannel;  // 0x023C, not reflected
     UPROPERTY(Deprecated) float MinRoughness;  // 0x0240, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float SpecularScale;  // 0x0244, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float ShadowResolutionScale;  // 0x0248, size 0x4
@@ -39,13 +40,10 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FColor BloomTint;  // 0x02A8, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bUseRayTracedDistanceFieldShadows;  // 0x02AC, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float RayStartOffsetDepthScale;  // 0x02B0, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    int32 PreviewShadowMapChannel;  // 0x023C
-    FLightSceneProxy * SceneProxy;  // 0x02B8
-    FStaticShadowDepthMap StaticShadowDepthMap;  // 0x02C0
-    FRenderCommandFence DestroyFence;  // 0x0310
-    uint32 : 1 bAddedToSceneVisible;  // 0x0320
+    FLightSceneProxy * SceneProxy;  // 0x02B8, not reflected
+    FStaticShadowDepthMap StaticShadowDepthMap;  // 0x02C0, not reflected
+    FRenderCommandFence DestroyFence;  // 0x0310, not reflected
+    uint32 : 1 bAddedToSceneVisible;  // 0x0320, not reflected
 
     UFUNCTION(BlueprintCallable) void SetAffectDynamicIndirectLighting(bool bNewValue);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void SetAffectTranslucentLighting(bool bNewValue);  // parameters 0x1

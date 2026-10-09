@@ -6,7 +6,5 @@ UCLASS(Const)
 class UIcarusDamageType : public UDamageType
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    EIcarusDamageType DamageType;  // 0x0040
+    EIcarusDamageType DamageType;  // 0x0040, not reflected
 };

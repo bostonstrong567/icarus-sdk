@@ -4,6 +4,7 @@
 USTRUCT()
 struct FInputActionKeyMapping
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName ActionName;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bShift : 1;  // 0x0008, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bCtrl : 1;  // 0x0008, mask 0x02

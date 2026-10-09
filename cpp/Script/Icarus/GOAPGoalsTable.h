@@ -5,5 +5,4 @@
 UCLASS()
 class UGOAPGoalsTable : public UIcarusDataTable
 {
-public:
 };

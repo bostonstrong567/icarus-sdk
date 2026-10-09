@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_GetWorldTime : public FRigUnit_AnimBase
 {
+public:
     UPROPERTY() float Year;  // 0x0008, size 0x4
     UPROPERTY() float Month;  // 0x000C, size 0x4
     UPROPERTY() float Day;  // 0x0010, size 0x4

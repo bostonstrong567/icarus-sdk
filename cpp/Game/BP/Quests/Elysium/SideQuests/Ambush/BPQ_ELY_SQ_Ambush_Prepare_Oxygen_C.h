@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_ELY_SQ_Ambush_Prepare_Oxygen_C : public ABPQ_Collect_Item_With_Tag_C
 {
-public:
 };

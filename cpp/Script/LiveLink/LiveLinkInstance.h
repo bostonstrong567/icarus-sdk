@@ -5,9 +5,10 @@
 UCLASS(Transient)
 class ULiveLinkInstance : public UAnimInstance
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(Transient) ULiveLinkRetargetAsset* CurrentRetargetAsset;  // 0x02B8, size 0x8
-
+public:
     UFUNCTION(BlueprintCallable) void SetRetargetAsset(TSubclassOf<ULiveLinkRetargetAsset> RetargetAsset);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void SetSubject(FLiveLinkSubjectName SubjectName);  // parameters 0x8
 };

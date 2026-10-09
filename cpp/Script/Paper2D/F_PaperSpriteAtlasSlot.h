@@ -4,6 +4,7 @@
 USTRUCT()
 struct FPaperSpriteAtlasSlot
 {
+public:
     UPROPERTY() TSoftObjectPtr<UPaperSprite> SpriteRef;  // 0x0000, size 0x28
     UPROPERTY() int32 AtlasIndex;  // 0x0028, size 0x4
     UPROPERTY() int32 X;  // 0x002C, size 0x4

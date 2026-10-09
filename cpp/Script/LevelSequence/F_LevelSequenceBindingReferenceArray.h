@@ -4,5 +4,6 @@
 USTRUCT()
 struct FLevelSequenceBindingReferenceArray
 {
+public:
     UPROPERTY() TArray<FLevelSequenceBindingReference> References;  // 0x0000, size 0x10
 };

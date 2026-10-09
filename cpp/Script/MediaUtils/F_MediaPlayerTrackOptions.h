@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMediaPlayerTrackOptions
 {
+public:
     UPROPERTY(BlueprintReadWrite) int32 Audio;  // 0x0000, size 0x4
     UPROPERTY(BlueprintReadWrite) int32 Caption;  // 0x0004, size 0x4
     UPROPERTY(BlueprintReadWrite) int32 Metadata;  // 0x0008, size 0x4

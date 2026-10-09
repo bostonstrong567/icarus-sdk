@@ -8,9 +8,8 @@ class UCheckProspectExpiredCallbackProxyGen : public UOnlineBlueprintCallProxyBa
 public:
     UPROPERTY(BlueprintAssignable) FOnCheckProspectExpiredEventSignature OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FOnCheckProspectExpiredEventSignature OnFail;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FReqCheckProspectExpired ReqCheckProspectExpired;  // 0x0050, private
-
+private:
+    FReqCheckProspectExpired ReqCheckProspectExpired;  // 0x0050, not reflected
+public:
     UFUNCTION(BlueprintCallable) static UCheckProspectExpiredCallbackProxyGen* CheckProspectExpired(const FReqCheckProspectExpired& Request);  // parameters 0x18
 };

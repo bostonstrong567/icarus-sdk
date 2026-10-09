@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRecordedCurrentWeatherBlock
 {
+public:
     UPROPERTY(SaveGame) FName InitialProspectForecast;  // 0x0000, size 0x8
     UPROPERTY(SaveGame) FName ProspectForecastRowName;  // 0x0008, size 0x8
     UPROPERTY(SaveGame) int32 StartTimeDelta;  // 0x0010, size 0x4

@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class AProp_Chemicals_B_C : public ABP_DeployableBase_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void Deployable_Interact(AActor* Interactor);  // parameters 0x8
 };

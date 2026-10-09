@@ -19,9 +19,8 @@ public:
     UPROPERTY() FVector InteractionCurPoint;  // 0x00C8, size 0xC
     UPROPERTY() float InteractionStartAngle;  // 0x00D4, size 0x4
     UPROPERTY() float InteractionCurAngle;  // 0x00D8, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    FVector LastHitPosition;  // 0x00DC, protected
-    float InitialTargetAngle;  // 0x00E8, protected
-    bool bEnableSnapAngleModifier;  // 0x00EC, protected
+protected:
+    FVector LastHitPosition;  // 0x00DC, not reflected
+    float InitialTargetAngle;  // 0x00E8, not reflected
+    bool bEnableSnapAngleModifier;  // 0x00EC, not reflected
 };

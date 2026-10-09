@@ -5,7 +5,6 @@
 UCLASS(Abstract)
 class UInputDelegateBinding : public UDynamicBlueprintBinding
 {
-public:
 
     // Virtual functions that start here:
     //   BindToInputComponent

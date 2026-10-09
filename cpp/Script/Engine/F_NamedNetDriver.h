@@ -4,8 +4,7 @@
 USTRUCT()
 struct FNamedNetDriver
 {
+public:
     UPROPERTY(Transient) UNetDriver* NetDriver;  // 0x0000, size 0x8
-
-    // Not reflected:
-    FNetDriverDefinition * NetDriverDef;  // 0x0008
+    FNetDriverDefinition * NetDriverDef;  // 0x0008, not reflected
 };

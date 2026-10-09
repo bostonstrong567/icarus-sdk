@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class UControlRigComponent : public UPrimitiveComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere) TSubclassOf<UControlRig> ControlRigClass;  // 0x0450, size 0x8
     UPROPERTY(BlueprintAssignable) FControlRigComponentDelegate OnPostInitializeDelegate;  // 0x0458, size 0x10
@@ -19,12 +20,11 @@ public:
     UPROPERTY(EditAnywhere) bool bUpdateInEditor;  // 0x04BB, size 0x1
     UPROPERTY(EditAnywhere) bool bDrawBones;  // 0x04BC, size 0x1
     UPROPERTY(EditAnywhere) bool bShowDebugDrawing;  // 0x04BD, size 0x1
+private:
     UPROPERTY(Transient) UControlRig* ControlRig;  // 0x04C0, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<USkeletalMeshComponent *,UControlRigComponent::FCachedSkeletalMeshComponentSettings,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<USkeletalMeshComponent *,UControlRigComponent::FCachedSkeletalMeshComponentSettings,0> > CachedSkeletalMeshComponentSettings;  // 0x04C8, private
-    UControlRigComponent::FControlRigComponentEvent ControlRigCreatedEvent;  // 0x0518, private
-
+    TMap<USkeletalMeshComponent *,UControlRigComponent::FCachedSkeletalMeshComponentSettings,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<USkeletalMeshComponent *,UControlRigComponent::FCachedSkeletalMeshComponentSettings,0> > CachedSkeletalMeshComponentSettings;  // 0x04C8, not reflected
+    UControlRigComponent::FControlRigComponentEvent ControlRigCreatedEvent;  // 0x0518, not reflected
+public:
     UFUNCTION(BlueprintCallable) void AddMappedCompleteSkeletalMesh(USkeletalMeshComponent* SkeletalMeshComponent);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void AddMappedComponents(TArray<FControlRigComponentMappedComponent> Components);  // parameters 0x10
     UFUNCTION(BlueprintCallable) void AddMappedElements(TArray<FControlRigComponentMappedElement> NewMappedElements);  // parameters 0x10

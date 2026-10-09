@@ -4,6 +4,7 @@
 USTRUCT()
 struct HabHandStateStruct
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TEnumAsByte<ESpaceHandGripMode> HandMode;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool Reaching;  // 0x0001, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector RelativeLocation;  // 0x0004, size 0xC

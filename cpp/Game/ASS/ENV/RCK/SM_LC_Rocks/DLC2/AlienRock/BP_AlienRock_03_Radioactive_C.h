@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_AlienRock_03_Radioactive_C : public ABP_AlienRock_01_Radioactive_C
 {
-public:
 };

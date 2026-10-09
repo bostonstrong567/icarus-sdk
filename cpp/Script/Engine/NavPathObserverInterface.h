@@ -5,5 +5,4 @@
 UCLASS(Abstract, MinimalAPI)
 class UNavPathObserverInterface : public UInterface
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FModifierStateData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UTexture2D* ModifierIcon;  // 0x0018, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EModifierType Type;  // 0x0020, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText ModifierName;  // 0x0028, size 0x18

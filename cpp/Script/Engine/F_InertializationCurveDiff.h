@@ -4,8 +4,7 @@
 USTRUCT()
 struct FInertializationCurveDiff
 {
-
-    // Not reflected:
-    float Delta;  // 0x0000
-    float Derivative;  // 0x0004
+public:
+    float Delta;  // 0x0000, not reflected
+    float Derivative;  // 0x0004, not reflected
 };

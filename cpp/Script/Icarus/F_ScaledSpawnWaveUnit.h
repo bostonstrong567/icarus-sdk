@@ -4,6 +4,7 @@
 USTRUCT()
 struct FScaledSpawnWaveUnit
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FAISetupRowHandle AISetup;  // 0x0000, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FEpicCreaturesRowHandle EpicCreature;  // 0x0018, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 SpawnWeight;  // 0x0030, size 0x4

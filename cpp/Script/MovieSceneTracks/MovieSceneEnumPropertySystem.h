@@ -5,5 +5,4 @@
 UCLASS()
 class UMovieSceneEnumPropertySystem : public UMovieScenePropertySystem
 {
-public:
 };

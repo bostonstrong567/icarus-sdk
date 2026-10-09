@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMovieSceneControlRigInstanceData : public FMovieSceneSequenceInstanceData
 {
+public:
     UPROPERTY() bool bAdditive;  // 0x0008, size 0x1
     UPROPERTY() bool bApplyBoneFilter;  // 0x0009, size 0x1
     UPROPERTY() FInputBlendPose BoneFilter;  // 0x0010, size 0x10

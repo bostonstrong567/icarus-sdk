@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLiveLinkSkeletonStaticData : public FLiveLinkBaseStaticData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FName> BoneNames;  // 0x0010, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<int32> BoneParents;  // 0x0020, size 0x10
 };

@@ -5,8 +5,10 @@
 UCLASS(EditInlineNew)
 class UNiagaraDataInterfaceIntRenderTarget2D : public UNiagaraDataInterfaceRWBase
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere) FIntPoint Size;  // 0x00D8, size 0x8
     UPROPERTY(EditAnywhere) FNiagaraUserParameterBinding RenderTargetUserParameter;  // 0x00E0, size 0x20
+protected:
     UPROPERTY(Transient) TMap<uint64, UTextureRenderTarget2D*> ManagedRenderTargets;  // 0x0100, size 0x50
 };

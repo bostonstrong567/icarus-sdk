@@ -5,6 +5,7 @@
 UCLASS(Abstract)
 class UBTService_BlackboardBase : public UBTService
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere) FBlackboardKeySelector BlackboardKey;  // 0x0070, size 0x28
 };

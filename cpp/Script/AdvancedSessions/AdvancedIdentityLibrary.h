@@ -6,7 +6,6 @@ UCLASS()
 class UAdvancedIdentityLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void GetAllUserAccounts(TArray<FBPUserOnlineAccount>& AccountInfos, EBlueprintResultSwitch& Result);  // parameters 0x11
     UFUNCTION(BlueprintCallable) static void GetLoginStatus(const FBPUniqueNetId& UniqueNetID, EBPLoginStatus& LoginStatus, EBlueprintResultSwitch& Result);  // parameters 0x22
     UFUNCTION(BlueprintCallable) static void GetPlayerAuthToken(APlayerController* PlayerController, FString& AuthToken, EBlueprintResultSwitch& Result);  // parameters 0x19

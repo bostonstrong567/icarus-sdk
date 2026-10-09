@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UBuildBlockerComponent : public UBoxComponent
 {
-public:
 };

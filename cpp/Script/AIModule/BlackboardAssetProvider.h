@@ -6,6 +6,5 @@ UCLASS(Abstract, MinimalAPI)
 class UBlackboardAssetProvider : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) UBlackboardData* GetBlackboardAsset() const;  // parameters 0x8
 };

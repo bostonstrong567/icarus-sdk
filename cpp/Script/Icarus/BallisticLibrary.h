@@ -6,7 +6,6 @@ UCLASS()
 class UBallisticLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToBallisticTable(FName Name, FBallisticData Data, FBallisticRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x211
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakBallisticEnum(FBallisticEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FBallisticRowHandle CastToBallisticRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

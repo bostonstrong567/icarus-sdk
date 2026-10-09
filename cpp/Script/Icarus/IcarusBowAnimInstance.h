@@ -6,6 +6,5 @@ UCLASS(Transient)
 class UIcarusBowAnimInstance : public UIcarusFirearmAnimInstance
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) bool IsHandConnectedToString();  // parameters 0x1
 };

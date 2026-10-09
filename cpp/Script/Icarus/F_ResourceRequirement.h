@@ -4,6 +4,7 @@
 USTRUCT()
 struct FResourceRequirement
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FIcarusResourcesEnum Resource;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 FlowRate;  // 0x0010, size 0x4
 };

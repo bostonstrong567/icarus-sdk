@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_D_Dead_EI_NPC_C_C : public ABP_Dead_NPC_Deployable_C
 {
-public:
 };

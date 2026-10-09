@@ -6,7 +6,6 @@ UCLASS()
 class USavedMountFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void BakeMountPreviewToTexture(UTextureRenderTarget2D* RenderTarget, AIcarusMountCharacter* Mount);  // parameters 0x10
     UFUNCTION(BlueprintCallable) static void DeleteMountPreviewTexture(FString MountUID);  // parameters 0x10
     UFUNCTION(BlueprintCallable) static TArray<FMountSaveData> GetAllPersistentMountData(APlayerController* Player);  // parameters 0x18

@@ -5,25 +5,26 @@
 UCLASS(Abstract, NotPlaceable, Config=Engine)
 class AController : public AActor, public INavAgentInterface
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(Replicated, ReplicatedUsing, BlueprintReadOnly) APlayerState* PlayerState;  // 0x0228, size 0x8
+    TWeakObjectPtr<AActor,FWeakObjectPtr> StartSpot;  // 0x0230, not reflected
     UPROPERTY(BlueprintAssignable) FInstigatedAnyDamageSignature OnInstigatedAnyDamage;  // 0x0238, size 0x10
     UPROPERTY() FName StateName;  // 0x0248, size 0x8
+protected:
+    TMulticastDelegate<void __cdecl(APawn *),FDefaultDelegateUserPolicy> OnNewPawn;  // 0x0270, not reflected
+    UPROPERTY() FRotator ControlRotation;  // 0x0288, size 0xC
+    uint8 : 1 bCanPossessWithoutAuthority;  // 0x0294, not reflected
+    uint8 : 1 bIsPlayerController;  // 0x0294, not reflected
+    UPROPERTY(EditAnywhere) uint8 bAttachToPawn : 1;  // 0x0294, mask 0x01
+    uint8 IgnoreMoveInput;  // 0x0295, not reflected
+    uint8 IgnoreLookInput;  // 0x0296, not reflected
+private:
     UPROPERTY(Replicated, ReplicatedUsing) APawn* Pawn;  // 0x0250, size 0x8
+    TWeakObjectPtr<APawn,FWeakObjectPtr> OldPawn;  // 0x0258, not reflected
     UPROPERTY() ACharacter* Character;  // 0x0260, size 0x8
     UPROPERTY(Instanced) USceneComponent* TransformComponent;  // 0x0268, size 0x8
-    UPROPERTY() FRotator ControlRotation;  // 0x0288, size 0xC
-    UPROPERTY(EditAnywhere) uint8 bAttachToPawn : 1;  // 0x0294, mask 0x01
-
-    // Not reflected: the engine's scripting cannot see these.
-    TWeakObjectPtr<AActor,FWeakObjectPtr> StartSpot;  // 0x0230
-    TWeakObjectPtr<APawn,FWeakObjectPtr> OldPawn;  // 0x0258, private
-    TMulticastDelegate<void __cdecl(APawn *),FDefaultDelegateUserPolicy> OnNewPawn;  // 0x0270, protected
-    uint8 : 1 bIsPlayerController;  // 0x0294, protected
-    uint8 : 1 bCanPossessWithoutAuthority;  // 0x0294, protected
-    uint8 IgnoreMoveInput;  // 0x0295, protected
-    uint8 IgnoreLookInput;  // 0x0296, protected
-
+public:
     UFUNCTION(BlueprintCallable) APlayerController* CastToPlayerController();  // parameters 0x8
     UFUNCTION(Client, Reliable, BlueprintNativeEvent) void ClientSetLocation(FVector NewLocation, FRotator NewRotation);  // parameters 0x18
     UFUNCTION(Client, Reliable, BlueprintNativeEvent) void ClientSetRotation(FRotator NewRotation, bool bResetCamera);  // parameters 0xD

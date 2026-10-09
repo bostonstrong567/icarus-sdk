@@ -11,10 +11,10 @@ public:
     UPROPERTY(EditAnywhere) uint8 bIgnoreExtraFields : 1;  // 0x0080, mask 0x02
     UPROPERTY(EditAnywhere) uint8 bIgnoreMissingFields : 1;  // 0x0080, mask 0x04
     UPROPERTY(EditAnywhere) FString ImportKeyField;  // 0x0088, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<FName,unsigned char *,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,unsigned char *,0> > RowMap;  // 0x0030, protected
-    TMulticastDelegate<void __cdecl(void),FDefaultDelegateUserPolicy> OnDataTableChangedDelegate;  // 0x0098, private
+protected:
+    TMap<FName,unsigned char *,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,unsigned char *,0> > RowMap;  // 0x0030, not reflected
+private:
+    TMulticastDelegate<void __cdecl(void),FDefaultDelegateUserPolicy> OnDataTableChangedDelegate;  // 0x0098, not reflected
 
     // Virtual functions that start here:
     //   AddRow, AddRowInternal, AllowDuplicateRowsOnImport, EmptyTable, GetNonConstRowMap, GetRowMap

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_OLY_Arctic_Expedition_Travel_C : public ABPQ_Travel_C
 {
-public:
 };

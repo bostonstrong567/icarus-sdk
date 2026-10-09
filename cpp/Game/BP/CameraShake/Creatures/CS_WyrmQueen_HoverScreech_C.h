@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UCS_WyrmQueen_HoverScreech_C : public UMatineeCameraShake
 {
-public:
 };

@@ -5,7 +5,6 @@
 UCLASS(Abstract, Config=Engine)
 class UNavAreaMeta : public UNavArea
 {
-public:
 
     // Virtual functions that start here:
     //   PickAreaClass

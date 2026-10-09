@@ -5,8 +5,6 @@
 UCLASS(MinimalAPI)
 class UTemplateSequenceSystem : public UMovieSceneEntitySystem
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    UE::MovieScene::FCachedEntityFilterResult_Match ApplicableFilter;  // 0x0040, private
+private:
+    UE::MovieScene::FCachedEntityFilterResult_Match ApplicableFilter;  // 0x0040, not reflected
 };

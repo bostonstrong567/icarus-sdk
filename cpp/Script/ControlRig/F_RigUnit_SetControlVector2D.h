@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_SetControlVector2D : public FRigUnitMutable
 {
+public:
     UPROPERTY() FName Control;  // 0x0068, size 0x8
     UPROPERTY() float Weight;  // 0x0070, size 0x4
     UPROPERTY() FVector2D Vector;  // 0x0074, size 0x8

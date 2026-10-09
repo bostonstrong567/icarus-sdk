@@ -4,6 +4,7 @@
 USTRUCT()
 struct FStaticMeshComponentInstanceData : public FPrimitiveComponentInstanceData
 {
+public:
     UPROPERTY() UStaticMesh* StaticMesh;  // 0x0100, size 0x8
     UPROPERTY() TArray<FStaticMeshVertexColorLODData> VertexColorLODs;  // 0x0108, size 0x10
     UPROPERTY() TArray<FGuid> CachedStaticLighting;  // 0x0118, size 0x10

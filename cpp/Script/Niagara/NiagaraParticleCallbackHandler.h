@@ -6,6 +6,5 @@ UCLASS(Abstract)
 class UNiagaraParticleCallbackHandler : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) void ReceiveParticleData(const TArray<FBasicParticleData>& Data, UNiagaraSystem* NiagaraSystem);  // parameters 0x18
 };

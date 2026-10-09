@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_D_Dead_Ape_C_C : public ABP_D_Dead_Ape_A_C
 {
-public:
 };

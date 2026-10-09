@@ -5,14 +5,12 @@
 UCLASS(Abstract)
 class UAsyncActionLoadPrimaryAssetBase : public UBlueprintAsyncActionBase
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<FPrimaryAssetId,TSizedDefaultAllocator<32> > AssetsToLoad;  // 0x0030, protected
-    TArray<FName,TSizedDefaultAllocator<32> > LoadBundles;  // 0x0040, protected
-    TArray<FName,TSizedDefaultAllocator<32> > OldBundles;  // 0x0050, protected
-    TSharedPtr<FStreamableHandle,0> LoadHandle;  // 0x0060, protected
-    UAsyncActionLoadPrimaryAssetBase::EAssetManagerOperation Operation;  // 0x0070, protected
+protected:
+    TArray<FPrimaryAssetId,TSizedDefaultAllocator<32> > AssetsToLoad;  // 0x0030, not reflected
+    TArray<FName,TSizedDefaultAllocator<32> > LoadBundles;  // 0x0040, not reflected
+    TArray<FName,TSizedDefaultAllocator<32> > OldBundles;  // 0x0050, not reflected
+    TSharedPtr<FStreamableHandle,0> LoadHandle;  // 0x0060, not reflected
+    UAsyncActionLoadPrimaryAssetBase::EAssetManagerOperation Operation;  // 0x0070, not reflected
 
     // Virtual functions that start here:
     //   HandleLoadCompleted

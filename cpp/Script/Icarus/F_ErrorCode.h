@@ -4,6 +4,7 @@
 USTRUCT()
 struct FErrorCode : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText Code;  // 0x0018, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText Description;  // 0x0030, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bReportToSentry;  // 0x0048, size 0x1

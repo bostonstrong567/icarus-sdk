@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ACaveEntranceBase : public AIcarusActor
 {
-public:
 };

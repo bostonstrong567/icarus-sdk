@@ -5,6 +5,7 @@
 UCLASS(MinimalAPI)
 class UMovieSceneVectorTrack : public UMovieScenePropertyTrack
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() int32 NumChannelsUsed;  // 0x00C0, size 0x4
 };

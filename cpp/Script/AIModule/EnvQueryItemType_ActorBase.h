@@ -5,7 +5,6 @@
 UCLASS(Abstract)
 class UEnvQueryItemType_ActorBase : public UEnvQueryItemType_VectorBase
 {
-public:
 
     // Virtual functions that start here:
     //   GetActor

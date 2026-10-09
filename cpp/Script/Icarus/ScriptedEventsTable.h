@@ -5,5 +5,4 @@
 UCLASS()
 class UScriptedEventsTable : public UIcarusDataTable
 {
-public:
 };

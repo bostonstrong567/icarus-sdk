@@ -4,6 +4,7 @@
 USTRUCT()
 struct FStructSerializerTestStruct
 {
+public:
     UPROPERTY() FStructSerializerNumericTestStruct Numerics;  // 0x0000, size 0x30
     UPROPERTY() FStructSerializerBooleanTestStruct Booleans;  // 0x0030, size 0x3
     UPROPERTY() FStructSerializerObjectTestStruct Objects;  // 0x0038, size 0xA0

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRecordedSplineIndexStruct
 {
+public:
     UPROPERTY(SaveGame, BlueprintReadWrite) int32 SplineActorID;  // 0x0000, size 0x4
     UPROPERTY(SaveGame, BlueprintReadWrite) int32 SplineIndex;  // 0x0004, size 0x4
 };

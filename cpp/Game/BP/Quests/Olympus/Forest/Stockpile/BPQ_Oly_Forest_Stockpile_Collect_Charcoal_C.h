@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_Oly_Forest_Stockpile_Collect_Charcoal_C : public ABPQ_Collect_Item_With_Tag_C
 {
-public:
 };

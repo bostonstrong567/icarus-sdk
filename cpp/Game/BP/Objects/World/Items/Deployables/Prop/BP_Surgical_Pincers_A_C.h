@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Surgical_Pincers_A_C : public ABP_DeployableBase_C
 {
-public:
 };

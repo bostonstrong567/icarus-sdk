@@ -6,6 +6,5 @@ UCLASS()
 class UVOIPStatics : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void SetMicThreshold(float InThreshold);  // parameters 0x4
 };

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_Glacier_OLY_Expedition_Collect_Tech3_C : public ABPQ_Retrieve_Item_And_Spawn_Crate_C
 {
-public:
 };

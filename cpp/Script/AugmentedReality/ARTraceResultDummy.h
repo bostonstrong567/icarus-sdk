@@ -5,5 +5,4 @@
 UCLASS()
 class UARTraceResultDummy : public UObject
 {
-public:
 };

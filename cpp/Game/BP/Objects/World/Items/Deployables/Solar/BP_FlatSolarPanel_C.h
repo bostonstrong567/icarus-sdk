@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_FlatSolarPanel_C : public ABP_SolarPanel_Base_C
 {
-public:
 };

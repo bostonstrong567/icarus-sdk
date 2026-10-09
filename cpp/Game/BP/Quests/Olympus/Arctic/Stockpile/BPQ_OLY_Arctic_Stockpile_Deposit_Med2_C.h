@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_OLY_Arctic_Stockpile_Deposit_Med2_C : public ABPQ_Stockpile_Deposit_Item_C
 {
-public:
 };

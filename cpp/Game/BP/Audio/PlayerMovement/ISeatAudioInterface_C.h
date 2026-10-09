@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UISeatAudioInterface_C : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable) void GetAudioSeatType(TEnumAsByte<EAudioSeatType>& Type);  // parameters 0x1
 };

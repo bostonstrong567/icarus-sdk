@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_ELY_Story_1_Eden_Iris_C : public ABPQ_ELY_Story_1_Eden_Mo_C
 {
-public:
 };

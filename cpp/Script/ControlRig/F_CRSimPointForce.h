@@ -4,6 +4,7 @@
 USTRUCT()
 struct FCRSimPointForce
 {
+public:
     UPROPERTY() ECRSimPointForceType ForceType;  // 0x0000, size 0x1
     UPROPERTY() FVector Vector;  // 0x0004, size 0xC
     UPROPERTY() float Coefficient;  // 0x0010, size 0x4

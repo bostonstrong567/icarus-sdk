@@ -5,5 +5,4 @@
 UCLASS()
 class UFieldGuideRedirectTable : public UIcarusDataTable
 {
-public:
 };

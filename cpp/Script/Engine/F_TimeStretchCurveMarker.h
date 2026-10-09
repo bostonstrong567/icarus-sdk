@@ -4,6 +4,7 @@
 USTRUCT()
 struct FTimeStretchCurveMarker
 {
+public:
     UPROPERTY(EditAnywhere) float Time;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere) float Alpha;  // 0x000C, size 0x4
 };

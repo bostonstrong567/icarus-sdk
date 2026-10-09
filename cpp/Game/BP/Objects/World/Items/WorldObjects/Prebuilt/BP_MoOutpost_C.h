@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class ABP_MoOutpost_C : public ABP_Prebuilt_Base_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void GetChest(AIcarusItem*& Array_Element);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void Prepare_Hideout();  // named "Prepare Hideout"
 };

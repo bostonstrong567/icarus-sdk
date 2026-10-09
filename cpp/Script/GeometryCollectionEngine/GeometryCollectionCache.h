@@ -5,7 +5,8 @@
 UCLASS()
 class UGeometryCollectionCache : public UObject
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() FRecordedTransformTrack RecordedData;  // 0x0028, size 0x10
     UPROPERTY() UGeometryCollection* SupportedCollection;  // 0x0038, size 0x8
     UPROPERTY() FGuid CompatibleCollectionState;  // 0x0040, size 0x10

@@ -5,5 +5,4 @@
 UCLASS()
 class UStatisticsTable : public UIcarusDataTable
 {
-public:
 };

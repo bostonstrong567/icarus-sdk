@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UBPQC_PersistantBlocker_C : public UActorComponent
 {
 public:
-
     UFUNCTION(BlueprintCallable) bool GetPersistantBlocker(APersistentBlocker*& FoundBlocker);  // parameters 0x10
 };

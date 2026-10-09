@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_SQ_Hunter_Establish_Supplies_Collect_Casings_C : public ABPQ_Common_Deliver_C
 {
-public:
 };

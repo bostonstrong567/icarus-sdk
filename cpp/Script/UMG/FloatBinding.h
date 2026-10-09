@@ -6,6 +6,5 @@ UCLASS()
 class UFloatBinding : public UPropertyBinding
 {
 public:
-
     UFUNCTION() float GetValue() const;  // parameters 0x4
 };

@@ -6,7 +6,6 @@ UCLASS()
 class UGeneticValuesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToGeneticValuesTable(FName Name, FGeneticValue Data, FGeneticValuesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xB9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakGeneticValuesEnum(FGeneticValuesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FGeneticValuesRowHandle CastToGeneticValuesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

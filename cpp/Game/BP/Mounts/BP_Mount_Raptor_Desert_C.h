@@ -5,5 +5,4 @@
 UCLASS(Config=Game)
 class ABP_Mount_Raptor_Desert_C : public ABP_Mount_Raptor_C
 {
-public:
 };

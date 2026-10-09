@@ -5,5 +5,4 @@
 UCLASS()
 class ULinkerPlaceholderFunction : public UFunction
 {
-public:
 };

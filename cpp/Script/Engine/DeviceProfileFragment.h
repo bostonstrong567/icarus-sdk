@@ -6,7 +6,5 @@ UCLASS(Config=DeviceProfiles)
 class UDeviceProfileFragment : public UObject
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<FString,TSizedDefaultAllocator<32> > CVars;  // 0x0028
+    TArray<FString,TSizedDefaultAllocator<32> > CVars;  // 0x0028, not reflected
 };

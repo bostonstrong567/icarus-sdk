@@ -10,7 +10,5 @@ public:
     UPROPERTY(EditAnywhere) FBlackboardKeySelector ConeOrigin;  // 0x0070, size 0x28
     UPROPERTY(EditAnywhere) FBlackboardKeySelector ConeDirection;  // 0x0098, size 0x28
     UPROPERTY(EditAnywhere) FBlackboardKeySelector Observed;  // 0x00C0, size 0x28
-
-    // Not reflected: the engine's scripting cannot see these.
-    float ConeHalfAngleDot;  // 0x00E8
+    float ConeHalfAngleDot;  // 0x00E8, not reflected
 };

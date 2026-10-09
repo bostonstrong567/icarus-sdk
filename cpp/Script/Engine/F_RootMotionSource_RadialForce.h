@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRootMotionSource_RadialForce : public FRootMotionSource
 {
+public:
     UPROPERTY() FVector Location;  // 0x0098, size 0xC
     UPROPERTY() AActor* LocationActor;  // 0x00A8, size 0x8
     UPROPERTY() float Radius;  // 0x00B0, size 0x4

@@ -5,5 +5,4 @@
 UCLASS()
 class UQuestQueriesTable : public UIcarusDataTable
 {
-public:
 };

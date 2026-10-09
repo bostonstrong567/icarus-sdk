@@ -4,8 +4,7 @@
 USTRUCT()
 struct FFloatSpringState
 {
-
-    // Not reflected:
-    float PrevError;  // 0x0000
-    float Velocity;  // 0x0004
+public:
+    float PrevError;  // 0x0000, not reflected
+    float Velocity;  // 0x0004, not reflected
 };

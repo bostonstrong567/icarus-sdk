@@ -14,7 +14,6 @@ public:
     UPROPERTY() int32 NumFixedVerts;  // 0x0078, size 0x4
     UPROPERTY() int32 MaxBoneWeights;  // 0x007C, size 0x4
     UPROPERTY() TArray<uint32> SelfCollisionIndices;  // 0x0080, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<unsigned int,TArray<float,TSizedDefaultAllocator<32> > *,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<unsigned int,TArray<float,TSizedDefaultAllocator<32> > *,0> > IdToArray;  // 0x0090, private
+private:
+    TMap<unsigned int,TArray<float,TSizedDefaultAllocator<32> > *,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<unsigned int,TArray<float,TSizedDefaultAllocator<32> > *,0> > IdToArray;  // 0x0090, not reflected
 };

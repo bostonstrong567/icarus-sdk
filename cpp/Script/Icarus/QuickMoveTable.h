@@ -5,5 +5,4 @@
 UCLASS()
 class UQuickMoveTable : public UIcarusDataTable
 {
-public:
 };

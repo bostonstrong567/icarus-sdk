@@ -4,5 +4,6 @@
 USTRUCT()
 struct FPrebuiltData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString FileName;  // 0x0018, size 0x10
 };

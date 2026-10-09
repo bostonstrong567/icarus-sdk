@@ -6,7 +6,6 @@ UCLASS()
 class UPrebuiltStructuresLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToPrebuiltStructuresTable(FName Name, FPrebuiltData Data, FPrebuiltStructuresRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x49
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakPrebuiltStructuresEnum(FPrebuiltStructuresEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FPrebuiltStructuresRowHandle CastToPrebuiltStructuresRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

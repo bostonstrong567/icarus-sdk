@@ -4,6 +4,8 @@
 USTRUCT()
 struct FMovieSceneFadeSectionTemplate : public FMovieSceneEvalTemplate
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() FMovieSceneFloatChannel FadeCurve;  // 0x0020, size 0xA0
     UPROPERTY() FLinearColor FadeColor;  // 0x00C0, size 0x10
     UPROPERTY() uint8 bFadeAudio : 1;  // 0x00D0, mask 0x01

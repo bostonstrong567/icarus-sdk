@@ -4,6 +4,7 @@
 USTRUCT()
 struct FModularSynthPreset : public FTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bEnablePolyphony : 1;  // 0x0008, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ESynth1OscType Osc1Type;  // 0x000C, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float Osc1Gain;  // 0x0010, size 0x4

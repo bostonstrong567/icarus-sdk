@@ -6,7 +6,6 @@ UCLASS()
 class UIcarusAttachmentsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToIcarusAttachmentsTable(FName Name, FIcarusAttachment Data, FIcarusAttachmentsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x51
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakIcarusAttachmentsEnum(FIcarusAttachmentsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FIcarusAttachmentsRowHandle CastToIcarusAttachmentsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

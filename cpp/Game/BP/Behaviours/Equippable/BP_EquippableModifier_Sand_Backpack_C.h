@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UBP_EquippableModifier_Sand_Backpack_C : public UBP_EquippableModifier_Lava_Hunter_Backpack_C
 {
-public:
 };

@@ -6,7 +6,6 @@ UCLASS(Abstract, MinimalAPI)
 class UArcadeMachineRecorderInterface : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintNativeEvent) TArray<FArcadeMachineScore> GetArcadeMachineScores() const;  // parameters 0x10
     UFUNCTION(BlueprintNativeEvent) void SetArcadeMachineScores(const TArray<FArcadeMachineScore>& Scores);  // parameters 0x10
 };

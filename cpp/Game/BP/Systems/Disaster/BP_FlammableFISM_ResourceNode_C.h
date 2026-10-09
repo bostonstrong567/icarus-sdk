@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UBP_FlammableFISM_ResourceNode_C : public UBP_FlammableFISM_C
 {
-public:
 };

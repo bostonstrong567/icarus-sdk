@@ -5,5 +5,4 @@
 UCLASS(Abstract, MinimalAPI)
 class UPathFollowingAgentInterface : public UInterface
 {
-public:
 };

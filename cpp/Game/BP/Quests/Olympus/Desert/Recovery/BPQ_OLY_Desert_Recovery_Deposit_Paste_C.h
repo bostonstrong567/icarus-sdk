@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_OLY_Desert_Recovery_Deposit_Paste_C : public ABPQ_OLY_Desert_Recovery_Deposit_Base_C
 {
-public:
 };

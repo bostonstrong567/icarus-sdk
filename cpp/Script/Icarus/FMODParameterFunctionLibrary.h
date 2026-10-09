@@ -6,7 +6,6 @@ UCLASS()
 class UFMODParameterFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void SetComponentAnimSpeedParameter(UFMODAudioComponent* AudioComponent, float FloatValue);  // parameters 0xC
     UFUNCTION(BlueprintCallable) static void SetComponentAnimStateParameter(UFMODAudioComponent* AudioComponent, EAnimStateFMODParam AnimStateValue);  // parameters 0x9
     UFUNCTION(BlueprintCallable) static void SetComponentBuildingOpenParameter(UFMODAudioComponent* AudioComponent, EBuildingOpenFMODParam BuildingOpenValue);  // parameters 0x9

@@ -6,7 +6,6 @@ UCLASS()
 class USettlementNPCClothingLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToSettlementNPCClothingTable(FName Name, FSettlementNPCClothingData Data, FSettlementNPCClothingRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x99
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakSettlementNPCClothingEnum(FSettlementNPCClothingEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FSettlementNPCClothingRowHandle CastToSettlementNPCClothingRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

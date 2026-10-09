@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Building_Floor_Diagonal_Concrete_C : public ABP_Building_Floor_Diagonal_C
 {
-public:
 };

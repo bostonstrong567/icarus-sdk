@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSourceEffectStereoDelaySettings
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EStereoDelaySourceEffect DelayMode;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float DelayTimeMsec;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float Feedback;  // 0x0008, size 0x4

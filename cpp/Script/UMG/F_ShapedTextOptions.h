@@ -4,6 +4,7 @@
 USTRUCT()
 struct FShapedTextOptions
 {
+public:
     UPROPERTY(EditAnywhere) uint8 bOverride_TextShapingMethod : 1;  // 0x0000, mask 0x01
     UPROPERTY(EditAnywhere) uint8 bOverride_TextFlowDirection : 1;  // 0x0000, mask 0x02
     UPROPERTY(EditAnywhere, BlueprintReadOnly) ETextShapingMethod TextShapingMethod;  // 0x0001, size 0x1

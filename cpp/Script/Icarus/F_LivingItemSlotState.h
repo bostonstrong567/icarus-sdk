@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLivingItemSlotState
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 SlotIndex;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 ChallengeProgress;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bIsActiveChallenge;  // 0x0008, size 0x1

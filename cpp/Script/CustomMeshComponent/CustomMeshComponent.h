@@ -5,11 +5,9 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UCustomMeshComponent : public UMeshComponent
 {
+private:
+    TArray<FCustomMeshTriangle,TSizedDefaultAllocator<32> > CustomMeshTris;  // 0x0478, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<FCustomMeshTriangle,TSizedDefaultAllocator<32> > CustomMeshTris;  // 0x0478, private
-
     UFUNCTION(BlueprintCallable) void AddCustomMeshTriangles(const TArray<FCustomMeshTriangle>& Triangles);  // parameters 0x10
     UFUNCTION(BlueprintCallable) void ClearCustomMeshTriangles();
     UFUNCTION(BlueprintCallable) bool SetCustomMeshTriangles(const TArray<FCustomMeshTriangle>& Triangles);  // parameters 0x11

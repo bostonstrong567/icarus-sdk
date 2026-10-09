@@ -5,11 +5,13 @@
 UCLASS(Config=Engine)
 class AWeatherController : public AInfo
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintAssignable) FWeatherUpdated WeatherUpdated;  // 0x0220, size 0x1
     UPROPERTY(BlueprintAssignable) FWeatherEventStartedSignature OnWeatherEventStarted;  // 0x0228, size 0x10
     UPROPERTY(BlueprintAssignable) FWeatherEventCompletedSignature OnWeatherEventCompleted;  // 0x0238, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float UpdateCycle;  // 0x0248, size 0x4
+protected:
     UPROPERTY() float CurrentUpdateTime;  // 0x024C, size 0x4
     UPROPERTY(BlueprintReadOnly) TMap<FName, FActorCollection> BiomeToActor;  // 0x0250, size 0x50
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<FWeatherBiomeGroupsEnum, FWeatherBiomeGroupForecast> BiomeGroupForecast;  // 0x02A0, size 0x50
@@ -17,11 +19,10 @@ public:
     UPROPERTY() TArray<FActiveWeatherInfo> WeatherToRemove;  // 0x0300, size 0x10
     UPROPERTY(EditAnywhere, Instanced) UWeatherControllerRecorderComponent* Recorder;  // 0x0310, size 0x8
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UIcarusStatContainer* StatContainer;  // 0x0318, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    float AccumulatedDeltaTime;  // 0x0320, private
-    FActorCollection NullBiomeToActor;  // 0x0328, private
-
+private:
+    float AccumulatedDeltaTime;  // 0x0320, not reflected
+    FActorCollection NullBiomeToActor;  // 0x0328, not reflected
+public:
     UFUNCTION(BlueprintCallable) bool AddWeatherEvent(const FBiomesRowHandle& Biome, const FWeatherEventsRowHandle& Event, int32 StartTime);  // parameters 0x35
     UFUNCTION(BlueprintCallable) void CheckForStormStart(int32 Now);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void ForceStopAllWeatherEvents();

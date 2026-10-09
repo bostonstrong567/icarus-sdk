@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABPQ_ELY_Story0_Craft_C : public ABPQ_Deploy_Count_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) bool ExtraDeployableChecks(AIcarusActor* Deployable);  // parameters 0x9
 };

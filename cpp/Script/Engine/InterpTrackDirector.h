@@ -5,7 +5,9 @@
 UCLASS(MinimalAPI)
 class UInterpTrackDirector : public UInterpTrack
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY() TArray<FDirectorTrackCut> CutTrack;  // 0x0070, size 0x10
+private:
     UPROPERTY(EditAnywhere) uint8 bSimulateCameraCutsOnClients : 1;  // 0x0080, mask 0x01
 };

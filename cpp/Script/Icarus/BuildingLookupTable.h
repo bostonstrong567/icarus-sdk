@@ -5,5 +5,4 @@
 UCLASS()
 class UBuildingLookupTable : public UIcarusDataTable
 {
-public:
 };

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_PRO_D_Rescue_NPC_Deliver2_C : public ABPQ_Common_Deliver_C
 {
-public:
 };

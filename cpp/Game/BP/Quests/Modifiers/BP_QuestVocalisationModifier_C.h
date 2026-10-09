@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UBP_QuestVocalisationModifier_C : public UBP_QuestModifierBase_C
 {
-public:
 };

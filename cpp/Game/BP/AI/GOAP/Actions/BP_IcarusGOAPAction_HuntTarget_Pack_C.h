@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UBP_IcarusGOAPAction_HuntTarget_Pack_C : public UBP_IcarusGOAPAction_HuntTarget_C
 {
-public:
 };

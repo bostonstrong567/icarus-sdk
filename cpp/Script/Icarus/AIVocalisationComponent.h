@@ -5,12 +5,10 @@
 UCLASS(Config=Engine)
 class UAIVocalisationComponent : public UVocalisationComponent
 {
+private:
+    TOptional<enum EAIAudioState> PendingInitState;  // 0x0108, not reflected
+    EAIAudioState CurrentState;  // 0x010A, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TOptional<enum EAIAudioState> PendingInitState;  // 0x0108, private
-    EAIAudioState CurrentState;  // 0x010A, private
-
     UFUNCTION(BlueprintCallable) void PlayAIVocalisation(EAIVocalisationType Type);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void SetAIState(EAIAudioState State);  // parameters 0x1
 };

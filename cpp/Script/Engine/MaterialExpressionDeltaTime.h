@@ -5,5 +5,4 @@
 UCLASS()
 class UMaterialExpressionDeltaTime : public UMaterialExpression
 {
-public:
 };

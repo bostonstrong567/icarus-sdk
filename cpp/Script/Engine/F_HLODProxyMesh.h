@@ -4,6 +4,8 @@
 USTRUCT()
 struct FHLODProxyMesh
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() TLazyObjectPtr<ALODActor> LODActor;  // 0x0000, size 0x1C
     UPROPERTY(EditAnywhere) UStaticMesh* StaticMesh;  // 0x0020, size 0x8
     UPROPERTY(EditAnywhere) FName Key;  // 0x0028, size 0x8

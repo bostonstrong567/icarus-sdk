@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UDestructibleBlockerRecorderComponent : public UActorStateRecorderComponent
 {
-public:
 };

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_GasFlyer_Projectile_C : public ASkeletalItem
 {
-public:
 };

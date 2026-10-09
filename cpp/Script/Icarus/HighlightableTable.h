@@ -5,5 +5,4 @@
 UCLASS()
 class UHighlightableTable : public UIcarusDataTable
 {
-public:
 };

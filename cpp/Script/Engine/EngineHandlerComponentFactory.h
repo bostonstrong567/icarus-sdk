@@ -5,5 +5,4 @@
 UCLASS()
 class UEngineHandlerComponentFactory : public UHandlerComponentFactory
 {
-public:
 };

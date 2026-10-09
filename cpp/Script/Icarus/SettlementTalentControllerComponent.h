@@ -5,8 +5,6 @@
 UCLASS(Config=Engine)
 class USettlementTalentControllerComponent : public UTalentControllerComponent
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bSettlementTalentControllerSetup;  // 0x00F8, protected
+protected:
+    bool bSettlementTalentControllerSetup;  // 0x00F8, not reflected
 };

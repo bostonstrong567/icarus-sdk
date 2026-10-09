@@ -4,10 +4,9 @@
 USTRUCT()
 struct FBranchingPointNotifyPayload
 {
-
-    // Not reflected:
-    USkeletalMeshComponent * SkelMeshComponent;  // 0x0000
-    UAnimSequenceBase * SequenceAsset;  // 0x0008
-    FAnimNotifyEvent * NotifyEvent;  // 0x0010
-    int32 MontageInstanceID;  // 0x0018
+public:
+    USkeletalMeshComponent * SkelMeshComponent;  // 0x0000, not reflected
+    UAnimSequenceBase * SequenceAsset;  // 0x0008, not reflected
+    FAnimNotifyEvent * NotifyEvent;  // 0x0010, not reflected
+    int32 MontageInstanceID;  // 0x0018, not reflected
 };

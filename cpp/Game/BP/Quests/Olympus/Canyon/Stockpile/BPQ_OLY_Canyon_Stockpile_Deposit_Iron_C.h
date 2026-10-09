@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_OLY_Canyon_Stockpile_Deposit_Iron_C : public ABPQ_Stockpile_Deposit_Item_C
 {
-public:
 };

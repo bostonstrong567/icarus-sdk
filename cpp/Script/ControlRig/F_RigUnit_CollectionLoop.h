@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_CollectionLoop : public FRigUnit_CollectionBaseMutable
 {
+public:
     UPROPERTY() FRigElementKeyCollection Collection;  // 0x0068, size 0x10
     UPROPERTY() FRigElementKey Item;  // 0x0078, size 0xC
     UPROPERTY() int32 Index;  // 0x0084, size 0x4

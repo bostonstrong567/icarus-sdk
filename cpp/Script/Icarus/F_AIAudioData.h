@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAIAudioData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UFMODEvent> FootstepSound;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName FrontFootSocket;  // 0x0040, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName RearFootSocket;  // 0x0048, size 0x8

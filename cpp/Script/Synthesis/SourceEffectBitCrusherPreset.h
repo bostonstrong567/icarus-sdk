@@ -6,11 +6,9 @@ UCLASS(EditInlineNew)
 class USourceEffectBitCrusherPreset : public USoundEffectSourcePreset
 {
 public:
+    FWindowsCriticalSection SettingsCritSect;  // 0x0068, not reflected
+    FSourceEffectBitCrusherSettings SettingsCopy;  // 0x0090, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FSourceEffectBitCrusherSettings Settings;  // 0x00C0, size 0x30
-
-    // Not reflected: the engine's scripting cannot see these.
-    FWindowsCriticalSection SettingsCritSect;  // 0x0068
-    FSourceEffectBitCrusherSettings SettingsCopy;  // 0x0090
 
     UFUNCTION(BlueprintCallable) void SetBitModulator(USoundModulatorBase* Modulator);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void SetBits(float Bits);  // parameters 0x4

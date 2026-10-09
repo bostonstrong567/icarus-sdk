@@ -5,5 +5,4 @@
 UCLASS()
 class UScalingRulesTable : public UIcarusDataTable
 {
-public:
 };

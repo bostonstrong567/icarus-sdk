@@ -4,6 +4,7 @@
 USTRUCT()
 struct FConstraintTarget
 {
+public:
     UPROPERTY(EditAnywhere) FTransform Transform;  // 0x0000, size 0x30
     UPROPERTY(EditAnywhere) float Weight;  // 0x0030, size 0x4
     UPROPERTY(EditAnywhere) bool bMaintainOffset;  // 0x0034, size 0x1

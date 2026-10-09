@@ -6,7 +6,5 @@ UCLASS()
 class UStructProperty : public UProperty
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    UScriptStruct * Struct;  // 0x0070
+    UScriptStruct * Struct;  // 0x0070, not reflected
 };

@@ -6,7 +6,6 @@ UCLASS()
 class UStaminaActionCostsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToStaminaActionCostsTable(FName Name, FStaminaCost Data, FStaminaActionCostsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x61
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakStaminaActionCostsEnum(FStaminaActionCostsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FStaminaActionCostsRowHandle CastToStaminaActionCostsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

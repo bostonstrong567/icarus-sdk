@@ -5,16 +5,18 @@
 UCLASS(Config=Engine)
 class UAuraManagerComponent : public UActorComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FGameplayTagQuery PlayerTagQuery;  // 0x0240, size 0x48
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FGameplayTagQuery NPCTagQuery;  // 0x0288, size 0x48
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FGameplayTagQuery DeployableTagQuery;  // 0x02D0, size 0x48
+private:
     UPROPERTY() TSet<AActor*> AllPlayers;  // 0x00B0, size 0x50
     UPROPERTY() TSet<AActor*> AllNPCs;  // 0x0100, size 0x50
     UPROPERTY() TSet<AActor*> AllDeployables;  // 0x0150, size 0x50
     UPROPERTY() TMap<AActor*, FAuraInstances> AuraInstances;  // 0x01A0, size 0x50
     UPROPERTY() TMap<AActor*, FActiveModifiers> AffectedActorModifiers;  // 0x01F0, size 0x50
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FGameplayTagQuery PlayerTagQuery;  // 0x0240, size 0x48
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FGameplayTagQuery NPCTagQuery;  // 0x0288, size 0x48
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FGameplayTagQuery DeployableTagQuery;  // 0x02D0, size 0x48
-
+public:
     UFUNCTION(BlueprintCallable) void AddAura(UModifierStateComponent* ModifierComp);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void AddAuraCustomRange(UModifierStateComponent* ModifierComp, int32 Range);  // parameters 0xC
     UFUNCTION(BlueprintCallable, BlueprintPure) bool CanModifierBeStacked(const FModifierStatesRowHandle& Modifier) const;  // parameters 0x19

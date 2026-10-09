@@ -6,6 +6,7 @@ UCLASS()
 class UGizmoAxisTranslationParameterSource : public UGizmoBaseFloatParameterSource
 {
 public:
+    TUniqueFunction<bool __cdecl(FVector const &,FVector &)> PositionConstraintFunction;  // 0x0050, not reflected
     UPROPERTY() TScriptInterface<IGizmoAxisSource> AxisSource;  // 0x0090, size 0x10
     UPROPERTY() TScriptInterface<IGizmoTransformSource> TransformSource;  // 0x00A0, size 0x10
     UPROPERTY() float Parameter;  // 0x00B0, size 0x4
@@ -13,7 +14,4 @@ public:
     UPROPERTY() FVector CurTranslationAxis;  // 0x00BC, size 0xC
     UPROPERTY() FVector CurTranslationOrigin;  // 0x00C8, size 0xC
     UPROPERTY() FTransform InitialTransform;  // 0x00E0, size 0x30
-
-    // Not reflected: the engine's scripting cannot see these.
-    TUniqueFunction<bool __cdecl(FVector const &,FVector &)> PositionConstraintFunction;  // 0x0050
 };

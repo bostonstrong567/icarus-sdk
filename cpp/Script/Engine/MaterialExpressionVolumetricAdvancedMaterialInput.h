@@ -5,5 +5,4 @@
 UCLASS()
 class UMaterialExpressionVolumetricAdvancedMaterialInput : public UMaterialExpression
 {
-public:
 };

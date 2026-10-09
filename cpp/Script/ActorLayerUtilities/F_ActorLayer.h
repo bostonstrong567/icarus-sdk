@@ -4,5 +4,6 @@
 USTRUCT()
 struct FActorLayer
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName Name;  // 0x0000, size 0x8
 };

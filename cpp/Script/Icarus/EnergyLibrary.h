@@ -6,7 +6,6 @@ UCLASS()
 class UEnergyLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToEnergyTable(FName Name, FEnergyData Data, FEnergyRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x81
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakEnergyEnum(FEnergyEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FEnergyRowHandle CastToEnergyRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

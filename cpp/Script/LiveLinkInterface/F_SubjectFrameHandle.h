@@ -4,7 +4,6 @@
 USTRUCT()
 struct FSubjectFrameHandle : public FLiveLinkBaseBlueprintData
 {
-
-    // Not reflected:
-    TSharedPtr<FCachedSubjectFrame,0> CachedFrame;  // 0x0008
+private:
+    TSharedPtr<FCachedSubjectFrame,0> CachedFrame;  // 0x0008, not reflected
 };

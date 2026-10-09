@@ -5,5 +5,4 @@
 UCLASS(Config=Game)
 class AIcarusPlayerCharacterServer : public AIcarusPlayerCharacter
 {
-public:
 };

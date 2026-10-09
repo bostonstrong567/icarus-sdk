@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMagicLeapARPinState
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float Confidence;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float ValidRadius;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float RotationError;  // 0x0008, size 0x4

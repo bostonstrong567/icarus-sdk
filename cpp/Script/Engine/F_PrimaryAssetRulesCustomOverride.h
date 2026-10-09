@@ -4,6 +4,7 @@
 USTRUCT()
 struct FPrimaryAssetRulesCustomOverride
 {
+public:
     UPROPERTY(EditAnywhere) FPrimaryAssetType PrimaryAssetType;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) FDirectoryPath FilterDirectory;  // 0x0008, size 0x10
     UPROPERTY(EditAnywhere) FString FilterString;  // 0x0018, size 0x10

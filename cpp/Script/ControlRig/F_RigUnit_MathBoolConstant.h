@@ -4,5 +4,6 @@
 USTRUCT()
 struct FRigUnit_MathBoolConstant : public FRigUnit_MathBoolBase
 {
+public:
     UPROPERTY() bool Value;  // 0x0008, size 0x1
 };

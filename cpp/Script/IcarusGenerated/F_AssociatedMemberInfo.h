@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAssociatedMemberInfo
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString AccountName;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString CharacterName;  // 0x0010, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString UserID;  // 0x0020, size 0x10

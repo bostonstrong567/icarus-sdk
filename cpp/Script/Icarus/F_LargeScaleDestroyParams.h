@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLargeScaleDestroyParams
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EIcarusDamageType DamageType;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EDestroyPattern Pattern;  // 0x0001, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 DamageToDestroyRatio;  // 0x0004, size 0x4

@@ -8,11 +8,10 @@ class UARGetCandidateObjectAsyncTaskBlueprintProxy : public UARBaseAsyncTaskBlue
 public:
     UPROPERTY(BlueprintAssignable) FARGetCandidateObjectPin OnSuccess;  // 0x0050, size 0x10
     UPROPERTY(BlueprintAssignable) FARGetCandidateObjectPin OnFailed;  // 0x0060, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FVector Location;  // 0x0070
-    FVector Extent;  // 0x007C
-    TSharedPtr<FARGetCandidateObjectAsyncTask,1> CandidateObjectTask;  // 0x0088, private
-
+    FVector Location;  // 0x0070, not reflected
+    FVector Extent;  // 0x007C, not reflected
+private:
+    TSharedPtr<FARGetCandidateObjectAsyncTask,1> CandidateObjectTask;  // 0x0088, not reflected
+public:
     UFUNCTION(BlueprintCallable) static UARGetCandidateObjectAsyncTaskBlueprintProxy* ARGetCandidateObject(UObject* WorldContextObject, FVector Location, FVector Extent);  // parameters 0x28
 };

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_Ape_C2_Setup_Deploy_C : public ABPQ_Deploy_Count_ItemStatic_C
 {
-public:
 };

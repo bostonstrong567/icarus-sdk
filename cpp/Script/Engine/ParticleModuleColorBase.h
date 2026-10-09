@@ -5,5 +5,4 @@
 UCLASS(Abstract, EditInlineNew)
 class UParticleModuleColorBase : public UParticleModule
 {
-public:
 };

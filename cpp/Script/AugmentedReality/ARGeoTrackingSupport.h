@@ -6,7 +6,6 @@ UCLASS(Abstract)
 class UARGeoTrackingSupport : public UObject
 {
 public:
-
     UFUNCTION(BlueprintCallable) bool AddGeoAnchorAtLocation(float Longitude, float Latitude, FString OptionalAnchorName);  // parameters 0x19
     UFUNCTION(BlueprintCallable) bool AddGeoAnchorAtLocationWithAltitude(float Longitude, float Latitude, float AltitudeMeters, FString OptionalAnchorName);  // parameters 0x21
     UFUNCTION(BlueprintCallable, BlueprintPure) EARGeoTrackingAccuracy GetGeoTrackingAccuracy() const;  // parameters 0x1

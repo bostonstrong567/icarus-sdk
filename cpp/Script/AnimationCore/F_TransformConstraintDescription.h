@@ -4,5 +4,6 @@
 USTRUCT()
 struct FTransformConstraintDescription : public FConstraintDescriptionEx
 {
+public:
     UPROPERTY(EditAnywhere) ETransformConstraintType TransformType;  // 0x0010, size 0x1
 };

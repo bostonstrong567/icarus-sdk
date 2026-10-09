@@ -4,6 +4,7 @@
 USTRUCT()
 struct FTableColumnHeaderStyle : public FSlateWidgetStyle
 {
+public:
     UPROPERTY(EditAnywhere) FSlateBrush SortPrimaryAscendingImage;  // 0x0008, size 0x88
     UPROPERTY(EditAnywhere) FSlateBrush SortPrimaryDescendingImage;  // 0x0090, size 0x88
     UPROPERTY(EditAnywhere) FSlateBrush SortSecondaryAscendingImage;  // 0x0118, size 0x88

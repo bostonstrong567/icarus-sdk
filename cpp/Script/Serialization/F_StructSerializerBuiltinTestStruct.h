@@ -4,6 +4,7 @@
 USTRUCT()
 struct FStructSerializerBuiltinTestStruct
 {
+public:
     UPROPERTY() FGuid Guid;  // 0x0000, size 0x10
     UPROPERTY() FName Name;  // 0x0010, size 0x8
     UPROPERTY() FString String;  // 0x0018, size 0x10

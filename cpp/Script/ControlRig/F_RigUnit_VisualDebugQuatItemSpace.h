@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_VisualDebugQuatItemSpace : public FRigUnit_DebugBase
 {
+public:
     UPROPERTY() FQuat Value;  // 0x0010, size 0x10
     UPROPERTY() bool bEnabled;  // 0x0020, size 0x1
     UPROPERTY() float Thickness;  // 0x0024, size 0x4

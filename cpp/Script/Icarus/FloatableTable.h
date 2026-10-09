@@ -5,5 +5,4 @@
 UCLASS()
 class UFloatableTable : public UIcarusDataTable
 {
-public:
 };

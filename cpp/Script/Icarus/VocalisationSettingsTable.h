@@ -5,5 +5,4 @@
 UCLASS()
 class UVocalisationSettingsTable : public UIcarusDataTable
 {
-public:
 };

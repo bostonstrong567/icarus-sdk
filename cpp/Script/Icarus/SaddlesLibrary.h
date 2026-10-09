@@ -6,7 +6,6 @@ UCLASS()
 class USaddlesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToSaddlesTable(FName Name, FSaddleData Data, FSaddlesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x171
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakSaddlesEnum(FSaddlesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FSaddlesRowHandle CastToSaddlesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -5,5 +5,4 @@
 UCLASS()
 class ULiveLinkBasicRole : public ULiveLinkRole
 {
-public:
 };

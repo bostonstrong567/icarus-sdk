@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_RG_C_People_1_Extract_C : public ABPQ_Common_Deliver_C
 {
-public:
 };

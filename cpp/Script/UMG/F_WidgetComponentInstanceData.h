@@ -4,8 +4,7 @@
 USTRUCT()
 struct FWidgetComponentInstanceData : public FSceneComponentInstanceData
 {
-
-    // Not reflected:
-    TSubclassOf<UUserWidget> WidgetClass;  // 0x00B8
-    UTextureRenderTarget2D * RenderTarget;  // 0x00C0
+public:
+    TSubclassOf<UUserWidget> WidgetClass;  // 0x00B8, not reflected
+    UTextureRenderTarget2D * RenderTarget;  // 0x00C0, not reflected
 };

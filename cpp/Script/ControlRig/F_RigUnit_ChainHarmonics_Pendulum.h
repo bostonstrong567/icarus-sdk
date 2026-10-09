@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_ChainHarmonics_Pendulum
 {
+public:
     UPROPERTY() bool bEnabled;  // 0x0000, size 0x1
     UPROPERTY() float PendulumStiffness;  // 0x0004, size 0x4
     UPROPERTY() FVector PendulumGravity;  // 0x0008, size 0xC

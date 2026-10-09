@@ -4,5 +4,6 @@
 USTRUCT()
 struct FCommonStorageResponse : public FCommonResponse
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString Key;  // 0x0018, size 0x10
 };

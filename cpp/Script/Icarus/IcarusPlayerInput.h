@@ -5,10 +5,9 @@
 UCLASS(Transient, Config=Input)
 class UIcarusPlayerInput : public UPlayerInput
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(Config) TMap<FKeybindContextsRowHandle, FPerInputUserBindings> SavedBindings;  // 0x03A8, size 0x50
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<FKeybindContextsRowHandle,TSharedPtr<FPerInputUserBindings,0>,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FKeybindContextsRowHandle,TSharedPtr<FPerInputUserBindings,0>,0> > RuntimeBindings;  // 0x03F8, protected
-    bool bLock;  // 0x0448, protected
+    TMap<FKeybindContextsRowHandle,TSharedPtr<FPerInputUserBindings,0>,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FKeybindContextsRowHandle,TSharedPtr<FPerInputUserBindings,0>,0> > RuntimeBindings;  // 0x03F8, not reflected
+    bool bLock;  // 0x0448, not reflected
 };

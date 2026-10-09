@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UItemManipulationComponent : public UActorComponent
 {
 public:
-
     UFUNCTION(BlueprintCallable) bool CanRepairItem(UInventory* SourceInventory, int32 SourceLocation, AIcarusPlayerCharacter* Target);  // parameters 0x19
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) ECanUseItemResult CanUseItem(UInventory* SourceInventory, int32 SourceLocation, FUsesEnum Use, FUseCondition UseCondition, AIcarusPlayerCharacter* Target);  // parameters 0x79
     UFUNCTION(BlueprintCallable) bool ConsumeItem(AIcarusPlayerCharacter* Source, UInventory* SourceInventory, int32 SourceLocation, AIcarusCharacter* Target, FItemData& ItemConsumed);  // parameters 0x211

@@ -6,7 +6,6 @@ UCLASS()
 class UPlayerIdentityLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToPlayerIdentityTable(FName Name, FPlayerIdentityData Data, FPlayerIdentityRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x49
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakPlayerIdentityEnum(FPlayerIdentityEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FPlayerIdentityRowHandle CastToPlayerIdentityRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

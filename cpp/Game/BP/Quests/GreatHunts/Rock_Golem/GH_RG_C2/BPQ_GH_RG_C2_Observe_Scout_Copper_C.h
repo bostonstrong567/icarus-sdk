@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_RG_C2_Observe_Scout_Copper_C : public ABPQ_GH_RG_C2_Observe_Scout_Gold_C
 {
-public:
 };

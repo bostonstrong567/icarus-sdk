@@ -5,5 +5,4 @@
 UCLASS()
 class UInventoryTable : public UIcarusDataTable
 {
-public:
 };

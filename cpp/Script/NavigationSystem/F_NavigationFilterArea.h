@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNavigationFilterArea
 {
+public:
     UPROPERTY(EditAnywhere) TSubclassOf<UNavArea> AreaClass;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) float TravelCostOverride;  // 0x0008, size 0x4
     UPROPERTY(EditAnywhere) float EnteringCostOverride;  // 0x000C, size 0x4

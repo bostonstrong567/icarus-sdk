@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_OLY_Riverlands_Stockpile_Deposit_Concrete_C : public ABPQ_Stockpile_Deposit_Item_C
 {
-public:
 };

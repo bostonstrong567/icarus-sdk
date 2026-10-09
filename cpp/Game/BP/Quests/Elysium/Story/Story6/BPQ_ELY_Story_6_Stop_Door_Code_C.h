@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_ELY_Story_6_Stop_Door_Code_C : public ABPQ_Collect_Note_C
 {
-public:
 };

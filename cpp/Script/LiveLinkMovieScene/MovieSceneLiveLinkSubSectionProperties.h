@@ -5,8 +5,6 @@
 UCLASS()
 class UMovieSceneLiveLinkSubSectionProperties : public UMovieSceneLiveLinkSubSection
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<TSharedPtr<IMovieSceneLiveLinkPropertyHandler,0>,TSizedDefaultAllocator<32> > PropertyHandlers;  // 0x0050, protected
+protected:
+    TArray<TSharedPtr<IMovieSceneLiveLinkPropertyHandler,0>,TSizedDefaultAllocator<32> > PropertyHandlers;  // 0x0050, not reflected
 };

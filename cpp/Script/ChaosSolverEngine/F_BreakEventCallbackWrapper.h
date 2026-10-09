@@ -4,7 +4,6 @@
 USTRUCT()
 struct FBreakEventCallbackWrapper
 {
-
-    // Not reflected:
-    TFunction<void __cdecl(FChaosBreakEvent const &)> BreakEventCallback;  // 0x0000
+public:
+    TFunction<void __cdecl(FChaosBreakEvent const &)> BreakEventCallback;  // 0x0000, not reflected
 };

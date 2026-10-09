@@ -5,5 +5,4 @@
 UCLASS()
 class UFirearmScopeDataTable : public UIcarusDataTable
 {
-public:
 };

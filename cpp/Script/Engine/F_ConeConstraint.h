@@ -4,6 +4,7 @@
 USTRUCT()
 struct FConeConstraint : public FConstraintBaseParams
 {
+public:
     UPROPERTY(EditAnywhere) float Swing1LimitDegrees;  // 0x0014, size 0x4
     UPROPERTY(EditAnywhere) float Swing2LimitDegrees;  // 0x0018, size 0x4
     UPROPERTY(EditAnywhere) TEnumAsByte<EAngularConstraintMotion> Swing1Motion;  // 0x001C, size 0x1

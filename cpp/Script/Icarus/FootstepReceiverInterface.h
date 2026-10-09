@@ -6,6 +6,5 @@ UCLASS(Abstract)
 class UFootstepReceiverInterface : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) void ReceivedFootstep(AActor* Actor, FVector Location);  // parameters 0x14
 };

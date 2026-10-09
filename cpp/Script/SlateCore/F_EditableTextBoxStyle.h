@@ -4,6 +4,7 @@
 USTRUCT()
 struct FEditableTextBoxStyle : public FSlateWidgetStyle
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSlateBrush BackgroundImageNormal;  // 0x0008, size 0x88
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSlateBrush BackgroundImageHovered;  // 0x0090, size 0x88
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSlateBrush BackgroundImageFocused;  // 0x0118, size 0x88

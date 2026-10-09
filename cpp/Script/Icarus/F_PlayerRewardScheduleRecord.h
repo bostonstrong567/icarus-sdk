@@ -4,6 +4,7 @@
 USTRUCT()
 struct FPlayerRewardScheduleRecord
 {
+public:
     UPROPERTY(SaveGame) FString PlayerId;  // 0x0000, size 0x10
     UPROPERTY(SaveGame) int32 LastExoticsExported;  // 0x0010, size 0x4
     UPROPERTY(SaveGame) int32 TotalExoticsExported;  // 0x0014, size 0x4

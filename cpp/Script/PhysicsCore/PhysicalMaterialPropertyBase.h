@@ -5,7 +5,6 @@
 UCLASS(Abstract, NotPlaceable, EditInlineNew, MinimalAPI)
 class UDEPRECATED_PhysicalMaterialPropertyBase : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   ConvertToSurfaceType

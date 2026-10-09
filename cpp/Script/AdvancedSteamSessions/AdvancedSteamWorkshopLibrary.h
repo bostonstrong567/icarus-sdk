@@ -6,7 +6,6 @@ UCLASS()
 class UAdvancedSteamWorkshopLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void GetNumSubscribedWorkshopItems(int32& NumberOfItems);  // parameters 0x4
     UFUNCTION(BlueprintCallable) static TArray<FBPSteamWorkshopID> GetSubscribedWorkshopItems(int32& NumberOfItems);  // parameters 0x18
 };

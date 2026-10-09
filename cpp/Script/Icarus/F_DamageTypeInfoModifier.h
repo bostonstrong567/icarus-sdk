@@ -4,6 +4,7 @@
 USTRUCT()
 struct FDamageTypeInfoModifier
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FTagQueriesRowHandle Tag;  // 0x0000, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FStatsEnum Stat;  // 0x0018, size 0x10
 };

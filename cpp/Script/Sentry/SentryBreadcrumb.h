@@ -5,11 +5,9 @@
 UCLASS()
 class USentryBreadcrumb : public UObject
 {
+private:
+    TSharedPtr<ISentryBreadcrumb,0> BreadcrumbNativeImpl;  // 0x0028, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<ISentryBreadcrumb,0> BreadcrumbNativeImpl;  // 0x0028, private
-
     UFUNCTION(BlueprintCallable, BlueprintPure) FString GetCategory() const;  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) TMap<FString, FString> GetData() const;  // parameters 0x50
     UFUNCTION(BlueprintCallable, BlueprintPure) ESentryLevel GetLevel() const;  // parameters 0x1

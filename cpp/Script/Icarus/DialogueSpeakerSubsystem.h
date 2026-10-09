@@ -5,11 +5,9 @@
 UCLASS()
 class UDialogueSpeakerSubsystem : public UWorldSubsystem
 {
+private:
+    TMap<FDialogueSpeakerRowHandle,UFMODAudioComponent *,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FDialogueSpeakerRowHandle,UFMODAudioComponent *,0> > DialogueSpeakers;  // 0x0030, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<FDialogueSpeakerRowHandle,UFMODAudioComponent *,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FDialogueSpeakerRowHandle,UFMODAudioComponent *,0> > DialogueSpeakers;  // 0x0030, private
-
     UFUNCTION(BlueprintCallable) void RegisterSpeakerAudioComponent(FDialogueSpeakerRowHandle Speaker, UFMODAudioComponent* AudioComponent);  // parameters 0x20
     UFUNCTION(BlueprintCallable) void UnregisterSpeakerAudioComponent(FDialogueSpeakerRowHandle Speaker, UFMODAudioComponent* AudioComponent);  // parameters 0x20
 };

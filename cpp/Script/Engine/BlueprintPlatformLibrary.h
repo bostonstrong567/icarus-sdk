@@ -6,7 +6,6 @@ UCLASS()
 class UBlueprintPlatformLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void CancelLocalNotification(FString ActivationEvent);  // parameters 0x10
     UFUNCTION(BlueprintCallable) static void CancelLocalNotificationById(int32 NotificationId);  // parameters 0x4
     UFUNCTION(BlueprintCallable) static void ClearAllLocalNotifications();

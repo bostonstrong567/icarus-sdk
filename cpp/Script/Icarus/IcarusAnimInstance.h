@@ -7,9 +7,7 @@ class UIcarusAnimInstance : public UAnimInstance
 {
 public:
     UPROPERTY(BlueprintReadWrite) AIcarusActor* OwningIcarusActor;  // 0x02B8, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FPlayIcarusAnimNotifyDelegate OnPlayIcarusNotify;  // 0x02C0
+    FPlayIcarusAnimNotifyDelegate OnPlayIcarusNotify;  // 0x02C0, not reflected
 
     UFUNCTION(BlueprintCallable, BlueprintPure) bool DoesCurveExist(FName CurveName) const;  // parameters 0x9
 };

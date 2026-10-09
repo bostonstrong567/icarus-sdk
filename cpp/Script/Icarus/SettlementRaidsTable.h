@@ -5,5 +5,4 @@
 UCLASS()
 class USettlementRaidsTable : public UIcarusDataTable
 {
-public:
 };

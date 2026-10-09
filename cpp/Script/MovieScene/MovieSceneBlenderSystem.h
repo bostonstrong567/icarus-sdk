@@ -5,9 +5,8 @@
 UCLASS(Abstract)
 class UMovieSceneBlenderSystem : public UMovieSceneEntitySystem
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TBitArray<FDefaultBitArrayAllocator> AllocatedBlendChannels;  // 0x0040, protected
-    FMovieSceneBlenderSystemID SystemID;  // 0x0060, private
+protected:
+    TBitArray<FDefaultBitArrayAllocator> AllocatedBlendChannels;  // 0x0040, not reflected
+private:
+    FMovieSceneBlenderSystemID SystemID;  // 0x0060, not reflected
 };

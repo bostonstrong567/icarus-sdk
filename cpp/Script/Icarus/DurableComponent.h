@@ -9,10 +9,9 @@ public:
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) int32 Durability;  // 0x00D0, size 0x4
     UPROPERTY(BlueprintAssignable) FActorBroken OnActorBroken;  // 0x00D4, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bSkipBroadcastBrokenSteps;  // 0x00D5, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool Initialised;  // 0x00D6, private
-
+private:
+    bool Initialised;  // 0x00D6, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) bool GetDurableData(FDurableData& OutData) const;  // parameters 0x41
     UFUNCTION(BlueprintCallable) void InitialiseComponent(int32 DurabilityValue);  // parameters 0x4
     UFUNCTION() void OnHealthUpdated(UActorState* ActorState, float NewHealth);  // parameters 0xC

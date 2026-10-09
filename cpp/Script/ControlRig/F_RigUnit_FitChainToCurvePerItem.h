@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_FitChainToCurvePerItem : public FRigUnit_HighlevelBaseMutable
 {
+public:
     UPROPERTY() FRigElementKeyCollection Items;  // 0x0068, size 0x10
     UPROPERTY() FCRFourPointBezier Bezier;  // 0x0078, size 0x30
     UPROPERTY() EControlRigCurveAlignment Alignment;  // 0x00A8, size 0x1

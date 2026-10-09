@@ -6,7 +6,6 @@ UCLASS(Abstract, MinimalAPI, Config=Engine)
 class AActorPrefab : public AActor
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) UActorPrefabAsset* GetPrefabAsset();  // parameters 0x8
 
     // Virtual functions that start here:

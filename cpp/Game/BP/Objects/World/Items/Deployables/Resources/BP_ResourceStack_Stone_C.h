@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_ResourceStack_Stone_C : public ABP_ResourceStack_Base_C
 {
-public:
 };

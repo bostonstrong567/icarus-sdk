@@ -6,7 +6,6 @@ UCLASS(Abstract)
 class UModifiableInterface : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) int32 GetNextUID();  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) void OnModifiersUpdated(UModifierStateComponent* ModifiedComponent, bool Removed);  // parameters 0x9
 };

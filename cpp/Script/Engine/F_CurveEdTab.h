@@ -4,6 +4,7 @@
 USTRUCT()
 struct FCurveEdTab
 {
+public:
     UPROPERTY() FString TabName;  // 0x0000, size 0x10
     UPROPERTY() TArray<FCurveEdEntry> Curves;  // 0x0010, size 0x10
     UPROPERTY() float ViewStartInput;  // 0x0020, size 0x4

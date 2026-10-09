@@ -4,6 +4,7 @@
 USTRUCT()
 struct FGroupedInstancedMapData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FInstancedMapDataRowHandle> InstancedMaps;  // 0x0018, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EInstancedLevelPickType PickType;  // 0x0028, size 0x1
 };

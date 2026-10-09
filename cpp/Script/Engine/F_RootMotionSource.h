@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRootMotionSource
 {
+public:
     UPROPERTY() uint16 Priority;  // 0x0010, size 0x2
     UPROPERTY() uint16 LocalID;  // 0x0012, size 0x2
     UPROPERTY() ERootMotionAccumulateMode AccumulateMode;  // 0x0014, size 0x1
@@ -15,10 +16,8 @@ struct FRootMotionSource
     UPROPERTY() FRootMotionSourceStatus Status;  // 0x0030, size 0x1
     UPROPERTY() FRootMotionSourceSettings Settings;  // 0x0031, size 0x1
     UPROPERTY() bool bInLocalSpace;  // 0x0032, size 0x1
+    bool bNeedsSimulatedCatchup;  // 0x0033, not reflected
+    bool bSimulatedNeedsSmoothing;  // 0x0034, not reflected
     UPROPERTY() FRootMotionMovementParams RootMotionParams;  // 0x0040, size 0x40
     UPROPERTY() FRootMotionFinishVelocitySettings FinishVelocityParams;  // 0x0080, size 0x14
-
-    // Not reflected:
-    bool bNeedsSimulatedCatchup;  // 0x0033
-    bool bSimulatedNeedsSmoothing;  // 0x0034
 };

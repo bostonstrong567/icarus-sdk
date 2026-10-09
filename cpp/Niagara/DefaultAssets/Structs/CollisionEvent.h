@@ -4,6 +4,7 @@
 USTRUCT()
 struct CollisionEvent
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector Vector1Position;  // 0x0000, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector Vector2Velocity;  // 0x000C, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector Vector3CollisionNormal;  // 0x0018, size 0xC

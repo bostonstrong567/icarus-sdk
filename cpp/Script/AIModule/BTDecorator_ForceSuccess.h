@@ -5,5 +5,4 @@
 UCLASS()
 class UBTDecorator_ForceSuccess : public UBTDecorator
 {
-public:
 };

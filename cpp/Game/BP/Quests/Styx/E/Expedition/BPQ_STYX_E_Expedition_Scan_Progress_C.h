@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABPQ_STYX_E_Expedition_Scan_Progress_C : public ABPQ_Common_Progress_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetMaxTime();  // parameters 0x4
 };

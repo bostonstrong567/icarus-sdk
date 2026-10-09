@@ -5,5 +5,4 @@
 UCLASS(Const, EditInlineNew)
 class UIcarusNotfiyState : public UAnimNotifyState
 {
-public:
 };

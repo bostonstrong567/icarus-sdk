@@ -5,5 +5,4 @@
 UCLASS(Abstract, EditInlineNew)
 class UParticleModuleOrientationBase : public UParticleModule
 {
-public:
 };

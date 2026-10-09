@@ -6,7 +6,6 @@ UCLASS()
 class UKismetArrayLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static int32 Array_Add(const TArray<int32>& TargetArray, const int32& NewItem);  // parameters 0x18
     UFUNCTION(BlueprintCallable) static int32 Array_AddUnique(const TArray<int32>& TargetArray, const int32& NewItem);  // parameters 0x18
     UFUNCTION(BlueprintCallable) static void Array_Append(const TArray<int32>& TargetArray, const TArray<int32>& SourceArray);  // parameters 0x20

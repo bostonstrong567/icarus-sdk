@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UBP_IcarusGOAPAction_FollowLeader_C : public UBP_IcarusGOAPAction_Base_C
 {
-public:
 };

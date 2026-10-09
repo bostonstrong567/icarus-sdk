@@ -4,5 +4,6 @@
 USTRUCT()
 struct FFMODLocalizedBankTable : public FTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere) UDataTable* Banks;  // 0x0008, size 0x8
 };

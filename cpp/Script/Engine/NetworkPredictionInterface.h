@@ -5,5 +5,4 @@
 UCLASS(Abstract, MinimalAPI)
 class UNetworkPredictionInterface : public UInterface
 {
-public:
 };

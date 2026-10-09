@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_OLY_Glacier_Construction_Oxite_C : public ABPQ_Deploy_Count_C
 {
-public:
 };

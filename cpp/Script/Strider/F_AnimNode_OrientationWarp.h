@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAnimNode_OrientationWarp : public FAnimNode_Base
 {
+public:
     UPROPERTY(EditAnywhere) FPoseLink InputPose;  // 0x0010, size 0x10
     UPROPERTY(EditAnywhere) float Direction;  // 0x0020, size 0x4
     UPROPERTY(EditAnywhere) float Offset;  // 0x0024, size 0x4
@@ -15,8 +16,7 @@ struct FAnimNode_OrientationWarp : public FAnimNode_Base
     UPROPERTY(EditAnywhere) FBoneReference RootBone;  // 0x0044, size 0x10
     UPROPERTY(EditAnywhere) FBoneChain SpineChain;  // 0x0058, size 0x20
     UPROPERTY(EditAnywhere) TArray<FBoneReference> RootBonesToCounterAdjust;  // 0x0078, size 0x10
-
-    // Not reflected:
-    float CurrentDirection;  // 0x0088
-    bool bValidCheckResult;  // 0x008C
+private:
+    float CurrentDirection;  // 0x0088, not reflected
+    bool bValidCheckResult;  // 0x008C, not reflected
 };

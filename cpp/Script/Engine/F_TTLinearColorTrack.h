@@ -4,5 +4,6 @@
 USTRUCT()
 struct FTTLinearColorTrack : public FTTPropertyTrack
 {
+public:
     UPROPERTY() UCurveLinearColor* CurveLinearColor;  // 0x0020, size 0x8
 };

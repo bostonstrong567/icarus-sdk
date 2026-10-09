@@ -5,5 +5,4 @@
 UCLASS(Transient, Config=Engine)
 class UIcarusGameEngine : public UGameEngine
 {
-public:
 };

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class AProp_LargeFlask_B_C : public ABP_DeployableBase_C
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_CollectionCount : public FRigUnit_CollectionBase
 {
+public:
     UPROPERTY() FRigElementKeyCollection Collection;  // 0x0008, size 0x10
     UPROPERTY() int32 Count;  // 0x0018, size 0x4
 };

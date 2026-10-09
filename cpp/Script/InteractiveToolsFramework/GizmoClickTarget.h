@@ -6,6 +6,5 @@ UCLASS(Abstract)
 class UGizmoClickTarget : public UInterface
 {
 public:
-
     UFUNCTION() void UpdateHoverState(bool bHovering) const;  // parameters 0x1
 };

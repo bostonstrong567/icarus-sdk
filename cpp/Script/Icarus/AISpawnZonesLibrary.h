@@ -6,7 +6,6 @@ UCLASS()
 class UAISpawnZonesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToAISpawnZonesTable(FName Name, FAISpawnZones Data, FAISpawnZonesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xC1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakAISpawnZonesEnum(FAISpawnZonesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FAISpawnZonesRowHandle CastToAISpawnZonesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

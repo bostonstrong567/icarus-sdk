@@ -8,7 +8,6 @@ class UNiagaraDataInterfaceGrid2DCollectionReader : public UNiagaraDataInterface
 public:
     UPROPERTY(EditAnywhere) FString EmitterName;  // 0x00F8, size 0x10
     UPROPERTY(EditAnywhere) FString DIName;  // 0x0108, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<unsigned __int64,FGrid2DCollectionReaderInstanceData_GameThread *,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<unsigned __int64,FGrid2DCollectionReaderInstanceData_GameThread *,0> > SystemInstancesToProxyData_GT;  // 0x0118, protected
+protected:
+    TMap<unsigned __int64,FGrid2DCollectionReaderInstanceData_GameThread *,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<unsigned __int64,FGrid2DCollectionReaderInstanceData_GameThread *,0> > SystemInstancesToProxyData_GT;  // 0x0118, not reflected
 };

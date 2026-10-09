@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class URecastFilter_UseDefaultArea : public UNavigationQueryFilter
 {
-public:
 };

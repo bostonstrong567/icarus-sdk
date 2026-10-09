@@ -5,6 +5,7 @@
 UCLASS()
 class UMovieSceneEvaluationHookSystem : public UMovieSceneEntitySystem
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() TMap<FMovieSceneEvaluationInstanceKey, FMovieSceneEvaluationHookEventContainer> PendingEventsByRootInstance;  // 0x0040, size 0x50
 };

@@ -5,9 +5,10 @@
 UCLASS(EditInlineNew, Config=Engine)
 class USphereComponent : public UShapeComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float SphereRadius;  // 0x0468, size 0x4
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetScaledSphereRadius() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetShapeScale() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetUnscaledSphereRadius() const;  // parameters 0x4

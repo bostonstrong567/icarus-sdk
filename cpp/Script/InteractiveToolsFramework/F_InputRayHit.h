@@ -4,12 +4,11 @@
 USTRUCT()
 struct FInputRayHit
 {
-
-    // Not reflected:
-    bool bHit;  // 0x0000
-    float HitDepth;  // 0x0004
-    FVector HitNormal;  // 0x0008
-    bool bHasHitNormal;  // 0x0014
-    int32 HitIdentifier;  // 0x0018
-    void * HitOwner;  // 0x0020
+public:
+    bool bHit;  // 0x0000, not reflected
+    float HitDepth;  // 0x0004, not reflected
+    FVector HitNormal;  // 0x0008, not reflected
+    bool bHasHitNormal;  // 0x0014, not reflected
+    int32 HitIdentifier;  // 0x0018, not reflected
+    void * HitOwner;  // 0x0020, not reflected
 };

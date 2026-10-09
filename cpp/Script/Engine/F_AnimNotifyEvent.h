@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAnimNotifyEvent : public FAnimLinkableElement
 {
+public:
     UPROPERTY(Deprecated) float DisplayTime;  // 0x0030, size 0x4
     UPROPERTY() float TriggerTimeOffset;  // 0x0034, size 0x4
     UPROPERTY() float EndTriggerTimeOffset;  // 0x0038, size 0x4
@@ -21,8 +22,7 @@ struct FAnimNotifyEvent : public FAnimLinkableElement
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bTriggerOnDedicatedServer;  // 0x00A0, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bTriggerOnFollower;  // 0x00A1, size 0x1
     UPROPERTY() int32 TrackIndex;  // 0x00A4, size 0x4
-
-    // Not reflected:
-    FName CachedNotifyEventName;  // 0x00A8
-    FName CachedNotifyEventBaseName;  // 0x00B0
+private:
+    FName CachedNotifyEventName;  // 0x00A8, not reflected
+    FName CachedNotifyEventBaseName;  // 0x00B0, not reflected
 };

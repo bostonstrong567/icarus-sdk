@@ -5,5 +5,4 @@
 UCLASS(Config=Game)
 class ABP_NPC_Slug_Swamp_Character_Enzyme_C : public ABP_NPC_Slug_Swamp_Character_C
 {
-public:
 };

@@ -6,6 +6,7 @@ UCLASS()
 class USubstanceGraphInstance : public UObject
 {
 public:
+    std::shared_ptr<SubstanceAir::GraphInstance> Instance;  // 0x0028, not reflected
     UPROPERTY() FString PackageURL;  // 0x0038, size 0x10
     UPROPERTY() USubstanceInstanceFactory* ParentFactory;  // 0x0048, size 0x8
     UPROPERTY() TMap<uint32, UTexture2D*> ImageSources;  // 0x0050, size 0x50
@@ -15,11 +16,8 @@ public:
     UPROPERTY() TMap<int32, FGuid> OutputTextureLinkData;  // 0x00B8, size 0x50
     UPROPERTY() TMap<uint32, USubstanceOutputData*> OutputInstances;  // 0x0108, size 0x50
     UPROPERTY(BlueprintReadOnly) bool bIsFrozen;  // 0x0158, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    std::shared_ptr<SubstanceAir::GraphInstance> Instance;  // 0x0028
-    GraphInstanceData mUserData;  // 0x015C
-    TSharedPtr<SubstanceAir::Preset,0> InstancePreset;  // 0x0168
+    GraphInstanceData mUserData;  // 0x015C, not reflected
+    TSharedPtr<SubstanceAir::Preset,0> InstancePreset;  // 0x0168, not reflected
 
     UFUNCTION(BlueprintCallable) void CreateMaterial(FString PackageName, UMaterial* ParentMaterial);  // parameters 0x18
     UFUNCTION(BlueprintCallable) void CreateOutputs();

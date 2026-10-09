@@ -5,5 +5,4 @@
 UCLASS(Transient, Config=Engine)
 class USK_CRE_Wolf_Juvenile_AnimBP_C : public USK_Wolf_AnimBP_C
 {
-public:
 };

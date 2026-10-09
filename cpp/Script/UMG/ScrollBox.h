@@ -25,11 +25,10 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bAllowRightClickDragScrolling;  // 0x0851, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float WheelScrollMultiplier;  // 0x0854, size 0x4
     UPROPERTY(BlueprintAssignable) FOnUserScrolledEvent OnUserScrolled;  // 0x0858, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    float DesiredScrollOffset;  // 0x0868, protected
-    TSharedPtr<SScrollBox,0> MyScrollBox;  // 0x0870, protected
-
+protected:
+    float DesiredScrollOffset;  // 0x0868, not reflected
+    TSharedPtr<SScrollBox,0> MyScrollBox;  // 0x0870, not reflected
+public:
     UFUNCTION(BlueprintCallable) void EndInertialScrolling();
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetScrollOffset() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetScrollOffsetOfEnd() const;  // parameters 0x4

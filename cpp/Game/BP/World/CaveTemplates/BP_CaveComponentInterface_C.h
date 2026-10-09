@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UBP_CaveComponentInterface_C : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable) void SetCaveState(bool IsInCave, AActor* CaveActor);  // parameters 0x10
 };

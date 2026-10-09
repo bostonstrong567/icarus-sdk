@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Makeshift_Beacon_C : public ABP_DeployableBase_C
 {
-public:
 };

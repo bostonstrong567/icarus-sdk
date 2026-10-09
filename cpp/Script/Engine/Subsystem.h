@@ -5,10 +5,8 @@
 UCLASS(Abstract)
 class USubsystem : public UObject
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    FSubsystemCollectionBase * InternalOwningSubsystem;  // 0x0028, private
+private:
+    FSubsystemCollectionBase * InternalOwningSubsystem;  // 0x0028, not reflected
 
     // Virtual functions that start here:
     //   Deinitialize, Initialize, ShouldCreateSubsystem

@@ -6,7 +6,6 @@ UCLASS()
 class UToolDamageLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToToolDamageTable(FName Name, FToolDamage Data, FToolDamageRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x61
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakToolDamageEnum(FToolDamageEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FToolDamageRowHandle CastToToolDamageRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_SQ_Farmer_Setup_Collect_Aluminium_C : public ABPQ_Common_Deliver_C
 {
-public:
 };

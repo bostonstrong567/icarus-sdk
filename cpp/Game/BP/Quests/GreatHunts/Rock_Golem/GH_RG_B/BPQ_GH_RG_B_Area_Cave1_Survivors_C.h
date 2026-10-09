@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_RG_B_Area_Cave1_Survivors_C : public ABPQ_Collect_Note_C
 {
-public:
 };

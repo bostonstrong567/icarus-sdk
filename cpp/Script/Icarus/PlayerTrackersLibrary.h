@@ -6,7 +6,6 @@ UCLASS()
 class UPlayerTrackersLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToPlayerTrackersTable(FName Name, FPlayerTracker Data, FPlayerTrackersRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xA1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakPlayerTrackersEnum(FPlayerTrackersEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FPlayerTrackersRowHandle CastToPlayerTrackersRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

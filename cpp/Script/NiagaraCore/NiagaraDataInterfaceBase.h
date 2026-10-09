@@ -5,7 +5,6 @@
 UCLASS(Abstract, EditInlineNew)
 class UNiagaraDataInterfaceBase : public UNiagaraMergeable
 {
-public:
 
     // Virtual functions that start here:
     //   BindParameters, CreateComputeParameters, GetComputeParametersTypeDesc, HasInternalAttributeReads

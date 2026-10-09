@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UMaterialExpressionTwoSidedSign : public UMaterialExpression
 {
-public:
 };

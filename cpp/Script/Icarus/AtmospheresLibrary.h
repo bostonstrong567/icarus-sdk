@@ -6,7 +6,6 @@ UCLASS()
 class UAtmospheresLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToAtmospheresTable(FName Name, FIcarusAtmosphere Data, FAtmospheresRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x169
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakAtmospheresEnum(FAtmospheresEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FAtmospheresRowHandle CastToAtmospheresRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

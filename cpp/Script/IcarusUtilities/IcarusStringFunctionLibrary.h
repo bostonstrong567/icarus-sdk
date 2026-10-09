@@ -6,7 +6,6 @@ UCLASS()
 class UIcarusStringFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool FastLess_Name(const FName& NameA, const FName& NameB);  // parameters 0x11
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool LexicalLess_Name(const FName& NameA, const FName& NameB);  // parameters 0x11
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool LexicalLess_String(FString StringA, FString StringB);  // parameters 0x21

@@ -4,5 +4,6 @@
 USTRUCT()
 struct FLoadoutRecords
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FPlayerLoadoutData> Loadouts;  // 0x0000, size 0x10
 };

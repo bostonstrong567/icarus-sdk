@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_SetMultiControlVector2D : public FRigUnitMutable
 {
+public:
     UPROPERTY() TArray<FRigUnit_SetMultiControlVector2D_Entry> Entries;  // 0x0068, size 0x10
     UPROPERTY() float Weight;  // 0x0078, size 0x4
     UPROPERTY() TArray<FCachedRigElement> CachedControlIndices;  // 0x0080, size 0x10

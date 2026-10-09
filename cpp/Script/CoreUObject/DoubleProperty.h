@@ -5,5 +5,4 @@
 UCLASS()
 class UDoubleProperty : public UNumericProperty
 {
-public:
 };

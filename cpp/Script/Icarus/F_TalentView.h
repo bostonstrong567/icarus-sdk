@@ -4,6 +4,7 @@
 USTRUCT()
 struct FTalentView : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<UTalentViewInterface> ViewClass;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<UTalentWidget> TalentClass;  // 0x0040, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<UTalentTooltipWidget> TooltipClass;  // 0x0068, size 0x28

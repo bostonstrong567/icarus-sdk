@@ -8,9 +8,8 @@ class UUpdateCosmeticsCallbackProxyGen : public UOnlineBlueprintCallProxyBase
 public:
     UPROPERTY(BlueprintAssignable) FOnUpdateCosmeticsEventSignature OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FOnUpdateCosmeticsEventSignature OnFail;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FReqUpdateCosmetics ReqUpdateCosmetics;  // 0x0050, private
-
+private:
+    FReqUpdateCosmetics ReqUpdateCosmetics;  // 0x0050, not reflected
+public:
     UFUNCTION(BlueprintCallable) static UUpdateCosmeticsCallbackProxyGen* UpdateCosmetics(const FReqUpdateCosmetics& Request);  // parameters 0xA0
 };

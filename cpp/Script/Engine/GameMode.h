@@ -5,8 +5,8 @@
 UCLASS(Transient, NotPlaceable, Config=Game)
 class AGameMode : public AGameModeBase
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
-    UPROPERTY(Transient) FName MatchState;  // 0x02C0, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bDelayedStart : 1;  // 0x02C8, mask 0x01
     UPROPERTY(BlueprintReadOnly) int32 NumSpectators;  // 0x02CC, size 0x4
     UPROPERTY(BlueprintReadOnly) int32 NumPlayers;  // 0x02D0, size 0x4
@@ -15,10 +15,12 @@ public:
     UPROPERTY(BlueprintReadOnly) int32 NumTravellingPlayers;  // 0x02DC, size 0x4
     UPROPERTY() TSubclassOf<ULocalMessage> EngineMessageClass;  // 0x02E0, size 0x8
     UPROPERTY() TArray<APlayerState*> InactivePlayerArray;  // 0x02E8, size 0x10
+protected:
+    UPROPERTY(Transient) FName MatchState;  // 0x02C0, size 0x8
     UPROPERTY(EditAnywhere) float InactivePlayerStateLifeSpan;  // 0x02F8, size 0x4
     UPROPERTY(EditAnywhere) int32 MaxInactivePlayers;  // 0x02FC, size 0x4
     UPROPERTY(Config) bool bHandleDedicatedServerReplays;  // 0x0300, size 0x1
-
+public:
     UFUNCTION(BlueprintCallable) void AbortMatch();
     UFUNCTION(BlueprintCallable) void EndMatch();
     UFUNCTION(BlueprintCallable, BlueprintPure) FName GetMatchState() const;  // parameters 0x8

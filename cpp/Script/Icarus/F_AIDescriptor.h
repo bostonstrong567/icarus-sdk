@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAIDescriptor : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FGameplayTagContainer Tags;  // 0x0018, size 0x20
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FStatsEnum> DescriptorStats;  // 0x0038, size 0x10
 };

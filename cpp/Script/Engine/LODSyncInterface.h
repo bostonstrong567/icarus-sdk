@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class ULODSyncInterface : public UInterface
 {
-public:
 };

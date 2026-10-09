@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class UAISightTargetInterface : public UInterface
 {
-public:
 };

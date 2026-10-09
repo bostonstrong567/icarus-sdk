@@ -5,12 +5,14 @@
 UCLASS(Config=Engine)
 class ACameraRig_Rail : public AActor
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, Interp, BlueprintReadWrite) float CurrentPositionOnRail;  // 0x0220, size 0x4
     UPROPERTY(EditAnywhere, Interp, BlueprintReadWrite) bool bLockOrientationToRail;  // 0x0224, size 0x1
+private:
     UPROPERTY(EditAnywhere, Instanced) USceneComponent* TransformComponent;  // 0x0228, size 0x8
     UPROPERTY(EditAnywhere, Instanced) USplineComponent* RailSplineComponent;  // 0x0230, size 0x8
     UPROPERTY(EditAnywhere, Instanced) USceneComponent* RailCameraMount;  // 0x0238, size 0x8
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) USplineComponent* GetRailSplineComponent();  // parameters 0x8
 };

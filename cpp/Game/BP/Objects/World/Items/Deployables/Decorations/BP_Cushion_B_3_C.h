@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Cushion_B_3_C : public ABP_DeployableBase_C
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFLODTileRecorderRecord
 {
+public:
     UPROPERTY(SaveGame) FName TileName;  // 0x0000, size 0x8
     UPROPERTY(SaveGame) FTransform Transform;  // 0x0010, size 0x30
     UPROPERTY(SaveGame) float RelevancyRadius;  // 0x0040, size 0x4

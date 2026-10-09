@@ -4,5 +4,6 @@
 USTRUCT()
 struct FTrackToSkeletonMap
 {
+public:
     UPROPERTY() int32 BoneTreeIndex;  // 0x0000, size 0x4
 };

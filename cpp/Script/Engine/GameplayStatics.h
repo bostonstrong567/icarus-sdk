@@ -6,7 +6,6 @@ UCLASS()
 class UGameplayStatics : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void ActivateReverbEffect(UObject* WorldContextObject, UReverbEffect* ReverbEffect, FName TagName, float Priority, float Volume, float FadeTime);  // parameters 0x24
     UFUNCTION(BlueprintCallable) static void AnnounceAccessibleString(FString AnnouncementString);  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) static float ApplyDamage(AActor* DamagedActor, float BaseDamage, AController* EventInstigator, AActor* DamageCauser, TSubclassOf<UDamageType> DamageTypeClass);  // parameters 0x2C

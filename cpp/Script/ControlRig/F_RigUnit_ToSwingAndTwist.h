@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_ToSwingAndTwist : public FRigUnit
 {
+public:
     UPROPERTY() FQuat Input;  // 0x0010, size 0x10
     UPROPERTY() FVector TwistAxis;  // 0x0020, size 0xC
     UPROPERTY() FQuat Swing;  // 0x0030, size 0x10

@@ -6,7 +6,6 @@ UCLASS()
 class UHealthSnapshotBlueprintLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(Exec, BlueprintCallable) static void LogPerformanceSnapshot(FString SnapshotTitle, bool bResetStats);  // parameters 0x11
     UFUNCTION(Exec, BlueprintCallable) static void StartPerformanceSnapshots();
     UFUNCTION(Exec, BlueprintCallable) static void StopPerformanceSnapshots();

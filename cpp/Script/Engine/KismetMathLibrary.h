@@ -6,7 +6,6 @@ UCLASS()
 class UKismetMathLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static float Abs(float A);  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) static int32 Abs_Int(int32 A);  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) static int64 Abs_Int64(int64 A);  // parameters 0x10

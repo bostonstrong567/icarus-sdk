@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABPQ_GH_Ape_B_Research_Capture_Find_C : public ABPQ_Travel_Medium_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool Check();  // parameters 0x1
 };

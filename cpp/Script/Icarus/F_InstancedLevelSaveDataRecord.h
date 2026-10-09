@@ -4,6 +4,7 @@
 USTRUCT()
 struct FInstancedLevelSaveDataRecord
 {
+public:
     UPROPERTY(SaveGame) int32 SelectedSlot;  // 0x0000, size 0x4
     UPROPERTY(SaveGame) FVector LoadedLocation;  // 0x0004, size 0xC
     UPROPERTY(SaveGame) FString UniqueLevelName;  // 0x0010, size 0x10

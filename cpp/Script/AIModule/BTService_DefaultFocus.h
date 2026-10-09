@@ -5,6 +5,7 @@
 UCLASS()
 class UBTService_DefaultFocus : public UBTService_BlackboardBase
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY() uint8 FocusPriority;  // 0x0098, size 0x1
 };

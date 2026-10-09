@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class AELY_SQ_Igloo_Setup_Food_C : public ABPQ_Common_Craft_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) void DeviceCheck(AActor* Device, bool& Success);  // parameters 0x9
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void GetDescription(const FText& InDescription, FText& OutDescription, bool& bOutComplete);  // parameters 0x31
 };

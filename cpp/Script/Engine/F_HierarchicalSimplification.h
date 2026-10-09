@@ -4,6 +4,7 @@
 USTRUCT()
 struct FHierarchicalSimplification
 {
+public:
     UPROPERTY(EditAnywhere) float TransitionScreenSize;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere) float OverrideDrawDistance;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere) uint8 bUseOverrideDrawDistance : 1;  // 0x0008, mask 0x01

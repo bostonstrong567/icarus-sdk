@@ -4,5 +4,6 @@
 USTRUCT()
 struct FAIDataProviderIntValue : public FAIDataProviderTypedValue
 {
+public:
     UPROPERTY(EditAnywhere) int32 DefaultValue;  // 0x0030, size 0x4
 };

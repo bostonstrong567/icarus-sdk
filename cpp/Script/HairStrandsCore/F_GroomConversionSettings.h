@@ -4,6 +4,7 @@
 USTRUCT()
 struct FGroomConversionSettings
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector Rotation;  // 0x0000, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector Scale;  // 0x000C, size 0xC
 };

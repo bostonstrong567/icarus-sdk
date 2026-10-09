@@ -4,5 +4,6 @@
 USTRUCT()
 struct FSerializedPlayerLoadout
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FItemData> SerializedItemData;  // 0x0000, size 0x10
 };

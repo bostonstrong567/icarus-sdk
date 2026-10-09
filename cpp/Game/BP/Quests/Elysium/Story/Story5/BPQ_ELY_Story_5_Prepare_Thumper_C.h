@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_ELY_Story_5_Prepare_Thumper_C : public ABPQ_Collect_Item_C
 {
-public:
 };

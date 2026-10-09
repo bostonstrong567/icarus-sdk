@@ -6,7 +6,6 @@ UCLASS()
 class UTransmutableLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToTransmutableTable(FName Name, FTransmutableData Data, FTransmutableRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x71
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakTransmutableEnum(FTransmutableEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FTransmutableRowHandle CastToTransmutableRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

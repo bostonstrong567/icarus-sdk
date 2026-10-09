@@ -6,7 +6,6 @@ UCLASS()
 class UBTFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void ClearBlackboardValue(UBTNode* NodeOwner, const FBlackboardKeySelector& Key);  // parameters 0x30
     UFUNCTION(BlueprintCallable) static void ClearBlackboardValueAsVector(UBTNode* NodeOwner, const FBlackboardKeySelector& Key);  // parameters 0x30
     UFUNCTION(BlueprintCallable, BlueprintPure) static AActor* GetBlackboardValueAsActor(UBTNode* NodeOwner, const FBlackboardKeySelector& Key);  // parameters 0x38

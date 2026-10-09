@@ -5,5 +5,4 @@
 UCLASS()
 class UWorkshopItemsTable : public UIcarusDataTable
 {
-public:
 };

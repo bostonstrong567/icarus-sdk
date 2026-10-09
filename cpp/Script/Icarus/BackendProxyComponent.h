@@ -28,6 +28,8 @@ public:
     UPROPERTY(BlueprintAssignable) FTrackedStatisticsUpdateResult TrackedStatisticsUpdateResult;  // 0x00C3, size 0x1
     UPROPERTY(BlueprintAssignable) FFactionMissionUpdateResult FactionMissionUpdateResult;  // 0x00C4, size 0x1
     UPROPERTY(BlueprintAssignable) FBackToHabResult BackToHabResult;  // 0x00C5, size 0x1
+    int32 BacktoHabRetryAttempts;  // 0x00C8, not reflected
+    FReqBackToHab RequestBackToHab;  // 0x00D0, not reflected
     UPROPERTY(BlueprintAssignable) FGetCharacterProfileResult GetCharacterProfileResult;  // 0x0118, size 0x1
     UPROPERTY(BlueprintAssignable) FGetUserProfileResult GetUserProfileResult;  // 0x0119, size 0x1
     UPROPERTY(BlueprintAssignable) FPackageLoadoutResult PackageLoadoutResult;  // 0x011A, size 0x1
@@ -96,10 +98,6 @@ public:
     UPROPERTY(Replicated, ReplicatedUsing, BlueprintReadOnly) TArray<FProspectInfo> Prospects;  // 0x0490, size 0x10
     UPROPERTY(Replicated, ReplicatedUsing, BlueprintReadOnly) TArray<FNotification> Notifications;  // 0x04A0, size 0x10
     UPROPERTY() FPendingInventorySwap PendingInventorySwap;  // 0x04B0, size 0x20
-
-    // Not reflected: the engine's scripting cannot see these.
-    int32 BacktoHabRetryAttempts;  // 0x00C8
-    FReqBackToHab RequestBackToHab;  // 0x00D0
 
     UFUNCTION(BlueprintCallable) bool CanPerformCurrencyConversion(FCurrencyConversionsRowHandle Conversion, int32 Iterations);  // parameters 0x1D
     UFUNCTION(Client, Reliable, BlueprintNativeEvent) void Client_Request_AvailableProspects();

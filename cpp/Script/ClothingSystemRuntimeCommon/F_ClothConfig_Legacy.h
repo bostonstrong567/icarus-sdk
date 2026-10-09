@@ -4,6 +4,7 @@
 USTRUCT()
 struct FClothConfig_Legacy
 {
+public:
     UPROPERTY() EClothingWindMethod_Legacy WindMethod;  // 0x0000, size 0x1
     UPROPERTY() FClothConstraintSetup_Legacy VerticalConstraintConfig;  // 0x0004, size 0x10
     UPROPERTY() FClothConstraintSetup_Legacy HorizontalConstraintConfig;  // 0x0014, size 0x10

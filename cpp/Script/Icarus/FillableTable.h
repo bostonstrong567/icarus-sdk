@@ -5,5 +5,4 @@
 UCLASS()
 class UFillableTable : public UIcarusDataTable
 {
-public:
 };

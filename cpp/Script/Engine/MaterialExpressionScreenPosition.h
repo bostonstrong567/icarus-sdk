@@ -5,5 +5,4 @@
 UCLASS()
 class UMaterialExpressionScreenPosition : public UMaterialExpression
 {
-public:
 };

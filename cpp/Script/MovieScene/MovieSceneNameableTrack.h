@@ -5,5 +5,4 @@
 UCLASS(Abstract, MinimalAPI)
 class UMovieSceneNameableTrack : public UMovieSceneTrack
 {
-public:
 };

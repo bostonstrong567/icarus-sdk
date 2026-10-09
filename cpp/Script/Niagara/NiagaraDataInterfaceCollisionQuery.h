@@ -6,8 +6,7 @@ UCLASS(EditInlineNew)
 class UNiagaraDataInterfaceCollisionQuery : public UNiagaraDataInterface
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    FNiagaraSystemInstance * SystemInstance;  // 0x0038
-    UEnum * TraceChannelEnum;  // 0x0040, private
+    FNiagaraSystemInstance * SystemInstance;  // 0x0038, not reflected
+private:
+    UEnum * TraceChannelEnum;  // 0x0040, not reflected
 };

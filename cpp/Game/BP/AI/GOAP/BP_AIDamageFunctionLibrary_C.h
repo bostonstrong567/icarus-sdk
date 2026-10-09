@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UBP_AIDamageFunctionLibrary_C : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void CalcLaunchAmount(FVector Dir, AActor* SelfNPC, AActor* TargetActor, UObject* __WorldContext, FVector& OutForce);  // parameters 0x34
     UFUNCTION(BlueprintCallable, BlueprintPure) static void CanActorBeKnockedBack(AActor* Target, UObject* __WorldContext, bool& CanBeKnockedBack);  // parameters 0x11
     UFUNCTION(BlueprintCallable) static void LaunchAttackTarget(AActor* SelfNPC, AActor* TargetActor, bool IncludeSelf, FVector OverrideLaunchDirection, UObject* __WorldContext);  // parameters 0x28

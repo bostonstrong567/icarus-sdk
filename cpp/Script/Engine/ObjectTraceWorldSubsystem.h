@@ -6,7 +6,5 @@ UCLASS()
 class UObjectTraceWorldSubsystem : public UWorldSubsystem
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint16 FrameIndex;  // 0x0030
+    uint16 FrameIndex;  // 0x0030, not reflected
 };

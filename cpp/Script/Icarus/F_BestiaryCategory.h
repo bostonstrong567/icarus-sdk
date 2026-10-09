@@ -4,5 +4,6 @@
 USTRUCT()
 struct FBestiaryCategory
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<FAtmospheresRowHandle, FBestiaryBiome> Biomes;  // 0x0000, size 0x50
 };

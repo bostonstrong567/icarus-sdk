@@ -6,7 +6,6 @@ UCLASS(MinimalAPI)
 class UIcarusFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static int32 AddFireModifierState(AActor* Parent, AActor* Causer, AController* Instigator);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static int32 AddModifierState(AActor* Parent, FModifier InModifier, AActor* Causer, AController* Instigator, int32 Effectiveness);  // parameters 0x40
     UFUNCTION(BlueprintCallable) static void AddTraitComponent(AActor* Owner, TSubclassOf<UTraitComponent> TraitComponentClass, FRowHandle TraitData, UTraitComponent*& OutComponent);  // parameters 0x30

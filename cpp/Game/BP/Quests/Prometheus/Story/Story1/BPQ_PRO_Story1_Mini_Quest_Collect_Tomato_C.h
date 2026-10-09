@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_PRO_Story1_Mini_Quest_Collect_Tomato_C : public ABPQ_Collect_Item_C
 {
-public:
 };

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Food_Trough_Metal_C : public ABP_Food_Trough_C
 {
-public:
 };

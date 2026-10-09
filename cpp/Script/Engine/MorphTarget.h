@@ -7,7 +7,5 @@ class UMorphTarget : public UObject
 {
 public:
     UPROPERTY() USkeletalMesh* BaseSkelMesh;  // 0x0028, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<FMorphTargetLODModel,TSizedDefaultAllocator<32> > MorphLODModels;  // 0x0030
+    TArray<FMorphTargetLODModel,TSizedDefaultAllocator<32> > MorphLODModels;  // 0x0030, not reflected
 };

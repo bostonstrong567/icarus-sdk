@@ -4,6 +4,7 @@
 USTRUCT()
 struct FChannelMapInfo
 {
+public:
     UPROPERTY() int32 ControlIndex;  // 0x0000, size 0x4
     UPROPERTY() int32 TotalChannelIndex;  // 0x0004, size 0x4
     UPROPERTY() int32 ChannelIndex;  // 0x0008, size 0x4

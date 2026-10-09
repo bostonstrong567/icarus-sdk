@@ -4,6 +4,7 @@
 USTRUCT()
 struct FTalentModelData
 {
+public:
     UPROPERTY() ETalentState State;  // 0x0000, size 0x1
     UPROPERTY() int32 Rank;  // 0x0004, size 0x4
     UPROPERTY() int32 MaxRank;  // 0x0008, size 0x4

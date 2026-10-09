@@ -4,6 +4,7 @@
 USTRUCT()
 struct FInteractData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<UInteractableBehaviour> Behaviour;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EAuthorityType AuthorityType;  // 0x0040, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float InteractCooldown;  // 0x0044, size 0x4

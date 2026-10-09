@@ -5,7 +5,8 @@
 UCLASS(Config=Engine)
 class UIcarusJuvenileRecorderComponent : public UIcarusNPCRecorderComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, SaveGame) ETamedState TamedState;  // 0x01E0, size 0x1
     UPROPERTY(EditAnywhere, SaveGame) float TamingProgress;  // 0x01E4, size 0x4
     UPROPERTY(EditAnywhere, SaveGame) FName TamesRowName;  // 0x01E8, size 0x8

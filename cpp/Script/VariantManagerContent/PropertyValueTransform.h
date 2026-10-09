@@ -5,5 +5,4 @@
 UCLASS()
 class UPropertyValueTransform : public UPropertyValue
 {
-public:
 };

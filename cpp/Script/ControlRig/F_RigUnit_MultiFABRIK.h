@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_MultiFABRIK : public FRigUnit_HighlevelBaseMutable
 {
+public:
     UPROPERTY() FName RootBone;  // 0x0068, size 0x8
     UPROPERTY() TArray<FRigUnit_MultiFABRIK_EndEffector> Effectors;  // 0x0070, size 0x10
     UPROPERTY() float Precision;  // 0x0080, size 0x4

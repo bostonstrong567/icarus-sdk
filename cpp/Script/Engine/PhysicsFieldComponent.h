@@ -6,10 +6,8 @@ UCLASS(Config=Engine)
 class UPhysicsFieldComponent : public USceneComponent
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<FFieldSystemCommand,TSizedDefaultAllocator<32> >[3] TransientCommands;  // 0x01F8
-    TArray<FFieldSystemCommand,TSizedDefaultAllocator<32> >[3] PersistentCommands;  // 0x0228
-    FPhysicsFieldInstance * FieldInstance;  // 0x0258
-    FPhysicsFieldSceneProxy * FieldProxy;  // 0x0260
+    TArray<FFieldSystemCommand,TSizedDefaultAllocator<32> >[3] TransientCommands;  // 0x01F8, not reflected
+    TArray<FFieldSystemCommand,TSizedDefaultAllocator<32> >[3] PersistentCommands;  // 0x0228, not reflected
+    FPhysicsFieldInstance * FieldInstance;  // 0x0258, not reflected
+    FPhysicsFieldSceneProxy * FieldProxy;  // 0x0260, not reflected
 };

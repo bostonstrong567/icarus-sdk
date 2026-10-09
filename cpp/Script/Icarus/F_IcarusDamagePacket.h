@@ -4,6 +4,7 @@
 USTRUCT()
 struct FIcarusDamagePacket
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FDamageEvent DamageEvent;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 TotalDamage;  // 0x0010, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 AppliedDamage;  // 0x0014, size 0x4

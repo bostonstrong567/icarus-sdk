@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Rock_Golem_Chair_C : public ABP_ChairBase_C
 {
-public:
 };

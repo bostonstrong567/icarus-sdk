@@ -6,7 +6,6 @@ UCLASS()
 class UChallengesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToChallengesTable(FName Name, FChallenge Data, FChallengesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x91
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakChallengesEnum(FChallengesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FChallengesRowHandle CastToChallengesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

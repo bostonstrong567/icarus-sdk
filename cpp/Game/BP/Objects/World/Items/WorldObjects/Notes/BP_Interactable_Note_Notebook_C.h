@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Interactable_Note_Notebook_C : public ABP_Interactable_Note_Base_C
 {
-public:
 };

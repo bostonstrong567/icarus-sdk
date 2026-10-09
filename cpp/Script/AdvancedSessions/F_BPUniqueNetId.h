@@ -4,9 +4,9 @@
 USTRUCT()
 struct FBPUniqueNetId
 {
-
-    // Not reflected:
-    bool bUseDirectPointer;  // 0x0000
-    TSharedPtr<FUniqueNetId const ,0> UniqueNetId;  // 0x0008
-    const FUniqueNetId * UniqueNetIdPtr;  // 0x0018
+public:
+    TSharedPtr<FUniqueNetId const ,0> UniqueNetId;  // 0x0008, not reflected
+    const FUniqueNetId * UniqueNetIdPtr;  // 0x0018, not reflected
+private:
+    bool bUseDirectPointer;  // 0x0000, not reflected
 };

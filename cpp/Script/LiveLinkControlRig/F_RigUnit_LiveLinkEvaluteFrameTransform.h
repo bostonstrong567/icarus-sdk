@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_LiveLinkEvaluteFrameTransform : public FRigUnit_LiveLinkBase
 {
+public:
     UPROPERTY() FName SubjectName;  // 0x0008, size 0x8
     UPROPERTY() bool bDrawDebug;  // 0x0010, size 0x1
     UPROPERTY() FLinearColor DebugColor;  // 0x0014, size 0x10

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FPaintingData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UTexture2D> SmallPaintingImage;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UTexture2D> LargePaintingImage;  // 0x0040, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bIsMonitor;  // 0x0068, size 0x1

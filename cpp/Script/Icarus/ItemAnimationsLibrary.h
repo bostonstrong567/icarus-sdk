@@ -6,7 +6,6 @@ UCLASS()
 class UItemAnimationsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToItemAnimationsTable(FName Name, FItemAnimationData Data, FItemAnimationsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x381
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakItemAnimationsEnum(FItemAnimationsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FItemAnimationsRowHandle CastToItemAnimationsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

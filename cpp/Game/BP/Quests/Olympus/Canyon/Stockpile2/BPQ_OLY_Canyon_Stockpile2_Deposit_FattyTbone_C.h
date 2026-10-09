@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_OLY_Canyon_Stockpile2_Deposit_FattyTbone_C : public ABPQ_Stockpile_Deposit_Item_C
 {
-public:
 };

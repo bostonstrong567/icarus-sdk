@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_DYN_Lost_Mark_C : public ABPQ_Deploy_Count_C
 {
-public:
 };

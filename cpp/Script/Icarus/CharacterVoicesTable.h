@@ -5,5 +5,4 @@
 UCLASS()
 class UCharacterVoicesTable : public UIcarusDataTable
 {
-public:
 };

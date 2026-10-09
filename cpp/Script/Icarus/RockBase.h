@@ -15,11 +15,10 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FExperienceEventsRowHandle ExperienceEventRow;  // 0x0300, size 0x18
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) TArray<bool> BreakArray;  // 0x0318, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<UStaticMeshComponent*> MeshArray;  // 0x0328, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bHasBeenDamaged;  // 0x0338, protected
-    FIcarusDamagePacket LastDamagePacket;  // 0x0340, protected
-
+protected:
+    bool bHasBeenDamaged;  // 0x0338, not reflected
+    FIcarusDamagePacket LastDamagePacket;  // 0x0340, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) int32 CalculateBreakCount() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) int32 GetBreakCount() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) bool HasInitialized() const;  // parameters 0x1

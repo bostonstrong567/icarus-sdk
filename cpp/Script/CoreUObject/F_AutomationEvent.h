@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAutomationEvent
 {
+public:
     UPROPERTY() EAutomationEventType Type;  // 0x0000, size 0x1
     UPROPERTY() FString Message;  // 0x0008, size 0x10
     UPROPERTY() FString Context;  // 0x0018, size 0x10

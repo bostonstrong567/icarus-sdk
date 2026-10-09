@@ -5,7 +5,8 @@
 UCLASS()
 class URichTextBlock : public UTextLayoutWidget
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere) FText Text;  // 0x0128, size 0x18
     UPROPERTY(EditAnywhere) UDataTable* TextStyleSet;  // 0x0140, size 0x8
     UPROPERTY(EditAnywhere) TArray<TSubclassOf<URichTextBlockDecorator>> DecoratorClasses;  // 0x0148, size 0x10
@@ -15,11 +16,9 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) ETextTransformPolicy TextTransformPolicy;  // 0x03D4, size 0x1
     UPROPERTY(Transient) FTextBlockStyle DefaultTextStyle;  // 0x03D8, size 0x270
     UPROPERTY(Transient) TArray<URichTextBlockDecorator*> InstanceDecorators;  // 0x0648, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<FSlateStyleSet,0> StyleInstance;  // 0x0658, protected
-    TSharedPtr<SRichTextBlock,0> MyRichTextBlock;  // 0x0668, protected
-
+    TSharedPtr<FSlateStyleSet,0> StyleInstance;  // 0x0658, not reflected
+    TSharedPtr<SRichTextBlock,0> MyRichTextBlock;  // 0x0668, not reflected
+public:
     UFUNCTION() void ClearAllDefaultStyleOverrides();
     UFUNCTION(BlueprintCallable) URichTextBlockDecorator* GetDecoratorByClass(TSubclassOf<URichTextBlockDecorator> DecoratorClass);  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) FText GetText() const;  // parameters 0x18

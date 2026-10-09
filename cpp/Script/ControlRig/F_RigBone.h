@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigBone : public FRigElement
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FName ParentName;  // 0x0018, size 0x8
     UPROPERTY(Transient) int32 ParentIndex;  // 0x0020, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FTransform InitialTransform;  // 0x0030, size 0x30

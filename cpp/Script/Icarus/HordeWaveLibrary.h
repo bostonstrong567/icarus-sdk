@@ -6,7 +6,6 @@ UCLASS()
 class UHordeWaveLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToHordeWaveTable(FName Name, FHordeWave Data, FHordeWaveRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x49
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakHordeWaveEnum(FHordeWaveEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FHordeWaveRowHandle CastToHordeWaveRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

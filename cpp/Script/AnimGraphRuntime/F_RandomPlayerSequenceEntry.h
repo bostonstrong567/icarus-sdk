@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRandomPlayerSequenceEntry
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UAnimSequence* Sequence;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float ChanceToPlay;  // 0x0008, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 MinLoopCount;  // 0x000C, size 0x4

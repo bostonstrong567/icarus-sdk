@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSubTrackGroup
 {
+public:
     UPROPERTY() FString GroupName;  // 0x0000, size 0x10
     UPROPERTY() TArray<int32> TrackIndices;  // 0x0010, size 0x10
     UPROPERTY() uint8 bIsCollapsed : 1;  // 0x0020, mask 0x01

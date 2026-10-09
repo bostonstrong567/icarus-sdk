@@ -5,5 +5,4 @@
 UCLASS(Abstract, MinimalAPI)
 class URVOAvoidanceInterface : public UInterface
 {
-public:
 };

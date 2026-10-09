@@ -6,6 +6,5 @@ UCLASS()
 class UVirtualStatFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static bool IsVirtualStat(FStatsEnum Stat);  // parameters 0x11
 };

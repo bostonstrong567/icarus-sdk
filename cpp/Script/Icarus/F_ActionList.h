@@ -4,6 +4,7 @@
 USTRUCT()
 struct FActionList
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<EActionableEventType, FStaminaActionCostsRowHandle> InputTypes;  // 0x0000, size 0x50
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FModifierStatesRowHandle ModifierState;  // 0x0050, size 0x18
 };

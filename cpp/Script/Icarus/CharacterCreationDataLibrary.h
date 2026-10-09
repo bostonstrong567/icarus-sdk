@@ -6,7 +6,6 @@ UCLASS()
 class UCharacterCreationDataLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToCharacterCreationDataTable(FName Name, FCharacterCreationData Data, FCharacterCreationDataRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x161
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakCharacterCreationDataEnum(FCharacterCreationDataEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FCharacterCreationDataRowHandle CastToCharacterCreationDataRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

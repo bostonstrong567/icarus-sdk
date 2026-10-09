@@ -4,7 +4,6 @@
 USTRUCT()
 struct FRigVMJumpOp : public FRigVMBaseOp
 {
-
-    // Not reflected:
-    int32 InstructionIndex;  // 0x0004
+public:
+    int32 InstructionIndex;  // 0x0004, not reflected
 };

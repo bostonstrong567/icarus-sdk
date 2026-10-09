@@ -5,5 +5,4 @@
 UCLASS()
 class ATerrain_021_C : public ALevelScriptActor
 {
-public:
 };

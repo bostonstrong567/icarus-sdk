@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMaterialEditorPromotionSettings
 {
+public:
     UPROPERTY(EditAnywhere) FFilePath DefaultMaterialAsset;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere) FFilePath DefaultDiffuseTexture;  // 0x0010, size 0x10
     UPROPERTY(EditAnywhere) FFilePath DefaultNormalTexture;  // 0x0020, size 0x10

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_PRO_C_Research_Test_Axe_C : public ABPQ_Common_Deliver_C
 {
-public:
 };

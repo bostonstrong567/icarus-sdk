@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UCS_TransportPod_Ascend_C : public UMatineeCameraShake
 {
-public:
 };

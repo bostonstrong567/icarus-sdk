@@ -4,10 +4,14 @@
 USTRUCT()
 struct FTextureLODGroup
 {
+public:
     UPROPERTY() TEnumAsByte<TextureGroup> Group;  // 0x0000, size 0x1
+    int32 MinLODMipCount;  // 0x0004, not reflected
+    int32 MaxLODMipCount;  // 0x0008, not reflected
     UPROPERTY() int32 LODBias;  // 0x000C, size 0x4
     UPROPERTY() int32 LODBias_Smaller;  // 0x0010, size 0x4
     UPROPERTY() int32 LODBias_Smallest;  // 0x0014, size 0x4
+    ETextureSamplerFilter Filter;  // 0x0018, not reflected
     UPROPERTY() int32 NumStreamedMips;  // 0x001C, size 0x4
     UPROPERTY() TEnumAsByte<TextureMipGenSettings> MipGenSettings;  // 0x0020, size 0x1
     UPROPERTY() int32 MinLODSize;  // 0x0024, size 0x4
@@ -16,6 +20,7 @@ struct FTextureLODGroup
     UPROPERTY() int32 MaxLODSize_Smallest;  // 0x0030, size 0x4
     UPROPERTY() int32 OptionalLODBias;  // 0x0034, size 0x4
     UPROPERTY() int32 OptionalMaxLODSize;  // 0x0038, size 0x4
+    int32 OptionalMaxLODMipCount;  // 0x003C, not reflected
     UPROPERTY() FName MinMagFilter;  // 0x0040, size 0x8
     UPROPERTY() FName MipFilter;  // 0x0048, size 0x8
     UPROPERTY() ETextureMipLoadOptions MipLoadOptions;  // 0x0050, size 0x1
@@ -26,10 +31,4 @@ struct FTextureLODGroup
     UPROPERTY() int32 VirtualTextureTileCountBias;  // 0x005C, size 0x4
     UPROPERTY() int32 VirtualTextureTileSizeBias;  // 0x0060, size 0x4
     UPROPERTY() TEnumAsByte<ETextureLossyCompressionAmount> LossyCompressionAmount;  // 0x0064, size 0x1
-
-    // Not reflected:
-    int32 MinLODMipCount;  // 0x0004
-    int32 MaxLODMipCount;  // 0x0008
-    ETextureSamplerFilter Filter;  // 0x0018
-    int32 OptionalMaxLODMipCount;  // 0x003C
 };

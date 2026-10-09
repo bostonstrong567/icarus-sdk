@@ -4,6 +4,7 @@
 USTRUCT()
 struct FDestructibleParameters
 {
+public:
     UPROPERTY(EditAnywhere) FDestructibleDamageParameters DamageParameters;  // 0x0000, size 0x1C
     UPROPERTY(EditAnywhere) FDestructibleDebrisParameters DebrisParameters;  // 0x001C, size 0x2C
     UPROPERTY(EditAnywhere) FDestructibleAdvancedParameters AdvancedParameters;  // 0x0048, size 0x10

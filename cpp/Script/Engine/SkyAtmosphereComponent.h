@@ -5,6 +5,7 @@
 UCLASS(EditInlineNew, MinimalAPI, Config=Engine)
 class USkyAtmosphereComponent : public USceneComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, Interp, BlueprintReadOnly) ESkyAtmosphereTransformMode TransformMode;  // 0x01F8, size 0x1
     UPROPERTY(EditAnywhere, Interp, BlueprintReadOnly) float BottomRadius;  // 0x01FC, size 0x4
@@ -29,13 +30,12 @@ public:
     UPROPERTY(EditAnywhere, Interp, BlueprintReadOnly) float HeightFogContribution;  // 0x028C, size 0x4
     UPROPERTY(EditAnywhere, Interp, BlueprintReadOnly) float TransmittanceMinLightElevationAngle;  // 0x0290, size 0x4
     UPROPERTY(EditAnywhere, Interp, BlueprintReadOnly) float AerialPerspectiveStartDepth;  // 0x0294, size 0x4
+private:
+    FSkyAtmosphereSceneProxy * SkyAtmosphereSceneProxy;  // 0x0298, not reflected
+    bool[2] OverrideAtmosphericLight;  // 0x02A0, not reflected
+    FVector[2] OverrideAtmosphericLightDirection;  // 0x02A4, not reflected
     UPROPERTY() FGuid bStaticLightingBuiltGUID;  // 0x02BC, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FSkyAtmosphereSceneProxy * SkyAtmosphereSceneProxy;  // 0x0298, private
-    bool[2] OverrideAtmosphericLight;  // 0x02A0, private
-    FVector[2] OverrideAtmosphericLightDirection;  // 0x02A4, private
-
+public:
     UFUNCTION(BlueprintCallable) FLinearColor GetAtmosphereTransmitanceOnGroundAtPlanetTop(UDirectionalLightComponent* DirectionalLight);  // parameters 0x18
     UFUNCTION(BlueprintCallable) void OverrideAtmosphereLightDirection(int32 AtmosphereLightIndex, const FVector& LightDirection);  // parameters 0x10
     UFUNCTION(BlueprintCallable) void SetAerialPespectiveViewDistanceScale(float NewValue);  // parameters 0x4

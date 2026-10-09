@@ -4,5 +4,6 @@
 USTRUCT()
 struct FARObjectUpdatePayload
 {
+public:
     UPROPERTY(BlueprintReadWrite) FTransform WorldTransform;  // 0x0000, size 0x30
 };

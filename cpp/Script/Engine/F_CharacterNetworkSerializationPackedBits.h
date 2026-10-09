@@ -4,8 +4,8 @@
 USTRUCT()
 struct FCharacterNetworkSerializationPackedBits
 {
-
-    // Not reflected:
-    TBitArray<TInlineAllocator<32,TSizedDefaultAllocator<32> > > DataBits;  // 0x0000
-    UPackageMap * SavedPackageMap;  // 0x0090
+public:
+    TBitArray<TInlineAllocator<32,TSizedDefaultAllocator<32> > > DataBits;  // 0x0000, not reflected
+private:
+    UPackageMap * SavedPackageMap;  // 0x0090, not reflected
 };

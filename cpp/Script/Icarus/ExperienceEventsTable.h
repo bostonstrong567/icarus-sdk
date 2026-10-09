@@ -5,5 +5,4 @@
 UCLASS()
 class UExperienceEventsTable : public UIcarusDataTable
 {
-public:
 };

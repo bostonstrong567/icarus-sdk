@@ -5,8 +5,6 @@
 UCLASS(Config=Engine)
 class UGreatHuntTalentControllerComponent : public UTalentControllerComponent
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bGreatHuntTalentControllerSetup;  // 0x00F8, protected
+protected:
+    bool bGreatHuntTalentControllerSetup;  // 0x00F8, not reflected
 };

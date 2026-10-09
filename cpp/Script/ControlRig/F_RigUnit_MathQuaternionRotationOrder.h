@@ -4,5 +4,6 @@
 USTRUCT()
 struct FRigUnit_MathQuaternionRotationOrder : public FRigUnit_MathBase
 {
+public:
     UPROPERTY() EControlRigRotationOrder RotationOrder;  // 0x0008, size 0x1
 };

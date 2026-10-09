@@ -5,5 +5,4 @@
 UCLASS()
 class USettlementNPCTaskTypesTable : public UIcarusDataTable
 {
-public:
 };

@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class ULevelPartitionInterface : public UInterface
 {
-public:
 };

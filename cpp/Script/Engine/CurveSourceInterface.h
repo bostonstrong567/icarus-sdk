@@ -6,7 +6,6 @@ UCLASS(Abstract)
 class UCurveSourceInterface : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintNativeEvent) FName GetBindingName() const;  // parameters 0x8
     UFUNCTION(BlueprintNativeEvent) float GetCurveValue(FName CurveName) const;  // parameters 0xC
     UFUNCTION(BlueprintNativeEvent) void GetCurves(TArray<FNamedCurveValue>& OutValues) const;  // parameters 0x10

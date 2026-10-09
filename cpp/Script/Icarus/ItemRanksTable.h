@@ -5,5 +5,4 @@
 UCLASS()
 class UItemRanksTable : public UIcarusDataTable
 {
-public:
 };

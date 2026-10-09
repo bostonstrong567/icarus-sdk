@@ -6,7 +6,6 @@ UCLASS()
 class UMusicTracksLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToMusicTracksTable(FName Name, FMusicTrack Data, FMusicTracksRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x159
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakMusicTracksEnum(FMusicTracksEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FMusicTracksRowHandle CastToMusicTracksRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

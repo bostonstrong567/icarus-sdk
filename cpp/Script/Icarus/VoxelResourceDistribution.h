@@ -5,12 +5,11 @@
 UCLASS(Abstract, Config=Engine)
 class UVoxelResourceDistribution : public UActorComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
+    FRandomStream RandomDistributionStream;  // 0x00B0, not reflected
+    int32 CurrentSeed;  // 0x00B8, not reflected
     UPROPERTY(EditAnywhere, Config) float VoxelInitMaxTimeMS;  // 0x00BC, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    FRandomStream RandomDistributionStream;  // 0x00B0, protected
-    int32 CurrentSeed;  // 0x00B8, protected
-
+public:
     UFUNCTION(BlueprintCallable) void SetDistributionSeed(int32 Seed);  // parameters 0x4
 };

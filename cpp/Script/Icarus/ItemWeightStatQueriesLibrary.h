@@ -6,7 +6,6 @@ UCLASS()
 class UItemWeightStatQueriesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToItemWeightStatQueriesTable(FName Name, FItemWeightStatQueries Data, FItemWeightStatQueriesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x61
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakItemWeightStatQueriesEnum(FItemWeightStatQueriesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FItemWeightStatQueriesRowHandle CastToItemWeightStatQueriesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -5,8 +5,6 @@
 UCLASS(EditInlineNew)
 class UAdditiveControlRig : public UControlRig
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<FRigUnit_AddBoneTransform,TSizedDefaultAllocator<32> > AddBoneRigUnits;  // 0x0650, private
+private:
+    TArray<FRigUnit_AddBoneTransform,TSizedDefaultAllocator<32> > AddBoneRigUnits;  // 0x0650, not reflected
 };

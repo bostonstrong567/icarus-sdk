@@ -6,7 +6,6 @@ UCLASS()
 class UHuntingSetupLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToHuntingSetupTable(FName Name, FHuntingSetup Data, FHuntingSetupRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x49
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakHuntingSetupEnum(FHuntingSetupEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FHuntingSetupRowHandle CastToHuntingSetupRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

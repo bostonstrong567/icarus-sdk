@@ -6,7 +6,6 @@ UCLASS()
 class UTagQueriesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToTagQueriesTable(FName Name, FTagQueries Data, FTagQueriesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x99
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakTagQueriesEnum(FTagQueriesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FTagQueriesRowHandle CastToTagQueriesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

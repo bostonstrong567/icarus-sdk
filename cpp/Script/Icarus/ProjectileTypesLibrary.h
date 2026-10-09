@@ -6,7 +6,6 @@ UCLASS()
 class UProjectileTypesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToProjectileTypesTable(FName Name, FIcarusProjectileType Data, FProjectileTypesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x51
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakProjectileTypesEnum(FProjectileTypesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FProjectileTypesRowHandle CastToProjectileTypesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

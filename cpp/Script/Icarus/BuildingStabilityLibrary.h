@@ -6,7 +6,6 @@ UCLASS()
 class UBuildingStabilityLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToBuildingStabilityTable(FName Name, FBuildingStability Data, FBuildingStabilityRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x61
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakBuildingStabilityEnum(FBuildingStabilityEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FBuildingStabilityRowHandle CastToBuildingStabilityRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -5,9 +5,12 @@
 UCLASS(Config=GameUserSettings)
 class UGameUserSettings : public UObject
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(Config) bool bUseVSync;  // 0x0028, size 0x1
     UPROPERTY(Config) bool bUseDynamicResolution;  // 0x0029, size 0x1
+    Scalability::FQualityLevels ScalabilityQuality;  // 0x0030, not reflected
+protected:
     UPROPERTY(Config) uint32 ResolutionSizeX;  // 0x0080, size 0x4
     UPROPERTY(Config) uint32 ResolutionSizeY;  // 0x0084, size 0x4
     UPROPERTY(Config) uint32 LastUserConfirmedResolutionSizeX;  // 0x0088, size 0x4
@@ -21,6 +24,7 @@ public:
     UPROPERTY(Config) int32 AudioQualityLevel;  // 0x00A8, size 0x4
     UPROPERTY(Config) int32 LastConfirmedAudioQualityLevel;  // 0x00AC, size 0x4
     UPROPERTY(Config) float FrameRateLimit;  // 0x00B0, size 0x4
+    float MinResolutionScale;  // 0x00B4, not reflected
     UPROPERTY(Config) int32 DesiredScreenWidth;  // 0x00B8, size 0x4
     UPROPERTY(Config) bool bUseDesiredScreenHeight;  // 0x00BC, size 0x1
     UPROPERTY(Config) int32 DesiredScreenHeight;  // 0x00C0, size 0x4
@@ -36,11 +40,7 @@ public:
     UPROPERTY(Config) bool bUseHDRDisplayOutput;  // 0x0104, size 0x1
     UPROPERTY(Config) int32 HDRDisplayOutputNits;  // 0x0108, size 0x4
     UPROPERTY(BlueprintAssignable) FOnGameUserSettingsUINeedsUpdate OnGameUserSettingsUINeedsUpdate;  // 0x0110, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    Scalability::FQualityLevels ScalabilityQuality;  // 0x0030
-    float MinResolutionScale;  // 0x00B4, protected
-
+public:
     UFUNCTION(BlueprintCallable) void ApplyHardwareBenchmarkResults();
     UFUNCTION(BlueprintCallable) void ApplyNonResolutionSettings();
     UFUNCTION(BlueprintCallable) void ApplyResolutionSettings(bool bCheckForCommandLineOverrides);  // parameters 0x1

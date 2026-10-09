@@ -5,5 +5,4 @@
 UCLASS(Config=GameUserSettings)
 class UBP_IcarusGameUserSettings_C : public UIcarusGameUserSettings
 {
-public:
 };

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Prop_Clipboard_D_C : public ABP_DeployableBase_C
 {
-public:
 };

@@ -5,6 +5,7 @@
 UCLASS(MinimalAPI)
 class UTimelineTemplate : public UObject
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere) float TimelineLength;  // 0x0028, size 0x4
     UPROPERTY(EditAnywhere) TEnumAsByte<ETimelineLengthMode> LengthMode;  // 0x002C, size 0x1
@@ -19,6 +20,7 @@ public:
     UPROPERTY(EditAnywhere) TArray<FBPVariableMetaDataEntry> MetaDataArray;  // 0x0070, size 0x10
     UPROPERTY() FGuid TimelineGuid;  // 0x0080, size 0x10
     UPROPERTY() TEnumAsByte<ETickingGroup> TimelineTickGroup;  // 0x0090, size 0x1
+private:
     UPROPERTY() FName VariableName;  // 0x0094, size 0x8
     UPROPERTY() FName DirectionPropertyName;  // 0x009C, size 0x8
     UPROPERTY() FName UpdateFunctionName;  // 0x00A4, size 0x8

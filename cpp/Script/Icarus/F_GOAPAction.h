@@ -4,6 +4,7 @@
 USTRUCT()
 struct FGOAPAction : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName Description;  // 0x0018, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FGOAPProperty> Preconditions;  // 0x0020, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FGOAPProperty> Effects;  // 0x0030, size 0x10

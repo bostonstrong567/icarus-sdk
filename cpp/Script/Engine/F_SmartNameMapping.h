@@ -4,9 +4,8 @@
 USTRUCT()
 struct FSmartNameMapping
 {
-
-    // Not reflected:
-    TArray<FName,TSizedDefaultAllocator<32> > CurveNameList;  // 0x0000
-    TArray<FCurveMetaData,TSizedDefaultAllocator<32> > CurveMetaDataList;  // 0x0010
-    TMap<FName,FCurveMetaData,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,FCurveMetaData,0> > CurveMetaDataMap;  // 0x0020
+private:
+    TArray<FName,TSizedDefaultAllocator<32> > CurveNameList;  // 0x0000, not reflected
+    TArray<FCurveMetaData,TSizedDefaultAllocator<32> > CurveMetaDataList;  // 0x0010, not reflected
+    TMap<FName,FCurveMetaData,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,FCurveMetaData,0> > CurveMetaDataMap;  // 0x0020, not reflected
 };

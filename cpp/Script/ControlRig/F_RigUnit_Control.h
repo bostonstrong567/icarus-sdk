@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_Control : public FRigUnit
 {
+public:
     UPROPERTY(EditAnywhere, Interp, BlueprintReadWrite) FEulerTransform Transform;  // 0x0008, size 0x24
     UPROPERTY() FTransform Base;  // 0x0030, size 0x30
     UPROPERTY() FTransform InitTransform;  // 0x0060, size 0x30

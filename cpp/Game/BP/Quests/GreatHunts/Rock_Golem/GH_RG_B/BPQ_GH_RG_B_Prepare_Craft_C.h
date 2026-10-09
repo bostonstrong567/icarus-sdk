@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_RG_B_Prepare_Craft_C : public ABPQ_Collect_Item_C
 {
-public:
 };

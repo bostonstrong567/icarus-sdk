@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Prop_Boardgame_B_C : public ABP_DeployableContainerBase_C
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSlotableData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<USlotableComponent> Behaviour;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FSocketStringIDQuery> StringIDQueries;  // 0x0040, size 0x10
 };

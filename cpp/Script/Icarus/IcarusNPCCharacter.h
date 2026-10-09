@@ -5,6 +5,7 @@
 UCLASS(Config=Game)
 class AIcarusNPCCharacter : public AIcarusCharacter
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TSubclassOf<UCharacterState> ActorStateClass;  // 0x0748, size 0x8
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UTerrainAnchorComponent* NPCTerrainAnchor;  // 0x0750, size 0x8
@@ -42,21 +43,21 @@ public:
     UPROPERTY(BlueprintAssignable) FRagdollSettledSignature RagdollSettled;  // 0x0890, size 0x10
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) FAISetupRowHandle AISetupRow;  // 0x08A0, size 0x18
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) AActor* FollowTargetActor;  // 0x08B8, size 0x8
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName FollowTargetActorKey;  // 0x08C0, size 0x8
+    bool bIsDrowning;  // 0x08D0, not reflected
+    FTimerHandle DelayedDrownTimer;  // 0x08D8, not reflected
+    int32 DrowningModifierUID;  // 0x08E0, not reflected
+    FTimerHandle AnimTickSettingsUpdateTimer;  // 0x08E8, not reflected
     UPROPERTY(Transient, Instanced) UCreatureAudioThreatComponent* AudioThreatComponent;  // 0x08F0, size 0x8
+    FVector OutOfBoundsStartingLocation;  // 0x08F8, not reflected
+    FTimerHandle OutOfBoundsCleanupHandle;  // 0x0908, not reflected
+    EMovementMode PreFrozenMovementMode;  // 0x0910, not reflected
+    bool bWasSurvivalTickActiveBeforeFreeze;  // 0x0914, not reflected
     UPROPERTY(Replicated) uint8 DistanceToFollowTarget;  // 0x0915, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    FTimerHandle BlackboardUpdateTimer;  // 0x08C8, private
-    bool bIsDrowning;  // 0x08D0, protected
-    FTimerHandle DelayedDrownTimer;  // 0x08D8, protected
-    int32 DrowningModifierUID;  // 0x08E0, protected
-    FTimerHandle AnimTickSettingsUpdateTimer;  // 0x08E8, protected
-    FVector OutOfBoundsStartingLocation;  // 0x08F8, protected
-    FTimerHandle OutOfBoundsCleanupHandle;  // 0x0908, protected
-    EMovementMode PreFrozenMovementMode;  // 0x0910, protected
-    bool bWasSurvivalTickActiveBeforeFreeze;  // 0x0914, protected
-
+private:
+    FTimerHandle BlackboardUpdateTimer;  // 0x08C8, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) bool FreezeNPC();  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) AActor* GetCurrentAnimationTarget() const;  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) bool GetFreezeNPCIfTerrainAnchorInvalid() const;  // parameters 0x1

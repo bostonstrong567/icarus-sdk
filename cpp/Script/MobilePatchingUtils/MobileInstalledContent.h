@@ -6,10 +6,8 @@ UCLASS()
 class UMobileInstalledContent : public UObject
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    FString InstallDir;  // 0x0028
-    TSharedPtr<IBuildManifest,1> InstalledManifest;  // 0x0038
+    FString InstallDir;  // 0x0028, not reflected
+    TSharedPtr<IBuildManifest,1> InstalledManifest;  // 0x0038, not reflected
 
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetDiskFreeSpace();  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetInstalledContentSize();  // parameters 0x4

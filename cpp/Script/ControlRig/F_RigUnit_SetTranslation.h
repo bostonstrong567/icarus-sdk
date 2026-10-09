@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_SetTranslation : public FRigUnitMutable
 {
+public:
     UPROPERTY() FRigElementKey Item;  // 0x0068, size 0xC
     UPROPERTY() EBoneGetterSetterMode Space;  // 0x0074, size 0x1
     UPROPERTY() FVector Translation;  // 0x0078, size 0xC

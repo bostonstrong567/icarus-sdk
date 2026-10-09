@@ -6,7 +6,6 @@ UCLASS()
 class ULayersBlueprintLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddActorToLayer(AActor* InActor, const FActorLayer& Layer);  // parameters 0x10
     UFUNCTION(BlueprintCallable) static TArray<AActor*> GetActors(UObject* WorldContextObject, const FActorLayer& ActorLayer);  // parameters 0x20
     UFUNCTION(BlueprintCallable) static void RemoveActorFromLayer(AActor* InActor, const FActorLayer& Layer);  // parameters 0x10

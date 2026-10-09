@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Flying_Tank_Corpse_C : public ABP_GOAP_Corpse_C
 {
-public:
 };

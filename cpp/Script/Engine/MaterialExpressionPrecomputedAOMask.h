@@ -5,5 +5,4 @@
 UCLASS()
 class UMaterialExpressionPrecomputedAOMask : public UMaterialExpression
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FResUpdateCosmetics
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool Success;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FOnlineProfileCharacter Character;  // 0x0008, size 0xF0
 };

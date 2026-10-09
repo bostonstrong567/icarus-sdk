@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNiagaraOutlinerSystemInstanceData
 {
+public:
     UPROPERTY(EditAnywhere) FString ComponentName;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere) TArray<FNiagaraOutlinerEmitterInstanceData> Emitters;  // 0x0010, size 0x10
     UPROPERTY(EditAnywhere) ENiagaraExecutionState ActualExecutionState;  // 0x0020, size 0x4

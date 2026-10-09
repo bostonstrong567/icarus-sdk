@@ -4,6 +4,7 @@
 USTRUCT()
 struct FComponentPicker
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName ComponentName;  // 0x0000, size 0x8
     UPROPERTY(Transient, Instanced) TWeakObjectPtr<USceneComponent> CachedComponent;  // 0x0008, size 0x8
 };

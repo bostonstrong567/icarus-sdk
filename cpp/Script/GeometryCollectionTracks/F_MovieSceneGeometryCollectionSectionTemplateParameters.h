@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMovieSceneGeometryCollectionSectionTemplateParameters : public FMovieSceneGeometryCollectionParams
 {
+public:
     UPROPERTY() FFrameNumber SectionStartTime;  // 0x0030, size 0x4
     UPROPERTY() FFrameNumber SectionEndTime;  // 0x0034, size 0x4
 };

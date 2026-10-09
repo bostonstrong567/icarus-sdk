@@ -17,9 +17,8 @@ public:
     UPROPERTY() float CurrentFocalLength;  // 0x0620, size 0x4
     UPROPERTY() float CurrentAperture;  // 0x0624, size 0x4
     UPROPERTY() float CurrentFocusDistance;  // 0x0628, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    FTransform Transform;  // 0x0630, private
-    bool bIsCineCamera;  // 0x0660, private
-    float WorldToMeters;  // 0x0664, private
+private:
+    FTransform Transform;  // 0x0630, not reflected
+    bool bIsCineCamera;  // 0x0660, not reflected
+    float WorldToMeters;  // 0x0664, not reflected
 };

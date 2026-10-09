@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBlueprintInputAxisKeyDelegateBinding : public FBlueprintInputDelegateBinding
 {
+public:
     UPROPERTY() FKey AxisKey;  // 0x0008, size 0x18
     UPROPERTY() FName FunctionNameToBind;  // 0x0020, size 0x8
 };

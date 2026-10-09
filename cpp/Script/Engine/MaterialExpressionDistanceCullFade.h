@@ -5,5 +5,4 @@
 UCLASS()
 class UMaterialExpressionDistanceCullFade : public UMaterialExpression
 {
-public:
 };

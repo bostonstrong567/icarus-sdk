@@ -5,5 +5,4 @@
 UCLASS(Abstract, EditInlineNew, Config=Engine)
 class UOcclusionPluginSourceSettingsBase : public UObject
 {
-public:
 };

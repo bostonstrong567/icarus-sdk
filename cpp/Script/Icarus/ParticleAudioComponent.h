@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class UParticleAudioComponent : public USceneComponent, public INiagaraParticleCallbackHandler
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName NiagaraVariableName;  // 0x0200, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 ParticleCountThreshold;  // 0x0208, size 0x4
@@ -13,10 +14,9 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UFMODEvent* PersistentSound;  // 0x0218, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bUseCountParameter;  // 0x0220, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bUseListenerRotation;  // 0x0221, size 0x1
+private:
+    bool bIsAudioActive;  // 0x0222, not reflected
+    int32 CurrentParticleCount;  // 0x0224, not reflected
     UPROPERTY(Instanced) UFMODAudioComponent* AudioComponent;  // 0x0228, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bIsAudioActive;  // 0x0222, private
-    int32 CurrentParticleCount;  // 0x0224, private
-    FTimerHandle TimeoutHandle;  // 0x0230, private
+    FTimerHandle TimeoutHandle;  // 0x0230, not reflected
 };

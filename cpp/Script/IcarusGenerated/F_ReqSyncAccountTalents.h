@@ -4,6 +4,7 @@
 USTRUCT()
 struct FReqSyncAccountTalents
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString UserID;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FBackendTalent> Talents;  // 0x0010, size 0x10
 };

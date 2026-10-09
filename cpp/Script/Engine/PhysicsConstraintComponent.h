@@ -10,13 +10,11 @@ public:
     UPROPERTY(EditAnywhere) FConstrainComponentPropName ComponentName1;  // 0x0200, size 0x8
     UPROPERTY(EditAnywhere) AActor* ConstraintActor2;  // 0x0208, size 0x8
     UPROPERTY(EditAnywhere) FConstrainComponentPropName ComponentName2;  // 0x0210, size 0x8
+    TWeakObjectPtr<UPrimitiveComponent,FWeakObjectPtr> OverrideComponent1;  // 0x0218, not reflected
+    TWeakObjectPtr<UPrimitiveComponent,FWeakObjectPtr> OverrideComponent2;  // 0x0220, not reflected
     UPROPERTY(Instanced, Deprecated) UPhysicsConstraintTemplate* ConstraintSetup;  // 0x0228, size 0x8
     UPROPERTY(BlueprintAssignable) FConstraintBrokenSignature OnConstraintBroken;  // 0x0230, size 0x10
     UPROPERTY(EditAnywhere) FConstraintInstance ConstraintInstance;  // 0x0240, size 0x1C8
-
-    // Not reflected: the engine's scripting cannot see these.
-    TWeakObjectPtr<UPrimitiveComponent,FWeakObjectPtr> OverrideComponent1;  // 0x0218
-    TWeakObjectPtr<UPrimitiveComponent,FWeakObjectPtr> OverrideComponent2;  // 0x0220
 
     UFUNCTION(BlueprintCallable) void BreakConstraint();
     UFUNCTION(BlueprintCallable) void GetConstraintForce(FVector& OutLinearForce, FVector& OutAngularForce);  // parameters 0x18

@@ -6,7 +6,6 @@ UCLASS()
 class UKismetSystemLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static FDebugFloatHistory AddFloatHistorySample(float Value, const FDebugFloatHistory& FloatHistory);  // parameters 0x48
     UFUNCTION(BlueprintCallable) static int32 BeginTransaction(FString Context, FText Description, UObject* PrimaryObject);  // parameters 0x34
     UFUNCTION(BlueprintCallable) static bool BoxOverlapActors(UObject* WorldContextObject, FVector BoxPos, FVector BoxExtent, const TArray<TEnumAsByte<EObjectTypeQuery>>& ObjectTypes, TSubclassOf<UObject> ActorClassFilter, const TArray<AActor*>& ActorsToIgnore, TArray<AActor*>& OutActors);  // parameters 0x59

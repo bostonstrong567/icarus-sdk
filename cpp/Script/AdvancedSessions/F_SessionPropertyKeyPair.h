@@ -4,9 +4,8 @@
 USTRUCT()
 struct FSessionPropertyKeyPair
 {
-
-    // Not reflected:
-    FName Key;  // 0x0000
-    FVariantData Data;  // 0x0008
-    EOnlineAdvertisementType AdvertisementType;  // 0x0020
+public:
+    FName Key;  // 0x0000, not reflected
+    FVariantData Data;  // 0x0008, not reflected
+    EOnlineAdvertisementType AdvertisementType;  // 0x0020, not reflected
 };

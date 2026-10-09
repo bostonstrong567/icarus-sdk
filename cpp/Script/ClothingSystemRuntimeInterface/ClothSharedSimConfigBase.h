@@ -5,7 +5,6 @@
 UCLASS(Abstract, NotPlaceable)
 class UDEPRECATED_ClothSharedSimConfigBase : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   Migrate

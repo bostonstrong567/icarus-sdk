@@ -4,7 +4,6 @@
 USTRUCT()
 struct FUniqueNetIdWrapper
 {
-
-    // Not reflected:
-    TSharedPtr<FUniqueNetId const ,0> UniqueNetId;  // 0x0008
+protected:
+    TSharedPtr<FUniqueNetId const ,0> UniqueNetId;  // 0x0008, not reflected
 };

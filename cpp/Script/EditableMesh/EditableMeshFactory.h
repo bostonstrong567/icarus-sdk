@@ -6,6 +6,5 @@ UCLASS()
 class UEditableMeshFactory : public UObject
 {
 public:
-
     UFUNCTION(BlueprintCallable) static UEditableMesh* MakeEditableMesh(UPrimitiveComponent* PrimitiveComponent, int32 LODIndex);  // parameters 0x18
 };

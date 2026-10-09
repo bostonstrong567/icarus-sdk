@@ -5,5 +5,4 @@
 UCLASS()
 class USettlementWallLibrary : public UBlueprintFunctionLibrary
 {
-public:
 };

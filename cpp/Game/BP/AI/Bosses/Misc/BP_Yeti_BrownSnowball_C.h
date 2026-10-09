@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Yeti_BrownSnowball_C : public ABP_GreatApe_Rock_C
 {
-public:
 };

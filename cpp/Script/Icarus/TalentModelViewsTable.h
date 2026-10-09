@@ -5,5 +5,4 @@
 UCLASS()
 class UTalentModelViewsTable : public UIcarusDataTable
 {
-public:
 };

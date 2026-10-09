@@ -4,6 +4,7 @@
 USTRUCT()
 struct FReqUserTicket
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString UserId;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString Ticket;  // 0x0010, size 0x10
 };

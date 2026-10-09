@@ -4,6 +4,7 @@
 USTRUCT()
 struct FIcarusTamingData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<UIcarusTamingComponent> Behaviour;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 TameDurationInSeconds;  // 0x0040, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector2D DesiredTemperatureRange;  // 0x0044, size 0x8

@@ -6,6 +6,5 @@ UCLASS(Config=Game)
 class UBTD_IsOnNavmesh_C : public UBTDecorator_BlueprintBase
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool PerformConditionCheckAI(AAIController* OwnerController, APawn* ControlledPawn);  // parameters 0x11
 };

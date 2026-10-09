@@ -5,5 +5,4 @@
 UCLASS()
 class UTimeOfDayTable : public UIcarusDataTable
 {
-public:
 };

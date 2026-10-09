@@ -4,10 +4,9 @@
 USTRUCT()
 struct FPawnActionEvent
 {
+public:
     UPROPERTY() UPawnAction* Action;  // 0x0000, size 0x8
-
-    // Not reflected:
-    EPawnActionEventType::Type EventType;  // 0x0008
-    EAIRequestPriority::Type Priority;  // 0x000C
-    uint32 Index;  // 0x0010
+    EPawnActionEventType::Type EventType;  // 0x0008, not reflected
+    EAIRequestPriority::Type Priority;  // 0x000C, not reflected
+    uint32 Index;  // 0x0010, not reflected
 };

@@ -6,7 +6,6 @@ UCLASS(Abstract, Config=Engine)
 class UFXSystemComponent : public UPrimitiveComponent
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) UFXSystemAsset* GetFXSystemAsset() const;  // parameters 0x8
     UFUNCTION(BlueprintCallable) void ReleaseToPool();
     UFUNCTION(BlueprintCallable) void SetActorParameter(FName ParameterName, AActor* Param);  // parameters 0x10

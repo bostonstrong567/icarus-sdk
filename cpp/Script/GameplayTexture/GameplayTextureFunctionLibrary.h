@@ -6,6 +6,5 @@ UCLASS()
 class UGameplayTextureFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static TArray<FColor> GetUniqueColours(UGameplayTexture* Texture);  // parameters 0x18
 };

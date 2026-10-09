@@ -4,6 +4,7 @@
 USTRUCT()
 struct FCRSimPoint
 {
+public:
     UPROPERTY() float Mass;  // 0x0000, size 0x4
     UPROPERTY() float Size;  // 0x0004, size 0x4
     UPROPERTY() float LinearDamping;  // 0x0008, size 0x4

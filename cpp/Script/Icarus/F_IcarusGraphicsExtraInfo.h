@@ -4,6 +4,7 @@
 USTRUCT()
 struct FIcarusGraphicsExtraInfo
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FString GPUDeviceName;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 GPUDedicatedMemoryGb;  // 0x0010, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 GPUDedicatedSystemMemoryGb;  // 0x0014, size 0x4

@@ -4,5 +4,6 @@
 USTRUCT()
 struct FFMODLocalizedBankRow : public FTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere) FString Path;  // 0x0008, size 0x10
 };

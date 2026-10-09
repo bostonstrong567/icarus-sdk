@@ -5,5 +5,4 @@
 UCLASS()
 class UMaterialExpressionSceneTexelSize : public UMaterialExpression
 {
-public:
 };

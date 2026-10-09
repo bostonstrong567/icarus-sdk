@@ -4,6 +4,7 @@
 USTRUCT()
 struct FWorkshopPack
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString Name;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FString> Categories;  // 0x0010, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FString> Tags;  // 0x0020, size 0x10

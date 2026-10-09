@@ -6,7 +6,6 @@ UCLASS()
 class UWeatherTierIconLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToWeatherTierIconTable(FName Name, FWeatherTierIcon Data, FWeatherTierIconRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x89
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakWeatherTierIconEnum(FWeatherTierIconEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FWeatherTierIconRowHandle CastToWeatherTierIconRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FCurveAtlasColorAdjustments
 {
+public:
     UPROPERTY() uint8 bChromaKeyTexture : 1;  // 0x0000, mask 0x01
     UPROPERTY() float AdjustBrightness;  // 0x0004, size 0x4
     UPROPERTY() float AdjustBrightnessCurve;  // 0x0008, size 0x4

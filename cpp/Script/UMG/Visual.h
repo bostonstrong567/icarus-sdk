@@ -5,7 +5,6 @@
 UCLASS()
 class UVisual : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   ReleaseSlateResources

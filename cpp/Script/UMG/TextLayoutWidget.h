@@ -5,7 +5,8 @@
 UCLASS(Abstract)
 class UTextLayoutWidget : public UWidget
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FShapedTextOptions ShapedTextOptions;  // 0x0108, size 0x3
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TEnumAsByte<ETextJustify> Justification;  // 0x010B, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) ETextWrappingPolicy WrappingPolicy;  // 0x010C, size 0x1
@@ -13,7 +14,7 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float WrapTextAt;  // 0x0110, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FMargin Margin;  // 0x0114, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float LineHeightPercentage;  // 0x0124, size 0x4
-
+public:
     UFUNCTION(BlueprintCallable) void SetJustification(TEnumAsByte<ETextJustify> InJustification);  // parameters 0x1
 
     // Virtual functions that start here:

@@ -5,12 +5,14 @@
 UCLASS(Transient, EditInlineNew, Config=Engine)
 class UInteractableBehaviour : public UTraitBehaviour
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) EInteractType InteractType;  // 0x00C0, size 0x1
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) int32 InteractIndex;  // 0x00C4, size 0x4
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) FName RequiredInteractTag;  // 0x00C8, size 0x8
+protected:
     UPROPERTY(Replicated) FInteractionsRowHandle InteractionsRowHandle;  // 0x00D0, size 0x18
-
+public:
     UFUNCTION(BlueprintNativeEvent) bool CanInteract(AActor* Instigator, FHitResult HitResult);  // parameters 0x91
     UFUNCTION(BlueprintCallable, BlueprintPure) bool GetInteractData(FInteractData& OutData) const;  // parameters 0x81
     UFUNCTION(BlueprintCallable, BlueprintPure) UInteractableComponent* GetInteractableComponent() const;  // parameters 0x8

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMovieSceneTrackInstanceComponent
 {
+public:
     UPROPERTY(Instanced) UMovieSceneSection* Owner;  // 0x0000, size 0x8
     UPROPERTY() TSubclassOf<UMovieSceneTrackInstance> TrackInstanceClass;  // 0x0008, size 0x8
 };

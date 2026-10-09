@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UBlueprintTalentControllerComponent : public UTalentControllerComponent
 {
-public:
 };

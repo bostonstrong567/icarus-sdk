@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMovieScenePropertySectionData
 {
+public:
     UPROPERTY() FName PropertyName;  // 0x0000, size 0x8
     UPROPERTY() FString PropertyPath;  // 0x0008, size 0x10
 };

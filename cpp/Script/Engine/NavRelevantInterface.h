@@ -5,5 +5,4 @@
 UCLASS(Abstract, MinimalAPI)
 class UNavRelevantInterface : public UInterface
 {
-public:
 };

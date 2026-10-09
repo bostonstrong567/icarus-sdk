@@ -5,14 +5,15 @@
 UCLASS(Transient)
 class UInteractiveTool : public UObject, public IInputBehaviorSource
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
+    TMulticastDelegate<void __cdecl(void),FDefaultDelegateUserPolicy> OnPropertySetsModified;  // 0x0030, not reflected
+protected:
     UPROPERTY() UInputBehaviorSet* InputBehaviors;  // 0x0048, size 0x8
     UPROPERTY() TArray<UObject*> ToolPropertyObjects;  // 0x0050, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMulticastDelegate<void __cdecl(void),FDefaultDelegateUserPolicy> OnPropertySetsModified;  // 0x0030
-    FInteractiveToolActionSet * ToolActionSet;  // 0x0060, private
-    FInteractiveToolInfo DefaultToolInfo;  // 0x0068, private
+private:
+    FInteractiveToolActionSet * ToolActionSet;  // 0x0060, not reflected
+    FInteractiveToolInfo DefaultToolInfo;  // 0x0068, not reflected
 
     // Virtual functions that start here:
     //   AddInputBehavior, AddToolPropertySource, CanAccept, DrawHUD, ExecuteAction, GetActionSet

@@ -6,7 +6,6 @@ UCLASS(Transient, EditInlineNew, Config=Engine)
 class UBP_Interactable_Pickup_Deployable_LandingPad_C : public UBP_Interactable_Pickup_Deployable_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool CanInteract(AActor* Instigator, FHitResult HitResult);  // parameters 0x91
     UFUNCTION(BlueprintCallable) void Pickup_Item(bool& PickedUp);  // parameters 0x1, named "Pickup Item"
 };

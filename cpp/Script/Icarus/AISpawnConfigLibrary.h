@@ -6,7 +6,6 @@ UCLASS()
 class UAISpawnConfigLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToAISpawnConfigTable(FName Name, FAISpawnConfigData Data, FAISpawnConfigRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xD1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakAISpawnConfigEnum(FAISpawnConfigEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FAISpawnConfigRowHandle CastToAISpawnConfigRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

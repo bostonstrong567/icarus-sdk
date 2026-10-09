@@ -6,7 +6,6 @@ UCLASS()
 class UStasisBagLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToStasisBagTable(FName Name, FStasisBagData Data, FStasisBagRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x79
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakStasisBagEnum(FStasisBagEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FStasisBagRowHandle CastToStasisBagRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FEnvOverlapData
 {
+public:
     UPROPERTY(EditAnywhere) float ExtentX;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere) float ExtentY;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere) float ExtentZ;  // 0x0008, size 0x4

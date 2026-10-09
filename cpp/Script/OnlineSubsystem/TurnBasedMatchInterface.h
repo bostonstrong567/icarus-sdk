@@ -6,7 +6,6 @@ UCLASS(Abstract)
 class UTurnBasedMatchInterface : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintImplementableEvent) void OnMatchEnded(FString Match);  // parameters 0x10
     UFUNCTION(BlueprintImplementableEvent) void OnMatchReceivedTurn(FString Match, bool bDidBecomeActive);  // parameters 0x11
 };

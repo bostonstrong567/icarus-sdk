@@ -6,7 +6,6 @@ UCLASS()
 class UMissionTypesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToMissionTypesTable(FName Name, FMissionType Data, FMissionTypesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x79
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakMissionTypesEnum(FMissionTypesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FMissionTypesRowHandle CastToMissionTypesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

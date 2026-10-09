@@ -6,9 +6,7 @@ UCLASS()
 class UField : public UObject
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    UField * Next;  // 0x0028
+    UField * Next;  // 0x0028, not reflected
 
     // Virtual functions that start here:
     //   AddCppProperty, Bind

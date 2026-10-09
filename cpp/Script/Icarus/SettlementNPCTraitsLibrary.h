@@ -6,7 +6,6 @@ UCLASS()
 class USettlementNPCTraitsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToSettlementNPCTraitsTable(FName Name, FSettlementNPCTraitData Data, FSettlementNPCTraitsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x101
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakSettlementNPCTraitsEnum(FSettlementNPCTraitsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FSettlementNPCTraitsRowHandle CastToSettlementNPCTraitsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -5,7 +5,6 @@
 UCLASS(Abstract, EditInlineNew, MinimalAPI)
 class UParticleModuleTypeDataBase : public UParticleModule
 {
-public:
 
     // Virtual functions that start here:
     //   Build, CacheModuleInfo, CreateInstance, IsAMeshEmitter, IsMotionBlurEnabled, RequiresBuild

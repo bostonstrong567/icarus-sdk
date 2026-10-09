@@ -6,7 +6,6 @@ UCLASS()
 class UResourceLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToResourceTable(FName Name, FResourceComponentData Data, FResourceRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xE1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakResourceEnum(FResourceEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FResourceRowHandle CastToResourceRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

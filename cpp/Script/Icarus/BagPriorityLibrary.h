@@ -6,7 +6,6 @@ UCLASS()
 class UBagPriorityLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToBagPriorityTable(FName Name, FBagPriorityData Data, FBagPriorityRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x61
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakBagPriorityEnum(FBagPriorityEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FBagPriorityRowHandle CastToBagPriorityRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

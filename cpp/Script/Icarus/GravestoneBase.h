@@ -5,13 +5,15 @@
 UCLASS(Config=Engine)
 class AGravestoneBase : public AIcarusCorpse
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
-    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) FPlayerCharacterID AssignedPlayerCharacterID;  // 0x05B0, size 0x18
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FName> RagdollHitEventBones;  // 0x05C8, size 0x10
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) FGravestoneData GravestoneData;  // 0x05D8, size 0xE0
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) TArray<FArmourRowHandle> PlayerArmour;  // 0x06B8, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bWasReloaded;  // 0x06C8, size 0x1
-
+protected:
+    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) FPlayerCharacterID AssignedPlayerCharacterID;  // 0x05B0, size 0x18
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FName> RagdollHitEventBones;  // 0x05C8, size 0x10
+public:
     UFUNCTION(BlueprintNativeEvent) void OnRep_AssignedPlayerCharacterID();
     UFUNCTION(BlueprintNativeEvent) void OnRep_GravestoneData();
     UFUNCTION(BlueprintNativeEvent) void OnRep_PlayerArmour();

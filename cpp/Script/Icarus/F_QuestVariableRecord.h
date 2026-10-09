@@ -4,6 +4,7 @@
 USTRUCT()
 struct FQuestVariableRecord
 {
+public:
     UPROPERTY(SaveGame, BlueprintReadOnly) FString VariableName;  // 0x0000, size 0x10
     UPROPERTY(SaveGame, BlueprintReadOnly) bool bVariable;  // 0x0010, size 0x1
     UPROPERTY(SaveGame, BlueprintReadOnly) float fVariable;  // 0x0014, size 0x4

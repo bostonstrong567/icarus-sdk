@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_MathTransformClampSpatially : public FRigUnit_MathTransformBase
 {
+public:
     UPROPERTY() FTransform Value;  // 0x0010, size 0x30
     UPROPERTY() TEnumAsByte<EAxis> Axis;  // 0x0040, size 0x1
     UPROPERTY() TEnumAsByte<EControlRigClampSpatialMode> Type;  // 0x0041, size 0x1

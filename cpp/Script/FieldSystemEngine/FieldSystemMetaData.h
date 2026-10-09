@@ -5,7 +5,6 @@
 UCLASS(Config=Engine)
 class UFieldSystemMetaData : public UActorComponent
 {
-public:
 
     // Virtual functions that start here:
     //   NewMetaData, Type

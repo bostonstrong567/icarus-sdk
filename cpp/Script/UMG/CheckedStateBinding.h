@@ -5,10 +5,8 @@
 UCLASS()
 class UCheckedStateBinding : public UPropertyBinding
 {
+private:
+    TOptional<enum UCheckedStateBinding::EConversion> bConversion;  // 0x0060, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TOptional<enum UCheckedStateBinding::EConversion> bConversion;  // 0x0060, private
-
     UFUNCTION() ECheckBoxState GetValue() const;  // parameters 0x1
 };

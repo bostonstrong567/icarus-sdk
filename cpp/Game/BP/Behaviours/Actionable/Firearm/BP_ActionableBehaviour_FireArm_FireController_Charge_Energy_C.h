@@ -6,7 +6,6 @@ UCLASS(Transient, Config=Engine)
 class UBP_ActionableBehaviour_FireArm_FireController_Charge_Energy_C : public UBP_ActionableBehaviour_FireArm_FireController_Charge_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) TEnumAsByte<CanFireReturnType> CanFire();  // parameters 0x1
     UFUNCTION(BlueprintCallable) void ConsumeZapEnergy();
     UFUNCTION(BlueprintCallable) void EndFire();

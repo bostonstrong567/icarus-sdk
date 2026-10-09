@@ -5,5 +5,4 @@
 UCLASS()
 class UFocusableTable : public UIcarusDataTable
 {
-public:
 };

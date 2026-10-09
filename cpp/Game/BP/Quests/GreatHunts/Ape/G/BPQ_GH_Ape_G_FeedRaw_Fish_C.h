@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_Ape_G_FeedRaw_Fish_C : public ABPQ_Common_Deliver_C
 {
-public:
 };

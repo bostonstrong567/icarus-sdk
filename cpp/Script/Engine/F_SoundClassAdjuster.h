@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSoundClassAdjuster
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) USoundClass* SoundClassObject;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float VolumeAdjuster;  // 0x0008, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float PitchAdjuster;  // 0x000C, size 0x4

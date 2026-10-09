@@ -4,5 +4,6 @@
 USTRUCT()
 struct FHordeWave : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FHordeCreatureSetup> Creatures;  // 0x0018, size 0x10
 };

@@ -15,13 +15,12 @@ public:
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) bool bIsProjectileActive;  // 0x0121, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FBallisticData CachedBallisticData;  // 0x0128, size 0x1F0
     UPROPERTY(EditAnywhere, BlueprintReadOnly) AActor* FiringActor;  // 0x0318, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    float LastBounceTime;  // 0x0320, private
-    FVector SpawnLocation;  // 0x0324, private
-    FTimerHandle CullDistanceTimerHandle;  // 0x0330, private
-    FStatContainer DamageStatContainer;  // 0x0338, private
-
+private:
+    float LastBounceTime;  // 0x0320, not reflected
+    FVector SpawnLocation;  // 0x0324, not reflected
+    FTimerHandle CullDistanceTimerHandle;  // 0x0330, not reflected
+    FStatContainer DamageStatContainer;  // 0x0338, not reflected
+public:
     UFUNCTION() void CheckWithinCullDistance();
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) bool CleanupBallistic();  // parameters 0x1
     UFUNCTION() void EnableItemHighlight(UActorComponent* Component, bool bReset);  // parameters 0x9

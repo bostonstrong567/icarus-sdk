@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFilterOptionPerAxis
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bX;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bY;  // 0x0001, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bZ;  // 0x0002, size 0x1

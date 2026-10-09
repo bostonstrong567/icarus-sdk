@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBiomeAISpawnData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FAISpawnListItemData> AISpawnList;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<FWorldStatsEnum, FAISpawnListItemData> WorldStatInjection;  // 0x0010, size 0x50
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 BiomeSpawnDensity;  // 0x0060, size 0x4

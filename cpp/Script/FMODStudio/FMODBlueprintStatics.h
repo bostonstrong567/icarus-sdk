@@ -6,7 +6,6 @@ UCLASS()
 class UFMODBlueprintStatics : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void BusSetMute(UFMODBus* Bus, bool bMute);  // parameters 0x9
     UFUNCTION(BlueprintCallable) static void BusSetPaused(UFMODBus* Bus, bool bPaused);  // parameters 0x9
     UFUNCTION(BlueprintCallable) static void BusSetVolume(UFMODBus* Bus, float Volume);  // parameters 0xC

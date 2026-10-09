@@ -10,7 +10,5 @@ public:
     UPROPERTY() UBlackboardData* BlackboardAsset;  // 0x0038, size 0x8
     UPROPERTY() TArray<UBTDecorator*> RootDecorators;  // 0x0040, size 0x10
     UPROPERTY() TArray<FBTDecoratorLogic> RootDecoratorOps;  // 0x0050, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint16 InstanceMemorySize;  // 0x0060
+    uint16 InstanceMemorySize;  // 0x0060, not reflected
 };

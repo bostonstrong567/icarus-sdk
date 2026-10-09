@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_ModifyBoneTransforms_PerBone
 {
+public:
     UPROPERTY(EditAnywhere) FName Bone;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) FTransform Transform;  // 0x0010, size 0x30
 };

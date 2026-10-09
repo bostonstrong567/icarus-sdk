@@ -4,9 +4,9 @@
 USTRUCT()
 struct FAnimNode_ControlRigInputPose : public FAnimNode_Base
 {
+public:
     UPROPERTY() FPoseLink InputPose;  // 0x0010, size 0x10
-
-    // Not reflected:
-    FAnimInstanceProxy * InputProxy;  // 0x0020
-    UAnimInstance * InputAnimInstance;  // 0x0028
+private:
+    FAnimInstanceProxy * InputProxy;  // 0x0020, not reflected
+    UAnimInstance * InputAnimInstance;  // 0x0028, not reflected
 };

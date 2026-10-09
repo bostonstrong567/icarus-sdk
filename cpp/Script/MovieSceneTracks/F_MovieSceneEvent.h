@@ -4,5 +4,6 @@
 USTRUCT()
 struct FMovieSceneEvent
 {
+public:
     UPROPERTY() FMovieSceneEventPtrs Ptrs;  // 0x0000, size 0x28
 };

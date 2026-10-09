@@ -7,7 +7,5 @@ class UGizmoComponentHitTarget : public UObject, public IGizmoClickTarget
 {
 public:
     UPROPERTY(Instanced) UPrimitiveComponent* Component;  // 0x0030, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    TFunction<void __cdecl(bool)> UpdateHoverFunction;  // 0x0040
+    TFunction<void __cdecl(bool)> UpdateHoverFunction;  // 0x0040, not reflected
 };

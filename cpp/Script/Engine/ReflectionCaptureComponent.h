@@ -5,6 +5,7 @@
 UCLASS(Abstract, MinimalAPI, Config=Engine)
 class UReflectionCaptureComponent : public USceneComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(Instanced) UBillboardComponent* CaptureOffsetComponent;  // 0x01F8, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) EReflectionSourceType ReflectionSourceType;  // 0x0200, size 0x1
@@ -16,13 +17,12 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float MaxValueRGBM;  // 0x021C, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector CaptureOffset;  // 0x0220, size 0xC
     UPROPERTY() FGuid MapBuildDataId;  // 0x022C, size 0x10
+    FReflectionCaptureProxy * SceneProxy;  // 0x0240, not reflected
+private:
+    bool bNeedsRecaptureOrUpload;  // 0x0248, not reflected
     UPROPERTY(Transient) UTextureCube* CachedEncodedHDRCubemap;  // 0x0250, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FReflectionCaptureProxy * SceneProxy;  // 0x0240
-    bool bNeedsRecaptureOrUpload;  // 0x0248, private
-    float CachedAverageBrightness;  // 0x0258, private
-    FRenderCommandFence ReleaseResourcesFence;  // 0x0260, private
+    float CachedAverageBrightness;  // 0x0258, not reflected
+    FRenderCommandFence ReleaseResourcesFence;  // 0x0260, not reflected
 
     // Virtual functions that start here:
     //   GetInfluenceBoundingRadius, UpdatePreviewShape

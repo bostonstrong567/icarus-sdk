@@ -4,5 +4,6 @@
 USTRUCT()
 struct FExpressionOutput
 {
+public:
     UPROPERTY() FName OutputName;  // 0x0000, size 0x8
 };

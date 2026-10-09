@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABP_Homestead_Kitchen_Sink_C : public ABP_Advanced_Kitchen_Sink_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) void GetWaterModifiers(TArray<FAlterationsEnum>& Array);  // parameters 0x10
 };

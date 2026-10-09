@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSoundAttenuationSettings : public FBaseAttenuationSettings
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bAttenuate : 1;  // 0x00B0, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bSpatialize : 1;  // 0x00B0, mask 0x02
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bAttenuateWithLPF : 1;  // 0x00B0, mask 0x04

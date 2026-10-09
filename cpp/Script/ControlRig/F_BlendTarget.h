@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBlendTarget
 {
+public:
     UPROPERTY(EditAnywhere) FTransform Transform;  // 0x0000, size 0x30
     UPROPERTY(EditAnywhere) float Weight;  // 0x0030, size 0x4
 };

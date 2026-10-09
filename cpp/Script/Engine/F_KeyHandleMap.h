@@ -4,8 +4,7 @@
 USTRUCT()
 struct FKeyHandleMap
 {
-
-    // Not reflected:
-    TMap<FKeyHandle,int,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FKeyHandle,int,0> > KeyHandlesToIndices;  // 0x0000
-    TArray<FKeyHandle,TSizedDefaultAllocator<32> > KeyHandles;  // 0x0050
+private:
+    TMap<FKeyHandle,int,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FKeyHandle,int,0> > KeyHandlesToIndices;  // 0x0000, not reflected
+    TArray<FKeyHandle,TSizedDefaultAllocator<32> > KeyHandles;  // 0x0050, not reflected
 };

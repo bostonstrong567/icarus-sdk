@@ -6,7 +6,6 @@ UCLASS(Abstract)
 class UGizmoStateTarget : public UInterface
 {
 public:
-
     UFUNCTION() void BeginUpdate();
     UFUNCTION() void EndUpdate();
 };

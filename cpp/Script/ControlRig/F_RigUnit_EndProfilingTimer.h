@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_EndProfilingTimer : public FRigUnit_DebugBaseMutable
 {
+public:
     UPROPERTY() int32 NumberOfMeasurements;  // 0x0068, size 0x4
     UPROPERTY() FString Prefix;  // 0x0070, size 0x10
     UPROPERTY() float AccumulatedTime;  // 0x0080, size 0x4

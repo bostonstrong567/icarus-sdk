@@ -6,7 +6,6 @@ UCLASS(Abstract)
 class UDrillRecorderInterface : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintImplementableEvent) void LoadDrillData(const FDrillSaveData& DrillData);  // parameters 0x2
     UFUNCTION(BlueprintImplementableEvent) FDrillSaveData SaveDrillData();  // parameters 0x2
 };

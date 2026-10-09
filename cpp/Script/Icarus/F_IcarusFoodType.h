@@ -4,5 +4,6 @@
 USTRUCT()
 struct FIcarusFoodType : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FTagQueriesRowHandle TagQuery;  // 0x0018, size 0x18
 };

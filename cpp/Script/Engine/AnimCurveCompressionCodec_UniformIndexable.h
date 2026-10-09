@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew)
 class UAnimCurveCompressionCodec_UniformIndexable : public UAnimCurveCompressionCodec
 {
-public:
 };

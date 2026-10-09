@@ -5,7 +5,8 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UFlammableFISM : public UFlammableComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing) UFLODRecord* RegisteredRecord;  // 0x00E0, size 0x8
     UPROPERTY(EditAnywhere) TMap<int32, UFlammableInstanceFLOD*> CurrentFlammableInstances;  // 0x00E8, size 0x50
     UPROPERTY(EditAnywhere) TMap<int32, FFlammableFISMVisualData> InstanceVisualData;  // 0x0138, size 0x50
@@ -21,7 +22,7 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float VisualFireTemperatureLerpDownSpeed;  // 0x033C, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float VisualEffectsFireSpreadLerpUpSpeed;  // 0x0340, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float VisualEffectsFireSpreadLerpDownSpeed;  // 0x0344, size 0x4
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) UFLODRecord* FindReplacementBurntRecord() const;  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) TMap<int32, UFlammableInstanceFLOD*> GetFlammableInstances() const;  // parameters 0x50
     UFUNCTION(BlueprintCallable, BlueprintPure) TMap<int32, FFlammableFISMVisualData> GetInstanceCustomPrimitiveData() const;  // parameters 0x50

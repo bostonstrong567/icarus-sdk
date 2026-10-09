@@ -4,7 +4,6 @@
 USTRUCT()
 struct FGameplayTagReferenceHelper
 {
-
-    // Not reflected:
-    TDelegate<FName __cdecl(void *),FDefaultDelegateUserPolicy> OnGetGameplayTagName;  // 0x0000
+public:
+    TDelegate<FName __cdecl(void *),FDefaultDelegateUserPolicy> OnGetGameplayTagName;  // 0x0000, not reflected
 };

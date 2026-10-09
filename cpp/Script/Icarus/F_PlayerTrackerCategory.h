@@ -4,5 +4,6 @@
 USTRUCT()
 struct FPlayerTrackerCategory : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString CategoryDescriptor;  // 0x0018, size 0x10
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FGameplayTagRedirect
 {
+public:
     UPROPERTY(EditAnywhere) FName OldTagName;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) FName NewTagName;  // 0x0008, size 0x8
 };

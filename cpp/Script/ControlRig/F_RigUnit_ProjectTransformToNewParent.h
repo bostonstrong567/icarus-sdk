@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_ProjectTransformToNewParent : public FRigUnit
 {
+public:
     UPROPERTY() FRigElementKey Child;  // 0x0008, size 0xC
     UPROPERTY() bool bChildInitial;  // 0x0014, size 0x1
     UPROPERTY() FRigElementKey OldParent;  // 0x0018, size 0xC

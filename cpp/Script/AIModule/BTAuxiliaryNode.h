@@ -5,14 +5,12 @@
 UCLASS(Abstract)
 class UBTAuxiliaryNode : public UBTNode
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint8 : 1 bNotifyBecomeRelevant;  // 0x0058, protected
-    uint8 : 1 bNotifyCeaseRelevant;  // 0x0058, protected
-    uint8 : 1 bNotifyTick;  // 0x0058, protected
-    uint8 : 1 bTickIntervals;  // 0x0058, protected
-    uint8 ChildIndex;  // 0x0059, protected
+protected:
+    uint8 : 1 bNotifyBecomeRelevant;  // 0x0058, not reflected
+    uint8 : 1 bNotifyCeaseRelevant;  // 0x0058, not reflected
+    uint8 : 1 bNotifyTick;  // 0x0058, not reflected
+    uint8 : 1 bTickIntervals;  // 0x0058, not reflected
+    uint8 ChildIndex;  // 0x0059, not reflected
 
     // Virtual functions that start here:
     //   OnBecomeRelevant, OnCeaseRelevant, TickNode

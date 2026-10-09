@@ -5,10 +5,8 @@
 UCLASS(Abstract)
 class UClothingInteractor : public UObject
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    int32 ClothingId;  // 0x0028, protected
+protected:
+    int32 ClothingId;  // 0x0028, not reflected
 
     // Virtual functions that start here:
     //   Sync

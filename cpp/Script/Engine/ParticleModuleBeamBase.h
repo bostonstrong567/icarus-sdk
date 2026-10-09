@@ -5,5 +5,4 @@
 UCLASS(Abstract, EditInlineNew)
 class UParticleModuleBeamBase : public UParticleModule
 {
-public:
 };

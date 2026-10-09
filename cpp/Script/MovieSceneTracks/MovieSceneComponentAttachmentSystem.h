@@ -5,9 +5,7 @@
 UCLASS(MinimalAPI)
 class UMovieSceneComponentAttachmentSystem : public UMovieSceneEntityInstantiatorSystem, public IMovieScenePreAnimatedStateSystemInterface
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    UE::MovieScene::TOverlappingEntityTracker_BoundObject<UE::MovieScene::FPreAnimAttachment> AttachmentTracker;  // 0x0048, private
-    TArray<TTuple<USceneComponent *,UE::MovieScene::FPreAnimAttachment>,TSizedDefaultAllocator<32> > PendingAttachmentsToRestore;  // 0x01B0, private
+private:
+    UE::MovieScene::TOverlappingEntityTracker_BoundObject<UE::MovieScene::FPreAnimAttachment> AttachmentTracker;  // 0x0048, not reflected
+    TArray<TTuple<USceneComponent *,UE::MovieScene::FPreAnimAttachment>,TSizedDefaultAllocator<32> > PendingAttachmentsToRestore;  // 0x01B0, not reflected
 };

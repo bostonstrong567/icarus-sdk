@@ -4,5 +4,6 @@
 USTRUCT()
 struct FLiveLinkBaseStaticData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FName> PropertyNames;  // 0x0000, size 0x10
 };

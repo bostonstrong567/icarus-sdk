@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_GetJointTransform : public FRigUnitMutable
 {
+public:
     UPROPERTY() FName Joint;  // 0x0068, size 0x8
     UPROPERTY() ETransformGetterType Type;  // 0x0070, size 0x1
     UPROPERTY() ETransformSpaceMode TransformSpace;  // 0x0071, size 0x1

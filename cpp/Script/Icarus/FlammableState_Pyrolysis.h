@@ -5,5 +5,4 @@
 UCLASS()
 class UFlammableState_Pyrolysis : public UFlammableState
 {
-public:
 };

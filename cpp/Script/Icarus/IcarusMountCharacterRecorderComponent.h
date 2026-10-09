@@ -5,7 +5,8 @@
 UCLASS(Config=Engine)
 class UIcarusMountCharacterRecorderComponent : public UIcarusNPCRecorderComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, SaveGame) TArray<FStomachContentSaveData> StomachContents;  // 0x01E0, size 0x10
     UPROPERTY(EditAnywhere, SaveGame) FString MountName;  // 0x01F0, size 0x10
     UPROPERTY(EditAnywhere, SaveGame) FPlayerCharacterID OwnerCharacterID;  // 0x0200, size 0x18

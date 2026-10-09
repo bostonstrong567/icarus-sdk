@@ -6,7 +6,6 @@ UCLASS()
 class UOreDepositLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToOreDepositTable(FName Name, FOreDeposit Data, FOreDepositRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x141
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakOreDepositEnum(FOreDepositEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FOreDepositRowHandle CastToOreDepositRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

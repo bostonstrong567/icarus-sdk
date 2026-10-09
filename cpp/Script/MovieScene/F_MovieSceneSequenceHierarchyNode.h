@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMovieSceneSequenceHierarchyNode
 {
+public:
     UPROPERTY() FMovieSceneSequenceID ParentID;  // 0x0000, size 0x4
     UPROPERTY() TArray<FMovieSceneSequenceID> Children;  // 0x0008, size 0x10
 };

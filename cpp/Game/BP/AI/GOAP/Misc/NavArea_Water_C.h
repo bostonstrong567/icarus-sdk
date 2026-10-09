@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UNavArea_Water_C : public UNavArea
 {
-public:
 };

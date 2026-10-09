@@ -6,6 +6,5 @@ UCLASS()
 class UKeyDataFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static FText GetDisplayNameForKey(const FKey& Key, bool bLongDisplay);  // parameters 0x38
 };

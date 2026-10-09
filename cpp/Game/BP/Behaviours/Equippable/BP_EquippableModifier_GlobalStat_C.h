@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UBP_EquippableModifier_GlobalStat_C : public UBP_EquippableModifier_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool ItemEquipped();  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool ItemUnequipped();  // parameters 0x1
 };

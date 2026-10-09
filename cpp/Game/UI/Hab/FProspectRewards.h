@@ -4,6 +4,7 @@
 USTRUCT()
 struct FProspectRewards
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 CreditsEarned;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 ProspectTimeTaken;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool ProspectSuccessful;  // 0x0008, size 0x1

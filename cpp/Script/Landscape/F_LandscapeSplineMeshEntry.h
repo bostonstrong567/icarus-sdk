@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLandscapeSplineMeshEntry
 {
+public:
     UPROPERTY(EditAnywhere) UStaticMesh* Mesh;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) TArray<UMaterialInterface*> MaterialOverrides;  // 0x0008, size 0x10
     UPROPERTY(EditAnywhere) uint8 bCenterH : 1;  // 0x0018, mask 0x01

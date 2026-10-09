@@ -5,5 +5,4 @@
 UCLASS()
 class AIcarusStartMap_C : public ALevelScriptActor
 {
-public:
 };

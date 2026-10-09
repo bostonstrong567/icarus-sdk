@@ -5,9 +5,10 @@
 UCLASS(MinimalAPI, Config=Engine)
 class ARadialForceActor : public ARigidBodyBase
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) URadialForceComponent* ForceComponent;  // 0x0220, size 0x8
-
+public:
     UFUNCTION(BlueprintCallable) void DisableForce();
     UFUNCTION(BlueprintCallable) void EnableForce();
     UFUNCTION(BlueprintCallable) void FireImpulse();

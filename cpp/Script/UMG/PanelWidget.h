@@ -5,12 +5,11 @@
 UCLASS(Abstract)
 class UPanelWidget : public UWidget
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY() TArray<UPanelSlot*> Slots;  // 0x0108, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bCanHaveMultipleChildren;  // 0x0118, protected
-
+    bool bCanHaveMultipleChildren;  // 0x0118, not reflected
+public:
     UFUNCTION(BlueprintCallable) UPanelSlot* AddChild(UWidget* Content);  // parameters 0x10
     UFUNCTION(BlueprintCallable) void ClearChildren();
     UFUNCTION(BlueprintCallable, BlueprintPure) TArray<UWidget*> GetAllChildren() const;  // parameters 0x10

@@ -5,5 +5,4 @@
 UCLASS()
 class UPropertyValueVisibility : public UPropertyValue
 {
-public:
 };

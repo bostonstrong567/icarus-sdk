@@ -4,5 +4,6 @@
 USTRUCT()
 struct FTTVectorTrack : public FTTPropertyTrack
 {
+public:
     UPROPERTY() UCurveVector* CurveVector;  // 0x0020, size 0x8
 };

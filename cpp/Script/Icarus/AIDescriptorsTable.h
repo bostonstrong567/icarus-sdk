@@ -5,5 +5,4 @@
 UCLASS()
 class UAIDescriptorsTable : public UIcarusDataTable
 {
-public:
 };

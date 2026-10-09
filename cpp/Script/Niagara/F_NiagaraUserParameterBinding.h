@@ -4,5 +4,6 @@
 USTRUCT()
 struct FNiagaraUserParameterBinding
 {
+public:
     UPROPERTY(EditAnywhere) FNiagaraVariable Parameter;  // 0x0000, size 0x20
 };

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UNavArea_Null : public UNavArea
 {
-public:
 };

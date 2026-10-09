@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Deep_Mining_Ore_Deposit_Base_C : public ABP_OreDeposit_C
 {
-public:
 };

@@ -6,11 +6,9 @@ UCLASS(EditInlineNew)
 class USubmixEffectFlexiverbPreset : public USoundEffectSubmixPreset
 {
 public:
+    FWindowsCriticalSection SettingsCritSect;  // 0x0068, not reflected
+    FSubmixEffectFlexiverbSettings SettingsCopy;  // 0x0090, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSubmixEffectFlexiverbSettings Settings;  // 0x00A0, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FWindowsCriticalSection SettingsCritSect;  // 0x0068
-    FSubmixEffectFlexiverbSettings SettingsCopy;  // 0x0090
 
     UFUNCTION(BlueprintCallable) void SetSettings(const FSubmixEffectFlexiverbSettings& InSettings);  // parameters 0x10
 };

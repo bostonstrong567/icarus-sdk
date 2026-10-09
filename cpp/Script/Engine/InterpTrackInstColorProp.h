@@ -6,8 +6,6 @@ UCLASS()
 class UInterpTrackInstColorProp : public UInterpTrackInstProperty
 {
 public:
+    FColor * ColorProp;  // 0x0050, not reflected
     UPROPERTY() FColor ResetColor;  // 0x0058, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    FColor * ColorProp;  // 0x0050
 };

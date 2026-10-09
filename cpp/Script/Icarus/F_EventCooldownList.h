@@ -4,5 +4,6 @@
 USTRUCT()
 struct FEventCooldownList
 {
+public:
     UPROPERTY() TArray<float> Cooldowns;  // 0x0000, size 0x10
 };

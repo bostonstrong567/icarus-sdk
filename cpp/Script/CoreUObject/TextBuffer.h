@@ -5,10 +5,8 @@
 UCLASS()
 class UTextBuffer : public UObject
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    int32 Pos;  // 0x0038, private
-    int32 Top;  // 0x003C, private
-    FString Text;  // 0x0040, private
+private:
+    int32 Pos;  // 0x0038, not reflected
+    int32 Top;  // 0x003C, not reflected
+    FString Text;  // 0x0040, not reflected
 };

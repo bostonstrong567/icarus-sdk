@@ -5,5 +5,4 @@
 UCLASS()
 class UInterpTrackInstFade : public UInterpTrackInst
 {
-public:
 };

@@ -6,7 +6,6 @@ UCLASS()
 class UActionableLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToActionableTable(FName Name, FActionableData Data, FActionableRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xA9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakActionableEnum(FActionableEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FActionableRowHandle CastToActionableRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

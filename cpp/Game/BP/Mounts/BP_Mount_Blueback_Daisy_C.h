@@ -5,5 +5,4 @@
 UCLASS(Config=Game)
 class ABP_Mount_Blueback_Daisy_C : public ABP_Mount_Blueback_C
 {
-public:
 };

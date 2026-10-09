@@ -4,5 +4,6 @@
 USTRUCT()
 struct FSubdivisionLimitSection
 {
+public:
     UPROPERTY(BlueprintReadWrite) TArray<FSubdividedQuad> SubdividedQuads;  // 0x0000, size 0x10
 };

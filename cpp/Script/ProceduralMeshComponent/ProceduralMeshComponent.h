@@ -5,15 +5,17 @@
 UCLASS(Config=Engine)
 class UProceduralMeshComponent : public UMeshComponent, public IInterface_CollisionDataProvider
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bUseComplexAsSimpleCollision;  // 0x0480, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bUseAsyncCooking;  // 0x0481, size 0x1
     UPROPERTY(Instanced) UBodySetup* ProcMeshBodySetup;  // 0x0488, size 0x8
+private:
     UPROPERTY() TArray<FProcMeshSection> ProcMeshSections;  // 0x0490, size 0x10
     UPROPERTY() TArray<FKConvexElem> CollisionConvexElems;  // 0x04A0, size 0x10
     UPROPERTY() FBoxSphereBounds LocalBounds;  // 0x04B0, size 0x1C
     UPROPERTY(Transient) TArray<UBodySetup*> AsyncBodySetupQueue;  // 0x04D0, size 0x10
-
+public:
     UFUNCTION(BlueprintCallable) void AddCollisionConvexMesh(TArray<FVector> ConvexVerts);  // parameters 0x10
     UFUNCTION(BlueprintCallable) void ClearAllMeshSections();
     UFUNCTION(BlueprintCallable) void ClearCollisionConvexMeshes();

@@ -5,5 +5,4 @@
 UCLASS()
 class USettlementBuildingsTable : public UIcarusDataTable
 {
-public:
 };

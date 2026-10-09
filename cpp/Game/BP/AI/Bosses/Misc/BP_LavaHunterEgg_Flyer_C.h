@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_LavaHunterEgg_Flyer_C : public ABP_LavaHunterEgg_C
 {
-public:
 };

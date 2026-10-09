@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UInterpFilter_Custom : public UInterpFilter
 {
-public:
 };

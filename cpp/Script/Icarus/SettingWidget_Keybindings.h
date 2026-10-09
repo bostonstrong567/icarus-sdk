@@ -6,7 +6,6 @@ UCLASS(EditInlineNew)
 class USettingWidget_Keybindings : public USettingWidget
 {
 public:
-
     UFUNCTION(BlueprintImplementableEvent) void ClearKeybindingWidgets();
     UFUNCTION(BlueprintImplementableEvent) UKeybindingWidget* CreateKeybindingWidget(const FKeybindingsRowHandle& Keybinding);  // parameters 0x20
 };

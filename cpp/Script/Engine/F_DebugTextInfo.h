@@ -4,6 +4,7 @@
 USTRUCT()
 struct FDebugTextInfo
 {
+public:
     UPROPERTY() AActor* SrcActor;  // 0x0000, size 0x8
     UPROPERTY() FVector SrcActorOffset;  // 0x0008, size 0xC
     UPROPERTY() FVector SrcActorDesiredOffset;  // 0x0014, size 0xC

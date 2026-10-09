@@ -6,12 +6,11 @@ UCLASS(Transient)
 class USingleClickInputBehavior : public UAnyButtonInputBehavior
 {
 public:
+    TFunction<bool __cdecl(FInputDeviceState const &)> ModifierCheckFunc;  // 0x0080, not reflected
     UPROPERTY() bool HitTestOnRelease;  // 0x00C0, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    TFunction<bool __cdecl(FInputDeviceState const &)> ModifierCheckFunc;  // 0x0080
-    FInputBehaviorModifierStates Modifiers;  // 0x00C8
-    IClickBehaviorTarget * Target;  // 0x0128, protected
+    FInputBehaviorModifierStates Modifiers;  // 0x00C8, not reflected
+protected:
+    IClickBehaviorTarget * Target;  // 0x0128, not reflected
 
     // Virtual functions that start here:
     //   Clicked, Initialize

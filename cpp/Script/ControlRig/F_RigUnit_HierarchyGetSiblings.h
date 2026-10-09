@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_HierarchyGetSiblings : public FRigUnit_HierarchyBase
 {
+public:
     UPROPERTY() FRigElementKey Item;  // 0x0008, size 0xC
     UPROPERTY() bool bIncludeItem;  // 0x0014, size 0x1
     UPROPERTY() FRigElementKeyCollection Siblings;  // 0x0018, size 0x10

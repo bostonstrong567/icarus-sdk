@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBuildableAudioData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UFMODEvent> BuildingPlacedSound;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UFMODEvent> BuildingStressDamageSound;  // 0x0040, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UFMODEvent> BuildingDestroyedSound;  // 0x0068, size 0x28

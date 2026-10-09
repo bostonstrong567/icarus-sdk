@@ -5,9 +5,8 @@
 UCLASS()
 class UMovieSceneSignedObject : public UObject
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() FGuid Signature;  // 0x0028, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    UMovieSceneSignedObject::FOnSignatureChanged OnSignatureChangedEvent;  // 0x0038, private
+    UMovieSceneSignedObject::FOnSignatureChanged OnSignatureChangedEvent;  // 0x0038, not reflected
 };

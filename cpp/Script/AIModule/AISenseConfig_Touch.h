@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew)
 class UAISenseConfig_Touch : public UAISenseConfig
 {
-public:
 };

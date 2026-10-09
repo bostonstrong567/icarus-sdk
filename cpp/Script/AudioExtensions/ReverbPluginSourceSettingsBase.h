@@ -5,5 +5,4 @@
 UCLASS(Abstract, EditInlineNew, Config=Engine)
 class UReverbPluginSourceSettingsBase : public UObject
 {
-public:
 };

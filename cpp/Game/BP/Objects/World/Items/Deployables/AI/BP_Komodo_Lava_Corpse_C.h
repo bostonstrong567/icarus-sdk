@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Komodo_Lava_Corpse_C : public ABP_GOAP_Corpse_C
 {
-public:
 };

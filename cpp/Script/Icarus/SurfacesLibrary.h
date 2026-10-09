@@ -6,7 +6,6 @@ UCLASS()
 class USurfacesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToSurfacesTable(FName Name, FSurfacesData Data, FSurfacesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xC9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakSurfacesEnum(FSurfacesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FSurfacesRowHandle CastToSurfacesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

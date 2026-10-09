@@ -4,6 +4,7 @@
 USTRUCT()
 struct FStructSerializerNumericTestStruct
 {
+public:
     UPROPERTY() int8 Int8;  // 0x0000, size 0x1
     UPROPERTY() int16 Int16;  // 0x0002, size 0x2
     UPROPERTY() int32 Int32;  // 0x0004, size 0x4

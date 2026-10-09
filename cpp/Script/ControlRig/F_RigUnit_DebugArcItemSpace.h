@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_DebugArcItemSpace : public FRigUnit_DebugBaseMutable
 {
+public:
     UPROPERTY() FTransform Transform;  // 0x0070, size 0x30
     UPROPERTY() FLinearColor Color;  // 0x00A0, size 0x10
     UPROPERTY() float Radius;  // 0x00B0, size 0x4

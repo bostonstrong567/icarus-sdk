@@ -5,5 +5,4 @@
 UCLASS()
 class UMulticastDelegatePropertyWrapper : public UPropertyWrapper
 {
-public:
 };

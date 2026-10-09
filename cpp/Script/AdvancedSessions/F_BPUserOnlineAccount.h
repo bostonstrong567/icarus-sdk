@@ -4,7 +4,6 @@
 USTRUCT()
 struct FBPUserOnlineAccount
 {
-
-    // Not reflected:
-    TSharedPtr<FUserOnlineAccount,0> UserAccountInfo;  // 0x0000
+public:
+    TSharedPtr<FUserOnlineAccount,0> UserAccountInfo;  // 0x0000, not reflected
 };

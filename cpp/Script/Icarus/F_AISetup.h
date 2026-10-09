@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAISetup : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<AActor> ActorClass;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<AController> ControllerClass;  // 0x0040, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FAICreatureTypeRowHandle CreatureType;  // 0x0068, size 0x18

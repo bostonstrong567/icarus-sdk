@@ -4,5 +4,6 @@
 USTRUCT()
 struct FCollectionReference
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName CollectionName;  // 0x0000, size 0x8
 };

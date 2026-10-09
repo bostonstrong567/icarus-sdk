@@ -5,9 +5,8 @@
 UCLASS(EditInlineNew)
 class UNiagaraDataInterfaceMeshRendererInfo : public UNiagaraDataInterface
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere) UNiagaraMeshRendererProperties* MeshRenderer;  // 0x0038, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<FNDIMeshRendererInfo,1> Info;  // 0x0040, protected
+    TSharedPtr<FNDIMeshRendererInfo,1> Info;  // 0x0040, not reflected
 };

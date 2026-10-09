@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UBP_ModifierState_BigBreakfast_C : public UModifierStateComponent
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool ModifierApplied();  // parameters 0x1
 };

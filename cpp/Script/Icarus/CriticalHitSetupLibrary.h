@@ -6,7 +6,6 @@ UCLASS()
 class UCriticalHitSetupLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToCriticalHitSetupTable(FName Name, FCriticalHitSetup Data, FCriticalHitSetupRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xD1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakCriticalHitSetupEnum(FCriticalHitSetupEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FCriticalHitSetupRowHandle CastToCriticalHitSetupRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

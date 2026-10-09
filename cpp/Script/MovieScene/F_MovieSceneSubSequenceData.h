@@ -4,6 +4,8 @@
 USTRUCT()
 struct FMovieSceneSubSequenceData
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+public:
     UPROPERTY() FSoftObjectPath Sequence;  // 0x0000, size 0x18
     UPROPERTY() FMovieSceneSequenceTransform OuterToInnerTransform;  // 0x0018, size 0x20
     UPROPERTY() FMovieSceneSequenceTransform RootToSequenceTransform;  // 0x0038, size 0x20
@@ -22,8 +24,7 @@ struct FMovieSceneSubSequenceData
     UPROPERTY() int16 HierarchicalBias;  // 0x00D4, size 0x2
     UPROPERTY() bool bHasHierarchicalEasing;  // 0x00D6, size 0x1
     UPROPERTY() FMovieSceneSequenceInstanceDataPtr InstanceData;  // 0x00D8, size 0x18
+private:
+    TWeakObjectPtr<UMovieSceneSequence,FWeakObjectPtr> CachedSequence;  // 0x00F0, not reflected
     UPROPERTY() FGuid SubSectionSignature;  // 0x00F8, size 0x10
-
-    // Not reflected:
-    TWeakObjectPtr<UMovieSceneSequence,FWeakObjectPtr> CachedSequence;  // 0x00F0
 };

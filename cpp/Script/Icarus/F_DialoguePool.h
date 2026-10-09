@@ -4,5 +4,6 @@
 USTRUCT()
 struct FDialoguePool : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FDialogueRowHandle> Pool;  // 0x0018, size 0x10
 };

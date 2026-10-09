@@ -5,5 +5,4 @@
 UCLASS()
 class UFlammableState_Destroyed : public UFlammableState
 {
-public:
 };

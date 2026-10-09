@@ -4,6 +4,7 @@
 USTRUCT()
 struct FDialogueContext
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UDialogueVoice* Speaker;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<UDialogueVoice*> Targets;  // 0x0008, size 0x10
 };

@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class ABP_Mount_Horse_Standard_Corpse_C : public ABP_GOAP_Corpse_Mount_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void IsSkeletonUpdated();
     UFUNCTION(BlueprintCallable) void OnSkinnedStateUpdated();
     UFUNCTION(BlueprintCallable) void UpdateCosmeticMaterials();

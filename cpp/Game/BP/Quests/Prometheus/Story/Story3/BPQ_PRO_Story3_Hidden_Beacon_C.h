@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_PRO_Story3_Hidden_Beacon_C : public ABPQ_Deploy_Count_C
 {
-public:
 };

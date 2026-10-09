@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNiagaraStatScope
 {
+public:
     UPROPERTY() FName FullName;  // 0x0000, size 0x8
     UPROPERTY() FName FriendlyName;  // 0x0008, size 0x8
 };

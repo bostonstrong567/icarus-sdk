@@ -5,23 +5,22 @@
 UCLASS(Transient, NotPlaceable, Config=Engine)
 class APartyBeaconClient : public AOnlineBeaconClient
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
+    TDelegate<void __cdecl(enum EPartyReservationResult::Type),FDefaultDelegateUserPolicy> ReservationRequestComplete;  // 0x02B0, not reflected
+    TDelegate<void __cdecl(int),FDefaultDelegateUserPolicy> ReservationCountUpdate;  // 0x02C0, not reflected
+    TDelegate<void __cdecl(void),FDefaultDelegateUserPolicy> ReservationFull;  // 0x02D0, not reflected
     UPROPERTY() FString DestSessionId;  // 0x02E0, size 0x10
     UPROPERTY() FPartyReservation PendingReservation;  // 0x02F0, size 0x50
     UPROPERTY() EClientRequestType RequestType;  // 0x0340, size 0x1
     UPROPERTY() bool bPendingReservationSent;  // 0x0341, size 0x1
     UPROPERTY() bool bCancelReservation;  // 0x0342, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    TDelegate<void __cdecl(enum EPartyReservationResult::Type),FDefaultDelegateUserPolicy> ReservationRequestComplete;  // 0x02B0, protected
-    TDelegate<void __cdecl(int),FDefaultDelegateUserPolicy> ReservationCountUpdate;  // 0x02C0, protected
-    TDelegate<void __cdecl(void),FDefaultDelegateUserPolicy> ReservationFull;  // 0x02D0, protected
-    FTimerHandle CancelRPCFailsafe;  // 0x0348, protected
-    FTimerHandle PendingResponseTimerHandle;  // 0x0350, protected
-    FTimerHandle PendingCancelResponseTimerHandle;  // 0x0358, protected
-    FTimerHandle PendingReservationUpdateTimerHandle;  // 0x0360, protected
-    FTimerHandle PendingReservationFullTimerHandle;  // 0x0368, protected
-
+    FTimerHandle CancelRPCFailsafe;  // 0x0348, not reflected
+    FTimerHandle PendingResponseTimerHandle;  // 0x0350, not reflected
+    FTimerHandle PendingCancelResponseTimerHandle;  // 0x0358, not reflected
+    FTimerHandle PendingReservationUpdateTimerHandle;  // 0x0360, not reflected
+    FTimerHandle PendingReservationFullTimerHandle;  // 0x0368, not reflected
+public:
     UFUNCTION(Client, Reliable, BlueprintNativeEvent) void ClientCancelReservationResponse(TEnumAsByte<EPartyReservationResult> ReservationResponse);  // parameters 0x1
     UFUNCTION(Client, Reliable, BlueprintNativeEvent) void ClientReservationResponse(TEnumAsByte<EPartyReservationResult> ReservationResponse);  // parameters 0x1
     UFUNCTION(Client, Reliable, BlueprintNativeEvent) void ClientSendReservationFull();

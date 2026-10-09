@@ -6,6 +6,5 @@ UCLASS()
 class URepGraphPolicyFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static TSoftClassPtr<AActor> GetPolicyClassSoftPtr(const FRepGraphClassPolicy& Policy);  // parameters 0x98
 };

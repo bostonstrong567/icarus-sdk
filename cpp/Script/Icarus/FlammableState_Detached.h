@@ -5,5 +5,4 @@
 UCLASS()
 class UFlammableState_Detached : public UFlammableState
 {
-public:
 };

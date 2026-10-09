@@ -6,6 +6,5 @@ UCLASS(Transient, Config=Engine)
 class UBP_ActionableBehaviour_Firearm_AmmoController_ScorpionRifle_C : public UBP_ActionableBehaviour_Firearm_AmmoController_WithAbort_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void GetFiredProjectileInfo(bool& HasBallisticData, FBallisticData& BallisticData, int32& ProjectileCount, FVector2D& ProjectileAccuracy);  // parameters 0x204
 };

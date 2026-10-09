@@ -6,7 +6,6 @@ UCLASS()
 class UOrchestrationStateFlagsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToOrchestrationStateFlagsTable(FName Name, FOrchestrationStateFlag Data, FOrchestrationStateFlagsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x49
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakOrchestrationStateFlagsEnum(FOrchestrationStateFlagsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FOrchestrationStateFlagsRowHandle CastToOrchestrationStateFlagsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

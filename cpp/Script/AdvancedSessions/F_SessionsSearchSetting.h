@@ -4,8 +4,7 @@
 USTRUCT()
 struct FSessionsSearchSetting
 {
-
-    // Not reflected:
-    EOnlineComparisonOpRedux ComparisonOp;  // 0x0000
-    FSessionPropertyKeyPair PropertyKeyPair;  // 0x0008
+public:
+    EOnlineComparisonOpRedux ComparisonOp;  // 0x0000, not reflected
+    FSessionPropertyKeyPair PropertyKeyPair;  // 0x0008, not reflected
 };

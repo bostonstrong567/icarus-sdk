@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNiagaraSystemScalabilityOverride : public FNiagaraSystemScalabilitySettings
 {
+public:
     UPROPERTY(EditAnywhere) uint8 bOverrideDistanceSettings : 1;  // 0x0048, mask 0x01
     UPROPERTY(EditAnywhere) uint8 bOverrideInstanceCountSettings : 1;  // 0x0048, mask 0x02
     UPROPERTY(EditAnywhere) uint8 bOverridePerSystemInstanceCountSettings : 1;  // 0x0048, mask 0x04

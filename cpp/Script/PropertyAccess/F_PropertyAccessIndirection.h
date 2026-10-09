@@ -4,6 +4,8 @@
 USTRUCT()
 struct FPropertyAccessIndirection
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() FFieldPath ArrayProperty;  // 0x0000, size 0x20
     UPROPERTY() UFunction* Function;  // 0x0020, size 0x8
     UPROPERTY() int32 ReturnBufferSize;  // 0x0028, size 0x4

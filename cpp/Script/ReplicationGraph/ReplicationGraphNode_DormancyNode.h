@@ -5,8 +5,6 @@
 UCLASS(Transient)
 class UReplicationGraphNode_DormancyNode : public UReplicationGraphNode_ActorList
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSortedMap<TObjectKey<UNetReplicationGraphConnection>,UReplicationGraphNode_ConnectionDormancyNode *,TSizedDefaultAllocator<32>,TLess<TObjectKey<UNetReplicationGraphConnection> const &> > ConnectionNodes;  // 0x00D0, private
+private:
+    TSortedMap<TObjectKey<UNetReplicationGraphConnection>,UReplicationGraphNode_ConnectionDormancyNode *,TSizedDefaultAllocator<32>,TLess<TObjectKey<UNetReplicationGraphConnection> const &> > ConnectionNodes;  // 0x00D0, not reflected
 };

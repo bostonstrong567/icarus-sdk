@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Prop_Dissected_Roach_C : public ABP_DeployableBase_C
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAnimationSetup
 {
+public:
     UPROPERTY(EditAnywhere) UAnimSequence* AnimSequence;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) TSubclassOf<UAnimSharingStateInstance> AnimBlueprint;  // 0x0008, size 0x8
     UPROPERTY(EditAnywhere) FPerPlatformInt NumRandomizedInstances;  // 0x0010, size 0x4

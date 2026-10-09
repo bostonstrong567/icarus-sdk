@@ -5,5 +5,4 @@
 UCLASS()
 class UWeatherTierIconTable : public UIcarusDataTable
 {
-public:
 };

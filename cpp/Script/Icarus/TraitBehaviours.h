@@ -5,10 +5,12 @@
 UCLASS(Abstract, EditInlineNew, Config=Engine)
 class UTraitBehaviours : public UTraitComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY() FTraitAnimNotifySignature OnTraitAnimNotify;  // 0x00D0, size 0x1
+protected:
     UPROPERTY() TArray<UTraitBehaviour*> OwnedBehaviours;  // 0x00D8, size 0x10
-
+public:
     UFUNCTION(BlueprintCallable) UTraitBehaviour* CreateBehaviour(TSubclassOf<UTraitBehaviour> BehaviourClass);  // parameters 0x10
     UFUNCTION(BlueprintNativeEvent) void CreateBehaviours();
     UFUNCTION(BlueprintCallable, BlueprintPure) TArray<UTraitBehaviour*> GetBehaviours() const;  // parameters 0x10

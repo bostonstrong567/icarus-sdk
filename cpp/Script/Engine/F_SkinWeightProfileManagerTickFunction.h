@@ -4,7 +4,6 @@
 USTRUCT()
 struct FSkinWeightProfileManagerTickFunction : public FTickFunction
 {
-
-    // Not reflected:
-    FSkinWeightProfileManager * Owner;  // 0x0028
+public:
+    FSkinWeightProfileManager * Owner;  // 0x0028, not reflected
 };

@@ -8,8 +8,7 @@ class UImageSequenceProtocol_EXR : public UImageSequenceProtocol
 public:
     UPROPERTY(EditAnywhere, Config) bool bCompressed;  // 0x00D8, size 0x1
     UPROPERTY(EditAnywhere, Config) TEnumAsByte<EHDRCaptureGamut> CaptureGamut;  // 0x00D9, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    int32 RestoreColorGamut;  // 0x00DC, private
-    int32 RestoreOutputDevice;  // 0x00E0, private
+private:
+    int32 RestoreColorGamut;  // 0x00DC, not reflected
+    int32 RestoreOutputDevice;  // 0x00E0, not reflected
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBestiaryData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText CreatureName;  // 0x0018, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UTexture2D> Image;  // 0x0030, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float PopupImageScale;  // 0x0058, size 0x4

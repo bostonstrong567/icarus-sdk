@@ -5,16 +5,15 @@
 UCLASS(Abstract)
 class UUserDefinedCaptureProtocol : public UMovieSceneImageCaptureProtocolBase
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(Transient, BlueprintReadOnly) UWorld* World;  // 0x0058, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    TUniquePtr<FFrameGrabber,TDefaultDelete<FFrameGrabber> > FinalPixelsFrameGrabber;  // 0x0060, protected
-    TAtomic<int> NumOutstandingOperations;  // 0x0068, protected
-    FFrameMetrics CachedFrameMetrics;  // 0x006C, protected
-    FCapturedPixelsID FinalPixelsID;  // 0x0080, protected
-    const FCapturedPixelsID * CurrentStreamID;  // 0x00D0, protected
-
+    TUniquePtr<FFrameGrabber,TDefaultDelete<FFrameGrabber> > FinalPixelsFrameGrabber;  // 0x0060, not reflected
+    TAtomic<int> NumOutstandingOperations;  // 0x0068, not reflected
+    FFrameMetrics CachedFrameMetrics;  // 0x006C, not reflected
+    FCapturedPixelsID FinalPixelsID;  // 0x0080, not reflected
+    const FCapturedPixelsID * CurrentStreamID;  // 0x00D0, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) FString GenerateFilename(const FFrameMetrics& InFrameMetrics) const;  // parameters 0x20
     UFUNCTION(BlueprintCallable, BlueprintPure) FFrameMetrics GetCurrentFrameMetrics() const;  // parameters 0x10
     UFUNCTION(BlueprintImplementableEvent) void OnBeginFinalize();

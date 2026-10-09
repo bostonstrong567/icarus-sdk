@@ -19,8 +19,7 @@ public:
     UPROPERTY(EditAnywhere) uint8 bTickDuringGame : 1;  // 0x04F4, mask 0x10
     UPROPERTY(EditAnywhere) TEnumAsByte<EEnvQueryRunMode> QueryingMode;  // 0x04F8, size 0x1
     UPROPERTY(EditAnywhere) FNavAgentProperties NavAgentProperties;  // 0x0500, size 0x30
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<FEnvQueryInstance,0> QueryInstance;  // 0x0530, protected
-    TArray<FEnvQueryInstance,TSizedDefaultAllocator<32> > StepResults;  // 0x0540, protected
+protected:
+    TSharedPtr<FEnvQueryInstance,0> QueryInstance;  // 0x0530, not reflected
+    TArray<FEnvQueryInstance,TSizedDefaultAllocator<32> > StepResults;  // 0x0540, not reflected
 };

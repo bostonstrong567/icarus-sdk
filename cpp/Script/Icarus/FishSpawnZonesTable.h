@@ -5,5 +5,4 @@
 UCLASS()
 class UFishSpawnZonesTable : public UIcarusDataTable
 {
-public:
 };

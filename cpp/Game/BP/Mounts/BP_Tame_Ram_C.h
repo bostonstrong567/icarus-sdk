@@ -6,7 +6,6 @@ UCLASS(Config=Game)
 class ABP_Tame_Ram_C : public ABP_Tame_Sheep_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool ReplaceSelfWithDeadItem(AIcarusActor*& ReplacementActor, const TArray<FIcarusStatReplicated>& CustomStats);  // parameters 0x19
     UFUNCTION(BlueprintCallable) void UpdateWoolCosmetics();
 };

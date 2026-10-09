@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMeshSectionInfo
 {
+public:
     UPROPERTY() int32 MaterialIndex;  // 0x0000, size 0x4
     UPROPERTY() bool bEnableCollision;  // 0x0004, size 0x1
     UPROPERTY() bool bCastShadow;  // 0x0005, size 0x1

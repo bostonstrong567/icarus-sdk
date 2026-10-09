@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UBP_SheepFunctionLibrary_C : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void UpdateWoolCosmetics(USkeletalMeshComponent* MeshComponent, UGFurComponent* GFurComponent, bool HasWool, bool IsRam, UObject* __WorldContext);  // parameters 0x20
 };

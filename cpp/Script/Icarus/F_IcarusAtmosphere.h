@@ -4,6 +4,7 @@
 USTRUCT()
 struct FIcarusAtmosphere : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText AtmosphereName;  // 0x0018, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UTexture2D> Image_Small;  // 0x0030, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UTexture2D> Image_Medium;  // 0x0058, size 0x28

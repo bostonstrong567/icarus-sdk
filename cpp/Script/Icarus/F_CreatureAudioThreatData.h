@@ -4,5 +4,6 @@
 USTRUCT()
 struct FCreatureAudioThreatData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<ECreatureAudioThreatTargetType, FCreatureAudioThreatSetting> ThreatSettings;  // 0x0018, size 0x50
 };

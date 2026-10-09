@@ -5,5 +5,4 @@
 UCLASS(Abstract, MinimalAPI)
 class UNavNodeInterface : public UInterface
 {
-public:
 };

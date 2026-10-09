@@ -5,5 +5,4 @@
 UCLASS(NotPlaceable, MinimalAPI, Config=Engine)
 class ALandscapeGizmoActor : public AActor
 {
-public:
 };

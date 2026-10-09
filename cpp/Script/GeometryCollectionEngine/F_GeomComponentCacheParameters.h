@@ -4,6 +4,7 @@
 USTRUCT()
 struct FGeomComponentCacheParameters
 {
+public:
     UPROPERTY(EditAnywhere) EGeometryCollectionCacheType CacheMode;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere) UGeometryCollectionCache* TargetCache;  // 0x0008, size 0x8
     UPROPERTY(EditAnywhere) float ReverseCacheBeginTime;  // 0x0010, size 0x4

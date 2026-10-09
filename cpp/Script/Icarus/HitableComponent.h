@@ -6,7 +6,6 @@ UCLASS(EditInlineNew, Config=Engine)
 class UHitableComponent : public UTraitComponent
 {
 public:
-
     UFUNCTION(BlueprintNativeEvent) bool CanConsumeHit(UActorState* ActorStateIn, FIcarusDamagePacket DamagePacket);  // parameters 0xE1
     UFUNCTION(BlueprintNativeEvent) bool ConsumeHit(UActorState* ActorStateIn, FIcarusDamagePacket DamagePacket);  // parameters 0xE1
     UFUNCTION(BlueprintCallable, BlueprintPure) bool GetHitableData(FHitableData& OutData) const;  // parameters 0x41

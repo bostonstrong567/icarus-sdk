@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBox2D
 {
+public:
     UPROPERTY(EditAnywhere, SaveGame, BlueprintReadWrite) FVector2D Min;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, SaveGame, BlueprintReadWrite) FVector2D Max;  // 0x0008, size 0x8
     UPROPERTY() uint8 bIsValid;  // 0x0010, size 0x1

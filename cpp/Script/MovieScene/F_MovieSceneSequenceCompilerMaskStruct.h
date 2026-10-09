@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMovieSceneSequenceCompilerMaskStruct
 {
+public:
     UPROPERTY() uint8 bHierarchy : 1;  // 0x0000, mask 0x01
     UPROPERTY() uint8 bEvaluationTemplate : 1;  // 0x0000, mask 0x02
     UPROPERTY() uint8 bEvaluationTemplateField : 1;  // 0x0000, mask 0x04

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSubdividedQuadVertex
 {
+public:
     UPROPERTY(BlueprintReadWrite) int32 VertexPositionIndex;  // 0x0000, size 0x4
     UPROPERTY(BlueprintReadWrite) FVector2D TextureCoordinate0;  // 0x0004, size 0x8
     UPROPERTY(BlueprintReadWrite) FVector2D TextureCoordinate1;  // 0x000C, size 0x8

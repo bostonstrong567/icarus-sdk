@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UBP_PostProcess_CameraModifier_C : public UCameraModifier
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent) void BlueprintModifyCamera(float DeltaTime, FVector ViewLocation, FRotator ViewRotation, float FOV, FVector& NewViewLocation, FRotator& NewViewRotation, float& NewFOV);  // parameters 0x3C
 };

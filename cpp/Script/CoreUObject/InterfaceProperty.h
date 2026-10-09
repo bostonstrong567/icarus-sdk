@@ -6,7 +6,5 @@ UCLASS()
 class UInterfaceProperty : public UProperty
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    UClass * InterfaceClass;  // 0x0070
+    UClass * InterfaceClass;  // 0x0070, not reflected
 };

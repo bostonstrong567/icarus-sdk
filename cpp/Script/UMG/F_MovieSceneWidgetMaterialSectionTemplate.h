@@ -4,5 +4,7 @@
 USTRUCT()
 struct FMovieSceneWidgetMaterialSectionTemplate : public FMovieSceneParameterSectionTemplate
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() TArray<FName> BrushPropertyNamePath;  // 0x0080, size 0x10
 };

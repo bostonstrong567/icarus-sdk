@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Building_Wall_Diagonal_Curved_Half_Angle_Up_L_Invert_Glass_C : public ABP_Building_Wall_Diagonal_Curved_Half_Angle_Up_L_Invert_C
 {
-public:
 };

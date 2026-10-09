@@ -5,21 +5,20 @@
 UCLASS(Abstract)
 class UBTTask_BlueprintBase : public UBTTaskNode
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(Transient) AAIController* AIOwner;  // 0x0070, size 0x8
     UPROPERTY(Transient) AActor* ActorOwner;  // 0x0078, size 0x8
     UPROPERTY(EditAnywhere) FIntervalCountdown TickInterval;  // 0x0080, size 0x8
+    TEnumAsByte<enum EBTNodeResult::Type> CurrentCallResult;  // 0x0088, not reflected
+    TArray<FProperty *,TSizedDefaultAllocator<32> > PropertyData;  // 0x0090, not reflected
+    uint32 : 1 bIsAborting;  // 0x00A0, not reflected
+    uint32 : 1 bStoreFinishResult;  // 0x00A0, not reflected
+    uint32 : 2 ReceiveAbortImplementations;  // 0x00A0, not reflected
+    uint32 : 2 ReceiveExecuteImplementations;  // 0x00A0, not reflected
+    uint32 : 2 ReceiveTickImplementations;  // 0x00A0, not reflected
     UPROPERTY(EditAnywhere) uint8 bShowPropertyDetails : 1;  // 0x00A0, mask 0x01
-
-    // Not reflected: the engine's scripting cannot see these.
-    TEnumAsByte<enum EBTNodeResult::Type> CurrentCallResult;  // 0x0088, protected
-    TArray<FProperty *,TSizedDefaultAllocator<32> > PropertyData;  // 0x0090, protected
-    uint32 : 2 ReceiveTickImplementations;  // 0x00A0, protected
-    uint32 : 2 ReceiveExecuteImplementations;  // 0x00A0, protected
-    uint32 : 2 ReceiveAbortImplementations;  // 0x00A0, protected
-    uint32 : 1 bIsAborting;  // 0x00A0, protected
-    uint32 : 1 bStoreFinishResult;  // 0x00A0, protected
-
+public:
     UFUNCTION(BlueprintCallable) void FinishAbort();
     UFUNCTION(BlueprintCallable) void FinishExecute(bool bSuccess);  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsTaskAborting() const;  // parameters 0x1

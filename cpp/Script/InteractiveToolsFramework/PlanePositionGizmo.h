@@ -23,8 +23,7 @@ public:
     UPROPERTY() FVector2D InteractionStartParameter;  // 0x00D4, size 0x8
     UPROPERTY() FVector2D InteractionCurParameter;  // 0x00DC, size 0x8
     UPROPERTY() FVector2D ParameterSigns;  // 0x00E4, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FVector LastHitPosition;  // 0x00EC, protected
-    FVector2D InitialTargetParameter;  // 0x00F8, protected
+protected:
+    FVector LastHitPosition;  // 0x00EC, not reflected
+    FVector2D InitialTargetParameter;  // 0x00F8, not reflected
 };

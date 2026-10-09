@@ -6,7 +6,6 @@ UCLASS()
 class UAdvancedSessionsLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddOrModifyExtraSettings(TArray<FSessionPropertyKeyPair>& SettingsArray, TArray<FSessionPropertyKeyPair>& NewOrChangedSettings, TArray<FSessionPropertyKeyPair>& ModifiedSettingsArray);  // parameters 0x30
     UFUNCTION(BlueprintCallable) static bool BanPlayer(UObject* WorldContextObject, APlayerController* PlayerToBan, FText BanReason);  // parameters 0x29
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool EqualEqual_UNetIDUnetID(const FBPUniqueNetId& A, const FBPUniqueNetId& B);  // parameters 0x41

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class AFoliageDeborker : public AInfo
 {
-public:
 };

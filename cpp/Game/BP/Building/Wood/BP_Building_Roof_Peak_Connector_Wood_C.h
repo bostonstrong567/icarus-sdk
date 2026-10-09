@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Building_Roof_Peak_Connector_Wood_C : public ABP_Building_Roof_Peak_Connector_C
 {
-public:
 };

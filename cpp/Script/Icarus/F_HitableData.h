@@ -4,5 +4,6 @@
 USTRUCT()
 struct FHitableData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<UHitableComponent> Behaviour;  // 0x0018, size 0x28
 };

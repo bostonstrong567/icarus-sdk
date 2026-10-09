@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UBP_IcarusGOAPGoal_ReturnToAnchor_C : public UIcarusGOAPGoal
 {
-public:
 };

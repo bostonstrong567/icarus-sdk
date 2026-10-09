@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UNavArea_JumpLink_C : public UNavArea
 {
-public:
 };

@@ -6,7 +6,6 @@ UCLASS(MinimalAPI)
 class UWaterFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION() static void AddOrReplaceWaterFlavourAlteration(FAlterationsEnum ExternalAlteration, FCustomProperties& CustomProperties);  // parameters 0x60
     UFUNCTION() static void AddOrReplaceWaterPurityAlteration(FAlterationsEnum ExternalAlteration, FCustomProperties& CustomProperties);  // parameters 0x60
     UFUNCTION(BlueprintCallable) static bool CanWaterItemBeAltered(const FItemData& NewIcarusItem);  // parameters 0x1F1

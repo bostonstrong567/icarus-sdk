@@ -6,9 +6,7 @@ UCLASS()
 class UDragonIK_Library : public UObject
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool Lock_Forward_Axis;  // 0x0028
+    bool Lock_Forward_Axis;  // 0x0028, not reflected
 
     UFUNCTION(BlueprintCallable, BlueprintPure) static FRotator CustomLookRotation(FVector lookAt, FVector upDirection);  // parameters 0x24
     UFUNCTION(BlueprintCallable, BlueprintPure) static FRotator LookAtRotation_V3(FVector source, FVector target, FVector upvector);  // parameters 0x30

@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class ULakeSplineComponent : public UEdgeSplineComponent
 {
 public:
-
     UFUNCTION(BlueprintCallable) void ConstructFromPrefabTemplate(const FPrefabLake& PrefabLake);  // parameters 0x70
     UFUNCTION(BlueprintCallable) void ConstructFromTransformArray(const TArray<FTransform>& Transforms, ESplineLoopDirection LoopDirection);  // parameters 0x11
     UFUNCTION(BlueprintCallable) static TArray<FVector> GetEdgePointsFromLakePoints(const TMap<FIntPoint, FVector>& LakePoints);  // parameters 0x60

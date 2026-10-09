@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABP_SkeletalItem_Sub_Machine_Scout_C : public ASkeletalItem, public IIFireTransformProvider_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void GetFireTransform(bool& Success, FTransform& FireTransform);  // parameters 0x40
 };

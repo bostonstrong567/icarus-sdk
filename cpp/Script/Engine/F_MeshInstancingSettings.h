@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMeshInstancingSettings
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSubclassOf<AActor> ActorClassToUse;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 InstanceReplacementThreshold;  // 0x0008, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EMeshInstancingReplacementMethod MeshReplacementMethod;  // 0x000C, size 0x1

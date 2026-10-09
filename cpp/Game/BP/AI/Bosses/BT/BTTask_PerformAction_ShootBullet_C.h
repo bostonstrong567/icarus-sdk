@@ -6,6 +6,5 @@ UCLASS(Config=Game)
 class UBTTask_PerformAction_ShootBullet_C : public UBTTask_PerformAction_SpitAttack_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void DoAction();
 };

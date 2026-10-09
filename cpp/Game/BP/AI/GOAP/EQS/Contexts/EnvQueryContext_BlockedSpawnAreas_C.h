@@ -6,6 +6,5 @@ UCLASS(EditInlineNew, Config=Engine)
 class UEnvQueryContext_BlockedSpawnAreas_C : public UEnvQueryContext_BlueprintBase
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void ProvideLocationsSet(UObject* QuerierObject, AActor* QuerierActor, TArray<FVector>& ResultingLocationSet) const;  // parameters 0x20
 };

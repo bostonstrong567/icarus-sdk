@@ -6,7 +6,6 @@ UCLASS()
 class UAIEventsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToAIEventsTable(FName Name, FAIEventData Data, FAIEventsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x71
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakAIEventsEnum(FAIEventsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FAIEventsRowHandle CastToAIEventsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -5,8 +5,6 @@
 UCLASS(Transient)
 class USelectionSet : public UObject
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMulticastDelegate<void __cdecl(USelectionSet *),FDefaultDelegateUserPolicy> OnModified;  // 0x0028, protected
+protected:
+    TMulticastDelegate<void __cdecl(USelectionSet *),FDefaultDelegateUserPolicy> OnModified;  // 0x0028, not reflected
 };

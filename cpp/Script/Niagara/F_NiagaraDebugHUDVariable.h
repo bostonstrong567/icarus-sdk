@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNiagaraDebugHUDVariable
 {
+public:
     UPROPERTY(EditAnywhere) bool bEnabled;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere) FString Name;  // 0x0008, size 0x10
 };

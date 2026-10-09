@@ -33,11 +33,9 @@ public:
     UPROPERTY(EditAnywhere) float EmissiveMultiplier;  // 0x0280, size 0x4
     UPROPERTY(EditAnywhere) float IrradianceScalar;  // 0x0284, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FLightingChannels LightingChannels;  // 0x0288, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    FDDGIVolumeSceneProxy * SceneProxy;  // 0x0290
-    FDDGITextureLoadContext LoadContext;  // 0x0298
-    FIntVector PrevProbeScrollOffsets;  // 0x0340
+    FDDGIVolumeSceneProxy * SceneProxy;  // 0x0290, not reflected
+    FDDGITextureLoadContext LoadContext;  // 0x0298, not reflected
+    FIntVector PrevProbeScrollOffsets;  // 0x0340, not reflected
 
     UFUNCTION(BlueprintCallable) void ClearProbeData();
     UFUNCTION(Exec) void DDGIClearVolumes();

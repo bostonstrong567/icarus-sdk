@@ -4,5 +4,6 @@
 USTRUCT()
 struct FInteractStack
 {
+public:
     UPROPERTY(BlueprintReadOnly) TArray<UInteractableBehaviour*> Stack;  // 0x0000, size 0x10
 };

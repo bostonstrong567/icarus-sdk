@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAnimParentNodeAssetOverride
 {
+public:
     UPROPERTY() UAnimationAsset* NewAsset;  // 0x0000, size 0x8
     UPROPERTY() FGuid ParentNodeGuid;  // 0x0008, size 0x10
 };

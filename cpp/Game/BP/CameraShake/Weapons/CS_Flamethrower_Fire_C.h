@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UCS_Flamethrower_Fire_C : public UMatineeCameraShake
 {
-public:
 };

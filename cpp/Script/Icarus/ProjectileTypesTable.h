@@ -5,5 +5,4 @@
 UCLASS()
 class UProjectileTypesTable : public UIcarusDataTable
 {
-public:
 };

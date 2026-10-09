@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_ApplyFK : public FRigUnitMutable
 {
+public:
     UPROPERTY(EditAnywhere) FName Joint;  // 0x0068, size 0x8
     UPROPERTY() FTransform Transform;  // 0x0070, size 0x30
     UPROPERTY(EditAnywhere) FTransformFilter Filter;  // 0x00A0, size 0x9

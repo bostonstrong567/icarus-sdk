@@ -5,5 +5,4 @@
 UCLASS()
 class UMovieSceneIntegerTrack : public UMovieScenePropertyTrack
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FUpdateLevelStreamingLevelStatus
 {
+public:
     UPROPERTY() FName PackageName;  // 0x0000, size 0x8
     UPROPERTY() int32 LODIndex;  // 0x0008, size 0x4
     UPROPERTY() bool bNewShouldBeLoaded;  // 0x000C, size 0x1

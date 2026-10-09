@@ -5,5 +5,4 @@
 UCLASS(NotPlaceable, Config=Engine)
 class ABP_NPC_Generic_Controller_C : public ABP_IcarusNPCGOAPController_C
 {
-public:
 };

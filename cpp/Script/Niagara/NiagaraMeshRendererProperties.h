@@ -5,6 +5,7 @@
 UCLASS(EditInlineNew)
 class UNiagaraMeshRendererProperties : public UNiagaraRendererProperties
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere) TArray<FNiagaraMeshRendererMeshProperties> Meshes;  // 0x0078, size 0x10
     UPROPERTY(EditAnywhere) ENiagaraRendererSourceDataMode SourceMode;  // 0x0088, size 0x1
@@ -47,12 +48,11 @@ public:
     UPROPERTY(Transient) FNiagaraVariableAttributeBinding PrevMeshOrientationBinding;  // 0x0710, size 0x58
     UPROPERTY(Transient) FNiagaraVariableAttributeBinding PrevCameraOffsetBinding;  // 0x0768, size 0x58
     UPROPERTY(Transient) FNiagaraVariableAttributeBinding PrevVelocityBinding;  // 0x07C0, size 0x58
+    uint32 MaterialParamValidMask;  // 0x0818, not reflected
+    FNiagaraRendererLayout RendererLayoutWithCustomSorting;  // 0x0820, not reflected
+    FNiagaraRendererLayout RendererLayoutWithoutCustomSorting;  // 0x0850, not reflected
+private:
     UPROPERTY(Deprecated) UStaticMesh* ParticleMesh;  // 0x0880, size 0x8
     UPROPERTY(Deprecated) FVector PivotOffset;  // 0x0888, size 0xC
     UPROPERTY(Deprecated) ENiagaraMeshPivotOffsetSpace PivotOffsetSpace;  // 0x0894, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint32 MaterialParamValidMask;  // 0x0818
-    FNiagaraRendererLayout RendererLayoutWithCustomSorting;  // 0x0820
-    FNiagaraRendererLayout RendererLayoutWithoutCustomSorting;  // 0x0850
 };

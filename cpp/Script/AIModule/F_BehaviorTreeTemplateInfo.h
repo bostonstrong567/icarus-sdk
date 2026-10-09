@@ -4,9 +4,8 @@
 USTRUCT()
 struct FBehaviorTreeTemplateInfo
 {
+public:
     UPROPERTY() UBehaviorTree* Asset;  // 0x0000, size 0x8
     UPROPERTY(Transient) UBTCompositeNode* Template;  // 0x0008, size 0x8
-
-    // Not reflected:
-    uint16 InstanceMemorySize;  // 0x0010
+    uint16 InstanceMemorySize;  // 0x0010, not reflected
 };

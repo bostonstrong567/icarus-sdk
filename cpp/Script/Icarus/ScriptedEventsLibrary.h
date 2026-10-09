@@ -6,7 +6,6 @@ UCLASS()
 class UScriptedEventsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToScriptedEventsTable(FName Name, FScriptedEventData Data, FScriptedEventsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x79
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakScriptedEventsEnum(FScriptedEventsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FScriptedEventsRowHandle CastToScriptedEventsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UFieldNodeInt : public UFieldNodeBase
 {
-public:
 };

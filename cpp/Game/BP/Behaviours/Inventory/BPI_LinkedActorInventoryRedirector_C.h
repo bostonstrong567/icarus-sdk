@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UBPI_LinkedActorInventoryRedirector_C : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable) void GetRedirectedInventoryComponent(UInventoryComponent*& InventoryComponent);  // parameters 0x8
 };

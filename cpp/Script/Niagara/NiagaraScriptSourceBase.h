@@ -6,10 +6,8 @@ UCLASS(MinimalAPI)
 class UNiagaraScriptSourceBase : public UObject
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<TSharedPtr<EditorExposedVectorConstant,0>,TSizedDefaultAllocator<32> > ExposedVectorConstants;  // 0x0028
-    TArray<TSharedPtr<EditorExposedVectorCurveConstant,0>,TSizedDefaultAllocator<32> > ExposedVectorCurveConstants;  // 0x0038
+    TArray<TSharedPtr<EditorExposedVectorConstant,0>,TSizedDefaultAllocator<32> > ExposedVectorConstants;  // 0x0028, not reflected
+    TArray<TSharedPtr<EditorExposedVectorCurveConstant,0>,TSizedDefaultAllocator<32> > ExposedVectorCurveConstants;  // 0x0038, not reflected
 
     // Virtual functions that start here:
     //   AddModuleIfMissing, ComputeVMCompilationId, GetChangeID, GetCompileBaseId, GetCompileHash

@@ -6,7 +6,6 @@ UCLASS()
 class UStatAfflictionsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToStatAfflictionsTable(FName Name, FStatAfflictions Data, FStatAfflictionsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xB1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakStatAfflictionsEnum(FStatAfflictionsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FStatAfflictionsRowHandle CastToStatAfflictionsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -27,11 +27,10 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float CableWidth;  // 0x04EC, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 NumSides;  // 0x04F0, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float TileMaterial;  // 0x04F4, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    float TimeRemainder;  // 0x04F8, private
-    TArray<FCableParticle,TSizedDefaultAllocator<32> > Particles;  // 0x0500, private
-
+private:
+    float TimeRemainder;  // 0x04F8, not reflected
+    TArray<FCableParticle,TSizedDefaultAllocator<32> > Particles;  // 0x0500, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) AActor* GetAttachedActor() const;  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) USceneComponent* GetAttachedComponent() const;  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) void GetCableParticleLocations(TArray<FVector>& Locations) const;  // parameters 0x10

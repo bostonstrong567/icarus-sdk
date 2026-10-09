@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UCS_AssaultRifle_Fire_C : public UMatineeCameraShake
 {
-public:
 };

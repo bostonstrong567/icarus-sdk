@@ -4,6 +4,7 @@
 USTRUCT()
 struct FChannelDefinition
 {
+public:
     UPROPERTY() FName ChannelName;  // 0x0000, size 0x8
     UPROPERTY() FName ClassName;  // 0x0008, size 0x8
     UPROPERTY() TSubclassOf<UObject> ChannelClass;  // 0x0010, size 0x8

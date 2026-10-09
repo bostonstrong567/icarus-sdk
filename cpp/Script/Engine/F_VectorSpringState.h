@@ -4,8 +4,7 @@
 USTRUCT()
 struct FVectorSpringState
 {
-
-    // Not reflected:
-    FVector PrevError;  // 0x0000
-    FVector Velocity;  // 0x000C
+public:
+    FVector PrevError;  // 0x0000, not reflected
+    FVector Velocity;  // 0x000C, not reflected
 };

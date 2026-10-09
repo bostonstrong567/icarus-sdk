@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Mission_Crate_C : public ABP_ContainerBase_C
 {
-public:
 };

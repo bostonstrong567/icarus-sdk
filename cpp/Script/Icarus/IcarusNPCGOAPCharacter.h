@@ -5,8 +5,8 @@
 UCLASS(Config=Game)
 class AIcarusNPCGOAPCharacter : public AIcarusNPCCharacter
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bSkipCapsuleSizeValidation;  // 0x0918, size 0x1
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) FAISetupRowHandle AISetup;  // 0x091C, size 0x18
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) FEpicCreaturesRowHandle EpicCreature;  // 0x0934, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText EpicCreatureName;  // 0x0950, size 0x18
@@ -26,14 +26,15 @@ public:
     UPROPERTY(BlueprintAssignable) FCreatureLevelUpdated CreatureLevelUpdated;  // 0x0A40, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) AActor* LastDamageCauser;  // 0x0A50, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) AActor* LastDamageInstigator;  // 0x0A58, size 0x8
+protected:
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bSkipCapsuleSizeValidation;  // 0x0918, size 0x1
+    float DefaultBuoyancy;  // 0x0A60, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EGOAPCharacterStance CurrentStance;  // 0x0A64, size 0x1
     UPROPERTY() int32 LevelToSet;  // 0x0A68, size 0x4
+private:
+    float LastForcedAnimUpdateTime;  // 0x0A6C, not reflected
     UPROPERTY() AActor* LastTarget;  // 0x0A70, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    float DefaultBuoyancy;  // 0x0A60, protected
-    float LastForcedAnimUpdateTime;  // 0x0A6C, private
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool GetMontageForAction(const TSoftClassPtr<UIcarusGOAPAction>& Action, TSoftObjectPtr<UAnimMontage>& ActionMontage, FName& MontageSection, FName& MontageNotify);  // parameters 0x61
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) FName GetNextAttackMontageSection(AActor* AttackTarget);  // parameters 0x10
     UFUNCTION(BlueprintNativeEvent) void OnCharacterStanceUpdated(EGOAPCharacterStance PreviousStance, EGOAPCharacterStance NewStance);  // parameters 0x2

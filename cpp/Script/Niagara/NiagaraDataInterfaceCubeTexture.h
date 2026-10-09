@@ -7,7 +7,6 @@ class UNiagaraDataInterfaceCubeTexture : public UNiagaraDataInterface
 {
 public:
     UPROPERTY(EditAnywhere) UTextureCube* Texture;  // 0x0038, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FIntPoint TextureSize;  // 0x0040, protected
+protected:
+    FIntPoint TextureSize;  // 0x0040, not reflected
 };

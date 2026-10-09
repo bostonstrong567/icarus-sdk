@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLandscapeSplineInterpPoint
 {
+public:
     UPROPERTY() FVector Center;  // 0x0000, size 0xC
     UPROPERTY() FVector Left;  // 0x000C, size 0xC
     UPROPERTY() FVector Right;  // 0x0018, size 0xC

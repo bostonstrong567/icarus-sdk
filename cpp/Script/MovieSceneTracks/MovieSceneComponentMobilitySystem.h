@@ -5,10 +5,8 @@
 UCLASS(MinimalAPI)
 class UMovieSceneComponentMobilitySystem : public UMovieSceneEntityInstantiatorSystem, public IMovieScenePreAnimatedStateSystemInterface
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    UE::MovieScene::TOverlappingEntityTracker_BoundObject<enum EComponentMobility::Type> MobilityTracker;  // 0x0048, private
-    UE::MovieScene::FEntityComponentFilter Filter;  // 0x01B0, private
-    TArray<TTuple<USceneComponent *,enum EComponentMobility::Type>,TSizedDefaultAllocator<32> > PendingMobilitiesToRestore;  // 0x0210, private
+private:
+    UE::MovieScene::TOverlappingEntityTracker_BoundObject<enum EComponentMobility::Type> MobilityTracker;  // 0x0048, not reflected
+    UE::MovieScene::FEntityComponentFilter Filter;  // 0x01B0, not reflected
+    TArray<TTuple<USceneComponent *,enum EComponentMobility::Type>,TSizedDefaultAllocator<32> > PendingMobilitiesToRestore;  // 0x0210, not reflected
 };

@@ -5,16 +5,14 @@
 UCLASS()
 class USentrySubsystem : public UGameInstanceSubsystem
 {
+private:
+    TSharedPtr<ISentrySubsystem,0> SubsystemNativeImpl;  // 0x0030, not reflected
+    FDelegateHandle PreLoadMapDelegate;  // 0x0040, not reflected
+    FDelegateHandle PostLoadMapDelegate;  // 0x0048, not reflected
+    FDelegateHandle GameStateChangedDelegate;  // 0x0050, not reflected
+    FDelegateHandle UserActivityChangedDelegate;  // 0x0058, not reflected
+    FDelegateHandle GameSessionIDChangedDelegate;  // 0x0060, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<ISentrySubsystem,0> SubsystemNativeImpl;  // 0x0030, private
-    FDelegateHandle PreLoadMapDelegate;  // 0x0040, private
-    FDelegateHandle PostLoadMapDelegate;  // 0x0048, private
-    FDelegateHandle GameStateChangedDelegate;  // 0x0050, private
-    FDelegateHandle UserActivityChangedDelegate;  // 0x0058, private
-    FDelegateHandle GameSessionIDChangedDelegate;  // 0x0060, private
-
     UFUNCTION(BlueprintCallable) void AddBreadcrumb(USentryBreadcrumb* Breadcrumb);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void AddBreadcrumbWithParams(FString Message, FString Category, FString Type, const TMap<FString, FString>& Data, ESentryLevel Level);  // parameters 0x81
     UFUNCTION(BlueprintCallable) USentryId* CaptureEvent(USentryEvent* Event);  // parameters 0x10

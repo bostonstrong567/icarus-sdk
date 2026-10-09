@@ -4,6 +4,7 @@
 USTRUCT()
 struct FStreamingRenderAssetPrimitiveInfo
 {
+public:
     UPROPERTY() UStreamableRenderAsset* RenderAsset;  // 0x0000, size 0x8
     UPROPERTY() FBoxSphereBounds Bounds;  // 0x0008, size 0x1C
     UPROPERTY() float TexelFactor;  // 0x0024, size 0x4

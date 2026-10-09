@@ -5,8 +5,9 @@
 UCLASS(Config=Engine)
 class ASceneCaptureCube : public ASceneCapture
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) USceneCaptureComponentCube* CaptureComponentCube;  // 0x0230, size 0x8
-
+public:
     UFUNCTION(BlueprintCallable) void OnInterpToggle(bool bEnable);  // parameters 0x1
 };

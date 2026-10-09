@@ -4,5 +4,6 @@
 USTRUCT()
 struct FNiagaraParameters
 {
+public:
     UPROPERTY(EditAnywhere) TArray<FNiagaraVariable> Parameters;  // 0x0000, size 0x10
 };

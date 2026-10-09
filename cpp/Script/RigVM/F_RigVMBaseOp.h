@@ -4,7 +4,6 @@
 USTRUCT()
 struct FRigVMBaseOp
 {
-
-    // Not reflected:
-    ERigVMOpCode OpCode;  // 0x0000
+public:
+    ERigVMOpCode OpCode;  // 0x0000, not reflected
 };

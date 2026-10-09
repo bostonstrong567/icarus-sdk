@@ -5,5 +5,4 @@
 UCLASS(Abstract, MinimalAPI)
 class UNavigationPathGenerator : public UInterface
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FTwoVectors
 {
+public:
     UPROPERTY(EditAnywhere, SaveGame, BlueprintReadWrite) FVector v1;  // 0x0000, size 0xC
     UPROPERTY(EditAnywhere, SaveGame, BlueprintReadWrite) FVector v2;  // 0x000C, size 0xC
 };

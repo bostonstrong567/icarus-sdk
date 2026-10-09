@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSurfacesData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UPhysicalMaterial> PhysicalMaterial;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TEnumAsByte<EPhysicalSurface> SurfaceType;  // 0x0040, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UParticleSystem> ParticleSystem;  // 0x0048, size 0x28

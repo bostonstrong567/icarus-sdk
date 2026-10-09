@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class ABP_Landmine_Poison_C : public ABP_Landmine_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void DoDamageToAI(AActor* Defender);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void DoDamageToPlayer(AActor* Defender);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void DoExplosionEffects(bool PlayBaseExplosionFX);  // parameters 0x1

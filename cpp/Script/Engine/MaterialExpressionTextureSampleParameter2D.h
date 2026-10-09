@@ -5,5 +5,4 @@
 UCLASS()
 class UMaterialExpressionTextureSampleParameter2D : public UMaterialExpressionTextureSampleParameter
 {
-public:
 };

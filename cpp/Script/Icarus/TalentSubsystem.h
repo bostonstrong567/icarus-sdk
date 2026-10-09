@@ -5,5 +5,4 @@
 UCLASS()
 class UTalentSubsystem : public UGameInstanceSubsystem
 {
-public:
 };

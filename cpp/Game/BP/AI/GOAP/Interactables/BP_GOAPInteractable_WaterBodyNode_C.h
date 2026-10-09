@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_GOAPInteractable_WaterBodyNode_C : public ABP_GOAPInteractable_Base_C
 {
-public:
 };

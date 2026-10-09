@@ -5,5 +5,4 @@
 UCLASS()
 class UAttachmentIconsTable : public UIcarusDataTable
 {
-public:
 };

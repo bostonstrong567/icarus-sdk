@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UPaperSpriteAtlas : public UObject
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBakedStringCustomAttribute
 {
+public:
     UPROPERTY(EditAnywhere) FName AttributeName;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) FStringCurve StringCurve;  // 0x0008, size 0x88
 };

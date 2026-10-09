@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_GetTransform : public FRigUnit
 {
+public:
     UPROPERTY() FRigElementKey Item;  // 0x0008, size 0xC
     UPROPERTY() EBoneGetterSetterMode Space;  // 0x0014, size 0x1
     UPROPERTY() bool bInitial;  // 0x0015, size 0x1

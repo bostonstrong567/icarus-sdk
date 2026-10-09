@@ -4,5 +4,6 @@
 USTRUCT()
 struct FNiagaraSystemScalabilitySettingsArray
 {
+public:
     UPROPERTY(EditAnywhere) TArray<FNiagaraSystemScalabilitySettings> Settings;  // 0x0000, size 0x10
 };

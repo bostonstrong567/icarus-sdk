@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_STYX_B_Research_Craft_C : public ABPQ_Collect_Item_C
 {
-public:
 };

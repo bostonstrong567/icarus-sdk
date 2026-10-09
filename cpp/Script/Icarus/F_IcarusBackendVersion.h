@@ -4,9 +4,8 @@
 USTRUCT()
 struct FIcarusBackendVersion
 {
-
-    // Not reflected:
-    int32 Major;  // 0x0000
-    int32 Minor;  // 0x0004
-    int32 Changelist;  // 0x0008
+public:
+    int32 Major;  // 0x0000, not reflected
+    int32 Minor;  // 0x0004, not reflected
+    int32 Changelist;  // 0x0008, not reflected
 };

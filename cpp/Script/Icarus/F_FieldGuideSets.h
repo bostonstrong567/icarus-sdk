@@ -4,5 +4,6 @@
 USTRUCT()
 struct FFieldGuideSets : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FItemsStaticRowHandle> SetItems;  // 0x0018, size 0x10
 };

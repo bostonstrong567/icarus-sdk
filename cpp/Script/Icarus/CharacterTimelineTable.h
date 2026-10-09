@@ -5,5 +5,4 @@
 UCLASS()
 class UCharacterTimelineTable : public UIcarusDataTable
 {
-public:
 };

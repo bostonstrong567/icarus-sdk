@@ -5,5 +5,4 @@
 UCLASS(Transient, Config=Engine)
 class UBP_ActionableBehaviour_Apply_To_Target_Pill_C : public UBP_ActionableBehaviour_Apply_To_Target_C
 {
-public:
 };

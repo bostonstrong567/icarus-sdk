@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UMaterialExpressionPixelNormalWS : public UMaterialExpression
 {
-public:
 };

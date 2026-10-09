@@ -4,6 +4,7 @@
 USTRUCT()
 struct FHairGroupDesc
 {
+public:
     UPROPERTY() float HairLength;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float HairWidth;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool HairWidth_Override;  // 0x0008, size 0x1

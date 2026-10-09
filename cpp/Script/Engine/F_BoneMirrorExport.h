@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBoneMirrorExport
 {
+public:
     UPROPERTY(EditAnywhere) FName BoneName;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) FName SourceBoneName;  // 0x0008, size 0x8
     UPROPERTY(EditAnywhere) TEnumAsByte<EAxis> BoneFlipAxis;  // 0x0010, size 0x1

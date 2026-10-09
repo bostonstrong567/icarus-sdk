@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class AChaosSolverActor : public AActor
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere) FChaosSolverConfiguration Properties;  // 0x0220, size 0x68
     UPROPERTY(Deprecated) float TimeStepMultiplier;  // 0x0288, size 0x4
@@ -25,13 +26,12 @@ public:
     UPROPERTY(EditAnywhere) float FloorHeight;  // 0x02E0, size 0x4
     UPROPERTY(EditAnywhere) FChaosDebugSubstepControl ChaosDebugSubstepControl;  // 0x02E4, size 0x3
     UPROPERTY(Instanced) UBillboardComponent* SpriteComponent;  // 0x02E8, size 0x8
+private:
+    TSharedPtr<FPhysScene_Chaos,0> PhysScene;  // 0x02F0, not reflected
+    Chaos::FPBDRigidsSolver * Solver;  // 0x0300, not reflected
     UPROPERTY(Instanced) UChaosGameplayEventDispatcher* GameplayEventDispatcherComponent;  // 0x0308, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<FPhysScene_Chaos,0> PhysScene;  // 0x02F0, private
-    Chaos::FPBDRigidsSolver * Solver;  // 0x0300, private
-    FSingleParticlePhysicsProxy * Proxy;  // 0x0310, private
-
+    FSingleParticlePhysicsProxy * Proxy;  // 0x0310, not reflected
+public:
     UFUNCTION(BlueprintCallable) void SetAsCurrentWorldSolver();
     UFUNCTION(BlueprintCallable) void SetSolverActive(bool bActive);  // parameters 0x1
 

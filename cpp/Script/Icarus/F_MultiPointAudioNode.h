@@ -4,13 +4,13 @@
 USTRUCT()
 struct FMultiPointAudioNode
 {
+public:
     UPROPERTY() UObject* TargetObject;  // 0x0000, size 0x8
-
-    // Not reflected:
-    bool bRemoveOnZeroWeighting;  // 0x0008
-    bool bLocationIsSet;  // 0x0009
-    float DefaultWeighting;  // 0x000C
-    float CurrentWeighting;  // 0x0010
-    FVector CurrentLocation;  // 0x0014
-    bool bMarkedForRemoval;  // 0x0020
+    bool bRemoveOnZeroWeighting;  // 0x0008, not reflected
+    bool bLocationIsSet;  // 0x0009, not reflected
+private:
+    float DefaultWeighting;  // 0x000C, not reflected
+    float CurrentWeighting;  // 0x0010, not reflected
+    FVector CurrentLocation;  // 0x0014, not reflected
+    bool bMarkedForRemoval;  // 0x0020, not reflected
 };

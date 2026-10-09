@@ -6,7 +6,6 @@ UCLASS()
 class UHighlightableLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToHighlightableTable(FName Name, FHighlightableData Data, FHighlightableRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x99
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakHighlightableEnum(FHighlightableEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FHighlightableRowHandle CastToHighlightableRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

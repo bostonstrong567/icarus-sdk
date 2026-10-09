@@ -5,5 +5,4 @@
 UCLASS()
 class UMovieScenePostSpawnEventSystem : public UMovieSceneEventSystem
 {
-public:
 };

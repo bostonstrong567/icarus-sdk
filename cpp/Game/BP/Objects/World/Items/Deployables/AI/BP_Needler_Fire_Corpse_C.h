@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Needler_Fire_Corpse_C : public ABP_GOAP_Corpse_C
 {
-public:
 };

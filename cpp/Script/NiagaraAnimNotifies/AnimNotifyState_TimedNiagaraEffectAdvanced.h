@@ -5,10 +5,8 @@
 UCLASS(Const, EditInlineNew)
 class UAnimNotifyState_TimedNiagaraEffectAdvanced : public UAnimNotifyState_TimedNiagaraEffect
 {
+protected:
+    TMap<UMeshComponent *,UAnimNotifyState_TimedNiagaraEffectAdvanced::FInstanceProgressInfo,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<UMeshComponent *,UAnimNotifyState_TimedNiagaraEffectAdvanced::FInstanceProgressInfo,0> > ProgressInfoMap;  // 0x0060, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<UMeshComponent *,UAnimNotifyState_TimedNiagaraEffectAdvanced::FInstanceProgressInfo,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<UMeshComponent *,UAnimNotifyState_TimedNiagaraEffectAdvanced::FInstanceProgressInfo,0> > ProgressInfoMap;  // 0x0060, protected
-
     UFUNCTION(BlueprintCallable) float GetNotifyProgress(UMeshComponent* MeshComp) const;  // parameters 0xC
 };

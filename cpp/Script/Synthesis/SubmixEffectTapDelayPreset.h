@@ -6,12 +6,10 @@ UCLASS(EditInlineNew)
 class USubmixEffectTapDelayPreset : public USoundEffectSubmixPreset
 {
 public:
+    FWindowsCriticalSection SettingsCritSect;  // 0x0068, not reflected
+    FSubmixEffectTapDelaySettings SettingsCopy;  // 0x0090, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSubmixEffectTapDelaySettings Settings;  // 0x00A8, size 0x18
-
-    // Not reflected: the engine's scripting cannot see these.
-    FWindowsCriticalSection SettingsCritSect;  // 0x0068
-    FSubmixEffectTapDelaySettings SettingsCopy;  // 0x0090
-    FSubmixEffectTapDelaySettings DynamicSettings;  // 0x00C0
+    FSubmixEffectTapDelaySettings DynamicSettings;  // 0x00C0, not reflected
 
     UFUNCTION(BlueprintCallable) void AddTap(int32& TapId);  // parameters 0x4
     UFUNCTION(BlueprintCallable) float GetMaxDelayInMilliseconds();  // parameters 0x4

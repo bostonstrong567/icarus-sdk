@@ -14,10 +14,9 @@ public:
     UPROPERTY() bool bOverrideAutoRadiusCalculation;  // 0x0138, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 BlurRadius;  // 0x013C, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FSlateBrush LowQualityFallbackBrush;  // 0x0140, size 0x88
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SBackgroundBlur,0> MyBackgroundBlur;  // 0x01C8, protected
-
+protected:
+    TSharedPtr<SBackgroundBlur,0> MyBackgroundBlur;  // 0x01C8, not reflected
+public:
     UFUNCTION(BlueprintCallable) void SetApplyAlphaToBlur(bool bInApplyAlphaToBlur);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void SetBlurRadius(int32 InBlurRadius);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void SetBlurStrength(float InStrength);  // parameters 0x4

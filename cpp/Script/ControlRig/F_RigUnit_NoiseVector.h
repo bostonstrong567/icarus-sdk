@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_NoiseVector : public FRigUnit_MathBase
 {
+public:
     UPROPERTY() FVector Position;  // 0x0008, size 0xC
     UPROPERTY() FVector Speed;  // 0x0014, size 0xC
     UPROPERTY() FVector Frequency;  // 0x0020, size 0xC

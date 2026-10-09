@@ -5,21 +5,21 @@
 UCLASS()
 class UMusicPlayer : public UObject
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
+    TDelegate<void __cdecl(UMusicPlayer *),FDefaultDelegateUserPolicy> TrackEndedDelegate;  // 0x0030, not reflected
+    const FMusicTrack * Track;  // 0x0040, not reflected
+private:
+    EMusicPlayerState PlayState;  // 0x0048, not reflected
+    FFMODEventInstance EventInstance;  // 0x0050, not reflected
+    const float DefaultFadeValue;  // 0x0058, not reflected
     UPROPERTY() UCurveFloat* FadeCurve;  // 0x0060, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    TDelegate<void __cdecl(UMusicPlayer *),FDefaultDelegateUserPolicy> TrackEndedDelegate;  // 0x0030
-    const FMusicTrack * Track;  // 0x0040
-    EMusicPlayerState PlayState;  // 0x0048, private
-    FFMODEventInstance EventInstance;  // 0x0050, private
-    const float DefaultFadeValue;  // 0x0058, private
-    EMusicPlayerFadeType FadeType;  // 0x0068, private
-    float FadeTime;  // 0x006C, private
-    float FadeLength;  // 0x0070, private
-    float FadeValueOffset;  // 0x0074, private
-    FWindowsCriticalSection CriticalSection_CallbackLock;  // 0x0078, private
-    bool bCriticalSection_EventEnded;  // 0x00A0, private
-    float TimePaused;  // 0x00A4, private
-    const float PauseTimeoutLength;  // 0x00A8, private
+    EMusicPlayerFadeType FadeType;  // 0x0068, not reflected
+    float FadeTime;  // 0x006C, not reflected
+    float FadeLength;  // 0x0070, not reflected
+    float FadeValueOffset;  // 0x0074, not reflected
+    FWindowsCriticalSection CriticalSection_CallbackLock;  // 0x0078, not reflected
+    bool bCriticalSection_EventEnded;  // 0x00A0, not reflected
+    float TimePaused;  // 0x00A4, not reflected
+    const float PauseTimeoutLength;  // 0x00A8, not reflected
 };

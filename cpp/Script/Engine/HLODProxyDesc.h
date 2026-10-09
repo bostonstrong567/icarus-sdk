@@ -5,5 +5,4 @@
 UCLASS()
 class UHLODProxyDesc : public UObject
 {
-public:
 };

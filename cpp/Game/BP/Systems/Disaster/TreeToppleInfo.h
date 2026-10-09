@@ -4,6 +4,7 @@
 USTRUCT()
 struct TreeToppleInfo
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ETreePrimitiveDetachContext Context;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector FallDirection;  // 0x0004, size 0xC
 };

@@ -4,5 +4,6 @@
 USTRUCT()
 struct FGenericStruct
 {
+public:
     UPROPERTY() int32 Data;  // 0x0000, size 0x4
 };

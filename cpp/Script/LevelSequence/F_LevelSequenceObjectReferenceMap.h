@@ -4,7 +4,6 @@
 USTRUCT()
 struct FLevelSequenceObjectReferenceMap
 {
-
-    // Not reflected:
-    TMap<FGuid,FLevelSequenceLegacyObjectReference,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FGuid,FLevelSequenceLegacyObjectReference,0> > Map;  // 0x0000
+public:
+    TMap<FGuid,FLevelSequenceLegacyObjectReference,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FGuid,FLevelSequenceLegacyObjectReference,0> > Map;  // 0x0000, not reflected
 };

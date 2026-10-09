@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAssetBundleEntry
 {
+public:
     UPROPERTY() FName BundleName;  // 0x0000, size 0x8
     UPROPERTY() TArray<FSoftObjectPath> BundleAssets;  // 0x0008, size 0x10
 };

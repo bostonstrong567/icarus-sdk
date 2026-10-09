@@ -5,7 +5,8 @@
 UCLASS()
 class UListView : public UListViewBase
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<EOrientation> Orientation;  // 0x02D8, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<ESelectionMode> SelectionMode;  // 0x02D9, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) EConsumeMouseWheel ConsumeMouseWheel;  // 0x02DA, size 0x1
@@ -14,24 +15,23 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float EntrySpacing;  // 0x02E0, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bReturnFocusToSelection;  // 0x02E4, size 0x1
     UPROPERTY(Transient) TArray<UObject*> ListItems;  // 0x02E8, size 0x10
+    TSharedPtr<SListView<UObject *>,0> MyListView;  // 0x02F8, not reflected
+private:
+    TMulticastDelegate<void __cdecl(UObject *),FDefaultDelegateUserPolicy> OnItemClickedEvent;  // 0x0220, not reflected
+    TMulticastDelegate<void __cdecl(UObject *),FDefaultDelegateUserPolicy> OnItemDoubleClickedEvent;  // 0x0238, not reflected
+    TMulticastDelegate<void __cdecl(UObject *),FDefaultDelegateUserPolicy> OnItemSelectionChangedEvent;  // 0x0250, not reflected
+    TMulticastDelegate<void __cdecl(UObject *,bool),FDefaultDelegateUserPolicy> OnItemIsHoveredChangedEvent;  // 0x0268, not reflected
+    TMulticastDelegate<void __cdecl(UObject *,UUserWidget &),FDefaultDelegateUserPolicy> OnItemScrolledIntoViewEvent;  // 0x0280, not reflected
+    TMulticastDelegate<void __cdecl(float,float),FDefaultDelegateUserPolicy> OnListViewScrolledEvent;  // 0x0298, not reflected
+    TMulticastDelegate<void __cdecl(UObject *,bool),FDefaultDelegateUserPolicy> OnItemExpansionChangedEvent;  // 0x02B0, not reflected
+    TDelegate<TSubclassOf<UUserWidget> __cdecl(UObject *),FDefaultDelegateUserPolicy> OnGetEntryClassForItemDelegate;  // 0x02C8, not reflected
     UPROPERTY(BlueprintAssignable) FOnListEntryInitializedDynamic BP_OnEntryInitialized;  // 0x0308, size 0x10
     UPROPERTY(BlueprintAssignable) FSimpleListItemEventDynamic BP_OnItemClicked;  // 0x0318, size 0x10
     UPROPERTY(BlueprintAssignable) FSimpleListItemEventDynamic BP_OnItemDoubleClicked;  // 0x0328, size 0x10
     UPROPERTY(BlueprintAssignable) FOnItemIsHoveredChangedDynamic BP_OnItemIsHoveredChanged;  // 0x0338, size 0x10
     UPROPERTY(BlueprintAssignable) FOnListItemSelectionChangedDynamic BP_OnItemSelectionChanged;  // 0x0348, size 0x10
     UPROPERTY(BlueprintAssignable) FOnListItemScrolledIntoViewDynamic BP_OnItemScrolledIntoView;  // 0x0358, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMulticastDelegate<void __cdecl(UObject *),FDefaultDelegateUserPolicy> OnItemClickedEvent;  // 0x0220, private
-    TMulticastDelegate<void __cdecl(UObject *),FDefaultDelegateUserPolicy> OnItemDoubleClickedEvent;  // 0x0238, private
-    TMulticastDelegate<void __cdecl(UObject *),FDefaultDelegateUserPolicy> OnItemSelectionChangedEvent;  // 0x0250, private
-    TMulticastDelegate<void __cdecl(UObject *,bool),FDefaultDelegateUserPolicy> OnItemIsHoveredChangedEvent;  // 0x0268, private
-    TMulticastDelegate<void __cdecl(UObject *,UUserWidget &),FDefaultDelegateUserPolicy> OnItemScrolledIntoViewEvent;  // 0x0280, private
-    TMulticastDelegate<void __cdecl(float,float),FDefaultDelegateUserPolicy> OnListViewScrolledEvent;  // 0x0298, private
-    TMulticastDelegate<void __cdecl(UObject *,bool),FDefaultDelegateUserPolicy> OnItemExpansionChangedEvent;  // 0x02B0, private
-    TDelegate<TSubclassOf<UUserWidget> __cdecl(UObject *),FDefaultDelegateUserPolicy> OnGetEntryClassForItemDelegate;  // 0x02C8, private
-    TSharedPtr<SListView<UObject *>,0> MyListView;  // 0x02F8, protected
-
+public:
     UFUNCTION(BlueprintCallable) void AddItem(UObject* Item);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void BP_CancelScrollIntoView();
     UFUNCTION(BlueprintCallable) void BP_ClearSelection();

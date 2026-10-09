@@ -27,10 +27,9 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<EButtonPressMethod> PressMethod;  // 0x074A, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool IsFocusable;  // 0x074B, size 0x1
     UPROPERTY(BlueprintAssignable) FOnCheckBoxComponentStateChanged OnCheckStateChanged;  // 0x0750, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SCheckBox,0> MyCheckbox;  // 0x0760, protected
-
+protected:
+    TSharedPtr<SCheckBox,0> MyCheckbox;  // 0x0760, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) ECheckBoxState GetCheckedState() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsChecked() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsPressed() const;  // parameters 0x1

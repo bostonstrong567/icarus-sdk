@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_MathRBFInterpolateQuatXform : public FRigUnit_MathRBFInterpolateQuatBase
 {
+public:
     UPROPERTY() TArray<FMathRBFInterpolateQuatXform_Target> Targets;  // 0x00D0, size 0x10
     UPROPERTY() FTransform Output;  // 0x00E0, size 0x30
 };

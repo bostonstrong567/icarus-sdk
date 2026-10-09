@@ -6,7 +6,6 @@ UCLASS()
 class UActionsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToActionsTable(FName Name, FActionData Data, FActionsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x121
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakActionsEnum(FActionsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FActionsRowHandle CastToActionsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

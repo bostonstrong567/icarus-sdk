@@ -4,6 +4,7 @@
 USTRUCT()
 struct FPendingTypeChange
 {
+public:
     UPROPERTY() FVoxelSetupDataRowHandle NewSetupRow;  // 0x0000, size 0x18
     UPROPERTY() TSoftObjectPtr<UMaterialInterface> NewMaterialOverride;  // 0x0018, size 0x28
 };

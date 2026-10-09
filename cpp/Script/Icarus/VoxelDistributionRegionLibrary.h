@@ -6,7 +6,6 @@ UCLASS()
 class UVoxelDistributionRegionLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToVoxelDistributionRegionTable(FName Name, FVoxelDistributionRegion Data, FVoxelDistributionRegionRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xA1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakVoxelDistributionRegionEnum(FVoxelDistributionRegionEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FVoxelDistributionRegionRowHandle CastToVoxelDistributionRegionRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

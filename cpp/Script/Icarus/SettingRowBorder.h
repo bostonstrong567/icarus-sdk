@@ -5,9 +5,10 @@
 UCLASS(EditInlineNew)
 class USettingRowBorder : public UIcarusWidget
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(Instanced, BlueprintReadOnly) USettingWidget* SettingWidget;  // 0x0298, size 0x8
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void HideName();
     UFUNCTION(BlueprintCallable) void SetSettingWidget(USettingWidget* InSettingWidget);  // parameters 0x8
 };

@@ -4,7 +4,6 @@
 USTRUCT()
 struct FSmartNameContainer
 {
-
-    // Not reflected:
-    TMap<FName,FSmartNameMapping,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,FSmartNameMapping,0> > NameMappings;  // 0x0000
+private:
+    TMap<FName,FSmartNameMapping,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,FSmartNameMapping,0> > NameMappings;  // 0x0000, not reflected
 };

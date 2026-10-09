@@ -6,6 +6,5 @@ UCLASS()
 class UMatineeCameraShakeFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static UMatineeCameraShake* Conv_MatineeCameraShake(UCameraShakeBase* CameraShake);  // parameters 0x10
 };

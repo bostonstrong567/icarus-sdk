@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, MinimalAPI)
 class ULevelStreamingAlwaysLoaded : public ULevelStreaming
 {
-public:
 };

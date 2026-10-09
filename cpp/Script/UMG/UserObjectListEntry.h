@@ -6,6 +6,5 @@ UCLASS(Abstract)
 class UUserObjectListEntry : public UUserListEntry
 {
 public:
-
     UFUNCTION(BlueprintImplementableEvent) void OnListItemObjectSet(UObject* ListItemObject);  // parameters 0x8
 };

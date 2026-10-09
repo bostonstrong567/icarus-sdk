@@ -5,5 +5,4 @@
 UCLASS(Config=Game)
 class UAITask_LockLogic : public UAITask
 {
-public:
 };

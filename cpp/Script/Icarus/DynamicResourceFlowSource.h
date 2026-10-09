@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class UDynamicResourceFlowSource : public UInterface
 {
-public:
 };

@@ -4,9 +4,12 @@
 USTRUCT()
 struct FDebugFloatHistory
 {
-    UPROPERTY(Transient) TArray<float> Samples;  // 0x0000, size 0x10
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float MaxSamples;  // 0x0010, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float MinValue;  // 0x0014, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float MaxValue;  // 0x0018, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bAutoAdjustMinMax;  // 0x001C, size 0x1
+private:
+    UPROPERTY(Transient) TArray<float> Samples;  // 0x0000, size 0x10
 };

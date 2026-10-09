@@ -4,6 +4,7 @@
 USTRUCT()
 struct FHairGroupsCardsSourceDescription
 {
+public:
     UPROPERTY() UMaterialInterface* Material;  // 0x0000, size 0x8
     UPROPERTY() FName MaterialSlotName;  // 0x0008, size 0x8
     UPROPERTY(EditAnywhere) EHairCardsSourceType SourceType;  // 0x0010, size 0x1

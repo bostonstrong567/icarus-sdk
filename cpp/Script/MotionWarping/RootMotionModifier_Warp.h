@@ -5,6 +5,7 @@
 UCLASS(Abstract, EditInlineNew)
 class URootMotionModifier_Warp : public URootMotionModifier
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName WarpTargetName;  // 0x00B8, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EWarpPointAnimProvider WarpPointAnimProvider;  // 0x00C0, size 0x1
@@ -17,10 +18,9 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bWarpRotation;  // 0x0118, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EMotionWarpRotationType RotationType;  // 0x0119, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float WarpRotationTimeMultiplier;  // 0x011C, size 0x4
+protected:
     UPROPERTY() FTransform CachedTargetTransform;  // 0x0120, size 0x30
-
-    // Not reflected: the engine's scripting cannot see these.
-    TOptional<FTransform> CachedOffsetFromWarpPoint;  // 0x0150, protected
+    TOptional<FTransform> CachedOffsetFromWarpPoint;  // 0x0150, not reflected
 
     // Virtual functions that start here:
     //   OnTargetTransformChanged

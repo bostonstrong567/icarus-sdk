@@ -5,5 +5,4 @@
 UCLASS()
 class UAlterationsTable : public UIcarusDataTable
 {
-public:
 };

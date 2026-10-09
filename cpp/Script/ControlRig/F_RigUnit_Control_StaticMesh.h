@@ -4,5 +4,6 @@
 USTRUCT()
 struct FRigUnit_Control_StaticMesh : public FRigUnit_Control
 {
+public:
     UPROPERTY() FTransform MeshTransform;  // 0x00D0, size 0x30
 };

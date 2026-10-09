@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew)
 class UDummyEndpointSettings : public UAudioEndpointSettingsBase
 {
-public:
 };

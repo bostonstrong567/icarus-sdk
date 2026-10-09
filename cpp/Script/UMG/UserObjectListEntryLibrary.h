@@ -6,6 +6,5 @@ UCLASS()
 class UUserObjectListEntryLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static UObject* GetListItemObject(TScriptInterface<IUserObjectListEntry> UserObjectListEntry);  // parameters 0x18
 };

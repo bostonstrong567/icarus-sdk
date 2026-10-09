@@ -6,7 +6,6 @@ UCLASS()
 class UIcarusAudioFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static bool EventInstanceIsInAudibleRange(FFMODEventInstance EventInstance);  // parameters 0x9
     UFUNCTION(BlueprintCallable, BlueprintPure) static float GetEventLengthInSeconds(UFMODEvent* Event);  // parameters 0xC
     UFUNCTION(BlueprintCallable, BlueprintPure) static float GetEventMaxDistance(UFMODEvent* Event);  // parameters 0xC

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FWTSplineMesh
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UStaticMesh* Mesh;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TEnumAsByte<ESplineMeshAxis> ForwardAxis;  // 0x0008, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FTransform Transform;  // 0x0010, size 0x30

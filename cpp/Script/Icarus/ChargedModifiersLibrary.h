@@ -6,7 +6,6 @@ UCLASS()
 class UChargedModifiersLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToChargedModifiersTable(FName Name, FChargedModifiers Data, FChargedModifiersRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x61
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakChargedModifiersEnum(FChargedModifiersEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FChargedModifiersRowHandle CastToChargedModifiersRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

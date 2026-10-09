@@ -5,5 +5,4 @@
 UCLASS(Const)
 class UWindDamage : public UIcarusDamageType
 {
-public:
 };

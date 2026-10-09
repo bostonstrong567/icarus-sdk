@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_SetMultiControlFloat_Entry
 {
+public:
     UPROPERTY() FName Control;  // 0x0000, size 0x8
     UPROPERTY() float FloatValue;  // 0x0008, size 0x4
 };

@@ -4,5 +4,6 @@
 USTRUCT()
 struct FDelegateArray
 {
+public:
     UPROPERTY() TArray<FPlatformInterfaceDelegate> Delegates;  // 0x0000, size 0x10
 };

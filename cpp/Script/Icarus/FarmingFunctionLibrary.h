@@ -6,7 +6,6 @@ UCLASS()
 class UFarmingFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static bool GetGrowthStateData(FFarmingSeedsRowHandle Seed, EPlantGrowthStates GrowthState, FFarmingGrowthStatesRowHandle& GrowthStateRow);  // parameters 0x35
     UFUNCTION(BlueprintCallable) static bool GetSeedRewards(FFarmingSeedsRowHandle Seed, EPlantGrowthStates GrowthState, FItemRewardsRowHandle& ItemRewardRow);  // parameters 0x35
     UFUNCTION(BlueprintCallable) static bool GetSeedRow(FItemData Item, FFarmingSeedsRowHandle& SeedRow);  // parameters 0x209

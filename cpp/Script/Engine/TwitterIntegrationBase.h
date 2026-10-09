@@ -6,7 +6,6 @@ UCLASS(Transient, Config=Engine)
 class UTwitterIntegrationBase : public UPlatformInterfaceBase
 {
 public:
-
     UFUNCTION() bool AuthorizeAccounts();  // parameters 0x1
     UFUNCTION() bool CanShowTweetUI();  // parameters 0x1
     UFUNCTION() FString GetAccountName(int32 AccountIndex);  // parameters 0x18

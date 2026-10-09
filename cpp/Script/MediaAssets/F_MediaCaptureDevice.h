@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMediaCaptureDevice
 {
+public:
     UPROPERTY(Transient, BlueprintReadOnly) FText DisplayName;  // 0x0000, size 0x18
     UPROPERTY(Transient, BlueprintReadOnly) FString Url;  // 0x0018, size 0x10
 };

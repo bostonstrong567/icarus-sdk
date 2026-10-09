@@ -13,11 +13,10 @@ public:
     UPROPERTY(EditAnywhere) bool bAbsoluteScale;  // 0x0064, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 Attached : 1;  // 0x0080, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FName SocketName;  // 0x0084, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    UFXSystemComponent * SpawnedEffect;  // 0x0068, protected
-    FQuat RotationOffsetQuat;  // 0x0070, protected
-
+protected:
+    UFXSystemComponent * SpawnedEffect;  // 0x0068, not reflected
+    FQuat RotationOffsetQuat;  // 0x0070, not reflected
+public:
     UFUNCTION(BlueprintCallable) UFXSystemComponent* GetSpawnedEffect() const;  // parameters 0x8
 
     // Virtual functions that start here:

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBrushEffectTerracing
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float TerraceAlpha;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float TerraceSpacing;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float TerraceSmoothness;  // 0x0008, size 0x4

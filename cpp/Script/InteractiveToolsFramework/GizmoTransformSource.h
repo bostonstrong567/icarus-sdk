@@ -6,7 +6,6 @@ UCLASS(Abstract)
 class UGizmoTransformSource : public UInterface
 {
 public:
-
     UFUNCTION() FTransform GetTransform() const;  // parameters 0x30
     UFUNCTION() void SetTransform(const FTransform& NewTransform);  // parameters 0x30
 };

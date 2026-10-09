@@ -5,11 +5,9 @@
 UCLASS()
 class UTextBinding : public UPropertyBinding
 {
+private:
+    TOptional<enum UTextBinding::EConversion> NeedsConversion;  // 0x0060, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TOptional<enum UTextBinding::EConversion> NeedsConversion;  // 0x0060, private
-
     UFUNCTION() FString GetStringValue() const;  // parameters 0x10
     UFUNCTION() FText GetTextValue() const;  // parameters 0x18
 };

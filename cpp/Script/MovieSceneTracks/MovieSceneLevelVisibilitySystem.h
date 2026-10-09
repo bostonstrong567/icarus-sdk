@@ -5,9 +5,7 @@
 UCLASS(MinimalAPI)
 class UMovieSceneLevelVisibilitySystem : public UMovieSceneEntitySystem, public IMovieScenePreAnimatedStateSystemInterface
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    UE::MovieScene::FCachedEntityFilterResult_Match ApplicableFilter;  // 0x0048, private
-    UE::MovieScene::FMovieSceneLevelStreamingSharedData SharedData;  // 0x00B8, private
+private:
+    UE::MovieScene::FCachedEntityFilterResult_Match ApplicableFilter;  // 0x0048, not reflected
+    UE::MovieScene::FMovieSceneLevelStreamingSharedData SharedData;  // 0x00B8, not reflected
 };

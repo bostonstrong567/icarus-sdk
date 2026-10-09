@@ -4,6 +4,7 @@
 USTRUCT()
 struct FExternalToolDefinition
 {
+public:
     UPROPERTY(EditAnywhere, Config) FString ToolName;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, Config) FFilePath ExecutablePath;  // 0x0010, size 0x10
     UPROPERTY(EditAnywhere, Config) FString CommandLineOptions;  // 0x0020, size 0x10

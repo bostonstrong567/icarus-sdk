@@ -12,9 +12,7 @@ public:
     UPROPERTY(EditAnywhere, Interp, BlueprintReadOnly) float MaxGustAmount;  // 0x0204, size 0x4
     UPROPERTY(EditAnywhere, Interp, BlueprintReadWrite) float Radius;  // 0x0208, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bPointWind : 1;  // 0x020C, mask 0x01
-
-    // Not reflected: the engine's scripting cannot see these.
-    FWindSourceSceneProxy * SceneProxy;  // 0x0210
+    FWindSourceSceneProxy * SceneProxy;  // 0x0210, not reflected
 
     UFUNCTION(BlueprintCallable) void SetMaximumGustAmount(float InNewMaxGust);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void SetMinimumGustAmount(float InNewMinGust);  // parameters 0x4

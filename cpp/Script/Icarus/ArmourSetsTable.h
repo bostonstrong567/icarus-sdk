@@ -5,5 +5,4 @@
 UCLASS()
 class UArmourSetsTable : public UIcarusDataTable
 {
-public:
 };

@@ -5,16 +5,17 @@
 UCLASS(Config=Engine)
 class UTameInteractableComponent : public UActorComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 MaxConcurrentInteractions;  // 0x00B0, size 0x4
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) bool bOnlyAllowWhitelistedActors;  // 0x00B4, size 0x1
+protected:
     UPROPERTY() TMap<AActor*, float> InteractingActors;  // 0x00B8, size 0x50
     UPROPERTY(Replicated) TArray<int32> WhitelistedActors;  // 0x0108, size 0x10
     UPROPERTY() float ForceEndInteractionDelay;  // 0x0118, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    FTimerHandle CleanupTimerHandle;  // 0x0120, private
-
+private:
+    FTimerHandle CleanupTimerHandle;  // 0x0120, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) bool BeginInteraction(AActor* InstigatingActor);  // parameters 0x9
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) bool CanBeInteractedWith(AActor* InstigatingActor) const;  // parameters 0x9
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) bool EndInteraction(AActor* InstigatingActor);  // parameters 0x9

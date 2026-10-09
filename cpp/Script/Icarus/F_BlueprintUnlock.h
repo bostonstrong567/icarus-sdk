@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBlueprintUnlock : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FItemableRowHandle Itemable;  // 0x0018, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FCharacterFlagsRowHandle> Requirements;  // 0x0030, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FCharacterFlagsRowHandle> Unlocks;  // 0x0040, size 0x10

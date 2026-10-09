@@ -6,7 +6,6 @@ UCLASS(Abstract)
 class UUserListEntry : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintImplementableEvent) void BP_OnEntryReleased();
     UFUNCTION(BlueprintImplementableEvent) void BP_OnItemExpansionChanged(bool bIsExpanded);  // parameters 0x1
     UFUNCTION(BlueprintImplementableEvent) void BP_OnItemSelectionChanged(bool bIsSelected);  // parameters 0x1

@@ -5,5 +5,4 @@
 UCLASS()
 class UChaosClothingSimulationFactory : public UClothingSimulationFactory
 {
-public:
 };

@@ -5,10 +5,8 @@
 UCLASS()
 class UHorizontalBox : public UPanelWidget
 {
+protected:
+    TSharedPtr<SHorizontalBox,0> MyHorizontalBox;  // 0x0120, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SHorizontalBox,0> MyHorizontalBox;  // 0x0120, protected
-
     UFUNCTION(BlueprintCallable) UHorizontalBoxSlot* AddChildToHorizontalBox(UWidget* Content);  // parameters 0x10
 };

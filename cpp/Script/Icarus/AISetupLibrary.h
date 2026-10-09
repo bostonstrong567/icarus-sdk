@@ -6,7 +6,6 @@ UCLASS()
 class UAISetupLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToAISetupTable(FName Name, FAISetup Data, FAISetupRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x2C9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakAISetupEnum(FAISetupEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FAISetupRowHandle CastToAISetupRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

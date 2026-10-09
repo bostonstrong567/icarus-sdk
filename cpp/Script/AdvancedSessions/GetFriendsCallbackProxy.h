@@ -8,11 +8,10 @@ class UGetFriendsCallbackProxy : public UOnlineBlueprintCallProxyBase
 public:
     UPROPERTY(BlueprintAssignable) FBlueprintGetFriendsListDelegate OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FBlueprintGetFriendsListDelegate OnFailure;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TWeakObjectPtr<APlayerController,FWeakObjectPtr> PlayerControllerWeakPtr;  // 0x0050, private
-    TDelegate<void __cdecl(int,bool,FString const &,FString const &),FDefaultDelegateUserPolicy> FriendListReadCompleteDelegate;  // 0x0058, private
-    UObject * WorldContextObject;  // 0x0068, private
-
+private:
+    TWeakObjectPtr<APlayerController,FWeakObjectPtr> PlayerControllerWeakPtr;  // 0x0050, not reflected
+    TDelegate<void __cdecl(int,bool,FString const &,FString const &),FDefaultDelegateUserPolicy> FriendListReadCompleteDelegate;  // 0x0058, not reflected
+    UObject * WorldContextObject;  // 0x0068, not reflected
+public:
     UFUNCTION(BlueprintCallable) static UGetFriendsCallbackProxy* GetAndStoreFriendsList(UObject* WorldContextObject, APlayerController* PlayerController);  // parameters 0x18
 };

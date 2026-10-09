@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBasicParticleData
 {
+public:
     UPROPERTY(BlueprintReadOnly) FVector Position;  // 0x0000, size 0xC
     UPROPERTY(BlueprintReadOnly) float Size;  // 0x000C, size 0x4
     UPROPERTY(BlueprintReadOnly) FVector Velocity;  // 0x0010, size 0xC

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRecordedForecastWeatherEvent
 {
+public:
     UPROPERTY(SaveGame) FName WeatherEventRowName;  // 0x0000, size 0x8
     UPROPERTY(SaveGame) FName BiomeGroupRowName;  // 0x0008, size 0x8
     UPROPERTY(SaveGame) int32 TimeElapsed;  // 0x0010, size 0x4

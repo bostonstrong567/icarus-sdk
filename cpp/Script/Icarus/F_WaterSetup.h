@@ -4,6 +4,7 @@
 USTRUCT()
 struct FWaterSetup : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UMaterialInterface> Material;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FFishSetupRowHandle> Fish;  // 0x0040, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float FishDensity;  // 0x0050, size 0x4

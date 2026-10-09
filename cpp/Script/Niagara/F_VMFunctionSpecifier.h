@@ -4,6 +4,7 @@
 USTRUCT()
 struct FVMFunctionSpecifier
 {
+public:
     UPROPERTY() FName Key;  // 0x0000, size 0x8
     UPROPERTY() FName Value;  // 0x0008, size 0x8
 };

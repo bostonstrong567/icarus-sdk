@@ -4,7 +4,6 @@
 USTRUCT()
 struct FParticleSystemWorldManagerTickFunction : public FTickFunction
 {
-
-    // Not reflected:
-    FParticleSystemWorldManager * Owner;  // 0x0028
+public:
+    FParticleSystemWorldManager * Owner;  // 0x0028, not reflected
 };

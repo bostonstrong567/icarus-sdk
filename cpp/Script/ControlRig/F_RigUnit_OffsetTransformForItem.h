@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_OffsetTransformForItem : public FRigUnitMutable
 {
+public:
     UPROPERTY() FRigElementKey Item;  // 0x0068, size 0xC
     UPROPERTY() FTransform OffsetTransform;  // 0x0080, size 0x30
     UPROPERTY() float Weight;  // 0x00B0, size 0x4

@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABP_Prop_Scales_C : public ABP_DeployableContainerBase_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void Deployable_Interact(AActor* Interactor);  // parameters 0x8
 };

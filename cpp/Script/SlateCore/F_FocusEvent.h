@@ -4,8 +4,7 @@
 USTRUCT()
 struct FFocusEvent
 {
-
-    // Not reflected:
-    EFocusCause Cause;  // 0x0000
-    uint32 UserIndex;  // 0x0004
+private:
+    EFocusCause Cause;  // 0x0000, not reflected
+    uint32 UserIndex;  // 0x0004, not reflected
 };

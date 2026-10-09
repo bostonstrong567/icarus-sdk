@@ -4,6 +4,7 @@
 USTRUCT()
 struct FCheckBoxStyle : public FSlateWidgetStyle
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TEnumAsByte<ESlateCheckBoxType> CheckBoxType;  // 0x0008, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSlateBrush UncheckedImage;  // 0x0010, size 0x88
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSlateBrush UncheckedHoveredImage;  // 0x0098, size 0x88

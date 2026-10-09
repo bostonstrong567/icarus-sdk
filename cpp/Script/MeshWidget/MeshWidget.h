@@ -7,11 +7,10 @@ class UMeshWidget : public UWidget
 {
 public:
     UPROPERTY(BlueprintAssignable) FOnUpdateMeshInstance OnRequestMeshInstanceUpdate;  // 0x0110, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SIcarusMeshWidget,0> MeshWidget;  // 0x0120, protected
-    TArray<TArray<FMeshInstanceData,TSizedDefaultAllocator<32> >,TSizedDefaultAllocator<32> > MeshInstanceData;  // 0x0130, protected
-
+protected:
+    TSharedPtr<SIcarusMeshWidget,0> MeshWidget;  // 0x0120, not reflected
+    TArray<TArray<FMeshInstanceData,TSizedDefaultAllocator<32> >,TSizedDefaultAllocator<32> > MeshInstanceData;  // 0x0130, not reflected
+public:
     UFUNCTION(BlueprintCallable) int32 AddMesh(USlateVectorArtData* InMeshData);  // parameters 0xC
     UFUNCTION(BlueprintCallable) int32 AddMeshWithInstancing(USlateVectorArtData* InMeshData, int32 InstanceCount);  // parameters 0x10
     UFUNCTION(BlueprintCallable) void AddRenderRun(int32 InMeshIndex, int32 InInstanceOffset, int32 InNumInstances);  // parameters 0xC

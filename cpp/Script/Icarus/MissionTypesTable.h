@@ -5,5 +5,4 @@
 UCLASS()
 class UMissionTypesTable : public UIcarusDataTable
 {
-public:
 };

@@ -4,5 +4,6 @@
 USTRUCT()
 struct FNiagaraDebuggerOutlinerUpdate
 {
+public:
     UPROPERTY(EditAnywhere) FNiagaraOutlinerData OutlinerData;  // 0x0000, size 0x50
 };

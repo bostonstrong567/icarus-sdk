@@ -5,7 +5,8 @@
 UCLASS(MinimalAPI)
 class UEnvQueryTest_Dot : public UEnvQueryTest
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere) FEnvDirection LineA;  // 0x01F8, size 0x20
     UPROPERTY(EditAnywhere) FEnvDirection LineB;  // 0x0218, size 0x20
     UPROPERTY(EditAnywhere) EEnvTestDot TestMode;  // 0x0238, size 0x1

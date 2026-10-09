@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_TwoBoneIKSimplePerItem : public FRigUnit_HighlevelBaseMutable
 {
+public:
     UPROPERTY() FRigElementKey ItemA;  // 0x0068, size 0xC
     UPROPERTY() FRigElementKey ItemB;  // 0x0074, size 0xC
     UPROPERTY() FRigElementKey EffectorItem;  // 0x0080, size 0xC

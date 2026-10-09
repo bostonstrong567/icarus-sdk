@@ -5,10 +5,11 @@
 UCLASS(EditInlineNew)
 class ULevelSequenceBurnIn : public UUserWidget
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(BlueprintReadOnly) FLevelSequencePlayerSnapshot FrameInformation;  // 0x0260, size 0xB8
     UPROPERTY(BlueprintReadOnly) ALevelSequenceActor* LevelSequenceActor;  // 0x0318, size 0x8
-
+public:
     UFUNCTION(BlueprintNativeEvent) TSubclassOf<ULevelSequenceBurnInInitSettings> GetSettingsClass() const;  // parameters 0x8
     UFUNCTION(BlueprintImplementableEvent) void SetSettings(UObject* InSettings);  // parameters 0x8
 

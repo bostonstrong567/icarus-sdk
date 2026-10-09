@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMovieSceneEvaluationFieldEntity
 {
+public:
     UPROPERTY() FMovieSceneEvaluationFieldEntityKey Key;  // 0x0000, size 0xC
     UPROPERTY() int32 SharedMetaDataIndex;  // 0x000C, size 0x4
 };

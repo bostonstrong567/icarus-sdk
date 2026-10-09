@@ -4,6 +4,7 @@
 USTRUCT()
 struct StaticWidget
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TEnumAsByte<EStaticUIWidgets> Type;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UUserWidget* Widget;  // 0x0008, size 0x8
 };

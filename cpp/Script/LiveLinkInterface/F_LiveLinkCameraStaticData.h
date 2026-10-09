@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLiveLinkCameraStaticData : public FLiveLinkTransformStaticData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bIsFieldOfViewSupported;  // 0x0018, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bIsAspectRatioSupported;  // 0x0019, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bIsFocalLengthSupported;  // 0x001A, size 0x1

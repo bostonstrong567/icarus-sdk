@@ -4,5 +4,6 @@
 USTRUCT()
 struct FLiveLinkConnectMessage
 {
+public:
     UPROPERTY() int32 LiveLinkVersion;  // 0x0000, size 0x4
 };

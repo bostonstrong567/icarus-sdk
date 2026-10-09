@@ -5,11 +5,13 @@
 UCLASS(Config=Engine)
 class URiverAudioComponent : public USceneComponent, public IDensityAudioInterface
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintReadWrite) RiverAudioState State;  // 0x0200, size 0x1
+protected:
     UPROPERTY(EditAnywhere) float LavaFlowFeatheringDistance;  // 0x0204, size 0x4
     UPROPERTY(EditAnywhere) FVector2D LavaFlowSpeedRange;  // 0x0208, size 0x8
     UPROPERTY(EditAnywhere) FVector2D LavaBaseToFlowingRange;  // 0x0210, size 0x8
-
+public:
     UFUNCTION(BlueprintCallable) float GetLavaFlowValue() const;  // parameters 0x4
 };

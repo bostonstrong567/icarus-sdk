@@ -5,5 +5,4 @@
 UCLASS(Transient, EditInlineNew, Config=Engine)
 class UBP_Interactable_Mission_STYX_D_Research2_Vacuum_Abyssal_Oxite_C : public UBP_Interactable_Interact_Vacuum_Items_Base_C
 {
-public:
 };

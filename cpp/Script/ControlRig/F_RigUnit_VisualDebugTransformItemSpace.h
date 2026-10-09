@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_VisualDebugTransformItemSpace : public FRigUnit_DebugBase
 {
+public:
     UPROPERTY() FTransform Value;  // 0x0010, size 0x30
     UPROPERTY() bool bEnabled;  // 0x0040, size 0x1
     UPROPERTY() float Thickness;  // 0x0044, size 0x4

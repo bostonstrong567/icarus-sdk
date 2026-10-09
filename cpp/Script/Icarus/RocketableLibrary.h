@@ -6,7 +6,6 @@ UCLASS()
 class URocketableLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToRocketableTable(FName Name, FRocketableData Data, FRocketableRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xB1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakRocketableEnum(FRocketableEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FRocketableRowHandle CastToRocketableRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

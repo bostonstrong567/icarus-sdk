@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSettlementNPCTask
 {
+public:
     UPROPERTY(BlueprintReadWrite) FGuid TaskId;  // 0x0000, size 0x10
     UPROPERTY(BlueprintReadWrite) FSettlementNPCTaskTypesRowHandle ActiveTaskType;  // 0x0010, size 0x18
     UPROPERTY(BlueprintReadWrite) TWeakObjectPtr<AActor> Target;  // 0x0028, size 0x8

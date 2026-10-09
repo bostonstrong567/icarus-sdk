@@ -8,10 +8,9 @@ class UDialogueSystem : public UActorComponent
 public:
     UPROPERTY(BlueprintAssignable) FPlayDialogue OnPlayDialogue;  // 0x00B0, size 0x10
     UPROPERTY(BlueprintAssignable) FClearDialogues OnClearDialogues;  // 0x00C0, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bDialogueEnabled;  // 0x00D0, private
-
+private:
+    bool bDialogueEnabled;  // 0x00D0, not reflected
+public:
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable, BlueprintNativeEvent) void ClearAllDialogues();
     UFUNCTION(BlueprintCallable) void LocalClearAllDialogues();
     UFUNCTION(BlueprintCallable) void LocalTriggerDialogue(const FDialogueRowHandle& Dialogue);  // parameters 0x18

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_Oly_Forest_Scan_Deploy_Hedgehogs_C : public ABPQ_Deploy_Count_C
 {
-public:
 };

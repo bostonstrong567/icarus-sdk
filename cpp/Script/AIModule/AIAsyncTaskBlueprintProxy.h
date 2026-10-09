@@ -8,12 +8,10 @@ class UAIAsyncTaskBlueprintProxy : public UObject
 public:
     UPROPERTY(BlueprintAssignable) FOAISimpleDelegate OnSuccess;  // 0x0028, size 0x10
     UPROPERTY(BlueprintAssignable) FOAISimpleDelegate OnFail;  // 0x0038, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TWeakObjectPtr<AAIController,FWeakObjectPtr> AIController;  // 0x0048
-    FAIRequestID MoveRequestId;  // 0x0050
-    TWeakObjectPtr<UWorld,FWeakObjectPtr> MyWorld;  // 0x0054
-    FTimerHandle TimerHandle_OnInstantFinish;  // 0x0060
+    TWeakObjectPtr<AAIController,FWeakObjectPtr> AIController;  // 0x0048, not reflected
+    FAIRequestID MoveRequestId;  // 0x0050, not reflected
+    TWeakObjectPtr<UWorld,FWeakObjectPtr> MyWorld;  // 0x0054, not reflected
+    FTimerHandle TimerHandle_OnInstantFinish;  // 0x0060, not reflected
 
     UFUNCTION() void OnMoveCompleted(FAIRequestID RequestID, TEnumAsByte<EPathFollowingResult> MovementResult);  // parameters 0x5
 };

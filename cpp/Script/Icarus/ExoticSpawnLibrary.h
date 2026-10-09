@@ -6,7 +6,6 @@ UCLASS()
 class UExoticSpawnLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToExoticSpawnTable(FName Name, FExoticSpawn Data, FExoticSpawnRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x39
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakExoticSpawnEnum(FExoticSpawnEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FExoticSpawnRowHandle CastToExoticSpawnRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

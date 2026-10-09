@@ -4,5 +4,6 @@
 USTRUCT()
 struct FMagicLeapARPinObjectIdList
 {
+public:
     UPROPERTY(EditAnywhere) TSet<FString> ObjectIdList;  // 0x0000, size 0x50
 };

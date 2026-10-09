@@ -5,17 +5,16 @@
 UCLASS()
 class UPointer : public UWidget
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FLinearColor Tint;  // 0x0108, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bAntiAlias;  // 0x0118, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float Thickness;  // 0x011C, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float Angle;  // 0x0120, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float ArrowLength;  // 0x0124, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float HeadLength;  // 0x0128, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SPointer,0> Impl;  // 0x0130, protected
-
+    TSharedPtr<SPointer,0> Impl;  // 0x0130, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetAngle() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) bool GetAntiAlias() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetArrowLength() const;  // parameters 0x4

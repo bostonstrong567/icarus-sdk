@@ -5,5 +5,4 @@
 UCLASS(Abstract, MinimalAPI)
 class UInputBehaviorSource : public UInterface
 {
-public:
 };

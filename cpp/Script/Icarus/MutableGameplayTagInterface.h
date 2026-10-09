@@ -6,7 +6,6 @@ UCLASS(Abstract, MinimalAPI)
 class UMutableGameplayTagInterface : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) FGameplayTagContainer GetGameplayTags() const;  // parameters 0x20
     UFUNCTION(BlueprintCallable) void SetGameplayTags(const FGameplayTagContainer& InGameplayTags);  // parameters 0x20
 };

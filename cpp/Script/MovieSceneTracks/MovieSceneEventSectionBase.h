@@ -5,7 +5,6 @@
 UCLASS(MinimalAPI)
 class UMovieSceneEventSectionBase : public UMovieSceneSection
 {
-public:
 
     // Virtual functions that start here:
     //   GetAllEntryPoints

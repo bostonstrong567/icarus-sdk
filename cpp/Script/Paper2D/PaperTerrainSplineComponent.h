@@ -6,7 +6,5 @@ UCLASS(Config=Engine)
 class UPaperTerrainSplineComponent : public USplineComponent
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TDelegate<void __cdecl(void),FDefaultDelegateUserPolicy> OnSplineEdited;  // 0x0548
+    TDelegate<void __cdecl(void),FDefaultDelegateUserPolicy> OnSplineEdited;  // 0x0548, not reflected
 };

@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class UUserInterfaceSettings : public UDeveloperSettings
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, Config) ERenderFocusRule RenderFocusRule;  // 0x0038, size 0x1
     UPROPERTY(EditAnywhere, Config) TMap<TEnumAsByte<EMouseCursor>, FHardwareCursorReference> HardwareCursors;  // 0x0040, size 0x50
@@ -23,11 +24,10 @@ public:
     UPROPERTY(EditAnywhere, Config) bool bAllowHighDPIInGameMode;  // 0x0230, size 0x1
     UPROPERTY(EditAnywhere, Config) FIntPoint DesignScreenSize;  // 0x0234, size 0x8
     UPROPERTY(EditAnywhere, Config) bool bLoadWidgetsOnDedicatedServer;  // 0x023C, size 0x1
+private:
     UPROPERTY(Transient) TArray<UObject*> CursorClasses;  // 0x0240, size 0x10
     UPROPERTY(Transient) TSubclassOf<UObject> CustomScalingRuleClassInstance;  // 0x0250, size 0x8
     UPROPERTY(Transient) UDPICustomScalingRule* CustomScalingRule;  // 0x0258, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    TOptional<FIntPoint> LastViewportSize;  // 0x0260, private
-    float CalculatedScale;  // 0x026C, private
+    TOptional<FIntPoint> LastViewportSize;  // 0x0260, not reflected
+    float CalculatedScale;  // 0x026C, not reflected
 };

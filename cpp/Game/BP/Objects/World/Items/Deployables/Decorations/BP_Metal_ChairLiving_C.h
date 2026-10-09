@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Metal_ChairLiving_C : public ABP_ChairBase_C
 {
-public:
 };

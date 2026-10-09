@@ -4,9 +4,8 @@
 USTRUCT()
 struct FFoundItemEntry
 {
-
-    // Not reflected:
-    UInventory * Inventory;  // 0x0000
-    int32 Count;  // 0x0008
-    int32 Location;  // 0x000C
+public:
+    UInventory * Inventory;  // 0x0000, not reflected
+    int32 Count;  // 0x0008, not reflected
+    int32 Location;  // 0x000C, not reflected
 };

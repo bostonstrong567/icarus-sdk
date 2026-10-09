@@ -4,5 +4,6 @@
 USTRUCT()
 struct FBandwidthTestItem
 {
+public:
     UPROPERTY() TArray<uint8> Kilobyte;  // 0x0000, size 0x10
 };

@@ -11,6 +11,7 @@ public:
     UPROPERTY(Replicated) uint32 Channels;  // 0x0224, size 0x4
     UPROPERTY(Replicated) uint32 InRate;  // 0x0228, size 0x4
     UPROPERTY(Replicated) uint32 OutRate;  // 0x022C, size 0x4
+    uint32 OutSaturation;  // 0x0230, not reflected
     UPROPERTY(Replicated) uint32 MaxPacketOverhead;  // 0x0234, size 0x4
     UPROPERTY(Replicated) uint32 InRateClientMax;  // 0x0238, size 0x4
     UPROPERTY(Replicated) uint32 InRateClientMin;  // 0x023C, size 0x4
@@ -55,7 +56,4 @@ public:
     UPROPERTY(Replicated) uint32 NetGUIDOutRate;  // 0x02D8, size 0x4
     UPROPERTY(Replicated) uint32 NetGUIDInRate;  // 0x02DC, size 0x4
     UPROPERTY(Replicated) uint32 NetSaturated;  // 0x02E0, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint32 OutSaturation;  // 0x0230
 };

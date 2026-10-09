@@ -5,5 +5,4 @@
 UCLASS()
 class UFloatProperty : public UNumericProperty
 {
-public:
 };

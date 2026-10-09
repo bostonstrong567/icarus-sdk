@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Cake_Pineapple_C : public ABP_Cake_Base_C
 {
-public:
 };

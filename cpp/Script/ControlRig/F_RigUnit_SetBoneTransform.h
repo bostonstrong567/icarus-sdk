@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_SetBoneTransform : public FRigUnitMutable
 {
+public:
     UPROPERTY() FName Bone;  // 0x0068, size 0x8
     UPROPERTY() FTransform Transform;  // 0x0070, size 0x30
     UPROPERTY() FTransform Result;  // 0x00A0, size 0x30

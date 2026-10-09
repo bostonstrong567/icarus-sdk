@@ -5,7 +5,6 @@
 UCLASS(Abstract)
 class UEngineCustomTimeStep : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   GetSynchronizationState, Initialize, Shutdown, UpdateTimeStep

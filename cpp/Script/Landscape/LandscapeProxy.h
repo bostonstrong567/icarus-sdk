@@ -5,9 +5,9 @@
 UCLASS(Abstract, NotPlaceable, MinimalAPI, Config=Engine)
 class ALandscapeProxy : public AActor
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(Instanced) ULandscapeSplinesComponent* SplineComponent;  // 0x0220, size 0x8
-    UPROPERTY() FGuid LandscapeGuid;  // 0x0228, size 0x10
     UPROPERTY() FIntPoint LandscapeSectionOffset;  // 0x0238, size 0x8
     UPROPERTY(EditAnywhere) int32 MaxLODLevel;  // 0x0240, size 0x4
     UPROPERTY(Deprecated) float LODDistanceFactor;  // 0x0244, size 0x4
@@ -24,6 +24,9 @@ public:
     UPROPERTY(EditAnywhere) UPhysicalMaterial* DefaultPhysMaterial;  // 0x0270, size 0x8
     UPROPERTY(EditAnywhere) float StreamingDistanceMultiplier;  // 0x0278, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UMaterialInterface* LandscapeMaterial;  // 0x0280, size 0x8
+    UMaterialInterface * LandscapeMaterialCached;  // 0x0288, not reflected
+    TArray<ULandscapeGrassType *,TSizedDefaultAllocator<32> > LandscapeGrassTypes;  // 0x0290, not reflected
+    float GrassMaxDiscardDistance;  // 0x02A0, not reflected
     UPROPERTY(EditAnywhere) UMaterialInterface* LandscapeHoleMaterial;  // 0x02A8, size 0x8
     UPROPERTY(EditAnywhere) TArray<FLandscapeProxyMaterialOverride> LandscapeMaterialsOverride;  // 0x02B0, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bMeshHoles;  // 0x02C0, size 0x1
@@ -37,6 +40,9 @@ public:
     UPROPERTY() TArray<ULandscapeComponent*> LandscapeComponents;  // 0x02F0, size 0x10
     UPROPERTY() TArray<ULandscapeHeightfieldCollisionComponent*> CollisionComponents;  // 0x0300, size 0x10
     UPROPERTY(Transient) TArray<UHierarchicalInstancedStaticMeshComponent*> FoliageComponents;  // 0x0310, size 0x10
+    FCachedLandscapeFoliage FoliageCache;  // 0x0320, not reflected
+    TArray<FAsyncTask<FAsyncGrassTask> *,TSizedDefaultAllocator<32> > AsyncFoliageTasks;  // 0x0370, not reflected
+    uint32 FrameOffsetForTickInterval;  // 0x0380, not reflected
     UPROPERTY() bool bHasLandscapeGrass;  // 0x0384, size 0x1
     UPROPERTY(EditAnywhere) float StaticLightingResolution;  // 0x0388, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 CastShadow : 1;  // 0x038C, mask 0x01
@@ -69,15 +75,9 @@ public:
     UPROPERTY(EditAnywhere) bool bUseLandscapeForCullingInvisibleHLODVertices;  // 0x0546, size 0x1
     UPROPERTY() bool bHasLayersContent;  // 0x0547, size 0x1
     UPROPERTY(Transient) TMap<UTexture2D*, ULandscapeWeightmapUsage*> WeightmapUsageMap;  // 0x0548, size 0x50
-
-    // Not reflected: the engine's scripting cannot see these.
-    UMaterialInterface * LandscapeMaterialCached;  // 0x0288
-    TArray<ULandscapeGrassType *,TSizedDefaultAllocator<32> > LandscapeGrassTypes;  // 0x0290
-    float GrassMaxDiscardDistance;  // 0x02A0
-    FCachedLandscapeFoliage FoliageCache;  // 0x0320
-    TArray<FAsyncTask<FAsyncGrassTask> *,TSizedDefaultAllocator<32> > AsyncFoliageTasks;  // 0x0370
-    uint32 FrameOffsetForTickInterval;  // 0x0380
-
+protected:
+    UPROPERTY() FGuid LandscapeGuid;  // 0x0228, size 0x10
+public:
     UFUNCTION(BlueprintCallable) void ChangeComponentScreenSizeToUseSubSections(float InComponentScreenSizeToUseSubSections);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void ChangeLODDistanceFactor(float InLODDistanceFactor);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void ChangeTessellationComponentScreenSize(float InTessellationComponentScreenSize);  // parameters 0x4

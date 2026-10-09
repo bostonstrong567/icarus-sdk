@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_PRO_Icesheet_Story_CraftTrailBeacons_C : public ABPQ_Collect_Item_C
 {
-public:
 };

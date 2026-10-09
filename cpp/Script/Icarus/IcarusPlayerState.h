@@ -5,28 +5,28 @@
 UCLASS(NotPlaceable, Config=Engine)
 class AIcarusPlayerState : public APlayerState, public ITalentHandler
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintAssignable) FOnFlagsChanged OnCharacterFlagsChanged;  // 0x0328, size 0x10
     UPROPERTY(BlueprintAssignable) FOnFlagsChanged OnAccountFlagsChanged;  // 0x0338, size 0x10
+    FOnTalentControllersSetup OnTalentControllersSetup;  // 0x0348, not reflected
+    UPROPERTY(Replicated) ACheatController* CheatController;  // 0x04B8, size 0x8
+    UPROPERTY(BlueprintAssignable) FOnTalentsChanged OnCharacterTalentsChanged;  // 0x04C0, size 0x10
+    UPROPERTY(BlueprintAssignable) FOnTalentsChanged OnAccountTalentsChanged;  // 0x04D0, size 0x10
+protected:
     UPROPERTY(Replicated, ReplicatedUsing) FOnlineProfileUser ActiveUserProfile;  // 0x0358, size 0x48
     UPROPERTY(Replicated, ReplicatedUsing) FOnlineProfileCharacter ActiveCharacter;  // 0x03A0, size 0xF0
     UPROPERTY(Instanced) UPlayerCharacterState* ActivePlayerCharacterState;  // 0x0490, size 0x8
     UPROPERTY(Replicated) FPlayerCharacterID PlayerCharacterID;  // 0x0498, size 0x18
     UPROPERTY(Replicated, BlueprintReadOnly) bool bIsHost;  // 0x04B0, size 0x1
-    UPROPERTY(Replicated) ACheatController* CheatController;  // 0x04B8, size 0x8
-    UPROPERTY(BlueprintAssignable) FOnTalentsChanged OnCharacterTalentsChanged;  // 0x04C0, size 0x10
-    UPROPERTY(BlueprintAssignable) FOnTalentsChanged OnAccountTalentsChanged;  // 0x04D0, size 0x10
+    bool bHaveTalentControllersBeenSetup;  // 0x04B1, not reflected
     UPROPERTY(Instanced, BlueprintReadOnly) UPlayerTalentControllerComponent* PlayerTalentController;  // 0x04E0, size 0x8
     UPROPERTY(Instanced, BlueprintReadOnly) UBlueprintTalentControllerComponent* BlueprintTalentController;  // 0x04E8, size 0x8
     UPROPERTY(Instanced, BlueprintReadOnly) UWorkshopTalentControllerComponent* WorkshopTalentController;  // 0x04F0, size 0x8
     UPROPERTY(Instanced, BlueprintReadOnly) UProspectTalentControllerComponent* ProspectTalentController;  // 0x04F8, size 0x8
     UPROPERTY(Instanced, BlueprintReadOnly) UOutpostTalentControllerComponent* OutpostTalentControllerComponent;  // 0x0500, size 0x8
     UPROPERTY(Instanced, BlueprintReadOnly) USoloTalentControllerComponent* SoloTalentControllerComponent;  // 0x0508, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FOnTalentControllersSetup OnTalentControllersSetup;  // 0x0348
-    bool bHaveTalentControllersBeenSetup;  // 0x04B1, protected
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) FOnlineProfileCharacter GetActiveCharacter() const;  // parameters 0xF0
     UFUNCTION(BlueprintCallable, BlueprintPure) UPlayerCharacterState* GetActivePlayerCharacterState() const;  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) FOnlineProfileUser GetActiveUserProfile() const;  // parameters 0x48

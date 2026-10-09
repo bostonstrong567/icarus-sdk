@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRecordedFrame
 {
+public:
     UPROPERTY() TArray<FTransform> Transforms;  // 0x0000, size 0x10
     UPROPERTY() TArray<int32> TransformIndices;  // 0x0010, size 0x10
     UPROPERTY() TArray<int32> PreviousTransformIndices;  // 0x0020, size 0x10

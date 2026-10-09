@@ -5,5 +5,4 @@
 UCLASS(Const, EditInlineNew, MinimalAPI)
 class UAnimNotifyState_DisableRootMotion : public UAnimNotifyState
 {
-public:
 };

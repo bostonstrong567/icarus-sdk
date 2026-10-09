@@ -5,5 +5,4 @@
 UCLASS(Abstract, MinimalAPI)
 class UNavEdgeProviderInterface : public UInterface
 {
-public:
 };

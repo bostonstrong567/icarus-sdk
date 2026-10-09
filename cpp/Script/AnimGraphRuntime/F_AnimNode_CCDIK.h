@@ -4,6 +4,8 @@
 USTRUCT()
 struct FAnimNode_CCDIK : public FAnimNode_SkeletalControlBase
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+public:
     UPROPERTY(EditAnywhere) FVector EffectorLocation;  // 0x00C8, size 0xC
     UPROPERTY(EditAnywhere) TEnumAsByte<EBoneControlSpace> EffectorLocationSpace;  // 0x00D4, size 0x1
     UPROPERTY(EditAnywhere) FBoneSocketTarget EffectorTarget;  // 0x00E0, size 0x60
@@ -13,5 +15,6 @@ struct FAnimNode_CCDIK : public FAnimNode_SkeletalControlBase
     UPROPERTY(EditAnywhere) int32 MaxIterations;  // 0x0164, size 0x4
     UPROPERTY(EditAnywhere) bool bStartFromTail;  // 0x0168, size 0x1
     UPROPERTY(EditAnywhere) bool bEnableRotationLimit;  // 0x0169, size 0x1
+private:
     UPROPERTY(EditAnywhere) TArray<float> RotationLimitPerJoints;  // 0x0170, size 0x10
 };

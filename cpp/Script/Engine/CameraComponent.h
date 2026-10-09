@@ -18,14 +18,13 @@ public:
     UPROPERTY(EditAnywhere, Interp, BlueprintReadWrite) TEnumAsByte<ECameraProjectionMode> ProjectionMode;  // 0x020D, size 0x1
     UPROPERTY(EditAnywhere, Interp, BlueprintReadWrite) float PostProcessBlendWeight;  // 0x0240, size 0x4
     UPROPERTY(EditAnywhere, Interp, BlueprintReadWrite) FPostProcessSettings PostProcessSettings;  // 0x0270, size 0x560
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint8 : 1 bUseAdditiveOffset;  // 0x020C, protected
-    FTransform AdditiveOffset;  // 0x0210, protected
-    float AdditiveFOVOffset;  // 0x0244, protected
-    TArray<FPostProcessSettings,TSizedDefaultAllocator<32> > ExtraPostProcessBlends;  // 0x0248, protected
-    TArray<float,TSizedDefaultAllocator<32> > ExtraPostProcessBlendWeights;  // 0x0258, protected
-
+protected:
+    uint8 : 1 bUseAdditiveOffset;  // 0x020C, not reflected
+    FTransform AdditiveOffset;  // 0x0210, not reflected
+    float AdditiveFOVOffset;  // 0x0244, not reflected
+    TArray<FPostProcessSettings,TSizedDefaultAllocator<32> > ExtraPostProcessBlends;  // 0x0248, not reflected
+    TArray<float,TSizedDefaultAllocator<32> > ExtraPostProcessBlendWeights;  // 0x0258, not reflected
+public:
     UFUNCTION(BlueprintCallable) void AddOrUpdateBlendable(TScriptInterface<IBlendableInterface> InBlendableObject, float InWeight);  // parameters 0x14
     UFUNCTION(BlueprintCallable) void GetCameraView(float DeltaTime, FMinimalViewInfo& DesiredView);  // parameters 0x600
     UFUNCTION(BlueprintCallable) void OnCameraMeshHiddenChanged();

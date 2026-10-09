@@ -6,7 +6,6 @@ UCLASS()
 class UConsumableLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToConsumableTable(FName Name, FConsumableData Data, FConsumableRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xC1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakConsumableEnum(FConsumableEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FConsumableRowHandle CastToConsumableRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

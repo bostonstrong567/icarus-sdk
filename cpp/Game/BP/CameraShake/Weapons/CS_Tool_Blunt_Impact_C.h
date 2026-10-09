@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UCS_Tool_Blunt_Impact_C : public UMatineeCameraShake
 {
-public:
 };

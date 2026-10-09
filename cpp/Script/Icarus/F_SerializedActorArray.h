@@ -4,9 +4,8 @@
 USTRUCT()
 struct FSerializedActorArray
 {
-
-    // Not reflected:
-    FArrayProperty * ArrayProp;  // 0x0000
-    int32 NumElements;  // 0x0008
-    TArray<int,TSizedDefaultAllocator<32> > UIDs;  // 0x0010
+public:
+    FArrayProperty * ArrayProp;  // 0x0000, not reflected
+    int32 NumElements;  // 0x0008, not reflected
+    TArray<int,TSizedDefaultAllocator<32> > UIDs;  // 0x0010, not reflected
 };

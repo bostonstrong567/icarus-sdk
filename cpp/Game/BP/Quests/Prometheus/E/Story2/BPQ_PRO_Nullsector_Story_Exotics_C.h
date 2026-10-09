@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_PRO_Nullsector_Story_Exotics_C : public ABPQ_Travel_Large_C
 {
-public:
 };

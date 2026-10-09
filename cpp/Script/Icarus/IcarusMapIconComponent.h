@@ -5,18 +5,19 @@
 UCLASS(Config=Engine)
 class UIcarusMapIconComponent : public UActorComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FMapIconsRowHandle MapIconData;  // 0x00B0, size 0x18
     UPROPERTY(BlueprintReadWrite) AActor* IconParentActor;  // 0x00C8, size 0x8
     UPROPERTY(Instanced, BlueprintReadOnly) UUserWidget* GeneratedIconWidget;  // 0x00D0, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bIconIsVisible;  // 0x00D8, size 0x1
     UPROPERTY(BlueprintAssignable) FOnIconVisibilityChanged OnIconVisibilityChanged;  // 0x00E0, size 0x10
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bSetupIconAutomatically;  // 0x00F0, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    FStreamableManager StreamableManager;  // 0x00F8, private
-    TSharedPtr<FStreamableHandle,0> Handle;  // 0x01E0, private
-
+private:
+    FStreamableManager StreamableManager;  // 0x00F8, not reflected
+    TSharedPtr<FStreamableHandle,0> Handle;  // 0x01E0, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) bool GetSetupIconAutomatically() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) bool HasWidgetBeenConstructed() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable) void SetSetupIconAutomatically(bool bAutomaticSetup);  // parameters 0x1

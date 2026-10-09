@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLiveLinkRefSkeleton
 {
+public:
     UPROPERTY() TArray<FName> BoneNames;  // 0x0000, size 0x10
     UPROPERTY() TArray<int32> BoneParents;  // 0x0010, size 0x10
 };

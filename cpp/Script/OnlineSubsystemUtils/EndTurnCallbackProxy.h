@@ -8,12 +8,11 @@ class UEndTurnCallbackProxy : public UOnlineBlueprintCallProxyBase
 public:
     UPROPERTY(BlueprintAssignable) FEmptyOnlineDelegate OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FEmptyOnlineDelegate OnFailure;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TWeakObjectPtr<APlayerController,FWeakObjectPtr> PlayerControllerWeakPtr;  // 0x0050, private
-    UObject * WorldContextObject;  // 0x0058, private
-    FString MatchID;  // 0x0060, private
-    UTurnBasedMatchInterface * TurnBasedMatchInterface;  // 0x0070, private
-
+private:
+    TWeakObjectPtr<APlayerController,FWeakObjectPtr> PlayerControllerWeakPtr;  // 0x0050, not reflected
+    UObject * WorldContextObject;  // 0x0058, not reflected
+    FString MatchID;  // 0x0060, not reflected
+    UTurnBasedMatchInterface * TurnBasedMatchInterface;  // 0x0070, not reflected
+public:
     UFUNCTION(BlueprintCallable) static UEndTurnCallbackProxy* EndTurn(UObject* WorldContextObject, APlayerController* PlayerController, FString MatchID, TScriptInterface<ITurnBasedMatchInterface> TurnBasedMatchInterface);  // parameters 0x38
 };

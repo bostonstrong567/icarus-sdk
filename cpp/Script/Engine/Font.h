@@ -22,7 +22,5 @@ public:
     UPROPERTY(EditAnywhere) int32 LegacyFontSize;  // 0x013C, size 0x4
     UPROPERTY(EditAnywhere) FName LegacyFontName;  // 0x0140, size 0x8
     UPROPERTY() FCompositeFont CompositeFont;  // 0x0148, size 0x38
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<unsigned short,unsigned short,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<unsigned short,unsigned short,0> > CharRemap;  // 0x0180
+    TMap<unsigned short,unsigned short,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<unsigned short,unsigned short,0> > CharRemap;  // 0x0180, not reflected
 };

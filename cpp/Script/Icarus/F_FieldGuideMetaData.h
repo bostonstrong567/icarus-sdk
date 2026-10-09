@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFieldGuideMetaData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FItemsStaticRowHandle Item;  // 0x0018, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UTexture2D> Image1;  // 0x0030, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText Description1;  // 0x0058, size 0x18

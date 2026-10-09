@@ -5,5 +5,4 @@
 UCLASS()
 class UIcarusContainerLibrary : public UBlueprintFunctionLibrary
 {
-public:
 };

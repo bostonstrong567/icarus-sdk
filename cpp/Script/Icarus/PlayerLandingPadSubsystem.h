@@ -5,11 +5,9 @@
 UCLASS()
 class UPlayerLandingPadSubsystem : public UWorldSubsystem
 {
+private:
+    TArray<TWeakObjectPtr<AIcarusActor,FWeakObjectPtr>,TSizedDefaultAllocator<32> > PlayerLandingPads;  // 0x0030, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<TWeakObjectPtr<AIcarusActor,FWeakObjectPtr>,TSizedDefaultAllocator<32> > PlayerLandingPads;  // 0x0030, private
-
     UFUNCTION(BlueprintCallable) AIcarusActor* FindNearbyLandingPad(AIcarusPlayerCharacter* Player, float MaxDistance, FVector& LocationOut);  // parameters 0x20
     UFUNCTION(BlueprintCallable) AIcarusActor* GetAssignedLandingPad(AIcarusPlayerCharacter* Player);  // parameters 0x10
     UFUNCTION(BlueprintCallable) void PlayerDeparted(AIcarusPlayerCharacter* PlayerCharacter);  // parameters 0x8

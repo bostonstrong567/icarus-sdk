@@ -4,5 +4,6 @@
 USTRUCT()
 struct FReqCheckProspectExpired
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString ProspectID;  // 0x0000, size 0x10
 };

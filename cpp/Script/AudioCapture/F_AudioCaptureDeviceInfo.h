@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAudioCaptureDeviceInfo
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FName DeviceName;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 NumInputChannels;  // 0x0008, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 SampleRate;  // 0x000C, size 0x4

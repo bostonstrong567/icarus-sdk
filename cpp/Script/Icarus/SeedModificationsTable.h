@@ -5,5 +5,4 @@
 UCLASS()
 class USeedModificationsTable : public UIcarusDataTable
 {
-public:
 };

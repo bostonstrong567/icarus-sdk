@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRotationRetargetingInfo
 {
+public:
     UPROPERTY(EditAnywhere) bool bEnabled;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere) FTransform Source;  // 0x0010, size 0x30
     UPROPERTY(EditAnywhere) FTransform Target;  // 0x0040, size 0x30

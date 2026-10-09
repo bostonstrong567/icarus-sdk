@@ -5,5 +5,4 @@
 UCLASS()
 class UCriticalHitAreasTable : public UIcarusDataTable
 {
-public:
 };

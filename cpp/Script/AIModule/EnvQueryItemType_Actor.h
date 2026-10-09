@@ -5,5 +5,4 @@
 UCLASS()
 class UEnvQueryItemType_Actor : public UEnvQueryItemType_ActorBase
 {
-public:
 };

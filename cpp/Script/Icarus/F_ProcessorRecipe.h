@@ -4,6 +4,7 @@
 USTRUCT()
 struct FProcessorRecipe : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bForceDisableRecipe;  // 0x0018, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FTalentsRowHandle Requirement;  // 0x001C, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FFlagsMultiRowHandle SessionRequirement;  // 0x0038, size 0x18

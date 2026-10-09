@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSliderStyle : public FSlateWidgetStyle
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSlateBrush NormalBarImage;  // 0x0008, size 0x88
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSlateBrush HoveredBarImage;  // 0x0090, size 0x88
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSlateBrush DisabledBarImage;  // 0x0118, size 0x88

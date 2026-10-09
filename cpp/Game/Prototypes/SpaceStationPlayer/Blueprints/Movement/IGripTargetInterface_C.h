@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UIGripTargetInterface_C : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable) void FindBestAnimation(FVector TargetLocation, FRotator TargetRotation, bool& Success, UAnimMontage*& GripMontage);  // parameters 0x28
     UFUNCTION(BlueprintCallable) void FindBestCharacterDirection(AIcarusPlayerCharacter* Character, bool ForLeftHand, FVector TargetLocation, bool& Success, FVector& BestDirection);  // parameters 0x28
     UFUNCTION(BlueprintCallable) void FindBestCharacterLocation(AIcarusPlayerCharacter* Character, bool ForLeftHand, FVector TargetLocation, bool& Success, FVector& BestLocation);  // parameters 0x28

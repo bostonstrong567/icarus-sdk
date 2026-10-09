@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMaterialCachedParameterEntry
 {
+public:
     UPROPERTY() TArray<uint64> NameHashes;  // 0x0000, size 0x10
     UPROPERTY() TArray<FMaterialParameterInfo> ParameterInfos;  // 0x0010, size 0x10
     UPROPERTY() TArray<FGuid> ExpressionGuids;  // 0x0020, size 0x10

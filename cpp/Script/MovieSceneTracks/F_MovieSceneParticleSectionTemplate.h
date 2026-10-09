@@ -4,5 +4,6 @@
 USTRUCT()
 struct FMovieSceneParticleSectionTemplate : public FMovieSceneEvalTemplate
 {
+public:
     UPROPERTY() FMovieSceneParticleChannel ParticleKeys;  // 0x0020, size 0x98
 };

@@ -4,10 +4,9 @@
 USTRUCT()
 struct FRigVMChangeTypeOp : public FRigVMUnaryOp
 {
-
-    // Not reflected:
-    ERigVMRegisterType Type;  // 0x0008
-    uint16 ElementSize;  // 0x000A
-    uint16 ElementCount;  // 0x000C
-    uint16 SliceCount;  // 0x000E
+public:
+    ERigVMRegisterType Type;  // 0x0008, not reflected
+    uint16 ElementSize;  // 0x000A, not reflected
+    uint16 ElementCount;  // 0x000C, not reflected
+    uint16 SliceCount;  // 0x000E, not reflected
 };

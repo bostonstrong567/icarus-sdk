@@ -5,6 +5,7 @@
 UCLASS(MinimalAPI, Config=Engine)
 class AAISpawner : public AActor
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<FTileSpawnData> WorldSpawnData;  // 0x0220, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UEnvQuery* Template;  // 0x0230, size 0x8
@@ -15,19 +16,19 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FAutonomousSpawnsRowHandle> GlobalAutonomousSpawners;  // 0x0270, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<TSubclassOf<UIcarusAISpawnFilter>> SpawnRules;  // 0x0280, size 0x10
     UPROPERTY(Replicated, Instanced, BlueprintReadOnly) UIcarusStatContainer* StatContainer;  // 0x0290, size 0x8
+protected:
     UPROPERTY(BlueprintReadOnly) FWorldData WorldData;  // 0x0298, size 0x160
     UPROPERTY() TMap<FAISetupRowHandle, float> LastAISetupSpawnTime;  // 0x03F8, size 0x50
+    TArray<TTuple<FAISetupRowHandle,int>,TSizedDefaultAllocator<32> > LatentAIDeathTimes;  // 0x0448, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<UAISpawnBehaviour*> ActiveAutonomousSpawners;  // 0x0458, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<AActor*> ActorsPendingCleanup;  // 0x0468, size 0x10
     UPROPERTY() TMap<FBiomesRowHandle, bool> BlockedBiomes;  // 0x0478, size 0x50
+private:
     UPROPERTY() AIcarusEQSTestingPawn* TestingPawn;  // 0x04C8, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<TTuple<FAISetupRowHandle,int>,TSizedDefaultAllocator<32> > LatentAIDeathTimes;  // 0x0448, protected
-    int32 TileIndex;  // 0x04D0, private
-    bool bIsPerformingSingleTileGeneration;  // 0x04D4, private
-    TArray<FAutonomousSpawnsRowHandle,TSizedDefaultAllocator<32> > AutonomousSpawnsPendingLoad;  // 0x04D8, private
-
+    int32 TileIndex;  // 0x04D0, not reflected
+    bool bIsPerformingSingleTileGeneration;  // 0x04D4, not reflected
+    TArray<FAutonomousSpawnsRowHandle,TSizedDefaultAllocator<32> > AutonomousSpawnsPendingLoad;  // 0x04D8, not reflected
+public:
     UFUNCTION(BlueprintCallable) void AddActorPendingCleanup(AActor* Actor);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void BlockBiomeDynamicSpawns(const FBiomesRowHandle& Biome, bool bBlock);  // parameters 0x19
     UFUNCTION() void ClearLatentNPCDeaths();

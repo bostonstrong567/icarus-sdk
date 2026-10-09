@@ -4,5 +4,6 @@
 USTRUCT()
 struct FWeatherBiomeGroupForecast
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<int32, FWeatherEventsRowHandle> PlannedEvents;  // 0x0000, size 0x50
 };

@@ -5,5 +5,4 @@
 UCLASS()
 class UAISpawnZonesTable : public UIcarusDataTable
 {
-public:
 };

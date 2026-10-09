@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UProspectAudioComponent : public UActorComponent
 {
 public:
-
     UFUNCTION() void OnLoadingScreenChanged(bool bIsLoadingScreenShowing);  // parameters 0x1
 };

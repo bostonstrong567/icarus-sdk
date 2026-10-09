@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class ABP_RockGolem_Juvie_Corpse_C : public ABP_GOAP_Corpse_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void IsSkeletonUpdated();
     UFUNCTION(BlueprintCallable) void OnSkinnedStateUpdated();
     UFUNCTION(BlueprintCallable) void Populate_Contents(float Multiplier, AIcarusPlayerCharacter* Player, bool ForcePopulateCorpse);  // parameters 0x11, named "Populate Contents"

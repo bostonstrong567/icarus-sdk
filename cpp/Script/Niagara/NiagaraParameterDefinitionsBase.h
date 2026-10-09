@@ -5,5 +5,4 @@
 UCLASS(Abstract, MinimalAPI)
 class UNiagaraParameterDefinitionsBase : public UObject
 {
-public:
 };

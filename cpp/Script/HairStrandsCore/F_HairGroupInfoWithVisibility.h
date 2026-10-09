@@ -4,5 +4,6 @@
 USTRUCT()
 struct FHairGroupInfoWithVisibility : public FHairGroupInfo
 {
+public:
     UPROPERTY(EditAnywhere) bool bIsVisible;  // 0x0018, size 0x1
 };

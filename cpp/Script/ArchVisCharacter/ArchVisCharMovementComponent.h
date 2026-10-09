@@ -14,8 +14,7 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float WalkingFriction;  // 0x0B1C, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float WalkingSpeed;  // 0x0B20, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float WalkingAcceleration;  // 0x0B24, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    FRotator CurrentRotationalVelocity;  // 0x0B28, protected
-    FRotator CurrentRotInput;  // 0x0B34, protected
+protected:
+    FRotator CurrentRotationalVelocity;  // 0x0B28, not reflected
+    FRotator CurrentRotInput;  // 0x0B34, not reflected
 };

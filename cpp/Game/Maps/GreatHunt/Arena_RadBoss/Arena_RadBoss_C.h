@@ -5,5 +5,4 @@
 UCLASS()
 class AArena_RadBoss_C : public ALevelScriptActor
 {
-public:
 };

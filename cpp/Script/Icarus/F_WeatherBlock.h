@@ -4,6 +4,7 @@
 USTRUCT()
 struct FWeatherBlock
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Tier;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 DurationSeconds;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FWeatherPoolsRowHandle WeatherPool;  // 0x0008, size 0x18

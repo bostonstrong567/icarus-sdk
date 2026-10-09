@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRBFTarget : public FRBFEntry
 {
+public:
     UPROPERTY(EditAnywhere) float ScaleFactor;  // 0x0010, size 0x4
     UPROPERTY(EditAnywhere) bool bApplyCustomCurve;  // 0x0014, size 0x1
     UPROPERTY(EditAnywhere) FRichCurve CustomCurve;  // 0x0018, size 0x80

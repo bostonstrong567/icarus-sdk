@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSpawnedWorldBossData
 {
+public:
     UPROPERTY(EditAnywhere, SaveGame, BlueprintReadWrite) FWorldBossesRowHandle WorldBoss;  // 0x0000, size 0x18
     UPROPERTY(EditAnywhere, SaveGame, BlueprintReadWrite) FTransform InitialSpawnTransform;  // 0x0020, size 0x30
     UPROPERTY(EditAnywhere, SaveGame, BlueprintReadWrite) bool bHasBeenKilled;  // 0x0050, size 0x1

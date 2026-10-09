@@ -8,9 +8,8 @@ class UExchangeCurrencyCallbackProxyGen : public UOnlineBlueprintCallProxyBase
 public:
     UPROPERTY(BlueprintAssignable) FOnExchangeCurrencyEventSignature OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FOnExchangeCurrencyEventSignature OnFail;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FReqExchangeCurrency ReqExchangeCurrency;  // 0x0050, private
-
+private:
+    FReqExchangeCurrency ReqExchangeCurrency;  // 0x0050, not reflected
+public:
     UFUNCTION(BlueprintCallable) static UExchangeCurrencyCallbackProxyGen* ExchangeCurrency(const FReqExchangeCurrency& Request);  // parameters 0x38
 };

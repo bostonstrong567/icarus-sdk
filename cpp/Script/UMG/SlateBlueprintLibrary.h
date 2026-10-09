@@ -6,7 +6,6 @@ UCLASS()
 class USlateBlueprintLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static FVector2D AbsoluteToLocal(const FGeometry& Geometry, FVector2D AbsoluteCoordinate);  // parameters 0x48
     UFUNCTION(BlueprintCallable, BlueprintPure) static void AbsoluteToViewport(UObject* WorldContextObject, FVector2D AbsoluteDesktopCoordinate, FVector2D& PixelPosition, FVector2D& ViewportPosition);  // parameters 0x20
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool EqualEqual_SlateBrush(const FSlateBrush& A, const FSlateBrush& B);  // parameters 0x111

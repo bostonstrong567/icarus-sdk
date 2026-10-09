@@ -6,7 +6,6 @@ UCLASS(MinimalAPI)
 class UVisualLoggerKismetLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void EnableRecording(bool bEnabled);  // parameters 0x1
     UFUNCTION(BlueprintCallable) static void LogBox(UObject* WorldContextObject, FBox BoxShape, FString Text, FLinearColor ObjectColor, FName LogCategory, bool bAddToMessageLog);  // parameters 0x51
     UFUNCTION(BlueprintCallable) static void LogLocation(UObject* WorldContextObject, FVector Location, FString Text, FLinearColor ObjectColor, float Radius, FName LogCategory, bool bAddToMessageLog);  // parameters 0x45

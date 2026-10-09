@@ -6,11 +6,9 @@ UCLASS(EditInlineNew)
 class USubmixEffectDynamicsProcessorPreset : public USoundEffectSubmixPreset
 {
 public:
+    FWindowsCriticalSection SettingsCritSect;  // 0x0068, not reflected
+    FSubmixEffectDynamicsProcessorSettings SettingsCopy;  // 0x0090, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSubmixEffectDynamicsProcessorSettings Settings;  // 0x00F0, size 0x60
-
-    // Not reflected: the engine's scripting cannot see these.
-    FWindowsCriticalSection SettingsCritSect;  // 0x0068
-    FSubmixEffectDynamicsProcessorSettings SettingsCopy;  // 0x0090
 
     UFUNCTION(BlueprintCallable) void ResetKey();
     UFUNCTION(BlueprintCallable) void SetAudioBus(UAudioBus* AudioBus);  // parameters 0x8

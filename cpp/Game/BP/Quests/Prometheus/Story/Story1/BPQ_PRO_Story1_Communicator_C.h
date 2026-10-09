@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_PRO_Story1_Communicator_C : public ABPQ_Deploy_Count_C
 {
-public:
 };

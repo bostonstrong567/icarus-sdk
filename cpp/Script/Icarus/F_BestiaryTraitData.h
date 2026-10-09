@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBestiaryTraitData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText TraitName;  // 0x0018, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FBestiaryTraitTypesRowHandle Type;  // 0x0030, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FLinearColor OverrideColor;  // 0x0048, size 0x10

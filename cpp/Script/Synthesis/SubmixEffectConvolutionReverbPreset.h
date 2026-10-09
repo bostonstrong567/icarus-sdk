@@ -10,11 +10,10 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSubmixEffectConvolutionReverbSettings Settings;  // 0x0070, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadOnly) ESubmixEffectConvolutionReverbBlockSize BlockSize;  // 0x0098, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bEnableHardwareAcceleration;  // 0x0099, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    FWindowsCriticalSection SettingsCritSect;  // 0x00A0, private
-    FSubmixEffectConvolutionReverbSettings SettingsCopy;  // 0x00C8, private
-
+private:
+    FWindowsCriticalSection SettingsCritSect;  // 0x00A0, not reflected
+    FSubmixEffectConvolutionReverbSettings SettingsCopy;  // 0x00C8, not reflected
+public:
     UFUNCTION(BlueprintCallable) void SetImpulseResponse(UAudioImpulseResponse* InImpulseResponse);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void SetSettings(const FSubmixEffectConvolutionReverbSettings& InSettings);  // parameters 0x28
 };

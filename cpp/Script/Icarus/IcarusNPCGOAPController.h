@@ -5,6 +5,7 @@
 UCLASS(NotPlaceable, Config=Engine)
 class AIcarusNPCGOAPController : public AIcarusNPCController
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bCurrentActionComplete;  // 0x03E0, size 0x1
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UIcarusGOAPInteractableComponent* CurrentInteractable;  // 0x03E8, size 0x8
@@ -14,6 +15,7 @@ public:
     UPROPERTY(BlueprintReadOnly) EGOAPControllerState CurrentControllerState;  // 0x0418, size 0x1
     UPROPERTY(BlueprintReadWrite) FRandomStream SeededRandomStream;  // 0x041C, size 0x8
     UPROPERTY(BlueprintAssignable) FRandomStreamUpdatedSignature OnRandomStreamUpdated;  // 0x0428, size 0x10
+private:
     UPROPERTY() FGOAPState CurrentState;  // 0x0438, size 0x10
     UPROPERTY() UIcarusGOAPGoal* CurrentGoal;  // 0x0448, size 0x8
     UPROPERTY() UIcarusGOAPAction* CurrentAction;  // 0x0450, size 0x8
@@ -25,15 +27,13 @@ public:
     UPROPERTY(Instanced) UIcarusGOAPAIState* AIState;  // 0x0498, size 0x8
     UPROPERTY(Instanced) UIcarusGOAPAIMemory* AIMemory;  // 0x04A0, size 0x8
     UPROPERTY() UIcarusGOAPGoal* DefaultGoal;  // 0x04A8, size 0x8
+    TQueue<UIcarusGOAPAction *,1> CurrentPlan;  // 0x04B0, not reflected
     UPROPERTY() TMap<TSoftClassPtr<UIcarusGOAPGoal>, float> LastGoalExecutionTimes;  // 0x04C0, size 0x50
-
-    // Not reflected: the engine's scripting cannot see these.
-    TQueue<UIcarusGOAPAction *,1> CurrentPlan;  // 0x04B0, private
-    bool ExecutedCurrentAction;  // 0x0510, private
-    bool LastActionSuccess;  // 0x0511, private
-    FString DebugPlan;  // 0x0518, private
-    TArray<int,TSizedDefaultAllocator<32> > TemporaryStatUIDs;  // 0x0528, private
-
+    bool ExecutedCurrentAction;  // 0x0510, not reflected
+    bool LastActionSuccess;  // 0x0511, not reflected
+    FString DebugPlan;  // 0x0518, not reflected
+    TArray<int,TSizedDefaultAllocator<32> > TemporaryStatUIDs;  // 0x0528, not reflected
+public:
     UFUNCTION(BlueprintCallable) bool AddTemporaryStatsForAction(TMap<FBaseStatsEnum, int32> TemporaryStats);  // parameters 0x51
     UFUNCTION(BlueprintCallable) bool CompleteCurrentAction(bool Succeeded);  // parameters 0x2
     UFUNCTION() void FreezeController();

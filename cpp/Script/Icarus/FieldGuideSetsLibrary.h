@@ -6,7 +6,6 @@ UCLASS()
 class UFieldGuideSetsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToFieldGuideSetsTable(FName Name, FFieldGuideSets Data, FFieldGuideSetsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x49
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakFieldGuideSetsEnum(FFieldGuideSetsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FFieldGuideSetsRowHandle CastToFieldGuideSetsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

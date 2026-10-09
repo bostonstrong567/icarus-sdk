@@ -6,7 +6,6 @@ UCLASS(Abstract)
 class UMovieSceneCustomClockSource : public UInterface
 {
 public:
-
     UFUNCTION() FFrameTime OnRequestCurrentTime(const FQualifiedFrameTime& InCurrentTime, float InPlayRate);  // parameters 0x1C
     UFUNCTION() void OnStartPlaying(const FQualifiedFrameTime& InStartTime);  // parameters 0x10
     UFUNCTION() void OnStopPlaying(const FQualifiedFrameTime& InStopTime);  // parameters 0x10

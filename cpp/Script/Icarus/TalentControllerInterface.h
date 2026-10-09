@@ -6,7 +6,6 @@ UCLASS(Abstract)
 class UTalentControllerInterface : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable) bool AreAllFlagsSet(const TArray<FFlagsMultiRowHandle>& Flags);  // parameters 0x11
     UFUNCTION(BlueprintCallable) bool AreAnyFlagsSet(const TArray<FFlagsMultiRowHandle>& Flags);  // parameters 0x11
     UFUNCTION(BlueprintCallable) bool CanRefundTalent(FTalentsRowHandle Talent, ERefundTalentResponse& SuccessOrFailureReason);  // parameters 0x1A

@@ -4,7 +4,6 @@
 USTRUCT()
 struct FMovieSceneEntitySystemGraphNodes
 {
-
-    // Not reflected:
-    TSparseArray<FMovieSceneEntitySystemGraphNode,FDefaultSparseArrayAllocator> Array;  // 0x0000
+public:
+    TSparseArray<FMovieSceneEntitySystemGraphNode,FDefaultSparseArrayAllocator> Array;  // 0x0000, not reflected
 };

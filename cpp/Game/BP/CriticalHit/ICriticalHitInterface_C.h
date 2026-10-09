@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UICriticalHitInterface_C : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable) bool CanKillcam();  // parameters 0x1
     UFUNCTION(BlueprintCallable) void GatherIntersections(AActor* Projectile, bool Debug, bool& Return, TArray<FCHCollisionStruct>& Intersections);  // parameters 0x20
     UFUNCTION(BlueprintCallable) void GetCHBounds(bool& Return, UBoxComponent*& Box);  // parameters 0x10

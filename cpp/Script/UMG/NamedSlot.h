@@ -5,8 +5,6 @@
 UCLASS()
 class UNamedSlot : public UContentWidget
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SBox,0> MyBox;  // 0x0120, protected
+protected:
+    TSharedPtr<SBox,0> MyBox;  // 0x0120, not reflected
 };

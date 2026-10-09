@@ -34,10 +34,9 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FShapedTextOptions ShapedTextOptions;  // 0x0A03, size 0x3
     UPROPERTY(BlueprintAssignable) FOnEditableTextBoxChangedEvent OnTextChanged;  // 0x0A08, size 0x10
     UPROPERTY(BlueprintAssignable) FOnEditableTextBoxCommittedEvent OnTextCommitted;  // 0x0A18, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SEditableTextBox,0> MyEditableTextBlock;  // 0x0A28, protected
-
+protected:
+    TSharedPtr<SEditableTextBox,0> MyEditableTextBlock;  // 0x0A28, not reflected
+public:
     UFUNCTION(BlueprintCallable) void ClearError();
     UFUNCTION(BlueprintCallable, BlueprintPure) FText GetText() const;  // parameters 0x18
     UFUNCTION(BlueprintCallable, BlueprintPure) bool HasError() const;  // parameters 0x1

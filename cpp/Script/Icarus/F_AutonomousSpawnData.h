@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAutonomousSpawnData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FAISetupEnum AISetup;  // 0x0018, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<AIcarusActor> IcarusActorClass;  // 0x0028, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<UObject> AISpawnBehaviour;  // 0x0050, size 0x28

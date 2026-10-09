@@ -8,11 +8,11 @@ class UWindowTitleBarArea : public UContentWidget
 public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bWindowButtonsEnabled;  // 0x0120, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bDoubleClickTogglesFullscreen;  // 0x0121, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SWindowTitleBarArea,0> MyWindowTitleBarArea;  // 0x0128, protected
-    FDelegateHandle WindowActionNotificationHandle;  // 0x0138, private
-
+protected:
+    TSharedPtr<SWindowTitleBarArea,0> MyWindowTitleBarArea;  // 0x0128, not reflected
+private:
+    FDelegateHandle WindowActionNotificationHandle;  // 0x0138, not reflected
+public:
     UFUNCTION(BlueprintCallable) void SetHorizontalAlignment(TEnumAsByte<EHorizontalAlignment> InHorizontalAlignment);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void SetPadding(FMargin InPadding);  // parameters 0x10
     UFUNCTION(BlueprintCallable) void SetVerticalAlignment(TEnumAsByte<EVerticalAlignment> InVerticalAlignment);  // parameters 0x1

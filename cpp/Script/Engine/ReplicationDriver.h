@@ -5,7 +5,6 @@
 UCLASS(Abstract, Transient, Config=Engine)
 class UReplicationDriver : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   AddClientConnection, AddNetworkActor, FlushNetDormancy, ForceNetUpdate, InitForNetDriver

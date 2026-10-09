@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Overflow_Bag_NoPhysics_C : public ABP_Overflow_Bag_C
 {
-public:
 };

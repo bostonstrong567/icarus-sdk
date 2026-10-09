@@ -5,7 +5,8 @@
 UCLASS(MinimalAPI)
 class UMovieScene3DTransformSection : public UMovieSceneSection, public IMovieSceneEntityProvider
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() FMovieSceneTransformMask TransformMask;  // 0x00F0, size 0x4
     UPROPERTY() FMovieSceneFloatChannel Translation;  // 0x00F8, size 0xA0
     UPROPERTY() FMovieSceneFloatChannel Rotation;  // 0x02D8, size 0xA0

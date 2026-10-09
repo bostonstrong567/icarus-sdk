@@ -5,13 +5,13 @@
 UCLASS(NotPlaceable, Config=game)
 class AWorldSettings : public AInfo, public IInterface_AssetUserData
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere) int32 VisibilityCellSize;  // 0x0228, size 0x4
     UPROPERTY(EditAnywhere) TEnumAsByte<EVisibilityAggressiveness> VisibilityAggressiveness;  // 0x022C, size 0x1
     UPROPERTY(EditAnywhere) uint8 bPrecomputeVisibility : 1;  // 0x022D, mask 0x01
     UPROPERTY(EditAnywhere) uint8 bPlaceCellsOnlyAlongCameraTracks : 1;  // 0x022D, mask 0x02
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bEnableWorldBoundsChecks : 1;  // 0x022D, mask 0x04
-    UPROPERTY(Config, BlueprintReadOnly) uint8 bEnableNavigationSystem : 1;  // 0x022D, mask 0x08
     UPROPERTY(EditAnywhere, Config, BlueprintReadOnly) uint8 bEnableAISystem : 1;  // 0x022D, mask 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bEnableWorldComposition : 1;  // 0x022D, mask 0x20
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bUseClientSideLevelStreamingVolumes : 1;  // 0x022D, mask 0x40
@@ -23,8 +23,6 @@ public:
     UPROPERTY(Replicated) uint8 bHighPriorityLoading : 1;  // 0x022E, mask 0x10
     UPROPERTY() uint8 bHighPriorityLoadingLocal : 1;  // 0x022E, mask 0x20
     UPROPERTY(EditAnywhere, Config) uint8 bOverrideDefaultBroadphaseSettings : 1;  // 0x022E, mask 0x40
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UNavigationSystemConfig* NavigationSystemConfig;  // 0x0230, size 0x8
-    UPROPERTY(Transient) UNavigationSystemConfig* NavigationSystemConfigOverride;  // 0x0238, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float WorldToMeters;  // 0x0240, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float KillZ;  // 0x0244, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TSubclassOf<UDamageType> KillZDamageType;  // 0x0248, size 0x8
@@ -52,13 +50,18 @@ public:
     UPROPERTY(EditAnywhere, Config) FBroadphaseSettings BroadphaseSettings;  // 0x0304, size 0x40
     UPROPERTY(Transient) APlayerState* Pauser;  // 0x0348, size 0x8
     UPROPERTY() TArray<FNetViewer> ReplicationViewers;  // 0x0350, size 0x10
+protected:
+    UPROPERTY(Config, BlueprintReadOnly) uint8 bEnableNavigationSystem : 1;  // 0x022D, mask 0x08
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UNavigationSystemConfig* NavigationSystemConfig;  // 0x0230, size 0x8
+    UPROPERTY(Transient) UNavigationSystemConfig* NavigationSystemConfigOverride;  // 0x0238, size 0x8
     UPROPERTY() TArray<UAssetUserData*> AssetUserData;  // 0x0360, size 0x10
     UPROPERTY(Replicated, Transient) APlayerState* PauserPlayerState;  // 0x0370, size 0x8
+private:
     UPROPERTY(Config) int32 MaxNumberOfBookmarks;  // 0x0378, size 0x4
     UPROPERTY(Config) TSubclassOf<UBookmarkBase> DefaultBookmarkClass;  // 0x0380, size 0x8
     UPROPERTY() TArray<UBookmarkBase*> BookmarkArray;  // 0x0388, size 0x10
     UPROPERTY() TSubclassOf<UBookmarkBase> LastBookmarkClass;  // 0x0398, size 0x8
-
+public:
     UFUNCTION() void OnRep_WorldGravityZ();
 
     // Virtual functions that start here:

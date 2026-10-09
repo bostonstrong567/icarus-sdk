@@ -4,10 +4,10 @@
 USTRUCT()
 struct FAnimNode_Constraint : public FAnimNode_SkeletalControlBase
 {
+public:
     UPROPERTY(EditAnywhere) FBoneReference BoneToModify;  // 0x00C8, size 0x10
     UPROPERTY(EditAnywhere) TArray<FConstraint> ConstraintSetup;  // 0x00D8, size 0x10
     UPROPERTY(EditAnywhere) TArray<float> ConstraintWeights;  // 0x00E8, size 0x10
-
-    // Not reflected:
-    TArray<FConstraintData,TSizedDefaultAllocator<32> > ConstraintData;  // 0x00F8
+private:
+    TArray<FConstraintData,TSizedDefaultAllocator<32> > ConstraintData;  // 0x00F8, not reflected
 };

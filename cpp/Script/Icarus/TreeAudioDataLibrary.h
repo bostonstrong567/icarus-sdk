@@ -6,7 +6,6 @@ UCLASS()
 class UTreeAudioDataLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToTreeAudioDataTable(FName Name, FTreeAudioData Data, FTreeAudioDataRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x1D1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakTreeAudioDataEnum(FTreeAudioDataEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FTreeAudioDataRowHandle CastToTreeAudioDataRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

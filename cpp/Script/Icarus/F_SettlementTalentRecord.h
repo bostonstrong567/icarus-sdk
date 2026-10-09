@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSettlementTalentRecord
 {
+public:
     UPROPERTY(SaveGame) FString RowName;  // 0x0000, size 0x10
     UPROPERTY(SaveGame) int32 Rank;  // 0x0010, size 0x4
 };

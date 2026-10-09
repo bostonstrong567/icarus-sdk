@@ -7,10 +7,9 @@ class UWidgetSwitcher : public UPanelWidget
 {
 public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 ActiveWidgetIndex;  // 0x0120, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SWidgetSwitcher,0> MyWidgetSwitcher;  // 0x0128, protected
-
+protected:
+    TSharedPtr<SWidgetSwitcher,0> MyWidgetSwitcher;  // 0x0128, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) UWidget* GetActiveWidget() const;  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) int32 GetActiveWidgetIndex() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) int32 GetNumWidgets() const;  // parameters 0x4

@@ -6,8 +6,6 @@ UCLASS()
 class USparseDelegateFunction : public UDelegateFunction
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    FName OwningClassName;  // 0x00E0
-    FName DelegateName;  // 0x00E8
+    FName OwningClassName;  // 0x00E0, not reflected
+    FName DelegateName;  // 0x00E8, not reflected
 };

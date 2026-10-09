@@ -4,5 +4,6 @@
 USTRUCT()
 struct FProspectSaveState : public FProspectSaveStateHeader
 {
+public:
     UPROPERTY() TArray<FStateRecorderBlob> StateRecorderBlobs;  // 0x00E8, size 0x10
 };

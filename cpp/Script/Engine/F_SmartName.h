@@ -4,8 +4,7 @@
 USTRUCT()
 struct FSmartName
 {
+public:
     UPROPERTY(EditAnywhere) FName DisplayName;  // 0x0000, size 0x8
-
-    // Not reflected:
-    uint16 UID;  // 0x0008
+    uint16 UID;  // 0x0008, not reflected
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMathRBFInterpolateVectorFloat_Target
 {
+public:
     UPROPERTY() FVector Target;  // 0x0000, size 0xC
     UPROPERTY() float Value;  // 0x000C, size 0x4
 };

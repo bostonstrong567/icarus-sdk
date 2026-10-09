@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_IM_Final_Travel_C : public ABPQ_Common_MapIconOnArrival_WithBeacon_Subquests_C
 {
-public:
 };

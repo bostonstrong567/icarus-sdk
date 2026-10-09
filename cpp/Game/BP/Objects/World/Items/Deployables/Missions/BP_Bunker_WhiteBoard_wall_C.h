@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Bunker_WhiteBoard_wall_C : public ABP_DeployableBase_C
 {
-public:
 };

@@ -6,7 +6,6 @@ UCLASS(Abstract, MinimalAPI)
 class UFarmingPlotRecorderInterface : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintNativeEvent) void GetFarmingPlotValues(bool& bIsSeededRecord, bool& bIsHarvestableRecord, int32& CurrentGrowthStageRecord, float& CurrentTimeRecord, FFarmingSeedsRowHandle& CurrentSeedRowRecord, float& NextStageTimeRecord, float& GrowthCompleteTimeRecord) const;  // parameters 0x2C
     UFUNCTION(BlueprintNativeEvent) void SetFarmingPlotValues(bool bIsSeededRecord, bool bIsHarvestableRecord, int32 CurrentGrowthStageRecord, float CurrentTimeRecord, FFarmingSeedsRowHandle CurrentSeedRowRecord, float NextStageTimeRecord, float GrowthCompleteTimeRecord);  // parameters 0x2C
 };

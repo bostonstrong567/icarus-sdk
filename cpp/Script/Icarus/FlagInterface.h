@@ -6,7 +6,6 @@ UCLASS(Abstract)
 class UFlagInterface : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) bool HasAllFlags(const TArray<FFlagsMultiRowHandle>& Flags) const;  // parameters 0x11
     UFUNCTION(BlueprintCallable, BlueprintPure) bool HasAnyFlags(const TArray<FFlagsMultiRowHandle>& Flags) const;  // parameters 0x11
     UFUNCTION(BlueprintCallable, BlueprintPure) bool HasFlag(const FFlagsMultiRowHandle& Flag) const;  // parameters 0x19

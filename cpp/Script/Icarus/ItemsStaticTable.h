@@ -5,5 +5,4 @@
 UCLASS()
 class UItemsStaticTable : public UIcarusDataTable
 {
-public:
 };

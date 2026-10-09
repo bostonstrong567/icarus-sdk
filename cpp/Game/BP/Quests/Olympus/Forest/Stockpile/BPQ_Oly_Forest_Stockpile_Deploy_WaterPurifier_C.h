@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_Oly_Forest_Stockpile_Deploy_WaterPurifier_C : public ABPQ_Deploy_Count_C
 {
-public:
 };

@@ -17,7 +17,5 @@ public:
     UPROPERTY(EditAnywhere) FRawDistributionFloat TargetStrength;  // 0x00E0, size 0x30
     UPROPERTY(EditAnywhere) uint8 bLockTargetStength : 1;  // 0x0110, mask 0x01
     UPROPERTY(EditAnywhere) float LockRadius;  // 0x0114, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    int32 LastSelectedParticleIndex;  // 0x0118
+    int32 LastSelectedParticleIndex;  // 0x0118, not reflected
 };

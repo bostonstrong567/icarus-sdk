@@ -5,5 +5,4 @@
 UCLASS(Transient, Config=Engine)
 class UMange_Wolf_Alpha_AnimBP_C : public UMange_Wolf_AnimBP_C
 {
-public:
 };

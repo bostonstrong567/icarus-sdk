@@ -5,6 +5,7 @@
 UCLASS(MinimalAPI, Config=Engine)
 class ABuildingBase : public AIcarusItem
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UIcarusNavigationDirtier* NavigationDirtier;  // 0x0570, size 0x8
     UPROPERTY(BlueprintAssignable) FOnBuildingDestroyed OnBuildingDestroyed;  // 0x0578, size 0x10
@@ -20,20 +21,20 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FWeightTransferRelationship> IndirectWeightDistributed;  // 0x0600, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<FWeightTransferRelationship> IndirectWeightReceived;  // 0x0610, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bHasSnow;  // 0x0620, size 0x1
+    FOctreeElementId2 OctreeElementId;  // 0x0624, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float NoNavigationDamageThreshold;  // 0x062C, size 0x4
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TMap<ABuildingBase*, float> HardStabilityMap;  // 0x0630, size 0x50
     UPROPERTY() UBuildingGridManagerSubsystem* BuildingGridManager;  // 0x0680, size 0x8
+private:
+    bool bIsDirty;  // 0x0688, not reflected
+    bool bHasCachedData;  // 0x0689, not reflected
+    EBuildingPieceType CachedPieceType;  // 0x068A, not reflected
+    EBuildingTypes CachedBuildingType;  // 0x068C, not reflected
+    float CachedBuildingTier;  // 0x0690, not reflected
     UPROPERTY() FBuildingStability CachedStabilityData;  // 0x0698, size 0x40
-
-    // Not reflected: the engine's scripting cannot see these.
-    FOctreeElementId2 OctreeElementId;  // 0x0624
-    bool bIsDirty;  // 0x0688, private
-    bool bHasCachedData;  // 0x0689, private
-    EBuildingPieceType CachedPieceType;  // 0x068A, private
-    EBuildingTypes CachedBuildingType;  // 0x068C, private
-    float CachedBuildingTier;  // 0x0690, private
-    EHasCustomNavigableGeometry::Type OriginalNavigableGeometry;  // 0x06D8, private
-
+    EHasCustomNavigableGeometry::Type OriginalNavigableGeometry;  // 0x06D8, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void AddWeightComponentInfluence(UShapeComponent* Shape, UWeightComponent* Weight, bool bSpreadToNeighbours);  // parameters 0x11
     UFUNCTION(BlueprintCallable) void ApplyBuildingSkinMaterialOverrides();
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) void CalculateStabilityState();

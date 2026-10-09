@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_SetBoneTranslation : public FRigUnitMutable
 {
+public:
     UPROPERTY() FName Bone;  // 0x0068, size 0x8
     UPROPERTY() FVector Translation;  // 0x0070, size 0xC
     UPROPERTY() EBoneGetterSetterMode Space;  // 0x007C, size 0x1

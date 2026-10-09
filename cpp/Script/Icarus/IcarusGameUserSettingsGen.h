@@ -5,6 +5,7 @@
 UCLASS(Config=GameUserSettings)
 class UIcarusGameUserSettingsGen : public UIcarusGameUserSettingsPreGen
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintAssignable) FOnVSyncApplied OnVSyncApplied;  // 0x0150, size 0x1
     UPROPERTY(BlueprintAssignable) FOnFrameLimitApplied OnFrameLimitApplied;  // 0x0151, size 0x1
@@ -93,6 +94,7 @@ public:
     UPROPERTY(BlueprintAssignable) FOnSprintCancelReloadApplied OnSprintCancelReloadApplied;  // 0x01A4, size 0x1
     UPROPERTY(BlueprintAssignable) FOnInvertYAxisApplied OnInvertYAxisApplied;  // 0x01A5, size 0x1
     UPROPERTY(BlueprintAssignable) FOnAimSensitivityApplied OnAimSensitivityApplied;  // 0x01A6, size 0x1
+protected:
     UPROPERTY(Config) bool bVSync;  // 0x01A7, size 0x1
     UPROPERTY(Config) float FrameLimit;  // 0x01A8, size 0x4
     UPROPERTY(Config) float ResolutionScale;  // 0x01AC, size 0x4
@@ -180,7 +182,7 @@ public:
     UPROPERTY(Config) bool bSprintCancelReload;  // 0x0250, size 0x1
     UPROPERTY(Config) bool bInvertYAxis;  // 0x0251, size 0x1
     UPROPERTY(Config) float AimSensitivity;  // 0x0254, size 0x4
-
+public:
     UFUNCTION(BlueprintCallable) void ApplyAudioSettings(bool bSaveSettings);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void ApplyControlsSettings(bool bSaveSettings);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void ApplyDisplaySettings(bool bSaveSettings);  // parameters 0x1

@@ -22,10 +22,9 @@ public:
     UPROPERTY(BlueprintAssignable) FOnControllerCaptureBeginEvent OnControllerCaptureBegin;  // 0x03C0, size 0x10
     UPROPERTY(BlueprintAssignable) FOnControllerCaptureEndEvent OnControllerCaptureEnd;  // 0x03D0, size 0x10
     UPROPERTY(BlueprintAssignable) FOnFloatValueChangedEvent OnValueChanged;  // 0x03E0, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SSynthKnob,0> MySynthKnob;  // 0x03F0, protected
-
+protected:
+    TSharedPtr<SSynthKnob,0> MySynthKnob;  // 0x03F0, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetValue() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable) void SetLocked(bool InValue);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void SetStepSize(float InValue);  // parameters 0x4

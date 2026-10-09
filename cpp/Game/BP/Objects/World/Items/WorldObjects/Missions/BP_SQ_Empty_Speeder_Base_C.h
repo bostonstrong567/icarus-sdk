@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_SQ_Empty_Speeder_Base_C : public ABP_WorldObject_C
 {
-public:
 };

@@ -5,5 +5,4 @@
 UCLASS()
 class UHordeTable : public UIcarusDataTable
 {
-public:
 };

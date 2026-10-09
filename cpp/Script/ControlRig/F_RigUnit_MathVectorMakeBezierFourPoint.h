@@ -4,5 +4,6 @@
 USTRUCT()
 struct FRigUnit_MathVectorMakeBezierFourPoint : public FRigUnit_MathVectorBase
 {
+public:
     UPROPERTY() FCRFourPointBezier Bezier;  // 0x0008, size 0x30
 };

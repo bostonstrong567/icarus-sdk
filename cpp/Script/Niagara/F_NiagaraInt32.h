@@ -4,5 +4,6 @@
 USTRUCT()
 struct FNiagaraInt32
 {
+public:
     UPROPERTY(EditAnywhere) int32 Value;  // 0x0000, size 0x4
 };

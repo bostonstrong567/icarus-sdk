@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_AimBone : public FRigUnit_HighlevelBaseMutable
 {
+public:
     UPROPERTY() FName Bone;  // 0x0068, size 0x8
     UPROPERTY() FRigUnit_AimBone_Target Primary;  // 0x0070, size 0x28
     UPROPERTY() FRigUnit_AimBone_Target Secondary;  // 0x0098, size 0x28

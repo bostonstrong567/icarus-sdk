@@ -5,15 +5,14 @@
 UCLASS()
 class UTileView : public UListView
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere) float EntryHeight;  // 0x0368, size 0x4
     UPROPERTY(EditAnywhere) float EntryWidth;  // 0x036C, size 0x4
     UPROPERTY(EditAnywhere) EListItemAlignment TileAlignment;  // 0x0370, size 0x1
     UPROPERTY(EditAnywhere) bool bWrapHorizontalNavigation;  // 0x0371, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<STileView<UObject *>,0> MyTileView;  // 0x0378, protected
-
+    TSharedPtr<STileView<UObject *>,0> MyTileView;  // 0x0378, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetEntryHeight() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetEntryWidth() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable) void SetEntryHeight(float NewHeight);  // parameters 0x4

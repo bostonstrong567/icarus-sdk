@@ -5,5 +5,4 @@
 UCLASS()
 class UAICreatureTypeTable : public UIcarusDataTable
 {
-public:
 };

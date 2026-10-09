@@ -5,8 +5,6 @@
 UCLASS()
 class UMovieSceneLiveLinkSubSectionBasicRole : public UMovieSceneLiveLinkSubSection
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<IMovieSceneLiveLinkPropertyHandler,0> PropertyHandler;  // 0x0050, protected
+protected:
+    TSharedPtr<IMovieSceneLiveLinkPropertyHandler,0> PropertyHandler;  // 0x0050, not reflected
 };

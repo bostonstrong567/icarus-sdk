@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_GetControlRotator : public FRigUnit
 {
+public:
     UPROPERTY() FName Control;  // 0x0008, size 0x8
     UPROPERTY() EBoneGetterSetterMode Space;  // 0x0010, size 0x1
     UPROPERTY() FRotator Rotator;  // 0x0014, size 0xC

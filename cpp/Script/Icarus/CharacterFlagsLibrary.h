@@ -6,7 +6,6 @@ UCLASS()
 class UCharacterFlagsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToCharacterFlagsTable(FName Name, FCharacterFlag Data, FCharacterFlagsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x51
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakCharacterFlagsEnum(FCharacterFlagsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FCharacterFlagsRowHandle CastToCharacterFlagsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

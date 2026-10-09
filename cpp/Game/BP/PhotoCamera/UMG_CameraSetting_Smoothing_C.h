@@ -6,6 +6,5 @@ UCLASS(EditInlineNew, Config=Engine)
 class UUMG_CameraSetting_Smoothing_C : public UW_CameraEntry_GenericSlider_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void UpdatePostProcess(FPostProcessSettings& Settings);  // parameters 0x560
 };

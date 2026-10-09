@@ -4,6 +4,7 @@
 USTRUCT()
 struct FConvolutionBloomSettings
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UTexture2D* Texture;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, Interp, BlueprintReadWrite) float Size;  // 0x0008, size 0x4
     UPROPERTY(EditAnywhere, Interp, BlueprintReadWrite) FVector2D CenterUV;  // 0x000C, size 0x8

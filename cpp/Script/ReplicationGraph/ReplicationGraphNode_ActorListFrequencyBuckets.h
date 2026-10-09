@@ -6,10 +6,9 @@ UCLASS(Transient)
 class UReplicationGraphNode_ActorListFrequencyBuckets : public UReplicationGraphNode
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<UReplicationGraphNode_ActorListFrequencyBuckets::FSettings,0> Settings;  // 0x0050
-    int32 TotalNumNonStreamingActors;  // 0x0060, protected
-    TArray<FActorRepListRefView,TInlineAllocator<2,TSizedDefaultAllocator<32> > > NonStreamingCollection;  // 0x0068, protected
-    FStreamingLevelActorListCollection StreamingLevelCollection;  // 0x0098, protected
+    TSharedPtr<UReplicationGraphNode_ActorListFrequencyBuckets::FSettings,0> Settings;  // 0x0050, not reflected
+protected:
+    int32 TotalNumNonStreamingActors;  // 0x0060, not reflected
+    TArray<FActorRepListRefView,TInlineAllocator<2,TSizedDefaultAllocator<32> > > NonStreamingCollection;  // 0x0068, not reflected
+    FStreamingLevelActorListCollection StreamingLevelCollection;  // 0x0098, not reflected
 };

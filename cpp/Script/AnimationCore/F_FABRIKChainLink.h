@@ -4,12 +4,11 @@
 USTRUCT()
 struct FFABRIKChainLink
 {
-
-    // Not reflected:
-    FVector Position;  // 0x0000
-    float Length;  // 0x000C
-    int32 BoneIndex;  // 0x0010
-    int32 TransformIndex;  // 0x0014
-    FVector DefaultDirToParent;  // 0x0018
-    TArray<int,TSizedDefaultAllocator<32> > ChildZeroLengthTransformIndices;  // 0x0028
+public:
+    FVector Position;  // 0x0000, not reflected
+    float Length;  // 0x000C, not reflected
+    int32 BoneIndex;  // 0x0010, not reflected
+    int32 TransformIndex;  // 0x0014, not reflected
+    FVector DefaultDirToParent;  // 0x0018, not reflected
+    TArray<int,TSizedDefaultAllocator<32> > ChildZeroLengthTransformIndices;  // 0x0028, not reflected
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FVocalisationSetting : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EVocalisationInterruptType InterruptType;  // 0x0018, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bCanInterruptSelf;  // 0x0019, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float QueueTimeoutLength;  // 0x001C, size 0x4

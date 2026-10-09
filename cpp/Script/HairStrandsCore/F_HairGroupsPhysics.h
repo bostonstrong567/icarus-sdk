@@ -4,6 +4,7 @@
 USTRUCT()
 struct FHairGroupsPhysics
 {
+public:
     UPROPERTY(EditAnywhere) FHairSolverSettings SolverSettings;  // 0x0000, size 0x38
     UPROPERTY(EditAnywhere) FHairExternalForces ExternalForces;  // 0x0038, size 0x1C
     UPROPERTY(EditAnywhere) FHairMaterialConstraints MaterialConstraints;  // 0x0058, size 0x1D8

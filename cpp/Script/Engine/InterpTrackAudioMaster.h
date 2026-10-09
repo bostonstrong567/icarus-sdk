@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UInterpTrackAudioMaster : public UInterpTrackVectorBase
 {
-public:
 };

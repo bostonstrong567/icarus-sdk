@@ -5,5 +5,4 @@
 UCLASS()
 class URecoveryBeaconsTable : public UIcarusDataTable
 {
-public:
 };

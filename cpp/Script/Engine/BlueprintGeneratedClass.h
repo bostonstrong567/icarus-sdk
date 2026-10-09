@@ -16,14 +16,13 @@ public:
     UPROPERTY() USimpleConstructionScript* SimpleConstructionScript;  // 0x0278, size 0x8
     UPROPERTY() UInheritableComponentHandler* InheritableComponentHandler;  // 0x0280, size 0x8
     UPROPERTY(Deprecated) UStructProperty* UberGraphFramePointerProperty;  // 0x0288, size 0x8
+    FStructProperty * UberGraphFramePointerProperty;  // 0x0290, not reflected
     UPROPERTY() UFunction* UberGraphFunction;  // 0x0298, size 0x8
     UPROPERTY() TMap<FName, FBlueprintCookedComponentInstancingData> CookedComponentInstancingData;  // 0x02A0, size 0x50
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint8 : 1 bCustomPropertyListForPostConstructionInitialized;  // 0x0234, private
-    FStructProperty * UberGraphFramePointerProperty;  // 0x0290
-    TIndirectArray<FCustomPropertyListNode,TSizedDefaultAllocator<32> > CustomPropertyListForPostConstruction;  // 0x02F0, private
-    FWindowsCriticalSection SerializeAndPostLoadCritical;  // 0x0300, private
+private:
+    uint8 : 1 bCustomPropertyListForPostConstructionInitialized;  // 0x0234, not reflected
+    TIndirectArray<FCustomPropertyListNode,TSizedDefaultAllocator<32> > CustomPropertyListForPostConstruction;  // 0x02F0, not reflected
+    FWindowsCriticalSection SerializeAndPostLoadCritical;  // 0x0300, not reflected
 
     // Virtual functions that start here:
     //   GetLifetimeBlueprintReplicationList, InstancePreReplication

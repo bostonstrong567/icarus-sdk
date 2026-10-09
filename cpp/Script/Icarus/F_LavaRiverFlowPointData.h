@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLavaRiverFlowPointData
 {
+public:
     UPROPERTY(BlueprintReadWrite) FVector2D Location;  // 0x0000, size 0x8
     UPROPERTY(BlueprintReadWrite) FVector2D Extent;  // 0x0008, size 0x8
     UPROPERTY(BlueprintReadWrite) float FlowSpeed;  // 0x0010, size 0x4

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSubmixEffectDynamicsProcessorSettings
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ESubmixEffectDynamicsProcessorType DynamicsProcessorType;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ESubmixEffectDynamicsPeakMode PeakMode;  // 0x0001, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ESubmixEffectDynamicsChannelLinkMode LinkMode;  // 0x0002, size 0x1

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Orka_Arctic_Corpse_C : public ABP_GOAP_Corpse_C
 {
-public:
 };

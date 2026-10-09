@@ -6,7 +6,6 @@ UCLASS(NotPlaceable, Config=Game)
 class AIcarusTitlePlayerController : public APlayerController
 {
 public:
-
     UFUNCTION(BlueprintImplementableEvent) void OnBeginRetryJoinServer(int32 JoinAttempt, int32 MaxAttempts);  // parameters 0x8
     UFUNCTION(BlueprintImplementableEvent) void OnEndRetryJoinServer();
 };

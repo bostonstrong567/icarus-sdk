@@ -5,11 +5,9 @@
 UCLASS()
 class UMovieSceneMotionVectorSimulationSystem : public UMovieSceneEntitySystem
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMultiMap<FObjectKey,UMovieSceneMotionVectorSimulationSystem::FSimulatedTransform,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FObjectKey,UMovieSceneMotionVectorSimulationSystem::FSimulatedTransform,1> > TransformData;  // 0x0040, private
-    bool bPreserveTransforms;  // 0x0090, private
-    bool bSimulationEnabled;  // 0x0091, private
-    bool bSimulateTransformsRequested;  // 0x0092, private
+private:
+    TMultiMap<FObjectKey,UMovieSceneMotionVectorSimulationSystem::FSimulatedTransform,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FObjectKey,UMovieSceneMotionVectorSimulationSystem::FSimulatedTransform,1> > TransformData;  // 0x0040, not reflected
+    bool bPreserveTransforms;  // 0x0090, not reflected
+    bool bSimulationEnabled;  // 0x0091, not reflected
+    bool bSimulateTransformsRequested;  // 0x0092, not reflected
 };

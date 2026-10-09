@@ -4,6 +4,7 @@
 USTRUCT()
 struct FOrbitOptions
 {
+public:
     UPROPERTY(EditAnywhere) uint8 bProcessDuringSpawn : 1;  // 0x0000, mask 0x01
     UPROPERTY(EditAnywhere) uint8 bProcessDuringUpdate : 1;  // 0x0000, mask 0x02
     UPROPERTY(EditAnywhere) uint8 bUseEmitterTime : 1;  // 0x0000, mask 0x04

@@ -6,7 +6,6 @@ UCLASS()
 class UIcarusQuestFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static bool DistanceCheckFromLocation(AActor* Actor, const FVector& Location, float Distance);  // parameters 0x19
     UFUNCTION(BlueprintCallable, BlueprintPure) static int32 GetCurrentPlayerCount(UObject* WorldContextObject);  // parameters 0xC
     UFUNCTION(BlueprintCallable) static TArray<AIcarusPlayerCharacter*> GetNearbyPlayersAtLocation(UObject* WorldContextObject, const FVector& Location, float MaxDistance, bool bIgnoreZ);  // parameters 0x30

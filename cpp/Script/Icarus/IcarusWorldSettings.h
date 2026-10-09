@@ -11,9 +11,7 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FCaveLocation> CaveLocations;  // 0x03C0, size 0x10
     UPROPERTY(Transient) UPlayerTrackerListener* PlayerTrackerListener;  // 0x03D0, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSubclassOf<AActor> AtmosphereControllerClass;  // 0x03D8, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bPlayerTrackerInitialized;  // 0x03E0
+    bool bPlayerTrackerInitialized;  // 0x03E0, not reflected
 
     UFUNCTION(BlueprintCallable) void AddDeepMiningOreDepositSpawnLocation(const FTransform& SpawnLocation);  // parameters 0x30
     UFUNCTION(BlueprintCallable) void AddExoticVoxelSpawnLocation(const FTransform& SpawnLocation);  // parameters 0x30

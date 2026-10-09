@@ -4,6 +4,7 @@
 USTRUCT()
 struct FInventorySlotSaveData
 {
+public:
     UPROPERTY(SaveGame) int32 Location;  // 0x0000, size 0x4
     UPROPERTY(SaveGame) FName ItemStaticData;  // 0x0004, size 0x8
     UPROPERTY(SaveGame) FString ItemGuid;  // 0x0010, size 0x10

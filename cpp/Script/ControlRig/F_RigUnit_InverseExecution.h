@@ -4,5 +4,6 @@
 USTRUCT()
 struct FRigUnit_InverseExecution : public FRigUnit
 {
+public:
     UPROPERTY(EditAnywhere, Transient) FControlRigExecuteContext ExecuteContext;  // 0x0008, size 0x60
 };

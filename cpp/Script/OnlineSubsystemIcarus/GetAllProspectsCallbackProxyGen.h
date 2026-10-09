@@ -8,9 +8,8 @@ class UGetAllProspectsCallbackProxyGen : public UOnlineBlueprintCallProxyBase
 public:
     UPROPERTY(BlueprintAssignable) FOnGetAllProspectsEventSignature OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FOnGetAllProspectsEventSignature OnFail;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FReqGetAllProspects ReqGetAllProspects;  // 0x0050, private
-
+private:
+    FReqGetAllProspects ReqGetAllProspects;  // 0x0050, not reflected
+public:
     UFUNCTION(BlueprintCallable) static UGetAllProspectsCallbackProxyGen* GetAllProspects(const FReqGetAllProspects& Request);  // parameters 0x18
 };

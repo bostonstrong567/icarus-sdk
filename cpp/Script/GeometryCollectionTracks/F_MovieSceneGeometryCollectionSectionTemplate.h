@@ -4,5 +4,6 @@
 USTRUCT()
 struct FMovieSceneGeometryCollectionSectionTemplate : public FMovieSceneEvalTemplate
 {
+public:
     UPROPERTY() FMovieSceneGeometryCollectionSectionTemplateParameters Params;  // 0x0020, size 0x38
 };

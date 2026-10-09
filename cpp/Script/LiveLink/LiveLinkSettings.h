@@ -5,8 +5,8 @@
 UCLASS(Config=Game)
 class ULiveLinkSettings : public UObject
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
-    UPROPERTY(EditAnywhere, Config) TArray<FLiveLinkRoleProjectSetting> DefaultRoleSettings;  // 0x0028, size 0x10
     UPROPERTY(Config) TSubclassOf<ULiveLinkFrameInterpolationProcessor> FrameInterpolationProcessor;  // 0x0038, size 0x8
     UPROPERTY(EditAnywhere, Config) TSoftObjectPtr<ULiveLinkPreset> DefaultLiveLinkPreset;  // 0x0040, size 0x28
     UPROPERTY(EditAnywhere, Config) FDirectoryPath PresetSaveDir;  // 0x0068, size 0x10
@@ -21,4 +21,6 @@ public:
     UPROPERTY(EditAnywhere, Config) FLinearColor InvalidColor;  // 0x00B8, size 0x10
     UPROPERTY(EditAnywhere, Config) uint8 TextSizeSource;  // 0x00C8, size 0x1
     UPROPERTY(EditAnywhere, Config) uint8 TextSizeSubject;  // 0x00C9, size 0x1
+protected:
+    UPROPERTY(EditAnywhere, Config) TArray<FLiveLinkRoleProjectSetting> DefaultRoleSettings;  // 0x0028, size 0x10
 };

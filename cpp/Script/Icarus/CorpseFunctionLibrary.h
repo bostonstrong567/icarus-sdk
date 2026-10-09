@@ -6,7 +6,6 @@ UCLASS()
 class UCorpseFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static bool IsProjectilePickable(AActor* AttachedActor, bool bSkipAllowPickUp);  // parameters 0xA
     UFUNCTION(BlueprintCallable) static void MoveActorArrowsToCorpseInventory(AActor* Deadin, FInventoryIDEnum InventoryID);  // parameters 0x18
 };

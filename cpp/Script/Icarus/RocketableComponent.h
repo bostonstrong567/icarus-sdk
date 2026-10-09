@@ -6,6 +6,5 @@ UCLASS(EditInlineNew, Config=Engine)
 class URocketableComponent : public UTraitComponent
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) bool GetRocketableData(FRocketableData& OutData) const;  // parameters 0x91
 };

@@ -4,8 +4,7 @@
 USTRUCT()
 struct FAudioOcclusionTraceResult
 {
-
-    // Not reflected:
-    float OcclusionTotal;  // 0x0000
-    int32 TraceCount;  // 0x0004
+private:
+    float OcclusionTotal;  // 0x0000, not reflected
+    int32 TraceCount;  // 0x0004, not reflected
 };

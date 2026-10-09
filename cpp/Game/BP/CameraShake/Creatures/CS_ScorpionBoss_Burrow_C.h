@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UCS_ScorpionBoss_Burrow_C : public UMatineeCameraShake
 {
-public:
 };

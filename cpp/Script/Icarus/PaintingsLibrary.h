@@ -6,7 +6,6 @@ UCLASS()
 class UPaintingsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToPaintingsTable(FName Name, FPaintingData Data, FPaintingsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xB9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakPaintingsEnum(FPaintingsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FPaintingsRowHandle CastToPaintingsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

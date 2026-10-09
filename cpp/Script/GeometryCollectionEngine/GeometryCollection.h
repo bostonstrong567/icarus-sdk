@@ -5,7 +5,9 @@
 UCLASS()
 class UGeometryCollection : public UObject
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
+    UObject * EditableMesh;  // 0x0028, not reflected
     UPROPERTY(EditAnywhere) bool EnableClustering;  // 0x0030, size 0x1
     UPROPERTY(EditAnywhere) int32 ClusterGroupIndex;  // 0x0034, size 0x4
     UPROPERTY(EditAnywhere) int32 MaxClusterLevel;  // 0x0038, size 0x4
@@ -28,11 +30,9 @@ public:
     UPROPERTY(EditAnywhere) TArray<FGeometryCollectionSizeSpecificData> SizeSpecificData;  // 0x00A8, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool EnableRemovePiecesOnFracture;  // 0x00B8, size 0x1
     UPROPERTY(EditAnywhere) TArray<UMaterialInterface*> RemoveOnFractureMaterials;  // 0x00C0, size 0x10
+private:
     UPROPERTY() FGuid PersistentGuid;  // 0x00D0, size 0x10
     UPROPERTY() FGuid StateGuid;  // 0x00E0, size 0x10
     UPROPERTY() int32 BoneSelectedMaterialIndex;  // 0x00F0, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    UObject * EditableMesh;  // 0x0028
-    TSharedPtr<FGeometryCollection,1> GeometryCollection;  // 0x00F8, private
+    TSharedPtr<FGeometryCollection,1> GeometryCollection;  // 0x00F8, not reflected
 };

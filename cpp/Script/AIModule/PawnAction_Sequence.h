@@ -9,8 +9,6 @@ public:
     UPROPERTY() TArray<UPawnAction*> ActionSequence;  // 0x0090, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<EPawnActionFailHandling> ChildFailureHandlingMode;  // 0x00A0, size 0x1
     UPROPERTY(Transient) UPawnAction* RecentActionCopy;  // 0x00A8, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint32 CurrentActionIndex;  // 0x00B0
-    EPawnSubActionTriggeringPolicy::Type SubActionTriggeringPolicy;  // 0x00B4
+    uint32 CurrentActionIndex;  // 0x00B0, not reflected
+    EPawnSubActionTriggeringPolicy::Type SubActionTriggeringPolicy;  // 0x00B4, not reflected
 };

@@ -5,7 +5,8 @@
 UCLASS(Config=Engine)
 class UGarbageCollectionSettings : public UDeveloperSettings
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, Config) float TimeBetweenPurgingPendingKillObjects;  // 0x0038, size 0x4
     UPROPERTY(EditAnywhere, Config) uint8 FlushStreamingOnGC : 1;  // 0x003C, mask 0x01
     UPROPERTY(EditAnywhere, Config) uint8 AllowParallelGC : 1;  // 0x003C, mask 0x02

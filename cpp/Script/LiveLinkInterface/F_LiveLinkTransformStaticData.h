@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLiveLinkTransformStaticData : public FLiveLinkBaseStaticData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bIsLocationSupported;  // 0x0010, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bIsRotationSupported;  // 0x0011, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bIsScaleSupported;  // 0x0012, size 0x1

@@ -5,7 +5,8 @@
 UCLASS()
 class UNodeMappingContainer : public UObject
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY(EditAnywhere) TMap<FName, FNodeItem> SourceItems;  // 0x0028, size 0x50
     UPROPERTY(EditAnywhere) TMap<FName, FNodeItem> TargetItems;  // 0x0078, size 0x50
     UPROPERTY(EditAnywhere) TMap<FName, FName> SourceToTarget;  // 0x00C8, size 0x50

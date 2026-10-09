@@ -5,9 +5,9 @@
 UCLASS(EditInlineNew)
 class ULiveLinkAnimationRoleToTransform : public ULiveLinkFrameTranslator
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere) FName BoneName;  // 0x0028, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<ULiveLinkAnimationRoleToTransform::FLiveLinkAnimationRoleToTransformWorker,1> Instance;  // 0x0030, private
+private:
+    TSharedPtr<ULiveLinkAnimationRoleToTransform::FLiveLinkAnimationRoleToTransformWorker,1> Instance;  // 0x0030, not reflected
 };

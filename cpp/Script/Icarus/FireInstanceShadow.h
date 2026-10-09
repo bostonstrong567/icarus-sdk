@@ -5,7 +5,8 @@
 UCLASS(Config=Engine)
 class AFireInstanceShadow : public AFireInstanceBase
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<FBox> InstanceBoxes;  // 0x0308, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bReadyToDestroy;  // 0x0318, size 0x1
 };

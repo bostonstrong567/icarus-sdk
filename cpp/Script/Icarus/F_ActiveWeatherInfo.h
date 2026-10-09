@@ -4,6 +4,7 @@
 USTRUCT()
 struct FActiveWeatherInfo
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FWeatherEventsRowHandle WeatherEvent;  // 0x0000, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FBiomesRowHandle Biome;  // 0x0018, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<UIcarusWeatherAction*> Actions;  // 0x0030, size 0x10

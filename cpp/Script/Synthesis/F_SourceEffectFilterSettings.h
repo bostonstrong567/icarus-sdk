@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSourceEffectFilterSettings
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ESourceEffectFilterCircuit FilterCircuit;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ESourceEffectFilterType FilterType;  // 0x0001, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float CutoffFrequency;  // 0x0004, size 0x4

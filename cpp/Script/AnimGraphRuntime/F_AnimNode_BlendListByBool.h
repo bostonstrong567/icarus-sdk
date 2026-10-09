@@ -4,5 +4,6 @@
 USTRUCT()
 struct FAnimNode_BlendListByBool : public FAnimNode_BlendListBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bActiveValue;  // 0x0098, size 0x1
 };

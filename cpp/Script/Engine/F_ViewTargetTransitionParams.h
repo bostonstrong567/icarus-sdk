@@ -4,6 +4,7 @@
 USTRUCT()
 struct FViewTargetTransitionParams
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float BlendTime;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TEnumAsByte<EViewTargetBlendFunction> BlendFunction;  // 0x0004, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float BlendExp;  // 0x0008, size 0x4

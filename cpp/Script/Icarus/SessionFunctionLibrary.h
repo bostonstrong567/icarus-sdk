@@ -6,7 +6,6 @@ UCLASS()
 class USessionFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static FIcarusSession CreateIcarusSessionFromSession(UObject* WorldContextObject, const FBlueprintSessionResult& Session);  // parameters 0x2D0
     UFUNCTION(BlueprintCallable, BlueprintPure) static FString GenerateProspectSessionId(FString UserID, const FProspectInfo& ProspectInfo);  // parameters 0xC0
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool GetDedicatedFromExtraSettings(const TArray<FSessionPropertyKeyPair>& ExtraSettings);  // parameters 0x11

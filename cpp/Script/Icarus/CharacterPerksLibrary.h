@@ -6,7 +6,6 @@ UCLASS()
 class UCharacterPerksLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToCharacterPerksTable(FName Name, FCharacterPerk Data, FCharacterPerksRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xE9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakCharacterPerksEnum(FCharacterPerksEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FCharacterPerksRowHandle CastToCharacterPerksRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -9,11 +9,10 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TSubclassOf<UNavArea> AreaClass;  // 0x00E0, size 0x8
     UPROPERTY(EditAnywhere) FVector FailsafeExtent;  // 0x00E8, size 0xC
     UPROPERTY(EditAnywhere, Config) uint8 bIncludeAgentHeight : 1;  // 0x00F4, mask 0x01
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<UNavModifierComponent::FRotatedBox,TSizedDefaultAllocator<32> > ComponentBounds;  // 0x00F8, protected
-    FDelegateHandle TransformUpdateHandle;  // 0x0108, protected
-    FTransform CachedTransform;  // 0x0110, protected
-
+protected:
+    TArray<UNavModifierComponent::FRotatedBox,TSizedDefaultAllocator<32> > ComponentBounds;  // 0x00F8, not reflected
+    FDelegateHandle TransformUpdateHandle;  // 0x0108, not reflected
+    FTransform CachedTransform;  // 0x0110, not reflected
+public:
     UFUNCTION(BlueprintCallable) void SetAreaClass(TSubclassOf<UNavArea> NewAreaClass);  // parameters 0x8
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLandscapeEditToolRenderData
 {
+public:
     UPROPERTY() UMaterialInterface* ToolMaterial;  // 0x0000, size 0x8
     UPROPERTY() UMaterialInterface* GizmoMaterial;  // 0x0008, size 0x8
     UPROPERTY() int32 SelectedType;  // 0x0010, size 0x4

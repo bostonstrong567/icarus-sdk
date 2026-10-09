@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UBP_EdenSetup_FunctionLibrary_C : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void CheckNPC(AQuestManager* QuestManager, FString Name, FQuestQueriesRowHandle Location, FItemsStaticRowHandle Item, TSubclassOf<AIcarusItem> Class, UObject* __WorldContext);  // parameters 0x58
     UFUNCTION(BlueprintCallable) static void CleanupNPC(FString Name, AQuestManager* Target, UObject* __WorldContext);  // parameters 0x20
     UFUNCTION(BlueprintCallable) static void SetupArkadia(UObject* WorldContextObject, UObject* __WorldContext, bool& Success);  // parameters 0x11

@@ -6,7 +6,6 @@ UCLASS(Abstract, MinimalAPI)
 class UCaveInterface : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) float GetCurrentSpelunkingDepth() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) float GetSpelunkingDepthFromLocation(FVector Location) const;  // parameters 0x10
 };

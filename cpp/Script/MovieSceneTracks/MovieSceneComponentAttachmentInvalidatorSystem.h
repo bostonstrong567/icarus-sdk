@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UMovieSceneComponentAttachmentInvalidatorSystem : public UMovieSceneEntityInstantiatorSystem
 {
-public:
 };

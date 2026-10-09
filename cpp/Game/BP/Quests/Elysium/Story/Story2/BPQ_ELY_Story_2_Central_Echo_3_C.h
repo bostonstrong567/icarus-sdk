@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_ELY_Story_2_Central_Echo_3_C : public ABPQ_Common_MapIconOnArrival_Subquests_C
 {
-public:
 };

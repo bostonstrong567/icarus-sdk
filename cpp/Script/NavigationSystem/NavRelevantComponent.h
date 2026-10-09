@@ -5,15 +5,14 @@
 UCLASS(Config=Engine)
 class UNavRelevantComponent : public UActorComponent, public INavRelevantInterface
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
+    FBox Bounds;  // 0x00B8, not reflected
+    uint32 : 1 bBoundsInitialized;  // 0x00D4, not reflected
+    uint32 : 1 bNavParentCacheInitialized;  // 0x00D4, not reflected
     UPROPERTY() uint8 bAttachToOwnersRoot : 1;  // 0x00D4, mask 0x01
     UPROPERTY(Transient) UObject* CachedNavParent;  // 0x00D8, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FBox Bounds;  // 0x00B8, protected
-    uint32 : 1 bBoundsInitialized;  // 0x00D4, protected
-    uint32 : 1 bNavParentCacheInitialized;  // 0x00D4, protected
-
+public:
     UFUNCTION(BlueprintCallable) void SetNavigationRelevancy(bool bRelevant);  // parameters 0x1
 
     // Virtual functions that start here:

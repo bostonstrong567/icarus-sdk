@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class UEnvQueryDebugHelpers : public UObject
 {
-public:
 };

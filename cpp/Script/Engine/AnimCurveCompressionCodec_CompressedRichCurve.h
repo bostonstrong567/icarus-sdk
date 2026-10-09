@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew)
 class UAnimCurveCompressionCodec_CompressedRichCurve : public UAnimCurveCompressionCodec
 {
-public:
 };

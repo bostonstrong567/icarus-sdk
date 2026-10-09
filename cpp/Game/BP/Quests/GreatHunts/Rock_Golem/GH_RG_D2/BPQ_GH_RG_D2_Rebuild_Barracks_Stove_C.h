@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_RG_D2_Rebuild_Barracks_Stove_C : public ABPQ_Deploy_Count_C
 {
-public:
 };

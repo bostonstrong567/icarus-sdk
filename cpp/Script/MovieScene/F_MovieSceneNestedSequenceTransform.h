@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMovieSceneNestedSequenceTransform
 {
+public:
     UPROPERTY() FMovieSceneTimeTransform LinearTransform;  // 0x0000, size 0xC
     UPROPERTY() FMovieSceneTimeWarping Warping;  // 0x000C, size 0x8
 };

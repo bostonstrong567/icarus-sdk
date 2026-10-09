@@ -5,5 +5,4 @@
 UCLASS()
 class UContextMenuGroupTypesTable : public UIcarusDataTable
 {
-public:
 };

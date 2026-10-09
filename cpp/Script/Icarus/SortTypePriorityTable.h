@@ -5,5 +5,4 @@
 UCLASS()
 class USortTypePriorityTable : public UIcarusDataTable
 {
-public:
 };

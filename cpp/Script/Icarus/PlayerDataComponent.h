@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class UPlayerDataComponent : public UActorComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintAssignable) FOnMetaCurrencyChanged OnMetaCurrencyChanged;  // 0x00B0, size 0x10
     UPROPERTY(BlueprintAssignable) FOnMetaInventoryChanged OnMetaInventoryChanged;  // 0x00E8, size 0x10
@@ -13,19 +14,19 @@ public:
     UPROPERTY(BlueprintAssignable) FOnReceivedReturnedItems OnReceivedReturnedItems;  // 0x0118, size 0x10
     UPROPERTY(BlueprintAssignable) FOnResearchWorkshopItemCompleteMC OnResearchWorkshopItemComplete;  // 0x0128, size 0x10
     UPROPERTY(BlueprintAssignable) FOnReplicateWorkshopItemCompleteMC OnReplicateWorkshopItemComplete;  // 0x0138, size 0x10
+protected:
+    FFactionMissionsRowHandle RetryGrantMissionRewardsMission;  // 0x00C0, not reflected
+    int32 RetryGrantMissionRewardsMissionIndex;  // 0x00D8, not reflected
+    bool bRetryGrantMissionRewardsIsCurrentMission;  // 0x00DC, not reflected
+    TWeakObjectPtr<AQuest,FWeakObjectPtr> RetryGrantMissionRewardsInitialQuest;  // 0x00E0, not reflected
+private:
+    FPlayerLoadoutData CachedLoadout;  // 0x0148, not reflected
+    bool bHasLoadout;  // 0x0528, not reflected
+    TArray<FItemData,TSizedDefaultAllocator<32> > PendingLoadoutExtensionItems;  // 0x0530, not reflected
+    bool bLoadoutExtensionAddInsurance;  // 0x0540, not reflected
+    TArray<FMountSaveData,TSizedDefaultAllocator<32> > PendingLoadoutExtensionMounts;  // 0x0548, not reflected
     UPROPERTY() TArray<FTalentsRowHandle> PendingAccountTalents;  // 0x0558, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FFactionMissionsRowHandle RetryGrantMissionRewardsMission;  // 0x00C0, protected
-    int32 RetryGrantMissionRewardsMissionIndex;  // 0x00D8, protected
-    bool bRetryGrantMissionRewardsIsCurrentMission;  // 0x00DC, protected
-    TWeakObjectPtr<AQuest,FWeakObjectPtr> RetryGrantMissionRewardsInitialQuest;  // 0x00E0, protected
-    FPlayerLoadoutData CachedLoadout;  // 0x0148, private
-    bool bHasLoadout;  // 0x0528, private
-    TArray<FItemData,TSizedDefaultAllocator<32> > PendingLoadoutExtensionItems;  // 0x0530, private
-    bool bLoadoutExtensionAddInsurance;  // 0x0540, private
-    TArray<FMountSaveData,TSizedDefaultAllocator<32> > PendingLoadoutExtensionMounts;  // 0x0548, private
-
+public:
     UFUNCTION(BlueprintCallable) void AbandonLoadout(FString ProspectId);  // parameters 0x10
     UFUNCTION(Client, Reliable, BlueprintNativeEvent) void AddAssociatedProspect(int32 ChrSlot, FAssociatedProspectInfo AssociatedProspectInfo);  // parameters 0xE0
     UFUNCTION(BlueprintCallable, BlueprintPure) bool CanInsureLoadout(const FPlayerLoadoutData& Loadout) const;  // parameters 0x3E1

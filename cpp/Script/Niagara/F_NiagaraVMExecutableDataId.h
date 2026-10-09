@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNiagaraVMExecutableDataId
 {
+public:
     UPROPERTY() FGuid CompilerVersionID;  // 0x0000, size 0x10
     UPROPERTY() ENiagaraScriptUsage ScriptUsageType;  // 0x0010, size 0x1
     UPROPERTY() FGuid ScriptUsageTypeID;  // 0x0014, size 0x10

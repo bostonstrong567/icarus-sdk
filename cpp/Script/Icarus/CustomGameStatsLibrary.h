@@ -6,7 +6,6 @@ UCLASS()
 class UCustomGameStatsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToCustomGameStatsTable(FName Name, FCustomGameStat Data, FCustomGameStatsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xA1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakCustomGameStatsEnum(FCustomGameStatsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FCustomGameStatsRowHandle CastToCustomGameStatsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

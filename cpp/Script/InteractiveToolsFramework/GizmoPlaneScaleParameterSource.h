@@ -6,6 +6,7 @@ UCLASS()
 class UGizmoPlaneScaleParameterSource : public UGizmoBaseVec2ParameterSource
 {
 public:
+    TUniqueFunction<bool __cdecl(FVector const &,FVector &)> PositionConstraintFunction;  // 0x0050, not reflected
     UPROPERTY() TScriptInterface<IGizmoAxisSource> AxisSource;  // 0x0090, size 0x10
     UPROPERTY() TScriptInterface<IGizmoTransformSource> TransformSource;  // 0x00A0, size 0x10
     UPROPERTY() float ScaleMultiplier;  // 0x00B0, size 0x4
@@ -16,7 +17,4 @@ public:
     UPROPERTY() FVector CurScaleAxisX;  // 0x00E4, size 0xC
     UPROPERTY() FVector CurScaleAxisY;  // 0x00F0, size 0xC
     UPROPERTY() FTransform InitialTransform;  // 0x0100, size 0x30
-
-    // Not reflected: the engine's scripting cannot see these.
-    TUniqueFunction<bool __cdecl(FVector const &,FVector &)> PositionConstraintFunction;  // 0x0050
 };

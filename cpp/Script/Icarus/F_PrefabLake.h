@@ -4,6 +4,7 @@
 USTRUCT()
 struct FPrefabLake
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FTransform Transform;  // 0x0000, size 0x30
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FWaterSetupRowHandle WaterSetup;  // 0x0030, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ESplineLoopDirection SplineDirection;  // 0x0048, size 0x1

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UFieldNodeFloat : public UFieldNodeBase
 {
-public:
 };

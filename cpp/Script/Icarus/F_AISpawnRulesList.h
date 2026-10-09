@@ -4,5 +4,6 @@
 USTRUCT()
 struct FAISpawnRulesList
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FAISpawnRulesEnum> SpawnRules;  // 0x0000, size 0x10
 };

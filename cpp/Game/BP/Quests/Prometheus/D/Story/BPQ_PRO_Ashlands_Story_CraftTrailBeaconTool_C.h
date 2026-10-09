@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_PRO_Ashlands_Story_CraftTrailBeaconTool_C : public ABPQ_Collect_Item_C
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_MathQuaternionSlerp : public FRigUnit_MathQuaternionBase
 {
+public:
     UPROPERTY() FQuat A;  // 0x0010, size 0x10
     UPROPERTY() FQuat B;  // 0x0020, size 0x10
     UPROPERTY() float T;  // 0x0030, size 0x4

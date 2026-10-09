@@ -4,5 +4,6 @@
 USTRUCT()
 struct FMovieSceneObjectBindingIDs
 {
+public:
     UPROPERTY() TArray<FMovieSceneObjectBindingID> IDs;  // 0x0000, size 0x10
 };

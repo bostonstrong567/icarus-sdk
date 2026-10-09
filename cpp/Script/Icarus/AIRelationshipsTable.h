@@ -5,5 +5,4 @@
 UCLASS()
 class UAIRelationshipsTable : public UIcarusDataTable
 {
-public:
 };

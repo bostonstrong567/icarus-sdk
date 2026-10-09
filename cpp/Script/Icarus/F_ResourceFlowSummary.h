@@ -4,6 +4,7 @@
 USTRUCT()
 struct FResourceFlowSummary
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FIcarusResourcesEnum ResourceType;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float TotalProduceRate;  // 0x0010, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float TotalConsumeRate;  // 0x0014, size 0x4

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_DistributeRotation_Rotation
 {
+public:
     UPROPERTY() FQuat Rotation;  // 0x0000, size 0x10
     UPROPERTY() float Ratio;  // 0x0010, size 0x4
 };

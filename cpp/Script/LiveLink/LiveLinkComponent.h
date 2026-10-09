@@ -7,11 +7,10 @@ class ULiveLinkComponent : public UActorComponent
 {
 public:
     UPROPERTY(BlueprintAssignable) FLiveLinkTickSignature OnLiveLinkUpdated;  // 0x00B0, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bIsDirty;  // 0x00C0, private
-    ILiveLinkClient * LiveLinkClient;  // 0x00C8, private
-
+private:
+    bool bIsDirty;  // 0x00C0, not reflected
+    ILiveLinkClient * LiveLinkClient;  // 0x00C8, not reflected
+public:
     UFUNCTION(BlueprintCallable) void GetAvailableSubjectNames(TArray<FName>& SubjectNames);  // parameters 0x10
     UFUNCTION(BlueprintCallable) void GetSubjectData(FName SubjectName, bool& bSuccess, FSubjectFrameHandle& SubjectFrameHandle);  // parameters 0x28
     UFUNCTION(BlueprintCallable) void GetSubjectDataAtSceneTime(FName SubjectName, const FTimecode& SceneTime, bool& bSuccess, FSubjectFrameHandle& SubjectFrameHandle);  // parameters 0x38

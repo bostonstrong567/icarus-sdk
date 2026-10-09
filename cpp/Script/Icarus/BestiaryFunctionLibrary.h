@@ -6,7 +6,6 @@ UCLASS()
 class UBestiaryFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static TArray<FBestiaryDataRowHandle> GetAllBeastsOrderedForBestiary(UObject* WorldContext);  // parameters 0x18
     UFUNCTION(BlueprintCallable) static TArray<FFishDataRowHandle> GetAllFishOrderedForBestiary(UObject* WorldContext);  // parameters 0x18
     UFUNCTION(BlueprintCallable) static TMap<FTerrainsRowHandle, FBestiaryCategory> GetBestiaryCategories(UObject* WorldContext);  // parameters 0x58

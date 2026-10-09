@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UCS_Grenade_Explosion_C : public UMatineeCameraShake
 {
-public:
 };

@@ -4,14 +4,15 @@
 USTRUCT()
 struct FAITeamStimulusEvent
 {
-    UPROPERTY() AActor* Broadcaster;  // 0x0028, size 0x8
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+public:
+    FVector LastKnowLocation;  // 0x0000, not reflected
+    float RangeSq;  // 0x0018, not reflected
+    float InformationAge;  // 0x001C, not reflected
+    FGenericTeamId TeamIdentifier;  // 0x0020, not reflected
+    float Strength;  // 0x0024, not reflected
     UPROPERTY() AActor* Enemy;  // 0x0030, size 0x8
-
-    // Not reflected:
-    FVector LastKnowLocation;  // 0x0000
-    FVector BroadcastLocation;  // 0x000C
-    float RangeSq;  // 0x0018
-    float InformationAge;  // 0x001C
-    FGenericTeamId TeamIdentifier;  // 0x0020
-    float Strength;  // 0x0024
+private:
+    FVector BroadcastLocation;  // 0x000C, not reflected
+    UPROPERTY() AActor* Broadcaster;  // 0x0028, size 0x8
 };

@@ -8,9 +8,8 @@ class UGetMetaResourceCallbackProxyGen : public UOnlineBlueprintCallProxyBase
 public:
     UPROPERTY(BlueprintAssignable) FOnGetMetaResourceEventSignature OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FOnGetMetaResourceEventSignature OnFail;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FReqGetMetaResources ReqGetMetaResources;  // 0x0050, private
-
+private:
+    FReqGetMetaResources ReqGetMetaResources;  // 0x0050, not reflected
+public:
     UFUNCTION(BlueprintCallable) static UGetMetaResourceCallbackProxyGen* GetMetaResource(const FReqGetMetaResources& Request);  // parameters 0x18
 };

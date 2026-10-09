@@ -21,8 +21,6 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float DestructibleDamageThresholdScale;  // 0x0050, size 0x4
     UPROPERTY(Deprecated) UDEPRECATED_PhysicalMaterialPropertyBase* PhysicalMaterialProperty;  // 0x0058, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<EPhysicalSurface> SurfaceType;  // 0x0060, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    TUniquePtr<FPhysicsMaterialHandle_PhysX,TDefaultDelete<FPhysicsMaterialHandle_PhysX> > MaterialHandle;  // 0x0068
-    FChaosUserData UserData;  // 0x0070
+    TUniquePtr<FPhysicsMaterialHandle_PhysX,TDefaultDelete<FPhysicsMaterialHandle_PhysX> > MaterialHandle;  // 0x0068, not reflected
+    FChaosUserData UserData;  // 0x0070, not reflected
 };

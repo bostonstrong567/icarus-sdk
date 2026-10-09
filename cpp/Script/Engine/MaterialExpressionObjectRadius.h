@@ -5,5 +5,4 @@
 UCLASS()
 class UMaterialExpressionObjectRadius : public UMaterialExpression
 {
-public:
 };

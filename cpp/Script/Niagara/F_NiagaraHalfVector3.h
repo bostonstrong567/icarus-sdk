@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNiagaraHalfVector3
 {
+public:
     UPROPERTY(EditAnywhere) uint16 x;  // 0x0000, size 0x2
     UPROPERTY(EditAnywhere) uint16 y;  // 0x0002, size 0x2
     UPROPERTY(EditAnywhere) uint16 z;  // 0x0004, size 0x2

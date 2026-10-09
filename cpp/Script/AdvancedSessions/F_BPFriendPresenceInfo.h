@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBPFriendPresenceInfo
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bIsOnline;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bIsPlaying;  // 0x0001, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bIsPlayingThisGame;  // 0x0002, size 0x1

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class AProp_Pipe2_F_C : public ABP_DeployableBase_C
 {
-public:
 };

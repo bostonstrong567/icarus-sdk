@@ -5,5 +5,4 @@
 UCLASS()
 class UMovieSceneIntegerPropertySystem : public UMovieScenePropertySystem
 {
-public:
 };

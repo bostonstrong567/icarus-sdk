@@ -4,5 +4,6 @@
 USTRUCT()
 struct FVertexInstancesForPolygonHole
 {
+public:
     UPROPERTY(BlueprintReadWrite) TArray<FVertexIndexAndInstanceID> VertexIndicesAndInstanceIDs;  // 0x0000, size 0x10
 };

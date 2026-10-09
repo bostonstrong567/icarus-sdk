@@ -5,15 +5,14 @@
 UCLASS()
 class UVariantSet : public UObject
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY(Deprecated) FText DisplayText;  // 0x0028, size 0x18
+    FText DisplayText;  // 0x0040, not reflected
     UPROPERTY() bool bExpanded;  // 0x0058, size 0x1
     UPROPERTY() TArray<UVariant*> Variants;  // 0x0060, size 0x10
     UPROPERTY() UTexture2D* Thumbnail;  // 0x0070, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FText DisplayText;  // 0x0040, private
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) FText GetDisplayText() const;  // parameters 0x18
     UFUNCTION(BlueprintCallable, BlueprintPure) int32 GetNumVariants() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) ULevelVariantSets* GetParent();  // parameters 0x8

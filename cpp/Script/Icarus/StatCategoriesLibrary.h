@@ -6,7 +6,6 @@ UCLASS()
 class UStatCategoriesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToStatCategoriesTable(FName Name, FStatCategory Data, FStatCategoriesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x51
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakStatCategoriesEnum(FStatCategoriesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FStatCategoriesRowHandle CastToStatCategoriesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

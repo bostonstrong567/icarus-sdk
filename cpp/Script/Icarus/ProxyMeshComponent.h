@@ -5,7 +5,10 @@
 UCLASS(Config=Engine)
 class UProxyMeshComponent : public UActorComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
+    UPROPERTY(BlueprintReadWrite) FOnProxyMeshVisibilityChanged OnProxyMeshVisibilityChanged;  // 0x0118, size 0x10
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bEnabled : 1;  // 0x00B0, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bOverrideBeginPlayBehaviour : 1;  // 0x00B0, mask 0x02
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FName ProxyMeshRootName;  // 0x00B4, size 0x8
@@ -15,11 +18,9 @@ public:
     UPROPERTY() TArray<USceneComponent*> ProxyMeshCraftingRepOverrides;  // 0x00E8, size 0x10
     UPROPERTY() TArray<FProxyMeshConditionContainerInventory> ProxyMeshConditionsCompact;  // 0x00F8, size 0x10
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) TArray<FProxyMeshRepState> ProxyMeshRepStates;  // 0x0108, size 0x10
-    UPROPERTY(BlueprintReadWrite) FOnProxyMeshVisibilityChanged OnProxyMeshVisibilityChanged;  // 0x0118, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSet<FName,DefaultKeyFuncs<FName,0>,FDefaultSetAllocator> WarnedUnresolvedComponents;  // 0x0128, private
-
+private:
+    TSet<FName,DefaultKeyFuncs<FName,0>,FDefaultSetAllocator> WarnedUnresolvedComponents;  // 0x0128, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) void ForceUpdateProxyMeshes();
     UFUNCTION(BlueprintCallable) void OnFuelItemRemoved(UInventory* Inventory, int32 Location, const FItemData& ItemData);  // parameters 0x200
     UFUNCTION(BlueprintCallable) void OnItemAdded(UInventory* Inventory, int32 Location);  // parameters 0xC

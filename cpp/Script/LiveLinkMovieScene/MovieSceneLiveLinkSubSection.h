@@ -8,9 +8,8 @@ class UMovieSceneLiveLinkSubSection : public UObject
 public:
     UPROPERTY() FLiveLinkSubSectionData SubSectionData;  // 0x0028, size 0x10
     UPROPERTY() TSubclassOf<ULiveLinkRole> SubjectRole;  // 0x0038, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<FLiveLinkBaseDataStruct<FLiveLinkBaseStaticData>,0> StaticData;  // 0x0040, protected
+protected:
+    TSharedPtr<FLiveLinkBaseDataStruct<FLiveLinkBaseStaticData>,0> StaticData;  // 0x0040, not reflected
 
     // Virtual functions that start here:
     //   CreateChannelProxy, FinalizeSection, GetChannelCount, Initialize, IsRoleSupported, RecordFrame

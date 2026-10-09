@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRiverSplineGenerationData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector SpawnLocation;  // 0x0000, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FRotator SpawnRotation;  // 0x000C, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FRiverSplineSetup> SplineSetup;  // 0x0018, size 0x10

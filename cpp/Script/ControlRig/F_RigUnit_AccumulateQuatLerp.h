@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_AccumulateQuatLerp : public FRigUnit_AccumulateBase
 {
+public:
     UPROPERTY() FQuat TargetValue;  // 0x0010, size 0x10
     UPROPERTY() FQuat InitialValue;  // 0x0020, size 0x10
     UPROPERTY() float Blend;  // 0x0030, size 0x4

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMaterialParameterCollectionInfo
 {
+public:
     UPROPERTY() FGuid StateId;  // 0x0000, size 0x10
     UPROPERTY() UMaterialParameterCollection* ParameterCollection;  // 0x0010, size 0x8
 };

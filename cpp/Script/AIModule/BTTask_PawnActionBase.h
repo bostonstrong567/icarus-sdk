@@ -5,7 +5,6 @@
 UCLASS(Abstract)
 class UBTTask_PawnActionBase : public UBTTaskNode
 {
-public:
 
     // Virtual functions that start here:
     //   OnActionEvent, OnActionLost

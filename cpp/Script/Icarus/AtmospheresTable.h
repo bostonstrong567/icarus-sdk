@@ -5,5 +5,4 @@
 UCLASS()
 class UAtmospheresTable : public UIcarusDataTable
 {
-public:
 };

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_PRO_C_Research_Craft_Knife_C : public ABPQ_Common_Craft_C
 {
-public:
 };

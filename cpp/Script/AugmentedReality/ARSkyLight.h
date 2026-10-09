@@ -5,11 +5,10 @@
 UCLASS(Config=Engine)
 class AARSkyLight : public ASkyLight
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() UAREnvironmentCaptureProbe* CaptureProbe;  // 0x0230, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    float LastUpdateTimestamp;  // 0x0238, private
-
+    float LastUpdateTimestamp;  // 0x0238, not reflected
+public:
     UFUNCTION(BlueprintCallable) void SetEnvironmentCaptureProbe(UAREnvironmentCaptureProbe* InCaptureProbe);  // parameters 0x8
 };

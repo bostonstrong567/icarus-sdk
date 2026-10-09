@@ -6,7 +6,6 @@ UCLASS()
 class UAccountFlagsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToAccountFlagsTable(FName Name, FAccountFlag Data, FAccountFlagsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x89
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakAccountFlagsEnum(FAccountFlagsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FAccountFlagsRowHandle CastToAccountFlagsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -5,13 +5,16 @@
 UCLASS(Config=Engine)
 class ANavLinkProxy : public AActor, public INavLinkHostInterface, public INavRelevantInterface
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<FNavigationLink> PointLinks;  // 0x0230, size 0x10
     UPROPERTY() TArray<FNavigationSegmentLink> SegmentLinks;  // 0x0240, size 0x10
-    UPROPERTY(EditAnywhere, Instanced) UNavLinkCustomComponent* SmartLinkComp;  // 0x0250, size 0x8
     UPROPERTY(EditAnywhere) bool bSmartLinkIsRelevant;  // 0x0258, size 0x1
+protected:
     UPROPERTY(BlueprintAssignable) FSmartLinkReachedSignature OnSmartLinkReached;  // 0x0260, size 0x10
-
+private:
+    UPROPERTY(EditAnywhere, Instanced) UNavLinkCustomComponent* SmartLinkComp;  // 0x0250, size 0x8
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) bool HasMovingAgents() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsSmartLinkEnabled() const;  // parameters 0x1
     UFUNCTION(BlueprintImplementableEvent) void ReceiveSmartLinkReached(AActor* Agent, const FVector& Destination);  // parameters 0x14

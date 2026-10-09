@@ -6,8 +6,6 @@ UCLASS(EditInlineNew)
 class UDialogueSoundWaveProxy : public USoundBase
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    USoundWave * SoundWave;  // 0x0170
-    TArray<FSubtitleCue,TSizedDefaultAllocator<32> > Subtitles;  // 0x0178
+    USoundWave * SoundWave;  // 0x0170, not reflected
+    TArray<FSubtitleCue,TSizedDefaultAllocator<32> > Subtitles;  // 0x0178, not reflected
 };

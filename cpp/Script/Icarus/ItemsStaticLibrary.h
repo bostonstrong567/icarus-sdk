@@ -6,7 +6,6 @@ UCLASS()
 class UItemsStaticLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToItemsStaticTable(FName Name, FItemStaticData Data, FItemsStaticRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x4A9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakItemsStaticEnum(FItemsStaticEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FItemsStaticRowHandle CastToItemsStaticRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

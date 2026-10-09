@@ -4,5 +4,6 @@
 USTRUCT()
 struct FInventorySlotAlterationData
 {
+public:
     UPROPERTY(SaveGame) FString Name;  // 0x0000, size 0x10
 };

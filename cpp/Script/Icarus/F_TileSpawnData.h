@@ -4,5 +4,6 @@
 USTRUCT()
 struct FTileSpawnData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<FVector> SpawnPoints;  // 0x0000, size 0x10
 };

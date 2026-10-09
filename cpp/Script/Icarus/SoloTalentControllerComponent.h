@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class USoloTalentControllerComponent : public UTalentControllerComponent
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FConstraintInstance : public FConstraintInstanceBase
 {
+public:
     UPROPERTY(EditAnywhere) FName JointName;  // 0x0018, size 0x8
     UPROPERTY(EditAnywhere) FName ConstraintBone1;  // 0x0020, size 0x8
     UPROPERTY(EditAnywhere) FName ConstraintBone2;  // 0x0028, size 0x8
@@ -15,11 +16,10 @@ struct FConstraintInstance : public FConstraintInstanceBase
     UPROPERTY() FVector SecAxis2;  // 0x006C, size 0xC
     UPROPERTY(EditAnywhere) FRotator AngularRotationOffset;  // 0x0078, size 0xC
     UPROPERTY(EditAnywhere) uint8 bScaleLinearLimits : 1;  // 0x0084, mask 0x01
+    float AverageMass;  // 0x0088, not reflected
     UPROPERTY(EditAnywhere) FConstraintProfileProperties ProfileInstance;  // 0x008C, size 0x114
-
-    // Not reflected:
-    float AverageMass;  // 0x0088
-    FChaosUserData UserData;  // 0x01A0
-    float LastKnownScale;  // 0x01B0
-    TDelegate<void __cdecl(int),FDefaultDelegateUserPolicy> OnConstraintBrokenDelegate;  // 0x01B8
+    FChaosUserData UserData;  // 0x01A0, not reflected
+private:
+    float LastKnownScale;  // 0x01B0, not reflected
+    TDelegate<void __cdecl(int),FDefaultDelegateUserPolicy> OnConstraintBrokenDelegate;  // 0x01B8, not reflected
 };

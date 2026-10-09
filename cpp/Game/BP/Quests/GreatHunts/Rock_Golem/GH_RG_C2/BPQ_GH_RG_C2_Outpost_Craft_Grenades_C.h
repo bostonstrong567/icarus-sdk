@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_RG_C2_Outpost_Craft_Grenades_C : public ABPQ_Collect_Item_WithName_C
 {
-public:
 };

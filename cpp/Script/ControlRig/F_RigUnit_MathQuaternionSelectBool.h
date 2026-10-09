@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_MathQuaternionSelectBool : public FRigUnit_MathQuaternionBase
 {
+public:
     UPROPERTY() bool Condition;  // 0x0008, size 0x1
     UPROPERTY() FQuat IfTrue;  // 0x0010, size 0x10
     UPROPERTY() FQuat IfFalse;  // 0x0020, size 0x10

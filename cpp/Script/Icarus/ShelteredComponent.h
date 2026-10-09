@@ -5,27 +5,27 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UShelteredComponent : public UTraitComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bDisableShelterTraces;  // 0x00D0, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float ShelterTraceTimeInterval;  // 0x00D4, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float ShelterTraceDistancePriorityScale;  // 0x00D8, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float ShelterTraceStarvationPriorityScale;  // 0x00DC, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float CurrentShelterValue;  // 0x00E0, size 0x4
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool Debug;  // 0x00E4, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 DebugDrawTraces;  // 0x00E8, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bDebugDrawModifiers;  // 0x00EC, size 0x1
     UPROPERTY(BlueprintReadOnly) float LastShelterCheckTime;  // 0x00F0, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bPerformingTraces;  // 0x00F4, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float ShelterTraceAccumulatedPriority;  // 0x00F8, size 0x4
+    float ShelterTraceDistanceFactor;  // 0x00FC, not reflected
+    float ShelterTraceStarvationFactor;  // 0x0100, not reflected
+    TArray<FShelteredAsyncTracePayload,TSizedDefaultAllocator<32> > TracePayloads;  // 0x0108, not reflected
     UPROPERTY() TSet<UShelteredModifierComponent*> PendingShelteredModifiers;  // 0x0118, size 0x50
     UPROPERTY() TArray<FBox> PendingShelteredModifierBoxes;  // 0x0168, size 0x10
     UPROPERTY() bool bRunningAsyncBeginTrace;  // 0x0178, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    float ShelterTraceDistanceFactor;  // 0x00FC, protected
-    float ShelterTraceStarvationFactor;  // 0x0100, protected
-    TArray<FShelteredAsyncTracePayload,TSizedDefaultAllocator<32> > TracePayloads;  // 0x0108, protected
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) bool CanSkipShelterCheck(AIcarusPlayerCharacter* CraftingPlayer, bool Repairing) const;  // parameters 0xA
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void DisableTraces(bool bDisable);  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintImplementableEvent) float GetCurrentExposureValue() const;  // parameters 0x4

@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew)
 class UNiagaraDataInterfaceGBuffer : public UNiagaraDataInterface
 {
-public:
 };

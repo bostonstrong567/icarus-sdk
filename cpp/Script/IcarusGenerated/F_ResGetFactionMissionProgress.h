@@ -4,6 +4,7 @@
 USTRUCT()
 struct FResGetFactionMissionProgress
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool Success;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FActiveFactionMission MissionProgress;  // 0x0008, size 0x18
 };

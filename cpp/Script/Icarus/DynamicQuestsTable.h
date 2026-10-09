@@ -5,5 +5,4 @@
 UCLASS()
 class UDynamicQuestsTable : public UIcarusDataTable
 {
-public:
 };

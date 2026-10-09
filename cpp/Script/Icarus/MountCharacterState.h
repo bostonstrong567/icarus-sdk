@@ -5,14 +5,16 @@
 UCLASS(Config=Engine)
 class UMountCharacterState : public USurvivalCharacterState, public ITalentHandler
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bFilterTalentsByArchetype;  // 0x03A8, size 0x1
     UPROPERTY(BlueprintReadOnly) FTalentArchetypesRowHandle ForcedArchetype;  // 0x03AC, size 0x18
+protected:
     UPROPERTY(BlueprintAssignable) FOnTalentsChanged OnCreatureTalentsChanged;  // 0x03C8, size 0x10
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) TArray<FBackendTalent> Talents;  // 0x03D8, size 0x10
     UPROPERTY(Instanced, BlueprintReadOnly) UCreatureTalentControllerComponent* CreatureTalentController;  // 0x03E8, size 0x8
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UStomachComponent* StomachComponent;  // 0x03F0, size 0x8
-
+public:
     UFUNCTION() void OnRep_Talents();
     UFUNCTION() void OnTalentControllerModelViewChanged(UTalentControllerComponent* Controller);  // parameters 0x8
     UFUNCTION() void OnUnlockedCreatureTalent(UTalentModelInterface_Const* Model, const FTalentsRowHandle& Talent, const FTalentModelData& TalentData);  // parameters 0x30

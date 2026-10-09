@@ -6,7 +6,6 @@ UCLASS()
 class UQuestQueriesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToQuestQueriesTable(FName Name, FQuestQueries Data, FQuestQueriesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x81
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakQuestQueriesEnum(FQuestQueriesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FQuestQueriesRowHandle CastToQuestQueriesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

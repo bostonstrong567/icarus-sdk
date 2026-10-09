@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_OLY_Farming_Stockpile_Deposit_Carrots_C : public ABPQ_Stockpile_Deposit_Item_C
 {
-public:
 };

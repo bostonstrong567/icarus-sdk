@@ -6,7 +6,6 @@ UCLASS()
 class UBlueprintGameplayTagLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddGameplayTag(FGameplayTagContainer& TagContainer, FGameplayTag Tag);  // parameters 0x28
     UFUNCTION(BlueprintCallable) static void AppendGameplayTagContainers(FGameplayTagContainer& InOutTagContainer, const FGameplayTagContainer& InTagContainer);  // parameters 0x40
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakGameplayTagContainer(const FGameplayTagContainer& GameplayTagContainer, TArray<FGameplayTag>& GameplayTags);  // parameters 0x30

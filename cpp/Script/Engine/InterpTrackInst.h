@@ -5,7 +5,6 @@
 UCLASS(MinimalAPI)
 class UInterpTrackInst : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   InitTrackInst, RestoreActorState, SaveActorState, TermTrackInst

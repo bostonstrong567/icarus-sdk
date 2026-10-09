@@ -5,5 +5,4 @@
 UCLASS()
 class UMusicQuestConditionsTable : public UIcarusDataTable
 {
-public:
 };

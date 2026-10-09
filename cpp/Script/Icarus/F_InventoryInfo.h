@@ -4,6 +4,7 @@
 USTRUCT()
 struct FInventoryInfo : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FInventoryIDEnum InventoryID;  // 0x0018, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FTagQueriesRowHandle SlotTemplate;  // 0x0028, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 StartingSlots;  // 0x0040, size 0x4

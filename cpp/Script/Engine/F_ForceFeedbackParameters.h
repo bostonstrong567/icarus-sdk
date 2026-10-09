@@ -4,6 +4,7 @@
 USTRUCT()
 struct FForceFeedbackParameters
 {
+public:
     UPROPERTY() FName Tag;  // 0x0000, size 0x8
     UPROPERTY() bool bLooping;  // 0x0008, size 0x1
     UPROPERTY() bool bIgnoreTimeDilation;  // 0x0009, size 0x1

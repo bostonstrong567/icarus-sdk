@@ -4,6 +4,7 @@
 USTRUCT()
 struct FPacketSimulationSettings
 {
+public:
     UPROPERTY(EditAnywhere) int32 PktLoss;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere) int32 PktLossMaxSize;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere) int32 PktLossMinSize;  // 0x0008, size 0x4

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FGPUSpriteLocalVectorFieldInfo
 {
+public:
     UPROPERTY() UVectorField* Field;  // 0x0000, size 0x8
     UPROPERTY() FTransform Transform;  // 0x0010, size 0x30
     UPROPERTY() FRotator MinInitialRotation;  // 0x0040, size 0xC

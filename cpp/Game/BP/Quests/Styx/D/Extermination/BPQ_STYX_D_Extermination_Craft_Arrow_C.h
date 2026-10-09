@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_STYX_D_Extermination_Craft_Arrow_C : public ABPQ_STYX_A_Extermination_Craft_Armor_C
 {
-public:
 };

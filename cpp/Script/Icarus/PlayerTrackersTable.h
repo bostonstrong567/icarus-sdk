@@ -5,5 +5,4 @@
 UCLASS()
 class UPlayerTrackersTable : public UIcarusDataTable
 {
-public:
 };

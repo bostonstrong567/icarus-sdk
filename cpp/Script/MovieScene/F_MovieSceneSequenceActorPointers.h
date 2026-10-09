@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMovieSceneSequenceActorPointers
 {
+public:
     UPROPERTY() AActor* SequenceActor;  // 0x0000, size 0x8
     UPROPERTY() TScriptInterface<IMovieSceneSequenceActor> SequenceActorInterface;  // 0x0008, size 0x10
 };

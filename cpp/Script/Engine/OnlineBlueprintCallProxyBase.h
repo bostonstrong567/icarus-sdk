@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UOnlineBlueprintCallProxyBase : public UBlueprintAsyncActionBase
 {
-public:
 };

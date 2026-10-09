@@ -5,16 +5,16 @@
 UCLASS(Config=Engine)
 class USynthComponentMonoWaveTable : public USynthComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintAssignable) FOnTableAltered OnTableAltered;  // 0x06C0, size 0x10
     UPROPERTY(BlueprintAssignable) FNumTablesChanged OnNumTablesChanged;  // 0x06D0, size 0x10
+protected:
     UPROPERTY(EditAnywhere) UMonoWaveTableSynthPreset* CurrentPreset;  // 0x06E0, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    UMonoWaveTableSynthPreset * CachedPreset;  // 0x06E8, protected
-    Audio::FMonoWaveTable Synth;  // 0x06F0, protected
-    int32 SampleRate;  // 0x0DF8, protected
-
+    UMonoWaveTableSynthPreset * CachedPreset;  // 0x06E8, not reflected
+    Audio::FMonoWaveTable Synth;  // 0x06F0, not reflected
+    int32 SampleRate;  // 0x0DF8, not reflected
+public:
     UFUNCTION(BlueprintCallable) float GetCurveTangent(int32 TableIndex);  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) TArray<float> GetKeyFrameValuesForTable(float TableIndex) const;  // parameters 0x18
     UFUNCTION(BlueprintCallable, BlueprintPure) int32 GetMaxTableIndex() const;  // parameters 0x4

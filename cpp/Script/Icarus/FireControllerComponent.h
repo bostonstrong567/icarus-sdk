@@ -5,22 +5,22 @@
 UCLASS(Config=Engine)
 class UFireControllerComponent : public UActorComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSubclassOf<AFireInstance> FireInstanceClass;  // 0x00B0, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSubclassOf<AFireInstanceShadow> FireInstanceShadowClass;  // 0x00B8, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FTagQueriesRowHandle CanIgniteFireQueryRowHandle;  // 0x00C0, size 0x18
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<AFireInstance*> ActiveFireInstances;  // 0x00D8, size 0x10
+    int32 LastActiveFireIndexBoundsChecked;  // 0x00E8, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<AFireInstanceShadow*> ActiveFireInstanceShadows;  // 0x00F0, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<UFlammableInstance*> ActiveFlammableInstances;  // 0x0100, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<UFlammableInstance*> DynamicInstances;  // 0x0110, size 0x10
     UPROPERTY(EditAnywhere) bool bReplicatedStatesDirty;  // 0x0120, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<TSubclassOf<UFlammableComponent>> DebugFlammableClasses;  // 0x0128, size 0x10
     UPROPERTY(EditAnywhere) int32 CurrentFlammableInstanceIndex;  // 0x0138, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    int32 LastActiveFireIndexBoundsChecked;  // 0x00E8, protected
-    TUniquePtr<FFlammableInstanceOctree,TDefaultDelete<FFlammableInstanceOctree> > InstancesOctree;  // 0x0140, protected
-
+    TUniquePtr<FFlammableInstanceOctree,TDefaultDelete<FFlammableInstanceOctree> > InstancesOctree;  // 0x0140, not reflected
+public:
     UFUNCTION(BlueprintCallable) static TArray<TSubclassOf<UObject>> GetAllFlammableComponentClasses();  // parameters 0x10
     UFUNCTION(BlueprintCallable) bool GetDebugFlammableState(TSubclassOf<UFlammableComponent> FlammableClass);  // parameters 0x9
     UFUNCTION() TArray<AFireInstance*> GetFireInstancesIntersectingBoundsBatch(const FBoxSphereBounds& Bounds);  // parameters 0x30

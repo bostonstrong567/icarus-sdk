@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_CollectionNameSearch : public FRigUnit_CollectionBase
 {
+public:
     UPROPERTY() FName PartialName;  // 0x0008, size 0x8
     UPROPERTY() ERigElementType TypeToSearch;  // 0x0010, size 0x1
     UPROPERTY() FRigElementKeyCollection Collection;  // 0x0018, size 0x10

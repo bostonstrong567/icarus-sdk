@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFirearmSoundData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UFMODEvent> Event;  // 0x0000, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName AttachPoint;  // 0x0028, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bUseChargeParameter;  // 0x0030, size 0x1

@@ -5,6 +5,7 @@
 UCLASS(Config=EditorPerProjectUserSettings)
 class UCompositionGraphCaptureProtocol : public UMovieSceneImageCaptureProtocolBase
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, Config, BlueprintReadWrite) FCompositionGraphCapturePasses IncludeRenderPasses;  // 0x0058, size 0x10
     UPROPERTY(EditAnywhere, Config, BlueprintReadWrite) bool bCaptureFramesInHDR;  // 0x0068, size 0x1
@@ -12,9 +13,8 @@ public:
     UPROPERTY(EditAnywhere, Config, BlueprintReadWrite) TEnumAsByte<EHDRCaptureGamut> CaptureGamut;  // 0x0070, size 0x1
     UPROPERTY(EditAnywhere, Config, BlueprintReadWrite) FSoftObjectPath PostProcessingMaterial;  // 0x0078, size 0x18
     UPROPERTY(EditAnywhere, Config, BlueprintReadWrite) bool bDisableScreenPercentage;  // 0x0090, size 0x1
+private:
     UPROPERTY(Transient) UMaterialInterface* PostProcessingMaterialPtr;  // 0x0098, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    TWeakPtr<FSceneViewport,0> SceneViewport;  // 0x00A0, private
-    TSharedPtr<FFrameCaptureViewExtension,1> ViewExtension;  // 0x00B0, private
+    TWeakPtr<FSceneViewport,0> SceneViewport;  // 0x00A0, not reflected
+    TSharedPtr<FFrameCaptureViewExtension,1> ViewExtension;  // 0x00B0, not reflected
 };

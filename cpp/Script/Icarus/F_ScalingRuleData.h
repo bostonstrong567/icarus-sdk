@@ -4,6 +4,7 @@
 USTRUCT()
 struct FScalingRuleData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bScaleByNearbyPlayerCount;  // 0x0018, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FScalingValueMap NearbyPlayersScaling;  // 0x001C, size 0x14
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UCurveFloat* CustomNearbyPlayersCurve;  // 0x0030, size 0x8

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FPrefabWaterfall
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FTransform Transform;  // 0x0000, size 0x30
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float Width;  // 0x0030, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float Height;  // 0x0034, size 0x4

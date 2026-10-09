@@ -5,5 +5,4 @@
 UCLASS()
 class UImageSequenceProtocol_BMP : public UImageSequenceProtocol
 {
-public:
 };

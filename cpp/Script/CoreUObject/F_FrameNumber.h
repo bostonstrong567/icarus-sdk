@@ -4,5 +4,6 @@
 USTRUCT()
 struct FFrameNumber
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Value;  // 0x0000, size 0x4
 };

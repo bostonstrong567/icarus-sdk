@@ -4,6 +4,7 @@
 USTRUCT()
 struct FUsableData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FUseCondition> Uses;  // 0x0018, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bAlwaysShowContextMenu;  // 0x0028, size 0x1
 };

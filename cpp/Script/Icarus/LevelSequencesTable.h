@@ -5,5 +5,4 @@
 UCLASS()
 class ULevelSequencesTable : public UIcarusDataTable
 {
-public:
 };

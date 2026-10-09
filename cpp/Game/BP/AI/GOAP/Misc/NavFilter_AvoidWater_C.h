@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UNavFilter_AvoidWater_C : public UIcarusNavQueryFilter
 {
-public:
 };

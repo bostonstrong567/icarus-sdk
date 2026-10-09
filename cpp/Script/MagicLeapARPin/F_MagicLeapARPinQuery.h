@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMagicLeapARPinQuery
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSet<EMagicLeapARPinType> Types;  // 0x0000, size 0x50
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 MaxResults;  // 0x0050, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector TargetPoint;  // 0x0054, size 0xC

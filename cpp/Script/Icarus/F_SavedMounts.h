@@ -4,5 +4,6 @@
 USTRUCT()
 struct FSavedMounts
 {
+public:
     UPROPERTY() TArray<FMountSaveData> SavedMounts;  // 0x0000, size 0x10
 };

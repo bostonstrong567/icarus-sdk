@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, MinimalAPI, Config=Engine)
 class UDrawSphereComponent : public USphereComponent
 {
-public:
 };

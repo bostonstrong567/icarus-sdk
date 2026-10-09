@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_PRO_A_Stockpile_DepositFood10_C : public ABPQ_Stockpile_Deposit_Item_C
 {
-public:
 };

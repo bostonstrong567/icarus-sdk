@@ -5,5 +5,4 @@
 UCLASS()
 class UAssetReferencesTable : public UIcarusDataTable
 {
-public:
 };

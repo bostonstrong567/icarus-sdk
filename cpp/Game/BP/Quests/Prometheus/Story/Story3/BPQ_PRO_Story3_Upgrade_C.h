@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_PRO_Story3_Upgrade_C : public ABP_Common_Check_For_Upgrade_C
 {
-public:
 };

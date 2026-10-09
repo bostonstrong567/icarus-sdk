@@ -4,6 +4,7 @@
 USTRUCT()
 struct FDatasmithPostProcessSettingsTemplate
 {
+public:
     UPROPERTY() uint8 bOverride_WhiteTemp : 1;  // 0x0000, mask 0x01
     UPROPERTY() uint8 bOverride_ColorSaturation : 1;  // 0x0000, mask 0x02
     UPROPERTY() uint8 bOverride_VignetteIntensity : 1;  // 0x0000, mask 0x04

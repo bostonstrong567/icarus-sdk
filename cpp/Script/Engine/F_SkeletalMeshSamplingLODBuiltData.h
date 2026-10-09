@@ -4,7 +4,6 @@
 USTRUCT()
 struct FSkeletalMeshSamplingLODBuiltData
 {
-
-    // Not reflected:
-    FSkeletalMeshAreaWeightedTriangleSampler AreaWeightedTriangleSampler;  // 0x0000
+public:
+    FSkeletalMeshAreaWeightedTriangleSampler AreaWeightedTriangleSampler;  // 0x0000, not reflected
 };

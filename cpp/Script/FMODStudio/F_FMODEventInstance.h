@@ -4,7 +4,6 @@
 USTRUCT()
 struct FFMODEventInstance
 {
-
-    // Not reflected:
-    FMOD::Studio::EventInstance * Instance;  // 0x0000
+public:
+    FMOD::Studio::EventInstance * Instance;  // 0x0000, not reflected
 };

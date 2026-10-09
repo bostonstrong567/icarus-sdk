@@ -6,7 +6,6 @@ UCLASS(Abstract, Transient, Config=Engine)
 class ANiagaraPreviewBase : public AActor
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void SetLabelText(const FText& InXAxisText, const FText& InYAxisText);  // parameters 0x30
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void SetSystem(UNiagaraSystem* InSystem);  // parameters 0x8
 };

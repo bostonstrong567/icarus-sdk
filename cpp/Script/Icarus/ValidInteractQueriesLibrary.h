@@ -6,7 +6,6 @@ UCLASS()
 class UValidInteractQueriesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToValidInteractQueriesTable(FName Name, FValidInteractQuery Data, FValidInteractQueriesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x91
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakValidInteractQueriesEnum(FValidInteractQueriesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FValidInteractQueriesRowHandle CastToValidInteractQueriesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

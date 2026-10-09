@@ -5,9 +5,10 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UTeleportComponent : public UActorComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) FTeleportInfo TeleportInfo;  // 0x00B0, size 0xC0
-
+public:
     UFUNCTION(NetMulticast, Reliable, BlueprintNativeEvent) void Multi_LoadLevel(FTeleportInfo InTeleportInfo, FVector LocationToLoadLevel);  // parameters 0xCC
     UFUNCTION(NetMulticast, Reliable, BlueprintNativeEvent) void Multi_UnloadLevel(FTeleportInfo InTeleportInfo);  // parameters 0xC0
     UFUNCTION() void OnRep_TeleportInfo();

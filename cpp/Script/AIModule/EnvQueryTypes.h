@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class UEnvQueryTypes : public UObject
 {
-public:
 };

@@ -6,7 +6,6 @@ UCLASS(Abstract, MinimalAPI)
 class UMapIconWidgetInterface : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintImplementableEvent) void InitialiseIconWidget(FMapIconsRowHandle MapIconData, AActor* OwningActor);  // parameters 0x20
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool ShouldDrawPathToLinkedActor(AActor*& LinkedActor);  // parameters 0x9
     UFUNCTION(BlueprintImplementableEvent) bool ShouldOverrideVisibility(ESlateVisibility& ForcedVisibility);  // parameters 0x2

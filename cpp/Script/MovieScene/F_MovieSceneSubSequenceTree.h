@@ -4,7 +4,6 @@
 USTRUCT()
 struct FMovieSceneSubSequenceTree
 {
-
-    // Not reflected:
-    TMovieSceneEvaluationTree<FMovieSceneSubSequenceTreeEntry> Data;  // 0x0000
+public:
+    TMovieSceneEvaluationTree<FMovieSceneSubSequenceTreeEntry> Data;  // 0x0000, not reflected
 };

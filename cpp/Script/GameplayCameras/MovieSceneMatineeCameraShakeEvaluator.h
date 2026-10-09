@@ -5,5 +5,4 @@
 UCLASS()
 class UMovieSceneMatineeCameraShakeEvaluator : public UMovieSceneCameraShakeEvaluator
 {
-public:
 };

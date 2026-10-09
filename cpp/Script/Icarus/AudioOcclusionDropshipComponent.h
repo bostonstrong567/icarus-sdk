@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UAudioOcclusionDropshipComponent : public UAudioOcclusionComponent
 {
-public:
 };

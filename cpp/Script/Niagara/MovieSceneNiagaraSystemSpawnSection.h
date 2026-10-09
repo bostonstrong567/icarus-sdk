@@ -5,7 +5,8 @@
 UCLASS(MinimalAPI)
 class UMovieSceneNiagaraSystemSpawnSection : public UMovieSceneSection
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY(EditAnywhere) ENiagaraSystemSpawnSectionStartBehavior SectionStartBehavior;  // 0x00E8, size 0x4
     UPROPERTY(EditAnywhere) ENiagaraSystemSpawnSectionEvaluateBehavior SectionEvaluateBehavior;  // 0x00EC, size 0x4
     UPROPERTY(EditAnywhere) ENiagaraSystemSpawnSectionEndBehavior SectionEndBehavior;  // 0x00F0, size 0x4

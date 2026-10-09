@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNiagaraSpawnInfo
 {
+public:
     UPROPERTY(BlueprintReadWrite) int32 Count;  // 0x0000, size 0x4
     UPROPERTY(BlueprintReadWrite) float InterpStartDt;  // 0x0004, size 0x4
     UPROPERTY(BlueprintReadWrite) float IntervalDt;  // 0x0008, size 0x4

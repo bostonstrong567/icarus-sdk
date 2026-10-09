@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UUMG_SettingControlBase_C : public UIcarusWidget
 {
-public:
 };

@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class USplineComponent : public UPrimitiveComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere) FSplineCurves SplineCurves;  // 0x0450, size 0x70
     UPROPERTY(Deprecated) FInterpCurveVector SplineInfo;  // 0x04C0, size 0x18
@@ -19,11 +20,12 @@ public:
     UPROPERTY() bool bModifiedByConstructionScript;  // 0x052E, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bInputSplinePointsToConstructionScript;  // 0x052F, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bDrawDebug;  // 0x0530, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector DefaultUpVector;  // 0x0538, size 0xC
+private:
     UPROPERTY(EditAnywhere) bool bClosedLoop;  // 0x0531, size 0x1
     UPROPERTY(EditAnywhere) bool bLoopPositionOverride;  // 0x0532, size 0x1
     UPROPERTY(EditAnywhere) float LoopPosition;  // 0x0534, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector DefaultUpVector;  // 0x0538, size 0xC
-
+public:
     UFUNCTION(BlueprintCallable) void AddPoint(const FSplinePoint& Point, bool bUpdateSpline);  // parameters 0x45
     UFUNCTION(BlueprintCallable) void AddPoints(const TArray<FSplinePoint>& Points, bool bUpdateSpline);  // parameters 0x11
     UFUNCTION(BlueprintCallable) void AddSplineLocalPoint(const FVector& Position);  // parameters 0xC

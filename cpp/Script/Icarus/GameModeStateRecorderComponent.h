@@ -5,7 +5,8 @@
 UCLASS(Config=Engine)
 class UGameModeStateRecorderComponent : public UActorStateRecorderComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY(EditAnywhere, SaveGame) FGameModeRecord GameModeRecord;  // 0x01C0, size 0x50
     UPROPERTY(EditAnywhere, SaveGame) FSpawnRecord GameModeSpawnRecord;  // 0x0210, size 0x1
     UPROPERTY(EditAnywhere, SaveGame) TMap<FString, int32> PreviouslyAssignedPlayerColors;  // 0x0218, size 0x50

@@ -5,5 +5,4 @@
 UCLASS()
 class ULightMapVirtualTexture : public UVirtualTexture
 {
-public:
 };

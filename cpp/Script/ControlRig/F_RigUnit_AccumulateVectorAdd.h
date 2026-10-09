@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_AccumulateVectorAdd : public FRigUnit_AccumulateBase
 {
+public:
     UPROPERTY() FVector Increment;  // 0x0008, size 0xC
     UPROPERTY() FVector InitialValue;  // 0x0014, size 0xC
     UPROPERTY() bool bIntegrateDeltaTime;  // 0x0020, size 0x1

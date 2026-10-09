@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBuildPromotionImportWorkflowSettings
 {
+public:
     UPROPERTY(EditAnywhere, Config) FEditorImportWorkflowDefinition Diffuse;  // 0x0000, size 0x20
     UPROPERTY(EditAnywhere, Config) FEditorImportWorkflowDefinition Normal;  // 0x0020, size 0x20
     UPROPERTY(EditAnywhere, Config) FEditorImportWorkflowDefinition StaticMesh;  // 0x0040, size 0x20

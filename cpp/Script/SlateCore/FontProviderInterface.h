@@ -5,5 +5,4 @@
 UCLASS(Abstract, MinimalAPI)
 class UFontProviderInterface : public UInterface
 {
-public:
 };

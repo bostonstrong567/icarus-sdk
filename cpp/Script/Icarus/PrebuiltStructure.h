@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class APrebuiltStructure : public AIcarusActor
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintAssignable) FOnStructureBuildComplete OnStructureBuildComplete;  // 0x02C0, size 0x10
     UPROPERTY(Transient, BlueprintReadOnly) bool bIsBuildInProgress;  // 0x02D0, size 0x1
@@ -12,8 +13,9 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<AActor*> SpawnedActors;  // 0x02D8, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<int32> SpawnedActorUIDs;  // 0x02E8, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FPrebuiltStructuresRowHandle PrebuiltStructureRow;  // 0x02F8, size 0x18
+private:
     UPROPERTY(Transient) TArray<FOnPrebuiltStructureReady> PendingReadyCallbacks;  // 0x0310, size 0x10
-
+public:
     UFUNCTION(BlueprintNativeEvent) void BP_CleanupStructure(float Lifetime);  // parameters 0x4
     UFUNCTION(BlueprintImplementableEvent) void BP_NotifyBuildComplete();
     UFUNCTION(BlueprintCallable) void BuildStructure(FPrebuiltStructuresRowHandle PrebuiltRowHandle);  // parameters 0x18

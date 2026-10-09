@@ -6,7 +6,6 @@ UCLASS()
 class UNiagaraDataInterfaceArrayFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static TArray<bool> GetNiagaraArrayBool(UNiagaraComponent* NiagaraSystem, FName OverrideName);  // parameters 0x20
     UFUNCTION(BlueprintCallable) static bool GetNiagaraArrayBoolValue(UNiagaraComponent* NiagaraSystem, FName OverrideName, int32 Index);  // parameters 0x15
     UFUNCTION(BlueprintCallable) static TArray<FLinearColor> GetNiagaraArrayColor(UNiagaraComponent* NiagaraSystem, FName OverrideName);  // parameters 0x20

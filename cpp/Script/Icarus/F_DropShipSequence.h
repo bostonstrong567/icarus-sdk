@@ -4,6 +4,7 @@
 USTRUCT()
 struct FDropShipSequence : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FDropShipEvent> Events;  // 0x0018, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UCurveFloat* Trajectory;  // 0x0028, size 0x8
 };

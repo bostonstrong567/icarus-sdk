@@ -4,10 +4,9 @@
 USTRUCT()
 struct FActiveGizmo
 {
-
-    // Not reflected:
-    UInteractiveGizmo * Gizmo;  // 0x0000
-    FString BuilderIdentifier;  // 0x0008
-    FString InstanceIdentifier;  // 0x0018
-    void * Owner;  // 0x0028
+public:
+    UInteractiveGizmo * Gizmo;  // 0x0000, not reflected
+    FString BuilderIdentifier;  // 0x0008, not reflected
+    FString InstanceIdentifier;  // 0x0018, not reflected
+    void * Owner;  // 0x0028, not reflected
 };

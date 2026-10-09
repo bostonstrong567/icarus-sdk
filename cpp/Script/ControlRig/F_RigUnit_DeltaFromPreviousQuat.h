@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_DeltaFromPreviousQuat : public FRigUnit_SimBase
 {
+public:
     UPROPERTY() FQuat Value;  // 0x0010, size 0x10
     UPROPERTY() FQuat Delta;  // 0x0020, size 0x10
     UPROPERTY() FQuat PreviousValue;  // 0x0030, size 0x10

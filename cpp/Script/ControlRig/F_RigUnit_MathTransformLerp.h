@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_MathTransformLerp : public FRigUnit_MathTransformBase
 {
+public:
     UPROPERTY() FTransform A;  // 0x0010, size 0x30
     UPROPERTY() FTransform B;  // 0x0040, size 0x30
     UPROPERTY() float T;  // 0x0070, size 0x4

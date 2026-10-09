@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_IM_O1_Researchers_2_Deliver_C : public ABPQ_Common_Deliver_C
 {
-public:
 };

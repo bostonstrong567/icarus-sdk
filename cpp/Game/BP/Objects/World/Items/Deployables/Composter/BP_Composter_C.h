@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Composter_C : public ABP_ResourceNetworkProcessor_C
 {
-public:
 };

@@ -6,6 +6,5 @@ UCLASS(EditInlineNew)
 class UMainInventoryWidgetBase : public UUserWidget
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool IsInventoryVisible();  // parameters 0x1
 };

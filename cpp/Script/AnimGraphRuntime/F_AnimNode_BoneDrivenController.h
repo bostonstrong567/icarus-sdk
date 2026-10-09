@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAnimNode_BoneDrivenController : public FAnimNode_SkeletalControlBase
 {
+public:
     UPROPERTY(EditAnywhere) FBoneReference SourceBone;  // 0x00C8, size 0x10
     UPROPERTY(EditAnywhere) UCurveFloat* DrivingCurve;  // 0x00D8, size 0x8
     UPROPERTY(EditAnywhere) float Multiplier;  // 0x00E0, size 0x4

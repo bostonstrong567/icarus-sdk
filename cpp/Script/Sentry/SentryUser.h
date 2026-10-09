@@ -5,11 +5,9 @@
 UCLASS()
 class USentryUser : public UObject
 {
+private:
+    TSharedPtr<ISentryUser,0> UserNativeImpl;  // 0x0028, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<ISentryUser,0> UserNativeImpl;  // 0x0028, private
-
     UFUNCTION(BlueprintCallable, BlueprintPure) TMap<FString, FString> GetData() const;  // parameters 0x50
     UFUNCTION(BlueprintCallable, BlueprintPure) FString GetEmail() const;  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) FString GetId() const;  // parameters 0x10

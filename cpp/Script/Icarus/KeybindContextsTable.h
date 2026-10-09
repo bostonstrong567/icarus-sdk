@@ -5,5 +5,4 @@
 UCLASS()
 class UKeybindContextsTable : public UIcarusDataTable
 {
-public:
 };

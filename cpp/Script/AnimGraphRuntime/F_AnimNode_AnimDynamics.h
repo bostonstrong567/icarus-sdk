@@ -4,8 +4,11 @@
 USTRUCT()
 struct FAnimNode_AnimDynamics : public FAnimNode_SkeletalControlBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float LinearDampingOverride;  // 0x00C8, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float AngularDampingOverride;  // 0x00CC, size 0x4
+    FTransform PreviousCompWorldSpaceTM;  // 0x00D0, not reflected
+    FTransform PreviousActorWorldSpaceTM;  // 0x0100, not reflected
     UPROPERTY(EditAnywhere) FBoneReference RelativeSpaceBone;  // 0x0130, size 0x10
     UPROPERTY(EditAnywhere) FBoneReference BoundBone;  // 0x0140, size 0x10
     UPROPERTY(EditAnywhere) FBoneReference ChainEnd;  // 0x0150, size 0x10
@@ -29,6 +32,8 @@ struct FAnimNode_AnimDynamics : public FAnimNode_SkeletalControlBase
     UPROPERTY(EditAnywhere) TArray<FAnimPhysPlanarLimit> PlanarLimits;  // 0x0230, size 0x10
     UPROPERTY(EditAnywhere) AnimPhysCollisionType CollisionType;  // 0x0240, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) AnimPhysSimSpaceType SimulationSpace;  // 0x0241, size 0x1
+    AnimPhysSimSpaceType LastSimSpace;  // 0x0242, not reflected
+    ETeleportType InitTeleportType;  // 0x0243, not reflected
     UPROPERTY(EditAnywhere) uint8 bUseSphericalLimits : 1;  // 0x0244, mask 0x01
     UPROPERTY(EditAnywhere) uint8 bUsePlanarLimit : 1;  // 0x0244, mask 0x02
     UPROPERTY(EditAnywhere) uint8 bDoUpdate : 1;  // 0x0244, mask 0x04
@@ -37,33 +42,28 @@ struct FAnimNode_AnimDynamics : public FAnimNode_SkeletalControlBase
     UPROPERTY(EditAnywhere) uint8 bOverrideAngularBias : 1;  // 0x0244, mask 0x20
     UPROPERTY(EditAnywhere) uint8 bOverrideAngularDamping : 1;  // 0x0244, mask 0x40
     UPROPERTY(EditAnywhere) uint8 bEnableWind : 1;  // 0x0244, mask 0x80
+    uint8 : 1 bWindWasEnabled;  // 0x0245, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bUseGravityOverride : 1;  // 0x0245, mask 0x02
     UPROPERTY(EditAnywhere) uint8 bLinearSpring : 1;  // 0x0245, mask 0x04
     UPROPERTY(EditAnywhere) uint8 bAngularSpring : 1;  // 0x0245, mask 0x08
     UPROPERTY(EditAnywhere) uint8 bChain : 1;  // 0x0245, mask 0x10
     UPROPERTY(EditAnywhere) FRotationRetargetingInfo RetargetingSettings;  // 0x0250, size 0x130
-
-    // Not reflected:
-    FTransform PreviousCompWorldSpaceTM;  // 0x00D0
-    FTransform PreviousActorWorldSpaceTM;  // 0x0100
-    AnimPhysSimSpaceType LastSimSpace;  // 0x0242
-    ETeleportType InitTeleportType;  // 0x0243
-    uint8 : 1 bWindWasEnabled;  // 0x0245
-    float NextTimeStep;  // 0x0380
-    float TimeDebt;  // 0x0384
-    float AnimPhysicsMinDeltaTime;  // 0x0388
-    float MaxPhysicsDeltaTime;  // 0x038C
-    float MaxSubstepDeltaTime;  // 0x0390
-    int32 MaxSubsteps;  // 0x0394
-    TArray<FAnimPhysLinkedBody,TSizedDefaultAllocator<32> > Bodies;  // 0x0398
-    TArray<FAnimPhysLinkedBody *,TSizedDefaultAllocator<32> > BodiesToReset;  // 0x03A8
-    TArray<FAnimPhysRigidBody *,TSizedDefaultAllocator<32> > BaseBodyPtrs;  // 0x03B8
-    TArray<FAnimPhysLinearLimit,TSizedDefaultAllocator<32> > LinearLimits;  // 0x03C8
-    TArray<FAnimPhysAngularLimit,TSizedDefaultAllocator<32> > AngularLimits;  // 0x03D8
-    TArray<FAnimPhysSpring,TSizedDefaultAllocator<32> > Springs;  // 0x03E8
-    TArray<FVector,TSizedDefaultAllocator<32> > JointOffsets;  // 0x03F8
-    TArray<FBoneReference,TSizedDefaultAllocator<32> > BoundBoneReferences;  // 0x0408
-    TArray<int,TSizedDefaultAllocator<32> > ActiveBoneIndices;  // 0x0418
-    FVector SimSpaceGravityDirection;  // 0x0428
-    FVector PreviousComponentLinearVelocity;  // 0x0434
+private:
+    float NextTimeStep;  // 0x0380, not reflected
+    float TimeDebt;  // 0x0384, not reflected
+    float AnimPhysicsMinDeltaTime;  // 0x0388, not reflected
+    float MaxPhysicsDeltaTime;  // 0x038C, not reflected
+    float MaxSubstepDeltaTime;  // 0x0390, not reflected
+    int32 MaxSubsteps;  // 0x0394, not reflected
+    TArray<FAnimPhysLinkedBody,TSizedDefaultAllocator<32> > Bodies;  // 0x0398, not reflected
+    TArray<FAnimPhysLinkedBody *,TSizedDefaultAllocator<32> > BodiesToReset;  // 0x03A8, not reflected
+    TArray<FAnimPhysRigidBody *,TSizedDefaultAllocator<32> > BaseBodyPtrs;  // 0x03B8, not reflected
+    TArray<FAnimPhysLinearLimit,TSizedDefaultAllocator<32> > LinearLimits;  // 0x03C8, not reflected
+    TArray<FAnimPhysAngularLimit,TSizedDefaultAllocator<32> > AngularLimits;  // 0x03D8, not reflected
+    TArray<FAnimPhysSpring,TSizedDefaultAllocator<32> > Springs;  // 0x03E8, not reflected
+    TArray<FVector,TSizedDefaultAllocator<32> > JointOffsets;  // 0x03F8, not reflected
+    TArray<FBoneReference,TSizedDefaultAllocator<32> > BoundBoneReferences;  // 0x0408, not reflected
+    TArray<int,TSizedDefaultAllocator<32> > ActiveBoneIndices;  // 0x0418, not reflected
+    FVector SimSpaceGravityDirection;  // 0x0428, not reflected
+    FVector PreviousComponentLinearVelocity;  // 0x0434, not reflected
 };

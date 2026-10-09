@@ -4,5 +4,6 @@
 USTRUCT()
 struct FAccoladeArrayStruct
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FAccoladesRowHandle> Array;  // 0x0000, size 0x10
 };

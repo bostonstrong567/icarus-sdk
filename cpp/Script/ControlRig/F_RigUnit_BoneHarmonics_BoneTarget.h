@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_BoneHarmonics_BoneTarget
 {
+public:
     UPROPERTY() FName Bone;  // 0x0000, size 0x8
     UPROPERTY() float Ratio;  // 0x0008, size 0x4
 };

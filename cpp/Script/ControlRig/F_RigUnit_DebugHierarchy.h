@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_DebugHierarchy : public FRigUnit_DebugBaseMutable
 {
+public:
     UPROPERTY() float Scale;  // 0x0068, size 0x4
     UPROPERTY() FLinearColor Color;  // 0x006C, size 0x10
     UPROPERTY() float Thickness;  // 0x007C, size 0x4

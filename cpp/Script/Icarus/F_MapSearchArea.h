@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMapSearchArea : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UTexture2D> Image;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FLinearColor Color;  // 0x0040, size 0x10
 };

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_IM_B_LocationC_Search_C : public ABPQ_Collect_Item_C
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FStaminaCost : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 BeginActionCost;  // 0x0018, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 EndActionCost;  // 0x001C, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 PerSecondCost;  // 0x0020, size 0x4

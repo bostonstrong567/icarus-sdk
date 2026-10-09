@@ -5,5 +5,4 @@
 UCLASS()
 class UMaterialExpressionAtmosphericLightVector : public UMaterialExpression
 {
-public:
 };

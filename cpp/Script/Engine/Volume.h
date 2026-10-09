@@ -5,5 +5,4 @@
 UCLASS(Abstract, Config=Engine)
 class AVolume : public ABrush
 {
-public:
 };

@@ -16,7 +16,5 @@ public:
     UPROPERTY(EditAnywhere) uint8 bLockSourceTangent : 1;  // 0x00D8, mask 0x01
     UPROPERTY(EditAnywhere) FRawDistributionFloat SourceStrength;  // 0x00E0, size 0x30
     UPROPERTY(EditAnywhere) uint8 bLockSourceStength : 1;  // 0x0110, mask 0x01
-
-    // Not reflected: the engine's scripting cannot see these.
-    int32 LastSelectedParticleIndex;  // 0x0114
+    int32 LastSelectedParticleIndex;  // 0x0114, not reflected
 };

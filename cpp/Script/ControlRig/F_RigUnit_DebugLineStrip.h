@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_DebugLineStrip : public FRigUnit_DebugBaseMutable
 {
+public:
     UPROPERTY() TArray<FVector> Points;  // 0x0068, size 0x10
     UPROPERTY() FLinearColor Color;  // 0x0078, size 0x10
     UPROPERTY() float Thickness;  // 0x0088, size 0x4

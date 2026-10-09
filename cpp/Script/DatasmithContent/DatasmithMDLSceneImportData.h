@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew)
 class UDatasmithMDLSceneImportData : public UDatasmithSceneImportData
 {
-public:
 };

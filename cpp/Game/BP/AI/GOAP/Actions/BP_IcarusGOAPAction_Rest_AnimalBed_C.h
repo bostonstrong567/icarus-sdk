@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UBP_IcarusGOAPAction_Rest_AnimalBed_C : public UBP_IcarusGOAPAction_Rest_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool CheckContextualPreconditions(AIcarusNPCGOAPController* Controller) const;  // parameters 0x9
     UFUNCTION(BlueprintCallable) void GetNearestUnoccupiedAnimalBed(AActor*& ValidBed, bool& Success);  // parameters 0x9
     UFUNCTION(BlueprintCallable) void IsAnimalBedUnoccupied(AActor* BedActor, bool& Unoccupied) const;  // parameters 0x9

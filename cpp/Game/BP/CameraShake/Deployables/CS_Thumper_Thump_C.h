@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UCS_Thumper_Thump_C : public UMatineeCameraShake
 {
-public:
 };

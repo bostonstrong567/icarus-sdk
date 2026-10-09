@@ -6,7 +6,6 @@ UCLASS()
 class UOnlineSubsystemEOSFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static FAccountId EpicAccountIdFromString(FString AccountId);  // parameters 0x18
     UFUNCTION(BlueprintCallable, BlueprintPure) static FString EpicAccountIdToString(const FAccountId& AccountId);  // parameters 0x18
     UFUNCTION(BlueprintCallable, BlueprintPure) static FAccountId GetAccountId();  // parameters 0x8

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FInstancedMapData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UWorld> MapAsset;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FBox MapBounds;  // 0x0040, size 0x1C
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 CaveID;  // 0x005C, size 0x4

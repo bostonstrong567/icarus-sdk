@@ -5,5 +5,4 @@
 UCLASS(Transient, Config=Engine)
 class USK_CRE_Zebra_Mount_AnimBP_C : public USK_CRE_Horse_Mount_AnimBP_C
 {
-public:
 };

@@ -5,8 +5,6 @@
 UCLASS()
 class UVoxelMeshLibrarySubsystem : public UWorldSubsystem
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<FString,FMeshSectionData,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FString,FMeshSectionData,0> > VoxelMeshLibrary;  // 0x0030, private
+private:
+    TMap<FString,FMeshSectionData,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FString,FMeshSectionData,0> > VoxelMeshLibrary;  // 0x0030, not reflected
 };

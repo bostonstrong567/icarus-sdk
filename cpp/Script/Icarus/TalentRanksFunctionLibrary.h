@@ -6,7 +6,6 @@ UCLASS()
 class UTalentRanksFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static FTalentRanksRowHandle FindRequiredTalentRank(FTalentsRowHandle Talent);  // parameters 0x30
     UFUNCTION(BlueprintCallable) static FTalentRank GetTalentRank(FTalentRanksRowHandle Reference, int32 Investment, EValid& Paths);  // parameters 0x98
 };

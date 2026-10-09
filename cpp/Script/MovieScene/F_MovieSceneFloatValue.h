@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMovieSceneFloatValue
 {
+public:
     UPROPERTY(EditAnywhere) float Value;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere) FMovieSceneTangentData Tangent;  // 0x0004, size 0x14
     UPROPERTY(EditAnywhere) TEnumAsByte<ERichCurveInterpMode> InterpMode;  // 0x0018, size 0x1

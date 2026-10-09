@@ -6,11 +6,9 @@ UCLASS(EditInlineNew)
 class USubmixEffectStereoDelayPreset : public USoundEffectSubmixPreset
 {
 public:
+    FWindowsCriticalSection SettingsCritSect;  // 0x0068, not reflected
+    FSubmixEffectStereoDelaySettings SettingsCopy;  // 0x0090, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSubmixEffectStereoDelaySettings Settings;  // 0x00B4, size 0x24
-
-    // Not reflected: the engine's scripting cannot see these.
-    FWindowsCriticalSection SettingsCritSect;  // 0x0068
-    FSubmixEffectStereoDelaySettings SettingsCopy;  // 0x0090
 
     UFUNCTION(BlueprintCallable) void SetSettings(const FSubmixEffectStereoDelaySettings& InSettings);  // parameters 0x24
 };

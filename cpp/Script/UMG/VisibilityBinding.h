@@ -6,6 +6,5 @@ UCLASS()
 class UVisibilityBinding : public UPropertyBinding
 {
 public:
-
     UFUNCTION() ESlateVisibility GetValue() const;  // parameters 0x1
 };

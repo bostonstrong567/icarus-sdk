@@ -6,7 +6,6 @@ UCLASS(Transient, Config=Engine)
 class UBP_ActionableBehaviour_FireArm_FireController_SemiAuto_SandwormCrossbow_C : public UBP_ActionableBehaviour_FireArm_FireController_SemiAuto_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void OnProjectileLanded(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit);  // parameters 0xA4
     UFUNCTION(BlueprintCallable) void OnQueryFinished(UEnvQueryInstanceBlueprintWrapper* QueryInstance, TEnumAsByte<EEnvQueryStatus> QueryStatus);  // parameters 0x9
     UFUNCTION(BlueprintCallable) void SpawnProjectile(FProjectileFireParams ProjectileParams);  // parameters 0x10

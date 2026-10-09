@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRCONCommandData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString ConsoleCommand;  // 0x0018, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText Parameters;  // 0x0028, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText Description;  // 0x0040, size 0x18

@@ -5,5 +5,4 @@
 UCLASS()
 class UIcarusResourcesTable : public UIcarusDataTable
 {
-public:
 };

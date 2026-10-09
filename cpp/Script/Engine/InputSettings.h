@@ -5,6 +5,7 @@
 UCLASS(Config=Input)
 class UInputSettings : public UObject
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, Config) TArray<FInputAxisConfigEntry> AxisConfig;  // 0x0028, size 0x10
     UPROPERTY(EditAnywhere, Config) uint8 bAltEnterTogglesFullscreen : 1;  // 0x0038, mask 0x01
@@ -25,15 +26,16 @@ public:
     UPROPERTY(EditAnywhere, Config) EMouseLockMode DefaultViewportMouseLockMode;  // 0x0071, size 0x1
     UPROPERTY(EditAnywhere, Config) float FOVScale;  // 0x0074, size 0x4
     UPROPERTY(EditAnywhere, Config) float DoubleClickTime;  // 0x0078, size 0x4
+    UPROPERTY(EditAnywhere, Config) FSoftObjectPath DefaultTouchInterface;  // 0x0100, size 0x18
+    UPROPERTY(Config, Deprecated) FKey ConsoleKey;  // 0x0118, size 0x18
+    UPROPERTY(EditAnywhere, Config) TArray<FKey> ConsoleKeys;  // 0x0130, size 0x10
+private:
     UPROPERTY(EditAnywhere, Config) TArray<FInputActionKeyMapping> ActionMappings;  // 0x0080, size 0x10
     UPROPERTY(EditAnywhere, Config) TArray<FInputAxisKeyMapping> AxisMappings;  // 0x0090, size 0x10
     UPROPERTY(EditAnywhere, Config) TArray<FInputActionSpeechMapping> SpeechMappings;  // 0x00A0, size 0x10
     UPROPERTY(EditAnywhere, Config) TSoftClassPtr<UPlayerInput> DefaultPlayerInputClass;  // 0x00B0, size 0x28
     UPROPERTY(EditAnywhere, Config) TSoftClassPtr<UInputComponent> DefaultInputComponentClass;  // 0x00D8, size 0x28
-    UPROPERTY(EditAnywhere, Config) FSoftObjectPath DefaultTouchInterface;  // 0x0100, size 0x18
-    UPROPERTY(Config, Deprecated) FKey ConsoleKey;  // 0x0118, size 0x18
-    UPROPERTY(EditAnywhere, Config) TArray<FKey> ConsoleKeys;  // 0x0130, size 0x10
-
+public:
     UFUNCTION(BlueprintCallable) void AddActionMapping(const FInputActionKeyMapping& KeyMapping, bool bForceRebuildKeymaps);  // parameters 0x29
     UFUNCTION(BlueprintCallable) void AddAxisMapping(const FInputAxisKeyMapping& KeyMapping, bool bForceRebuildKeymaps);  // parameters 0x29
     UFUNCTION(BlueprintCallable) void ForceRebuildKeymaps();

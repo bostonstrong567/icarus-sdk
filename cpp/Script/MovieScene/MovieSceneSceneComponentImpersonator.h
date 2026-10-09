@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class UMovieSceneSceneComponentImpersonator : public UInterface
 {
-public:
 };

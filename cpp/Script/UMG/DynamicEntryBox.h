@@ -5,9 +5,10 @@
 UCLASS()
 class UDynamicEntryBox : public UDynamicEntryBoxBase
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TSubclassOf<UUserWidget> EntryWidgetClass;  // 0x01D8, size 0x8
-
+public:
     UFUNCTION(BlueprintCallable) UUserWidget* BP_CreateEntry();  // parameters 0x8
     UFUNCTION(BlueprintCallable) UUserWidget* BP_CreateEntryOfClass(TSubclassOf<UUserWidget> EntryClass);  // parameters 0x10
     UFUNCTION(BlueprintCallable) void RemoveEntry(UUserWidget* EntryWidget);  // parameters 0x8

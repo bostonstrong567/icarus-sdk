@@ -4,5 +4,6 @@
 USTRUCT()
 struct FVertexOffsetUsage
 {
+public:
     UPROPERTY(EditAnywhere) int32 Usage;  // 0x0000, size 0x4
 };

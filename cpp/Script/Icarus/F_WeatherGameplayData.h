@@ -4,6 +4,7 @@
 USTRUCT()
 struct FWeatherGameplayData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FBiomesEnum Biome;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector WindDirection;  // 0x0010, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float WindForce;  // 0x001C, size 0x4

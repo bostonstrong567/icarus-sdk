@@ -6,7 +6,6 @@ UCLASS()
 class UNPCNameFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static TArray<FString> GatherUsedSettlementNPCNames(UObject* WorldContextObject);  // parameters 0x18
     UFUNCTION(BlueprintCallable) static FText GetRandomNPCBackground(float OptionalSeed);  // parameters 0x20
     UFUNCTION(BlueprintCallable) static FText GetRandomNPCName(ENPCNameGender Gender, const TArray<FString>& ExcludeNames);  // parameters 0x30

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Metal_Nightstand_C : public ABP_DeployableContainerBase_C
 {
-public:
 };

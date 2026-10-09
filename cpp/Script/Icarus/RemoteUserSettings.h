@@ -5,11 +5,9 @@
 UCLASS(Config=Engine)
 class URemoteUserSettings : public UActorComponent
 {
+private:
+    TMap<enum ERemoteUserSetting,int,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<enum ERemoteUserSetting,int,0> > Settings;  // 0x00B0, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<enum ERemoteUserSetting,int,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<enum ERemoteUserSetting,int,0> > Settings;  // 0x00B0, private
-
     UFUNCTION(Client, Reliable, BlueprintNativeEvent) void Client_PushSetting(ERemoteUserSetting ID, int32 Value);  // parameters 0x8
     UFUNCTION(Client, Reliable, BlueprintNativeEvent) void Client_PushSettings();
     UFUNCTION() void RemoteUserSettingChanged(ERemoteUserSetting UserSetting, int32 Value);  // parameters 0x8

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_Ape_G_FeedCooked_Meat_C : public ABPQ_Common_Deliver_C
 {
-public:
 };

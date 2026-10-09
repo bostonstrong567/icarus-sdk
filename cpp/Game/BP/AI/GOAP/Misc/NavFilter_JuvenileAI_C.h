@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UNavFilter_JuvenileAI_C : public UIcarusNavQueryFilter
 {
-public:
 };

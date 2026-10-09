@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_SetBoneRotation : public FRigUnitMutable
 {
+public:
     UPROPERTY() FName Bone;  // 0x0068, size 0x8
     UPROPERTY() FQuat Rotation;  // 0x0070, size 0x10
     UPROPERTY() EBoneGetterSetterMode Space;  // 0x0080, size 0x1

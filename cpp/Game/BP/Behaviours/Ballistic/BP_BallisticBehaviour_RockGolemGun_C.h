@@ -6,6 +6,5 @@ UCLASS(EditInlineNew, Config=Engine)
 class UBP_BallisticBehaviour_RockGolemGun_C : public UBP_BallisticBehaviour_Base_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void PlayHitEffects(FHitResult Hit, bool ValidHit);  // parameters 0x89
 };

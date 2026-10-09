@@ -4,9 +4,8 @@
 USTRUCT()
 struct FBoneChainLink
 {
+public:
     UPROPERTY(EditAnywhere) FBoneReference Bone;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere) float Weight;  // 0x0010, size 0x4
-
-    // Not reflected:
-    float NormalizedWeight;  // 0x0014
+    float NormalizedWeight;  // 0x0014, not reflected
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FIcarusWeatherActionData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<UIcarusWeatherAction> WeatherActionComponent;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bIsRampingUp;  // 0x0040, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UTexture2D> TimelineIcon;  // 0x0048, size 0x28

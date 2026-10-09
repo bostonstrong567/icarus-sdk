@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_Ape_C2_Prepare_Sonic_C : public ABPQ_Collect_Item_C
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FHuntingClueSetup : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EHuntingClueType ClueType;  // 0x0018, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float ClueLifespan;  // 0x001C, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float MaxClueDistance;  // 0x0020, size 0x4

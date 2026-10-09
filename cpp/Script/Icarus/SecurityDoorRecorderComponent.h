@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class USecurityDoorRecorderComponent : public UActorStateRecorderComponent
 {
-public:
 };

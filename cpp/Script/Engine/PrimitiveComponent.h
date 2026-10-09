@@ -5,6 +5,7 @@
 UCLASS(Abstract, Config=Engine)
 class UPrimitiveComponent : public USceneComponent, public INavRelevantInterface
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float MinDrawDistance;  // 0x0200, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float LDMaxDrawDistance;  // 0x0204, size 0x4
@@ -13,11 +14,14 @@ public:
     UPROPERTY() TEnumAsByte<ESceneDepthPriorityGroup> ViewOwnerDepthPriorityGroup;  // 0x020D, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<EIndirectLightingCacheQuality> IndirectLightingCacheQuality;  // 0x020E, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) ELightmapType LightmapType;  // 0x020F, size 0x1
+    uint8 : 1 bAttachedToStreamingManagerAsDynamic;  // 0x0210, not reflected
+    uint8 : 1 bAttachedToStreamingManagerAsStatic;  // 0x0210, not reflected
+    uint8 : 1 bHandledByStreamingManagerAsDynamic;  // 0x0210, not reflected
+    uint8 : 1 bIgnoreStreamingManagerUpdate;  // 0x0210, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bUseMaxLODAsImposter : 1;  // 0x0210, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bBatchImpostersAsInstances : 1;  // 0x0210, mask 0x02
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bNeverDistanceCull : 1;  // 0x0210, mask 0x04
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bAlwaysCreatePhysicsState : 1;  // 0x0210, mask 0x80
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bGenerateOverlapEvents : 1;  // 0x0211, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bMultiBodyOverlap : 1;  // 0x0211, mask 0x02
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bTraceComplexOnMove : 1;  // 0x0211, mask 0x04
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bReturnMaterialOnMove : 1;  // 0x0211, mask 0x08
@@ -71,8 +75,7 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FLightingChannels LightingChannels;  // 0x021B, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) ERendererStencilMask CustomDepthStencilWriteMask;  // 0x021C, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 CustomDepthStencilValue;  // 0x0220, size 0x4
-    UPROPERTY(EditAnywhere) FCustomPrimitiveData CustomPrimitiveData;  // 0x0228, size 0x10
-    UPROPERTY(Transient) FCustomPrimitiveData CustomPrimitiveDataInternal;  // 0x0238, size 0x10
+    FPhysScene_PhysX * DeferredCreatePhysicsStateScene;  // 0x0248, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 TranslucencySortPriority;  // 0x0250, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float TranslucencySortDistanceOffset;  // 0x0254, size 0x4
     UPROPERTY() int32 VisibilityId;  // 0x0258, size 0x4
@@ -81,8 +84,11 @@ public:
     UPROPERTY(EditAnywhere) int8 VirtualTextureCullMips;  // 0x0271, size 0x1
     UPROPERTY(EditAnywhere) int8 VirtualTextureMinCoverage;  // 0x0272, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) ERuntimeVirtualTextureMainPassType VirtualTextureRenderPassType;  // 0x0273, size 0x1
+    FPrimitiveComponentId ComponentId;  // 0x0274, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float LpvBiasMultiplier;  // 0x0278, size 0x4
+    FThreadSafeCounter AttachmentCounter;  // 0x027C, not reflected
     UPROPERTY(EditAnywhere) float BoundsScale;  // 0x0284, size 0x4
+    float LastSubmitTime;  // 0x0288, not reflected
     UPROPERTY(Transient) TArray<AActor*> MoveIgnoreActors;  // 0x0298, size 0x10
     UPROPERTY(Transient) TArray<UPrimitiveComponent*> MoveIgnoreComponents;  // 0x02A8, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FBodyInstance BodyInstance;  // 0x02C8, size 0x158
@@ -91,6 +97,7 @@ public:
     UPROPERTY(BlueprintAssignable) FComponentEndOverlapSignature OnComponentEndOverlap;  // 0x0422, size 0x1
     UPROPERTY(BlueprintAssignable) FComponentWakeSignature OnComponentWake;  // 0x0423, size 0x1
     UPROPERTY(BlueprintAssignable) FComponentSleepSignature OnComponentSleep;  // 0x0424, size 0x1
+    FComponentCollisionSettingsChangedSignature OnComponentCollisionSettingsChangedEvent;  // 0x0425, not reflected
     UPROPERTY(BlueprintAssignable) FComponentBeginCursorOverSignature OnBeginCursorOver;  // 0x0426, size 0x1
     UPROPERTY(BlueprintAssignable) FComponentEndCursorOverSignature OnEndCursorOver;  // 0x0427, size 0x1
     UPROPERTY(BlueprintAssignable) FComponentOnClickedSignature OnClicked;  // 0x0428, size 0x1
@@ -99,27 +106,21 @@ public:
     UPROPERTY(BlueprintAssignable) FComponentOnInputTouchEndSignature OnInputTouchEnd;  // 0x042B, size 0x1
     UPROPERTY(BlueprintAssignable) FComponentBeginTouchOverSignature OnInputTouchEnter;  // 0x042C, size 0x1
     UPROPERTY(BlueprintAssignable) FComponentEndTouchOverSignature OnInputTouchLeave;  // 0x042D, size 0x1
+    FPrimitiveSceneProxy * SceneProxy;  // 0x0430, not reflected
+    FRenderCommandFence DetachFence;  // 0x0438, not reflected
+protected:
+    uint8 : 1 bCachedAllCollideableDescendantsRelative;  // 0x0217, not reflected
+    float LastCheckedAllCollideableDescendantsTime;  // 0x0280, not reflected
+    TArray<FOverlapInfo,TSizedDefaultAllocator<32> > OverlappingComponents;  // 0x02B8, not reflected
+private:
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bGenerateOverlapEvents : 1;  // 0x0211, mask 0x01
+    uint8 MoveIgnoreMask;  // 0x0219, not reflected
+    UPROPERTY(EditAnywhere) FCustomPrimitiveData CustomPrimitiveData;  // 0x0228, size 0x10
+    UPROPERTY(Transient) FCustomPrimitiveData CustomPrimitiveDataInternal;  // 0x0238, size 0x10
+    float LastRenderTime;  // 0x028C, not reflected
+    float LastRenderTimeOnScreen;  // 0x0290, not reflected
     UPROPERTY(Instanced) UPrimitiveComponent* LODParentPrimitive;  // 0x0448, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint8 : 1 bAttachedToStreamingManagerAsStatic;  // 0x0210
-    uint8 : 1 bAttachedToStreamingManagerAsDynamic;  // 0x0210
-    uint8 : 1 bHandledByStreamingManagerAsDynamic;  // 0x0210
-    uint8 : 1 bIgnoreStreamingManagerUpdate;  // 0x0210
-    uint8 : 1 bCachedAllCollideableDescendantsRelative;  // 0x0217, protected
-    uint8 MoveIgnoreMask;  // 0x0219, private
-    FPhysScene_PhysX * DeferredCreatePhysicsStateScene;  // 0x0248
-    FPrimitiveComponentId ComponentId;  // 0x0274
-    FThreadSafeCounter AttachmentCounter;  // 0x027C
-    float LastCheckedAllCollideableDescendantsTime;  // 0x0280, protected
-    float LastSubmitTime;  // 0x0288
-    float LastRenderTime;  // 0x028C, private
-    float LastRenderTimeOnScreen;  // 0x0290, private
-    TArray<FOverlapInfo,TSizedDefaultAllocator<32> > OverlappingComponents;  // 0x02B8, protected
-    FComponentCollisionSettingsChangedSignature OnComponentCollisionSettingsChangedEvent;  // 0x0425
-    FPrimitiveSceneProxy * SceneProxy;  // 0x0430
-    FRenderCommandFence DetachFence;  // 0x0438
-
+public:
     UFUNCTION(BlueprintCallable) void AddAngularImpulse(FVector Impulse, FName BoneName, bool bVelChange);  // parameters 0x15
     UFUNCTION(BlueprintCallable) void AddAngularImpulseInDegrees(FVector Impulse, FName BoneName, bool bVelChange);  // parameters 0x15
     UFUNCTION(BlueprintCallable) void AddAngularImpulseInRadians(FVector Impulse, FName BoneName, bool bVelChange);  // parameters 0x15

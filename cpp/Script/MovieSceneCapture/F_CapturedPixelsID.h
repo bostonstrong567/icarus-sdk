@@ -4,5 +4,6 @@
 USTRUCT()
 struct FCapturedPixelsID
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<FName, FName> Identifiers;  // 0x0000, size 0x50
 };

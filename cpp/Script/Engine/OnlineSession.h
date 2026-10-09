@@ -5,7 +5,6 @@
 UCLASS(Config=Game)
 class UOnlineSession : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   ClearOnlineDelegates, EndOnlineSession, HandleDisconnect, OnSessionUserInviteAccepted

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FPlayerLoadoutData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FItemData EnviroSuit;  // 0x0000, size 0x1F0
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FDropship Dropship;  // 0x01F0, size 0xE0
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FItemData> MetaItems;  // 0x02D0, size 0x10

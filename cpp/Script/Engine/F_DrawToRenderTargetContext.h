@@ -4,8 +4,7 @@
 USTRUCT()
 struct FDrawToRenderTargetContext
 {
+public:
     UPROPERTY() UTextureRenderTarget2D* RenderTarget;  // 0x0000, size 0x8
-
-    // Not reflected:
-    FDrawEvent * DrawEvent;  // 0x0008
+    FDrawEvent * DrawEvent;  // 0x0008, not reflected
 };

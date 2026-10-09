@@ -6,7 +6,6 @@ UCLASS()
 class UGraphicsTierDescriptionLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToGraphicsTierDescriptionTable(FName Name, FGraphicsTierDescription Data, FGraphicsTierDescriptionRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x59
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakGraphicsTierDescriptionEnum(FGraphicsTierDescriptionEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FGraphicsTierDescriptionRowHandle CastToGraphicsTierDescriptionRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

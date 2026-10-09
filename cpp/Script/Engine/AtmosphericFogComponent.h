@@ -5,6 +5,7 @@
 UCLASS(EditInlineNew, MinimalAPI, Config=Engine)
 class UAtmosphericFogComponent : public USceneComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, Interp, BlueprintReadWrite) float SunMultiplier;  // 0x01F8, size 0x4
     UPROPERTY(EditAnywhere, Interp, BlueprintReadWrite) float FogMultiplier;  // 0x01FC, size 0x4
@@ -21,20 +22,19 @@ public:
     UPROPERTY(EditAnywhere, Interp, BlueprintReadOnly) uint8 bDisableSunDisk : 1;  // 0x0228, mask 0x01
     UPROPERTY(EditAnywhere, Interp, BlueprintReadOnly) uint8 bAtmosphereAffectsSunIlluminance : 1;  // 0x0228, mask 0x02
     UPROPERTY(EditAnywhere, Interp, BlueprintReadOnly) uint8 bDisableGroundScattering : 1;  // 0x0228, mask 0x04
-    UPROPERTY(EditAnywhere, BlueprintReadOnly) FAtmospherePrecomputeParameters PrecomputeParams;  // 0x022C, size 0x2C
     UPROPERTY(Deprecated) UTexture2D* TransmittanceTexture;  // 0x0258, size 0x8
     UPROPERTY(Deprecated) UTexture2D* IrradianceTexture;  // 0x0260, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint32 PrecomputeCounter;  // 0x0268
-    FThreadSafeCounter GameThreadServiceRequest;  // 0x026C
-    FAtmosphereTextureResource * TransmittanceResource;  // 0x0270
-    FAtmosphereTextureResource * IrradianceResource;  // 0x0278
-    FAtmosphereTextureResource * InscatterResource;  // 0x0280
-    FUntypedBulkData2<unsigned char> TransmittanceData;  // 0x0288
-    FUntypedBulkData2<unsigned char> IrradianceData;  // 0x02B0
-    FUntypedBulkData2<unsigned char> InscatterData;  // 0x02D8
-
+    uint32 PrecomputeCounter;  // 0x0268, not reflected
+    FThreadSafeCounter GameThreadServiceRequest;  // 0x026C, not reflected
+    FAtmosphereTextureResource * TransmittanceResource;  // 0x0270, not reflected
+    FAtmosphereTextureResource * IrradianceResource;  // 0x0278, not reflected
+    FAtmosphereTextureResource * InscatterResource;  // 0x0280, not reflected
+    FUntypedBulkData2<unsigned char> TransmittanceData;  // 0x0288, not reflected
+    FUntypedBulkData2<unsigned char> IrradianceData;  // 0x02B0, not reflected
+    FUntypedBulkData2<unsigned char> InscatterData;  // 0x02D8, not reflected
+protected:
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) FAtmospherePrecomputeParameters PrecomputeParams;  // 0x022C, size 0x2C
+public:
     UFUNCTION(BlueprintCallable) void DisableGroundScattering(bool NewGroundScattering);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void DisableSunDisk(bool NewSunDisk);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void SetAltitudeScale(float NewAltitudeScale);  // parameters 0x4

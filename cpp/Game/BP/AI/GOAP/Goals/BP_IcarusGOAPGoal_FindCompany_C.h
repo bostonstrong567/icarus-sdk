@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UBP_IcarusGOAPGoal_FindCompany_C : public UBP_IcarusGOAPGoal_Base_C
 {
-public:
 };

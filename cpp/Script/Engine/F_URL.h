@@ -4,6 +4,7 @@
 USTRUCT()
 struct FURL
 {
+public:
     UPROPERTY() FString Protocol;  // 0x0000, size 0x10
     UPROPERTY() FString Host;  // 0x0010, size 0x10
     UPROPERTY() int32 Port;  // 0x0020, size 0x4

@@ -7,7 +7,6 @@ class UNiagaraDataInterfaceVolumeTexture : public UNiagaraDataInterface
 {
 public:
     UPROPERTY(EditAnywhere) UVolumeTexture* Texture;  // 0x0038, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FIntVector TextureSize;  // 0x0040, protected
+protected:
+    FIntVector TextureSize;  // 0x0040, not reflected
 };

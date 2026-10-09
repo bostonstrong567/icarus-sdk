@@ -6,7 +6,6 @@ UCLASS()
 class UGooglePADFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static EGooglePADErrorCode CancelDownload(TArray<FString> AssetPacks);  // parameters 0x11
     UFUNCTION(BlueprintCallable) static EGooglePADErrorCode GetAssetPackLocation(FString Name, int32& Location);  // parameters 0x15
     UFUNCTION(BlueprintCallable) static FString GetAssetsPath(int32 Location);  // parameters 0x18

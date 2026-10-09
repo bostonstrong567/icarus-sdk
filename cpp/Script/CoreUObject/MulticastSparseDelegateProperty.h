@@ -5,5 +5,4 @@
 UCLASS()
 class UMulticastSparseDelegateProperty : public UMulticastDelegateProperty
 {
-public:
 };

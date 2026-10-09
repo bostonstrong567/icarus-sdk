@@ -4,7 +4,6 @@
 USTRUCT()
 struct FMovieSceneEvalTemplateBase
 {
-
-    // Not reflected:
-    uint8 OverrideMask;  // 0x0008
+protected:
+    uint8 OverrideMask;  // 0x0008, not reflected
 };

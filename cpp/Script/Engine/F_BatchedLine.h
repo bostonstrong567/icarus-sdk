@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBatchedLine
 {
+public:
     UPROPERTY() FVector Start;  // 0x0000, size 0xC
     UPROPERTY() FVector End;  // 0x000C, size 0xC
     UPROPERTY() FLinearColor Color;  // 0x0018, size 0x10

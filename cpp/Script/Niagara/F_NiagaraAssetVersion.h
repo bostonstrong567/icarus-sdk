@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNiagaraAssetVersion
 {
+public:
     UPROPERTY(EditAnywhere) int32 MajorVersion;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere) int32 MinorVersion;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere) FGuid VersionGuid;  // 0x0008, size 0x10

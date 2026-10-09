@@ -4,6 +4,7 @@
 USTRUCT()
 struct FReferencePose
 {
+public:
     UPROPERTY() FName PoseName;  // 0x0000, size 0x8
     UPROPERTY() TArray<FTransform> ReferencePose;  // 0x0008, size 0x10
 };

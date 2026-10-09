@@ -6,6 +6,5 @@ UCLASS(EditInlineNew, Config=Engine)
 class UEquippableComponent : public UTraitComponent
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) bool GetEquippableData(FEquippableData& OutData) const;  // parameters 0x119
 };

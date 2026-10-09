@@ -5,5 +5,4 @@
 UCLASS()
 class UBTService_HighPriorityFocus : public UBTService_DefaultFocus
 {
-public:
 };

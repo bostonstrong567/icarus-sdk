@@ -6,6 +6,5 @@ UCLASS(Transient, Config=Engine)
 class UBP_ActionableBehaviour_SledgeHammer_Block_C : public UBP_ActionableBehaviour_Melee_Block_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool ShouldConsumeActionInput(AActor* InvokingActor, EActionableEventType OnActionType, EActionableTrigger ActionTrigger);  // parameters 0xB
 };

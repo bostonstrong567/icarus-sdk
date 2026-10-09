@@ -4,6 +4,7 @@
 USTRUCT()
 struct FTransformConstraint
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FConstraintDescription Operator;  // 0x0000, size 0xD
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName SourceNode;  // 0x0010, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName TargetNode;  // 0x0018, size 0x8

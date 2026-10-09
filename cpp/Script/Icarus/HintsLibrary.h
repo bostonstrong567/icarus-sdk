@@ -6,7 +6,6 @@ UCLASS()
 class UHintsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToHintsTable(FName Name, FHintsData Data, FHintsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x51
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakHintsEnum(FHintsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FHintsRowHandle CastToHintsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

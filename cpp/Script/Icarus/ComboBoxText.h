@@ -5,9 +5,8 @@
 UCLASS()
 class UComboBoxText : public UWidget
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
-    UPROPERTY(EditAnywhere) TArray<FText> DefaultOptions;  // 0x0108, size 0x10
-    UPROPERTY(EditAnywhere) FText SelectedOption;  // 0x0118, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FComboBoxStyle WidgetStyle;  // 0x0130, size 0x3F0
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FTableRowStyle ItemStyle;  // 0x0520, size 0x7C8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FMargin ContentPadding;  // 0x0CE8, size 0x10
@@ -20,14 +19,16 @@ public:
     UPROPERTY(EditAnywhere) FGenerateWidgetForText OnGenerateWidgetEvent;  // 0x0D84, size 0x10
     UPROPERTY(BlueprintAssignable) FOnSelectionChangedEvent OnSelectionChanged;  // 0x0D98, size 0x10
     UPROPERTY(BlueprintAssignable) FOnOpeningEvent OnOpening;  // 0x0DA8, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<TSharedPtr<FText,0>,TSizedDefaultAllocator<32> > Options;  // 0x0DB8, protected
-    TSharedPtr<SComboBox<TSharedPtr<FText,0> >,0> MyComboBox;  // 0x0DC8, protected
-    TSharedPtr<SBox,0> ComboBoxContent;  // 0x0DD8, protected
-    TWeakPtr<STextBlock,0> DefaultComboBoxContent;  // 0x0DE8, protected
-    TSharedPtr<FText,0> CurrentOptionPtr;  // 0x0DF8, protected
-
+protected:
+    TArray<TSharedPtr<FText,0>,TSizedDefaultAllocator<32> > Options;  // 0x0DB8, not reflected
+    TSharedPtr<SComboBox<TSharedPtr<FText,0> >,0> MyComboBox;  // 0x0DC8, not reflected
+    TSharedPtr<SBox,0> ComboBoxContent;  // 0x0DD8, not reflected
+    TWeakPtr<STextBlock,0> DefaultComboBoxContent;  // 0x0DE8, not reflected
+    TSharedPtr<FText,0> CurrentOptionPtr;  // 0x0DF8, not reflected
+private:
+    UPROPERTY(EditAnywhere) TArray<FText> DefaultOptions;  // 0x0108, size 0x10
+    UPROPERTY(EditAnywhere) FText SelectedOption;  // 0x0118, size 0x18
+public:
     UFUNCTION(BlueprintCallable) void AddOption(const FText& Option);  // parameters 0x18
     UFUNCTION(BlueprintCallable) void ClearOptions();
     UFUNCTION(BlueprintCallable) void ClearSelection();

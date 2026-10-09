@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigSpace : public FRigElement
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ERigSpaceType SpaceType;  // 0x0018, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FName ParentName;  // 0x001C, size 0x8
     UPROPERTY(Transient, BlueprintReadOnly) int32 ParentIndex;  // 0x0024, size 0x4

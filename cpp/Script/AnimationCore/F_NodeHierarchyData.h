@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNodeHierarchyData
 {
+public:
     UPROPERTY() TArray<FNodeObject> Nodes;  // 0x0000, size 0x10
     UPROPERTY() TArray<FTransform> Transforms;  // 0x0010, size 0x10
     UPROPERTY() TMap<FName, int32> NodeNameToIndexMapping;  // 0x0020, size 0x50

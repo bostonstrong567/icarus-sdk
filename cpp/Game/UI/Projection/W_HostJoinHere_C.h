@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UW_HostJoinHere_C : public UW_SpaceTooltip_Base_C
 {
-public:
 };

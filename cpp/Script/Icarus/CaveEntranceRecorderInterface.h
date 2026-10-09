@@ -6,7 +6,6 @@ UCLASS(Abstract, MinimalAPI)
 class UCaveEntranceRecorderInterface : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintNativeEvent) AVoxelResource* GetVoxelActor() const;  // parameters 0x8
     UFUNCTION(BlueprintNativeEvent) void SetVoxelBlockerSaveData(const TArray<FVoxelMinedSphere>& VoxelBlockerSaveData);  // parameters 0x10
 };

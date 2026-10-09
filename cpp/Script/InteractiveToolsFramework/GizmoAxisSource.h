@@ -6,7 +6,6 @@ UCLASS(Abstract)
 class UGizmoAxisSource : public UInterface
 {
 public:
-
     UFUNCTION() FVector GetDirection() const;  // parameters 0xC
     UFUNCTION() FVector GetOrigin() const;  // parameters 0xC
     UFUNCTION() void GetTangentVectors(FVector& TangentXOut, FVector& TangentYOut) const;  // parameters 0x18

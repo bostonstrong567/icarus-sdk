@@ -19,10 +19,9 @@ public:
     UPROPERTY(BlueprintAssignable) FOnButtonReleasedEvent OnReleased;  // 0x03E8, size 0x10
     UPROPERTY(BlueprintAssignable) FOnButtonHoverEvent OnHovered;  // 0x03F8, size 0x10
     UPROPERTY(BlueprintAssignable) FOnButtonHoverEvent OnUnhovered;  // 0x0408, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SButton,0> MyButton;  // 0x0418, protected
-
+protected:
+    TSharedPtr<SButton,0> MyButton;  // 0x0418, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsPressed() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable) void SetBackgroundColor(FLinearColor InBackgroundColor);  // parameters 0x10
     UFUNCTION(BlueprintCallable) void SetClickMethod(TEnumAsByte<EButtonClickMethod> InClickMethod);  // parameters 0x1

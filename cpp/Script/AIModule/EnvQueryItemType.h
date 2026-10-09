@@ -5,10 +5,8 @@
 UCLASS(Abstract)
 class UEnvQueryItemType : public UObject
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint16 ValueSize;  // 0x0028, protected
+protected:
+    uint16 ValueSize;  // 0x0028, not reflected
 
     // Virtual functions that start here:
     //   AddBlackboardFilters, GetDescription, StoreInBlackboard

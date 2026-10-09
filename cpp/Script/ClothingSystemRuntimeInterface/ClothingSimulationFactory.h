@@ -5,7 +5,6 @@
 UCLASS(Abstract)
 class UClothingSimulationFactory : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   CreateInteractor, CreateSimulation, DestroySimulation, GetClothConfigClasses

@@ -5,11 +5,9 @@
 UCLASS()
 class USentryEvent : public UObject
 {
+private:
+    TSharedPtr<ISentryEvent,0> EventNativeImpl;  // 0x0028, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<ISentryEvent,0> EventNativeImpl;  // 0x0028, private
-
     UFUNCTION(BlueprintCallable, BlueprintPure) ESentryLevel GetLevel() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) FString GetMessage() const;  // parameters 0x10
     UFUNCTION(BlueprintCallable) void SetLevel(ESentryLevel Level);  // parameters 0x1

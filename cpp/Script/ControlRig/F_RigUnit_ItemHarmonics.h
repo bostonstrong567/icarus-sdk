@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_ItemHarmonics : public FRigUnit_HighlevelBaseMutable
 {
+public:
     UPROPERTY() TArray<FRigUnit_Harmonics_TargetItem> Targets;  // 0x0068, size 0x10
     UPROPERTY() FVector WaveSpeed;  // 0x0078, size 0xC
     UPROPERTY() FVector WaveFrequency;  // 0x0084, size 0xC

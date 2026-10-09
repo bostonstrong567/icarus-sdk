@@ -6,7 +6,6 @@ UCLASS()
 class UFloatableLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToFloatableTable(FName Name, FFloatableData Data, FFloatableRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x79
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakFloatableEnum(FFloatableEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FFloatableRowHandle CastToFloatableRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

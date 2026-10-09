@@ -6,7 +6,6 @@ UCLASS()
 class UIcarusResourceFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static bool ResourceIsValid(FIcarusResourcesEnum Resource);  // parameters 0x11
     UFUNCTION(BlueprintCallable) static void ResourceIsValidExec(FIcarusResourcesEnum Resource, EResourceLibraryExec& Paths);  // parameters 0x11
 };

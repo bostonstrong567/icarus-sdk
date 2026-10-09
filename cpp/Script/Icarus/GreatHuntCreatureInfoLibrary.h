@@ -6,7 +6,6 @@ UCLASS()
 class UGreatHuntCreatureInfoLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToGreatHuntCreatureInfoTable(FName Name, FGreatHuntCreatureInfo Data, FGreatHuntCreatureInfoRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x101
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakGreatHuntCreatureInfoEnum(FGreatHuntCreatureInfoEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FGreatHuntCreatureInfoRowHandle CastToGreatHuntCreatureInfoRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

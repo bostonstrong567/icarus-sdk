@@ -4,5 +4,6 @@
 USTRUCT()
 struct FBPOnlineRecentPlayer : public FBPOnlineUser
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString LastSeen;  // 0x0040, size 0x10
 };

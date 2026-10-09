@@ -6,7 +6,6 @@ UCLASS()
 class UFishSpawnZonesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToFishSpawnZonesTable(FName Name, FFishSpawnZones Data, FFishSpawnZonesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x91
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakFishSpawnZonesEnum(FFishSpawnZonesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FFishSpawnZonesRowHandle CastToFishSpawnZonesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBakedAnimationState
 {
+public:
     UPROPERTY() FName StateName;  // 0x0000, size 0x8
     UPROPERTY() TArray<FBakedStateExitTransition> Transitions;  // 0x0008, size 0x10
     UPROPERTY() int32 StateRootNodeIndex;  // 0x0018, size 0x4

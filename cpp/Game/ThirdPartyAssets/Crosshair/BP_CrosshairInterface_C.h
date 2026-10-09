@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UBP_CrosshairInterface_C : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable) void GetCrosshairAimAlpha(float& AimAlpha);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void WantsBowMode(bool& bWantsBowMode);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void WantsShowCrosshair(bool& bShowCrosshair);  // parameters 0x1

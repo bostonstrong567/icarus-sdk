@@ -4,5 +4,6 @@
 USTRUCT()
 struct FAnimNode_ConvertComponentToLocalSpace : public FAnimNode_Base
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FComponentSpacePoseLink ComponentPose;  // 0x0010, size 0x10
 };

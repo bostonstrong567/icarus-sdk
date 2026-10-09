@@ -6,6 +6,5 @@ UCLASS(Transient, EditInlineNew, Config=Engine)
 class UBP_Interactable_WaterStorage_DrinkStats_C : public UBP_Interactable_Rain_Reservior_Drink_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void AddAlterations(AActor* Player);  // parameters 0x8
 };

@@ -5,7 +5,6 @@
 UCLASS(Config=Engine)
 class UFieldNodeBase : public UActorComponent
 {
-public:
 
     // Virtual functions that start here:
     //   NewEvaluationGraph, ResultsExpector, Type

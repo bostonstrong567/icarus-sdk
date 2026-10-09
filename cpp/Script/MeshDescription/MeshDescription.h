@@ -5,5 +5,4 @@
 UCLASS(NotPlaceable)
 class UDEPRECATED_MeshDescription : public UObject
 {
-public:
 };

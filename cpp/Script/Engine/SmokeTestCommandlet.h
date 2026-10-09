@@ -5,5 +5,4 @@
 UCLASS(Transient)
 class USmokeTestCommandlet : public UCommandlet
 {
-public:
 };

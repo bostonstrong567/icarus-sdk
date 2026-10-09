@@ -4,5 +4,6 @@
 USTRUCT()
 struct FEngineServiceTerminate
 {
+public:
     UPROPERTY(EditAnywhere) FString UserName;  // 0x0000, size 0x10
 };

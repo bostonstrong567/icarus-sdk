@@ -11,8 +11,7 @@ public:
     UPROPERTY(Config) bool bLoadAllTilesDuringCinematic;  // 0x0060, size 0x1
     UPROPERTY(Config) bool bRebaseOriginIn3DSpace;  // 0x0061, size 0x1
     UPROPERTY(Config) float RebaseOriginDistance;  // 0x0064, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    FString WorldRoot;  // 0x0028, private
-    TArray<FWorldCompositionTile,TSizedDefaultAllocator<32> > Tiles;  // 0x0038, private
+private:
+    FString WorldRoot;  // 0x0028, not reflected
+    TArray<FWorldCompositionTile,TSizedDefaultAllocator<32> > Tiles;  // 0x0038, not reflected
 };

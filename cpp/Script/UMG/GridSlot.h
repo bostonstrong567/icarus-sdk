@@ -15,10 +15,9 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 ColumnSpan;  // 0x0058, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 Layer;  // 0x005C, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FVector2D Nudge;  // 0x0060, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    SGridPanel::FSlot * Slot;  // 0x0068, private
-
+private:
+    SGridPanel::FSlot * Slot;  // 0x0068, not reflected
+public:
     UFUNCTION(BlueprintCallable) void SetColumn(int32 InColumn);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void SetColumnSpan(int32 InColumnSpan);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void SetHorizontalAlignment(TEnumAsByte<EHorizontalAlignment> InHorizontalAlignment);  // parameters 0x1

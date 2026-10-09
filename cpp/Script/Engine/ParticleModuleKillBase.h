@@ -5,5 +5,4 @@
 UCLASS(Abstract, EditInlineNew)
 class UParticleModuleKillBase : public UParticleModule
 {
-public:
 };

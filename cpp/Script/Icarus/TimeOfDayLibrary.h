@@ -6,7 +6,6 @@ UCLASS()
 class UTimeOfDayLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToTimeOfDayTable(FName Name, FTimeOfDay Data, FTimeOfDayRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x41
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakTimeOfDayEnum(FTimeOfDayEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FTimeOfDayRowHandle CastToTimeOfDayRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

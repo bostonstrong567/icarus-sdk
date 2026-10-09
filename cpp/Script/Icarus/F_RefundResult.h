@@ -4,5 +4,6 @@
 USTRUCT()
 struct FRefundResult
 {
+public:
     UPROPERTY(BlueprintReadWrite) TArray<FRefundItem> RefundedItems;  // 0x0000, size 0x10
 };

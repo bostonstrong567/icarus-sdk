@@ -6,7 +6,6 @@ UCLASS()
 class UAttachmentIconsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToAttachmentIconsTable(FName Name, FAttachmentIcon Data, FAttachmentIconsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x79
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakAttachmentIconsEnum(FAttachmentIconsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FAttachmentIconsRowHandle CastToAttachmentIconsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

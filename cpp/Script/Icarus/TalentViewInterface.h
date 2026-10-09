@@ -5,11 +5,9 @@
 UCLASS(Abstract, EditInlineNew, MinimalAPI)
 class UTalentViewInterface : public UUserWidget
 {
+protected:
+    TScriptInterface<ITalentControllerInterface> Controller;  // 0x0260, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TScriptInterface<ITalentControllerInterface> Controller;  // 0x0260, protected
-
     UFUNCTION(BlueprintCallable, BlueprintPure) TScriptInterface<ITalentControllerInterface> GetController() const;  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintImplementableEvent) UTalentGraphWidget* GetGraphWidget() const;  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) UTalentModelInterface_Const* GetModel() const;  // parameters 0x8

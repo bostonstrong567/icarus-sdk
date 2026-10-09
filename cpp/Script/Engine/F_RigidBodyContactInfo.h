@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigidBodyContactInfo
 {
+public:
     UPROPERTY() FVector ContactPosition;  // 0x0000, size 0xC
     UPROPERTY() FVector ContactNormal;  // 0x000C, size 0xC
     UPROPERTY() float ContactPenetration;  // 0x0018, size 0x4

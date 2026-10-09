@@ -4,6 +4,7 @@
 USTRUCT()
 struct FVoxelMaterialMap : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UStaticMesh> Mesh;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<EVoxelResourceCategory, TSoftObjectPtr<UMaterialInterface>> Materials;  // 0x0040, size 0x50
 };

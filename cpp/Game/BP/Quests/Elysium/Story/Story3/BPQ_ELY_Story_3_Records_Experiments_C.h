@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_ELY_Story_3_Records_Experiments_C : public ABPQ_Collect_Note_C
 {
-public:
 };

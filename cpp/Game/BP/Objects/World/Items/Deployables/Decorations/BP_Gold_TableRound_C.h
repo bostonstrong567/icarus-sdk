@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Gold_TableRound_C : public ABP_DeployableBase_C
 {
-public:
 };

@@ -19,10 +19,9 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<FKey> EscapeKeys;  // 0x06C0, size 0x10
     UPROPERTY(BlueprintAssignable) FOnKeySelected OnKeySelected;  // 0x06D0, size 0x10
     UPROPERTY(BlueprintAssignable) FOnIsSelectingKeyChanged OnIsSelectingKeyChanged;  // 0x06E0, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SInputKeySelector,0> MyInputKeySelector;  // 0x06F0, private
-
+private:
+    TSharedPtr<SInputKeySelector,0> MyInputKeySelector;  // 0x06F0, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) bool GetIsSelectingKey() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable) void SetAllowGamepadKeys(bool bInAllowGamepadKeys);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void SetAllowModifierKeys(bool bInAllowModifierKeys);  // parameters 0x1

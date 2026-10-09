@@ -6,7 +6,6 @@ UCLASS()
 class UConnectedPlayersFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool EqualEqual_ConnectedPlayerConnectedPlayer(const FConnectedPlayer& A, const FConnectedPlayer& B);  // parameters 0x71
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool EqualEqual_ConnectedPlayerPlayerCharacterID(const FConnectedPlayer& A, const FPlayerCharacterID& B);  // parameters 0x51
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool FindInitialisedConnectedPlayerByController(UObject* WorldContextObject, AIcarusPlayerController* Controller, FConnectedPlayer& OutConnectedPlayer);  // parameters 0x49

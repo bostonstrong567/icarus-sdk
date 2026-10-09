@@ -5,18 +5,19 @@
 UCLASS(Config=Engine)
 class UIcarusTamingComponent : public UActorComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) ETamedState TamedState;  // 0x00B0, size 0x1
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) float TamingProgress;  // 0x00B4, size 0x4
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) FTamesRowHandle TamesRow;  // 0x00B8, size 0x18
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) AActor* CurrentLeader;  // 0x00D0, size 0x8
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) FPlayerCharacterID LastPlayerLeaderID;  // 0x00D8, size 0x18
+protected:
     UPROPERTY() AIcarusNPCCharacter* OwnerNPC;  // 0x00F0, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bConvertedStatsRequireUpdate;  // 0x00F8, private
-    FTimerHandle SetPlayerLeaderTimerHandle;  // 0x0100, private
-
+private:
+    bool bConvertedStatsRequireUpdate;  // 0x00F8, not reflected
+    FTimerHandle SetPlayerLeaderTimerHandle;  // 0x0100, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) bool CanTameCreature() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) bool DoesMeetModifierRequirement() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) bool DoesMeetNutritionRequirement() const;  // parameters 0x1

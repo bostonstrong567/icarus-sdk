@@ -5,7 +5,6 @@
 UCLASS(Abstract)
 class UHandlerComponentFactory : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   CreateComponentInstance

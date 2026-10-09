@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_IM_Defences_Hedgehog_C : public ABPQ_Deploy_Count_C
 {
-public:
 };

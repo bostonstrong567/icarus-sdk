@@ -4,6 +4,7 @@
 USTRUCT()
 struct FCompositeFallbackFont
 {
+public:
     UPROPERTY() FTypeface Typeface;  // 0x0000, size 0x10
     UPROPERTY() float ScalingFactor;  // 0x0010, size 0x4
 };

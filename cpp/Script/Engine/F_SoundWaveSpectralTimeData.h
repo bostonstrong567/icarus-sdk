@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSoundWaveSpectralTimeData
 {
+public:
     UPROPERTY() TArray<FSoundWaveSpectralDataEntry> Data;  // 0x0000, size 0x10
     UPROPERTY() float TimeSec;  // 0x0010, size 0x4
 };

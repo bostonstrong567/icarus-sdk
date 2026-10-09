@@ -4,5 +4,6 @@
 USTRUCT()
 struct FPerPlatformBool
 {
+public:
     UPROPERTY(EditAnywhere) bool Default;  // 0x0000, size 0x1
 };

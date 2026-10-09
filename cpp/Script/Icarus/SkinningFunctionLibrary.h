@@ -6,7 +6,6 @@ UCLASS()
 class USkinningFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AwardSkinningBestiaryProgress(const FProcessingItem& Item);  // parameters 0x24
     UFUNCTION(BlueprintCallable) static void AwardTrophyBestiaryProgress(const FProcessingItem& Item);  // parameters 0x24
     UFUNCTION(BlueprintCallable) static FBestiaryDataRowHandle GetBestiaryFromItemsStaticCorpse(const FItemsStaticRowHandle& CorpseRow);  // parameters 0x30

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FVertexIndexAndInstanceID
 {
+public:
     UPROPERTY(BlueprintReadWrite) int32 ContourIndex;  // 0x0000, size 0x4
     UPROPERTY(BlueprintReadWrite) FVertexInstanceID VertexInstanceID;  // 0x0004, size 0x4
 };

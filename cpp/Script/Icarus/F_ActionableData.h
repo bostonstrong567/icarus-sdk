@@ -4,6 +4,7 @@
 USTRUCT()
 struct FActionableData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<FActionsRowHandle, FActionList> ActionMapping;  // 0x0018, size 0x50
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bUseClientPrediction;  // 0x0068, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FRowHandle> GenericData;  // 0x0070, size 0x10

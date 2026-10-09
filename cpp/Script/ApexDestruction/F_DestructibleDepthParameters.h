@@ -4,5 +4,6 @@
 USTRUCT()
 struct FDestructibleDepthParameters
 {
+public:
     UPROPERTY(EditAnywhere) TEnumAsByte<EImpactDamageOverride> ImpactDamageOverride;  // 0x0000, size 0x1
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigPoseElement
 {
+public:
     UPROPERTY() FCachedRigElement Index;  // 0x0000, size 0x14
     UPROPERTY() FTransform GlobalTransform;  // 0x0020, size 0x30
     UPROPERTY() FTransform LocalTransform;  // 0x0050, size 0x30

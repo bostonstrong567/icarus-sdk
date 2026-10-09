@@ -5,13 +5,11 @@
 UCLASS(Config=Engine)
 class UWeatherForecasting : public UActorComponent
 {
+private:
+    FWeatherPoolsRowHandle LastWeatherPool;  // 0x00B0, not reflected
+    TArray<FBiomeGroupForecast,TSizedDefaultAllocator<32> > LastEmptyBiomeMap;  // 0x00C8, not reflected
+    TMap<FWeatherBiomeGroupsEnum,FRandomStream,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FWeatherBiomeGroupsEnum,FRandomStream,0> > BiomeRandoms;  // 0x00D8, not reflected
+    bool bInitedFromSaveGame;  // 0x0128, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    FWeatherPoolsRowHandle LastWeatherPool;  // 0x00B0, private
-    TArray<FBiomeGroupForecast,TSizedDefaultAllocator<32> > LastEmptyBiomeMap;  // 0x00C8, private
-    TMap<FWeatherBiomeGroupsEnum,FRandomStream,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FWeatherBiomeGroupsEnum,FRandomStream,0> > BiomeRandoms;  // 0x00D8, private
-    bool bInitedFromSaveGame;  // 0x0128, private
-
     UFUNCTION() void Deinitialize();
 };

@@ -6,8 +6,6 @@ UCLASS(Transient)
 class UPluginCommandlet : public UCommandlet
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<FString,TSizedDefaultAllocator<32> > CmdLineTokens;  // 0x0080
-    TArray<FString,TSizedDefaultAllocator<32> > CmdLineSwitches;  // 0x0090
+    TArray<FString,TSizedDefaultAllocator<32> > CmdLineTokens;  // 0x0080, not reflected
+    TArray<FString,TSizedDefaultAllocator<32> > CmdLineSwitches;  // 0x0090, not reflected
 };

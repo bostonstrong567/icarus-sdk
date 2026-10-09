@@ -5,5 +5,4 @@
 UCLASS()
 class UARLightEstimate : public UObject
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FEmitterDynamicParameter
 {
+public:
     UPROPERTY(EditAnywhere) FName ParamName;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) uint8 bUseEmitterTime : 1;  // 0x0008, mask 0x01
     UPROPERTY(EditAnywhere) uint8 bSpawnTimeOnly : 1;  // 0x0008, mask 0x02

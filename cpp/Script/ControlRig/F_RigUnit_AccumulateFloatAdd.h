@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_AccumulateFloatAdd : public FRigUnit_AccumulateBase
 {
+public:
     UPROPERTY() float Increment;  // 0x0008, size 0x4
     UPROPERTY() float InitialValue;  // 0x000C, size 0x4
     UPROPERTY() bool bIntegrateDeltaTime;  // 0x0010, size 0x1

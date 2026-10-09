@@ -4,6 +4,7 @@
 USTRUCT()
 struct FEquippableData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<UEquippableModifier> EquippableModifier;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<FStatsEnum, int32> GrantedStats;  // 0x0040, size 0x50
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bStackedModifiersGiveDiminishingReturns;  // 0x0090, size 0x1

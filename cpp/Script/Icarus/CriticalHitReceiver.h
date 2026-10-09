@@ -6,7 +6,6 @@ UCLASS(Abstract)
 class UCriticalHitReceiver : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) TMap<UPrimitiveComponent*, FCriticalHitAreasEnum> GetCriticalHitAreas() const;  // parameters 0x50
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) FCriticalHitAreasEnum GetDefaultCriticalArea() const;  // parameters 0x10
 };

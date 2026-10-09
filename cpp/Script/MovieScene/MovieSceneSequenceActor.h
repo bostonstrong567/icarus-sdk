@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class UMovieSceneSequenceActor : public UInterface
 {
-public:
 };

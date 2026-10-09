@@ -4,6 +4,7 @@
 USTRUCT()
 struct FCustomChannelSetup
 {
+public:
     UPROPERTY() TEnumAsByte<ECollisionChannel> Channel;  // 0x0000, size 0x1
     UPROPERTY() TEnumAsByte<ECollisionResponse> DefaultResponse;  // 0x0001, size 0x1
     UPROPERTY() bool bTraceType;  // 0x0002, size 0x1

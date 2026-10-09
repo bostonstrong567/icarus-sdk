@@ -10,7 +10,6 @@ public:
     UPROPERTY(EditAnywhere) FName ActorTransformBone;  // 0x00B8, size 0x8
     UPROPERTY(EditAnywhere) bool bModifyActorTransform;  // 0x00C0, size 0x1
     UPROPERTY(EditAnywhere) bool bSetRelativeLocation;  // 0x00C1, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    FLiveLinkClientReference ClientRef;  // 0x00C2, private
+private:
+    FLiveLinkClientReference ClientRef;  // 0x00C2, not reflected
 };

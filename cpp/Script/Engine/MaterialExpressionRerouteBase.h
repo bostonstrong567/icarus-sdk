@@ -5,7 +5,6 @@
 UCLASS(Abstract)
 class UMaterialExpressionRerouteBase : public UMaterialExpression
 {
-public:
 
     // Virtual functions that start here:
     //   GetRerouteInput

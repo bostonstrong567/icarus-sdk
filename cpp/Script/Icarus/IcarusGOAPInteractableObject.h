@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class AIcarusGOAPInteractableObject : public AActor
 {
-public:
 };

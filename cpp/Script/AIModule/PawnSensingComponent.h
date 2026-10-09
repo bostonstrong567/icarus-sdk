@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class UPawnSensingComponent : public UActorComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float HearingThreshold;  // 0x00B0, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float LOSHearingThreshold;  // 0x00B4, size 0x4
@@ -17,12 +18,11 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bHearNoises : 1;  // 0x00C4, mask 0x08
     UPROPERTY(BlueprintAssignable) FSeePawnDelegate OnSeePawn;  // 0x00D0, size 0x10
     UPROPERTY(BlueprintAssignable) FHearNoiseDelegate OnHearNoise;  // 0x00E0, size 0x10
+protected:
+    FTimerHandle TimerHandle_OnTimer;  // 0x00C8, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float PeripheralVisionAngle;  // 0x00F0, size 0x4
     UPROPERTY() float PeripheralVisionCosine;  // 0x00F4, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    FTimerHandle TimerHandle_OnTimer;  // 0x00C8, protected
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetPeripheralVisionAngle() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetPeripheralVisionCosine() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) void SetPeripheralVisionAngle(float NewPeripheralVisionAngle);  // parameters 0x4

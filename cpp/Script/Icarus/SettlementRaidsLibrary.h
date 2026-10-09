@@ -6,7 +6,6 @@ UCLASS()
 class USettlementRaidsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToSettlementRaidsTable(FName Name, FSettlementRaid Data, FSettlementRaidsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x51
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakSettlementRaidsEnum(FSettlementRaidsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FSettlementRaidsRowHandle CastToSettlementRaidsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

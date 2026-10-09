@@ -6,7 +6,6 @@ UCLASS()
 class UInstancedMapDataLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToInstancedMapDataTable(FName Name, FInstancedMapData Data, FInstancedMapDataRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xA1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakInstancedMapDataEnum(FInstancedMapDataEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FInstancedMapDataRowHandle CastToInstancedMapDataRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

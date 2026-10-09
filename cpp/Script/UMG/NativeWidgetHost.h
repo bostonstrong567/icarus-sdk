@@ -5,8 +5,6 @@
 UCLASS()
 class UNativeWidgetHost : public UWidget
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SWidget,0> NativeWidget;  // 0x0108, protected
+protected:
+    TSharedPtr<SWidget,0> NativeWidget;  // 0x0108, not reflected
 };

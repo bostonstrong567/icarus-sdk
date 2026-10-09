@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBPInterfaceDescription
 {
+public:
     UPROPERTY() TSubclassOf<UInterface> Interface;  // 0x0000, size 0x8
     UPROPERTY() TArray<UEdGraph*> Graphs;  // 0x0008, size 0x10
 };

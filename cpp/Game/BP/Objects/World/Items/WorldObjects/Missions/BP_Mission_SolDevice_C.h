@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Mission_SolDevice_C : public ABP_WorldObject_C
 {
-public:
 };

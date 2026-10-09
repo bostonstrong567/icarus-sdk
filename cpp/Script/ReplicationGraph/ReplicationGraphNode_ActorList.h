@@ -5,9 +5,7 @@
 UCLASS(Transient)
 class UReplicationGraphNode_ActorList : public UReplicationGraphNode
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    FActorRepListRefView ReplicationActorList;  // 0x0050, protected
-    FStreamingLevelActorListCollection StreamingLevelCollection;  // 0x0060, protected
+protected:
+    FActorRepListRefView ReplicationActorList;  // 0x0050, not reflected
+    FStreamingLevelActorListCollection StreamingLevelCollection;  // 0x0060, not reflected
 };

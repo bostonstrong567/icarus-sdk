@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABPQ_GH_IM_B_Deliver_Sample_C : public ABPQ_Common_Deliver_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void GetDescription(const FText& InDescription, FText& OutDescription, bool& bOutComplete);  // parameters 0x31
 };

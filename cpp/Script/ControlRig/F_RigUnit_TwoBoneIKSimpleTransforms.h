@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_TwoBoneIKSimpleTransforms : public FRigUnit_HighlevelBase
 {
+public:
     UPROPERTY() FTransform Root;  // 0x0010, size 0x30
     UPROPERTY() FVector PoleVector;  // 0x0040, size 0xC
     UPROPERTY() FTransform Effector;  // 0x0050, size 0x30

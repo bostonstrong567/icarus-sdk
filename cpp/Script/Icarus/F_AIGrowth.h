@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAIGrowth : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<FBaseStatsEnum, int32> Base;  // 0x0018, size 0x50
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UCurveFloat* Health;  // 0x0068, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UCurveFloat* MeleeDamage;  // 0x0070, size 0x8

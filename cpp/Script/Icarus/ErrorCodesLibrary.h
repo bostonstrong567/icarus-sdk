@@ -6,7 +6,6 @@ UCLASS()
 class UErrorCodesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToErrorCodesTable(FName Name, FErrorCode Data, FErrorCodesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x71
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakErrorCodesEnum(FErrorCodesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FErrorCodesRowHandle CastToErrorCodesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

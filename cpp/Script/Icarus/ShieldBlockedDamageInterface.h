@@ -6,6 +6,5 @@ UCLASS(Abstract)
 class UShieldBlockedDamageInterface : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) void ShieldBlockedDamage(const FIcarusDamagePacket& DamagePacket);  // parameters 0xD8
 };

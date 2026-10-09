@@ -4,9 +4,8 @@
 USTRUCT()
 struct FFavoriteEntry
 {
-
-    // Not reflected:
-    uint32 IP;  // 0x0000
-    uint16 ConPort;  // 0x0004
-    uint16 QPort;  // 0x0006
+public:
+    uint32 IP;  // 0x0000, not reflected
+    uint16 ConPort;  // 0x0004, not reflected
+    uint16 QPort;  // 0x0006, not reflected
 };

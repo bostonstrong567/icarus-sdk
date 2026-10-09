@@ -12,9 +12,8 @@ public:
     UPROPERTY(EditAnywhere) TEnumAsByte<ESubUVBoundingVertexCount> BoundingMode;  // 0x0038, size 0x1
     UPROPERTY(EditAnywhere) TEnumAsByte<EOpacitySourceMode> OpacitySourceMode;  // 0x0039, size 0x1
     UPROPERTY(EditAnywhere) float AlphaThreshold;  // 0x003C, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    FSubUVDerivedData DerivedData;  // 0x0040, private
-    FRenderCommandFence ReleaseFence;  // 0x0050, private
-    FSubUVBoundingGeometryBuffer * BoundingGeometryBuffer;  // 0x0060, private
+private:
+    FSubUVDerivedData DerivedData;  // 0x0040, not reflected
+    FRenderCommandFence ReleaseFence;  // 0x0050, not reflected
+    FSubUVBoundingGeometryBuffer * BoundingGeometryBuffer;  // 0x0060, not reflected
 };

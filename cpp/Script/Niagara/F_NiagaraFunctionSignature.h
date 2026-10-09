@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNiagaraFunctionSignature
 {
+public:
     UPROPERTY() FName Name;  // 0x0000, size 0x8
     UPROPERTY() TArray<FNiagaraVariable> Inputs;  // 0x0008, size 0x10
     UPROPERTY() TArray<FNiagaraVariable> Outputs;  // 0x0018, size 0x10

@@ -6,7 +6,6 @@ UCLASS()
 class UWorldResourceFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static int32 GetMaxVoxelResourceAroundLocation(UObject* WorldContextObject, FVector WorldLocation, float Radius, bool bUseInitialResourceValues);  // parameters 0x20
     UFUNCTION(BlueprintCallable) static bool GetNearbyVoxelResources(UObject* WorldContextObject, FVector WorldLocation, TArray<AVoxelResource*>& FoundVoxels, float Radius, bool bIncludeFullyMined);  // parameters 0x2E
     UFUNCTION(BlueprintCallable) static int32 GetTotalConsumedVoxelResourceAroundLocation(UObject* WorldContextObject, FVector WorldLocation, int32& VoxelNodeCount, float Radius, bool bOnlyVoxelsSupportingReinit);  // parameters 0x24

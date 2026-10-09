@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNiagaraOutlinerSystemData
 {
+public:
     UPROPERTY(EditAnywhere) TArray<FNiagaraOutlinerSystemInstanceData> SystemInstances;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere) FNiagaraOutlinerTimingData AveragePerFrameTime;  // 0x0010, size 0x8
     UPROPERTY(EditAnywhere) FNiagaraOutlinerTimingData MaxPerFrameTime;  // 0x0018, size 0x8

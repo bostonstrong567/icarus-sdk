@@ -4,9 +4,8 @@
 USTRUCT()
 struct FCurveMetaData
 {
-
-    // Not reflected:
-    TArray<FBoneReference,TSizedDefaultAllocator<32> > LinkedBones;  // 0x0000
-    uint8 MaxLOD;  // 0x0010
-    FAnimCurveType Type;  // 0x0011
+public:
+    TArray<FBoneReference,TSizedDefaultAllocator<32> > LinkedBones;  // 0x0000, not reflected
+    uint8 MaxLOD;  // 0x0010, not reflected
+    FAnimCurveType Type;  // 0x0011, not reflected
 };

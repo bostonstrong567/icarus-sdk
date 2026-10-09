@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew)
 class UDistributionVectorParticleParameter : public UDistributionVectorParameterBase
 {
-public:
 };

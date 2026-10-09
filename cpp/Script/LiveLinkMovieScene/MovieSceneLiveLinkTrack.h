@@ -5,6 +5,7 @@
 UCLASS(MinimalAPI)
 class UMovieSceneLiveLinkTrack : public UMovieScenePropertyTrack, public IMovieSceneTrackTemplateProducer
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY() TSubclassOf<ULiveLinkRole> TrackRole;  // 0x00C8, size 0x8
 };

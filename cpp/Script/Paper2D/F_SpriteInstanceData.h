@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSpriteInstanceData
 {
+public:
     UPROPERTY(EditAnywhere) FMatrix Transform;  // 0x0000, size 0x40
     UPROPERTY(EditAnywhere) UPaperSprite* SourceSprite;  // 0x0040, size 0x8
     UPROPERTY(EditAnywhere) FColor VertexColor;  // 0x0048, size 0x4

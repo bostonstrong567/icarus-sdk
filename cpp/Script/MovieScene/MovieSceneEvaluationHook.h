@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class UMovieSceneEvaluationHook : public UInterface
 {
-public:
 };

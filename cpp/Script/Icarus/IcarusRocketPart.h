@@ -5,12 +5,11 @@
 UCLASS(Config=Engine)
 class AIcarusRocketPart : public AIcarusItem
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
+    TArray<FRocketPartConnection,TSizedDefaultAllocator<32> > Connectors;  // 0x0570, not reflected
     UPROPERTY(BlueprintReadWrite) int32 PartIdentifier;  // 0x0580, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<FRocketPartConnection,TSizedDefaultAllocator<32> > Connectors;  // 0x0570, protected
-
+public:
     UFUNCTION(BlueprintCallable) void DestroyAllConnections();
     UFUNCTION(BlueprintCallable) void FindConnectableConnector(AIcarusRocketPartConnector* OtherConnector, AIcarusRocketPartConnector*& Connector);  // parameters 0x10
     UFUNCTION(BlueprintCallable) FName GetChildSocketName(AIcarusRocketPartConnector* Connector);  // parameters 0x10

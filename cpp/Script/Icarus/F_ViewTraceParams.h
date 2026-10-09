@@ -4,6 +4,7 @@
 USTRUCT()
 struct FViewTraceParams
 {
+public:
     UPROPERTY(BlueprintReadWrite) TArray<AActor*> IgnoredActors;  // 0x0000, size 0x10
     UPROPERTY(BlueprintReadWrite) TArray<UPrimitiveComponent*> IgnoredComponents;  // 0x0010, size 0x10
     UPROPERTY(BlueprintReadWrite) bool bTraceComplex;  // 0x0020, size 0x1

@@ -5,17 +5,15 @@
 UCLASS(Transient, NotPlaceable, Config=Game)
 class ADedicatedServerEntryGameMode : public AIcarusGameModeBase
 {
+private:
+    EMissionDifficulty PendingNewProspectDifficulty;  // 0x0318, not reflected
+    bool PendingNewProspectHardcore;  // 0x0319, not reflected
+    FString PendingNewProspectNameOverride;  // 0x0320, not reflected
+    FString PendingTravelURL;  // 0x0330, not reflected
+    bool bIsPendingMapChange;  // 0x0340, not reflected
+    FTimerHandle MapChangeTimerHandle;  // 0x0348, not reflected
+    float MapChangeResponseTime;  // 0x0350, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    EMissionDifficulty PendingNewProspectDifficulty;  // 0x0318, private
-    bool PendingNewProspectHardcore;  // 0x0319, private
-    FString PendingNewProspectNameOverride;  // 0x0320, private
-    FString PendingTravelURL;  // 0x0330, private
-    bool bIsPendingMapChange;  // 0x0340, private
-    FTimerHandle MapChangeTimerHandle;  // 0x0348, private
-    float MapChangeResponseTime;  // 0x0350, private
-
     UFUNCTION() void CommitMapChange();
     UFUNCTION(Exec) bool CreateProspect(FString ProspectName, int32 ProspectDifficulty, bool bHardcore, FString ProspectIdOverride);  // parameters 0x29
     UFUNCTION(Exec) bool LoadProspect(FString ProspectId);  // parameters 0x11

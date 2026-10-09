@@ -6,7 +6,6 @@ UCLASS()
 class UAfflictionChanceLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToAfflictionChanceTable(FName Name, FAfflictionChance Data, FAfflictionChanceRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x61
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakAfflictionChanceEnum(FAfflictionChanceEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FAfflictionChanceRowHandle CastToAfflictionChanceRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

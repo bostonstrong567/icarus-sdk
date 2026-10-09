@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Refined_Wood_Fishing_Rod_C : public ABP_SkeletalItem_Fishing_Rod_C
 {
-public:
 };

@@ -6,7 +6,6 @@ UCLASS()
 class UBuildableAudioDataLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToBuildableAudioDataTable(FName Name, FBuildableAudioData Data, FBuildableAudioDataRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x1A9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakBuildableAudioDataEnum(FBuildableAudioDataEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FBuildableAudioDataRowHandle CastToBuildableAudioDataRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

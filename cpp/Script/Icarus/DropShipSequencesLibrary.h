@@ -6,7 +6,6 @@ UCLASS()
 class UDropShipSequencesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToDropShipSequencesTable(FName Name, FDropShipSequence Data, FDropShipSequencesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x51
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakDropShipSequencesEnum(FDropShipSequencesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FDropShipSequencesRowHandle CastToDropShipSequencesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

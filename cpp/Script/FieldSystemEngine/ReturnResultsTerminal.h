@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UReturnResultsTerminal : public UFieldNodeBase
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) UReturnResultsTerminal* SetReturnResultsTerminal();  // parameters 0x8
 };

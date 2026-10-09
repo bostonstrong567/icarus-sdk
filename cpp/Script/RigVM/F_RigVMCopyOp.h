@@ -4,8 +4,7 @@
 USTRUCT()
 struct FRigVMCopyOp : public FRigVMBaseOp
 {
-
-    // Not reflected:
-    FRigVMOperand Source;  // 0x0002
-    FRigVMOperand Target;  // 0x0008
+public:
+    FRigVMOperand Source;  // 0x0002, not reflected
+    FRigVMOperand Target;  // 0x0008, not reflected
 };

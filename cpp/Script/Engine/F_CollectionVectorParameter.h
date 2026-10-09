@@ -4,5 +4,6 @@
 USTRUCT()
 struct FCollectionVectorParameter : public FCollectionParameterBase
 {
+public:
     UPROPERTY(EditAnywhere) FLinearColor DefaultValue;  // 0x0018, size 0x10
 };

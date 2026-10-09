@@ -4,6 +4,7 @@
 USTRUCT()
 struct FHapticFeedbackDetails_Curve
 {
+public:
     UPROPERTY(EditAnywhere) FRuntimeFloatCurve Frequency;  // 0x0000, size 0x88
     UPROPERTY(EditAnywhere) FRuntimeFloatCurve Amplitude;  // 0x0088, size 0x88
 };

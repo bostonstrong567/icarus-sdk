@@ -6,7 +6,6 @@ UCLASS()
 class UWaterSetupLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToWaterSetupTable(FName Name, FWaterSetup Data, FWaterSetupRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x101
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakWaterSetupEnum(FWaterSetupEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FWaterSetupRowHandle CastToWaterSetupRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

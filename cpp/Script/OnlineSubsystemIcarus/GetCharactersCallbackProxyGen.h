@@ -8,9 +8,8 @@ class UGetCharactersCallbackProxyGen : public UOnlineBlueprintCallProxyBase
 public:
     UPROPERTY(BlueprintAssignable) FOnGetCharactersEventSignature OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FOnGetCharactersEventSignature OnFail;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FReqGetCharacters ReqGetCharacters;  // 0x0050, private
-
+private:
+    FReqGetCharacters ReqGetCharacters;  // 0x0050, not reflected
+public:
     UFUNCTION(BlueprintCallable) static UGetCharactersCallbackProxyGen* GetCharacters(const FReqGetCharacters& Request);  // parameters 0x10
 };

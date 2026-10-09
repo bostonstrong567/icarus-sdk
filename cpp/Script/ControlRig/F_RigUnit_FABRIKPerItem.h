@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_FABRIKPerItem : public FRigUnit_HighlevelBaseMutable
 {
+public:
     UPROPERTY() FRigElementKeyCollection Items;  // 0x0068, size 0x10
     UPROPERTY() FTransform EffectorTransform;  // 0x0080, size 0x30
     UPROPERTY() float Precision;  // 0x00B0, size 0x4

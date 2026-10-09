@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLightmassDebugOptions
 {
+public:
     UPROPERTY(EditAnywhere) uint8 bDebugMode : 1;  // 0x0000, mask 0x01
     UPROPERTY(EditAnywhere) uint8 bStatsEnabled : 1;  // 0x0000, mask 0x02
     UPROPERTY(EditAnywhere) uint8 bGatherBSPSurfacesAcrossComponents : 1;  // 0x0000, mask 0x04

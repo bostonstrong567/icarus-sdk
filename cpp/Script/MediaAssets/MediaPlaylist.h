@@ -5,9 +5,10 @@
 UCLASS()
 class UMediaPlaylist : public UObject
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere) TArray<UMediaSource*> Items;  // 0x0028, size 0x10
-
+public:
     UFUNCTION(BlueprintCallable) bool Add(UMediaSource* MediaSource);  // parameters 0x9
     UFUNCTION(BlueprintCallable) bool AddFile(FString FilePath);  // parameters 0x11
     UFUNCTION(BlueprintCallable) bool AddUrl(FString Url);  // parameters 0x11

@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, MinimalAPI)
 class UAnimCompress_BitwiseCompressOnly : public UAnimCompress
 {
-public:
 };

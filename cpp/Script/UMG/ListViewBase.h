@@ -5,23 +5,23 @@
 UCLASS(Abstract)
 class UListViewBase : public UWidget
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TSubclassOf<UUserWidget> EntryWidgetClass;  // 0x0108, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float WheelScrollMultiplier;  // 0x0110, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bEnableScrollAnimation;  // 0x0114, size 0x1
     UPROPERTY(EditAnywhere) bool bEnableFixedLineOffset;  // 0x0115, size 0x1
     UPROPERTY(EditAnywhere) float FixedLineScrollOffset;  // 0x0118, size 0x4
+private:
     UPROPERTY(BlueprintAssignable) FOnListEntryGeneratedDynamic BP_OnEntryGenerated;  // 0x0120, size 0x10
     UPROPERTY(BlueprintAssignable) FOnListEntryReleasedDynamic BP_OnEntryReleased;  // 0x0130, size 0x10
     UPROPERTY(Transient) FUserWidgetPool EntryWidgetPool;  // 0x0140, size 0x80
-
-    // Not reflected: the engine's scripting cannot see these.
-    FTimerHandle EntryGenAnnouncementTimerHandle;  // 0x01C0, private
-    TArray<TWeakObjectPtr<UUserWidget,FWeakObjectPtr>,TSizedDefaultAllocator<32> > GeneratedEntriesToAnnounce;  // 0x01C8, private
-    UListViewBase::FOnListEntryGenerated OnListEntryGeneratedEvent;  // 0x01D8, private
-    UListViewBase::FOnEntryWidgetReleased OnEntryWidgetReleasedEvent;  // 0x01F0, private
-    TSharedPtr<STableViewBase,0> MyTableViewBase;  // 0x0208, private
-
+    FTimerHandle EntryGenAnnouncementTimerHandle;  // 0x01C0, not reflected
+    TArray<TWeakObjectPtr<UUserWidget,FWeakObjectPtr>,TSizedDefaultAllocator<32> > GeneratedEntriesToAnnounce;  // 0x01C8, not reflected
+    UListViewBase::FOnListEntryGenerated OnListEntryGeneratedEvent;  // 0x01D8, not reflected
+    UListViewBase::FOnEntryWidgetReleased OnEntryWidgetReleasedEvent;  // 0x01F0, not reflected
+    TSharedPtr<STableViewBase,0> MyTableViewBase;  // 0x0208, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) TArray<UUserWidget*> GetDisplayedEntryWidgets() const;  // parameters 0x10
     UFUNCTION(BlueprintCallable) void RegenerateAllEntries();
     UFUNCTION(BlueprintCallable) void RequestRefresh();

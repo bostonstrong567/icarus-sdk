@@ -4,5 +4,6 @@
 USTRUCT()
 struct FMyPluginStruct
 {
+public:
     UPROPERTY() FString TestString;  // 0x0000, size 0x10
 };

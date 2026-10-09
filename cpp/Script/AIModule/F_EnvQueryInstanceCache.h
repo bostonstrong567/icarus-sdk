@@ -4,9 +4,8 @@
 USTRUCT()
 struct FEnvQueryInstanceCache
 {
+public:
     UPROPERTY() UEnvQuery* Template;  // 0x0000, size 0x8
-
-    // Not reflected:
-    FEnvQueryInstance Instance;  // 0x0008
-    FName AssetName;  // 0x0170
+    FEnvQueryInstance Instance;  // 0x0008, not reflected
+    FName AssetName;  // 0x0170, not reflected
 };

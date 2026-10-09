@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_MathIntUnaryOp : public FRigUnit_MathIntBase
 {
+public:
     UPROPERTY() int32 Value;  // 0x0008, size 0x4
     UPROPERTY() int32 Result;  // 0x000C, size 0x4
 };

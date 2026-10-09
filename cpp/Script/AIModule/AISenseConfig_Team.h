@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew)
 class UAISenseConfig_Team : public UAISenseConfig
 {
-public:
 };

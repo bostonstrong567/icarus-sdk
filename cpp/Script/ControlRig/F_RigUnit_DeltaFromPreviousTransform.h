@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_DeltaFromPreviousTransform : public FRigUnit_SimBase
 {
+public:
     UPROPERTY() FTransform Value;  // 0x0010, size 0x30
     UPROPERTY() FTransform Delta;  // 0x0040, size 0x30
     UPROPERTY() FTransform PreviousValue;  // 0x0070, size 0x30

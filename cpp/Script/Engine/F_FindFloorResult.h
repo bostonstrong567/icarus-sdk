@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFindFloorResult
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bBlockingHit : 1;  // 0x0000, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bWalkableFloor : 1;  // 0x0000, mask 0x02
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bLineTrace : 1;  // 0x0000, mask 0x04

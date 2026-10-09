@@ -5,5 +5,4 @@
 UCLASS()
 class AOutpost_011_C : public ALevelScriptActor
 {
-public:
 };

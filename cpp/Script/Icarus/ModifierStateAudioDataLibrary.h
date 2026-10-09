@@ -6,7 +6,6 @@ UCLASS()
 class UModifierStateAudioDataLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToModifierStateAudioDataTable(FName Name, FModifierStateAudioData Data, FModifierStateAudioDataRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xD1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakModifierStateAudioDataEnum(FModifierStateAudioDataEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FModifierStateAudioDataRowHandle CastToModifierStateAudioDataRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

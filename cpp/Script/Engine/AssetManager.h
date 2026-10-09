@@ -5,7 +5,18 @@
 UCLASS()
 class UAssetManager : public UObject
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
+    TMap<FName,FPrimaryAssetId,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,FPrimaryAssetId,0> > AssetPathMap;  // 0x0028, not reflected
+    TMap<FPrimaryAssetId,FPrimaryAssetRulesExplicitOverride,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FPrimaryAssetId,FPrimaryAssetRulesExplicitOverride,0> > AssetRuleOverrides;  // 0x0078, not reflected
+    TMap<FPrimaryAssetId,TArray<FPrimaryAssetId,TSizedDefaultAllocator<32> >,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FPrimaryAssetId,TArray<FPrimaryAssetId,TSizedDefaultAllocator<32> >,0> > ManagementParentMap;  // 0x00C8, not reflected
+    TMap<FPrimaryAssetId,TSharedPtr<FAssetBundleData,1>,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FPrimaryAssetId,TSharedPtr<FAssetBundleData,1>,0> > CachedAssetBundles;  // 0x0118, not reflected
+    TArray<FString,TSizedDefaultAllocator<32> > AlreadyScannedDirectories;  // 0x0168, not reflected
+    TArray<FString,TSizedDefaultAllocator<32> > AllAssetSearchRoots;  // 0x0178, not reflected
+    TArray<FString,TSizedDefaultAllocator<32> > AddedAssetSearchRoots;  // 0x0188, not reflected
+    FStreamableManager StreamableManager;  // 0x0198, not reflected
+    TArray<UAssetManager::FPendingChunkInstall,TSizedDefaultAllocator<32> > PendingChunkInstalls;  // 0x0280, not reflected
+    TMap<FPrimaryAssetId,FGuid,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FPrimaryAssetId,FGuid,0> > PrimaryAssetEncryptionKeyCache;  // 0x0290, not reflected
     UPROPERTY() TArray<UObject*> ObjectReferenceList;  // 0x02E0, size 0x10
     UPROPERTY() bool bIsGlobalAsyncScanEnvironment;  // 0x02F0, size 0x1
     UPROPERTY() bool bShouldGuessTypeAndName;  // 0x02F1, size 0x1
@@ -20,27 +31,16 @@ public:
     UPROPERTY() bool bIncludeOnlyOnDiskAssets;  // 0x02FA, size 0x1
     UPROPERTY() bool bHasCompletedInitialScan;  // 0x02FB, size 0x1
     UPROPERTY() int32 NumberOfSpawnedNotifications;  // 0x02FC, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<FName,FPrimaryAssetId,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,FPrimaryAssetId,0> > AssetPathMap;  // 0x0028, protected
-    TMap<FPrimaryAssetId,FPrimaryAssetRulesExplicitOverride,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FPrimaryAssetId,FPrimaryAssetRulesExplicitOverride,0> > AssetRuleOverrides;  // 0x0078, protected
-    TMap<FPrimaryAssetId,TArray<FPrimaryAssetId,TSizedDefaultAllocator<32> >,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FPrimaryAssetId,TArray<FPrimaryAssetId,TSizedDefaultAllocator<32> >,0> > ManagementParentMap;  // 0x00C8, protected
-    TMap<FPrimaryAssetId,TSharedPtr<FAssetBundleData,1>,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FPrimaryAssetId,TSharedPtr<FAssetBundleData,1>,0> > CachedAssetBundles;  // 0x0118, protected
-    TArray<FString,TSizedDefaultAllocator<32> > AlreadyScannedDirectories;  // 0x0168, protected
-    TArray<FString,TSizedDefaultAllocator<32> > AllAssetSearchRoots;  // 0x0178, protected
-    TArray<FString,TSizedDefaultAllocator<32> > AddedAssetSearchRoots;  // 0x0188, protected
-    FStreamableManager StreamableManager;  // 0x0198, protected
-    TArray<UAssetManager::FPendingChunkInstall,TSizedDefaultAllocator<32> > PendingChunkInstalls;  // 0x0280, protected
-    TMap<FPrimaryAssetId,FGuid,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FPrimaryAssetId,FGuid,0> > PrimaryAssetEncryptionKeyCache;  // 0x0290, protected
-    TMap<FName,FName,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,FName,0> > PrimaryAssetTypeRedirects;  // 0x0300, protected
-    TMap<FString,FString,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FString,FString,0> > PrimaryAssetIdRedirects;  // 0x0350, protected
-    TMap<FName,FName,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,FName,0> > AssetPathRedirects;  // 0x03A0, protected
-    TMulticastDelegate<void __cdecl(FString const &),FDefaultDelegateUserPolicy> OnAddedAssetSearchRootDelegate;  // 0x03F0, protected
-    FDelegateHandle ChunkInstallDelegateHandle;  // 0x0408, protected
-    bool bOldTemporaryCachingMode;  // 0x0410, private
-    TMap<FName,TSharedRef<FPrimaryAssetTypeData,0>,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,TSharedRef<FPrimaryAssetTypeData,0>,0> > AssetTypeMap;  // 0x0418, private
-    IAssetRegistry * CachedAssetRegistry;  // 0x0468, private
-    const UAssetManagerSettings * CachedSettings;  // 0x0470, private
+    TMap<FName,FName,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,FName,0> > PrimaryAssetTypeRedirects;  // 0x0300, not reflected
+    TMap<FString,FString,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FString,FString,0> > PrimaryAssetIdRedirects;  // 0x0350, not reflected
+    TMap<FName,FName,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,FName,0> > AssetPathRedirects;  // 0x03A0, not reflected
+    TMulticastDelegate<void __cdecl(FString const &),FDefaultDelegateUserPolicy> OnAddedAssetSearchRootDelegate;  // 0x03F0, not reflected
+    FDelegateHandle ChunkInstallDelegateHandle;  // 0x0408, not reflected
+private:
+    bool bOldTemporaryCachingMode;  // 0x0410, not reflected
+    TMap<FName,TSharedRef<FPrimaryAssetTypeData,0>,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,TSharedRef<FPrimaryAssetTypeData,0>,0> > AssetTypeMap;  // 0x0418, not reflected
+    IAssetRegistry * CachedAssetRegistry;  // 0x0468, not reflected
+    const UAssetManagerSettings * CachedSettings;  // 0x0470, not reflected
 
     // Virtual functions that start here:
     //   AcquireChunkList, AcquireResourcesForAssetList, AcquireResourcesForPrimaryAssetList

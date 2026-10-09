@@ -6,7 +6,6 @@ UCLASS()
 class UFuelLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToFuelTable(FName Name, FFuelData Data, FFuelRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x81
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakFuelEnum(FFuelEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FFuelRowHandle CastToFuelRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

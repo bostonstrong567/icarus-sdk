@@ -4,6 +4,7 @@
 USTRUCT()
 struct FHordeCreatureSetup
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FAISetupRowHandle Creature;  // 0x0000, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FEpicCreaturesRowHandle Epic;  // 0x0018, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<FBaseStatsEnum, int32> AdditionalStats;  // 0x0030, size 0x50

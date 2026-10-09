@@ -5,5 +5,4 @@
 UCLASS()
 class UBTComposite_Sequence : public UBTCompositeNode
 {
-public:
 };

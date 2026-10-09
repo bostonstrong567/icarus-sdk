@@ -6,7 +6,6 @@ UCLASS()
 class UMusicTrackStateGroupsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToMusicTrackStateGroupsTable(FName Name, FMusicTrackStateGroup Data, FMusicTrackStateGroupsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x39
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakMusicTrackStateGroupsEnum(FMusicTrackStateGroupsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FMusicTrackStateGroupsRowHandle CastToMusicTrackStateGroupsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

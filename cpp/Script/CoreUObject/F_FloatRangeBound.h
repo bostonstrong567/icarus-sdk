@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFloatRangeBound
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TEnumAsByte<ERangeBoundTypes> Type;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float Value;  // 0x0004, size 0x4
 };

@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UCS_Mount_HorseKick_C : public UMatineeCameraShake
 {
-public:
 };

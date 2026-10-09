@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class ULocalPlayerSubsystem : public USubsystem
 {
-public:
 };

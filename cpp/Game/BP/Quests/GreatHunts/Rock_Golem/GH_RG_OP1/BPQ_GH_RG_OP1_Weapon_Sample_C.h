@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_RG_OP1_Weapon_Sample_C : public ABPQ_Collect_Item_WithName_C
 {
-public:
 };

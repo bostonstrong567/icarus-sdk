@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAnimNode_ModifyBone : public FAnimNode_SkeletalControlBase
 {
+public:
     UPROPERTY(EditAnywhere) FBoneReference BoneToModify;  // 0x00C8, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector Translation;  // 0x00D8, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FRotator Rotation;  // 0x00E4, size 0xC

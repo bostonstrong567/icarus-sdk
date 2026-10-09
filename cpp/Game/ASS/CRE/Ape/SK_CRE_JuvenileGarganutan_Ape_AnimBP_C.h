@@ -5,5 +5,4 @@
 UCLASS(Transient, Config=Engine)
 class USK_CRE_JuvenileGarganutan_Ape_AnimBP_C : public USK_CRE_Juvenile_Ape_AnimBP_C
 {
-public:
 };

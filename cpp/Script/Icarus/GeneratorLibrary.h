@@ -6,7 +6,6 @@ UCLASS()
 class UGeneratorLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToGeneratorTable(FName Name, FGeneratorData Data, FGeneratorRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x81
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakGeneratorEnum(FGeneratorEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FGeneratorRowHandle CastToGeneratorRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

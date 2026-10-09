@@ -6,7 +6,6 @@ UCLASS()
 class URowLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool EqualEqual_FRowHandleFRowHandle(FRowHandle RowHandleA, FRowHandle RowHandleB);  // parameters 0x31
     UFUNCTION(BlueprintCallable, BlueprintPure) static UIcarusDataTable* GetDataTable(FRowHandle RowHandle);  // parameters 0x20
     UFUNCTION(BlueprintCallable, BlueprintPure) static UIcarusDataTable* GetDataTableForEdit(FRowHandle RowHandle);  // parameters 0x20

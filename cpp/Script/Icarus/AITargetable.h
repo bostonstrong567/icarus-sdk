@@ -6,7 +6,6 @@ UCLASS(Abstract)
 class UAITargetable : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) TArray<FCriticalHitLocation> GetCriticalHitBones() const;  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) FAIRelationshipsRowHandle GetRelationshipData() const;  // parameters 0x18
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) int32 GetTargetAlertness() const;  // parameters 0x4

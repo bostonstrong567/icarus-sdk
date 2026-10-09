@@ -4,5 +4,6 @@
 USTRUCT()
 struct FSceneComponentInstanceData : public FActorComponentInstanceData
 {
+public:
     UPROPERTY() TMap<USceneComponent*, FTransform> AttachedInstanceComponents;  // 0x0068, size 0x50
 };

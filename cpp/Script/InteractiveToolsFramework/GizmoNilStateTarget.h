@@ -5,5 +5,4 @@
 UCLASS()
 class UGizmoNilStateTarget : public UObject, public IGizmoStateTarget
 {
-public:
 };

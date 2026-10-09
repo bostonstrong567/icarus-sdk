@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLivingItemShopItemData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FItemTemplateRowHandle ItemTemplate;  // 0x0018, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FWorkshopCost> Cost;  // 0x0030, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UTexture2D> ItemImage;  // 0x0040, size 0x28

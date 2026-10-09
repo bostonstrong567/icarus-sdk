@@ -5,10 +5,11 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UFlammableActorFLOD : public UFlammableActor
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UFLODActorComponent* FLODActorComponent;  // 0x0100, size 0x8
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UFlammableFISM* FlammableFISM;  // 0x0108, size 0x8
-
+public:
     UFUNCTION() void OnConceal(UFLODActorComponent* Component, AActor* Actor);  // parameters 0x10
     UFUNCTION() void OnRevealing(UFLODActorComponent* Component, AActor* Actor, const FTransform& Transform);  // parameters 0x40
     UFUNCTION(BlueprintNativeEvent) void OnUpdateInstanceVisuals(float FireSpread, float FireTemperature);  // parameters 0x8

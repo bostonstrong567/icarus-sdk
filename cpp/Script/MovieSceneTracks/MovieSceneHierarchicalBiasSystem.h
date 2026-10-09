@@ -5,5 +5,4 @@
 UCLASS()
 class UMovieSceneHierarchicalBiasSystem : public UMovieSceneEntityInstantiatorSystem
 {
-public:
 };

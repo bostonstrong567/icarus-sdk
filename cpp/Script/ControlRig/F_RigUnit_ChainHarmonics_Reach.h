@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_ChainHarmonics_Reach
 {
+public:
     UPROPERTY() bool bEnabled;  // 0x0000, size 0x1
     UPROPERTY() FVector ReachTarget;  // 0x0004, size 0xC
     UPROPERTY() FVector ReachAxis;  // 0x0010, size 0xC

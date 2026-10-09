@@ -6,7 +6,6 @@ UCLASS()
 class UVirtualStatsLibrary : public UStatsLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakVirtualStatsEnum(FVirtualStatsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static void EnableVirtualStatsLogging(bool bEnable);  // parameters 0x1
     UFUNCTION() static bool Filter(int32 Index);  // parameters 0x5

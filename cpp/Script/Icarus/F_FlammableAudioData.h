@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFlammableAudioData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float Weighting;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) EFlammableAudioLocationType LocationType;  // 0x0004, size 0x1
 };

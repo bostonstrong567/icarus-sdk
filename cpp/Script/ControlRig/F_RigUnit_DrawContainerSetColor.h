@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_DrawContainerSetColor : public FRigUnitMutable
 {
+public:
     UPROPERTY() FName InstructionName;  // 0x0068, size 0x8
     UPROPERTY() FLinearColor Color;  // 0x0070, size 0x10
 };

@@ -5,5 +5,4 @@
 UCLASS(Const)
 class UAnimNotify_PauseClothingSimulation : public UAnimNotify
 {
-public:
 };

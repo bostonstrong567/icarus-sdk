@@ -5,7 +5,6 @@
 UCLASS(Abstract, EditInlineNew, Config=Game)
 class UAISenseEvent : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   GetSenseID

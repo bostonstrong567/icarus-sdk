@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSimulationStageMetaData
 {
+public:
     UPROPERTY() FName SimulationStageName;  // 0x0000, size 0x8
     UPROPERTY() FName IterationSource;  // 0x0008, size 0x8
     UPROPERTY() uint8 bSpawnOnly : 1;  // 0x0010, mask 0x01

@@ -42,17 +42,16 @@ public:
     UPROPERTY(EditAnywhere) FBox CustomOcclusionBounds;  // 0x00CC, size 0x1C
     UPROPERTY(Transient) TArray<FLODSoloTrack> SoloTracking;  // 0x00E8, size 0x10
     UPROPERTY(EditAnywhere) TArray<FNamedEmitterMaterial> NamedMaterialSlots;  // 0x00F8, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint8 : 1 bIsElligibleForAsyncTick;  // 0x00B0, private
-    uint8 : 1 bIsElligibleForAsyncTickComputed;  // 0x00B0, private
-    uint8 : 1 bAnyEmitterLoopsForever;  // 0x00B6, private
-    EParticleSignificanceLevel HighestSignificance;  // 0x0108, private
-    EParticleSignificanceLevel LowestSignificance;  // 0x0109, private
-    uint8 : 1 bShouldManageSignificance;  // 0x010A, private
-    uint8 : 1 bIsImmortal;  // 0x010A, private
-    uint8 : 1 bWillBecomeZombie;  // 0x010A, private
-
+private:
+    uint8 : 1 bIsElligibleForAsyncTick;  // 0x00B0, not reflected
+    uint8 : 1 bIsElligibleForAsyncTickComputed;  // 0x00B0, not reflected
+    uint8 : 1 bAnyEmitterLoopsForever;  // 0x00B6, not reflected
+    EParticleSignificanceLevel HighestSignificance;  // 0x0108, not reflected
+    EParticleSignificanceLevel LowestSignificance;  // 0x0109, not reflected
+    uint8 : 1 bIsImmortal;  // 0x010A, not reflected
+    uint8 : 1 bShouldManageSignificance;  // 0x010A, not reflected
+    uint8 : 1 bWillBecomeZombie;  // 0x010A, not reflected
+public:
     UFUNCTION(BlueprintCallable) bool ContainsEmitterType(TSubclassOf<UObject> TypeData);  // parameters 0x9
 
     // Virtual functions that start here:

@@ -5,5 +5,4 @@
 UCLASS(Abstract, EditInlineNew)
 class UParticleModuleRotationRateBase : public UParticleModule
 {
-public:
 };

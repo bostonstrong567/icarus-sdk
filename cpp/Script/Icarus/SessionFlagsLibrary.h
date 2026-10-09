@@ -6,7 +6,6 @@ UCLASS()
 class USessionFlagsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToSessionFlagsTable(FName Name, FSessionFlag Data, FSessionFlagsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x39
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakSessionFlagsEnum(FSessionFlagsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FSessionFlagsRowHandle CastToSessionFlagsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

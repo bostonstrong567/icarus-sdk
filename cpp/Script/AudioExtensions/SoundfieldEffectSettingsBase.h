@@ -5,7 +5,6 @@
 UCLASS(Abstract, EditInlineNew, Config=Engine)
 class USoundfieldEffectSettingsBase : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   GetNewProxy

@@ -4,5 +4,6 @@
 USTRUCT()
 struct FUdpMockMessage
 {
+public:
     UPROPERTY() TArray<uint8> Data;  // 0x0000, size 0x10
 };

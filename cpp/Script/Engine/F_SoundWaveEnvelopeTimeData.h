@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSoundWaveEnvelopeTimeData
 {
+public:
     UPROPERTY() float Amplitude;  // 0x0000, size 0x4
     UPROPERTY() float TimeSec;  // 0x0004, size 0x4
 };

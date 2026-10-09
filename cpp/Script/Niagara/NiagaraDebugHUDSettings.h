@@ -6,8 +6,6 @@ UCLASS(Config=EditorPerProjectUserSettings)
 class UNiagaraDebugHUDSettings : public UObject
 {
 public:
+    TMulticastDelegate<void __cdecl(void),FDefaultDelegateUserPolicy> OnChangedDelegate;  // 0x0030, not reflected
     UPROPERTY(EditAnywhere, Config) FNiagaraDebugHUDSettingsData Data;  // 0x0048, size 0xE0
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMulticastDelegate<void __cdecl(void),FDefaultDelegateUserPolicy> OnChangedDelegate;  // 0x0030
 };

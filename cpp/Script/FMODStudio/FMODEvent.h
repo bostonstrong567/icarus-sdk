@@ -5,5 +5,4 @@
 UCLASS()
 class UFMODEvent : public UFMODAsset
 {
-public:
 };

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_RG_C2_Outpost_Build_Bed_C : public ABPQ_Deploy_Count_C
 {
-public:
 };

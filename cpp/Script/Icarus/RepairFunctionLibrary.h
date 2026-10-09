@@ -6,7 +6,6 @@ UCLASS()
 class URepairFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void GetPlayerMaterials(AIcarusPlayerCharacter* Character, const TArray<FRepairableItem>& RepairListIn, TArray<FQueueItem>& MaterialsOut);  // parameters 0x28
     UFUNCTION(BlueprintCallable) static void GetQueueItemDetails(const FQueueItem& QueueItem, FItemsStaticRowHandle& Item, int32& Count);  // parameters 0x64
     UFUNCTION(BlueprintCallable) static void GetRepairableItems(TArray<UInventory*> Inventories, TArray<FRepairableItem>& RepairListOut, bool bHavePower, bool bArmor, bool bWorkshopOnly, bool bExcludeWorkshop);  // parameters 0x24

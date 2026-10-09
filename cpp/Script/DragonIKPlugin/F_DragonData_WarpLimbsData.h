@@ -4,6 +4,7 @@
 USTRUCT()
 struct FDragonData_WarpLimbsData
 {
+public:
     UPROPERTY(EditAnywhere) FName Foot_Bone_Name;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) FName Knee_Bone_Name;  // 0x0008, size 0x8
     UPROPERTY(EditAnywhere) FName Thigh_Bone_Name;  // 0x0010, size 0x8

@@ -6,7 +6,6 @@ UCLASS()
 class UTurretLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToTurretTable(FName Name, FTurretData Data, FTurretRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xD9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakTurretEnum(FTurretEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FTurretRowHandle CastToTurretRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

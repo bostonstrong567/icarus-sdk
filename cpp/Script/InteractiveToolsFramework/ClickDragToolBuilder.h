@@ -5,5 +5,4 @@
 UCLASS(Transient)
 class UClickDragToolBuilder : public UInteractiveToolBuilder
 {
-public:
 };

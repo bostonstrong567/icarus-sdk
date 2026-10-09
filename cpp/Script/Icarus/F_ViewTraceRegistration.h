@@ -4,5 +4,6 @@
 USTRUCT()
 struct FViewTraceRegistration
 {
+public:
     UPROPERTY() float MaxDistance;  // 0x0000, size 0x4
 };

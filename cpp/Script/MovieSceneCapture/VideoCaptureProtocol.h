@@ -8,7 +8,6 @@ class UVideoCaptureProtocol : public UFrameGrabberProtocol
 public:
     UPROPERTY(EditAnywhere, Config) bool bUseCompression;  // 0x0068, size 0x1
     UPROPERTY(EditAnywhere, Config) float CompressionQuality;  // 0x006C, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<TUniquePtr<FAVIWriter,TDefaultDelete<FAVIWriter> >,TSizedDefaultAllocator<32> > AVIWriters;  // 0x0070, private
+private:
+    TArray<TUniquePtr<FAVIWriter,TDefaultDelete<FAVIWriter> >,TSizedDefaultAllocator<32> > AVIWriters;  // 0x0070, not reflected
 };

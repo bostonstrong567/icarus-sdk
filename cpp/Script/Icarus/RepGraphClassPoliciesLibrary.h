@@ -6,7 +6,6 @@ UCLASS()
 class URepGraphClassPoliciesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToRepGraphClassPoliciesTable(FName Name, FRepGraphClassPolicy Data, FRepGraphClassPoliciesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x91
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakRepGraphClassPoliciesEnum(FRepGraphClassPoliciesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FRepGraphClassPoliciesRowHandle CastToRepGraphClassPoliciesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

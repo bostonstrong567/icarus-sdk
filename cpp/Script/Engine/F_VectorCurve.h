@@ -4,5 +4,6 @@
 USTRUCT()
 struct FVectorCurve : public FAnimCurveBase
 {
+public:
     UPROPERTY() FRichCurve FloatCurves;  // 0x0018, size 0x80
 };

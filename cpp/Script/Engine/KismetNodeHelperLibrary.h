@@ -6,7 +6,6 @@ UCLASS()
 class UKismetNodeHelperLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static bool BitIsMarked(int32 Data, int32 Index);  // parameters 0x9
     UFUNCTION(BlueprintCallable) static void ClearAllBits(int32& Data);  // parameters 0x4
     UFUNCTION(BlueprintCallable) static void ClearBit(int32& Data, int32 Index);  // parameters 0x8

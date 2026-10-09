@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBuildPromotionTestSettings
 {
+public:
     UPROPERTY(EditAnywhere) FFilePath DefaultStaticMeshAsset;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere) FBuildPromotionImportWorkflowSettings ImportWorkflow;  // 0x0010, size 0x150
     UPROPERTY(EditAnywhere) FBuildPromotionOpenAssetSettings OpenAssets;  // 0x0160, size 0x60

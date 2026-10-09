@@ -4,6 +4,7 @@
 USTRUCT()
 struct FHairSolverSettings
 {
+public:
     UPROPERTY(EditAnywhere) bool EnableSimulation;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere) EGroomNiagaraSolvers NiagaraSolver;  // 0x0001, size 0x1
     UPROPERTY(EditAnywhere) TSoftObjectPtr<UNiagaraSystem> CustomSystem;  // 0x0008, size 0x28

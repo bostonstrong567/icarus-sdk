@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMovieSceneSequencePlaybackSettings
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bAutoPlay : 1;  // 0x0000, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FMovieSceneSequenceLoopCount LoopCount;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float PlayRate;  // 0x0008, size 0x4

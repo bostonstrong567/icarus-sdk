@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBakedCustomAttributePerBoneData
 {
+public:
     UPROPERTY() int32 BoneTreeIndex;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere) TArray<FBakedStringCustomAttribute> StringAttributes;  // 0x0008, size 0x10
     UPROPERTY(EditAnywhere) TArray<FBakedIntegerCustomAttribute> IntAttributes;  // 0x0018, size 0x10

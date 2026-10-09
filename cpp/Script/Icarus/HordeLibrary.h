@@ -6,7 +6,6 @@ UCLASS()
 class UHordeLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToHordeTable(FName Name, FHorde Data, FHordeRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x99
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakHordeEnum(FHordeEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FHordeRowHandle CastToHordeRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

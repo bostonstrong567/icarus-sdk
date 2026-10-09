@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_PRO_C_Research_CollectMiasma_C : public ABPQ_Common_PlayerHeldItem_C
 {
-public:
 };

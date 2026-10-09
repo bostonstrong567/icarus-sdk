@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_IM_O3_Mammoth_C : public ABPQ_Common_Hunt_C
 {
-public:
 };

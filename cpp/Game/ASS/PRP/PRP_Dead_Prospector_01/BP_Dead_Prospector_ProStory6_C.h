@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Dead_Prospector_ProStory6_C : public ABP_Dead_Prospector_Group15_Gored_01_C
 {
-public:
 };

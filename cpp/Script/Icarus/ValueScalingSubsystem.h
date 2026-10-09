@@ -5,5 +5,4 @@
 UCLASS()
 class UValueScalingSubsystem : public UWorldSubsystem
 {
-public:
 };

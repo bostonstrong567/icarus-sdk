@@ -5,30 +5,30 @@
 UCLASS()
 class URigVM : public UObject
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY() FRigVMMemoryContainer WorkMemoryStorage;  // 0x0028, size 0xA0
+    FRigVMMemoryContainer * WorkMemoryPtr;  // 0x00C8, not reflected
     UPROPERTY() FRigVMMemoryContainer LiteralMemoryStorage;  // 0x00D0, size 0xA0
+    FRigVMMemoryContainer * LiteralMemoryPtr;  // 0x0170, not reflected
     UPROPERTY() FRigVMByteCode ByteCodeStorage;  // 0x0178, size 0x30
+    FRigVMByteCode * ByteCodePtr;  // 0x01A8, not reflected
+private:
     UPROPERTY(Transient) FRigVMInstructionArray Instructions;  // 0x01B0, size 0x10
     UPROPERTY(Transient) FRigVMExecuteContext Context;  // 0x01C0, size 0x58
     UPROPERTY() TArray<FName> FunctionNamesStorage;  // 0x0218, size 0x10
+    TArray<FName,TSizedDefaultAllocator<32> > * FunctionNamesPtr;  // 0x0228, not reflected
+    TArray<void (__cdecl*)(FRigVMExecuteContext &,FRigVMFixedArray<FRigVMMemoryHandle>),TSizedDefaultAllocator<32> > FunctionsStorage;  // 0x0230, not reflected
+    TArray<void (__cdecl*)(FRigVMExecuteContext &,FRigVMFixedArray<FRigVMMemoryHandle>),TSizedDefaultAllocator<32> > * FunctionsPtr;  // 0x0240, not reflected
     UPROPERTY() TArray<FRigVMParameter> Parameters;  // 0x0248, size 0x10
     UPROPERTY() TMap<FName, int32> ParametersNameMap;  // 0x0258, size 0x50
+    TArray<unsigned int,TSizedDefaultAllocator<32> > FirstHandleForInstruction;  // 0x02A8, not reflected
+    TArray<FRigVMMemoryHandle,TSizedDefaultAllocator<32> > CachedMemoryHandles;  // 0x02B8, not reflected
+    TArray<FRigVMMemoryContainer *,TSizedDefaultAllocator<32> > CachedMemory;  // 0x02C8, not reflected
+    TArray<FRigVMExternalVariable,TSizedDefaultAllocator<32> > ExternalVariables;  // 0x02D8, not reflected
+    int32 ExecutingThreadId;  // 0x02E8, not reflected
     UPROPERTY(Transient) URigVM* DeferredVMToCopy;  // 0x02F0, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FRigVMMemoryContainer * WorkMemoryPtr;  // 0x00C8
-    FRigVMMemoryContainer * LiteralMemoryPtr;  // 0x0170
-    FRigVMByteCode * ByteCodePtr;  // 0x01A8
-    TArray<FName,TSizedDefaultAllocator<32> > * FunctionNamesPtr;  // 0x0228, private
-    TArray<void (__cdecl*)(FRigVMExecuteContext &,FRigVMFixedArray<FRigVMMemoryHandle>),TSizedDefaultAllocator<32> > FunctionsStorage;  // 0x0230, private
-    TArray<void (__cdecl*)(FRigVMExecuteContext &,FRigVMFixedArray<FRigVMMemoryHandle>),TSizedDefaultAllocator<32> > * FunctionsPtr;  // 0x0240, private
-    TArray<unsigned int,TSizedDefaultAllocator<32> > FirstHandleForInstruction;  // 0x02A8, private
-    TArray<FRigVMMemoryHandle,TSizedDefaultAllocator<32> > CachedMemoryHandles;  // 0x02B8, private
-    TArray<FRigVMMemoryContainer *,TSizedDefaultAllocator<32> > CachedMemory;  // 0x02C8, private
-    TArray<FRigVMExternalVariable,TSizedDefaultAllocator<32> > ExternalVariables;  // 0x02D8, private
-    int32 ExecutingThreadId;  // 0x02E8, private
-
+public:
     UFUNCTION() int32 AddRigVMFunction(UScriptStruct* InRigVMStruct, const FName& InMethodName);  // parameters 0x14
     UFUNCTION(BlueprintCallable) bool Execute(const FName& InEntryName);  // parameters 0x9
     UFUNCTION(BlueprintCallable, BlueprintPure) int32 GetParameterArraySize(const FName& InParameterName) const;  // parameters 0xC

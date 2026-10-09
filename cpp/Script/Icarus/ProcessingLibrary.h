@@ -6,7 +6,6 @@ UCLASS()
 class UProcessingLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToProcessingTable(FName Name, FProcessingData Data, FProcessingRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x89
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakProcessingEnum(FProcessingEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FProcessingRowHandle CastToProcessingRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -5,5 +5,4 @@
 UCLASS()
 class UMaterialExpressionLightVector : public UMaterialExpression
 {
-public:
 };

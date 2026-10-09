@@ -4,6 +4,7 @@
 USTRUCT()
 struct FCustomPoolSizes
 {
+public:
     UPROPERTY(EditAnywhere, Config) int32 Desktop;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere, Config) int32 Mobile;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere, Config) int32 PS4;  // 0x0008, size 0x4

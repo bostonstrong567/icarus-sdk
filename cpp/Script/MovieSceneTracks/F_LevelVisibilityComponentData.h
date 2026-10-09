@@ -4,5 +4,6 @@
 USTRUCT()
 struct FLevelVisibilityComponentData
 {
+public:
     UPROPERTY(Instanced) UMovieSceneLevelVisibilitySection* Section;  // 0x0000, size 0x8
 };

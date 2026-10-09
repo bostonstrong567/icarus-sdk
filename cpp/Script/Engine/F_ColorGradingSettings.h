@@ -4,6 +4,7 @@
 USTRUCT()
 struct FColorGradingSettings
 {
+public:
     UPROPERTY(EditAnywhere, Interp, BlueprintReadWrite) FColorGradePerRangeSettings Global;  // 0x0000, size 0x50
     UPROPERTY(EditAnywhere, Interp, BlueprintReadWrite) FColorGradePerRangeSettings Shadows;  // 0x0050, size 0x50
     UPROPERTY(EditAnywhere, Interp, BlueprintReadWrite) FColorGradePerRangeSettings Midtones;  // 0x00A0, size 0x50

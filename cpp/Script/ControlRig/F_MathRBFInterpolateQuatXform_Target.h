@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMathRBFInterpolateQuatXform_Target
 {
+public:
     UPROPERTY() FQuat Target;  // 0x0000, size 0x10
     UPROPERTY() FTransform Value;  // 0x0010, size 0x30
 };

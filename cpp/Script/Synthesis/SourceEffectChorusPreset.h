@@ -6,11 +6,9 @@ UCLASS(EditInlineNew)
 class USourceEffectChorusPreset : public USoundEffectSourcePreset
 {
 public:
+    FWindowsCriticalSection SettingsCritSect;  // 0x0068, not reflected
+    FSourceEffectChorusSettings SettingsCopy;  // 0x0090, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FSourceEffectChorusSettings Settings;  // 0x0108, size 0x78
-
-    // Not reflected: the engine's scripting cannot see these.
-    FWindowsCriticalSection SettingsCritSect;  // 0x0068
-    FSourceEffectChorusSettings SettingsCopy;  // 0x0090
 
     UFUNCTION(BlueprintCallable) void SetDepth(float Depth);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void SetDepthModulator(USoundModulatorBase* Modulator);  // parameters 0x8

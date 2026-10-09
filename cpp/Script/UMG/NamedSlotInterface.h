@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class UNamedSlotInterface : public UInterface
 {
-public:
 };

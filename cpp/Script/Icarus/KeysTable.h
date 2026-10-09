@@ -5,5 +5,4 @@
 UCLASS()
 class UKeysTable : public UIcarusDataTable
 {
-public:
 };

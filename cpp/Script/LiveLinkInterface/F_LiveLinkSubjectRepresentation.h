@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLiveLinkSubjectRepresentation
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FLiveLinkSubjectName Subject;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSubclassOf<ULiveLinkRole> Role;  // 0x0008, size 0x8
 };

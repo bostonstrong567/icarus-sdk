@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew)
 class UDefaultCameraShakeBase : public UCameraShakeBase
 {
-public:
 };

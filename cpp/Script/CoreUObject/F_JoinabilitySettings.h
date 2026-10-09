@@ -4,6 +4,7 @@
 USTRUCT()
 struct FJoinabilitySettings
 {
+public:
     UPROPERTY() FName SessionName;  // 0x0000, size 0x8
     UPROPERTY() bool bPublicSearchable;  // 0x0008, size 0x1
     UPROPERTY() bool bAllowInvites;  // 0x0009, size 0x1

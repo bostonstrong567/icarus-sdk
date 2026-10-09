@@ -4,10 +4,9 @@
 USTRUCT()
 struct FQueueItem
 {
-
-    // Not reflected:
-    FItemsStaticRowHandle Item;  // 0x0000
-    FCraftingTagsRowHandle Query;  // 0x0018
-    int32 Count;  // 0x0030
-    TArray<FFoundItemEntry,TSizedDefaultAllocator<32> > Items;  // 0x0038
+public:
+    FItemsStaticRowHandle Item;  // 0x0000, not reflected
+    FCraftingTagsRowHandle Query;  // 0x0018, not reflected
+    int32 Count;  // 0x0030, not reflected
+    TArray<FFoundItemEntry,TSizedDefaultAllocator<32> > Items;  // 0x0038, not reflected
 };

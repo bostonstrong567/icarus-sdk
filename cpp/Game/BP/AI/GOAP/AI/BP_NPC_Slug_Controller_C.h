@@ -6,6 +6,5 @@ UCLASS(NotPlaceable, Config=Engine)
 class ABP_NPC_Slug_Controller_C : public ABP_NPC_Generic_Controller_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void GetAdditionalTargetThreatModifier(AActor* PerceivedTarget, float& AdditionalThreatPlusPercent);  // parameters 0xC
 };

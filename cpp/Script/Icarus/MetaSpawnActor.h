@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class AMetaSpawnActor : public AIcarusActor
 {
-public:
 };

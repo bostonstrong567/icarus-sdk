@@ -4,6 +4,7 @@
 USTRUCT()
 struct FClothPhysicalMeshData
 {
+public:
     UPROPERTY(EditAnywhere) TArray<FVector> Vertices;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere) TArray<FVector> Normals;  // 0x0010, size 0x10
     UPROPERTY(EditAnywhere) TArray<uint32> Indices;  // 0x0020, size 0x10

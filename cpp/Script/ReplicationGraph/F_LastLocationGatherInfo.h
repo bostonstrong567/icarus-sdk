@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLastLocationGatherInfo
 {
+public:
     UPROPERTY() UNetConnection* Connection;  // 0x0000, size 0x8
     UPROPERTY() FVector LastLocation;  // 0x0008, size 0xC
     UPROPERTY() FVector LastOutOfRangeLocationCheck;  // 0x0014, size 0xC

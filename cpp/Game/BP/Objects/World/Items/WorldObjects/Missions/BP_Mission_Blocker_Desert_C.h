@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Mission_Blocker_Desert_C : public ABP_Mission_Blocker_Base_C
 {
-public:
 };

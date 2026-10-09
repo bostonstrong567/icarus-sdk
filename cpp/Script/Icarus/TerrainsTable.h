@@ -5,5 +5,4 @@
 UCLASS()
 class UTerrainsTable : public UIcarusDataTable
 {
-public:
 };

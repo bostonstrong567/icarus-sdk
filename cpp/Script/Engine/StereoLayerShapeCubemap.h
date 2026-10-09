@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew)
 class UStereoLayerShapeCubemap : public UStereoLayerShape
 {
-public:
 };

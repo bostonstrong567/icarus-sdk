@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_Ape_C_Stage_Equipment_Mortar_C : public ABPQ_Deploy_Count_C
 {
-public:
 };

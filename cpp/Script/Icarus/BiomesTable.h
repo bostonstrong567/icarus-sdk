@@ -5,5 +5,4 @@
 UCLASS()
 class UBiomesTable : public UIcarusDataTable
 {
-public:
 };

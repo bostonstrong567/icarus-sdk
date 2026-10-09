@@ -5,10 +5,11 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UBoxComponent : public UShapeComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FVector BoxExtent;  // 0x0468, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float LineThickness;  // 0x0474, size 0x4
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) FVector GetScaledBoxExtent() const;  // parameters 0xC
     UFUNCTION(BlueprintCallable, BlueprintPure) FVector GetUnscaledBoxExtent() const;  // parameters 0xC
     UFUNCTION(BlueprintCallable) void SetBoxExtent(FVector InBoxExtent, bool bUpdateOverlaps);  // parameters 0xD

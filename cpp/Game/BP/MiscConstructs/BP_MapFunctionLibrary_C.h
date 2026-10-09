@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UBP_MapFunctionLibrary_C : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static void FromUV(FVector2D UV, UObject* __WorldContext, FVector2D& Fractional);  // parameters 0x18
     UFUNCTION(BlueprintCallable, BlueprintPure) static void GetAlphabet(UObject* __WorldContext, TArray<FString>& Alphabet);  // parameters 0x18
     UFUNCTION(BlueprintCallable, BlueprintPure) static void GetGridSize(UObject* __WorldContext, float& GridSize);  // parameters 0xC

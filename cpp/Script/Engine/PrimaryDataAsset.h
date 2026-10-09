@@ -5,5 +5,4 @@
 UCLASS(Abstract, MinimalAPI)
 class UPrimaryDataAsset : public UDataAsset
 {
-public:
 };

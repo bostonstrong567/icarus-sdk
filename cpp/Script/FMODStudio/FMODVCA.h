@@ -5,5 +5,4 @@
 UCLASS()
 class UFMODVCA : public UFMODAsset
 {
-public:
 };

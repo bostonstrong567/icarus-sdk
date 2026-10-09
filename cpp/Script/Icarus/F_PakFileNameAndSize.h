@@ -4,6 +4,7 @@
 USTRUCT()
 struct FPakFileNameAndSize
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FString Filename;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int64 FileSize;  // 0x0010, size 0x8
 };

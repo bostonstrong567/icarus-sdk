@@ -4,6 +4,7 @@
 USTRUCT()
 struct FCameraShakeUpdateParams
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float DeltaTime;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float ShakeScale;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float DynamicScale;  // 0x0008, size 0x4

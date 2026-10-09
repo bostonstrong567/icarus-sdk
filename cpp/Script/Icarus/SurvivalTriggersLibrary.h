@@ -6,7 +6,6 @@ UCLASS()
 class USurvivalTriggersLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToSurvivalTriggersTable(FName Name, FSurvivalTriggers Data, FSurvivalTriggersRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xF1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakSurvivalTriggersEnum(FSurvivalTriggersEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FSurvivalTriggersRowHandle CastToSurvivalTriggersRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

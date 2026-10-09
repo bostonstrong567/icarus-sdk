@@ -5,7 +5,6 @@
 UCLASS(Abstract, EditInlineNew)
 class UParticleModuleEventSendToGame : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   DoEvent

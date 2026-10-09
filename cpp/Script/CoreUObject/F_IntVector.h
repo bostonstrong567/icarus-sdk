@@ -4,6 +4,7 @@
 USTRUCT()
 struct FIntVector
 {
+public:
     UPROPERTY(EditAnywhere, SaveGame, BlueprintReadWrite) int32 X;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere, SaveGame, BlueprintReadWrite) int32 Y;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere, SaveGame, BlueprintReadWrite) int32 Z;  // 0x0008, size 0x4

@@ -4,12 +4,11 @@
 USTRUCT()
 struct FCompressedRichCurve
 {
-
-    // Not reflected:
-    TEnumAsByte<enum ERichCurveCompressionFormat> CompressionFormat;  // 0x0000
-    TEnumAsByte<enum ERichCurveKeyTimeCompressionFormat> KeyTimeCompressionFormat;  // 0x0001
-    TEnumAsByte<enum ERichCurveExtrapolation> PreInfinityExtrap;  // 0x0002
-    TEnumAsByte<enum ERichCurveExtrapolation> PostInfinityExtrap;  // 0x0003
-    FCompressedRichCurve::TConstantValueNumKeys ConstantValueNumKeys;  // 0x0004
-    TArray<unsigned char,TSizedDefaultAllocator<32> > CompressedKeys;  // 0x0008
+public:
+    TEnumAsByte<enum ERichCurveCompressionFormat> CompressionFormat;  // 0x0000, not reflected
+    TEnumAsByte<enum ERichCurveKeyTimeCompressionFormat> KeyTimeCompressionFormat;  // 0x0001, not reflected
+    TEnumAsByte<enum ERichCurveExtrapolation> PreInfinityExtrap;  // 0x0002, not reflected
+    TEnumAsByte<enum ERichCurveExtrapolation> PostInfinityExtrap;  // 0x0003, not reflected
+    FCompressedRichCurve::TConstantValueNumKeys ConstantValueNumKeys;  // 0x0004, not reflected
+    TArray<unsigned char,TSizedDefaultAllocator<32> > CompressedKeys;  // 0x0008, not reflected
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNiagaraComponentPropertyBinding
 {
+public:
     UPROPERTY() FNiagaraVariableAttributeBinding AttributeBinding;  // 0x0000, size 0x58
     UPROPERTY() FName PropertyName;  // 0x0058, size 0x8
     UPROPERTY() FNiagaraTypeDefinition PropertyType;  // 0x0060, size 0x10

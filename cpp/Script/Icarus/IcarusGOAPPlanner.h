@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UIcarusGOAPPlanner : public UActorComponent
 {
-public:
 };

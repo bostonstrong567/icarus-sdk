@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABPQ_PRO_A_Extraction_Craft_Shovel_C : public ABPQ_Common_Craft_TagModifier_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void GetDescription(const FText& InDescription, FText& OutDescription, bool& bOutComplete);  // parameters 0x31
 };

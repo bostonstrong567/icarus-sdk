@@ -6,7 +6,6 @@ UCLASS()
 class UTurnBasedBlueprintLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void GetIsMyTurn(UObject* WorldContextObject, APlayerController* PlayerController, FString MatchID, bool& bIsMyTurn);  // parameters 0x21
     UFUNCTION(BlueprintCallable) static void GetMyPlayerIndex(UObject* WorldContextObject, APlayerController* PlayerController, FString MatchID, int32& PlayerIndex);  // parameters 0x24
     UFUNCTION(BlueprintCallable) static void GetPlayerDisplayName(UObject* WorldContextObject, APlayerController* PlayerController, FString MatchID, int32 PlayerIndex, FString& PlayerDisplayName);  // parameters 0x38

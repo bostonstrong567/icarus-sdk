@@ -6,7 +6,6 @@ UCLASS()
 class UVoxelSetupDataLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToVoxelSetupDataTable(FName Name, FVoxelSetupData Data, FVoxelSetupDataRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xE1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakVoxelSetupDataEnum(FVoxelSetupDataEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FVoxelSetupDataRowHandle CastToVoxelSetupDataRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

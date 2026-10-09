@@ -4,5 +4,6 @@
 USTRUCT()
 struct FTTFloatTrack : public FTTPropertyTrack
 {
+public:
     UPROPERTY() UCurveFloat* CurveFloat;  // 0x0020, size 0x8
 };

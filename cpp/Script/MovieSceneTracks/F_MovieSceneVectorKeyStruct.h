@@ -4,5 +4,6 @@
 USTRUCT()
 struct FMovieSceneVectorKeyStruct : public FMovieSceneVectorKeyStructBase
 {
+public:
     UPROPERTY(EditAnywhere) FVector Vector;  // 0x0028, size 0xC
 };

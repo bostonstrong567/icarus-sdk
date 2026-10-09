@@ -6,7 +6,6 @@ UCLASS()
 class UIcarusAIBlueprintFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void BlockBiomeDynamicSpawn(UObject* WorldContext, const FBiomesRowHandle& Biome, bool bBlock);  // parameters 0x21
     UFUNCTION(BlueprintCallable) static void ConfigureSightPerceptionAutoDetectionRange(UAIPerceptionComponent* PerceptionComponent, float AutoSuccessRangeFromLastSeenLocation);  // parameters 0xC
     UFUNCTION(BlueprintCallable) static void ConfigureSightPerceptionSense(UAIPerceptionComponent* PerceptionComponent, float MaxAge, float SightRadius, float LoseSightRadius, float PeripheralVisionAngle, float AutoSuccessRangeFromLastSeenLocation, float PointOfViewBackwardOffset, float NearClippingRadius);  // parameters 0x24

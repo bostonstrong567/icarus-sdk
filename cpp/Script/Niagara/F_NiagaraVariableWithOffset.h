@@ -4,5 +4,6 @@
 USTRUCT()
 struct FNiagaraVariableWithOffset : public FNiagaraVariableBase
 {
+public:
     UPROPERTY() int32 Offset;  // 0x000C, size 0x4
 };

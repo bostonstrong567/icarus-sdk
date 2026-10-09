@@ -4,6 +4,7 @@
 USTRUCT()
 struct FTableRowStyle : public FSlateWidgetStyle
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSlateBrush SelectorFocusedBrush;  // 0x0008, size 0x88
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSlateBrush ActiveHoveredBrush;  // 0x0090, size 0x88
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSlateBrush ActiveBrush;  // 0x0118, size 0x88

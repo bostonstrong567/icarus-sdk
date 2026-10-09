@@ -5,8 +5,6 @@
 UCLASS()
 class UMovieSceneHierarchicalEasingInstantiatorSystem : public UMovieSceneEntityInstantiatorSystem
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<UE::MovieScene::FInstanceHandle,unsigned short,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<UE::MovieScene::FInstanceHandle,unsigned short,0> > InstanceHandleToEasingChannel;  // 0x0040, private
+private:
+    TMap<UE::MovieScene::FInstanceHandle,unsigned short,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<UE::MovieScene::FInstanceHandle,unsigned short,0> > InstanceHandleToEasingChannel;  // 0x0040, not reflected
 };

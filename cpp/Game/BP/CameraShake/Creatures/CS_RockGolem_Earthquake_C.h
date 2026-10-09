@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UCS_RockGolem_Earthquake_C : public UDefaultCameraShakeBase
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBlueprintInputActionDelegateBinding : public FBlueprintInputDelegateBinding
 {
+public:
     UPROPERTY() FName InputActionName;  // 0x0004, size 0x8
     UPROPERTY() TEnumAsByte<EInputEvent> InputKeyEvent;  // 0x000C, size 0x1
     UPROPERTY() FName FunctionNameToBind;  // 0x0010, size 0x8

@@ -5,7 +5,8 @@
 UCLASS(Config=Camera)
 class UCameraModifier_CameraShake : public UCameraModifier
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY() TArray<FActiveCameraShakeInfo> ActiveShakes;  // 0x0048, size 0x10
     UPROPERTY() TMap<TSubclassOf<UCameraShakeBase>, FPooledCameraShakes> ExpiredPooledShakesMap;  // 0x0058, size 0x50
     UPROPERTY(EditAnywhere) float SplitScreenShakeScale;  // 0x00A8, size 0x4

@@ -6,7 +6,6 @@ UCLASS(MinimalAPI)
 class UStreamlineLibraryDLSSG : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static void GetDLSSGFrameTiming(float& FrameRateInHertz, int32& FramesPresented);  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) static void GetDLSSGMinimumDriverVersion(int32& MinDriverVersionMajor, int32& MinDriverVersionMinor);  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) static UStreamlineDLSSGMode GetDLSSGMode();  // parameters 0x1

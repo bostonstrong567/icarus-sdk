@@ -4,11 +4,11 @@
 USTRUCT()
 struct FTimeStretchCurveInstance
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY(Transient) bool bHasValidData;  // 0x0000, size 0x1
-
-    // Not reflected:
-    float T_Original;  // 0x0004
-    float T_Target;  // 0x0008
-    TArray<float,TSizedDefaultAllocator<32> > P_Marker_Original;  // 0x0010
-    TArray<float,TSizedDefaultAllocator<32> > P_Marker_Target;  // 0x0020
+    float T_Original;  // 0x0004, not reflected
+    float T_Target;  // 0x0008, not reflected
+    TArray<float,TSizedDefaultAllocator<32> > P_Marker_Original;  // 0x0010, not reflected
+    TArray<float,TSizedDefaultAllocator<32> > P_Marker_Target;  // 0x0020, not reflected
 };

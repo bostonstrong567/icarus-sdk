@@ -5,7 +5,8 @@
 UCLASS()
 class UMovieSceneHookSection : public UMovieSceneSection, public IMovieSceneEntityProvider, public IMovieSceneEvaluationHook
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY() uint8 bRequiresRangedHook : 1;  // 0x00F8, mask 0x01
     UPROPERTY() uint8 bRequiresTriggerHooks : 1;  // 0x00F8, mask 0x02
 

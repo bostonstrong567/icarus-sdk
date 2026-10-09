@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Fireplace_Screen_C : public ABP_DeployableBase_C
 {
-public:
 };

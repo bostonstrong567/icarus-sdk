@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class ABP_RockGolem_Juvie_Corpse_Arctic_C : public ABP_RockGolem_Juvie_Corpse_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void IsSkeletonUpdated();
     UFUNCTION(BlueprintCallable) void OnSkinnedStateUpdated();
 };

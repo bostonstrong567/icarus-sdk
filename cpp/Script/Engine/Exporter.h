@@ -16,12 +16,11 @@ public:
     UPROPERTY() uint8 bSelectedOnly : 1;  // 0x0060, mask 0x02
     UPROPERTY() uint8 bForceFileOperations : 1;  // 0x0060, mask 0x04
     UPROPERTY(BlueprintReadWrite) UAssetExportTask* ExportTask;  // 0x0068, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool BatchExportMode;  // 0x0070, protected
-    bool ShowExportOption;  // 0x0071, protected
-    bool CancelBatch;  // 0x0072, protected
-
+protected:
+    bool BatchExportMode;  // 0x0070, not reflected
+    bool ShowExportOption;  // 0x0071, not reflected
+    bool CancelBatch;  // 0x0072, not reflected
+public:
     UFUNCTION(BlueprintCallable) static bool RunAssetExportTask(UAssetExportTask* Task);  // parameters 0x9
     UFUNCTION(BlueprintCallable) static bool RunAssetExportTasks(const TArray<UAssetExportTask*>& ExportTasks);  // parameters 0x11
     UFUNCTION(BlueprintImplementableEvent) bool ScriptRunAssetExportTask(UAssetExportTask* Task);  // parameters 0x9

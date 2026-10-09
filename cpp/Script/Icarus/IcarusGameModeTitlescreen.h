@@ -6,6 +6,5 @@ UCLASS(Transient, NotPlaceable, Config=Game)
 class AIcarusGameModeTitlescreen : public AIcarusGameModeBase
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) FString CheckIfDriversAreUpToDate() const;  // parameters 0x10
 };

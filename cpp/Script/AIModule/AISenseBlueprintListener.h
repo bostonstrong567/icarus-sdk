@@ -5,5 +5,4 @@
 UCLASS()
 class UAISenseBlueprintListener : public UUserDefinedStruct
 {
-public:
 };

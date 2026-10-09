@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRiverSplineList
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FWTSplineMesh> Splines;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Level;  // 0x0010, size 0x4
 };

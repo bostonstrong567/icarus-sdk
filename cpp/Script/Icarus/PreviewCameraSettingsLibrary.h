@@ -6,7 +6,6 @@ UCLASS()
 class UPreviewCameraSettingsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToPreviewCameraSettingsTable(FName Name, FPreviewCameraSettings Data, FPreviewCameraSettingsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x89
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakPreviewCameraSettingsEnum(FPreviewCameraSettingsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FPreviewCameraSettingsRowHandle CastToPreviewCameraSettingsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

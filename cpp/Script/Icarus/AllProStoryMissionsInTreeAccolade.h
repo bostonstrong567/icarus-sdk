@@ -5,5 +5,4 @@
 UCLASS()
 class UAllProStoryMissionsInTreeAccolade : public UAllTalentsInTreeAccolade
 {
-public:
 };

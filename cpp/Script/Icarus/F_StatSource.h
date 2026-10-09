@@ -4,8 +4,7 @@
 USTRUCT()
 struct FStatSource
 {
-
-    // Not reflected:
-    EStatSources Source;  // 0x0000
-    int32 UID;  // 0x0004
+public:
+    EStatSources Source;  // 0x0000, not reflected
+    int32 UID;  // 0x0004, not reflected
 };

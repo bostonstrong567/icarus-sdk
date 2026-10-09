@@ -4,5 +4,6 @@
 USTRUCT()
 struct FMovieSceneAudioSectionTemplate : public FMovieSceneEvalTemplate
 {
+public:
     UPROPERTY(Instanced) UMovieSceneAudioSection* AudioSection;  // 0x0020, size 0x8
 };

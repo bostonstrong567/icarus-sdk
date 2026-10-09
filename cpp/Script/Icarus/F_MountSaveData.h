@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMountSaveData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString DatabaseGUID;  // 0x0000, size 0x10
     UPROPERTY() FStateRecorderBlob RecorderBlob;  // 0x0010, size 0x20
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString MountName;  // 0x0030, size 0x10

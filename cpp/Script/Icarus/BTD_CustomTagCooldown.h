@@ -11,7 +11,6 @@ public:
     UPROPERTY(EditAnywhere) float DefaultCooldownDuration;  // 0x0080, size 0x4
     UPROPERTY(EditAnywhere) bool bAddToExistingDuration;  // 0x0084, size 0x1
     UPROPERTY(EditAnywhere) bool bActivatesCooldown;  // 0x0085, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    float CooldownDurationValue;  // 0x0088, protected
+protected:
+    float CooldownDurationValue;  // 0x0088, not reflected
 };

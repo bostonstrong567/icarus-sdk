@@ -5,5 +5,4 @@
 UCLASS()
 class UGameplayConfigTable : public UIcarusDataTable
 {
-public:
 };

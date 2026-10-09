@@ -4,5 +4,6 @@
 USTRUCT()
 struct FHeightmapData
 {
+public:
     UPROPERTY() UTexture2D* Texture;  // 0x0000, size 0x8
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FHairGroupsMaterial
 {
+public:
     UPROPERTY(EditAnywhere) UMaterialInterface* Material;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) FName SlotName;  // 0x0008, size 0x8
 };

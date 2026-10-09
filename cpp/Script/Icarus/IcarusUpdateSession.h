@@ -5,11 +5,12 @@
 UCLASS(MinimalAPI)
 class UIcarusUpdateSession : public UIcarusSessionBase
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY() UGetProspectCallbackProxyGen* GetProspectCallbackProxy;  // 0x0398, size 0x8
     UPROPERTY() UUpdateSessionCallbackProxyAdvanced* UpdateSessionCallbackProxy;  // 0x03A0, size 0x8
     UPROPERTY() bool bForceUpdate;  // 0x03A8, size 0x1
-
+public:
     UFUNCTION() void GetProspectInfoFailure(const FResGetProspect& Response);  // parameters 0xE8
     UFUNCTION() void GetProspectInfoSuccess(const FResGetProspect& Response);  // parameters 0xE8
     UFUNCTION(BlueprintCallable) static UIcarusUpdateSession* IcarusUpdateSession(UObject* WorldContextObject, APlayerController* PlayerController);  // parameters 0x18

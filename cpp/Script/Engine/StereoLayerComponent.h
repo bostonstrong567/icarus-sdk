@@ -5,13 +5,15 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UStereoLayerComponent : public USceneComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bLiveTexture : 1;  // 0x01F8, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bSupportsDepth : 1;  // 0x01F8, mask 0x02
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bNoAlphaChannel : 1;  // 0x01F8, mask 0x04
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bQuadPreserveTextureRatio : 1;  // 0x0210, mask 0x01
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) UTexture* Texture;  // 0x0200, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) UTexture* LeftTexture;  // 0x0208, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bQuadPreserveTextureRatio : 1;  // 0x0210, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FVector2D QuadSize;  // 0x0214, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FBox2D UVRect;  // 0x021C, size 0x14
     UPROPERTY(Deprecated) float CylinderRadius;  // 0x0230, size 0x4
@@ -22,15 +24,14 @@ public:
     UPROPERTY(Deprecated) TEnumAsByte<EStereoLayerShape> StereoLayerShape;  // 0x0285, size 0x1
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UStereoLayerShape* Shape;  // 0x0288, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 Priority;  // 0x0290, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bIsDirty;  // 0x0294, private
-    bool bTextureNeedsUpdate;  // 0x0295, private
-    uint32 LayerId;  // 0x0298, private
-    FTransform LastTransform;  // 0x02A0, private
-    bool bLastVisible;  // 0x02D0, private
-    bool bNeedsPostLoadFixup;  // 0x02D1, private
-
+private:
+    bool bIsDirty;  // 0x0294, not reflected
+    bool bTextureNeedsUpdate;  // 0x0295, not reflected
+    uint32 LayerId;  // 0x0298, not reflected
+    FTransform LastTransform;  // 0x02A0, not reflected
+    bool bLastVisible;  // 0x02D0, not reflected
+    bool bNeedsPostLoadFixup;  // 0x02D1, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) UTexture* GetLeftTexture() const;  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) int32 GetPriority() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) FVector2D GetQuadSize() const;  // parameters 0x8

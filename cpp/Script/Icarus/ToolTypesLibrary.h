@@ -6,7 +6,6 @@ UCLASS()
 class UToolTypesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToToolTypesTable(FName Name, FIcarusToolType Data, FToolTypesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x51
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakToolTypesEnum(FToolTypesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FToolTypesRowHandle CastToToolTypesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

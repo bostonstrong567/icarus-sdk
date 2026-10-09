@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_ELY_SQ_Trials_Race_Trial_Progress_Marker_Gamma_C : public ABPQ_ELY_SQ_Trials_Race_Trial_Progress_Marker_C
 {
-public:
 };

@@ -4,5 +4,6 @@
 USTRUCT()
 struct FDynamicQuestRewardItem : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FRewardItemEntry> Rewards;  // 0x0018, size 0x10
 };

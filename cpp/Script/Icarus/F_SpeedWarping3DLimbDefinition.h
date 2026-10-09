@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSpeedWarping3DLimbDefinition
 {
+public:
     UPROPERTY(EditAnywhere) FBoneReference IKLimbBone;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere) FBoneReference FKLimbBone;  // 0x0010, size 0x10
     UPROPERTY(EditAnywhere) FBoneReference IKLimbTargetBone;  // 0x0020, size 0x10

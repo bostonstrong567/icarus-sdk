@@ -15,7 +15,6 @@ public:
     UPROPERTY(Transient) TArray<UMaterialExpressionMaterialFunctionCall*> BlendCallers;  // 0x00C8, size 0x10
     UPROPERTY(Transient) int32 NumActiveBlendCallers;  // 0x00D8, size 0x4
     UPROPERTY(Transient) bool bIsLayerGraphBuilt;  // 0x00DC, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    const FMaterialLayersFunctions * ParamLayers;  // 0x00E0, private
+private:
+    const FMaterialLayersFunctions * ParamLayers;  // 0x00E0, not reflected
 };

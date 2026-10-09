@@ -4,6 +4,7 @@
 USTRUCT()
 struct FResUpdateProspect
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool Success;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EUpdateProspectFailure FailureReason;  // 0x0001, size 0x1
 };

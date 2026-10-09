@@ -4,11 +4,15 @@
 USTRUCT()
 struct FNavigationLinkBase
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+public:
     UPROPERTY(EditAnywhere) float LeftProjectHeight;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere) float MaxFallDownLength;  // 0x0004, size 0x4
+    int32 UserId;  // 0x0008, not reflected
     UPROPERTY(EditAnywhere) float SnapRadius;  // 0x000C, size 0x4
     UPROPERTY(EditAnywhere) float SnapHeight;  // 0x0010, size 0x4
     UPROPERTY(EditAnywhere) FNavAgentSelector SupportedAgents;  // 0x0014, size 0x4
+    uint32 SupportedAgentsBits;  // 0x0018, not reflected
     UPROPERTY() uint8 bSupportsAgent0 : 1;  // 0x0018, mask 0x01
     UPROPERTY() uint8 bSupportsAgent1 : 1;  // 0x0018, mask 0x02
     UPROPERTY() uint8 bSupportsAgent2 : 1;  // 0x0018, mask 0x04
@@ -36,10 +40,7 @@ struct FNavigationLinkBase
     UPROPERTY() uint8 bCustomFlag5 : 1;  // 0x001D, mask 0x80
     UPROPERTY() uint8 bCustomFlag6 : 1;  // 0x001E, mask 0x01
     UPROPERTY() uint8 bCustomFlag7 : 1;  // 0x001E, mask 0x02
+private:
     UPROPERTY(EditAnywhere) TSubclassOf<UNavAreaBase> AreaClass;  // 0x0020, size 0x8
-
-    // Not reflected:
-    int32 UserId;  // 0x0008
-    uint32 SupportedAgentsBits;  // 0x0018
-    TWeakObjectPtr<UClass,FWeakObjectPtr> AreaClassOb;  // 0x0028
+    TWeakObjectPtr<UClass,FWeakObjectPtr> AreaClassOb;  // 0x0028, not reflected
 };

@@ -6,7 +6,6 @@ UCLASS()
 class ULivingItemBlueprintFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static bool GetEquippedItemUpgrades(const FItemData& Item, TArray<FLivingItemUpgradeData>& Upgrades);  // parameters 0x201
     UFUNCTION(BlueprintCallable) static bool GetLivingItemActiveChallengeSlotState(const FItemData& Item, FLivingItemSlotState& ActiveQuestSlot);  // parameters 0x269
     UFUNCTION(BlueprintCallable) static bool GetLivingItemSlotStates(const FItemData& Item, TArray<FLivingItemSlotState>& Slots);  // parameters 0x201

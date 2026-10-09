@@ -6,7 +6,6 @@ UCLASS()
 class UTamedCreatureModifiersLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToTamedCreatureModifiersTable(FName Name, FTamedCreatureModifier Data, FTamedCreatureModifiersRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x61
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakTamedCreatureModifiersEnum(FTamedCreatureModifiersEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FTamedCreatureModifiersRowHandle CastToTamedCreatureModifiersRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -5,5 +5,4 @@
 UCLASS()
 class UMusicTrackStateGroupsTable : public UIcarusDataTable
 {
-public:
 };

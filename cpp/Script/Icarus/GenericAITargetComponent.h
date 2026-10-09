@@ -5,10 +5,12 @@
 UCLASS(Config=Engine)
 class UGenericAITargetComponent : public UActorComponent, public IAITargetable, public IAISightTargetInterface
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UAIPerceptionStimuliSourceComponent* PerceptionComponent;  // 0x00C0, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FAIRelationshipsRowHandle TargetableRelationship;  // 0x00C8, size 0x18
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) USceneComponent* TargetComponent;  // 0x00E0, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector ActorRootPerceptionTargetOffset;  // 0x00E8, size 0xC
+protected:
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UActorState* ActorState;  // 0x00F8, size 0x8
 };

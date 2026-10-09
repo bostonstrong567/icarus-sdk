@@ -5,9 +5,11 @@
 UCLASS(Config=Engine)
 class UProceduralFoliageComponent : public UActorComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UProceduralFoliageSpawner* FoliageSpawner;  // 0x00B0, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float TileOverlap;  // 0x00B8, size 0x4
+private:
     UPROPERTY() AVolume* SpawningVolume;  // 0x00C0, size 0x8
     UPROPERTY() FGuid ProceduralGuid;  // 0x00C8, size 0x10
 

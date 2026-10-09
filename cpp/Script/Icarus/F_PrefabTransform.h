@@ -4,5 +4,6 @@
 USTRUCT()
 struct FPrefabTransform
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FTransform Transform;  // 0x0000, size 0x30
 };

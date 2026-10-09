@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMovieSceneGeometryCacheParams
 {
+public:
     UPROPERTY(EditAnywhere) UGeometryCache* GeometryCacheAsset;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) FFrameNumber FirstLoopStartFrameOffset;  // 0x0008, size 0x4
     UPROPERTY(EditAnywhere) FFrameNumber StartFrameOffset;  // 0x000C, size 0x4

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FDecayableData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 DecayTime;  // 0x0018, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 SpoilTime;  // 0x001C, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FItemTemplateRowHandle SpoiledItem;  // 0x0020, size 0x18

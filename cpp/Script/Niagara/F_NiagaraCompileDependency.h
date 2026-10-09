@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNiagaraCompileDependency
 {
+public:
     UPROPERTY() FString LinkerErrorMessage;  // 0x0000, size 0x10
     UPROPERTY() FGuid NodeGuid;  // 0x0010, size 0x10
     UPROPERTY() FGuid PinGuid;  // 0x0020, size 0x10

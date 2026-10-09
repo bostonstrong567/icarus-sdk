@@ -4,5 +4,6 @@
 USTRUCT()
 struct FFMODEventControlSectionTemplate : public FMovieSceneEvalTemplate
 {
+public:
     UPROPERTY() FFMODEventControlChannel ControlKeys;  // 0x0020, size 0x98
 };

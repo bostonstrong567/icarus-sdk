@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_OLY_Riverlands_Extermination_Track_C : public ABPQ_Travel_C
 {
-public:
 };

@@ -4,7 +4,6 @@
 USTRUCT()
 struct FMovieSceneFrameRange
 {
-
-    // Not reflected:
-    TRange<FFrameNumber> Value;  // 0x0000
+public:
+    TRange<FFrameNumber> Value;  // 0x0000, not reflected
 };

@@ -5,5 +5,4 @@
 UCLASS()
 class UMovieSceneBoolPropertySystem : public UMovieScenePropertySystem
 {
-public:
 };

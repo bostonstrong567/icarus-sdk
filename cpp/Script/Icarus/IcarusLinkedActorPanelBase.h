@@ -6,6 +6,5 @@ UCLASS(EditInlineNew)
 class UIcarusLinkedActorPanelBase : public UUserWidget
 {
 public:
-
     UFUNCTION(BlueprintImplementableEvent) AActor* GetLinkedActor() const;  // parameters 0x8
 };

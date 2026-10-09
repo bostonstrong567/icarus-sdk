@@ -6,7 +6,6 @@ UCLASS()
 class UOrchestrationEventsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToOrchestrationEventsTable(FName Name, FOrchestrationEventDescription Data, FOrchestrationEventsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xA1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakOrchestrationEventsEnum(FOrchestrationEventsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FOrchestrationEventsRowHandle CastToOrchestrationEventsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

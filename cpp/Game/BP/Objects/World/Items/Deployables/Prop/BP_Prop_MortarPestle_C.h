@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Prop_MortarPestle_C : public ABP_MortarAndPestle_C
 {
-public:
 };

@@ -8,9 +8,8 @@ class UBackToHabCallbackProxyGen : public UOnlineBlueprintCallProxyBase
 public:
     UPROPERTY(BlueprintAssignable) FOnBackToHabEventSignature OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FOnBackToHabEventSignature OnFail;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FReqBackToHab ReqBackToHab;  // 0x0050, private
-
+private:
+    FReqBackToHab ReqBackToHab;  // 0x0050, not reflected
+public:
     UFUNCTION(BlueprintCallable) static UBackToHabCallbackProxyGen* BackToHab(const FReqBackToHab& Request);  // parameters 0x50
 };

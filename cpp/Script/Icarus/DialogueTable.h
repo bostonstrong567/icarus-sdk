@@ -5,5 +5,4 @@
 UCLASS()
 class UDialogueTable : public UIcarusDataTable
 {
-public:
 };

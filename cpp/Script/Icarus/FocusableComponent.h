@@ -5,10 +5,12 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UFocusableComponent : public UTraitComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(Replicated, ReplicatedUsing, BlueprintReadWrite) bool IsFocused;  // 0x00D0, size 0x1
+protected:
     UPROPERTY(BlueprintReadOnly) FFocusableData CachedFocusableData;  // 0x00E0, size 0x1F0
-
+public:
     UFUNCTION(BlueprintCallable) void Focus();
     UFUNCTION(BlueprintCallable, BlueprintPure) bool GetFocusableData(FFocusableData& OutData) const;  // parameters 0x1F1
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) void GetIdleAnim(TSoftObjectPtr<UAnimSequence>& OutFPIdleAnim, TSoftObjectPtr<UAnimSequence>& OutTPStandingIdleAnim, TSoftObjectPtr<UAnimSequence>& OutTPCrouchedIdleAnim);  // parameters 0x78

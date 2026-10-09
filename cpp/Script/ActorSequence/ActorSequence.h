@@ -5,7 +5,8 @@
 UCLASS(Config=Engine)
 class UActorSequence : public UMovieSceneSequence
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY(Instanced) UMovieScene* MovieScene;  // 0x0060, size 0x8
     UPROPERTY() FActorSequenceObjectReferenceMap ObjectReferences;  // 0x0068, size 0x20
 };

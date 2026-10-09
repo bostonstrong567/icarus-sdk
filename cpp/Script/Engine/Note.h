@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI, Config=Engine)
 class ANote : public AActor
 {
-public:
 };

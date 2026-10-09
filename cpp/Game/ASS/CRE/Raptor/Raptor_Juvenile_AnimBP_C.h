@@ -5,5 +5,4 @@
 UCLASS(Transient, Config=Engine)
 class URaptor_Juvenile_AnimBP_C : public URaptor_Rig_AnimBP_C
 {
-public:
 };

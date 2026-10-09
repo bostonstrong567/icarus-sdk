@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_ELY_Story_6_Arctic_Cave_C : public ABPQ_Travel_Small_C
 {
-public:
 };

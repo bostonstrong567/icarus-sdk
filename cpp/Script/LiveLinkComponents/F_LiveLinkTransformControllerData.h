@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLiveLinkTransformControllerData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bWorldTransform;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere) bool bUseLocation;  // 0x0001, size 0x1
     UPROPERTY(EditAnywhere) bool bUseRotation;  // 0x0002, size 0x1

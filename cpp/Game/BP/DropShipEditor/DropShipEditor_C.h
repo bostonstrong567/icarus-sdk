@@ -5,5 +5,4 @@
 UCLASS()
 class ADropShipEditor_C : public ALevelScriptActor
 {
-public:
 };

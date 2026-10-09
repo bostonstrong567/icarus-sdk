@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Building_Beam_Cross_Diagnal_Stone_C : public ABP_Building_Beam_Cross_Diagnal_C
 {
-public:
 };

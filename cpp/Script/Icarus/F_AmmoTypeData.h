@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAmmoTypeData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 ProjectileCount;  // 0x0018, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 ProjectileDamage;  // 0x001C, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector2D ProjectileAccuracy;  // 0x0020, size 0x8

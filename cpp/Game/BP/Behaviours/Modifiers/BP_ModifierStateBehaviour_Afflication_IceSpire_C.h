@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UBP_ModifierStateBehaviour_Afflication_IceSpire_C : public UModifierStateComponent
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool ModifierApplied();  // parameters 0x1
 };

@@ -6,8 +6,6 @@ UCLASS(MinimalAPI)
 class UInterpTrackInstFloatProp : public UInterpTrackInstProperty
 {
 public:
+    float * FloatProp;  // 0x0050, not reflected
     UPROPERTY() float ResetFloat;  // 0x0058, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    float * FloatProp;  // 0x0050
 };

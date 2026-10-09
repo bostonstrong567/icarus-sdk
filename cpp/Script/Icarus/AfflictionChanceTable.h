@@ -5,5 +5,4 @@
 UCLASS()
 class UAfflictionChanceTable : public UIcarusDataTable
 {
-public:
 };

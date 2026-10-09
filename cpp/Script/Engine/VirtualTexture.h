@@ -5,5 +5,4 @@
 UCLASS()
 class UVirtualTexture : public UObject
 {
-public:
 };

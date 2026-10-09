@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class USpawnedVoxelRecorderComponent : public UVoxelRecorderComponent
 {
-public:
 };

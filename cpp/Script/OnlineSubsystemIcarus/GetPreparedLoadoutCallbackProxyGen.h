@@ -8,9 +8,8 @@ class UGetPreparedLoadoutCallbackProxyGen : public UOnlineBlueprintCallProxyBase
 public:
     UPROPERTY(BlueprintAssignable) FOnGetPreparedLoadoutEventSignature OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FOnGetPreparedLoadoutEventSignature OnFail;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FReqPreparedLoadout ReqPreparedLoadout;  // 0x0050, private
-
+private:
+    FReqPreparedLoadout ReqPreparedLoadout;  // 0x0050, not reflected
+public:
     UFUNCTION(BlueprintCallable) static UGetPreparedLoadoutCallbackProxyGen* GetPreparedLoadout(const FReqPreparedLoadout& Request);  // parameters 0x20
 };

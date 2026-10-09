@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Rad_Radio_Tower_Portable_C : public ABP_Rad_Radio_Tower_C
 {
-public:
 };

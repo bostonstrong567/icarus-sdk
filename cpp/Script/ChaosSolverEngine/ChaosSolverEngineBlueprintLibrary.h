@@ -6,6 +6,5 @@ UCLASS()
 class UChaosSolverEngineBlueprintLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static FHitResult ConvertPhysicsCollisionToHitResult(const FChaosPhysicsCollisionInfo& PhysicsCollision);  // parameters 0xF8
 };

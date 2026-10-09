@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMaterialCachedParameters
 {
+public:
     UPROPERTY() FMaterialCachedParameterEntry RuntimeEntries;  // 0x0000, size 0x30
     UPROPERTY() TArray<float> ScalarValues;  // 0x00F0, size 0x10
     UPROPERTY() TArray<FLinearColor> VectorValues;  // 0x0100, size 0x10

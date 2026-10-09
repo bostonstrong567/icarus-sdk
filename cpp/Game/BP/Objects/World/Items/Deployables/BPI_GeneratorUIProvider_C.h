@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UBPI_GeneratorUIProvider_C : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable) void UseDeviceToggle(bool& WantsDeviceToggle);  // parameters 0x1
 };

@@ -5,7 +5,6 @@
 UCLASS()
 class UGauntletTestControllerBootTest : public UGauntletTestController
 {
-public:
 
     // Virtual functions that start here:
     //   IsBootProcessComplete

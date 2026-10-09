@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew)
 class ULiveLinkLightController : public ULiveLinkControllerBase
 {
-public:
 };

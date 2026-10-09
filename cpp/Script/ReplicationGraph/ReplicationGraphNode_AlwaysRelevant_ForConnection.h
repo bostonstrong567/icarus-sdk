@@ -6,8 +6,6 @@ UCLASS(Transient)
 class UReplicationGraphNode_AlwaysRelevant_ForConnection : public UReplicationGraphNode_ActorList
 {
 public:
+    FActorRepListRefView ReplicationActorList;  // 0x00D0, not reflected
     UPROPERTY() TArray<FAlwaysRelevantActorInfo> PastRelevantActors;  // 0x00E0, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FActorRepListRefView ReplicationActorList;  // 0x00D0
 };

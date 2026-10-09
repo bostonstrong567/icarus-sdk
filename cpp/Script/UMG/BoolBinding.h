@@ -6,6 +6,5 @@ UCLASS()
 class UBoolBinding : public UPropertyBinding
 {
 public:
-
     UFUNCTION() bool GetValue() const;  // parameters 0x1
 };

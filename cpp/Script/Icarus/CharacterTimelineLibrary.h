@@ -6,7 +6,6 @@ UCLASS()
 class UCharacterTimelineLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToCharacterTimelineTable(FName Name, FCharacterTimeline Data, FCharacterTimelineRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x81
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakCharacterTimelineEnum(FCharacterTimelineEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FCharacterTimelineRowHandle CastToCharacterTimelineRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

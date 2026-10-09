@@ -6,6 +6,5 @@ UCLASS(EditInlineNew, Config=Engine)
 class UMeshableComponent : public UTraitComponent
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) bool GetMeshableData(FMeshableData& OutData) const;  // parameters 0x1D1
 };

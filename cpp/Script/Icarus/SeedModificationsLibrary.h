@@ -6,7 +6,6 @@ UCLASS()
 class USeedModificationsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToSeedModificationsTable(FName Name, FSeedModification Data, FSeedModificationsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x81
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakSeedModificationsEnum(FSeedModificationsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FSeedModificationsRowHandle CastToSeedModificationsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

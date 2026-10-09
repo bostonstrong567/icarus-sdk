@@ -6,7 +6,5 @@ UCLASS()
 class UObjectPropertyBase : public UProperty
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    UClass * PropertyClass;  // 0x0070
+    UClass * PropertyClass;  // 0x0070, not reflected
 };

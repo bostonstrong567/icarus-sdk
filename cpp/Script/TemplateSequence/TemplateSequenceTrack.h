@@ -5,7 +5,6 @@
 UCLASS(MinimalAPI)
 class UTemplateSequenceTrack : public UMovieSceneSubTrack
 {
-public:
 
     // Virtual functions that start here:
     //   AddNewTemplateSequenceSection

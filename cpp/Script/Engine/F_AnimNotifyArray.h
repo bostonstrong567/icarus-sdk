@@ -4,5 +4,6 @@
 USTRUCT()
 struct FAnimNotifyArray
 {
+public:
     UPROPERTY(Transient) TArray<FAnimNotifyEventReference> Notifies;  // 0x0000, size 0x10
 };

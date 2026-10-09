@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Breakable_Rock_Base_C : public ARockBase
 {
-public:
 };

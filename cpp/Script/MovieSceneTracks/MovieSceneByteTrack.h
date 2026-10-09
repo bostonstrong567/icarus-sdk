@@ -5,6 +5,7 @@
 UCLASS()
 class UMovieSceneByteTrack : public UMovieScenePropertyTrack
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY() UEnum* Enum;  // 0x00C0, size 0x8
 };

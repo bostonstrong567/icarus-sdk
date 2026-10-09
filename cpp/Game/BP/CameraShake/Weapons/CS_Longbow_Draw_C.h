@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UCS_Longbow_Draw_C : public UMatineeCameraShake
 {
-public:
 };

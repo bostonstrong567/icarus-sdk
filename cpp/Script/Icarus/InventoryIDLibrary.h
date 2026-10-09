@@ -6,7 +6,6 @@ UCLASS()
 class UInventoryIDLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToInventoryIDTable(FName Name, FInventoryID Data, FInventoryIDRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x41
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakInventoryIDEnum(FInventoryIDEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FInventoryIDRowHandle CastToInventoryIDRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

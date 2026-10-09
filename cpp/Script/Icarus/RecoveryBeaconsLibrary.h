@@ -6,7 +6,6 @@ UCLASS()
 class URecoveryBeaconsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToRecoveryBeaconsTable(FName Name, FRecoveryBeacon Data, FRecoveryBeaconsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x61
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakRecoveryBeaconsEnum(FRecoveryBeaconsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FRecoveryBeaconsRowHandle CastToRecoveryBeaconsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

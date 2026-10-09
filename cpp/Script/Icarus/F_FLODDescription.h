@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFLODDescription : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TSoftObjectPtr<UFoliageType> FoliageType;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FGameplayTagContainer FoliageTags;  // 0x0040, size 0x20
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bDisabled;  // 0x0060, size 0x1

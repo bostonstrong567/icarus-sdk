@@ -4,6 +4,7 @@
 USTRUCT()
 struct FControlRigIOSettings
 {
+public:
     UPROPERTY() bool bUpdatePose;  // 0x0000, size 0x1
     UPROPERTY() bool bUpdateCurves;  // 0x0001, size 0x1
 };

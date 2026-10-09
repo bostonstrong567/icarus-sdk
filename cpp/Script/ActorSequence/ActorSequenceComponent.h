@@ -5,7 +5,8 @@
 UCLASS(Config=Engine)
 class UActorSequenceComponent : public UActorComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere) FMovieSceneSequencePlaybackSettings PlaybackSettings;  // 0x00B0, size 0x14
     UPROPERTY(EditAnywhere, Instanced) UActorSequence* Sequence;  // 0x00C8, size 0x8
     UPROPERTY(Transient, BlueprintReadOnly) UActorSequencePlayer* SequencePlayer;  // 0x00D0, size 0x8

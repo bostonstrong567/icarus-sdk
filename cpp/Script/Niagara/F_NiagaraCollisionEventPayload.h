@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNiagaraCollisionEventPayload
 {
+public:
     UPROPERTY() FVector CollisionPos;  // 0x0000, size 0xC
     UPROPERTY() FVector CollisionNormal;  // 0x000C, size 0xC
     UPROPERTY() FVector CollisionVelocity;  // 0x0018, size 0xC

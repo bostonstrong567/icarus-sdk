@@ -4,6 +4,7 @@
 USTRUCT()
 struct FDatasmithImportBaseOptions
 {
+public:
     UPROPERTY(Transient, BlueprintReadWrite) EDatasmithImportScene SceneHandling;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, Config, BlueprintReadWrite) bool bIncludeGeometry;  // 0x0001, size 0x1
     UPROPERTY(EditAnywhere, Config, BlueprintReadWrite) bool bIncludeMaterial;  // 0x0002, size 0x1

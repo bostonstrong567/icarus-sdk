@@ -5,11 +5,9 @@
 UCLASS(Abstract)
 class ULiveLinkBlueprintVirtualSubject : public ULiveLinkVirtualSubject
 {
+private:
+    FLiveLinkBaseDataStruct<FLiveLinkBaseStaticData> CachedStaticData;  // 0x0160, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    FLiveLinkBaseDataStruct<FLiveLinkBaseStaticData> CachedStaticData;  // 0x0160, private
-
     UFUNCTION(BlueprintImplementableEvent) void OnInitialize();
     UFUNCTION(BlueprintImplementableEvent) void OnUpdate();
     UFUNCTION(BlueprintCallable) bool UpdateVirtualSubjectFrameData_Internal(const FLiveLinkBaseFrameData& InStruct, bool bInShouldStampCurrentTime);  // parameters 0xA2

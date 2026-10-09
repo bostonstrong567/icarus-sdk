@@ -5,6 +5,7 @@
 UCLASS(Config=Game)
 class APaperCharacter : public ACharacter
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UPaperFlipbookComponent* Sprite;  // 0x04B8, size 0x8
 };

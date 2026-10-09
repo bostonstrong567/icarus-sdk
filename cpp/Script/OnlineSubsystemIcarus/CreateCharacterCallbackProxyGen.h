@@ -8,9 +8,8 @@ class UCreateCharacterCallbackProxyGen : public UOnlineBlueprintCallProxyBase
 public:
     UPROPERTY(BlueprintAssignable) FOnCreateCharacterEventSignature OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FOnCreateCharacterEventSignature OnFail;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FReqCreateCharacter ReqCreateCharacter;  // 0x0050, private
-
+private:
+    FReqCreateCharacter ReqCreateCharacter;  // 0x0050, not reflected
+public:
     UFUNCTION(BlueprintCallable) static UCreateCharacterCallbackProxyGen* CreateCharacter(const FReqCreateCharacter& Request);  // parameters 0x98
 };

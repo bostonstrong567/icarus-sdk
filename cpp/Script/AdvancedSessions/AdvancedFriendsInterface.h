@@ -6,7 +6,6 @@ UCLASS(Abstract, MinimalAPI)
 class UAdvancedFriendsInterface : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintImplementableEvent) void OnPlayerLoginChanged(int32 PlayerNum);  // parameters 0x4
     UFUNCTION(BlueprintImplementableEvent) void OnPlayerLoginStatusChanged(EBPLoginStatus PreviousStatus, EBPLoginStatus NewStatus, FBPUniqueNetId PlayerUniqueNetID);  // parameters 0x28
     UFUNCTION(BlueprintImplementableEvent) void OnPlayerVoiceStateChanged(FBPUniqueNetId PlayerId, bool bIsTalking);  // parameters 0x21

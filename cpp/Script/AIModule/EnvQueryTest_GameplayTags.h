@@ -5,7 +5,8 @@
 UCLASS(MinimalAPI)
 class UEnvQueryTest_GameplayTags : public UEnvQueryTest
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere) FGameplayTagQuery TagQueryToMatch;  // 0x01F8, size 0x48
     UPROPERTY() bool bUpdatedToUseQuery;  // 0x0240, size 0x1
     UPROPERTY() EGameplayContainerMatchType TagsToMatch;  // 0x0241, size 0x1

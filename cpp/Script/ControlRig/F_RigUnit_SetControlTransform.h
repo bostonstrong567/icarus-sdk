@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_SetControlTransform : public FRigUnitMutable
 {
+public:
     UPROPERTY() FName Control;  // 0x0068, size 0x8
     UPROPERTY() float Weight;  // 0x0070, size 0x4
     UPROPERTY() FTransform Transform;  // 0x0080, size 0x30

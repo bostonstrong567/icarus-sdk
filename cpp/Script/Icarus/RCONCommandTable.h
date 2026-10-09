@@ -5,5 +5,4 @@
 UCLASS()
 class URCONCommandTable : public UIcarusDataTable
 {
-public:
 };

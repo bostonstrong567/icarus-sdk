@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class AInstancedLevelBounds : public ALevelBounds
 {
-public:
 };

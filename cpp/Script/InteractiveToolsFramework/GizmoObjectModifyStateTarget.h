@@ -6,9 +6,7 @@ UCLASS()
 class UGizmoObjectModifyStateTarget : public UObject, public IGizmoStateTarget
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TWeakObjectPtr<UObject,FWeakObjectPtr> ModifyObject;  // 0x0030
-    FText TransactionDescription;  // 0x0038
-    TWeakObjectPtr<UInteractiveGizmoManager,FWeakObjectPtr> GizmoManager;  // 0x0050
+    TWeakObjectPtr<UObject,FWeakObjectPtr> ModifyObject;  // 0x0030, not reflected
+    FText TransactionDescription;  // 0x0038, not reflected
+    TWeakObjectPtr<UInteractiveGizmoManager,FWeakObjectPtr> GizmoManager;  // 0x0050, not reflected
 };

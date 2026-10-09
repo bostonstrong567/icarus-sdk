@@ -6,6 +6,5 @@ UCLASS(MinimalAPI)
 class UIcarusResetCharacterFromSession : public UIcarusSessionBase
 {
 public:
-
     UFUNCTION(BlueprintCallable) static UIcarusResetCharacterFromSession* IcarusResetCharacterFromSession(UObject* WorldContextObject, APlayerController* PlayerController, FOnlineProfileCharacter OnlineProfileCharacter);  // parameters 0x108
 };

@@ -5,5 +5,4 @@
 UCLASS()
 class ULazyObjectProperty : public UObjectPropertyBase
 {
-public:
 };

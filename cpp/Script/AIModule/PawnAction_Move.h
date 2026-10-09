@@ -5,7 +5,8 @@
 UCLASS(EditInlineNew)
 class UPawnAction_Move : public UPawnAction
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) AActor* GoalActor;  // 0x0090, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector GoalLocation;  // 0x0098, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float AcceptableRadius;  // 0x00A4, size 0x4
@@ -17,12 +18,10 @@ public:
     UPROPERTY() uint8 bProjectGoalToNavigation : 1;  // 0x00B0, mask 0x10
     UPROPERTY() uint8 bUpdatePathToGoal : 1;  // 0x00B0, mask 0x20
     UPROPERTY() uint8 bAbortChildActionOnPathChange : 1;  // 0x00B0, mask 0x40
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<FNavigationPath,1> Path;  // 0x00B8, protected
-    FDelegateHandle PathObserverDelegateHandle;  // 0x00C8, protected
-    FTimerHandle TimerHandle_DeferredPerformMoveAction;  // 0x00D0, protected
-    FTimerHandle TimerHandle_TryToRepath;  // 0x00D8, protected
+    TSharedPtr<FNavigationPath,1> Path;  // 0x00B8, not reflected
+    FDelegateHandle PathObserverDelegateHandle;  // 0x00C8, not reflected
+    FTimerHandle TimerHandle_DeferredPerformMoveAction;  // 0x00D0, not reflected
+    FTimerHandle TimerHandle_TryToRepath;  // 0x00D8, not reflected
 
     // Virtual functions that start here:
     //   IsPartialPathAllowed, OnPathUpdated, RequestMove

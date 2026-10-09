@@ -50,9 +50,8 @@ public:
     UPROPERTY(Config) float MovementTimeDiscrepancyDriftAllowance;  // 0x02BC, size 0x4
     UPROPERTY(Config) bool bMovementTimeDiscrepancyForceCorrectionsDuringResolution;  // 0x02C0, size 0x1
     UPROPERTY(Config) bool bUseDistanceBasedRelevancy;  // 0x02C1, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    FTimerHandle TimerHandle_UpdateNetSpeedsTimer;  // 0x02C8, protected
+protected:
+    FTimerHandle TimerHandle_UpdateNetSpeedsTimer;  // 0x02C8, not reflected
 
     // Virtual functions that start here:
     //   CalculatedNetSpeed, EnableStandbyCheatDetection, ExceedsAllowablePositionError

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLightPropagationVolumeSettings
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bOverride_LPVIntensity : 1;  // 0x0000, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bOverride_LPVDirectionalOcclusionIntensity : 1;  // 0x0000, mask 0x02
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bOverride_LPVDirectionalOcclusionRadius : 1;  // 0x0000, mask 0x04

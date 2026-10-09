@@ -6,7 +6,6 @@ UCLASS()
 class UPrebuildStructureFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static FString GetSaveStructureString(FString FileName);  // parameters 0x20
     UFUNCTION(BlueprintCallable) static TArray<FString> GetSavedStructureFiles();  // parameters 0x10
     UFUNCTION(BlueprintCallable) static FSerializedStructure LoadStructure(FString FileName);  // parameters 0x40

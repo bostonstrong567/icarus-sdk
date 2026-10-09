@@ -5,5 +5,4 @@
 UCLASS()
 class UPrebuiltStructuresTable : public UIcarusDataTable
 {
-public:
 };

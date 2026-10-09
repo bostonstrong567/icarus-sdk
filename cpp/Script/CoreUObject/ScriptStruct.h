@@ -6,11 +6,10 @@ UCLASS()
 class UScriptStruct : public UStruct
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    EStructFlags StructFlags;  // 0x00B0
-    bool bPrepareCppStructOpsCompleted;  // 0x00B4, protected
-    UScriptStruct::ICppStructOps * CppStructOps;  // 0x00B8, protected
+    EStructFlags StructFlags;  // 0x00B0, not reflected
+protected:
+    bool bPrepareCppStructOpsCompleted;  // 0x00B4, not reflected
+    UScriptStruct::ICppStructOps * CppStructOps;  // 0x00B8, not reflected
 
     // Virtual functions that start here:
     //   GetCustomGuid, GetStructCPPName, GetStructTypeHash, InitializeDefaultValue, PrepareCppStructOps

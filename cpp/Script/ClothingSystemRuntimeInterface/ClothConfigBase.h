@@ -5,7 +5,6 @@
 UCLASS(Abstract)
 class UClothConfigBase : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   HasSelfCollision, NeedsSelfCollisionIndices

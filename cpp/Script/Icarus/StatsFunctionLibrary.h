@@ -6,7 +6,6 @@ UCLASS()
 class UStatsFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static bool CheckStatComparison(const FStatComparison& Comparison, UIcarusStatContainer* StatContainer);  // parameters 0x21
     UFUNCTION(BlueprintCallable) static void CompareItemStats(UObject* WorldContextObject, const FItemData& ItemBase, const FItemData& CompareToItem, TArray<FStatComparisonResult>& ComparisonResults);  // parameters 0x3F8
     UFUNCTION(BlueprintCallable) static int32 GetStatAdjustedDurabilityLoss(AIcarusPlayerCharacter* Player, int32 Durability);  // parameters 0x10

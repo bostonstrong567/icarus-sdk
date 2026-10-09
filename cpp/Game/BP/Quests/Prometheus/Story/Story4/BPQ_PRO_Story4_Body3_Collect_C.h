@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_PRO_Story4_Body3_Collect_C : public ABPQ_Retrieve_Item_Base_C
 {
-public:
 };

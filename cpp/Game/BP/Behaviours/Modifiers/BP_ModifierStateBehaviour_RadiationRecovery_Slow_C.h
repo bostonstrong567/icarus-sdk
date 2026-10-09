@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UBP_ModifierStateBehaviour_RadiationRecovery_Slow_C : public UBP_ModifierStateBehaviour_RadiationRecovery_C
 {
-public:
 };

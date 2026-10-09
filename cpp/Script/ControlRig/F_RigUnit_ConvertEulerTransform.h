@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_ConvertEulerTransform : public FRigUnit
 {
+public:
     UPROPERTY() FEulerTransform Input;  // 0x0008, size 0x24
     UPROPERTY() FTransform Result;  // 0x0030, size 0x30
 };

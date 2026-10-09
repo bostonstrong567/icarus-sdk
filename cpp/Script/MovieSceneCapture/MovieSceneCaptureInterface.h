@@ -5,5 +5,4 @@
 UCLASS(Abstract, MinimalAPI)
 class UMovieSceneCaptureInterface : public UInterface
 {
-public:
 };

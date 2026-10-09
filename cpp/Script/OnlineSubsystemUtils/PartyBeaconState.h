@@ -5,7 +5,8 @@
 UCLASS(Transient, NotPlaceable, Config=Engine)
 class UPartyBeaconState : public UObject
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(Transient) FName SessionName;  // 0x0028, size 0x8
     UPROPERTY(Transient) int32 NumConsumedReservations;  // 0x0030, size 0x4
     UPROPERTY(Transient) int32 MaxReservations;  // 0x0034, size 0x4
@@ -19,9 +20,7 @@ public:
     UPROPERTY(Config) TArray<FPartyBeaconCrossplayPlatformMapping> PlatformTypeMapping;  // 0x0068, size 0x10
     UPROPERTY(Transient) bool bEnableRemovalRequests;  // 0x0078, size 0x1
     UPROPERTY(Transient) TArray<FPartyReservation> Reservations;  // 0x0080, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<TSharedPtr<FUniqueNetId const ,0>,TSizedDefaultAllocator<32> > PlayersPendingJoin;  // 0x0090, protected
+    TArray<TSharedPtr<FUniqueNetId const ,0>,TSizedDefaultAllocator<32> > PlayersPendingJoin;  // 0x0090, not reflected
 
     // Virtual functions that start here:
     //   AddReservation, AreTeamsAvailable, BestFitTeamAssignmentJiggle, ChangeTeam, CrossPlayAllowed

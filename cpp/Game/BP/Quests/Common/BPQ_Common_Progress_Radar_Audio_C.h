@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABPQ_Common_Progress_Radar_Audio_C : public ABPQ_Common_Progress_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void PlayersLeftArea();
 };

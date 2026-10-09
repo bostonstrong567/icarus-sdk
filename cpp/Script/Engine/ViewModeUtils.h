@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UViewModeUtils : public UObject
 {
-public:
 };

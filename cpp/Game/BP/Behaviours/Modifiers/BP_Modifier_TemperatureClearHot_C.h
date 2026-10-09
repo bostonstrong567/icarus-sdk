@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UBP_Modifier_TemperatureClearHot_C : public UBP_Modifier_TemperatureClear_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void CanHeal(bool& CanHeal);  // parameters 0x1
 };

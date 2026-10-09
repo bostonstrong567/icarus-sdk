@@ -6,7 +6,6 @@ UCLASS()
 class UMapIconsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToMapIconsTable(FName Name, FMapIconsData Data, FMapIconsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xD9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakMapIconsEnum(FMapIconsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FMapIconsRowHandle CastToMapIconsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -6,7 +6,6 @@ UCLASS()
 class UTerrainZoneAudioDataLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToTerrainZoneAudioDataTable(FName Name, FTerrainZoneAudioData Data, FTerrainZoneAudioDataRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x41
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakTerrainZoneAudioDataEnum(FTerrainZoneAudioDataEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FTerrainZoneAudioDataRowHandle CastToTerrainZoneAudioDataRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -5,17 +5,19 @@
 UCLASS(Transient, NotPlaceable, Config=Engine)
 class AControlRigGizmoActor : public AActor
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(Instanced) USceneComponent* ActorRootComponent;  // 0x0220, size 0x8
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UStaticMeshComponent* StaticMeshComponent;  // 0x0228, size 0x8
     UPROPERTY() uint32 ControlRigIndex;  // 0x0230, size 0x4
     UPROPERTY() FName ControlName;  // 0x0234, size 0x8
     UPROPERTY() FName ColorParameterName;  // 0x023C, size 0x8
+private:
     UPROPERTY(BlueprintReadWrite) uint8 bEnabled : 1;  // 0x0244, mask 0x01
     UPROPERTY(BlueprintReadWrite) uint8 bSelected : 1;  // 0x0244, mask 0x02
     UPROPERTY(BlueprintReadWrite) uint8 bSelectable : 1;  // 0x0244, mask 0x04
     UPROPERTY(BlueprintReadWrite) uint8 bHovered : 1;  // 0x0244, mask 0x08
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) FTransform GetGlobalTransform() const;  // parameters 0x30
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsEnabled() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsHovered() const;  // parameters 0x1

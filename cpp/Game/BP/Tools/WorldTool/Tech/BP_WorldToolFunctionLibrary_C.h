@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UBP_WorldToolFunctionLibrary_C : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static void ConvertSplineData(FRiverSplineList List, FTransform Transform, UObject* __WorldContext, TArray<FRiverSplineSetup>& Setup);  // parameters 0x68
     UFUNCTION(BlueprintCallable) static void FillSplineLists(TArray<FWTSplineMesh>& SplineMeshComps, UObject* __WorldContext, TArray<FRiverSplineList>& SplineList);  // parameters 0x28
     UFUNCTION(BlueprintCallable) static void FindRiverSplineLevel(FWTSplineMesh Comp, TArray<FBoxSphereBounds>& Bounds, UObject* __WorldContext, int32& Level);  // parameters 0xCC

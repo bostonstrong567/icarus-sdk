@@ -6,7 +6,6 @@ UCLASS()
 class USettlementNPCTaskTypesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToSettlementNPCTaskTypesTable(FName Name, FSettlementNPCTaskTypeData Data, FSettlementNPCTaskTypesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x119
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakSettlementNPCTaskTypesEnum(FSettlementNPCTaskTypesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FSettlementNPCTaskTypesRowHandle CastToSettlementNPCTaskTypesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

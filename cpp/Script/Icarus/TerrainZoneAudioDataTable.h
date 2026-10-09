@@ -5,5 +5,4 @@
 UCLASS()
 class UTerrainZoneAudioDataTable : public UIcarusDataTable
 {
-public:
 };

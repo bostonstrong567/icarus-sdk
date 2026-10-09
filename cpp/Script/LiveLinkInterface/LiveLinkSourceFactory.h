@@ -5,7 +5,6 @@
 UCLASS(Abstract)
 class ULiveLinkSourceFactory : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   BuildCreationPanel, CreateSource, CreateSourceCreationPanel, GetMenuType, GetSourceDisplayName

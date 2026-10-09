@@ -10,9 +10,8 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool PadRight;  // 0x0121, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool PadTop;  // 0x0122, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool PadBottom;  // 0x0123, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SSafeZone,0> MySafeZone;  // 0x0128, protected
-
+protected:
+    TSharedPtr<SSafeZone,0> MySafeZone;  // 0x0128, not reflected
+public:
     UFUNCTION(BlueprintCallable) void SetSidesToPad(bool InPadLeft, bool InPadRight, bool InPadTop, bool InPadBottom);  // parameters 0x4
 };

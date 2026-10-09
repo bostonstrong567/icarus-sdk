@@ -5,19 +5,20 @@
 UCLASS()
 class UIcarusGOAPAction : public UObject
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
+    FGOAPActionsRowHandle CachedRowHandle;  // 0x0028, not reflected
+    float ActionTimer;  // 0x0040, not reflected
+    float TimeSinceLastCostUpdate;  // 0x0044, not reflected
+    float TimeSinceLastTick;  // 0x0048, not reflected
+    bool AttemptedExecuting;  // 0x004C, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadWrite) AActor* Target;  // 0x0050, size 0x8
+protected:
     UPROPERTY(BlueprintReadOnly) AIcarusNPCGOAPController* CachedController;  // 0x0058, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FGOAPActionsRowHandle CachedRowHandle;  // 0x0028
-    float ActionTimer;  // 0x0040
-    float TimeSinceLastCostUpdate;  // 0x0044
-    float TimeSinceLastTick;  // 0x0048
-    bool AttemptedExecuting;  // 0x004C
-    FGOAPState InternalPreconditions;  // 0x0060, private
-    FGOAPState InternalEffects;  // 0x0070, private
-
+private:
+    FGOAPState InternalPreconditions;  // 0x0060, not reflected
+    FGOAPState InternalEffects;  // 0x0070, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) bool ActionReset(bool Interrupted);  // parameters 0x2
     UFUNCTION(BlueprintCallable, BlueprintPure) bool AreEffectsSatisfied(AIcarusNPCGOAPController* Controller) const;  // parameters 0x9
     UFUNCTION(BlueprintCallable, BlueprintPure) bool ArePreconditionsSatisfied(AIcarusNPCGOAPController* Controller);  // parameters 0x9

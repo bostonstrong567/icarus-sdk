@@ -5,10 +5,8 @@
 UCLASS(Transient)
 class UInputBehavior : public UObject
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    FInputCapturePriority DefaultPriority;  // 0x0028, protected
+protected:
+    FInputCapturePriority DefaultPriority;  // 0x0028, not reflected
 
     // Virtual functions that start here:
     //   BeginCapture, BeginHoverCapture, EndHoverCapture, ForceEndCapture, GetPriority, GetSupportedDevices

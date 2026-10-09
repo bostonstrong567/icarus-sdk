@@ -5,10 +5,11 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UCapsuleComponent : public UShapeComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float CapsuleHalfHeight;  // 0x0468, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float CapsuleRadius;  // 0x046C, size 0x4
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetScaledCapsuleHalfHeight() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetScaledCapsuleHalfHeight_WithoutHemisphere() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetScaledCapsuleRadius() const;  // parameters 0x4

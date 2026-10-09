@@ -5,13 +5,12 @@
 UCLASS(Abstract, Config=EditorPerProjectUserSettings)
 class UImageSequenceProtocol : public UFrameGrabberProtocol
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    EImageFormat Format;  // 0x0068, protected
-    TMap<FString,FStringFormatArg,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FString,FStringFormatArg,0> > StringFormatMap;  // 0x0070, private
-    IImageWriteQueue * ImageWriteQueue;  // 0x00C0, private
-    TFuture<void> FinalizeFence;  // 0x00C8, private
+protected:
+    EImageFormat Format;  // 0x0068, not reflected
+private:
+    TMap<FString,FStringFormatArg,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FString,FStringFormatArg,0> > StringFormatMap;  // 0x0070, not reflected
+    IImageWriteQueue * ImageWriteQueue;  // 0x00C0, not reflected
+    TFuture<void> FinalizeFence;  // 0x00C8, not reflected
 
     // Virtual functions that start here:
     //   GetCompressionQuality

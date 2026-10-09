@@ -6,7 +6,6 @@ UCLASS()
 class UItemAttachmentLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToItemAttachmentTable(FName Name, FItemAttachmentData Data, FItemAttachmentRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x59
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakItemAttachmentEnum(FItemAttachmentEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FItemAttachmentRowHandle CastToItemAttachmentRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

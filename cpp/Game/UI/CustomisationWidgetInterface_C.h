@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UCustomisationWidgetInterface_C : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable) void GetCameraFocus(FPreviewCameraSettingsEnum& CameraFocus);  // parameters 0x10
     UFUNCTION(BlueprintCallable) void GetCosmeticData(FCharacterCosmetics& CosmeticData);  // parameters 0x80
 };

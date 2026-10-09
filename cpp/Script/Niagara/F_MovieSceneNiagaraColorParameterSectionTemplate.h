@@ -4,6 +4,8 @@
 USTRUCT()
 struct FMovieSceneNiagaraColorParameterSectionTemplate : public FMovieSceneNiagaraParameterSectionTemplate
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() FMovieSceneFloatChannel RedChannel;  // 0x0040, size 0xA0
     UPROPERTY() FMovieSceneFloatChannel GreenChannel;  // 0x00E0, size 0xA0
     UPROPERTY() FMovieSceneFloatChannel BlueChannel;  // 0x0180, size 0xA0

@@ -5,7 +5,6 @@
 UCLASS(Abstract, EditInlineNew)
 class ULiveLinkFrameInterpolationProcessor : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   FetchWorker, GetRole

@@ -44,24 +44,22 @@ public:
     UPROPERTY(EditAnywhere) FNiagaraVariableAttributeBinding U1OverrideBinding;  // 0x0700, size 0x58
     UPROPERTY(EditAnywhere) FNiagaraVariableAttributeBinding V1RangeOverrideBinding;  // 0x0758, size 0x58
     UPROPERTY(EditAnywhere) TArray<FNiagaraMaterialAttributeBinding> MaterialParameterBindings;  // 0x07B0, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bSortKeyDataSetAccessorIsAge;  // 0x07C0
-    FNiagaraDataSetAccessor<float> SortKeyDataSetAccessor;  // 0x07C4
-    FNiagaraDataSetAccessor<FVector> PositionDataSetAccessor;  // 0x07CC
-    FNiagaraDataSetAccessor<float> NormalizedAgeAccessor;  // 0x07D4
-    FNiagaraDataSetAccessor<float> SizeDataSetAccessor;  // 0x07DC
-    FNiagaraDataSetAccessor<float> TwistDataSetAccessor;  // 0x07E4
-    FNiagaraDataSetAccessor<FVector> FacingDataSetAccessor;  // 0x07EC
-    FNiagaraDataSetAccessor<FVector4> MaterialParam0DataSetAccessor;  // 0x07F4
-    FNiagaraDataSetAccessor<FVector4> MaterialParam1DataSetAccessor;  // 0x07FC
-    FNiagaraDataSetAccessor<FVector4> MaterialParam2DataSetAccessor;  // 0x0804
-    FNiagaraDataSetAccessor<FVector4> MaterialParam3DataSetAccessor;  // 0x080C
-    bool DistanceFromStartIsBound;  // 0x0814
-    bool U0OverrideIsBound;  // 0x0815
-    bool U1OverrideIsBound;  // 0x0816
-    FNiagaraDataSetAccessor<int> RibbonIdDataSetAccessor;  // 0x0818
-    FNiagaraDataSetAccessor<FNiagaraID> RibbonFullIDDataSetAccessor;  // 0x081C
-    uint32 MaterialParamValidMask;  // 0x0828
-    FNiagaraRendererLayout RendererLayout;  // 0x0830
+    bool bSortKeyDataSetAccessorIsAge;  // 0x07C0, not reflected
+    FNiagaraDataSetAccessor<float> SortKeyDataSetAccessor;  // 0x07C4, not reflected
+    FNiagaraDataSetAccessor<FVector> PositionDataSetAccessor;  // 0x07CC, not reflected
+    FNiagaraDataSetAccessor<float> NormalizedAgeAccessor;  // 0x07D4, not reflected
+    FNiagaraDataSetAccessor<float> SizeDataSetAccessor;  // 0x07DC, not reflected
+    FNiagaraDataSetAccessor<float> TwistDataSetAccessor;  // 0x07E4, not reflected
+    FNiagaraDataSetAccessor<FVector> FacingDataSetAccessor;  // 0x07EC, not reflected
+    FNiagaraDataSetAccessor<FVector4> MaterialParam0DataSetAccessor;  // 0x07F4, not reflected
+    FNiagaraDataSetAccessor<FVector4> MaterialParam1DataSetAccessor;  // 0x07FC, not reflected
+    FNiagaraDataSetAccessor<FVector4> MaterialParam2DataSetAccessor;  // 0x0804, not reflected
+    FNiagaraDataSetAccessor<FVector4> MaterialParam3DataSetAccessor;  // 0x080C, not reflected
+    bool DistanceFromStartIsBound;  // 0x0814, not reflected
+    bool U0OverrideIsBound;  // 0x0815, not reflected
+    bool U1OverrideIsBound;  // 0x0816, not reflected
+    FNiagaraDataSetAccessor<int> RibbonIdDataSetAccessor;  // 0x0818, not reflected
+    FNiagaraDataSetAccessor<FNiagaraID> RibbonFullIDDataSetAccessor;  // 0x081C, not reflected
+    uint32 MaterialParamValidMask;  // 0x0828, not reflected
+    FNiagaraRendererLayout RendererLayout;  // 0x0830, not reflected
 };

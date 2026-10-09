@@ -4,8 +4,7 @@
 USTRUCT()
 struct FJsonObjectWrapper
 {
+public:
     UPROPERTY(EditAnywhere) FString JsonString;  // 0x0000, size 0x10
-
-    // Not reflected:
-    TSharedPtr<FJsonObject,0> JsonObject;  // 0x0010
+    TSharedPtr<FJsonObject,0> JsonObject;  // 0x0010, not reflected
 };

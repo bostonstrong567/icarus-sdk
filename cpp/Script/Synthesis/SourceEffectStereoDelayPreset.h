@@ -6,11 +6,9 @@ UCLASS(EditInlineNew)
 class USourceEffectStereoDelayPreset : public USoundEffectSourcePreset
 {
 public:
+    FWindowsCriticalSection SettingsCritSect;  // 0x0068, not reflected
+    FSourceEffectStereoDelaySettings SettingsCopy;  // 0x0090, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FSourceEffectStereoDelaySettings Settings;  // 0x00B4, size 0x24
-
-    // Not reflected: the engine's scripting cannot see these.
-    FWindowsCriticalSection SettingsCritSect;  // 0x0068
-    FSourceEffectStereoDelaySettings SettingsCopy;  // 0x0090
 
     UFUNCTION(BlueprintCallable) void SetSettings(const FSourceEffectStereoDelaySettings& InSettings);  // parameters 0x24
 };

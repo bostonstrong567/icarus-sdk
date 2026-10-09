@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNiagaraScriptExecutionParameterStore : public FNiagaraParameterStore
 {
+public:
     UPROPERTY() int32 ParameterSize;  // 0x0078, size 0x4
     UPROPERTY() uint32 PaddedParameterSize;  // 0x007C, size 0x4
     UPROPERTY() TArray<FNiagaraScriptExecutionPaddingInfo> PaddingInfo;  // 0x0080, size 0x10

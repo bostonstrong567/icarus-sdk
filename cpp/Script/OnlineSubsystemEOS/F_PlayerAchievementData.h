@@ -4,6 +4,7 @@
 USTRUCT()
 struct FPlayerAchievementData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString AchievementId;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float Progress;  // 0x0010, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FDateTime UnlockTime;  // 0x0018, size 0x8

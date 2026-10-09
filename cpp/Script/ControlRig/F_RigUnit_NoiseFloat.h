@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_NoiseFloat : public FRigUnit_MathBase
 {
+public:
     UPROPERTY() float Value;  // 0x0008, size 0x4
     UPROPERTY() float Speed;  // 0x000C, size 0x4
     UPROPERTY() float Frequency;  // 0x0010, size 0x4

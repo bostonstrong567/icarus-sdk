@@ -5,16 +5,17 @@
 UCLASS(Abstract, MinimalAPI)
 class UMaterialInterface : public UObject, public IBlendableInterface, public IInterface_AssetUserData
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) USubsurfaceProfile* SubsurfaceProfile;  // 0x0038, size 0x8
+    FRenderCommandFence ParentRefFence;  // 0x0040, not reflected
+protected:
     UPROPERTY(EditAnywhere) FLightmassMaterialInterfaceSettings LightmassSettings;  // 0x0050, size 0x10
     UPROPERTY() TArray<FMaterialTextureInfo> TextureStreamingData;  // 0x0060, size 0x10
     UPROPERTY(EditAnywhere) TArray<UAssetUserData*> AssetUserData;  // 0x0070, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FRenderCommandFence ParentRefFence;  // 0x0040
-    uint32 FeatureLevelsToForceCompile;  // 0x0080, private
-
+private:
+    uint32 FeatureLevelsToForceCompile;  // 0x0080, not reflected
+public:
     UFUNCTION(BlueprintCallable) UMaterial* GetBaseMaterial();  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) FMaterialParameterInfo GetParameterInfo(TEnumAsByte<EMaterialParameterAssociation> Association, FName ParameterName, UMaterialFunctionInterface* LayerFunction) const;  // parameters 0x28
     UFUNCTION(BlueprintCallable, BlueprintPure) UPhysicalMaterial* GetPhysicalMaterial() const;  // parameters 0x8

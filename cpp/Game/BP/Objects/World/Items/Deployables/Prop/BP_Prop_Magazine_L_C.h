@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Prop_Magazine_L_C : public ABP_DeployableBase_C
 {
-public:
 };

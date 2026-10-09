@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UCS_LavaBomber_PreDetonate_C : public UMatineeCameraShake
 {
-public:
 };

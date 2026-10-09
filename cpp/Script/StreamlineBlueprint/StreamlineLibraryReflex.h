@@ -6,7 +6,6 @@ UCLASS(MinimalAPI)
 class UStreamlineLibraryReflex : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static UStreamlineReflexMode GetDefaultReflexMode();  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) static float GetGameLatencyInMs();  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) static float GetGameToRenderLatencyInMs();  // parameters 0x4

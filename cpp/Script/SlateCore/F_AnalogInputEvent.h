@@ -4,7 +4,6 @@
 USTRUCT()
 struct FAnalogInputEvent : public FKeyEvent
 {
-
-    // Not reflected:
-    float AnalogValue;  // 0x0038
+private:
+    float AnalogValue;  // 0x0038, not reflected
 };

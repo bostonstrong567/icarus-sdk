@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_TimeOffsetVector : public FRigUnit_SimBase
 {
+public:
     UPROPERTY() FVector Value;  // 0x0008, size 0xC
     UPROPERTY() float SecondsAgo;  // 0x0014, size 0x4
     UPROPERTY() int32 BufferSize;  // 0x0018, size 0x4

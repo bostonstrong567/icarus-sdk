@@ -5,11 +5,9 @@
 UCLASS(Transient)
 class UAnyButtonInputBehavior : public UInputBehavior
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    EInputDevices ActiveDevice;  // 0x0030, protected
-    TUniqueFunction<FDeviceButtonState __cdecl(FInputDeviceState const &)> GetMouseButtonStateFunc;  // 0x0040, protected
+protected:
+    EInputDevices ActiveDevice;  // 0x0030, not reflected
+    TUniqueFunction<FDeviceButtonState __cdecl(FInputDeviceState const &)> GetMouseButtonStateFunc;  // 0x0040, not reflected
 
     // Virtual functions that start here:
     //   GetClickPoint, GetDeviceRay, GetWorldRay, IsDown, IsPressed, IsReleased, SetUseCustomMouseButton

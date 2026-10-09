@@ -4,6 +4,7 @@
 USTRUCT()
 struct FItemData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FItemsStaticRowHandle ItemStaticData;  // 0x0018, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FItemDynamicData> ItemDynamicData;  // 0x0030, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FIcarusStatReplicated> ItemCustomStats;  // 0x0040, size 0x10

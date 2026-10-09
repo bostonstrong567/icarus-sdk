@@ -5,5 +5,4 @@
 UCLASS()
 class UMovieSceneColorPropertySystem : public UMovieScenePropertySystem
 {
-public:
 };

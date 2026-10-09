@@ -4,6 +4,7 @@
 USTRUCT()
 struct FDialogue : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<EDialogueRedirectCondition, FDialogueRowHandle> Redirects;  // 0x0018, size 0x50
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UFMODEvent> Audio;  // 0x0068, size 0x28
     UPROPERTY(EditAnywhere, Transient, BlueprintReadOnly) float AudioLength;  // 0x0090, size 0x4

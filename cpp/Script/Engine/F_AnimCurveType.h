@@ -4,8 +4,7 @@
 USTRUCT()
 struct FAnimCurveType
 {
-
-    // Not reflected:
-    bool bMaterial;  // 0x0000
-    bool bMorphtarget;  // 0x0001
+public:
+    bool bMaterial;  // 0x0000, not reflected
+    bool bMorphtarget;  // 0x0001, not reflected
 };

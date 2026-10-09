@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class URefinedOilComponent : public UResourceNetworkComponent
 {
-public:
 };

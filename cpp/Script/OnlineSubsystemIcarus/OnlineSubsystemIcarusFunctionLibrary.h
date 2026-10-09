@@ -6,7 +6,6 @@ UCLASS()
 class UOnlineSubsystemIcarusFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static FString GetGatewayAddress();  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) static FString GetHash(const TArray<uint8>& Buffer);  // parameters 0x20
     UFUNCTION(BlueprintCallable, BlueprintPure) static UIcarusConnectionComponent* GetIcarusConnectionComponent();  // parameters 0x8

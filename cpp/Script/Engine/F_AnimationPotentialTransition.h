@@ -4,9 +4,8 @@
 USTRUCT()
 struct FAnimationPotentialTransition
 {
-
-    // Not reflected:
-    int32 TargetState;  // 0x0000
-    const FBakedStateExitTransition * TransitionRule;  // 0x0008
-    TArray<int,TInlineAllocator<3,TSizedDefaultAllocator<32> > > SourceTransitionIndices;  // 0x0010
+public:
+    int32 TargetState;  // 0x0000, not reflected
+    const FBakedStateExitTransition * TransitionRule;  // 0x0008, not reflected
+    TArray<int,TInlineAllocator<3,TSizedDefaultAllocator<32> > > SourceTransitionIndices;  // 0x0010, not reflected
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBasedMovementInfo
 {
+public:
     UPROPERTY(Instanced) UPrimitiveComponent* MovementBase;  // 0x0000, size 0x8
     UPROPERTY() FName BoneName;  // 0x0008, size 0x8
     UPROPERTY() FVector_NetQuantize100 Location;  // 0x0010, size 0xC

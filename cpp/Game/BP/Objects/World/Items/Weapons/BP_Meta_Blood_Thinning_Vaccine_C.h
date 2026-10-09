@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Meta_Blood_Thinning_Vaccine_C : public ABP_Syringe_C
 {
-public:
 };

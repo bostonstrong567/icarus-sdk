@@ -8,13 +8,12 @@ class UCheckGeoTrackingAvailabilityAsyncTaskBlueprintProxy : public UARBaseAsync
 public:
     UPROPERTY(BlueprintAssignable) FGeoTrackingAvailabilityDelegate OnSuccess;  // 0x0050, size 0x10
     UPROPERTY(BlueprintAssignable) FGeoTrackingAvailabilityDelegate OnFailed;  // 0x0060, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TOptional<float> Longitude;  // 0x0070, private
-    TOptional<float> Latitude;  // 0x0078, private
-    TSharedPtr<FCheckGeoTrackingAvailabilityAsyncTask,1> MyTask;  // 0x0080, private
-    FString Error;  // 0x0090, private
-
+private:
+    TOptional<float> Longitude;  // 0x0070, not reflected
+    TOptional<float> Latitude;  // 0x0078, not reflected
+    TSharedPtr<FCheckGeoTrackingAvailabilityAsyncTask,1> MyTask;  // 0x0080, not reflected
+    FString Error;  // 0x0090, not reflected
+public:
     UFUNCTION(BlueprintCallable) static UCheckGeoTrackingAvailabilityAsyncTaskBlueprintProxy* CheckGeoTrackingAvailability(UObject* WorldContextObject);  // parameters 0x10
     UFUNCTION(BlueprintCallable) static UCheckGeoTrackingAvailabilityAsyncTaskBlueprintProxy* CheckGeoTrackingAvailabilityAtLocation(UObject* WorldContextObject, float Longitude, float Latitude);  // parameters 0x18
 };

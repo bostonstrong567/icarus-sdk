@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNetworkingStatus
 {
+public:
     UPROPERTY(BlueprintReadOnly) FString CurrentHostPlayerName;  // 0x0000, size 0x10
     UPROPERTY(BlueprintReadOnly) FString BackupHostPlayerName;  // 0x0010, size 0x10
     UPROPERTY(BlueprintReadOnly) TArray<FString> PlayerNames;  // 0x0020, size 0x10

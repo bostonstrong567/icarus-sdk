@@ -20,21 +20,19 @@ public:
     UPROPERTY() UTexture2D* DefaultTexture;  // 0x0060, size 0x8
     UPROPERTY() UTexture2D* GradientTexture0;  // 0x0068, size 0x8
     UPROPERTY() UReporterGraph* ReporterGraph;  // 0x0070, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    int32 UnsafeSizeX;  // 0x0078
-    int32 UnsafeSizeY;  // 0x007C
-    int32 SafeZonePadX;  // 0x0080
-    int32 SafeZonePadY;  // 0x0084
-    int32 SafeZonePadEX;  // 0x0088
-    int32 SafeZonePadEY;  // 0x008C
-    int32 CachedDisplayWidth;  // 0x0090
-    int32 CachedDisplayHeight;  // 0x0094
-    FDisplayDebugManager DisplayDebugManager;  // 0x0098
-    FCanvas * Canvas;  // 0x0268
-    FSceneView * SceneView;  // 0x0270
-    FMatrix ViewProjectionMatrix;  // 0x0280
-    FQuat HmdOrientation;  // 0x02C0
+    int32 UnsafeSizeX;  // 0x0078, not reflected
+    int32 UnsafeSizeY;  // 0x007C, not reflected
+    int32 SafeZonePadX;  // 0x0080, not reflected
+    int32 SafeZonePadY;  // 0x0084, not reflected
+    int32 SafeZonePadEX;  // 0x0088, not reflected
+    int32 SafeZonePadEY;  // 0x008C, not reflected
+    int32 CachedDisplayWidth;  // 0x0090, not reflected
+    int32 CachedDisplayHeight;  // 0x0094, not reflected
+    FDisplayDebugManager DisplayDebugManager;  // 0x0098, not reflected
+    FCanvas * Canvas;  // 0x0268, not reflected
+    FSceneView * SceneView;  // 0x0270, not reflected
+    FMatrix ViewProjectionMatrix;  // 0x0280, not reflected
+    FQuat HmdOrientation;  // 0x02C0, not reflected
 
     UFUNCTION(BlueprintCallable) void K2_Deproject(FVector2D ScreenPosition, FVector& WorldOrigin, FVector& WorldDirection);  // parameters 0x20
     UFUNCTION(BlueprintCallable) void K2_DrawBorder(UTexture* BorderTexture, UTexture* BackgroundTexture, UTexture* LeftBorderTexture, UTexture* RightBorderTexture, UTexture* TopBorderTexture, UTexture* BottomBorderTexture, FVector2D ScreenPosition, FVector2D ScreenSize, FVector2D CoordinatePosition, FVector2D CoordinateSize, FLinearColor RenderColor, FVector2D BorderScale, FVector2D BackgroundScale, float Rotation, FVector2D PivotPoint, FVector2D CornerSize);  // parameters 0x84

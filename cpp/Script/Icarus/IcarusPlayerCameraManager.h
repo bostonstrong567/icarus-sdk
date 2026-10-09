@@ -5,9 +5,10 @@
 UCLASS(Transient, NotPlaceable, Config=Engine)
 class AIcarusPlayerCameraManager : public APlayerCameraManager
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY(Instanced) UAudioListenerCollider* AudioListenerCollider;  // 0x2810, size 0x8
-
+public:
     UFUNCTION() void SetScreenShakeEnabled(bool bEnabled);  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void UpdateRotationLimits();
 };

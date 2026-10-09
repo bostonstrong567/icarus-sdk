@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMountVariation
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bCanBeSelected;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bCanBeSelectedByForcedEvolution;  // 0x0001, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<int32, TSoftObjectPtr<UMaterialInstance>> MeshMaterials;  // 0x0008, size 0x50

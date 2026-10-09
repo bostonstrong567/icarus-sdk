@@ -6,7 +6,6 @@ UCLASS()
 class UItemTemplateLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToItemTemplateTable(FName Name, FItemData Data, FItemTemplateRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x211
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakItemTemplateEnum(FItemTemplateEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FItemTemplateRowHandle CastToItemTemplateRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

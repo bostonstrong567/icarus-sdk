@@ -5,7 +5,10 @@
 UCLASS(MinimalAPI, Config=Engine)
 class UStaticMesh : public UStreamableRenderAsset, public IInterface_CollisionDataProvider, public IInterface_AssetUserData
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
+    TUniquePtr<FStaticMeshRenderData,TDefaultDelete<FStaticMeshRenderData> > RenderData;  // 0x0070, not reflected
+    TUniquePtr<FStaticMeshOccluderData,TDefaultDelete<FStaticMeshOccluderData> > OccluderData;  // 0x0078, not reflected
     UPROPERTY() FPerPlatformInt MinLOD;  // 0x0080, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float LpvBiasMultiplier;  // 0x0084, size 0x4
     UPROPERTY(BlueprintReadWrite) TArray<FStaticMaterial> StaticMaterials;  // 0x0088, size 0x10
@@ -24,23 +27,20 @@ public:
     UPROPERTY() uint8 bIsBuiltAtRuntime : 1;  // 0x00B4, mask 0x40
     UPROPERTY(EditAnywhere) uint8 bAllowCPUAccess : 1;  // 0x00B5, mask 0x01
     UPROPERTY(EditAnywhere) uint8 bSupportGpuUniformlyDistributedSampling : 1;  // 0x00B5, mask 0x02
+    FRenderCommandFence ReleaseResourcesFence;  // 0x00B8, not reflected
+    FGuid LightingGuid;  // 0x00C8, not reflected
     UPROPERTY() TArray<UStaticMeshSocket*> Sockets;  // 0x00D8, size 0x10
+    TSharedPtr<FSpeedTreeWind,0> SpeedTreeWind;  // 0x00E8, not reflected
     UPROPERTY(EditAnywhere) FVector PositiveBoundsExtension;  // 0x00F8, size 0xC
     UPROPERTY(EditAnywhere) FVector NegativeBoundsExtension;  // 0x0104, size 0xC
     UPROPERTY() FBoxSphereBounds ExtendedBounds;  // 0x0110, size 0x1C
-    UPROPERTY() int32 ElementToIgnoreForTexFactor;  // 0x012C, size 0x4
-    UPROPERTY(EditAnywhere) TArray<UAssetUserData*> AssetUserData;  // 0x0130, size 0x10
     UPROPERTY(Instanced) UObject* EditableMesh;  // 0x0140, size 0x8
     UPROPERTY(EditAnywhere, Transient, Instanced) UNavCollisionBase* NavCollision;  // 0x0148, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    TUniquePtr<FStaticMeshRenderData,TDefaultDelete<FStaticMeshRenderData> > RenderData;  // 0x0070
-    TUniquePtr<FStaticMeshOccluderData,TDefaultDelete<FStaticMeshOccluderData> > OccluderData;  // 0x0078
-    uint8 : 1 bRenderingResourcesInitialized;  // 0x00B4, protected
-    FRenderCommandFence ReleaseResourcesFence;  // 0x00B8
-    FGuid LightingGuid;  // 0x00C8
-    TSharedPtr<FSpeedTreeWind,0> SpeedTreeWind;  // 0x00E8
-
+protected:
+    uint8 : 1 bRenderingResourcesInitialized;  // 0x00B4, not reflected
+    UPROPERTY() int32 ElementToIgnoreForTexFactor;  // 0x012C, size 0x4
+    UPROPERTY(EditAnywhere) TArray<UAssetUserData*> AssetUserData;  // 0x0130, size 0x10
+public:
     UFUNCTION(BlueprintCallable) FName AddMaterial(UMaterialInterface* Material);  // parameters 0x10
     UFUNCTION(BlueprintCallable) void AddSocket(UStaticMeshSocket* Socket);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void BuildFromStaticMeshDescriptions(const TArray<UStaticMeshDescription*>& StaticMeshDescriptions, bool bBuildSimpleCollision);  // parameters 0x11

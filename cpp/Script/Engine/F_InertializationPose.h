@@ -4,12 +4,11 @@
 USTRUCT()
 struct FInertializationPose
 {
-
-    // Not reflected:
-    FTransform ComponentTransform;  // 0x0000
-    TArray<FTransform,TSizedDefaultAllocator<32> > BoneTransforms;  // 0x0030
-    TArray<enum EInertializationBoneState,TSizedDefaultAllocator<32> > BoneStates;  // 0x0040
-    FInertializationCurve Curves;  // 0x0050
-    FName AttachParentName;  // 0x0090
-    float DeltaTime;  // 0x0098
+public:
+    FTransform ComponentTransform;  // 0x0000, not reflected
+    TArray<FTransform,TSizedDefaultAllocator<32> > BoneTransforms;  // 0x0030, not reflected
+    TArray<enum EInertializationBoneState,TSizedDefaultAllocator<32> > BoneStates;  // 0x0040, not reflected
+    FInertializationCurve Curves;  // 0x0050, not reflected
+    FName AttachParentName;  // 0x0090, not reflected
+    float DeltaTime;  // 0x0098, not reflected
 };

@@ -6,7 +6,6 @@ UCLASS()
 class UFieldGuideFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static TArray<FItemsStaticRowHandle> GetAllArmorHelmets();  // parameters 0x10
     UFUNCTION(BlueprintCallable) static TArray<FFieldGuideCategoriesRowHandle> GetAllCategoryDisplayOrder();  // parameters 0x10
     UFUNCTION(BlueprintCallable) static TArray<FItemsStaticRowHandle> GetAllCropPlots();  // parameters 0x10

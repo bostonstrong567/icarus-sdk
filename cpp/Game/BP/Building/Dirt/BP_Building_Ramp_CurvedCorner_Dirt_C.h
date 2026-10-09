@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class ABP_Building_Ramp_CurvedCorner_Dirt_C : public ABP_Building_Ramp_Diagonal_Curved_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) void BuildingStabilityColorCalc(FLinearColor& StabilityColor);  // parameters 0x10
     UFUNCTION(BlueprintCallable) void Calculate_Stability_State_Implementation();  // named "Calculate Stability State Implementation"
 };

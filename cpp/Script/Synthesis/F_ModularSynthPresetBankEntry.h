@@ -4,6 +4,7 @@
 USTRUCT()
 struct FModularSynthPresetBankEntry
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString PresetName;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FModularSynthPreset Preset;  // 0x0010, size 0xE0
 };

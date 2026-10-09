@@ -4,5 +4,6 @@
 USTRUCT()
 struct FDefaultAudioBusSettings
 {
+public:
     UPROPERTY(EditAnywhere) FSoftObjectPath AudioBus;  // 0x0000, size 0x18
 };

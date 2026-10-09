@@ -5,5 +5,4 @@
 UCLASS()
 class UCurrencyConversionsTable : public UIcarusDataTable
 {
-public:
 };

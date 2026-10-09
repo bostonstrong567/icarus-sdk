@@ -4,6 +4,7 @@
 USTRUCT()
 struct FReqJoinProspect
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString ProspectID;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 ChrSlot;  // 0x0010, size 0x4
 };

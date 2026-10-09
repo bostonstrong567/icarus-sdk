@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMovieSceneSequencePlaybackParams
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FFrameTime Frame;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float Time;  // 0x0008, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString MarkedFrame;  // 0x0010, size 0x10

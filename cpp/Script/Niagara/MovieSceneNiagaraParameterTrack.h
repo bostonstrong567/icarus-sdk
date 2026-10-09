@@ -5,7 +5,8 @@
 UCLASS(Abstract, MinimalAPI)
 class UMovieSceneNiagaraParameterTrack : public UMovieSceneNiagaraTrack
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() FNiagaraVariable Parameter;  // 0x00A0, size 0x20
 
     // Virtual functions that start here:

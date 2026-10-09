@@ -6,7 +6,6 @@ UCLASS()
 class UCrudeOilLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToCrudeOilTable(FName Name, FCrudeOilData Data, FCrudeOilRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x81
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakCrudeOilEnum(FCrudeOilEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FCrudeOilRowHandle CastToCrudeOilRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

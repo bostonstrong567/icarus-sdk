@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_STYX_B_Stockpile_Deposit_RefinedGold_C : public ABPQ_Stockpile_Deposit_Item_C
 {
-public:
 };

@@ -5,5 +5,4 @@
 UCLASS()
 class UFoodTypesTable : public UIcarusDataTable
 {
-public:
 };

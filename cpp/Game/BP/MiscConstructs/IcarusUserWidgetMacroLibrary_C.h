@@ -5,5 +5,4 @@
 UCLASS(Abstract, NotPlaceable, EditInlineNew, Config=Engine)
 class UIcarusUserWidgetMacroLibrary_C : public UUserWidget
 {
-public:
 };

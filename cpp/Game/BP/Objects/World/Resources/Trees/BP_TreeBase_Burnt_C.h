@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABP_TreeBase_Burnt_C : public ABP_TreeBase_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void OnAppliedCollisionDamage(float CollisionDamage, FHitResult Hit);  // parameters 0x8C
 };

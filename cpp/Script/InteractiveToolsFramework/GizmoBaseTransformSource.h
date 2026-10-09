@@ -6,7 +6,5 @@ UCLASS()
 class UGizmoBaseTransformSource : public UObject, public IGizmoTransformSource
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMulticastDelegate<void __cdecl(IGizmoTransformSource *),FDefaultDelegateUserPolicy> OnTransformChanged;  // 0x0030
+    TMulticastDelegate<void __cdecl(IGizmoTransformSource *),FDefaultDelegateUserPolicy> OnTransformChanged;  // 0x0030, not reflected
 };

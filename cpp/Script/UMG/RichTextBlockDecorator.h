@@ -5,7 +5,6 @@
 UCLASS(Abstract)
 class URichTextBlockDecorator : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   CreateDecorator

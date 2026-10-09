@@ -4,6 +4,7 @@
 USTRUCT()
 struct FEnumParameterNameAndCurve
 {
+public:
     UPROPERTY() FName ParameterName;  // 0x0000, size 0x8
     UPROPERTY() FMovieSceneByteChannel ParameterCurve;  // 0x0008, size 0x98
 };

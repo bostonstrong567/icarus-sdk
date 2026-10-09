@@ -5,11 +5,12 @@
 UCLASS(Config=Engine)
 class UPaperSpriteComponent : public UMeshComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) UPaperSprite* SourceSprite;  // 0x0478, size 0x8
     UPROPERTY(Deprecated) UMaterialInterface* MaterialOverride;  // 0x0480, size 0x8
     UPROPERTY(EditAnywhere, Interp, BlueprintReadOnly) FLinearColor SpriteColor;  // 0x0488, size 0x10
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) UPaperSprite* GetSprite();  // parameters 0x8
     UFUNCTION(BlueprintCallable) bool SetSprite(UPaperSprite* NewSprite);  // parameters 0x9
     UFUNCTION(BlueprintCallable) void SetSpriteColor(FLinearColor NewColor);  // parameters 0x10

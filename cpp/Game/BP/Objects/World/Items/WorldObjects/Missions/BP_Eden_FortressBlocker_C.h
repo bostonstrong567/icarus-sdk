@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Eden_FortressBlocker_C : public ABP_Eden_BuildBlocker_C
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_KalmanTransform : public FRigUnit_SimBase
 {
+public:
     UPROPERTY() FTransform Value;  // 0x0010, size 0x30
     UPROPERTY() int32 BufferSize;  // 0x0040, size 0x4
     UPROPERTY() FTransform Result;  // 0x0050, size 0x30

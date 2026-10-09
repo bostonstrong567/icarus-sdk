@@ -5,8 +5,9 @@
 UCLASS()
 class UARTrackedPose : public UARTrackedGeometry
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() FARPose3D TrackedPose;  // 0x00F8, size 0x50
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) FARPose3D GetTrackedPoseData() const;  // parameters 0x50
 };

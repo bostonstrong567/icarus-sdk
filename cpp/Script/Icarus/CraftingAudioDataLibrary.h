@@ -6,7 +6,6 @@ UCLASS()
 class UCraftingAudioDataLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToCraftingAudioDataTable(FName Name, FCraftingAudioData Data, FCraftingAudioDataRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xB9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakCraftingAudioDataEnum(FCraftingAudioDataEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FCraftingAudioDataRowHandle CastToCraftingAudioDataRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -5,10 +5,12 @@
 UCLASS(Config=Engine)
 class ALevelVariantSetsActor : public AActor
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FSoftObjectPath LevelVariantSets;  // 0x0220, size 0x18
+private:
     UPROPERTY(Transient) TMap<TSubclassOf<UObject>, ULevelVariantSetsFunctionDirector*> DirectorInstances;  // 0x0238, size 0x50
-
+public:
     UFUNCTION(BlueprintCallable) ULevelVariantSets* GetLevelVariantSets(bool bLoad);  // parameters 0x10
     UFUNCTION(BlueprintCallable) void SetLevelVariantSets(ULevelVariantSets* InVariantSets);  // parameters 0x8
     UFUNCTION(BlueprintCallable) bool SwitchOnVariantByIndex(int32 VariantSetIndex, int32 VariantIndex);  // parameters 0x9

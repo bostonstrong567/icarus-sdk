@@ -16,7 +16,5 @@ public:
     UPROPERTY(EditAnywhere) float InheritVelocityScale;  // 0x0058, size 0x4
     UPROPERTY(EditAnywhere) FName SkelMeshActorParamName;  // 0x005C, size 0x8
     UPROPERTY(EditAnywhere) int32 NumPreSelectedIndices;  // 0x0064, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    EBoneSocketSourceIndexMode SourceIndexMode;  // 0x0068
+    EBoneSocketSourceIndexMode SourceIndexMode;  // 0x0068, not reflected
 };

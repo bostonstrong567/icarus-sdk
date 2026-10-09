@@ -5,6 +5,7 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UInstancedStaticMeshComponent : public UStaticMeshComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere) TArray<FInstancedStaticMeshInstanceData> PerInstanceSMData;  // 0x04E0, size 0x10
     UPROPERTY(EditAnywhere) int32 NumCustomDataFloats;  // 0x04F0, size 0x4
@@ -13,16 +14,15 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 InstanceStartCullDistance;  // 0x050C, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 InstanceEndCullDistance;  // 0x0510, size 0x4
     UPROPERTY() TArray<int32> InstanceReorderTable;  // 0x0518, size 0x10
+    uint64 ProxySize;  // 0x0528, not reflected
+    TSharedPtr<FPerInstanceRenderData,1> PerInstanceRenderData;  // 0x0530, not reflected
+    FInstanceUpdateCmdBuffer InstanceUpdateCmdBuffer;  // 0x0540, not reflected
+    TUniquePtr<FStaticMeshInstanceData,TDefaultDelete<FStaticMeshInstanceData> > InstanceDataBuffers;  // 0x0558, not reflected
+    TArray<FBodyInstance *,TSizedDefaultAllocator<32> > InstanceBodies;  // 0x0560, not reflected
+protected:
     UPROPERTY(Transient) int32 NumPendingLightmaps;  // 0x0570, size 0x4
     UPROPERTY(Transient) TArray<FInstancedStaticMeshMappingInfo> CachedMappings;  // 0x0578, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint64 ProxySize;  // 0x0528
-    TSharedPtr<FPerInstanceRenderData,1> PerInstanceRenderData;  // 0x0530
-    FInstanceUpdateCmdBuffer InstanceUpdateCmdBuffer;  // 0x0540
-    TUniquePtr<FStaticMeshInstanceData,TDefaultDelete<FStaticMeshInstanceData> > InstanceDataBuffers;  // 0x0558
-    TArray<FBodyInstance *,TSizedDefaultAllocator<32> > InstanceBodies;  // 0x0560
-
+public:
     UFUNCTION(BlueprintCallable) int32 AddInstance(const FTransform& InstanceTransform);  // parameters 0x34
     UFUNCTION(BlueprintCallable) int32 AddInstanceWorldSpace(const FTransform& WorldTransform);  // parameters 0x34
     UFUNCTION(BlueprintCallable) TArray<int32> AddInstances(const TArray<FTransform>& InstanceTransforms, bool bShouldReturnIndices);  // parameters 0x28

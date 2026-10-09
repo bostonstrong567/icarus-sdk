@@ -6,7 +6,6 @@ UCLASS(EditInlineNew)
 class USettingWidget_ContinuousRange : public USettingWidget
 {
 public:
-
     UFUNCTION(BlueprintImplementableEvent) void SetApplyDuringDrag(bool bApplyDuringDrag);  // parameters 0x1
     UFUNCTION(BlueprintImplementableEvent) void SetRange(float MinVal, float MaxVal);  // parameters 0x8
     UFUNCTION(BlueprintImplementableEvent) void SetStepSize(float StepSize);  // parameters 0x4

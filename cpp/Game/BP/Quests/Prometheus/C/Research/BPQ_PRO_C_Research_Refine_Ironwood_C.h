@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABPQ_PRO_C_Research_Refine_Ironwood_C : public ABPQ_Common_Craft_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void GetDescription(const FText& InDescription, FText& OutDescription, bool& bOutComplete);  // parameters 0x31
 };

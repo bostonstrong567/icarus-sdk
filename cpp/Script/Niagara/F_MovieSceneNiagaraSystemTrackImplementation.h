@@ -4,6 +4,8 @@
 USTRUCT()
 struct FMovieSceneNiagaraSystemTrackImplementation : public FMovieSceneTrackImplementation
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() FFrameNumber SpawnSectionStartFrame;  // 0x0010, size 0x4
     UPROPERTY() FFrameNumber SpawnSectionEndFrame;  // 0x0014, size 0x4
     UPROPERTY() ENiagaraSystemSpawnSectionStartBehavior SpawnSectionStartBehavior;  // 0x0018, size 0x4

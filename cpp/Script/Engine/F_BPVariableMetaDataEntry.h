@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBPVariableMetaDataEntry
 {
+public:
     UPROPERTY(EditAnywhere) FName DataKey;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) FString DataValue;  // 0x0008, size 0x10
 };

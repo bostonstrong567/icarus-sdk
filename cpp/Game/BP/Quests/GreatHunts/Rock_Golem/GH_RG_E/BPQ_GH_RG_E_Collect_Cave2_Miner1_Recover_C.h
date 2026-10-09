@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_RG_E_Collect_Cave2_Miner1_Recover_C : public ABPQ_Common_Deliver_C
 {
-public:
 };

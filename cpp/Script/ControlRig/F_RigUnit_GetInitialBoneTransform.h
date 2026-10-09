@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_GetInitialBoneTransform : public FRigUnit
 {
+public:
     UPROPERTY() FName Bone;  // 0x0008, size 0x8
     UPROPERTY() EBoneGetterSetterMode Space;  // 0x0010, size 0x1
     UPROPERTY() FTransform Transform;  // 0x0020, size 0x30

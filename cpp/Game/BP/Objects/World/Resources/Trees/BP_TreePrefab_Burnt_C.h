@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_TreePrefab_Burnt_C : public ABP_TreePrefab_C
 {
-public:
 };

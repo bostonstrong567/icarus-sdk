@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UUMG_SearchBox_C : public USearchBox
 {
-public:
 };

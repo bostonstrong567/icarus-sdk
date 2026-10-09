@@ -4,6 +4,7 @@
 USTRUCT()
 struct FKeybindData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(Transient, BlueprintReadOnly) FName ActionName;  // 0x0018, size 0x8
     UPROPERTY(EditAnywhere) bool bOverrideActionName;  // 0x0020, size 0x1
     UPROPERTY(EditAnywhere) FName ActionNameOverride;  // 0x0024, size 0x8

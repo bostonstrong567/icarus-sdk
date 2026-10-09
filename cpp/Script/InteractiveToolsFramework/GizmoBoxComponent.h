@@ -12,10 +12,9 @@ public:
     UPROPERTY(EditAnywhere) float LineThickness;  // 0x049C, size 0x4
     UPROPERTY(EditAnywhere) bool bRemoveHiddenLines;  // 0x04A0, size 0x1
     UPROPERTY(EditAnywhere) bool bEnableAxisFlip;  // 0x04A1, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bFlippedX;  // 0x04A2, private
-    bool bFlippedY;  // 0x04A3, private
-    bool bFlippedZ;  // 0x04A4, private
-    bool bRenderVisibility;  // 0x04A5, private
+private:
+    bool bFlippedX;  // 0x04A2, not reflected
+    bool bFlippedY;  // 0x04A3, not reflected
+    bool bFlippedZ;  // 0x04A4, not reflected
+    bool bRenderVisibility;  // 0x04A5, not reflected
 };

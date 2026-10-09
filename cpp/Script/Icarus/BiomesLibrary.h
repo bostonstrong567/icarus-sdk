@@ -6,7 +6,6 @@ UCLASS()
 class UBiomesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToBiomesTable(FName Name, FIcarusBiome Data, FBiomesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xB9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakBiomesEnum(FBiomesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FBiomesRowHandle CastToBiomesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

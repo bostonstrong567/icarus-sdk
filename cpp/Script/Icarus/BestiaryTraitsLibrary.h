@@ -6,7 +6,6 @@ UCLASS()
 class UBestiaryTraitsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToBestiaryTraitsTable(FName Name, FBestiaryTraitData Data, FBestiaryTraitsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xA1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakBestiaryTraitsEnum(FBestiaryTraitsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FBestiaryTraitsRowHandle CastToBestiaryTraitsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

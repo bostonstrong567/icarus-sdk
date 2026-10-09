@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class UMovieSceneKeyProxy : public UInterface
 {
-public:
 };

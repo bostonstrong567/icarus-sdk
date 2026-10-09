@@ -5,7 +5,6 @@
 UCLASS(Abstract, Transient)
 class UInteractiveGizmoBuilder : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   BuildGizmo

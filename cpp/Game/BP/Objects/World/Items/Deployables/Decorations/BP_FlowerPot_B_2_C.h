@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_FlowerPot_B_2_C : public ABP_FlowerPot_Base_C
 {
-public:
 };

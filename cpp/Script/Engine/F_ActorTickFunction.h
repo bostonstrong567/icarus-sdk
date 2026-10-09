@@ -4,7 +4,6 @@
 USTRUCT()
 struct FActorTickFunction : public FTickFunction
 {
-
-    // Not reflected:
-    AActor * Target;  // 0x0028
+public:
+    AActor * Target;  // 0x0028, not reflected
 };

@@ -5,5 +5,4 @@
 UCLASS()
 class UFieldGuideMetaDataTable : public UIcarusDataTable
 {
-public:
 };

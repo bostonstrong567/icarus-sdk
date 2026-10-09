@@ -4,6 +4,7 @@
 USTRUCT()
 struct FDLCPackageData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 PackageID;  // 0x0018, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText DLCName;  // 0x0020, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString WebsiteAddress;  // 0x0038, size 0x10

@@ -6,7 +6,6 @@ UCLASS()
 class UValidAmmoTypesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToValidAmmoTypesTable(FName Name, FValidAmmoTypes Data, FValidAmmoTypesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x79
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakValidAmmoTypesEnum(FValidAmmoTypesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FValidAmmoTypesRowHandle CastToValidAmmoTypesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -5,5 +5,4 @@
 UCLASS()
 class UWorkshopTalentModel : public UTalentModelInterface
 {
-public:
 };

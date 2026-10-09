@@ -4,6 +4,7 @@
 USTRUCT()
 struct FHairMaterialConstraints
 {
+public:
     UPROPERTY(EditAnywhere) FHairBendConstraint BendConstraint;  // 0x0000, size 0x98
     UPROPERTY(EditAnywhere) FHairStretchConstraint StretchConstraint;  // 0x0098, size 0x98
     UPROPERTY(EditAnywhere) FHairCollisionConstraint CollisionConstraint;  // 0x0130, size 0xA8

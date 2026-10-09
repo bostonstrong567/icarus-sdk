@@ -4,5 +4,6 @@
 USTRUCT()
 struct FRigUnit_DebugTransformArrayMutable_WorkData
 {
+public:
     UPROPERTY() TArray<FTransform> DrawTransforms;  // 0x0000, size 0x10
 };

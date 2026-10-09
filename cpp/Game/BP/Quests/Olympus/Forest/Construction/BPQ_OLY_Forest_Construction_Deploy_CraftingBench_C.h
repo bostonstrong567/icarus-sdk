@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_OLY_Forest_Construction_Deploy_CraftingBench_C : public ABPQ_Deploy_Count_C
 {
-public:
 };

@@ -5,16 +5,16 @@
 UCLASS(Transient, NotPlaceable, Config=Game)
 class AMagicLeapSharedWorldGameMode : public AGameMode
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintReadWrite) FMagicLeapSharedWorldSharedData SharedWorldData;  // 0x0308, size 0x10
     UPROPERTY(BlueprintAssignable) FMagicLeapOnNewLocalDataFromClients OnNewLocalDataFromClients;  // 0x0318, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float PinSelectionConfidenceThreshold;  // 0x0328, size 0x4
+protected:
+    TMap<AMagicLeapSharedWorldPlayerController *,TArray<FGuid,TSizedDefaultAllocator<32> >,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<AMagicLeapSharedWorldPlayerController *,TArray<FGuid,TSizedDefaultAllocator<32> >,0> > PlayerToLocalPins;  // 0x0330, not reflected
+    TMap<FGuid,TMap<AMagicLeapSharedWorldPlayerController *,FMagicLeapARPinState,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<AMagicLeapSharedWorldPlayerController *,FMagicLeapARPinState,0> >,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FGuid,TMap<AMagicLeapSharedWorldPlayerController *,FMagicLeapARPinState,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<AMagicLeapSharedWorldPlayerController *,FMagicLeapARPinState,0> >,0> > PinToOwnersToStates;  // 0x0380, not reflected
     UPROPERTY(BlueprintReadWrite) AMagicLeapSharedWorldPlayerController* ChosenOne;  // 0x03D0, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<AMagicLeapSharedWorldPlayerController *,TArray<FGuid,TSizedDefaultAllocator<32> >,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<AMagicLeapSharedWorldPlayerController *,TArray<FGuid,TSizedDefaultAllocator<32> >,0> > PlayerToLocalPins;  // 0x0330, protected
-    TMap<FGuid,TMap<AMagicLeapSharedWorldPlayerController *,FMagicLeapARPinState,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<AMagicLeapSharedWorldPlayerController *,FMagicLeapARPinState,0> >,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FGuid,TMap<AMagicLeapSharedWorldPlayerController *,FMagicLeapARPinState,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<AMagicLeapSharedWorldPlayerController *,FMagicLeapARPinState,0> >,0> > PinToOwnersToStates;  // 0x0380, protected
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly, BlueprintNativeEvent) void DetermineSharedWorldData(FMagicLeapSharedWorldSharedData& NewSharedWorldData);  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly, BlueprintNativeEvent) void SelectChosenOne();
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) bool SendSharedWorldDataToClients();  // parameters 0x1

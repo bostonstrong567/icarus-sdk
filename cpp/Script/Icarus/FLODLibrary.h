@@ -6,7 +6,6 @@ UCLASS()
 class UFLODLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void DestroyAllBurntTreeInstances(UObject* WorldContextObject, UFLODRecord* Record);  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool EqualEqual_FFLODInstanceFFLODInstance(FFLODRecordInstance A, FFLODRecordInstance B);  // parameters 0x41
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool EqualEqual_FFLODInstanceIDFFLODInstanceID(FFLODInstanceID A, FFLODInstanceID B);  // parameters 0x21

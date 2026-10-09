@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_AudioLog_C : public ABP_Note_C
 {
-public:
 };

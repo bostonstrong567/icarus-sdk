@@ -5,5 +5,4 @@
 UCLASS()
 class AArena_IceMammoth_C : public ALevelScriptActor
 {
-public:
 };

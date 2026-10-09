@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_PRO_B_Extermination_Hunt_GasFlier_C : public ABPQ_Common_Hunt_C
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FTrackedGeometryGroup
 {
+public:
     UPROPERTY() AARActor* ARActor;  // 0x0000, size 0x8
     UPROPERTY(Instanced) UARComponent* ARComponent;  // 0x0008, size 0x8
     UPROPERTY() UARTrackedGeometry* TrackedGeometry;  // 0x0010, size 0x8

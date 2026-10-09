@@ -6,7 +6,6 @@ UCLASS()
 class UMetaResourceNodesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToMetaResourceNodesTable(FName Name, FMetaResourceNodeInfo Data, FMetaResourceNodesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x79
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakMetaResourceNodesEnum(FMetaResourceNodesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FMetaResourceNodesRowHandle CastToMetaResourceNodesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

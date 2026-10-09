@@ -6,7 +6,6 @@ UCLASS()
 class UProcessorRecipesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToProcessorRecipesTable(FName Name, FProcessorRecipe Data, FProcessorRecipesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x329
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakProcessorRecipesEnum(FProcessorRecipesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FProcessorRecipesRowHandle CastToProcessorRecipesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

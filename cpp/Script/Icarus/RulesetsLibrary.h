@@ -6,7 +6,6 @@ UCLASS()
 class URulesetsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToRulesetsTable(FName Name, FRulesetData Data, FRulesetsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x49
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakRulesetsEnum(FRulesetsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FRulesetsRowHandle CastToRulesetsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

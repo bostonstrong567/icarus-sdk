@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UHighlightableCustomiserInterface_C : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable) void GetDescription(FText& Description);  // parameters 0x18
     UFUNCTION(BlueprintCallable) void GetDisplayName(FText& Name);  // parameters 0x18
 };

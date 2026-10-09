@@ -8,9 +8,8 @@ class UGetMetaInventoryCallbackProxyGen : public UOnlineBlueprintCallProxyBase
 public:
     UPROPERTY(BlueprintAssignable) FOnGetMetaInventoryEventSignature OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FOnGetMetaInventoryEventSignature OnFail;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FReqGetMetaInventory ReqGetMetaInventory;  // 0x0050, private
-
+private:
+    FReqGetMetaInventory ReqGetMetaInventory;  // 0x0050, not reflected
+public:
     UFUNCTION(BlueprintCallable) static UGetMetaInventoryCallbackProxyGen* GetMetaInventory(const FReqGetMetaInventory& Request);  // parameters 0x20
 };

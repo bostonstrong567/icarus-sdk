@@ -6,6 +6,5 @@ UCLASS(Transient, EditInlineNew, Config=Engine)
 class UBP_Interactable_NoInteraction_C : public UInteractableBehaviour
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool CanInteract(AActor* Instigator, FHitResult HitResult);  // parameters 0x91
 };

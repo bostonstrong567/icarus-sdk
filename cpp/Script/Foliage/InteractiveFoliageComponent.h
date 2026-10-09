@@ -6,7 +6,5 @@ UCLASS(EditInlineNew, Config=Engine)
 class UInteractiveFoliageComponent : public UStaticMeshComponent
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    FInteractiveFoliageSceneProxy * FoliageSceneProxy;  // 0x04E0
+    FInteractiveFoliageSceneProxy * FoliageSceneProxy;  // 0x04E0, not reflected
 };

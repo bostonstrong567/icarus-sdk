@@ -6,7 +6,6 @@ UCLASS()
 class UArmourSetBonusLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToArmourSetBonusTable(FName Name, FArmourSetBonus Data, FArmourSetBonusRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xA9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakArmourSetBonusEnum(FArmourSetBonusEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FArmourSetBonusRowHandle CastToArmourSetBonusRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

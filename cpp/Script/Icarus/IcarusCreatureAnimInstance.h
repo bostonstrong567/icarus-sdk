@@ -30,11 +30,10 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FPoseSnapshot RagdollPose;  // 0x0340, size 0x38
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EMovementState CurrentMovementState;  // 0x0378, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) AActor* CurrentTarget;  // 0x0380, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FRotator LastRotation;  // 0x0388, private
-    FPositionHistory PositionHistory;  // 0x0398, private
-
+private:
+    FRotator LastRotation;  // 0x0388, not reflected
+    FPositionHistory PositionHistory;  // 0x0398, not reflected
+public:
     UFUNCTION(BlueprintCallable) static float CalculateVelocityFromPositionHistory(float DeltaSeconds, FVector Position, FPositionHistory& History, int32 NumberOfSamples, float VelocityMin, float VelocityMax);  // parameters 0x50
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetLeanAmount() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) FRotator GetOwnerLookAtRotation() const;  // parameters 0xC

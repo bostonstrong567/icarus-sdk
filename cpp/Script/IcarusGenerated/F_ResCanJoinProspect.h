@@ -4,5 +4,6 @@
 USTRUCT()
 struct FResCanJoinProspect
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool Success;  // 0x0000, size 0x1
 };

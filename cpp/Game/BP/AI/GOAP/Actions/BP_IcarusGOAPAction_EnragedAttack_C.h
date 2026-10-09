@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UBP_IcarusGOAPAction_EnragedAttack_C : public UBP_IcarusGOAPAction_Melee_Attack_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool ExecutionComplete(AIcarusNPCGOAPController* Controller);  // parameters 0x9
 };

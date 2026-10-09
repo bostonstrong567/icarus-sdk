@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_TwistBones : public FRigUnit_HighlevelBaseMutable
 {
+public:
     UPROPERTY() FName StartBone;  // 0x0068, size 0x8
     UPROPERTY() FName EndBone;  // 0x0070, size 0x8
     UPROPERTY() FVector TwistAxis;  // 0x0078, size 0xC

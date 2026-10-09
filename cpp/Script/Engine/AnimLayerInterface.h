@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class UAnimLayerInterface : public UInterface
 {
-public:
 };

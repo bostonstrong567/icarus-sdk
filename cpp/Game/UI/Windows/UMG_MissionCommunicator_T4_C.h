@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UUMG_MissionCommunicator_T4_C : public UUMG_Mission_Communicator_T3_C
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBPSteamWorkshopItemDetails
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FBPSteamResult ResultOfRequest;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FBPWorkshopFileType FileType;  // 0x0001, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 CreatorAppID;  // 0x0004, size 0x4

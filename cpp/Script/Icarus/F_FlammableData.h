@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFlammableData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TSoftClassPtr<UFlammableComponent> Behaviour;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FFlammableAudioData AudioData;  // 0x0040, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float CombustionFuelDensity;  // 0x0048, size 0x4

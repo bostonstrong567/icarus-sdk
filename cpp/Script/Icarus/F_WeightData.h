@@ -4,6 +4,7 @@
 USTRUCT()
 struct FWeightData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<UWeightComponent> Behaviour;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float Weight;  // 0x0040, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool AddInventoryWeight;  // 0x0044, size 0x1

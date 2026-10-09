@@ -11,7 +11,5 @@ public:
     UPROPERTY(EditAnywhere) bool bAddToExistingDuration;  // 0x0088, size 0x1
     UPROPERTY(EditAnywhere) float CooldownDuration;  // 0x008C, size 0x4
     UPROPERTY(EditAnywhere) float RandomDeviation;  // 0x0090, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    float CooldownDurationValue;  // 0x0094
+    float CooldownDurationValue;  // 0x0094, not reflected
 };

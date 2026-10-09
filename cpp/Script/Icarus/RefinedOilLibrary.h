@@ -6,7 +6,6 @@ UCLASS()
 class URefinedOilLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToRefinedOilTable(FName Name, FRefinedOilData Data, FRefinedOilRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x81
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakRefinedOilEnum(FRefinedOilEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FRefinedOilRowHandle CastToRefinedOilRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -5,21 +5,21 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UFLODFISMComponent : public UFoliageInstancedStaticMeshComponent, public IMutableGameplayTagInterface
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintReadOnly) int32 RegisteredRecordIndex;  // 0x06B0, size 0x4
     UPROPERTY(BlueprintReadOnly) TWeakObjectPtr<AFLODTile> RegisteredFLODTile;  // 0x06B4, size 0x8
     UPROPERTY(Instanced, BlueprintReadOnly) TWeakObjectPtr<UFlammableFISM> RegisteredFlammable;  // 0x06BC, size 0x8
+    bool bTryRegisterSelf;  // 0x06C4, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FGameplayTagContainer GameplayTags;  // 0x06C8, size 0x20
+protected:
     UPROPERTY() UFoliageType* CachedFoliageType;  // 0x06E8, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bTryRegisterSelf;  // 0x06C4
-    TSet<int,DefaultKeyFuncs<int,0>,FDefaultSetAllocator> InsidePhysicsBoundsIndices;  // 0x06F0, protected
-    TArray<FTransform,TSizedDefaultAllocator<32> > InitialInstanceTransforms;  // 0x0740, protected
-    bool bForceNextNavUpdate;  // 0x0750, protected
-    float MaxDistanceSq;  // 0x0754, protected
-    bool bHasCalculatedMaxDistance;  // 0x0758, protected
-
+    TSet<int,DefaultKeyFuncs<int,0>,FDefaultSetAllocator> InsidePhysicsBoundsIndices;  // 0x06F0, not reflected
+    TArray<FTransform,TSizedDefaultAllocator<32> > InitialInstanceTransforms;  // 0x0740, not reflected
+    bool bForceNextNavUpdate;  // 0x0750, not reflected
+    float MaxDistanceSq;  // 0x0754, not reflected
+    bool bHasCalculatedMaxDistance;  // 0x0758, not reflected
+public:
     UFUNCTION(BlueprintCallable) static bool GetFISMPhysDebugEnabled();  // parameters 0x1
     UFUNCTION(BlueprintCallable) static float GetInfluenceOverlapRadius();  // parameters 0x4
     UFUNCTION(BlueprintCallable) static float GetInfluencePhysicsRadius();  // parameters 0x4

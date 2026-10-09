@@ -4,6 +4,7 @@
 USTRUCT()
 struct FComboButtonStyle : public FSlateWidgetStyle
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FButtonStyle ButtonStyle;  // 0x0008, size 0x278
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSlateBrush DownArrowImage;  // 0x0280, size 0x88
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector2D ShadowOffset;  // 0x0308, size 0x8

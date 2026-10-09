@@ -4,5 +4,6 @@
 USTRUCT()
 struct FSubmixEffectSubmixEQSettings
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FSubmixEffectEQBand> EQBands;  // 0x0000, size 0x10
 };

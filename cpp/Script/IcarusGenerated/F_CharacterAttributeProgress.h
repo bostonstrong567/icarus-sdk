@@ -4,6 +4,7 @@
 USTRUCT()
 struct FCharacterAttributeProgress
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ECharacterAttribute Attribute;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Level;  // 0x0004, size 0x4
 };

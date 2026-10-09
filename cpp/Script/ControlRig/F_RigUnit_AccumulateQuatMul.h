@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_AccumulateQuatMul : public FRigUnit_AccumulateBase
 {
+public:
     UPROPERTY() FQuat Multiplier;  // 0x0010, size 0x10
     UPROPERTY() FQuat InitialValue;  // 0x0020, size 0x10
     UPROPERTY() bool bFlipOrder;  // 0x0030, size 0x1

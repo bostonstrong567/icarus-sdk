@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Mission_Supply_Pod2_C : public ABP_Mission_Supply_Pod_C
 {
-public:
 };

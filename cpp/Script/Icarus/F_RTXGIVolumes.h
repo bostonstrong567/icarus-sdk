@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRTXGIVolumes : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere) FTransform BoxTransform;  // 0x0020, size 0x30
     UPROPERTY(EditAnywhere) bool EnableVolume;  // 0x0050, size 0x1
     UPROPERTY(EditAnywhere) float UpdatePriority;  // 0x0054, size 0x4

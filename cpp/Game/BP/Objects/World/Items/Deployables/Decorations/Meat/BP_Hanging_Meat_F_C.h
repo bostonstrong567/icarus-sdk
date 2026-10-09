@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Hanging_Meat_F_C : public ABP_DeployableBase_C
 {
-public:
 };

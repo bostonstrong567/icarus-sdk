@@ -5,5 +5,4 @@
 UCLASS()
 class UDatasmithAdditionalData : public UObject
 {
-public:
 };

@@ -6,7 +6,6 @@ UCLASS(Abstract, EditInlineNew)
 class UPawnAction_BlueprintBase : public UPawnAction
 {
 public:
-
     UFUNCTION(BlueprintImplementableEvent) void ActionFinished(APawn* ControlledPawn, TEnumAsByte<EPawnActionResult> WithResult);  // parameters 0x9
     UFUNCTION(BlueprintImplementableEvent) void ActionPause(APawn* ControlledPawn);  // parameters 0x8
     UFUNCTION(BlueprintImplementableEvent) void ActionResume(APawn* ControlledPawn);  // parameters 0x8

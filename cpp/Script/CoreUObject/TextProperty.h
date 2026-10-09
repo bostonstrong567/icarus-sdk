@@ -5,5 +5,4 @@
 UCLASS()
 class UTextProperty : public UProperty
 {
-public:
 };

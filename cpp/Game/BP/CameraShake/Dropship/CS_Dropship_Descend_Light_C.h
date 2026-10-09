@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UCS_Dropship_Descend_Light_C : public UMatineeCameraShake
 {
-public:
 };

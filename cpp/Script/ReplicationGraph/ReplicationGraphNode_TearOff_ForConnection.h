@@ -7,7 +7,5 @@ class UReplicationGraphNode_TearOff_ForConnection : public UReplicationGraphNode
 {
 public:
     UPROPERTY() TArray<FTearOffActorInfo> TearOffActors;  // 0x0050, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FActorRepListRefView ReplicationActorList;  // 0x0060
+    FActorRepListRefView ReplicationActorList;  // 0x0060, not reflected
 };

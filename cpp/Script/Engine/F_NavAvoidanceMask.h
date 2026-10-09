@@ -4,6 +4,8 @@
 USTRUCT()
 struct FNavAvoidanceMask
 {
+public:
+    int32 Packed;  // 0x0000, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bGroup0 : 1;  // 0x0000, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bGroup1 : 1;  // 0x0000, mask 0x02
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bGroup2 : 1;  // 0x0000, mask 0x04
@@ -36,7 +38,4 @@ struct FNavAvoidanceMask
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bGroup29 : 1;  // 0x0003, mask 0x20
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bGroup30 : 1;  // 0x0003, mask 0x40
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bGroup31 : 1;  // 0x0003, mask 0x80
-
-    // Not reflected:
-    int32 Packed;  // 0x0000
 };

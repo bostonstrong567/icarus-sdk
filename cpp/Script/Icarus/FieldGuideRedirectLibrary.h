@@ -6,7 +6,6 @@ UCLASS()
 class UFieldGuideRedirectLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToFieldGuideRedirectTable(FName Name, FFieldGuideRedirectData Data, FFieldGuideRedirectRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x79
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakFieldGuideRedirectEnum(FFieldGuideRedirectEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FFieldGuideRedirectRowHandle CastToFieldGuideRedirectRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

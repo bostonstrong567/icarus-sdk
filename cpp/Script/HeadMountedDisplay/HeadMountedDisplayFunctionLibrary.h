@@ -6,7 +6,6 @@ UCLASS()
 class UHeadMountedDisplayFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakKey(FKey InKey, FString& InteractionProfile, EControllerHand& Hand, FName& MotionSource, FString& Indentifier, FString& Component);  // parameters 0x58
     UFUNCTION(BlueprintCallable) static void CalibrateExternalTrackingToHMD(const FTransform& ExternalTrackingTransform);  // parameters 0x30
     UFUNCTION(BlueprintCallable) static void ClearXRTimedInputActionDelegate(const FName& ActionPath);  // parameters 0x8

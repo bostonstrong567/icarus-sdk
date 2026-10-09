@@ -5,18 +5,18 @@
 UCLASS(Config=Engine)
 class ADeployable : public AIcarusItem, public IDeployableFoundationInterface
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) AActor* FoundationActor;  // 0x0580, size 0x8
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) TArray<ADeployable*> AttachedDeployableActors;  // 0x0588, size 0x10
     UPROPERTY(EditAnywhere) bool bWantsDeployableTick;  // 0x0598, size 0x1
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UIcarusNavigationDirtier* NavigationDirtier;  // 0x05A0, size 0x8
+    FOctreeElementId2 OctreeElementId;  // 0x05A8, not reflected
+private:
+    FTimerHandle NextDirtyTimer;  // 0x0578, not reflected
+    bool bRegisteredWithDeployableTick;  // 0x05B0, not reflected
     UPROPERTY() UDeployableManagerSubsystem* DeployableManager;  // 0x05B8, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FTimerHandle NextDirtyTimer;  // 0x0578, private
-    FOctreeElementId2 OctreeElementId;  // 0x05A8
-    bool bRegisteredWithDeployableTick;  // 0x05B0, private
-
+public:
     UFUNCTION(BlueprintNativeEvent) void AttachedDeployableActorsUpdated();
     UFUNCTION(BlueprintCallable) void ConditionalReregisterBiome(const FBiomesRowHandle& Biome);  // parameters 0x18
     UFUNCTION(BlueprintImplementableEvent) void DeployableTick(float DeltaSeconds);  // parameters 0x4

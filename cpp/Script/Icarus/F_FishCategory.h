@@ -4,5 +4,6 @@
 USTRUCT()
 struct FFishCategory
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<EFishRarity, FFishRarity> Rarity;  // 0x0000, size 0x50
 };

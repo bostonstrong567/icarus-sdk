@@ -4,11 +4,10 @@
 USTRUCT()
 struct FAudioContextSubscriber
 {
+public:
     UPROPERTY(Instanced) UFMODAudioComponent* AudioComponent;  // 0x0000, size 0x8
-
-    // Not reflected:
-    bool bUsesOcclusionParameter;  // 0x0008
-    FName OcclusionParameterTraceName;  // 0x000C
-    bool bUsesWaterImmersionParameter;  // 0x0014
-    uint32 UniqueId;  // 0x0018
+    bool bUsesOcclusionParameter;  // 0x0008, not reflected
+    FName OcclusionParameterTraceName;  // 0x000C, not reflected
+    bool bUsesWaterImmersionParameter;  // 0x0014, not reflected
+    uint32 UniqueId;  // 0x0018, not reflected
 };

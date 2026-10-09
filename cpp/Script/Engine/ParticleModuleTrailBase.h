@@ -5,5 +5,4 @@
 UCLASS(Abstract, EditInlineNew)
 class UParticleModuleTrailBase : public UParticleModule
 {
-public:
 };

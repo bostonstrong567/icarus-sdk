@@ -4,6 +4,7 @@
 USTRUCT()
 struct FPredictProjectilePathParams
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector StartLocation;  // 0x0000, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector LaunchVelocity;  // 0x000C, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bTraceWithCollision;  // 0x0018, size 0x1

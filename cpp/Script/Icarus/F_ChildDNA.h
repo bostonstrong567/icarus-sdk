@@ -4,6 +4,7 @@
 USTRUCT()
 struct FChildDNA
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FCreatureGenetics> Genetics;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ECreatureSex Sex;  // 0x0010, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FGeneticLineagesRowHandle Lineage;  // 0x0014, size 0x18

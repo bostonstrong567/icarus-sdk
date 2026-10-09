@@ -4,6 +4,7 @@
 USTRUCT()
 struct FGravestoneData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FPoseSnapshot DeathPose;  // 0x0000, size 0x38
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector DeathVelocity;  // 0x0038, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FCharacterCosmetics PlayerCosmetics;  // 0x0044, size 0x80

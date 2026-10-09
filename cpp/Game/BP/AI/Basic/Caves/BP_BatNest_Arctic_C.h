@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_BatNest_Arctic_C : public ABP_BatNest_C
 {
-public:
 };

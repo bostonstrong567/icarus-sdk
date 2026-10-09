@@ -4,6 +4,7 @@
 USTRUCT()
 struct FPredictProjectilePathPointData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FVector Location;  // 0x0000, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FVector Velocity;  // 0x000C, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float Time;  // 0x0018, size 0x4

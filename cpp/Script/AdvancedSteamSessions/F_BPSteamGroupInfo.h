@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBPSteamGroupInfo
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FBPUniqueNetId GroupID;  // 0x0000, size 0x20
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FString GroupName;  // 0x0020, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FString GroupTag;  // 0x0030, size 0x10

@@ -6,6 +6,5 @@ UCLASS(EditInlineNew)
 class USettingsMenu : public UIcarusWidget
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void Save(bool bForce);  // parameters 0x1
 };

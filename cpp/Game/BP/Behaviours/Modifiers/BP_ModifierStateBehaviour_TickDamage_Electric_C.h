@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UBP_ModifierStateBehaviour_TickDamage_Electric_C : public UBP_ModifierStateBehaviour_TickDamage_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool ModifierApplied();  // parameters 0x1
 };

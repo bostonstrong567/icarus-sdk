@@ -5,5 +5,4 @@
 UCLASS()
 class UHLODEngineSubsystem : public UEngineSubsystem
 {
-public:
 };

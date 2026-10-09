@@ -5,7 +5,8 @@
 UCLASS()
 class UBTDecorator_CheckGameplayTagsOnActor : public UBTDecorator
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere) FBlackboardKeySelector ActorToCheck;  // 0x0068, size 0x28
     UPROPERTY(EditAnywhere) EGameplayContainerMatchType TagsToMatch;  // 0x0090, size 0x1
     UPROPERTY(EditAnywhere) FGameplayTagContainer GameplayTags;  // 0x0098, size 0x20

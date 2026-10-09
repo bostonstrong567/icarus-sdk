@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Zipline_T3_C : public ABP_Zipline_Base_C
 {
-public:
 };

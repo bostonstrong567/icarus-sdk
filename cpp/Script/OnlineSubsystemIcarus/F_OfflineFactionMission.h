@@ -4,5 +4,6 @@
 USTRUCT()
 struct FOfflineFactionMission
 {
+public:
     UPROPERTY() int32 FactionMissionStatus;  // 0x0000, size 0x4
 };

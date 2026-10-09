@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class ABPQ_Collect_Item_WithName_C : public ABPQ_Collect_Item_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void GetDescription(const FText& InDescription, FText& OutDescription, bool& bOutComplete);  // parameters 0x31
     UFUNCTION(BlueprintCallable, BlueprintPure) void GetName(FText& Name);  // parameters 0x18
 };

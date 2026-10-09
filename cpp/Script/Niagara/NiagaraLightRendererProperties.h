@@ -20,13 +20,11 @@ public:
     UPROPERTY(EditAnywhere) FNiagaraVariableAttributeBinding RadiusBinding;  // 0x01F8, size 0x58
     UPROPERTY(EditAnywhere) FNiagaraVariableAttributeBinding VolumetricScatteringBinding;  // 0x0250, size 0x58
     UPROPERTY(EditAnywhere) FNiagaraVariableAttributeBinding RendererVisibilityTagBinding;  // 0x02A8, size 0x58
-
-    // Not reflected: the engine's scripting cannot see these.
-    FNiagaraDataSetAccessor<FVector> PositionDataSetAccessor;  // 0x0300
-    FNiagaraDataSetAccessor<FLinearColor> ColorDataSetAccessor;  // 0x0308
-    FNiagaraDataSetAccessor<float> RadiusDataSetAccessor;  // 0x0310
-    FNiagaraDataSetAccessor<float> ExponentDataSetAccessor;  // 0x0318
-    FNiagaraDataSetAccessor<float> ScatteringDataSetAccessor;  // 0x0320
-    FNiagaraDataSetAccessor<FNiagaraBool> EnabledDataSetAccessor;  // 0x0328
-    FNiagaraDataSetAccessor<int> RendererVisibilityTagAccessor;  // 0x032C
+    FNiagaraDataSetAccessor<FVector> PositionDataSetAccessor;  // 0x0300, not reflected
+    FNiagaraDataSetAccessor<FLinearColor> ColorDataSetAccessor;  // 0x0308, not reflected
+    FNiagaraDataSetAccessor<float> RadiusDataSetAccessor;  // 0x0310, not reflected
+    FNiagaraDataSetAccessor<float> ExponentDataSetAccessor;  // 0x0318, not reflected
+    FNiagaraDataSetAccessor<float> ScatteringDataSetAccessor;  // 0x0320, not reflected
+    FNiagaraDataSetAccessor<FNiagaraBool> EnabledDataSetAccessor;  // 0x0328, not reflected
+    FNiagaraDataSetAccessor<int> RendererVisibilityTagAccessor;  // 0x032C, not reflected
 };

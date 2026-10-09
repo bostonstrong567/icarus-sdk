@@ -6,21 +6,20 @@ UCLASS()
 class UStruct : public UField
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    UStruct * SuperStruct;  // 0x0040, private
-    UField * Children;  // 0x0048
-    FField * ChildProperties;  // 0x0050
-    int32 PropertiesSize;  // 0x0058
-    int32 MinAlignment;  // 0x005C
-    TArray<unsigned char,TSizedDefaultAllocator<32> > Script;  // 0x0060
-    FProperty * PropertyLink;  // 0x0070
-    FProperty * RefLink;  // 0x0078
-    FProperty * DestructorLink;  // 0x0080
-    FProperty * PostConstructLink;  // 0x0088
-    TArray<UObject *,TSizedDefaultAllocator<32> > ScriptAndPropertyObjectReferences;  // 0x0090
-    TArray<TTuple<TFieldPath<FField>,int>,TSizedDefaultAllocator<32> > * UnresolvedScriptProperties;  // 0x00A0
-    const FUnversionedStructSchema * UnversionedSchema;  // 0x00A8
+    UField * Children;  // 0x0048, not reflected
+    FField * ChildProperties;  // 0x0050, not reflected
+    int32 PropertiesSize;  // 0x0058, not reflected
+    int32 MinAlignment;  // 0x005C, not reflected
+    TArray<unsigned char,TSizedDefaultAllocator<32> > Script;  // 0x0060, not reflected
+    FProperty * PropertyLink;  // 0x0070, not reflected
+    FProperty * RefLink;  // 0x0078, not reflected
+    FProperty * DestructorLink;  // 0x0080, not reflected
+    FProperty * PostConstructLink;  // 0x0088, not reflected
+    TArray<UObject *,TSizedDefaultAllocator<32> > ScriptAndPropertyObjectReferences;  // 0x0090, not reflected
+    TArray<TTuple<TFieldPath<FField>,int>,TSizedDefaultAllocator<32> > * UnresolvedScriptProperties;  // 0x00A0, not reflected
+    const FUnversionedStructSchema * UnversionedSchema;  // 0x00A8, not reflected
+private:
+    UStruct * SuperStruct;  // 0x0040, not reflected
 
     // Virtual functions that start here:
     //   ArePropertyGuidsAvailable, CustomFindProperty, DestroyStruct, FindPropertyGuidFromName

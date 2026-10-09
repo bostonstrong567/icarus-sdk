@@ -4,6 +4,7 @@
 USTRUCT()
 struct FStorageInfo
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString Key;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString Hash;  // 0x0010, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName HashType;  // 0x0020, size 0x8

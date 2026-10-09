@@ -5,10 +5,8 @@
 UCLASS(Transient)
 class UInteractionMechanic : public UObject
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TWeakObjectPtr<UInteractiveTool,FWeakObjectPtr> ParentTool;  // 0x0028, protected
+protected:
+    TWeakObjectPtr<UInteractiveTool,FWeakObjectPtr> ParentTool;  // 0x0028, not reflected
 
     // Virtual functions that start here:
     //   AddToolPropertySource, Render, Setup, Shutdown, Tick

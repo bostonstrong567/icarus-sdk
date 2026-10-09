@@ -4,7 +4,6 @@
 USTRUCT()
 struct FMRMeshConfiguration
 {
-
-    // Not reflected:
-    bool bSendVertexColors;  // 0x0000
+public:
+    bool bSendVertexColors;  // 0x0000, not reflected
 };

@@ -4,7 +4,6 @@
 USTRUCT()
 struct FCharacterMovementComponentPostPhysicsTickFunction : public FTickFunction
 {
-
-    // Not reflected:
-    UCharacterMovementComponent * Target;  // 0x0028
+public:
+    UCharacterMovementComponent * Target;  // 0x0028, not reflected
 };

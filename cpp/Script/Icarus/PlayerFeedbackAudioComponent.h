@@ -11,11 +11,10 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UFMODEvent* CausedAfflictionsFeedbackSound;  // 0x00C0, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UFMODEvent* MissionUpdatedFeedbackSound;  // 0x00C8, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UFMODEvent* MissionCompletedFeedbackSound;  // 0x00D0, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FTimerHandle MissionNotifiesTimerHandle;  // 0x00D8, private
-    UPlayerFeedbackAudioComponent::EMissionNotifyType PendingNotify;  // 0x00E0, private
-
+private:
+    FTimerHandle MissionNotifiesTimerHandle;  // 0x00D8, not reflected
+    UPlayerFeedbackAudioComponent::EMissionNotifyType PendingNotify;  // 0x00E0, not reflected
+public:
     UFUNCTION(Client, Reliable, BlueprintNativeEvent) void Client_PlayCausedAfflictions();
     UFUNCTION(Client, Reliable, BlueprintNativeEvent) void Client_PlayCriticalHit(FVector HitLocation, FCriticalHitAreasRowHandle CriticalHitArea);  // parameters 0x24
     UFUNCTION(Client, Reliable, BlueprintNativeEvent) void Client_PlayMissionCompleted();

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_DebugBezier : public FRigUnit_DebugBaseMutable
 {
+public:
     UPROPERTY() FCRFourPointBezier Bezier;  // 0x0068, size 0x30
     UPROPERTY() float MinimumU;  // 0x0098, size 0x4
     UPROPERTY() float MaximumU;  // 0x009C, size 0x4

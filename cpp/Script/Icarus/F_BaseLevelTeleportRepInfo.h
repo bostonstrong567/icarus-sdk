@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBaseLevelTeleportRepInfo
 {
+public:
     UPROPERTY() FTransform BaseMeshTransform;  // 0x0000, size 0x30
     UPROPERTY() FTransform PlacementMeshTransform;  // 0x0030, size 0x30
     UPROPERTY() UStaticMesh* BaseMeshRef;  // 0x0060, size 0x8

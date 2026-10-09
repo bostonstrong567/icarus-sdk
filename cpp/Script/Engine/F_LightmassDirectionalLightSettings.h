@@ -4,5 +4,6 @@
 USTRUCT()
 struct FLightmassDirectionalLightSettings : public FLightmassLightSettings
 {
+public:
     UPROPERTY(EditAnywhere) float LightSourceAngle;  // 0x000C, size 0x4
 };

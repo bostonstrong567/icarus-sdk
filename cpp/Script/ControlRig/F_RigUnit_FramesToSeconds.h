@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_FramesToSeconds : public FRigUnit_AnimBase
 {
+public:
     UPROPERTY() float Frames;  // 0x0008, size 0x4
     UPROPERTY() float Seconds;  // 0x000C, size 0x4
 };

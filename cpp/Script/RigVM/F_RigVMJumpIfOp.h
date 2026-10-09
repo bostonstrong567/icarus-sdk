@@ -4,8 +4,7 @@
 USTRUCT()
 struct FRigVMJumpIfOp : public FRigVMUnaryOp
 {
-
-    // Not reflected:
-    int32 InstructionIndex;  // 0x0008
-    bool Condition;  // 0x000C
+public:
+    int32 InstructionIndex;  // 0x0008, not reflected
+    bool Condition;  // 0x000C, not reflected
 };

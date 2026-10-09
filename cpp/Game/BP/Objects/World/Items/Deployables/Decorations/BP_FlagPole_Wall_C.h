@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_FlagPole_Wall_C : public ABP_National_Flag_C
 {
-public:
 };

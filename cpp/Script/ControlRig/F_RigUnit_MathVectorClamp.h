@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_MathVectorClamp : public FRigUnit_MathVectorBase
 {
+public:
     UPROPERTY() FVector Value;  // 0x0008, size 0xC
     UPROPERTY() FVector Minimum;  // 0x0014, size 0xC
     UPROPERTY() FVector Maximum;  // 0x0020, size 0xC

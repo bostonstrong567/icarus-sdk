@@ -5,5 +5,4 @@
 UCLASS()
 class UTaskListAccolade : public UAccoladeImpl
 {
-public:
 };

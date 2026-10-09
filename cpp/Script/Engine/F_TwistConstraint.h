@@ -4,6 +4,7 @@
 USTRUCT()
 struct FTwistConstraint : public FConstraintBaseParams
 {
+public:
     UPROPERTY(EditAnywhere) float TwistLimitDegrees;  // 0x0014, size 0x4
     UPROPERTY(EditAnywhere) TEnumAsByte<EAngularConstraintMotion> TwistMotion;  // 0x0018, size 0x1
 };

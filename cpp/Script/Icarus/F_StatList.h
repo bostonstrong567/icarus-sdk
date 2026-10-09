@@ -4,7 +4,6 @@
 USTRUCT()
 struct FStatList
 {
-
-    // Not reflected:
-    TArray<TTuple<enum EStats,int>,TSizedDefaultAllocator<32> > Stats;  // 0x0000
+private:
+    TArray<TTuple<enum EStats,int>,TSizedDefaultAllocator<32> > Stats;  // 0x0000, not reflected
 };

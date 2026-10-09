@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMathRBFInterpolateVectorColor_Target
 {
+public:
     UPROPERTY() FVector Target;  // 0x0000, size 0xC
     UPROPERTY() FLinearColor Value;  // 0x000C, size 0x10
 };

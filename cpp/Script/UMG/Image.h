@@ -12,12 +12,11 @@ public:
     UPROPERTY() FGetLinearColor ColorAndOpacityDelegate;  // 0x01B0, size 0x10
     UPROPERTY(EditAnywhere) bool bFlipForRightToLeftFlowDirection;  // 0x01C0, size 0x1
     UPROPERTY(EditAnywhere) FOnPointerEvent OnMouseButtonDownEvent;  // 0x01C4, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SImage,0> MyImage;  // 0x01D8, protected
-    TSharedPtr<FStreamableHandle,0> StreamingHandle;  // 0x01E8, protected
-    FSoftObjectPath StreamingObjectPath;  // 0x01F8, protected
-
+protected:
+    TSharedPtr<SImage,0> MyImage;  // 0x01D8, not reflected
+    TSharedPtr<FStreamableHandle,0> StreamingHandle;  // 0x01E8, not reflected
+    FSoftObjectPath StreamingObjectPath;  // 0x01F8, not reflected
+public:
     UFUNCTION(BlueprintCallable) UMaterialInstanceDynamic* GetDynamicMaterial();  // parameters 0x8
     UFUNCTION(BlueprintCallable) void SetBrush(const FSlateBrush& InBrush);  // parameters 0x88
     UFUNCTION(BlueprintCallable) void SetBrushFromAsset(USlateBrushAsset* Asset);  // parameters 0x8

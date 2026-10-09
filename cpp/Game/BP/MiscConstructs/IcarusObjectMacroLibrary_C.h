@@ -5,5 +5,4 @@
 UCLASS(Abstract, NotPlaceable, Config=Engine)
 class UIcarusObjectMacroLibrary_C : public UObject
 {
-public:
 };

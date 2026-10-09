@@ -6,8 +6,6 @@ UCLASS()
 class UMetaData : public UObject
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<FWeakObjectPtr,TMap<FName,FString,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,FString,0> >,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FWeakObjectPtr,TMap<FName,FString,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,FString,0> >,0> > ObjectMetaDataMap;  // 0x0028
-    TMap<FName,FString,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,FString,0> > RootMetaDataMap;  // 0x0078
+    TMap<FWeakObjectPtr,TMap<FName,FString,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,FString,0> >,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FWeakObjectPtr,TMap<FName,FString,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,FString,0> >,0> > ObjectMetaDataMap;  // 0x0028, not reflected
+    TMap<FName,FString,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,FString,0> > RootMetaDataMap;  // 0x0078, not reflected
 };

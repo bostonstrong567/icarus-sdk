@@ -4,6 +4,7 @@
 USTRUCT()
 struct FGridBlendSample
 {
+public:
     UPROPERTY() FEditorElement GridElement;  // 0x0000, size 0x18
     UPROPERTY() float BlendWeight;  // 0x0018, size 0x4
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNiagaraRibbonUVSettings
 {
+public:
     UPROPERTY(EditAnywhere) ENiagaraRibbonUVDistributionMode DistributionMode;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere) ENiagaraRibbonUVEdgeMode LeadingEdgeMode;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere) ENiagaraRibbonUVEdgeMode TrailingEdgeMode;  // 0x0008, size 0x4

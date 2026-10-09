@@ -4,6 +4,7 @@
 USTRUCT()
 struct FInstancedSaveStateHeader
 {
+public:
     UPROPERTY(BlueprintReadOnly) int32 Version;  // 0x0008, size 0x4
     UPROPERTY(BlueprintReadOnly) FString UniqueLevelName;  // 0x0010, size 0x10
     UPROPERTY(BlueprintReadOnly) int32 SubCaveID;  // 0x0020, size 0x4

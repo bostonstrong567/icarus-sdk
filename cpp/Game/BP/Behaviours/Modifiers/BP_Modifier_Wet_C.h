@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UBP_Modifier_Wet_C : public UModifierStateComponent
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool ModifierRemoved();  // parameters 0x1
 };

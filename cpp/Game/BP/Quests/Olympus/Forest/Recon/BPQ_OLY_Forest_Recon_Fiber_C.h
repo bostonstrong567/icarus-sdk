@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_OLY_Forest_Recon_Fiber_C : public ABPQ_Collect_Item_WithName_C
 {
-public:
 };

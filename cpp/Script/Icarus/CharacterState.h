@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class UCharacterState : public UActorState
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintAssignable) FOnStaminaUpdatedSignature OnStaminaUpdated;  // 0x0270, size 0x1
     UPROPERTY(BlueprintAssignable) FOnStaminaDepletedSignature OnStaminaDepleted;  // 0x0271, size 0x1
@@ -17,19 +18,18 @@ public:
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) int32 TotalExperience;  // 0x0280, size 0x4
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) FCharacterGrowthRowHandle GrowthRowHandle;  // 0x0284, size 0x18
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) int32 Level;  // 0x029C, size 0x4
+private:
     UPROPERTY() TMap<int32, FStaminaActionCostsRowHandle> StaminaTickEvents;  // 0x02A0, size 0x50
+    float TickStaminaDelta;  // 0x02F0, not reflected
+    FTimerHandle TickStaminaTimer;  // 0x02F8, not reflected
+    float StaminaRegenTime;  // 0x0300, not reflected
+    float StaminaRegenCycle;  // 0x0304, not reflected
+    int32 StaminaAddedPerCycle;  // 0x0308, not reflected
+    float StaminaTimeLastDecremented;  // 0x030C, not reflected
     UPROPERTY() bool bHasStaminaRegen;  // 0x0310, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    float TickStaminaDelta;  // 0x02F0, private
-    FTimerHandle TickStaminaTimer;  // 0x02F8, private
-    float StaminaRegenTime;  // 0x0300, private
-    float StaminaRegenCycle;  // 0x0304, private
-    int32 StaminaAddedPerCycle;  // 0x0308, private
-    float StaminaTimeLastDecremented;  // 0x030C, private
-    float BiomeUpdateCycle;  // 0x0314, private
-    float BiomeUpdateTime;  // 0x0318, private
-
+    float BiomeUpdateCycle;  // 0x0314, not reflected
+    float BiomeUpdateTime;  // 0x0318, not reflected
+public:
     UFUNCTION(BlueprintCallable) void AddExperience(int32 Amount);  // parameters 0x4
     UFUNCTION() bool AddExperienceEvent(const FExperienceEventsRowHandle& ExperienceEvent, int32 GrantedExperience);  // parameters 0x1D
     UFUNCTION(BlueprintCallable) void AddStamina(int32 Amount);  // parameters 0x4

@@ -4,8 +4,7 @@
 USTRUCT()
 struct FNavigationEvent : public FInputEvent
 {
-
-    // Not reflected:
-    EUINavigation NavigationType;  // 0x0018
-    ENavigationGenesis NavigationGenesis;  // 0x0019
+private:
+    EUINavigation NavigationType;  // 0x0018, not reflected
+    ENavigationGenesis NavigationGenesis;  // 0x0019, not reflected
 };

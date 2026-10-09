@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_ToRigSpace_Transform : public FRigUnit
 {
+public:
     UPROPERTY() FTransform Transform;  // 0x0010, size 0x30
     UPROPERTY() FTransform Global;  // 0x0040, size 0x30
 };

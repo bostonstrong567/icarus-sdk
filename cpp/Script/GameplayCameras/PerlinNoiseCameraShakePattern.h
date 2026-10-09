@@ -17,12 +17,11 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FPerlinNoiseShaker Yaw;  // 0x0068, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FPerlinNoiseShaker Roll;  // 0x0070, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FPerlinNoiseShaker FOV;  // 0x0078, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FVector InitialLocationOffset;  // 0x0080, private
-    FVector CurrentLocationOffset;  // 0x008C, private
-    FVector InitialRotationOffset;  // 0x0098, private
-    FVector CurrentRotationOffset;  // 0x00A4, private
-    float InitialFOVOffset;  // 0x00B0, private
-    float CurrentFOVOffset;  // 0x00B4, private
+private:
+    FVector InitialLocationOffset;  // 0x0080, not reflected
+    FVector CurrentLocationOffset;  // 0x008C, not reflected
+    FVector InitialRotationOffset;  // 0x0098, not reflected
+    FVector CurrentRotationOffset;  // 0x00A4, not reflected
+    float InitialFOVOffset;  // 0x00B0, not reflected
+    float CurrentFOVOffset;  // 0x00B4, not reflected
 };

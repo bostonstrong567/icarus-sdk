@@ -6,7 +6,6 @@ UCLASS()
 class UMovieSceneCaptureEnvironment : public UObject
 {
 public:
-
     UFUNCTION(BlueprintCallable) static UMovieSceneAudioCaptureProtocolBase* FindAudioCaptureProtocol();  // parameters 0x8
     UFUNCTION(BlueprintCallable) static UMovieSceneImageCaptureProtocolBase* FindImageCaptureProtocol();  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) static float GetCaptureElapsedTime();  // parameters 0x4

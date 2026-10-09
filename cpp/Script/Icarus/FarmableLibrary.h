@@ -6,7 +6,6 @@ UCLASS()
 class UFarmableLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToFarmableTable(FName Name, FFarmableData Data, FFarmableRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x51
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakFarmableEnum(FFarmableEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FFarmableRowHandle CastToFarmableRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

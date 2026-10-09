@@ -4,6 +4,7 @@
 USTRUCT()
 struct FHairBendConstraint
 {
+public:
     UPROPERTY(EditAnywhere) bool SolveBend;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere) bool ProjectBend;  // 0x0001, size 0x1
     UPROPERTY(EditAnywhere) float BendDamping;  // 0x0004, size 0x4

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FTagQueries : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FGameplayTagQuery Query;  // 0x0018, size 0x48
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText DisplayName;  // 0x0060, size 0x18
 };

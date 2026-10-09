@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Fish_04_Var3_DemonPirhana_C : public ABP_Fish_04_DemonPirhana_C
 {
-public:
 };

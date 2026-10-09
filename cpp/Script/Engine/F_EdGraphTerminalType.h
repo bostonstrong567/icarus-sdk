@@ -4,6 +4,7 @@
 USTRUCT()
 struct FEdGraphTerminalType
 {
+public:
     UPROPERTY() FName TerminalCategory;  // 0x0000, size 0x8
     UPROPERTY() FName TerminalSubCategory;  // 0x0008, size 0x8
     UPROPERTY() TWeakObjectPtr<UObject> TerminalSubCategoryObject;  // 0x0010, size 0x8

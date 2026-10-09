@@ -5,11 +5,9 @@
 UCLASS()
 class USentryScope : public UObject
 {
+private:
+    TSharedPtr<ISentryScope,0> ScopeNativeImpl;  // 0x0028, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<ISentryScope,0> ScopeNativeImpl;  // 0x0028, private
-
     UFUNCTION(BlueprintCallable) void AddAttachment(USentryAttachment* Attachment);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void AddBreadcrumb(USentryBreadcrumb* Breadcrumb);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void Clear();

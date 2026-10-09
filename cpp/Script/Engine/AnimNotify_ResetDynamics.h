@@ -5,5 +5,4 @@
 UCLASS(Const)
 class UAnimNotify_ResetDynamics : public UAnimNotify
 {
-public:
 };

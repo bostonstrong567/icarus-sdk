@@ -6,7 +6,6 @@ UCLASS(Abstract)
 class UDeployableFoundationInterface : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintNativeEvent) void AddAttachedDeployable(ADeployable* Deployable);  // parameters 0x8
     UFUNCTION(BlueprintNativeEvent) void RemoveAttachedDeployable(ADeployable* Deployable);  // parameters 0x8
 };

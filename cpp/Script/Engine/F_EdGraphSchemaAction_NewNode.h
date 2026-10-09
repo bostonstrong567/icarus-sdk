@@ -4,5 +4,6 @@
 USTRUCT()
 struct FEdGraphSchemaAction_NewNode : public FEdGraphSchemaAction
 {
+public:
     UPROPERTY() UEdGraphNode* NodeTemplate;  // 0x0100, size 0x8
 };

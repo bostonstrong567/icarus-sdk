@@ -5,13 +5,15 @@
 UCLASS()
 class UAISpawnBehaviour : public UObject
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FAutonomousSpawnData SpawnData;  // 0x0028, size 0xB8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FAutonomousSpawnsRowHandle SpawnsRowHandle;  // 0x00E0, size 0x18
     UPROPERTY(BlueprintAssignable) FSpawnCompleteSignature SpawnComplete;  // 0x00F8, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<AActor*> SpawnedAI;  // 0x0108, size 0x10
+private:
     UPROPERTY() TSubclassOf<AIcarusActor> CachedActorSpawnClass;  // 0x0118, size 0x8
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) bool CanCleanupAI(AActor* AI);  // parameters 0x9
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) void CleanupAI(AActor* AI);  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) bool GetNextAIToSpawn(FAISetupEnum& AISetup, TSoftClassPtr<AIcarusActor>& ActorClass) const;  // parameters 0x39

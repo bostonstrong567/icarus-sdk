@@ -22,10 +22,9 @@ public:
     UPROPERTY(BlueprintAssignable) FOnControllerCaptureEndEventSynth2D OnControllerCaptureEnd;  // 0x0438, size 0x10
     UPROPERTY(BlueprintAssignable) FOnFloatValueChangedEventSynth2D OnValueChangedX;  // 0x0448, size 0x10
     UPROPERTY(BlueprintAssignable) FOnFloatValueChangedEventSynth2D OnValueChangedY;  // 0x0458, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SSynth2DSlider,0> MySlider;  // 0x0468, protected
-
+protected:
+    TSharedPtr<SSynth2DSlider,0> MySlider;  // 0x0468, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) FVector2D GetValue() const;  // parameters 0x8
     UFUNCTION(BlueprintCallable) void SetIndentHandle(bool InValue);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void SetLocked(bool InValue);  // parameters 0x1

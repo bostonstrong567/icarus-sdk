@@ -6,7 +6,6 @@ UCLASS()
 class USettlementEventsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToSettlementEventsTable(FName Name, FSettlementEventData Data, FSettlementEventsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xD9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakSettlementEventsEnum(FSettlementEventsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FSettlementEventsRowHandle CastToSettlementEventsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

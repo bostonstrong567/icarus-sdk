@@ -4,9 +4,9 @@
 USTRUCT()
 struct FMovieSceneEventSectionData : public FMovieSceneChannel
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() TArray<FFrameNumber> Times;  // 0x0008, size 0x10
     UPROPERTY() TArray<FEventPayload> KeyValues;  // 0x0018, size 0x10
-
-    // Not reflected:
-    FMovieSceneKeyHandleMap KeyHandles;  // 0x0028
+    FMovieSceneKeyHandleMap KeyHandles;  // 0x0028, not reflected
 };

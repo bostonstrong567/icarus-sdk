@@ -16,14 +16,12 @@ public:
     UPROPERTY() FGuid HeightfieldGuid;  // 0x0488, size 0x10
     UPROPERTY() FBox CachedLocalBox;  // 0x0498, size 0x1C
     UPROPERTY(Instanced) TLazyObjectPtr<ULandscapeComponent> RenderComponent;  // 0x04B4, size 0x1C
+    TArray<unsigned char,TSizedDefaultAllocator<32> > CookedCollisionData;  // 0x04D0, not reflected
     UPROPERTY() TArray<UPhysicalMaterial*> CookedPhysicalMaterials;  // 0x04E0, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<unsigned char,TSizedDefaultAllocator<32> > CookedCollisionData;  // 0x04D0
-    TRefCountPtr<ULandscapeHeightfieldCollisionComponent::FHeightfieldGeometryRef> HeightfieldRef;  // 0x04F0
-    int32 HeightfieldRowsCount;  // 0x04F8
-    int32 HeightfieldColumnsCount;  // 0x04FC
-    FNavHeightfieldSamples CachedHeightFieldSamples;  // 0x0500
+    TRefCountPtr<ULandscapeHeightfieldCollisionComponent::FHeightfieldGeometryRef> HeightfieldRef;  // 0x04F0, not reflected
+    int32 HeightfieldRowsCount;  // 0x04F8, not reflected
+    int32 HeightfieldColumnsCount;  // 0x04FC, not reflected
+    FNavHeightfieldSamples CachedHeightFieldSamples;  // 0x0500, not reflected
 
     UFUNCTION(BlueprintCallable, BlueprintPure) ULandscapeComponent* GetRenderComponent() const;  // parameters 0x8
 

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FResourceComponentRecord
 {
+public:
     UPROPERTY(SaveGame) bool bDeviceActive;  // 0x0000, size 0x1
     UPROPERTY(SaveGame) bool bDeviceManuallyShutdown;  // 0x0001, size 0x1
     UPROPERTY(SaveGame) uint32 ConnectionPriorityMask;  // 0x0004, size 0x4

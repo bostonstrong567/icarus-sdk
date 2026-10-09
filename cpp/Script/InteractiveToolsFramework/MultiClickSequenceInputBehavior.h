@@ -6,12 +6,11 @@ UCLASS(Transient)
 class UMultiClickSequenceInputBehavior : public UAnyButtonInputBehavior
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    FInputBehaviorModifierStates Modifiers;  // 0x0080
-    TFunction<bool __cdecl(FInputDeviceState const &)> ModifierCheckFunc;  // 0x00E0
-    IClickSequenceBehaviorTarget * Target;  // 0x0120, protected
-    UMultiClickSequenceInputBehavior::ESequenceState State;  // 0x0128, protected
+    FInputBehaviorModifierStates Modifiers;  // 0x0080, not reflected
+    TFunction<bool __cdecl(FInputDeviceState const &)> ModifierCheckFunc;  // 0x00E0, not reflected
+protected:
+    IClickSequenceBehaviorTarget * Target;  // 0x0120, not reflected
+    UMultiClickSequenceInputBehavior::ESequenceState State;  // 0x0128, not reflected
 
     // Virtual functions that start here:
     //   Initialize

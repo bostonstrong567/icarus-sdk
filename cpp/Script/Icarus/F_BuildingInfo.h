@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBuildingInfo
 {
+public:
     UPROPERTY(SaveGame, BlueprintReadWrite) FTransform Transform;  // 0x0000, size 0x30
     UPROPERTY(SaveGame, BlueprintReadWrite) int32 Variation;  // 0x0030, size 0x4
     UPROPERTY(SaveGame, BlueprintReadWrite) int32 IcarusUID;  // 0x0034, size 0x4

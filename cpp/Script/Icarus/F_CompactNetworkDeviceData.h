@@ -4,6 +4,7 @@
 USTRUCT()
 struct FCompactNetworkDeviceData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName DeviceNameRowName;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 NumPriority;  // 0x0008, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 NumOn;  // 0x000C, size 0x4

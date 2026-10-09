@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Faction_Mission_Boss_Den_WorldBoss_C : public ABP_Faction_Mission_Boss_Den_C
 {
-public:
 };

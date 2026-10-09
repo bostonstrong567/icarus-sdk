@@ -4,5 +4,6 @@
 USTRUCT()
 struct FMeshElementAttributeList
 {
+public:
     UPROPERTY(BlueprintReadWrite) TArray<FMeshElementAttributeData> Attributes;  // 0x0000, size 0x10
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FProcMeshVertex
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector Position;  // 0x0000, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector Normal;  // 0x000C, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FProcMeshTangent Tangent;  // 0x0018, size 0x10

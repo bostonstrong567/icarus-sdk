@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_DeltaFromPreviousVector : public FRigUnit_SimBase
 {
+public:
     UPROPERTY() FVector Value;  // 0x0008, size 0xC
     UPROPERTY() FVector Delta;  // 0x0014, size 0xC
     UPROPERTY() FVector PreviousValue;  // 0x0020, size 0xC

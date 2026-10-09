@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_ForLoopCount : public FRigUnitMutable
 {
+public:
     UPROPERTY() int32 Count;  // 0x0068, size 0x4
     UPROPERTY() int32 Index;  // 0x006C, size 0x4
     UPROPERTY() float Ratio;  // 0x0070, size 0x4

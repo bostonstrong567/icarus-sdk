@@ -5,7 +5,8 @@
 UCLASS()
 class UMovieSceneSubTrack : public UMovieSceneNameableTrack
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY() TArray<UMovieSceneSection*> Sections;  // 0x0090, size 0x10
 
     // Virtual functions that start here:

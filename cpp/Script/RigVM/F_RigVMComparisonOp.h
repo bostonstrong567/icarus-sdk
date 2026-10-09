@@ -4,9 +4,8 @@
 USTRUCT()
 struct FRigVMComparisonOp : public FRigVMBaseOp
 {
-
-    // Not reflected:
-    FRigVMOperand A;  // 0x0002
-    FRigVMOperand B;  // 0x0008
-    FRigVMOperand Result;  // 0x000E
+public:
+    FRigVMOperand A;  // 0x0002, not reflected
+    FRigVMOperand B;  // 0x0008, not reflected
+    FRigVMOperand Result;  // 0x000E, not reflected
 };

@@ -7,10 +7,10 @@ class ACineCameraActor : public ACameraActor
 {
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FCameraLookatTrackingSettings LookatTrackingSettings;  // 0x07B0, size 0x50
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint8 : 1 bResetInterplation;  // 0x0800, protected
-    UCineCameraComponent * CineCameraComponent;  // 0x0808, private
-
+protected:
+    uint8 : 1 bResetInterplation;  // 0x0800, not reflected
+private:
+    UCineCameraComponent * CineCameraComponent;  // 0x0808, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) UCineCameraComponent* GetCineCameraComponent() const;  // parameters 0x8
 };

@@ -6,7 +6,6 @@ UCLASS()
 class UQuickMoveLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToQuickMoveTable(FName Name, FQuickMove Data, FQuickMoveRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x59
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakQuickMoveEnum(FQuickMoveEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FQuickMoveRowHandle CastToQuickMoveRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

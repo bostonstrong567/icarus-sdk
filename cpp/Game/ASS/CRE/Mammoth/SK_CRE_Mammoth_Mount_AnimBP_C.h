@@ -5,5 +5,4 @@
 UCLASS(Transient, Config=Engine)
 class USK_CRE_Mammoth_Mount_AnimBP_C : public USK_CRE_Mammoth_AnimBP_C
 {
-public:
 };

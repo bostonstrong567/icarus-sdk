@@ -6,7 +6,6 @@ UCLASS()
 class URTXGIVolumesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToRTXGIVolumesTable(FName Name, FRTXGIVolumes Data, FRTXGIVolumesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x109
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakRTXGIVolumesEnum(FRTXGIVolumesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FRTXGIVolumesRowHandle CastToRTXGIVolumesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

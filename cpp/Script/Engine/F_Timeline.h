@@ -4,6 +4,8 @@
 USTRUCT()
 struct FTimeline
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() TEnumAsByte<ETimelineLengthMode> LengthMode;  // 0x0000, size 0x1
     UPROPERTY() uint8 bLooping : 1;  // 0x0001, mask 0x01
     UPROPERTY() uint8 bReversePlayback : 1;  // 0x0001, mask 0x02
@@ -19,8 +21,6 @@ struct FTimeline
     UPROPERTY() FOnTimelineEvent TimelineFinishedFunc;  // 0x0060, size 0x10
     UPROPERTY() TWeakObjectPtr<UObject> PropertySetObject;  // 0x0070, size 0x8
     UPROPERTY() FName DirectionPropertyName;  // 0x0078, size 0x8
-
-    // Not reflected:
-    TDelegate<void __cdecl(void),FDefaultDelegateUserPolicy> TimelineFinishFuncStatic;  // 0x0080
-    FProperty * DirectionProperty;  // 0x0090
+    TDelegate<void __cdecl(void),FDefaultDelegateUserPolicy> TimelineFinishFuncStatic;  // 0x0080, not reflected
+    FProperty * DirectionProperty;  // 0x0090, not reflected
 };

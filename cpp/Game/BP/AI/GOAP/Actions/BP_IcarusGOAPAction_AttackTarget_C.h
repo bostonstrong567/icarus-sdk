@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UBP_IcarusGOAPAction_AttackTarget_C : public UIcarusGOAPAction
 {
-public:
 };

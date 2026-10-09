@@ -5,6 +5,7 @@
 UCLASS(Config=Game)
 class APawn : public AActor, public INavAgentInterface
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bUseControllerRotationPitch : 1;  // 0x0228, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bUseControllerRotationYaw : 1;  // 0x0228, mask 0x02
@@ -15,18 +16,18 @@ public:
     UPROPERTY(EditAnywhere) EAutoPossessAI AutoPossessAI;  // 0x0231, size 0x1
     UPROPERTY(Replicated) uint8 RemoteViewPitch;  // 0x0232, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSubclassOf<AController> AIControllerClass;  // 0x0238, size 0x8
-    UPROPERTY(Replicated, ReplicatedUsing, BlueprintReadOnly) APlayerState* PlayerState;  // 0x0240, size 0x8
+    float BlendedReplayViewPitch;  // 0x0248, not reflected
     UPROPERTY(Transient, BlueprintReadOnly) AController* LastHitBy;  // 0x0250, size 0x8
     UPROPERTY(Replicated, ReplicatedUsing) AController* Controller;  // 0x0258, size 0x8
+    float AllowedYawError;  // 0x0260, not reflected
+protected:
     UPROPERTY(Transient) FVector ControlInputVector;  // 0x0264, size 0xC
     UPROPERTY(Transient) FVector LastControlInputVector;  // 0x0270, size 0xC
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint32 : 1 bInputEnabled;  // 0x0228, private
-    uint32 : 1 bProcessingOutsideWorldBounds;  // 0x0228, private
-    float BlendedReplayViewPitch;  // 0x0248
-    float AllowedYawError;  // 0x0260
-
+private:
+    uint32 : 1 bInputEnabled;  // 0x0228, not reflected
+    uint32 : 1 bProcessingOutsideWorldBounds;  // 0x0228, not reflected
+    UPROPERTY(Replicated, ReplicatedUsing, BlueprintReadOnly) APlayerState* PlayerState;  // 0x0240, size 0x8
+public:
     UFUNCTION(BlueprintCallable) void AddControllerPitchInput(float Val);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void AddControllerRollInput(float Val);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void AddControllerYawInput(float Val);  // parameters 0x4

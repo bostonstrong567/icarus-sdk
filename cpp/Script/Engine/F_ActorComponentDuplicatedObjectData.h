@@ -4,8 +4,7 @@
 USTRUCT()
 struct FActorComponentDuplicatedObjectData
 {
-
-    // Not reflected:
-    UObject * DuplicatedObject;  // 0x0000
-    int32 ObjectPathDepth;  // 0x0008
+public:
+    UObject * DuplicatedObject;  // 0x0000, not reflected
+    int32 ObjectPathDepth;  // 0x0008, not reflected
 };

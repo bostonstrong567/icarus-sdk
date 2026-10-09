@@ -6,6 +6,5 @@ UCLASS()
 class UPaperSpriteBlueprintLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static FSlateBrush MakeBrushFromSprite(UPaperSprite* Sprite, int32 Width, int32 Height);  // parameters 0x98
 };

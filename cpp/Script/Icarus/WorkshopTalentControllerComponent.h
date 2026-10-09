@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UWorkshopTalentControllerComponent : public UTalentControllerComponent
 {
-public:
 };

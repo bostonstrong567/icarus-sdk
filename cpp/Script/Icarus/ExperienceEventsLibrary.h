@@ -6,7 +6,6 @@ UCLASS()
 class UExperienceEventsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToExperienceEventsTable(FName Name, FExperienceEvent Data, FExperienceEventsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x59
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakExperienceEventsEnum(FExperienceEventsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FExperienceEventsRowHandle CastToExperienceEventsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -6,7 +6,6 @@ UCLASS()
 class UHitableLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToHitableTable(FName Name, FHitableData Data, FHitableRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x61
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakHitableEnum(FHitableEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FHitableRowHandle CastToHitableRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

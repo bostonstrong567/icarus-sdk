@@ -4,5 +4,6 @@
 USTRUCT()
 struct FIcarusGOAPState
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FIcarusGOAPProperty> Properties;  // 0x0000, size 0x10
 };

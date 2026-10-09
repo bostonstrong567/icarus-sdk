@@ -4,6 +4,7 @@
 USTRUCT()
 struct FHairGroupsInterpolation
 {
+public:
     UPROPERTY(EditAnywhere) FHairDecimationSettings DecimationSettings;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) FHairInterpolationSettings InterpolationSettings;  // 0x0008, size 0xC
 };

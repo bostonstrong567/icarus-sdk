@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_GetControlVector2D : public FRigUnit
 {
+public:
     UPROPERTY() FName Control;  // 0x0008, size 0x8
     UPROPERTY() FVector2D Vector;  // 0x0010, size 0x8
     UPROPERTY() FVector2D Minimum;  // 0x0018, size 0x8

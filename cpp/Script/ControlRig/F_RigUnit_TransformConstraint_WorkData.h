@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_TransformConstraint_WorkData
 {
+public:
     UPROPERTY() TArray<FConstraintData> ConstraintData;  // 0x0000, size 0x10
     UPROPERTY() TMap<int32, int32> ConstraintDataToTargets;  // 0x0010, size 0x50
 };

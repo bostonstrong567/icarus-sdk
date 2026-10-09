@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_Ape_E_Resupply_C : public ABPQ_Common_RequestResupply_C
 {
-public:
 };

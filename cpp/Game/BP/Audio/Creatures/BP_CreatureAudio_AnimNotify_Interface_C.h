@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UBP_CreatureAudio_AnimNotify_Interface_C : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable) void OnFootstepAnimNotify(TEnumAsByte<ECreatureFootstepType> FootstepType, TEnumAsByte<ECreatureFootstepDirection> FootstepDirection);  // parameters 0x2
     UFUNCTION(BlueprintCallable) void OnVocalisationAnimNotify(EAIVocalisationType VocalisationType);  // parameters 0x1
 };

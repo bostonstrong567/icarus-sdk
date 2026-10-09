@@ -6,7 +6,6 @@ UCLASS()
 class UItemRewardsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToItemRewardsTable(FName Name, FItemRewards Data, FItemRewardsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x49
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakItemRewardsEnum(FItemRewardsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FItemRewardsRowHandle CastToItemRewardsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

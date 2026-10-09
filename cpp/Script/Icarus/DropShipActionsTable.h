@@ -5,5 +5,4 @@
 UCLASS()
 class UDropShipActionsTable : public UIcarusDataTable
 {
-public:
 };

@@ -5,12 +5,12 @@
 UCLASS(EditInlineNew, MinimalAPI)
 class USoundNodeWavePlayer : public USoundNodeAssetReferencer
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
+    UPROPERTY(EditAnywhere) uint8 bLooping : 1;  // 0x0080, mask 0x01
+private:
     UPROPERTY(EditAnywhere) TSoftObjectPtr<USoundWave> SoundWaveAssetPtr;  // 0x0048, size 0x28
     UPROPERTY(Transient) USoundWave* SoundWave;  // 0x0070, size 0x8
-    UPROPERTY(EditAnywhere) uint8 bLooping : 1;  // 0x0080, mask 0x01
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint8 : 1 bAsyncLoading;  // 0x0078, private
-    FThreadSafeBool bAsyncLoadRequestPending;  // 0x007C, private
+    uint8 : 1 bAsyncLoading;  // 0x0078, not reflected
+    FThreadSafeBool bAsyncLoadRequestPending;  // 0x007C, not reflected
 };

@@ -4,7 +4,6 @@
 USTRUCT()
 struct FNiagaraWorldManagerTickFunction : public FTickFunction
 {
-
-    // Not reflected:
-    FNiagaraWorldManager * Owner;  // 0x0028
+public:
+    FNiagaraWorldManager * Owner;  // 0x0028, not reflected
 };

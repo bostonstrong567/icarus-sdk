@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_IcarusDynamicDropShipSpawn_C : public ABP_IcarusDropShipSpawn_C
 {
-public:
 };

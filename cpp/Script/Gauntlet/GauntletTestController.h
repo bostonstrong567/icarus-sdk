@@ -5,10 +5,8 @@
 UCLASS()
 class UGauntletTestController : public UObject
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    FGauntletModule * ParentModule;  // 0x0028, private
+private:
+    FGauntletModule * ParentModule;  // 0x0028, not reflected
 
     // Virtual functions that start here:
     //   OnInit, OnPostMapChange, OnPreMapChange, OnStateChange, OnTick

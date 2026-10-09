@@ -6,6 +6,5 @@ UCLASS(EditInlineNew, Config=Engine)
 class UConsumableComponent : public UTraitComponent
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) bool GetConsumableData(FConsumableData& OutData) const;  // parameters 0xA1
 };

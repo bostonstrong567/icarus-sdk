@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UMaterialExpressionVertexColor : public UMaterialExpression
 {
-public:
 };

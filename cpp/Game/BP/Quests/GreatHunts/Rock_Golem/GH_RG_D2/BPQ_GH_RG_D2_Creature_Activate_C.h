@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_RG_D2_Creature_Activate_C : public ABPQ_Deploy_Count_C
 {
-public:
 };

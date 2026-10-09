@@ -5,6 +5,7 @@
 UCLASS(EditInlineNew)
 class UNiagaraDataInterfaceChaosDestruction : public UNiagaraDataInterface
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere) TSet<AChaosSolverActor*> ChaosSolverActorSet;  // 0x0038, size 0x50
     UPROPERTY(EditAnywhere) EDataSourceTypeEnum DataSourceType;  // 0x0088, size 0x1
@@ -49,16 +50,15 @@ public:
     UPROPERTY(EditAnywhere) FVector2D FinalVelocityMagnitudeMinMax;  // 0x01C0, size 0x8
     UPROPERTY(EditAnywhere) float MaxLatency;  // 0x01C8, size 0x4
     UPROPERTY(EditAnywhere) EDebugTypeEnum DebugType;  // 0x01CC, size 0x1
+protected:
     UPROPERTY() int32 LastSpawnedPointID;  // 0x01D0, size 0x4
     UPROPERTY() float LastSpawnTime;  // 0x01D4, size 0x4
+    TArray<FVector,TSizedDefaultAllocator<32> > ColorArray;  // 0x01D8, not reflected
     UPROPERTY() float SolverTime;  // 0x01E8, size 0x4
     UPROPERTY() float TimeStampOfLastProcessedData;  // 0x01EC, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<FVector,TSizedDefaultAllocator<32> > ColorArray;  // 0x01D8, protected
-    bool ShouldSpawn;  // 0x01F0, protected
-    TArray<FSolverData,TSizedDefaultAllocator<32> > Solvers;  // 0x01F8, protected
-    TArray<Chaos::FCollidingDataExt,TSizedDefaultAllocator<32> > CollisionEvents;  // 0x0208, protected
-    TArray<Chaos::FBreakingDataExt,TSizedDefaultAllocator<32> > BreakingEvents;  // 0x0218, protected
-    TArray<Chaos::FTrailingDataExt,TSizedDefaultAllocator<32> > TrailingEvents;  // 0x0228, protected
+    bool ShouldSpawn;  // 0x01F0, not reflected
+    TArray<FSolverData,TSizedDefaultAllocator<32> > Solvers;  // 0x01F8, not reflected
+    TArray<Chaos::FCollidingDataExt,TSizedDefaultAllocator<32> > CollisionEvents;  // 0x0208, not reflected
+    TArray<Chaos::FBreakingDataExt,TSizedDefaultAllocator<32> > BreakingEvents;  // 0x0218, not reflected
+    TArray<Chaos::FTrailingDataExt,TSizedDefaultAllocator<32> > TrailingEvents;  // 0x0228, not reflected
 };

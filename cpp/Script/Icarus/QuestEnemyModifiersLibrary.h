@@ -6,7 +6,6 @@ UCLASS()
 class UQuestEnemyModifiersLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToQuestEnemyModifiersTable(FName Name, FQuestEnemyModifier Data, FQuestEnemyModifiersRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x81
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakQuestEnemyModifiersEnum(FQuestEnemyModifiersEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FQuestEnemyModifiersRowHandle CastToQuestEnemyModifiersRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

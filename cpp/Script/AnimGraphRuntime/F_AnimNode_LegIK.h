@@ -4,11 +4,10 @@
 USTRUCT()
 struct FAnimNode_LegIK : public FAnimNode_SkeletalControlBase
 {
+public:
     UPROPERTY(EditAnywhere) float ReachPrecision;  // 0x00C8, size 0x4
     UPROPERTY(EditAnywhere) int32 MaxIterations;  // 0x00CC, size 0x4
     UPROPERTY(EditAnywhere) TArray<FAnimLegIKDefinition> LegsDefinition;  // 0x00D0, size 0x10
-
-    // Not reflected:
-    TArray<FAnimLegIKData,TSizedDefaultAllocator<32> > LegsData;  // 0x00E0
-    FAnimInstanceProxy * MyAnimInstanceProxy;  // 0x00F0
+    TArray<FAnimLegIKData,TSizedDefaultAllocator<32> > LegsData;  // 0x00E0, not reflected
+    FAnimInstanceProxy * MyAnimInstanceProxy;  // 0x00F0, not reflected
 };

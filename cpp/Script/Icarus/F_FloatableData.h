@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFloatableData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<UFloatableComponent> Behaviour;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float MeshDensity;  // 0x0040, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float FluidDensity;  // 0x0044, size 0x4

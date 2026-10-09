@@ -6,7 +6,6 @@ UCLASS()
 class UDamageFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AppendNewCriticalHitAreas(TMap<UPrimitiveComponent*, FCriticalHitAreasEnum> InitialHitAreas, TMap<UPrimitiveComponent*, FCriticalHitAreasEnum> AreasToAppend, TMap<UPrimitiveComponent*, FCriticalHitAreasEnum>& CombinedAreas);  // parameters 0xF0
     UFUNCTION(BlueprintCallable) static int32 CalculateDamageTaken(EIcarusDamageType DamageType, int32 DamageValue, AActor* Causer, AActor* Defender);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static bool CheckForStealthHit(EIcarusDamageType DamageType, AActor* Causer, AActor* Defender);  // parameters 0x19

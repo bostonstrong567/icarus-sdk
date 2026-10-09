@@ -6,7 +6,6 @@ UCLASS()
 class UKismetGuidLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static FString Conv_GuidToString(const FGuid& InGuid);  // parameters 0x20
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool EqualEqual_GuidGuid(const FGuid& A, const FGuid& B);  // parameters 0x21
     UFUNCTION(BlueprintCallable) static void Invalidate_Guid(FGuid& InGuid);  // parameters 0x10

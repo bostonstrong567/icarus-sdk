@@ -8,9 +8,8 @@ class UGetDropshipsCallbackProxyGen : public UOnlineBlueprintCallProxyBase
 public:
     UPROPERTY(BlueprintAssignable) FOnGetDropshipsEventSignature OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FOnGetDropshipsEventSignature OnFail;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FReqGetDropships ReqGetDropships;  // 0x0050, private
-
+private:
+    FReqGetDropships ReqGetDropships;  // 0x0050, not reflected
+public:
     UFUNCTION(BlueprintCallable) static UGetDropshipsCallbackProxyGen* GetDropships(const FReqGetDropships& Request);  // parameters 0x18
 };

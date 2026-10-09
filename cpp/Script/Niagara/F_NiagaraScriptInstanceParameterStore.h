@@ -4,8 +4,7 @@
 USTRUCT()
 struct FNiagaraScriptInstanceParameterStore : public FNiagaraParameterStore
 {
-
-    // Not reflected:
-    FNiagaraCompiledDataReference<FNiagaraScriptExecutionParameterStore> ScriptParameterStore;  // 0x0078
-    uint8 : 1 bInitialized;  // 0x0080
+private:
+    FNiagaraCompiledDataReference<FNiagaraScriptExecutionParameterStore> ScriptParameterStore;  // 0x0078, not reflected
+    uint8 : 1 bInitialized;  // 0x0080, not reflected
 };

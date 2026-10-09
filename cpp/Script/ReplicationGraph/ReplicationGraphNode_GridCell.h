@@ -5,10 +5,10 @@
 UCLASS(Transient)
 class UReplicationGraphNode_GridCell : public UReplicationGraphNode_ActorList
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
+    TFunction<UReplicationGraphNode * __cdecl(UReplicationGraphNode_GridCell *)> CreateDynamicNodeOverride;  // 0x00D0, not reflected
+private:
     UPROPERTY() UReplicationGraphNode* DynamicNode;  // 0x0110, size 0x8
     UPROPERTY() UReplicationGraphNode_DormancyNode* DormancyNode;  // 0x0118, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    TFunction<UReplicationGraphNode * __cdecl(UReplicationGraphNode_GridCell *)> CreateDynamicNodeOverride;  // 0x00D0
 };

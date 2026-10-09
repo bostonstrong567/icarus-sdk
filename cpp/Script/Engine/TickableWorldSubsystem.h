@@ -5,8 +5,6 @@
 UCLASS(Abstract)
 class UTickableWorldSubsystem : public UWorldSubsystem
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bInitialized;  // 0x0038, private
+private:
+    bool bInitialized;  // 0x0038, not reflected
 };

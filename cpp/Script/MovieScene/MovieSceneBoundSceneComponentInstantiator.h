@@ -5,5 +5,4 @@
 UCLASS()
 class UMovieSceneBoundSceneComponentInstantiator : public UMovieSceneEntityInstantiatorSystem
 {
-public:
 };

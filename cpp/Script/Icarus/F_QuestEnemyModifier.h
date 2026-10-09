@@ -4,6 +4,7 @@
 USTRUCT()
 struct FQuestEnemyModifier : public FQuestModifierData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FAISetupRowHandle> PossibleEnemies;  // 0x0040, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 MaxEnemies;  // 0x0050, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bSpawnAllInitially;  // 0x0054, size 0x1

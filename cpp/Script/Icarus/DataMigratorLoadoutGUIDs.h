@@ -5,5 +5,4 @@
 UCLASS()
 class UDataMigratorLoadoutGUIDs : public UDataMigratorBase
 {
-public:
 };

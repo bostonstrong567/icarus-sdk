@@ -67,10 +67,9 @@ public:
     UPROPERTY(EditAnywhere) FColor VertexIndexColor;  // 0x02CC, size 0x4
     UPROPERTY(EditAnywhere) FColor VertexNormalColor;  // 0x02D0, size 0x4
     UPROPERTY(Instanced) UBillboardComponent* SpriteComponent;  // 0x02D8, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FConsoleVariableSinkHandle ConsoleVariableSinkHandle;  // 0x02E0, private
-    FDelegateHandle DebugDrawTextDelegateHandle;  // 0x02E8, private
-    TArray<AGeometryCollectionDebugDrawActor::FDebugDrawText,TSizedDefaultAllocator<32> > DebugDrawTexts;  // 0x02F0, private
-    bool bNeedsDebugLinesFlush;  // 0x0300, private
+private:
+    FConsoleVariableSinkHandle ConsoleVariableSinkHandle;  // 0x02E0, not reflected
+    FDelegateHandle DebugDrawTextDelegateHandle;  // 0x02E8, not reflected
+    TArray<AGeometryCollectionDebugDrawActor::FDebugDrawText,TSizedDefaultAllocator<32> > DebugDrawTexts;  // 0x02F0, not reflected
+    bool bNeedsDebugLinesFlush;  // 0x0300, not reflected
 };

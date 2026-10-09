@@ -4,5 +4,6 @@
 USTRUCT()
 struct FMovieSceneExpansionState
 {
+public:
     UPROPERTY() bool bExpanded;  // 0x0000, size 0x1
 };

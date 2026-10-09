@@ -6,7 +6,6 @@ UCLASS()
 class UWidgetLayoutLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static FVector2D GetMousePositionOnPlatform();  // parameters 0x8
     UFUNCTION(BlueprintCallable) static FVector2D GetMousePositionOnViewport(UObject* WorldContextObject);  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintCosmetic) static bool GetMousePositionScaledByDPI(APlayerController* Player, float& LocationX, float& LocationY);  // parameters 0x11

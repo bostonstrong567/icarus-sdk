@@ -5,5 +5,4 @@
 UCLASS()
 class UCreatureAudioThreatDataTable : public UIcarusDataTable
 {
-public:
 };

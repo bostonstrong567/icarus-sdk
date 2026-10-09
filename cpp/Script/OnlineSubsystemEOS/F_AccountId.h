@@ -4,7 +4,6 @@
 USTRUCT()
 struct FAccountId
 {
-
-    // Not reflected:
-    EOS_EpicAccountIdDetails * AccountId;  // 0x0000
+public:
+    EOS_EpicAccountIdDetails * AccountId;  // 0x0000, not reflected
 };

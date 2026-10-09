@@ -5,10 +5,12 @@
 UCLASS(MinimalAPI, Config=Engine)
 class AExponentialHeightFog : public AInfo
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UExponentialHeightFogComponent* Component;  // 0x0220, size 0x8
     UPROPERTY(Replicated, ReplicatedUsing) uint8 bEnabled : 1;  // 0x0228, mask 0x01
-
+private:
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UExponentialHeightFogComponent* Component;  // 0x0220, size 0x8
+public:
     UFUNCTION() void OnRep_bEnabled();
 
     // Virtual functions that start here:

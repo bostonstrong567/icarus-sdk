@@ -5,5 +5,4 @@
 UCLASS()
 class UNationalFlagsTable : public UIcarusDataTable
 {
-public:
 };

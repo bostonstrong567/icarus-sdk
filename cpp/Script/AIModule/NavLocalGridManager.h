@@ -5,16 +5,14 @@
 UCLASS()
 class UNavLocalGridManager : public UObject
 {
+protected:
+    TArray<FCombinedNavGridData,TSizedDefaultAllocator<32> > CombinedGrids;  // 0x0028, not reflected
+    TArray<FNavLocalGridData,TSizedDefaultAllocator<32> > SourceGrids;  // 0x0038, not reflected
+    int32 VersionNum;  // 0x0048, not reflected
+    int32 NextGridId;  // 0x004C, not reflected
+    int32 MaxActiveSourceGrids;  // 0x0050, not reflected
+    uint32 : 1 bNeedsRebuilds;  // 0x0054, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<FCombinedNavGridData,TSizedDefaultAllocator<32> > CombinedGrids;  // 0x0028, protected
-    TArray<FNavLocalGridData,TSizedDefaultAllocator<32> > SourceGrids;  // 0x0038, protected
-    int32 VersionNum;  // 0x0048, protected
-    int32 NextGridId;  // 0x004C, protected
-    int32 MaxActiveSourceGrids;  // 0x0050, protected
-    uint32 : 1 bNeedsRebuilds;  // 0x0054, protected
-
     UFUNCTION(BlueprintCallable) static int32 AddLocalNavigationGridForBox(UObject* WorldContextObject, const FVector& Location, FVector Extent, FRotator Rotation, int32 Radius2D, float Height, bool bRebuildGrids);  // parameters 0x3C
     UFUNCTION(BlueprintCallable) static int32 AddLocalNavigationGridForCapsule(UObject* WorldContextObject, const FVector& Location, float CapsuleRadius, float CapsuleHalfHeight, int32 Radius2D, float Height, bool bRebuildGrids);  // parameters 0x2C
     UFUNCTION(BlueprintCallable) static int32 AddLocalNavigationGridForPoint(UObject* WorldContextObject, const FVector& Location, int32 Radius2D, float Height, bool bRebuildGrids);  // parameters 0x24

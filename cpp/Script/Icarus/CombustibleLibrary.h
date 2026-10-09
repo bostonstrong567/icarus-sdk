@@ -6,7 +6,6 @@ UCLASS()
 class UCombustibleLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToCombustibleTable(FName Name, FCombustibleData Data, FCombustibleRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x61
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakCombustibleEnum(FCombustibleEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FCombustibleRowHandle CastToCombustibleRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

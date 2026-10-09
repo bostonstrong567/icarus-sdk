@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UMovieSceneFadeTrack : public UMovieSceneFloatTrack, public IMovieSceneTrackTemplateProducer
 {
-public:
 };

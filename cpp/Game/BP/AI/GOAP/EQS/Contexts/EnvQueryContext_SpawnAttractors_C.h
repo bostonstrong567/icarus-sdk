@@ -6,6 +6,5 @@ UCLASS(EditInlineNew, Config=Engine)
 class UEnvQueryContext_SpawnAttractors_C : public UEnvQueryContext_BlueprintBase
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void ProvideActorsSet(UObject* QuerierObject, AActor* QuerierActor, TArray<AActor*>& ResultingActorsSet) const;  // parameters 0x20
 };

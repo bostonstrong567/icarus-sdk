@@ -4,6 +4,7 @@
 USTRUCT()
 struct FItemRecordStatData
 {
+public:
     UPROPERTY(SaveGame) FName Stat;  // 0x0000, size 0x8
     UPROPERTY(SaveGame) int32 Value;  // 0x0008, size 0x4
 };

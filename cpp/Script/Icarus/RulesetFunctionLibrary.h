@@ -5,5 +5,4 @@
 UCLASS()
 class URulesetFunctionLibrary : public UBlueprintFunctionLibrary
 {
-public:
 };

@@ -5,5 +5,4 @@
 UCLASS(Abstract, NotPlaceable, Config=Engine)
 class ABP_ForEachLoopDelay_C : public AActor
 {
-public:
 };

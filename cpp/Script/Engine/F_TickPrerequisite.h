@@ -4,8 +4,7 @@
 USTRUCT()
 struct FTickPrerequisite
 {
-
-    // Not reflected:
-    TWeakObjectPtr<UObject,FWeakObjectPtr> PrerequisiteObject;  // 0x0000
-    FTickFunction * PrerequisiteTickFunction;  // 0x0008
+public:
+    TWeakObjectPtr<UObject,FWeakObjectPtr> PrerequisiteObject;  // 0x0000, not reflected
+    FTickFunction * PrerequisiteTickFunction;  // 0x0008, not reflected
 };

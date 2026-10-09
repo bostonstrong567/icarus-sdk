@@ -14,6 +14,7 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FHairGroupsCardsSourceDescription> HairGroupsCards;  // 0x0080, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FHairGroupsMeshesSourceDescription> HairGroupsMeshes;  // 0x0090, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FHairGroupsMaterial> HairGroupsMaterials;  // 0x00A0, size 0x10
+    TArray<FHairGroupData,TSizedDefaultAllocator<32> > HairGroupsData;  // 0x00B0, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool EnableGlobalInterpolation;  // 0x00C0, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EGroomInterpolationType HairInterpolationType;  // 0x00C1, size 0x1
     UPROPERTY(EditAnywhere) EHairLODSelectionType LODSelectionType;  // 0x00C2, size 0x1
@@ -21,8 +22,6 @@ public:
     UPROPERTY(EditAnywhere) FPerPlatformBool DisableBelowMinLodStripping;  // 0x00C8, size 0x1
     UPROPERTY() TArray<float> EffectiveLODBias;  // 0x00D0, size 0x10
     UPROPERTY(EditAnywhere) TArray<UAssetUserData*> AssetUserData;  // 0x00E0, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<FHairGroupData,TSizedDefaultAllocator<32> > HairGroupsData;  // 0x00B0
-    bool bIsInitialized;  // 0x00F0, private
+private:
+    bool bIsInitialized;  // 0x00F0, not reflected
 };

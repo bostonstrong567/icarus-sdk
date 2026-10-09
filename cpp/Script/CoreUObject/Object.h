@@ -5,7 +5,6 @@ UCLASS(Abstract)
 class UObject
 {
 public:
-
     UFUNCTION(BlueprintImplementableEvent) void ExecuteUbergraph(int32 EntryPoint);  // parameters 0x4
 
     // Virtual functions that start here:

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FInterpEdSelKey
 {
+public:
     UPROPERTY() UInterpGroup* Group;  // 0x0000, size 0x8
     UPROPERTY() UInterpTrack* Track;  // 0x0008, size 0x8
     UPROPERTY() int32 KeyIndex;  // 0x0010, size 0x4

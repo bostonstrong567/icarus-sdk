@@ -6,9 +6,7 @@ UCLASS(EditInlineNew)
 class USettingWidget_Language : public USettingWidget
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<FText,TSizedDefaultAllocator<32> > Options;  // 0x0388
+    TArray<FText,TSizedDefaultAllocator<32> > Options;  // 0x0388, not reflected
 
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void SetLanguage(FString Language);  // parameters 0x10
     UFUNCTION(BlueprintImplementableEvent) void SetOptions(const TArray<FText>& NewOptions);  // parameters 0x10

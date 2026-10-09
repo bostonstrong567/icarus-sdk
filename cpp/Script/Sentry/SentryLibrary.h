@@ -6,7 +6,6 @@ UCLASS()
 class USentryLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static FString ByteArrayToString(const TArray<uint8>& Array);  // parameters 0x20
     UFUNCTION(BlueprintCallable) static USentryAttachment* CreateSentryAttachmentWithData(const TArray<uint8>& Data, FString Filename, FString ContentType);  // parameters 0x38
     UFUNCTION(BlueprintCallable) static USentryAttachment* CreateSentryAttachmentWithPath(FString Path, FString Filename, FString ContentType);  // parameters 0x38

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UCreatureTalentControllerComponent : public UTalentControllerComponent
 {
-public:
 };

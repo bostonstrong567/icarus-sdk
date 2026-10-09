@@ -4,6 +4,7 @@
 USTRUCT()
 struct FDurableData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Max_Durability;  // 0x0018, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool Destroyed_At_Zero;  // 0x001C, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FRepairData> ItemsForRepair;  // 0x0020, size 0x10

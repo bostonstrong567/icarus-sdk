@@ -6,7 +6,6 @@ UCLASS()
 class UWeightLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToWeightTable(FName Name, FWeightData Data, FWeightRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x71
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakWeightEnum(FWeightEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FWeightRowHandle CastToWeightRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

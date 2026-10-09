@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UCS_Mammoth_Footstep_C : public UMatineeCameraShake
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_AimConstraint : public FRigUnitMutable
 {
+public:
     UPROPERTY(EditAnywhere) FName Joint;  // 0x0068, size 0x8
     UPROPERTY(EditAnywhere) EAimMode AimMode;  // 0x0070, size 0x1
     UPROPERTY(EditAnywhere) EAimMode UpMode;  // 0x0071, size 0x1

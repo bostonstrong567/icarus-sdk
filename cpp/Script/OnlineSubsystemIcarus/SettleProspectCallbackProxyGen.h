@@ -8,9 +8,8 @@ class USettleProspectCallbackProxyGen : public UOnlineBlueprintCallProxyBase
 public:
     UPROPERTY(BlueprintAssignable) FOnSettleProspectEventSignature OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FOnSettleProspectEventSignature OnFail;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FReqSettleProspect ReqSettleProspect;  // 0x0050, private
-
+private:
+    FReqSettleProspect ReqSettleProspect;  // 0x0050, not reflected
+public:
     UFUNCTION(BlueprintCallable) static USettleProspectCallbackProxyGen* SettleProspect(const FReqSettleProspect& Request);  // parameters 0x30
 };

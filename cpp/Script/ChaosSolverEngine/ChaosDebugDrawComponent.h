@@ -5,8 +5,6 @@
 UCLASS(Config=Engine)
 class UChaosDebugDrawComponent : public UActorComponent
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bInPlay;  // 0x00B0, private
+private:
+    bool bInPlay;  // 0x00B0, not reflected
 };

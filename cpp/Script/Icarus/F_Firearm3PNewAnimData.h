@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFirearm3PNewAnimData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UAnimSequence> Poses;  // 0x0000, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UAnimSequence> Run;  // 0x0028, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UAnimSequence> Sprint;  // 0x0050, size 0x28

@@ -4,5 +4,6 @@
 USTRUCT()
 struct FRigPose
 {
+public:
     UPROPERTY() TArray<FRigPoseElement> Elements;  // 0x0000, size 0x10
 };

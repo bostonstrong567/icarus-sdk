@@ -19,10 +19,9 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSoundModulationDestinationSettings WetLevelModulation;  // 0x0088, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSoundModulationDestinationSettings DryLevelModulation;  // 0x0098, size 0x10
     UPROPERTY(BlueprintAssignable) FOnSubmixRecordedFileDone OnSubmixRecordedFileDone;  // 0x00A8, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TUniquePtr<Audio::FAudioRecordingData,TDefaultDelete<Audio::FAudioRecordingData> > RecordingData;  // 0x00B8, protected
-
+protected:
+    TUniquePtr<Audio::FAudioRecordingData,TDefaultDelete<Audio::FAudioRecordingData> > RecordingData;  // 0x00B8, not reflected
+public:
     UFUNCTION(BlueprintCallable) void AddEnvelopeFollowerDelegate(UObject* WorldContextObject, const FOnSubmixEnvelopeBP& OnSubmixEnvelopeBP);  // parameters 0x18
     UFUNCTION(BlueprintCallable) void AddSpectralAnalysisDelegate(UObject* WorldContextObject, const TArray<FSoundSubmixSpectralAnalysisBandSettings>& InBandSettings, const FOnSubmixSpectralAnalysisBP& OnSubmixSpectralAnalysisBP, float UpdateRate, float DecibelNoiseFloor, bool bDoNormalize, bool bDoAutoRange, float AutoRangeAttackTime, float AutoRangeReleaseTime);  // parameters 0x3C
     UFUNCTION(BlueprintCallable) void RemoveSpectralAnalysisDelegate(UObject* WorldContextObject, const FOnSubmixSpectralAnalysisBP& OnSubmixSpectralAnalysisBP);  // parameters 0x18

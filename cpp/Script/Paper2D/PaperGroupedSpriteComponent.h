@@ -5,13 +5,12 @@
 UCLASS(Config=Engine)
 class UPaperGroupedSpriteComponent : public UMeshComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY() TArray<UMaterialInterface*> InstanceMaterials;  // 0x0478, size 0x10
     UPROPERTY(EditAnywhere) TArray<FSpriteInstanceData> PerInstanceSpriteData;  // 0x0488, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<FBodyInstance *,TSizedDefaultAllocator<32> > InstanceBodies;  // 0x0498, protected
-
+    TArray<FBodyInstance *,TSizedDefaultAllocator<32> > InstanceBodies;  // 0x0498, not reflected
+public:
     UFUNCTION(BlueprintCallable) int32 AddInstance(const FTransform& Transform, UPaperSprite* Sprite, bool bWorldSpace, FLinearColor Color);  // parameters 0x50
     UFUNCTION(BlueprintCallable) void ClearInstances();
     UFUNCTION(BlueprintCallable, BlueprintPure) int32 GetInstanceCount() const;  // parameters 0x4

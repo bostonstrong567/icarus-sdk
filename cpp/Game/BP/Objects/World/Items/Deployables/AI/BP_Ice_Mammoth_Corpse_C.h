@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class ABP_Ice_Mammoth_Corpse_C : public ABP_GOAP_Corpse_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void IsSkeletonUpdated();
     UFUNCTION(BlueprintCallable) void OnSkinnedStateUpdated();
 };

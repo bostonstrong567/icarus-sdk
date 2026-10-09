@@ -4,5 +4,6 @@
 USTRUCT()
 struct FBoneReductionSetting
 {
+public:
     UPROPERTY() TArray<FName> BonesToRemove;  // 0x0000, size 0x10
 };

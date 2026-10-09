@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_ELY_Story_5_Draw_Sandworm_2_C : public ABPQ_ELY_Story_5_Draw_Sandworm_C
 {
-public:
 };

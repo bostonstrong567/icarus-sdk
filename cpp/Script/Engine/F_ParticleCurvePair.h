@@ -4,6 +4,7 @@
 USTRUCT()
 struct FParticleCurvePair
 {
+public:
     UPROPERTY() FString CurveName;  // 0x0000, size 0x10
     UPROPERTY() UObject* CurveObject;  // 0x0010, size 0x8
 };

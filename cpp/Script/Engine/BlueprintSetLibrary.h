@@ -6,7 +6,6 @@ UCLASS()
 class UBlueprintSetLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void SetSetPropertyByName(UObject* Object, FName PropertyName, const TSet<int32>& Value);  // parameters 0x60
     UFUNCTION(BlueprintCallable) static void Set_Add(const TSet<int32>& TargetSet, const int32& NewItem);  // parameters 0x54
     UFUNCTION(BlueprintCallable) static void Set_AddItems(const TSet<int32>& TargetSet, const TArray<int32>& NewItems);  // parameters 0x60

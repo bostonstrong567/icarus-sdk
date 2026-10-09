@@ -5,5 +5,4 @@
 UCLASS()
 class UMaterialExpressionParticleColor : public UMaterialExpression
 {
-public:
 };

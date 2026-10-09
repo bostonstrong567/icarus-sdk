@@ -4,5 +4,6 @@
 USTRUCT()
 struct FCharacterFlag : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText Description;  // 0x0018, size 0x18
 };

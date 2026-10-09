@@ -4,6 +4,7 @@
 USTRUCT()
 struct FVoxelMinedSphere
 {
+public:
     UPROPERTY(EditAnywhere, SaveGame, BlueprintReadWrite) FVector Location;  // 0x0000, size 0xC
     UPROPERTY(EditAnywhere, SaveGame, BlueprintReadWrite) float Radius;  // 0x000C, size 0x4
 };

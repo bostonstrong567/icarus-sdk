@@ -8,8 +8,7 @@ class UImgMediaPlaybackComponent : public UActorComponent
 public:
     UPROPERTY(EditAnywhere) float Width;  // 0x00B0, size 0x4
     UPROPERTY(EditAnywhere) float LODBias;  // 0x00B4, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<TWeakObjectPtr<UMediaTexture,FWeakObjectPtr>,TSizedDefaultAllocator<32> > MediaTextures;  // 0x00B8, protected
-    TSharedPtr<FImgMediaMipMapObjectInfo,1> ObjectInfo;  // 0x00C8, protected
+protected:
+    TArray<TWeakObjectPtr<UMediaTexture,FWeakObjectPtr>,TSizedDefaultAllocator<32> > MediaTextures;  // 0x00B8, not reflected
+    TSharedPtr<FImgMediaMipMapObjectInfo,1> ObjectInfo;  // 0x00C8, not reflected
 };

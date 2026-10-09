@@ -6,6 +6,5 @@ UCLASS(EditInlineNew, Config=Engine)
 class UW_MetaShop_C : public UW_SpaceTooltip_Base_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void UpdateVisuals();
 };

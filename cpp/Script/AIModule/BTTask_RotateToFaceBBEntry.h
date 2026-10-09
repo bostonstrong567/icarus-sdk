@@ -5,10 +5,10 @@
 UCLASS(Config=Game)
 class UBTTask_RotateToFaceBBEntry : public UBTTask_BlackboardBase
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, Config) float Precision;  // 0x0098, size 0x4
     UPROPERTY(EditAnywhere, Config) bool bIgnoreZPrecision;  // 0x009C, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    float PrecisionDot;  // 0x00A0, private
+private:
+    float PrecisionDot;  // 0x00A0, not reflected
 };

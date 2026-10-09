@@ -8,9 +8,8 @@ class UGetLoadoutInventoryCallbackProxyGen : public UOnlineBlueprintCallProxyBas
 public:
     UPROPERTY(BlueprintAssignable) FOnGetLoadoutInventoryEventSignature OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FOnGetLoadoutInventoryEventSignature OnFail;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FReqLoadoutInventory ReqLoadoutInventory;  // 0x0050, private
-
+private:
+    FReqLoadoutInventory ReqLoadoutInventory;  // 0x0050, not reflected
+public:
     UFUNCTION(BlueprintCallable) static UGetLoadoutInventoryCallbackProxyGen* GetLoadoutInventory(const FReqLoadoutInventory& Request);  // parameters 0x20
 };

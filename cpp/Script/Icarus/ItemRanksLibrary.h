@@ -6,7 +6,6 @@ UCLASS()
 class UItemRanksLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToItemRanksTable(FName Name, FItemRank Data, FItemRanksRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x79
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakItemRanksEnum(FItemRanksEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FItemRanksRowHandle CastToItemRanksRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

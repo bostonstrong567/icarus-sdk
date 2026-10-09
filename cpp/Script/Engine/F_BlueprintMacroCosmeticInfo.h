@@ -4,7 +4,6 @@
 USTRUCT()
 struct FBlueprintMacroCosmeticInfo
 {
-
-    // Not reflected:
-    bool bContainsLatentNodes;  // 0x0000
+public:
+    bool bContainsLatentNodes;  // 0x0000, not reflected
 };

@@ -6,31 +6,30 @@ UCLASS(Transient, Config=Input)
 class UPlayerInput : public UObject
 {
 public:
+    FVector[11] Touches;  // 0x0028, not reflected
+    TMap<unsigned int,FVector,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<unsigned int,FVector,0> > TouchEventLocations;  // 0x00B0, not reflected
+    float[2] ZeroTime;  // 0x0100, not reflected
+    float[2] SmoothedMouse;  // 0x0108, not reflected
+    int32 MouseSamples;  // 0x0110, not reflected
+    float MouseSamplingTotal;  // 0x0114, not reflected
     UPROPERTY(Config) TArray<FKeyBind> DebugExecBindings;  // 0x0120, size 0x10
+    TArray<FInputAxisConfigEntry,TSizedDefaultAllocator<32> > AxisConfig;  // 0x0130, not reflected
+    TArray<FInputActionKeyMapping,TSizedDefaultAllocator<32> > ActionMappings;  // 0x0140, not reflected
+    TArray<FInputAxisKeyMapping,TSizedDefaultAllocator<32> > AxisMappings;  // 0x0150, not reflected
     UPROPERTY(Config) TArray<FName> InvertedAxis;  // 0x0160, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FVector[11] Touches;  // 0x0028
-    TMap<unsigned int,FVector,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<unsigned int,FVector,0> > TouchEventLocations;  // 0x00B0
-    float[2] ZeroTime;  // 0x0100
-    float[2] SmoothedMouse;  // 0x0108
-    int32 MouseSamples;  // 0x0110
-    float MouseSamplingTotal;  // 0x0114
-    TEnumAsByte<enum EInputEvent> CurrentEvent;  // 0x0118, private
-    TArray<FInputAxisConfigEntry,TSizedDefaultAllocator<32> > AxisConfig;  // 0x0130
-    TArray<FInputActionKeyMapping,TSizedDefaultAllocator<32> > ActionMappings;  // 0x0140
-    TArray<FInputAxisKeyMapping,TSizedDefaultAllocator<32> > AxisMappings;  // 0x0150
-    TMap<FKey,FInputAxisProperties,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FKey,FInputAxisProperties,0> > AxisProperties;  // 0x0170, private
-    TMap<FName,UPlayerInput::FActionKeyDetails,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,UPlayerInput::FActionKeyDetails,0> > ActionKeyMap;  // 0x01C0, private
-    TMap<FName,UPlayerInput::FAxisKeyDetails,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,UPlayerInput::FAxisKeyDetails,0> > AxisKeyMap;  // 0x0210, private
-    TMap<FKey,FKeyState,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FKey,FKeyState,0> > KeyStateMap;  // 0x0260, private
-    uint32 KeyMapBuildIndex;  // 0x02B0, private
-    uint8 : 1 bKeyMapsBuilt;  // 0x02B4, private
-    FGestureRecognizer GestureRecognizer;  // 0x02B8, private
-    TArray<unsigned int,TSizedDefaultAllocator<32> > EventIndices;  // 0x0390, private
-    uint32 EventCount;  // 0x03A0, private
-    float LastTimeDilation;  // 0x03A4, private
-
+private:
+    TEnumAsByte<enum EInputEvent> CurrentEvent;  // 0x0118, not reflected
+    TMap<FKey,FInputAxisProperties,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FKey,FInputAxisProperties,0> > AxisProperties;  // 0x0170, not reflected
+    TMap<FName,UPlayerInput::FActionKeyDetails,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,UPlayerInput::FActionKeyDetails,0> > ActionKeyMap;  // 0x01C0, not reflected
+    TMap<FName,UPlayerInput::FAxisKeyDetails,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,UPlayerInput::FAxisKeyDetails,0> > AxisKeyMap;  // 0x0210, not reflected
+    TMap<FKey,FKeyState,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FKey,FKeyState,0> > KeyStateMap;  // 0x0260, not reflected
+    uint32 KeyMapBuildIndex;  // 0x02B0, not reflected
+    uint8 : 1 bKeyMapsBuilt;  // 0x02B4, not reflected
+    FGestureRecognizer GestureRecognizer;  // 0x02B8, not reflected
+    TArray<unsigned int,TSizedDefaultAllocator<32> > EventIndices;  // 0x0390, not reflected
+    uint32 EventCount;  // 0x03A0, not reflected
+    float LastTimeDilation;  // 0x03A4, not reflected
+public:
     UFUNCTION(Exec) void ClearSmoothing();
     UFUNCTION(Exec) void InvertAxis(FName AxisName);  // parameters 0x8
     UFUNCTION(Exec) void InvertAxisKey(FKey AxisKey);  // parameters 0x18

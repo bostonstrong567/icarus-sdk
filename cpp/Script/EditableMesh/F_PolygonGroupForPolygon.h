@@ -4,6 +4,7 @@
 USTRUCT()
 struct FPolygonGroupForPolygon
 {
+public:
     UPROPERTY(BlueprintReadWrite) FPolygonID PolygonID;  // 0x0000, size 0x4
     UPROPERTY(BlueprintReadWrite) FPolygonGroupID PolygonGroupID;  // 0x0004, size 0x4
 };

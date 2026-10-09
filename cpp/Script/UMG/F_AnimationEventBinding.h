@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAnimationEventBinding
 {
+public:
     UPROPERTY() UWidgetAnimation* Animation;  // 0x0000, size 0x8
     UPROPERTY() FWidgetAnimationDynamicEvent Delegate;  // 0x0008, size 0x10
     UPROPERTY() EWidgetAnimationEvent AnimationEvent;  // 0x0018, size 0x1

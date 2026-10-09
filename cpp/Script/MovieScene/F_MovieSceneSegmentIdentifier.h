@@ -4,5 +4,6 @@
 USTRUCT()
 struct FMovieSceneSegmentIdentifier
 {
+public:
     UPROPERTY() int32 IdentifierIndex;  // 0x0000, size 0x4
 };

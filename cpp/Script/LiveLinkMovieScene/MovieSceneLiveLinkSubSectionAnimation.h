@@ -5,8 +5,6 @@
 UCLASS()
 class UMovieSceneLiveLinkSubSectionAnimation : public UMovieSceneLiveLinkSubSection
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<FMovieSceneLiveLinkTransformHandler,0> TransformHandler;  // 0x0050, protected
+protected:
+    TSharedPtr<FMovieSceneLiveLinkTransformHandler,0> TransformHandler;  // 0x0050, not reflected
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLevelViewportInfo
 {
+public:
     UPROPERTY() FVector CamPosition;  // 0x0000, size 0xC
     UPROPERTY() FRotator CamRotation;  // 0x000C, size 0xC
     UPROPERTY() float CamOrthoZoom;  // 0x0018, size 0x4

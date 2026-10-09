@@ -4,8 +4,7 @@
 USTRUCT()
 struct FChaosHandlerSet
 {
+public:
+    bool bLegacyComponentNotify;  // 0x0000, not reflected
     UPROPERTY() TSet<UObject*> ChaosHandlers;  // 0x0008, size 0x50
-
-    // Not reflected:
-    bool bLegacyComponentNotify;  // 0x0000
 };

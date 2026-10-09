@@ -4,6 +4,7 @@
 USTRUCT()
 struct FTalentHoverConfig
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSlateColor NormalTextColor;  // 0x0000, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSlateColor HoveredTextColor;  // 0x0028, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSlateColor PressedTextColor;  // 0x0050, size 0x28

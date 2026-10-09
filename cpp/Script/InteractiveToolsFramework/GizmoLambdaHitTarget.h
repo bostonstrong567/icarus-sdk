@@ -6,8 +6,6 @@ UCLASS()
 class UGizmoLambdaHitTarget : public UObject, public IGizmoClickTarget
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TUniqueFunction<FInputRayHit __cdecl(FInputDeviceRay const &)> IsHitFunction;  // 0x0030
-    TFunction<void __cdecl(bool)> UpdateHoverFunction;  // 0x0070
+    TUniqueFunction<FInputRayHit __cdecl(FInputDeviceRay const &)> IsHitFunction;  // 0x0030, not reflected
+    TFunction<void __cdecl(bool)> UpdateHoverFunction;  // 0x0070, not reflected
 };

@@ -4,8 +4,8 @@
 USTRUCT()
 struct FFloatDistribution
 {
+public:
     UPROPERTY() FDistributionLookupTable Table;  // 0x0000, size 0x20
-
-    // Not reflected:
-    FDistributionLookupTable LookupTable;  // 0x0000
+private:
+    FDistributionLookupTable LookupTable;  // 0x0000, not reflected
 };

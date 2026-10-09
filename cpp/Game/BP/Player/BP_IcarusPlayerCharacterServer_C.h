@@ -5,5 +5,4 @@
 UCLASS(Config=Game)
 class ABP_IcarusPlayerCharacterServer_C : public AIcarusPlayerCharacterServer
 {
-public:
 };

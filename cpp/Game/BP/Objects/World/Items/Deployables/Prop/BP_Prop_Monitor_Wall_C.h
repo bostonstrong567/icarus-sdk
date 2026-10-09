@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Prop_Monitor_Wall_C : public ABP_Prop_Monitor_C
 {
-public:
 };

@@ -5,16 +5,16 @@
 UCLASS(Config=Engine)
 class UBrainComponent : public UActorComponent, public IAIResourceInterface
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(Transient, Instanced) UBlackboardComponent* BlackboardComp;  // 0x00B8, size 0x8
     UPROPERTY(Transient) AAIController* AIOwner;  // 0x00C0, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<FAIMessage,TSizedDefaultAllocator<32> > MessagesToProcess;  // 0x00C8, protected
-    TArray<FAIMessageObserver *,TSizedDefaultAllocator<32> > MessageObservers;  // 0x00D8, protected
-    FAIResourceLock ResourceLock;  // 0x00E8, protected
-    uint32 : 1 bDoLogicRestartOnUnlock;  // 0x0100, private
-
+    TArray<FAIMessage,TSizedDefaultAllocator<32> > MessagesToProcess;  // 0x00C8, not reflected
+    TArray<FAIMessageObserver *,TSizedDefaultAllocator<32> > MessageObservers;  // 0x00D8, not reflected
+    FAIResourceLock ResourceLock;  // 0x00E8, not reflected
+private:
+    uint32 : 1 bDoLogicRestartOnUnlock;  // 0x0100, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsPaused() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsRunning() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable) void RestartLogic();

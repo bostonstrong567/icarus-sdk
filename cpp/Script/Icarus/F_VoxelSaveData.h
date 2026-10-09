@@ -4,6 +4,7 @@
 USTRUCT()
 struct FVoxelSaveData
 {
+public:
     UPROPERTY(SaveGame) TArray<FVoxelMinedSphere> MinedSpheres;  // 0x0000, size 0x10
     UPROPERTY(SaveGame) bool bIsVoxelFullyMined;  // 0x0010, size 0x1
     UPROPERTY(SaveGame) int32 TotalUnminedVoxels;  // 0x0014, size 0x4

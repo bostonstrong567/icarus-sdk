@@ -6,7 +6,6 @@ UCLASS()
 class UAudioMixerBlueprintLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddMasterSubmixEffect(UObject* WorldContextObject, USoundEffectSubmixPreset* SubmixEffectPreset);  // parameters 0x10
     UFUNCTION(BlueprintCallable) static void AddSourceEffectToPresetChain(UObject* WorldContextObject, USoundEffectSourcePresetChain* PresetChain, FSourceEffectChainEntry Entry);  // parameters 0x20
     UFUNCTION(BlueprintCallable) static int32 AddSubmixEffect(UObject* WorldContextObject, USoundSubmix* SoundSubmix, USoundEffectSubmixPreset* SubmixEffectPreset);  // parameters 0x1C

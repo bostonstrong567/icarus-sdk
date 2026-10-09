@@ -4,6 +4,7 @@
 USTRUCT()
 struct FProspectInfo
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString ProspectID;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString ClaimedAccountID;  // 0x0010, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 ClaimedAccountCharacter;  // 0x0020, size 0x4

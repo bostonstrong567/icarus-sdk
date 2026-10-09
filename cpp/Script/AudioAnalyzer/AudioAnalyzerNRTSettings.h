@@ -5,5 +5,4 @@
 UCLASS(Abstract, EditInlineNew)
 class UAudioAnalyzerNRTSettings : public UAudioAnalyzerAsset
 {
-public:
 };

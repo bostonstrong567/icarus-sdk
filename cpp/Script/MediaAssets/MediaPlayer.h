@@ -5,6 +5,7 @@
 UCLASS()
 class UMediaPlayer : public UObject
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintAssignable) FOnMediaPlayerMediaEvent OnEndReached;  // 0x0028, size 0x10
     UPROPERTY(BlueprintAssignable) FOnMediaPlayerMediaEvent OnMediaClosed;  // 0x0038, size 0x10
@@ -20,6 +21,7 @@ public:
     UPROPERTY(BlueprintReadWrite) bool NativeAudioOut;  // 0x00C0, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool PlayOnOpen;  // 0x00C1, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 Shuffle : 1;  // 0x00C4, mask 0x01
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 Loop : 1;  // 0x00C4, mask 0x02
     UPROPERTY(Transient, BlueprintReadOnly) UMediaPlaylist* Playlist;  // 0x00C8, size 0x8
     UPROPERTY(BlueprintReadOnly) int32 PlaylistIndex;  // 0x00D0, size 0x4
@@ -27,14 +29,13 @@ public:
     UPROPERTY(EditAnywhere) float HorizontalFieldOfView;  // 0x00E0, size 0x4
     UPROPERTY(EditAnywhere) float VerticalFieldOfView;  // 0x00E4, size 0x4
     UPROPERTY(EditAnywhere) FRotator ViewRotation;  // 0x00E8, size 0xC
+private:
+    UMediaPlayer::FOnMediaEvent MediaEvent;  // 0x00F8, not reflected
+    TSharedPtr<FMediaPlayerFacade,1> PlayerFacade;  // 0x0110, not reflected
     UPROPERTY() FGuid PlayerGuid;  // 0x0120, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    UMediaPlayer::FOnMediaEvent MediaEvent;  // 0x00F8, private
-    TSharedPtr<FMediaPlayerFacade,1> PlayerFacade;  // 0x0110, private
-    bool PlayOnNext;  // 0x0130, private
-    bool RegisteredWithMediaModule;  // 0x0131, private
-
+    bool PlayOnNext;  // 0x0130, not reflected
+    bool RegisteredWithMediaModule;  // 0x0131, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) bool CanPause() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable) bool CanPlaySource(UMediaSource* MediaSource);  // parameters 0x9
     UFUNCTION(BlueprintCallable) bool CanPlayUrl(FString Url);  // parameters 0x11

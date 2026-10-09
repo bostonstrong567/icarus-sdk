@@ -4,9 +4,8 @@
 USTRUCT()
 struct FRigControlModifiedContext
 {
-
-    // Not reflected:
-    EControlRigSetKey SetKey;  // 0x0000
-    float LocalTime;  // 0x0004
-    FName EventName;  // 0x0008
+public:
+    EControlRigSetKey SetKey;  // 0x0000, not reflected
+    float LocalTime;  // 0x0004, not reflected
+    FName EventName;  // 0x0008, not reflected
 };

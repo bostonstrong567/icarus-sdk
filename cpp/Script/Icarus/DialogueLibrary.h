@@ -6,7 +6,6 @@ UCLASS()
 class UDialogueLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToDialogueTable(FName Name, FDialogue Data, FDialogueRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x101
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakDialogueEnum(FDialogueEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FDialogueRowHandle CastToDialogueRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UBP_BallisticBehaviour_SlugLauncher_C : public UBP_BallisticBehaviour_FilteredDamage_C
 {
-public:
 };

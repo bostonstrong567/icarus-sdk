@@ -5,8 +5,10 @@
 UCLASS(Transient, Config=Engine)
 class UBehaviorTreeManager : public UObject
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(Config) int32 MaxDebuggerSteps;  // 0x0028, size 0x4
+protected:
     UPROPERTY() TArray<FBehaviorTreeTemplateInfo> LoadedTemplates;  // 0x0030, size 0x10
     UPROPERTY() TArray<UBehaviorTreeComponent*> ActiveComponents;  // 0x0040, size 0x10
 };

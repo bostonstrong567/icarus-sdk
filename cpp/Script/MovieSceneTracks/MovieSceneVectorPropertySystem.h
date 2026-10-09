@@ -5,5 +5,4 @@
 UCLASS()
 class UMovieSceneVectorPropertySystem : public UMovieScenePropertySystem
 {
-public:
 };

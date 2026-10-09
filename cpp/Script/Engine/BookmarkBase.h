@@ -5,7 +5,6 @@
 UCLASS(Abstract)
 class UBookmarkBase : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   OnCleared

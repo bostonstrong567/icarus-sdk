@@ -5,6 +5,7 @@
 UCLASS(MinimalAPI)
 class ULandscapeSplineControlPoint : public UObject
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere) FVector Location;  // 0x0028, size 0xC
     UPROPERTY(EditAnywhere) FRotator Rotation;  // 0x0034, size 0xC
@@ -17,6 +18,7 @@ public:
     UPROPERTY(EditAnywhere) float RightSideLayerFalloffFactor;  // 0x0058, size 0x4
     UPROPERTY(EditAnywhere) float EndFalloff;  // 0x005C, size 0x4
     UPROPERTY() TArray<FLandscapeSplineConnection> ConnectedSegments;  // 0x0060, size 0x10
+protected:
     UPROPERTY() TArray<FLandscapeSplineInterpPoint> Points;  // 0x0070, size 0x10
     UPROPERTY() FBox Bounds;  // 0x0080, size 0x1C
     UPROPERTY(Instanced) UControlPointMeshComponent* LocalMeshComponent;  // 0x00A0, size 0x8

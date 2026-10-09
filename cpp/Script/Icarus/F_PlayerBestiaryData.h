@@ -4,6 +4,7 @@
 USTRUCT()
 struct FPlayerBestiaryData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<FBestiaryGroupTracking> BestiaryTracking;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<FFishTypeTracking> FishTracking;  // 0x0010, size 0x10
 };

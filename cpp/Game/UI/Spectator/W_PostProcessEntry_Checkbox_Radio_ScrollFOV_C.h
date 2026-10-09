@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UW_PostProcessEntry_Checkbox_Radio_ScrollFOV_C : public UW_PostProcessEntry_Checkbox_Radio_C
 {
-public:
 };

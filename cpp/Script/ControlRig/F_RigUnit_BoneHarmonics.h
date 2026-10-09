@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_BoneHarmonics : public FRigUnit_HighlevelBaseMutable
 {
+public:
     UPROPERTY() TArray<FRigUnit_BoneHarmonics_BoneTarget> Bones;  // 0x0068, size 0x10
     UPROPERTY() FVector WaveSpeed;  // 0x0078, size 0xC
     UPROPERTY() FVector WaveFrequency;  // 0x0084, size 0xC

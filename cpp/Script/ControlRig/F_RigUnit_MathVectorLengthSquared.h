@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_MathVectorLengthSquared : public FRigUnit_MathVectorBase
 {
+public:
     UPROPERTY() FVector Value;  // 0x0008, size 0xC
     UPROPERTY() float Result;  // 0x0014, size 0x4
 };

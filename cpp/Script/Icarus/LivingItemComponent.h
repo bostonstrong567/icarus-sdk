@@ -8,13 +8,12 @@ class ULivingItemComponent : public UTraitComponent
 public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<UStaticMeshComponent*> AttachedStaticMeshes;  // 0x00D0, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TMap<UStaticMeshComponent*, FMeshCustomisationData> AppliedMeshCustomisations;  // 0x00E0, size 0x50
-
-    // Not reflected: the engine's scripting cannot see these.
-    int32 CurrentUnlockingSlot;  // 0x0130, private
-    FChallenge CurrentUnlockingChallenge;  // 0x0138, private
-    TArray<FMeshCustomisationData,TSizedDefaultAllocator<32> > PendingMeshCustomisations;  // 0x01A8, private
-    TSharedPtr<FStreamableHandle,0> PendingMeshCustomisationsStreamingHandle;  // 0x01B8, private
-
+private:
+    int32 CurrentUnlockingSlot;  // 0x0130, not reflected
+    FChallenge CurrentUnlockingChallenge;  // 0x0138, not reflected
+    TArray<FMeshCustomisationData,TSizedDefaultAllocator<32> > PendingMeshCustomisations;  // 0x01A8, not reflected
+    TSharedPtr<FStreamableHandle,0> PendingMeshCustomisationsStreamingHandle;  // 0x01B8, not reflected
+public:
     UFUNCTION(BlueprintCallable) void Cheat_AddChallengeProgress(int32 Amount);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void Cheat_CompleteActiveChallenge();
     UFUNCTION(BlueprintCallable) void Cheat_CompleteAllChallenges();

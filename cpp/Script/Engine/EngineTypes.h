@@ -5,5 +5,4 @@
 UCLASS(Abstract, Config=Engine)
 class UEngineTypes : public UObject
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMovieSceneTrackInstanceEntry
 {
+public:
     UPROPERTY() UObject* BoundObject;  // 0x0000, size 0x8
     UPROPERTY() UMovieSceneTrackInstance* TrackInstance;  // 0x0008, size 0x8
 };

@@ -5,5 +5,4 @@
 UCLASS(NotPlaceable, EditInlineNew)
 class UDEPRECATED_RootMotionModifier_SimpleWarp : public URootMotionModifier_Warp
 {
-public:
 };

@@ -5,7 +5,6 @@
 UCLASS(Abstract)
 class UToolMenuBase : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   AddMenuCustomization, ContainsEntry, ContainsSection, FindMenuCustomization

@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UHabFunctionLibrary_C : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static FVector ConditionallyFilterUpDirection(FVector Vector, FVector UpAxis, bool IgnoreUp, UObject* __WorldContext) const;  // parameters 0x34
     UFUNCTION(BlueprintCallable) static void FindBestGripTransform(UPrimitiveComponent* GripTargetComponent, bool ForLeftHand, FVector TargetLocation, FRotator TargetRotation, UObject* __WorldContext, FTransform& BestTransform);  // parameters 0x60
     UFUNCTION(BlueprintCallable) static void GetAutoOrientLocationAndDirection(AIcarusPlayerCharacter* Character, HabHandStateStruct HandState, bool ForLeftHand, FVector& DesiredHeadLocation, FVector& DesiredFacingDirection, UObject* __WorldContext, bool& FoundLocationSuccessfully);  // parameters 0x61

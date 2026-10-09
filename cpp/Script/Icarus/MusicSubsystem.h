@@ -5,27 +5,26 @@
 UCLASS()
 class UMusicSubsystem : public UGameInstanceSubsystem
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
+    FMusicSubsystemConfig CurrentConfig;  // 0x0030, not reflected
     UPROPERTY() TArray<UMusicPlayer*> MusicPlayers;  // 0x0038, size 0x10
+    bool bMusicCanPlay;  // 0x0048, not reflected
+    bool bAutoTrackChangeEnabled;  // 0x0049, not reflected
+    FTimerHandle WaitTimerHandle;  // 0x0050, not reflected
+    TArray<FMusicTrack const *,TSizedDefaultAllocator<32> > TrackHistory;  // 0x0058, not reflected
+    uint8 PlayerStateCondition;  // 0x0068, not reflected
+    uint8 CombatCondition;  // 0x0069, not reflected
+    uint8 TimeOfDayCondition;  // 0x006A, not reflected
+    uint8 WeatherCondition;  // 0x006B, not reflected
+    uint8 DropTimeCondition;  // 0x006C, not reflected
+    uint8 DropStateCondition;  // 0x006D, not reflected
+    uint8 GameplayEventCondition;  // 0x006E, not reflected
+    uint8 DisasterCondition;  // 0x006F, not reflected
+    FMusicLocationConditionsRowHandle LocationCondition;  // 0x0070, not reflected
+    FMusicQuestConditionsRowHandle QuestCondition;  // 0x0088, not reflected
     UPROPERTY() TMap<FMusicTrackStateGroupsRowHandle, int32> TrackStates;  // 0x00A0, size 0x50
-
-    // Not reflected: the engine's scripting cannot see these.
-    FMusicSubsystemConfig CurrentConfig;  // 0x0030, private
-    bool bMusicCanPlay;  // 0x0048, private
-    bool bAutoTrackChangeEnabled;  // 0x0049, private
-    FTimerHandle WaitTimerHandle;  // 0x0050, private
-    TArray<FMusicTrack const *,TSizedDefaultAllocator<32> > TrackHistory;  // 0x0058, private
-    uint8 PlayerStateCondition;  // 0x0068, private
-    uint8 CombatCondition;  // 0x0069, private
-    uint8 TimeOfDayCondition;  // 0x006A, private
-    uint8 WeatherCondition;  // 0x006B, private
-    uint8 DropTimeCondition;  // 0x006C, private
-    uint8 DropStateCondition;  // 0x006D, private
-    uint8 GameplayEventCondition;  // 0x006E, private
-    uint8 DisasterCondition;  // 0x006F, private
-    FMusicLocationConditionsRowHandle LocationCondition;  // 0x0070, private
-    FMusicQuestConditionsRowHandle QuestCondition;  // 0x0088, private
-
+public:
     UFUNCTION(BlueprintCallable) void SetAutoTrackChangeEnabled(bool bEnabled);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void SetConditionCombatState(EMusicConditionCombatState NewCombatState);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void SetConditionDisaster(EMusicConditionDisaster NewDisaster);  // parameters 0x1

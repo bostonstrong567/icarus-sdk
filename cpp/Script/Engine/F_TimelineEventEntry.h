@@ -4,6 +4,7 @@
 USTRUCT()
 struct FTimelineEventEntry
 {
+public:
     UPROPERTY() float Time;  // 0x0000, size 0x4
     UPROPERTY() FOnTimelineEvent EventFunc;  // 0x0004, size 0x10
 };

@@ -5,5 +5,4 @@
 UCLASS()
 class UDatasmithOptionsBase : public UObject
 {
-public:
 };

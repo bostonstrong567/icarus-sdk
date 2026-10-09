@@ -5,5 +5,4 @@
 UCLASS()
 class ULinkerPlaceholderExportObject : public UObject
 {
-public:
 };

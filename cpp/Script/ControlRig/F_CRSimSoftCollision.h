@@ -4,6 +4,7 @@
 USTRUCT()
 struct FCRSimSoftCollision
 {
+public:
     UPROPERTY() FTransform Transform;  // 0x0000, size 0x30
     UPROPERTY() ECRSimSoftCollisionType ShapeType;  // 0x0030, size 0x1
     UPROPERTY() float MinimumDistance;  // 0x0034, size 0x4

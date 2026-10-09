@@ -5,5 +5,4 @@
 UCLASS(Abstract, MinimalAPI)
 class UResourceInteractionInterface : public UInterface
 {
-public:
 };

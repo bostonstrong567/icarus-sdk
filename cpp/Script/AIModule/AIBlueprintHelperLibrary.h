@@ -6,7 +6,6 @@ UCLASS()
 class UAIBlueprintHelperLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static UAIAsyncTaskBlueprintProxy* CreateMoveToProxyObject(UObject* WorldContextObject, APawn* Pawn, FVector Destination, AActor* TargetActor, float AcceptanceRadius, bool bStopOnOverlap);  // parameters 0x38
     UFUNCTION(BlueprintCallable, BlueprintPure) static AAIController* GetAIController(AActor* ControlledActor);  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) static UBlackboardComponent* GetBlackboard(AActor* Target);  // parameters 0x10

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FInAppPurchaseProductInfo
 {
+public:
     UPROPERTY(BlueprintReadOnly) FString Identifier;  // 0x0000, size 0x10
     UPROPERTY(BlueprintReadOnly) FString TransactionIdentifier;  // 0x0010, size 0x10
     UPROPERTY(BlueprintReadOnly) FString DisplayName;  // 0x0020, size 0x10

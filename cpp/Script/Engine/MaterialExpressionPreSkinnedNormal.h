@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UMaterialExpressionPreSkinnedNormal : public UMaterialExpression
 {
-public:
 };

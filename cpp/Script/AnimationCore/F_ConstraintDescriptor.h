@@ -4,8 +4,7 @@
 USTRUCT()
 struct FConstraintDescriptor
 {
+public:
     UPROPERTY() EConstraintType Type;  // 0x0000, size 0x1
-
-    // Not reflected:
-    FConstraintDescriptionEx * ConstraintDescription;  // 0x0008
+    FConstraintDescriptionEx * ConstraintDescription;  // 0x0008, not reflected
 };

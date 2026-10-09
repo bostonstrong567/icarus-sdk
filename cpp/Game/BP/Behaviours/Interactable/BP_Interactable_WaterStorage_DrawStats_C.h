@@ -6,6 +6,5 @@ UCLASS(Transient, EditInlineNew, Config=Engine)
 class UBP_Interactable_WaterStorage_DrawStats_C : public UBP_Interactable_Rain_Reservior_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) void GetWaterModifiers(TArray<FAlterationsEnum>& Array);  // parameters 0x10
 };

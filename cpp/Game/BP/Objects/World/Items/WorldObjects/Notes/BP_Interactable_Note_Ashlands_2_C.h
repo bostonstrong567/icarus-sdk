@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Interactable_Note_Ashlands_2_C : public ABP_Interactable_Note_Base_C
 {
-public:
 };

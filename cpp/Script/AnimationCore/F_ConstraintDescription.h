@@ -4,6 +4,7 @@
 USTRUCT()
 struct FConstraintDescription
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bTranslation;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bRotation;  // 0x0001, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bScale;  // 0x0002, size 0x1

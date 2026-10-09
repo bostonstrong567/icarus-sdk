@@ -4,10 +4,9 @@
 USTRUCT()
 struct FTrackRenderData
 {
-
-    // Not reflected:
-    FMatrix Matrix;  // 0x0000
-    FBox BoundingBox;  // 0x0040
-    int32 MatrixSampleIndex;  // 0x005C
-    int32 BoundsSampleIndex;  // 0x0060
+public:
+    FMatrix Matrix;  // 0x0000, not reflected
+    FBox BoundingBox;  // 0x0040, not reflected
+    int32 MatrixSampleIndex;  // 0x005C, not reflected
+    int32 BoundsSampleIndex;  // 0x0060, not reflected
 };

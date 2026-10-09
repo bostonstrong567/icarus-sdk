@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class UChaosNotifyHandlerInterface : public UInterface
 {
-public:
 };

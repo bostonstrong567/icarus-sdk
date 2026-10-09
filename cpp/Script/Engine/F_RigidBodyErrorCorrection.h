@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigidBodyErrorCorrection
 {
+public:
     UPROPERTY(EditAnywhere) float PingExtrapolation;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere) float PingLimit;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere) float ErrorPerLinearDifference;  // 0x0008, size 0x4

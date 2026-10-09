@@ -5,5 +5,4 @@
 UCLASS(Config=Game)
 class AIcarusShipEditorCharacter : public AIcarusCharacter
 {
-public:
 };

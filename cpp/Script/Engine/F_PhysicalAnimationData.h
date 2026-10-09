@@ -4,6 +4,7 @@
 USTRUCT()
 struct FPhysicalAnimationData
 {
+public:
     UPROPERTY() FName BodyName;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bIsLocalSimulation : 1;  // 0x0008, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float OrientationStrength;  // 0x000C, size 0x4

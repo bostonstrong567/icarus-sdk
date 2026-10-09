@@ -5,17 +5,18 @@
 UCLASS(Abstract, EditInlineNew)
 class UUserWidget : public UWidget, public INamedSlotInterface
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FLinearColor ColorAndOpacity;  // 0x0110, size 0x10
     UPROPERTY() FGetLinearColor ColorAndOpacityDelegate;  // 0x0120, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FSlateColor ForegroundColor;  // 0x0130, size 0x28
     UPROPERTY() FGetSlateColor ForegroundColorDelegate;  // 0x0158, size 0x10
     UPROPERTY(BlueprintAssignable) FOnVisibilityChangedEvent OnVisibilityChanged;  // 0x0168, size 0x10
+    UUserWidget::FNativeOnVisibilityChangedEvent OnNativeVisibilityChanged;  // 0x0178, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FMargin Padding;  // 0x0190, size 0x10
     UPROPERTY(Transient) TArray<UUMGSequencePlayer*> ActiveSequencePlayers;  // 0x01A0, size 0x10
     UPROPERTY(Transient) UUMGSequenceTickManager* AnimationTickManager;  // 0x01B0, size 0x8
     UPROPERTY(Transient) TArray<UUMGSequencePlayer*> StoppedSequencePlayers;  // 0x01B8, size 0x10
-    UPROPERTY() TArray<FNamedSlotBinding> NamedSlotBindings;  // 0x01C8, size 0x10
     UPROPERTY(Transient) UWidgetTree* WidgetTree;  // 0x01D8, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 Priority;  // 0x01E0, size 0x4
     UPROPERTY(Deprecated) uint8 bSupportsKeyboardFocus : 1;  // 0x01E4, mask 0x01
@@ -23,22 +24,22 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bStopAction : 1;  // 0x01E4, mask 0x04
     UPROPERTY() uint8 bHasScriptImplementedTick : 1;  // 0x01E4, mask 0x08
     UPROPERTY() uint8 bHasScriptImplementedPaint : 1;  // 0x01E4, mask 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadOnly) EWidgetTickFrequency TickFrequency;  // 0x01F0, size 0x1
+protected:
+    uint8 : 1 bInitialized;  // 0x01E4, not reflected
+    uint8 : 1 bStoppingAllAnimations;  // 0x01E4, not reflected
     UPROPERTY(Transient, Instanced) UInputComponent* InputComponent;  // 0x01F8, size 0x8
     UPROPERTY(Transient) TArray<FAnimationEventBinding> AnimationCallbacks;  // 0x0200, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    UUserWidget::FNativeOnVisibilityChangedEvent OnNativeVisibilityChanged;  // 0x0178
-    uint8 : 1 bInitialized;  // 0x01E4, protected
-    uint8 : 1 bStoppingAllAnimations;  // 0x01E4, protected
-    FVector2D MinimumDesiredSize;  // 0x01E8, private
-    FAnchors ViewportAnchors;  // 0x0210, private
-    FMargin ViewportOffsets;  // 0x0220, private
-    FVector2D ViewportAlignment;  // 0x0230, private
-    TWeakPtr<SWidget,0> FullScreenWidget;  // 0x0238, private
-    FLocalPlayerContext PlayerContext;  // 0x0248, private
-    TWeakObjectPtr<UWorld,FWeakObjectPtr> CachedWorld;  // 0x0258, private
-
+private:
+    UPROPERTY() TArray<FNamedSlotBinding> NamedSlotBindings;  // 0x01C8, size 0x10
+    FVector2D MinimumDesiredSize;  // 0x01E8, not reflected
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) EWidgetTickFrequency TickFrequency;  // 0x01F0, size 0x1
+    FAnchors ViewportAnchors;  // 0x0210, not reflected
+    FMargin ViewportOffsets;  // 0x0220, not reflected
+    FVector2D ViewportAlignment;  // 0x0230, not reflected
+    TWeakPtr<SWidget,0> FullScreenWidget;  // 0x0238, not reflected
+    FLocalPlayerContext PlayerContext;  // 0x0248, not reflected
+    TWeakObjectPtr<UWorld,FWeakObjectPtr> CachedWorld;  // 0x0258, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintCosmetic) bool AddToPlayerScreen(int32 ZOrder);  // parameters 0x5
     UFUNCTION(BlueprintCallable, BlueprintCosmetic) void AddToViewport(int32 ZOrder);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void BindToAnimationEvent(UWidgetAnimation* Animation, FWidgetAnimationDynamicEvent Delegate, EWidgetAnimationEvent AnimationEvent, FName UserTag);  // parameters 0x24

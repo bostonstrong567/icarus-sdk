@@ -12,12 +12,11 @@ public:
     UPROPERTY() int32 SubsectionSizeQuads;  // 0x0058, size 0x4
     UPROPERTY() int32 ComponentNumSubsections;  // 0x005C, size 0x4
     UPROPERTY() FVector DrawScale;  // 0x0060, size 0xC
+    TMap<FIntPoint,ULandscapeComponent *,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FIntPoint,ULandscapeComponent *,0> > XYtoComponentMap;  // 0x0070, not reflected
+    TMap<FIntPoint,ULandscapeHeightfieldCollisionComponent *,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FIntPoint,ULandscapeHeightfieldCollisionComponent *,0> > XYtoCollisionComponentMap;  // 0x00C0, not reflected
     UPROPERTY() TArray<ALandscapeStreamingProxy*> Proxies;  // 0x0110, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<FIntPoint,ULandscapeComponent *,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FIntPoint,ULandscapeComponent *,0> > XYtoComponentMap;  // 0x0070
-    TMap<FIntPoint,ULandscapeHeightfieldCollisionComponent *,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FIntPoint,ULandscapeHeightfieldCollisionComponent *,0> > XYtoCollisionComponentMap;  // 0x00C0
-    TSet<ULandscapeComponent *,DefaultKeyFuncs<ULandscapeComponent *,0>,FDefaultSetAllocator> SelectedComponents;  // 0x0120, private
-    TSet<ULandscapeComponent *,DefaultKeyFuncs<ULandscapeComponent *,0>,FDefaultSetAllocator> SelectedRegionComponents;  // 0x0170, private
-    TMap<FIntPoint,float,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FIntPoint,float,0> > SelectedRegion;  // 0x01C0
+    TMap<FIntPoint,float,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FIntPoint,float,0> > SelectedRegion;  // 0x01C0, not reflected
+private:
+    TSet<ULandscapeComponent *,DefaultKeyFuncs<ULandscapeComponent *,0>,FDefaultSetAllocator> SelectedComponents;  // 0x0120, not reflected
+    TSet<ULandscapeComponent *,DefaultKeyFuncs<ULandscapeComponent *,0>,FDefaultSetAllocator> SelectedRegionComponents;  // 0x0170, not reflected
 };

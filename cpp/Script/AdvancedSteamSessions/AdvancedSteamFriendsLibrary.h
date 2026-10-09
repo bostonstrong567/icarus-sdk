@@ -6,7 +6,6 @@ UCLASS()
 class UAdvancedSteamFriendsLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static FBPUniqueNetId CreateSteamIDFromString(FString SteamID64);  // parameters 0x30
     UFUNCTION(BlueprintCallable) static bool FilterText(FString TextToFilter, EBPTextFilteringContext Context, FBPUniqueNetId TextSourceID, FString& FilteredText);  // parameters 0x49
     UFUNCTION(BlueprintCallable) static int32 GetFriendSteamLevel(FBPUniqueNetId UniqueNetId);  // parameters 0x24

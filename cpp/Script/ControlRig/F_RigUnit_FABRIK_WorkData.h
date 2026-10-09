@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_FABRIK_WorkData
 {
+public:
     UPROPERTY() TArray<FFABRIKChainLink> Chain;  // 0x0000, size 0x10
     UPROPERTY() TArray<FCachedRigElement> CachedItems;  // 0x0010, size 0x10
     UPROPERTY() FCachedRigElement CachedEffector;  // 0x0020, size 0x14

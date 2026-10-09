@@ -5,8 +5,6 @@
 UCLASS()
 class URecastNavMeshDataChunk : public UNavigationDataChunk
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<FRecastTileData,TSizedDefaultAllocator<32> > Tiles;  // 0x0030, private
+private:
+    TArray<FRecastTileData,TSizedDefaultAllocator<32> > Tiles;  // 0x0030, not reflected
 };

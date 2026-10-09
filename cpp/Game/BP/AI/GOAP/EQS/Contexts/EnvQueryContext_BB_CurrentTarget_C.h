@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UEnvQueryContext_BB_CurrentTarget_C : public UEnvQueryContext_BB_TargetActor_C
 {
-public:
 };

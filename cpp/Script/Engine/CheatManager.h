@@ -5,25 +5,25 @@
 UCLASS()
 class UCheatManager : public UObject
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY() ADebugCameraController* DebugCameraControllerRef;  // 0x0028, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TSubclassOf<ADebugCameraController> DebugCameraControllerClass;  // 0x0030, size 0x8
+    uint32 : 1 bDebugCapsuleSweep;  // 0x0038, not reflected
+    uint32 : 1 bDebugCapsuleTraceComplex;  // 0x0038, not reflected
+    uint32 : 1 bToggleAILogging;  // 0x0038, not reflected
+    float DebugTraceDistance;  // 0x003C, not reflected
+    float DebugCapsuleHalfHeight;  // 0x0040, not reflected
+    float DebugCapsuleRadius;  // 0x0044, not reflected
+    float DebugTraceDrawNormalLength;  // 0x0048, not reflected
+    TEnumAsByte<enum ECollisionChannel> DebugTraceChannel;  // 0x004C, not reflected
+    TArray<FDebugTraceInfo,TSizedDefaultAllocator<32> > DebugTraceInfoList;  // 0x0050, not reflected
+    TArray<FDebugTraceInfo,TSizedDefaultAllocator<32> > DebugTracePawnInfoList;  // 0x0060, not reflected
+    int32 CurrentTraceIndex;  // 0x0070, not reflected
+    int32 CurrentTracePawnIndex;  // 0x0074, not reflected
+protected:
     UPROPERTY(Transient) TArray<UCheatManagerExtension*> CheatManagerExtensions;  // 0x0078, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint32 : 1 bDebugCapsuleSweep;  // 0x0038
-    uint32 : 1 bDebugCapsuleTraceComplex;  // 0x0038
-    uint32 : 1 bToggleAILogging;  // 0x0038
-    float DebugTraceDistance;  // 0x003C
-    float DebugCapsuleHalfHeight;  // 0x0040
-    float DebugCapsuleRadius;  // 0x0044
-    float DebugTraceDrawNormalLength;  // 0x0048
-    TEnumAsByte<enum ECollisionChannel> DebugTraceChannel;  // 0x004C
-    TArray<FDebugTraceInfo,TSizedDefaultAllocator<32> > DebugTraceInfoList;  // 0x0050
-    TArray<FDebugTraceInfo,TSizedDefaultAllocator<32> > DebugTracePawnInfoList;  // 0x0060
-    int32 CurrentTraceIndex;  // 0x0070
-    int32 CurrentTracePawnIndex;  // 0x0074
-
+public:
     UFUNCTION(Exec) void BugIt(FString ScreenShotDescription);  // parameters 0x10
     UFUNCTION(Exec) void BugItGo(float X, float Y, float Z, float Pitch, float Yaw, float Roll);  // parameters 0x18
     UFUNCTION(Exec) void BugItStringCreator(FVector ViewLocation, FRotator ViewRotation, FString& GoString, FString& LocString);  // parameters 0x38

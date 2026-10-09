@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFocusableData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<UFocusableComponent> Behaviour;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FItemAttachmentRowHandle AttachmentData;  // 0x0040, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FTransform AttachmentOffset;  // 0x0060, size 0x30

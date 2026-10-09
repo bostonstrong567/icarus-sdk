@@ -5,5 +5,4 @@
 UCLASS(Transient, Config=Engine)
 class UBP_Actionable_Paste_Consumable_C : public UBP_Actionable_Bandage_Consumable_C
 {
-public:
 };

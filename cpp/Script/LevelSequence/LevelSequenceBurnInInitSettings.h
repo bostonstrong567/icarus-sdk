@@ -5,5 +5,4 @@
 UCLASS()
 class ULevelSequenceBurnInInitSettings : public UObject
 {
-public:
 };

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_SQ_Norex_Trade_Travel_C : public ABPQ_Travel_Medium_C
 {
-public:
 };

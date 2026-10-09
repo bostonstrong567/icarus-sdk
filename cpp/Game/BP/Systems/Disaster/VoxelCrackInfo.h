@@ -4,6 +4,7 @@
 USTRUCT()
 struct VoxelCrackInfo
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) AActor* Attacker;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) AActor* Weapon;  // 0x0008, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FHitResult HitInfo;  // 0x0010, size 0x88

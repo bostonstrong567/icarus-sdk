@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABPQ_OLY_Desert_Recovery_Deposit_Base_C : public ABPQ_Stockpile_Deposit_Item_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) AIcarusActor* GetContainerActor();  // parameters 0x8
 };

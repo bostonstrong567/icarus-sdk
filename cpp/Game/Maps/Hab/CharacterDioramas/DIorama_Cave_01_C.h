@@ -5,5 +5,4 @@
 UCLASS()
 class ADIorama_Cave_01_C : public ALevelScriptActor
 {
-public:
 };

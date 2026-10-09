@@ -4,5 +4,6 @@
 USTRUCT()
 struct FSourceEffectEQSettings
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FSourceEffectEQBand> EQBands;  // 0x0000, size 0x10
 };

@@ -6,7 +6,6 @@ UCLASS(Abstract)
 class USpawnableAI : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) UActorState* GetAIActorState();  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) FAISetupRowHandle GetAISetupRowHandle() const;  // parameters 0x18
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) UIcarusStatContainer* GetAIStatContainer() const;  // parameters 0x8

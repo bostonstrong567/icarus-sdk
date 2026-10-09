@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_HAV_SW_Blackberry_Bush_03_C : public ABP_DestructableHarvest_C
 {
-public:
 };

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_RG_C2_Observe_Scout_Gold_Deposit_C : public ABPQ_Common_Deliver_C
 {
-public:
 };

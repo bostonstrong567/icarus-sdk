@@ -5,7 +5,6 @@
 UCLASS(Abstract, MinimalAPI)
 class UAnimCompositeBase : public UAnimSequenceBase
 {
-public:
 
     // Virtual functions that start here:
     //   ContainRecursive, InvalidateRecursiveAsset

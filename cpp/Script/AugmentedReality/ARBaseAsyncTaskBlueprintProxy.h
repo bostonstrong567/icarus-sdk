@@ -5,11 +5,10 @@
 UCLASS(Abstract)
 class UARBaseAsyncTaskBlueprintProxy : public UBlueprintAsyncActionBase
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<FARAsyncTask,1> AsyncTask;  // 0x0038, protected
-    bool bShouldTick;  // 0x0048, private
+protected:
+    TSharedPtr<FARAsyncTask,1> AsyncTask;  // 0x0038, not reflected
+private:
+    bool bShouldTick;  // 0x0048, not reflected
 
     // Virtual functions that start here:
     //   ReportFailure, ReportSuccess

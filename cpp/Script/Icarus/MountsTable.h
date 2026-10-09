@@ -5,5 +5,4 @@
 UCLASS()
 class UMountsTable : public UIcarusDataTable
 {
-public:
 };

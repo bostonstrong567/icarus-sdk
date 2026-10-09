@@ -4,6 +4,7 @@
 USTRUCT()
 struct FProspectCompleteInformation
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FProspectInfo ProspectInfo;  // 0x0000, size 0xA0
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool FactionMissionSuccessful;  // 0x00A0, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FAttachment ProspectRewards;  // 0x00A8, size 0x28

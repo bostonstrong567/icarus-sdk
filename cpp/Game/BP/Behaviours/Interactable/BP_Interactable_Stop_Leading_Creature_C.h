@@ -6,6 +6,5 @@ UCLASS(Transient, EditInlineNew, Config=Engine)
 class UBP_Interactable_Stop_Leading_Creature_C : public UBP_Interactable_Lead_Creature_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool CanInteract(AActor* Instigator, FHitResult HitResult);  // parameters 0x91
 };

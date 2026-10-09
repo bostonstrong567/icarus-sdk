@@ -4,6 +4,7 @@
 USTRUCT()
 struct FModulatorContinuousParams
 {
+public:
     UPROPERTY(EditAnywhere) FName ParameterName;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) float Default;  // 0x0008, size 0x4
     UPROPERTY(EditAnywhere) float MinInput;  // 0x000C, size 0x4

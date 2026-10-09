@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UBP_GFur_1ST_BrownBear_Arms_C : public UGFurComponent
 {
-public:
 };

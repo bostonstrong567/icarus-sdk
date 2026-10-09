@@ -5,5 +5,4 @@
 UCLASS()
 class UPropertyValueColor : public UPropertyValue
 {
-public:
 };

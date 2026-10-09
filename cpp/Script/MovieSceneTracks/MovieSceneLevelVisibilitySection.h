@@ -5,10 +5,11 @@
 UCLASS()
 class UMovieSceneLevelVisibilitySection : public UMovieSceneSection, public IMovieSceneEntityProvider
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY(EditAnywhere) ELevelVisibility Visibility;  // 0x00F0, size 0x1
     UPROPERTY(EditAnywhere) TArray<FName> LevelNames;  // 0x00F8, size 0x10
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) TArray<FName> GetLevelNames() const;  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) ELevelVisibility GetVisibility() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable) void SetLevelNames(const TArray<FName>& InLevelNames);  // parameters 0x10

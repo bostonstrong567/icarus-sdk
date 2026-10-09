@@ -16,6 +16,7 @@ public:
     UPROPERTY() uint8 bHasConcatenatorNode : 1;  // 0x0038, mask 0x40
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bBypassVolumeScaleForPriority : 1;  // 0x0038, mask 0x80
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EVirtualizationMode VirtualizationMode;  // 0x0039, size 0x1
+    TMap<unsigned int,int,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<unsigned int,int,0> > CurrentPlayCount;  // 0x0040, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSet<USoundConcurrency*> ConcurrencySet;  // 0x0090, size 0x50
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSoundConcurrencySettings ConcurrencyOverrides;  // 0x00E0, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float Duration;  // 0x0108, size 0x4
@@ -29,9 +30,6 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FSoundSourceBusSendInfo> BusSends;  // 0x0140, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FSoundSourceBusSendInfo> PreEffectBusSends;  // 0x0150, size 0x10
     UPROPERTY(EditAnywhere) TArray<UAssetUserData*> AssetUserData;  // 0x0160, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<unsigned int,int,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<unsigned int,int,0> > CurrentPlayCount;  // 0x0040
 
     // Virtual functions that start here:
     //   CreateSoundGenerator, GetAttenuationSettingsToApply, GetCurveData, GetDuration, GetMaxDistance

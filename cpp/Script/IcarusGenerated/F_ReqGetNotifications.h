@@ -4,6 +4,7 @@
 USTRUCT()
 struct FReqGetNotifications
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString UserID;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool CompleteList;  // 0x0010, size 0x1
 };

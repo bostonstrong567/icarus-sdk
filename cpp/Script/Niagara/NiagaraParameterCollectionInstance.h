@@ -5,16 +5,16 @@
 UCLASS()
 class UNiagaraParameterCollectionInstance : public UObject
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere) UNiagaraParameterCollection* Collection;  // 0x0028, size 0x8
     UPROPERTY() TArray<FNiagaraVariable> OverridenParameters;  // 0x0030, size 0x10
+private:
     UPROPERTY() FNiagaraParameterStore ParameterStorage;  // 0x0040, size 0x78
-
-    // Not reflected: the engine's scripting cannot see these.
-    FWindowsRWLock DirtyParameterLock;  // 0x00B8, private
-    TArray<TTuple<FName,float>,TSizedDefaultAllocator<32> > DirtyScalarParameters;  // 0x00C0, private
-    TArray<TTuple<FName,FLinearColor>,TSizedDefaultAllocator<32> > DirtyVectorParameters;  // 0x00D0, private
-
+    FWindowsRWLock DirtyParameterLock;  // 0x00B8, not reflected
+    TArray<TTuple<FName,float>,TSizedDefaultAllocator<32> > DirtyScalarParameters;  // 0x00C0, not reflected
+    TArray<TTuple<FName,FLinearColor>,TSizedDefaultAllocator<32> > DirtyVectorParameters;  // 0x00D0, not reflected
+public:
     UFUNCTION(BlueprintCallable) bool GetBoolParameter(FString InVariableName);  // parameters 0x11
     UFUNCTION(BlueprintCallable) FLinearColor GetColorParameter(FString InVariableName);  // parameters 0x20
     UFUNCTION(BlueprintCallable) float GetFloatParameter(FString InVariableName);  // parameters 0x14

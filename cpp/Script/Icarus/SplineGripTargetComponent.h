@@ -7,9 +7,8 @@ class USplineGripTargetComponent : public USplineComponent
 {
 public:
     UPROPERTY(Transient) UBodySetup* ShapeBodySetup;  // 0x0548, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint8 : 1 bUseArchetypeBodySetup;  // 0x0550, protected
-
+protected:
+    uint8 : 1 bUseArchetypeBodySetup;  // 0x0550, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) FBox CalcBoundingBox() const;  // parameters 0x1C
 };

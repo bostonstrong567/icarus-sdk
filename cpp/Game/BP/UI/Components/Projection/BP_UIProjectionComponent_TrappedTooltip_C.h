@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UBP_UIProjectionComponent_TrappedTooltip_C : public UBP_UIProjectionComponent_MountTooltip_C
 {
-public:
 };

@@ -5,8 +5,6 @@
 UCLASS(Abstract, Config=RuntimeOptions)
 class URuntimeOptionsBase : public UObject
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    FString OptionCommandPrefix;  // 0x0028, protected
+protected:
+    FString OptionCommandPrefix;  // 0x0028, not reflected
 };

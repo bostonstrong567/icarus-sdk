@@ -4,11 +4,10 @@
 USTRUCT()
 struct FClothingAssetData_Legacy
 {
+public:
     UPROPERTY() FName AssetName;  // 0x0000, size 0x8
     UPROPERTY() FString ApexFileName;  // 0x0008, size 0x10
     UPROPERTY() bool bClothPropertiesChanged;  // 0x0018, size 0x1
     UPROPERTY() FClothPhysicsProperties_Legacy PhysicsProperties;  // 0x001C, size 0x50
-
-    // Not reflected:
-    nvidia::apex::ClothingAsset * ApexClothingAsset;  // 0x0070
+    nvidia::apex::ClothingAsset * ApexClothingAsset;  // 0x0070, not reflected
 };

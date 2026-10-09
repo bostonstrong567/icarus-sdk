@@ -8,9 +8,8 @@ class UGetChallengesCallbackProxyGen : public UOnlineBlueprintCallProxyBase
 public:
     UPROPERTY(BlueprintAssignable) FOnGetChallengesEventSignature OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FOnGetChallengesEventSignature OnFail;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FReqGetChallenges ReqGetChallenges;  // 0x0050, private
-
+private:
+    FReqGetChallenges ReqGetChallenges;  // 0x0050, not reflected
+public:
     UFUNCTION(BlueprintCallable) static UGetChallengesCallbackProxyGen* GetChallenges(const FReqGetChallenges& Request);  // parameters 0x18
 };

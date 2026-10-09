@@ -6,7 +6,6 @@ UCLASS()
 class UQuestWeatherModifiersLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToQuestWeatherModifiersTable(FName Name, FQuestWeatherModifier Data, FQuestWeatherModifiersRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x61
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakQuestWeatherModifiersEnum(FQuestWeatherModifiersEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FQuestWeatherModifiersRowHandle CastToQuestWeatherModifiersRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

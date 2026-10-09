@@ -6,7 +6,6 @@ UCLASS()
 class UIcarusChanceLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void BP_RollChance(int32 Threshold, ERollResult& Paths);  // parameters 0x5
     UFUNCTION(BlueprintCallable) static void BP_RollCustom(int32 MinimumInclusive, int32 MaximumInclusive, int32 Threshold, ERollResult& Paths);  // parameters 0xD
     UFUNCTION(BlueprintCallable) static void BP_SeededRollChance(FRandomStream& Stream, int32 Threshold, ERollResult& Paths);  // parameters 0xD

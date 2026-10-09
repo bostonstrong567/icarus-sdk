@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSettlementNPCRecord
 {
+public:
     UPROPERTY(SaveGame) FGuid NpcId;  // 0x0000, size 0x10
     UPROPERTY(SaveGame) FString DisplayName;  // 0x0010, size 0x10
     UPROPERTY(SaveGame) uint8 Gender;  // 0x0020, size 0x1

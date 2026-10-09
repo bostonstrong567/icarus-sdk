@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLevelSimplificationDetails
 {
+public:
     UPROPERTY(EditAnywhere) bool bCreatePackagePerAsset;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere) float DetailsPercentage;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere) FMaterialProxySettings StaticMeshMaterialSettings;  // 0x0008, size 0x88

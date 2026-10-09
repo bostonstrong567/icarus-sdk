@@ -6,7 +6,5 @@ UCLASS()
 class UByteProperty : public UNumericProperty
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    UEnum * Enum;  // 0x0070
+    UEnum * Enum;  // 0x0070, not reflected
 };

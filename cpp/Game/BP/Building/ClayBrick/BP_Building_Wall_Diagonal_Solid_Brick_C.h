@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Building_Wall_Diagonal_Solid_Brick_C : public ABP_Building_Wall_Diagonal_C
 {
-public:
 };

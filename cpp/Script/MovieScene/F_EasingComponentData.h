@@ -4,5 +4,6 @@
 USTRUCT()
 struct FEasingComponentData
 {
+public:
     UPROPERTY(Instanced) UMovieSceneSection* Section;  // 0x0000, size 0x8
 };

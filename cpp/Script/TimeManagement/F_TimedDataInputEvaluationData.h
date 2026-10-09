@@ -4,6 +4,7 @@
 USTRUCT()
 struct FTimedDataInputEvaluationData
 {
+public:
     UPROPERTY(BlueprintReadWrite) float DistanceToNewestSampleSeconds;  // 0x0000, size 0x4
     UPROPERTY(BlueprintReadWrite) float DistanceToOldestSampleSeconds;  // 0x0004, size 0x4
 };

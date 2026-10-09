@@ -5,7 +5,8 @@
 UCLASS(Config=Engine)
 class UPlayerStateRecorderComponent : public UActorStateRecorderComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, SaveGame) FPlayerCharacterID PlayerCharacterID;  // 0x01C0, size 0x18
     UPROPERTY(EditAnywhere, SaveGame) FVector Location;  // 0x01D8, size 0xC
     UPROPERTY(EditAnywhere, SaveGame) FRotator Rotation;  // 0x01E4, size 0xC

@@ -4,9 +4,8 @@
 USTRUCT()
 struct FMovieScene3DLocationKeyStruct : public FMovieSceneKeyStruct
 {
+public:
     UPROPERTY(EditAnywhere) FVector Location;  // 0x0008, size 0xC
     UPROPERTY(EditAnywhere) FFrameNumber Time;  // 0x0014, size 0x4
-
-    // Not reflected:
-    FMovieSceneKeyStructHelper KeyStructInterop;  // 0x0018
+    FMovieSceneKeyStructHelper KeyStructInterop;  // 0x0018, not reflected
 };

@@ -8,11 +8,10 @@ class UIcarusGOAPAIMemory : public UActorComponent
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FIcarusGOAPAIFact> InteractableObjectMemories;  // 0x00B0, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) AIcarusNPCGOAPController* CurrentController;  // 0x00C0, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    float UpdateTimer;  // 0x00C8, private
-    float UpdateThreshold;  // 0x00CC, private
-
+private:
+    float UpdateTimer;  // 0x00C8, not reflected
+    float UpdateThreshold;  // 0x00CC, not reflected
+public:
     UFUNCTION(BlueprintCallable) FIcarusGOAPAIFact GetClosestKnownInteractable(AActor* Actor, EGOAPObjectType ObjectType, bool bOnlyCurrentlyPerceived);  // parameters 0x70
     UFUNCTION(BlueprintCallable) TArray<FIcarusGOAPAIFact> GetDistanceSortedKnownInteractables(AActor* Actor, EGOAPObjectType ObjectType, bool bOnlyCurrentlyPerceived);  // parameters 0x20
     UFUNCTION(BlueprintCallable) bool GetFactForObject(AActor* Object, FIcarusGOAPAIFact& FoundFact);  // parameters 0x69

@@ -6,6 +6,5 @@ UCLASS()
 class UDataMigratorManager : public UObject
 {
 public:
-
     UFUNCTION(BlueprintCallable) bool PerformMigrations();  // parameters 0x1
 };

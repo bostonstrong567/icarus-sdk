@@ -15,8 +15,7 @@ public:
     UPROPERTY(EditAnywhere) int32 RendererVisibility;  // 0x013C, size 0x4
     UPROPERTY(EditAnywhere, Instanced) USceneComponent* TemplateComponent;  // 0x0140, size 0x8
     UPROPERTY() TArray<FNiagaraComponentPropertyBinding> PropertyBindings;  // 0x0148, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<FName,FNiagaraPropertySetter,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,FNiagaraPropertySetter,0> > SetterFunctionMapping;  // 0x0158
-    const UNiagaraEmitter * EmitterPtr;  // 0x01A8, private
+    TMap<FName,FNiagaraPropertySetter,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,FNiagaraPropertySetter,0> > SetterFunctionMapping;  // 0x0158, not reflected
+private:
+    const UNiagaraEmitter * EmitterPtr;  // 0x01A8, not reflected
 };

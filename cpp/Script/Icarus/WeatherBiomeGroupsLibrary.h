@@ -6,7 +6,6 @@ UCLASS()
 class UWeatherBiomeGroupsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToWeatherBiomeGroupsTable(FName Name, FIcarusWeatherBiomeGroup Data, FWeatherBiomeGroupsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x49
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakWeatherBiomeGroupsEnum(FWeatherBiomeGroupsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FWeatherBiomeGroupsRowHandle CastToWeatherBiomeGroupsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

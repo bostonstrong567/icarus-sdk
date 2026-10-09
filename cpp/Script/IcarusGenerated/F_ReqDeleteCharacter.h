@@ -4,5 +4,6 @@
 USTRUCT()
 struct FReqDeleteCharacter
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 ChrSlot;  // 0x0000, size 0x4
 };

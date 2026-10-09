@@ -5,12 +5,11 @@
 UCLASS(Abstract, Transient, Config=Engine)
 class UReplicationGraphNode : public UObject
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY() TArray<UReplicationGraphNode*> AllChildNodes;  // 0x0028, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<FReplicationGraphGlobalData,0> GraphGlobals;  // 0x0038, protected
-    bool bRequiresPrepareForReplicationCall;  // 0x0048, protected
+    TSharedPtr<FReplicationGraphGlobalData,0> GraphGlobals;  // 0x0038, not reflected
+    bool bRequiresPrepareForReplicationCall;  // 0x0048, not reflected
 
     // Virtual functions that start here:
     //   GatherActorListsForConnection, GetAllActorsInNode_Debugging, GetDebugString, LogNode

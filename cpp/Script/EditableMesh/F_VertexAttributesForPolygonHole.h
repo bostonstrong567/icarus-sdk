@@ -4,5 +4,6 @@
 USTRUCT()
 struct FVertexAttributesForPolygonHole
 {
+public:
     UPROPERTY(BlueprintReadWrite) TArray<FMeshElementAttributeList> VertexAttributeList;  // 0x0000, size 0x10
 };

@@ -4,10 +4,9 @@
 USTRUCT()
 struct FInputEvent
 {
-
-    // Not reflected:
-    FModifierKeysState ModifierKeys;  // 0x0008
-    bool bIsRepeat;  // 0x000A
-    uint32 UserIndex;  // 0x000C
-    const FWidgetPath * EventPath;  // 0x0010
+protected:
+    FModifierKeysState ModifierKeys;  // 0x0008, not reflected
+    bool bIsRepeat;  // 0x000A, not reflected
+    uint32 UserIndex;  // 0x000C, not reflected
+    const FWidgetPath * EventPath;  // 0x0010, not reflected
 };

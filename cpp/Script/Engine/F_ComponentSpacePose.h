@@ -4,6 +4,7 @@
 USTRUCT()
 struct FComponentSpacePose
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FTransform> Transforms;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FName> Names;  // 0x0010, size 0x10
 };

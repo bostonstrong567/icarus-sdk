@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UBP_IcarusGameModeFunctionLibrary_C : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void Cheat_Exhaust_ARandom_ExoticDeposit(UObject* __WorldContext);  // parameters 0x8, named "Cheat Exhaust ARandom ExoticDeposit"
     UFUNCTION(BlueprintCallable) static void FindMetaSpawnByBiomeAndDistance(TArray<ABP_IcarusMetaSpawn_C*>& MetaSpawns, FMetaSpawn MetaSpawnDescription, FVector AveragePlayerStartLocation, UObject* __WorldContext, TArray<ABP_IcarusMetaSpawn_C*>& ValidCandidates);  // parameters 0x50
     UFUNCTION(BlueprintCallable) static void FindMetaSpawnByName(TArray<ABP_IcarusMetaSpawn_C*>& MetaSpawns, FMetaSpawn MetaSpawnDescription, UObject* __WorldContext, ABP_IcarusMetaSpawn_C*& MetaSpawn);  // parameters 0x38

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FStatColorMapEntry
 {
+public:
     UPROPERTY(Config) float In;  // 0x0000, size 0x4
     UPROPERTY(Config) FColor Out;  // 0x0004, size 0x4
 };

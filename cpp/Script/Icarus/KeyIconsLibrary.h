@@ -6,7 +6,6 @@ UCLASS()
 class UKeyIconsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToKeyIconsTable(FName Name, FKeyIconData Data, FKeyIconsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x81
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakKeyIconsEnum(FKeyIconsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FKeyIconsRowHandle CastToKeyIconsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

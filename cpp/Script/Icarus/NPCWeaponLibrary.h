@@ -6,7 +6,6 @@ UCLASS()
 class UNPCWeaponLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToNPCWeaponTable(FName Name, FNPCWeaponData Data, FNPCWeaponRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x159
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakNPCWeaponEnum(FNPCWeaponEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FNPCWeaponRowHandle CastToNPCWeaponRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

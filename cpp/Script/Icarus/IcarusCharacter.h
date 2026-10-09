@@ -5,12 +5,11 @@
 UCLASS(Config=Game)
 class AIcarusCharacter : public ACharacter, public IModifiableInterface, public IAITargetable, public IMutableGameplayTagInterface, public IAISightTargetInterface, public ISpawnableAI, public IIcarusActorUIDInterface, public IGameplayTagAssetInterface
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
-    UPROPERTY(Replicated) int32 IcarusUID;  // 0x0564, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSubclassOf<UIcarusStateRecorderComponent> RecorderClass;  // 0x0568, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bSaveModifiersToDatabase;  // 0x0570, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bWasReloaded;  // 0x0571, size 0x1
-    UPROPERTY(EditAnywhere, Instanced) UIcarusStateRecorderComponent* Recorder;  // 0x0578, size 0x8
     UPROPERTY(BlueprintAssignable) FSprintUpdatedSignature OnSprintingUpdated;  // 0x0580, size 0x10
     UPROPERTY(BlueprintAssignable) FHitEffectsSpawnedSignature OnHitEffectsSpawned;  // 0x0590, size 0x10
     UPROPERTY(Replicated, Instanced, BlueprintReadOnly) UIcarusStatContainer* StatContainer;  // 0x05A0, size 0x8
@@ -42,17 +41,19 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float PreciseReachHeightMultiplier;  // 0x06D4, size 0x4
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) AIcarusCharacter* ParentCharacter;  // 0x0738, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 ParentCharacterUID;  // 0x0740, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bHasSetUpAI;  // 0x0560, protected
-    int32 CurrentModifierUID;  // 0x0608, protected
-    bool ShouldTakeFallDamage;  // 0x060C, protected
-    float TimeSinceStartedFalling;  // 0x0610, private
-    float LastPlayerNoiseTime;  // 0x0614, private
-    TMap<enum EStats,int,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<enum EStats,int,0> > ActiveAuras;  // 0x06D8, protected
-    FTimerHandle MovementTimerHandle;  // 0x0728, private
-    float FractionalStaminaCost;  // 0x0730, private
-
+protected:
+    bool bHasSetUpAI;  // 0x0560, not reflected
+    UPROPERTY(EditAnywhere, Instanced) UIcarusStateRecorderComponent* Recorder;  // 0x0578, size 0x8
+    int32 CurrentModifierUID;  // 0x0608, not reflected
+    bool ShouldTakeFallDamage;  // 0x060C, not reflected
+    TMap<enum EStats,int,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<enum EStats,int,0> > ActiveAuras;  // 0x06D8, not reflected
+private:
+    UPROPERTY(Replicated) int32 IcarusUID;  // 0x0564, size 0x4
+    float TimeSinceStartedFalling;  // 0x0610, not reflected
+    float LastPlayerNoiseTime;  // 0x0614, not reflected
+    FTimerHandle MovementTimerHandle;  // 0x0728, not reflected
+    float FractionalStaminaCost;  // 0x0730, not reflected
+public:
     UFUNCTION(BlueprintCallable) void Aim(bool bClientSimulation);  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) TArray<AIcarusPlayerCharacter*> BP_GetAllDamagingPlayerCharacters() const;  // parameters 0x10
     UFUNCTION(BlueprintNativeEvent) FAIRelationshipsRowHandle CheckForStatBasedAIRelationshipChange(const FAIRelationshipsRowHandle& PreviousRelationship);  // parameters 0x30

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FWindowStyle : public FSlateWidgetStyle
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FButtonStyle MinimizeButtonStyle;  // 0x0008, size 0x278
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FButtonStyle MaximizeButtonStyle;  // 0x0280, size 0x278
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FButtonStyle RestoreButtonStyle;  // 0x04F8, size 0x278

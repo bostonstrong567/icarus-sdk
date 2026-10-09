@@ -4,5 +4,6 @@
 USTRUCT()
 struct FRigUnit_GetDeltaTime : public FRigUnit_AnimBase
 {
+public:
     UPROPERTY() float Result;  // 0x0008, size 0x4
 };

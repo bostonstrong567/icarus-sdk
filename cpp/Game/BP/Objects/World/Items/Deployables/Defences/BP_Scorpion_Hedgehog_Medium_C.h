@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABP_Scorpion_Hedgehog_Medium_C : public ABP_Spike_Trap_Base_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void DoDamage(int32 DamageAmount, AActor* Defender);  // parameters 0x10
 };

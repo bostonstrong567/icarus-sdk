@@ -5,7 +5,6 @@
 UCLASS(Abstract)
 class UNiagaraEventReceiverEmitterAction : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   PerformAction

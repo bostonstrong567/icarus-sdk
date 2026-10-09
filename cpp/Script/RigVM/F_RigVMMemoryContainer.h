@@ -4,6 +4,8 @@
 USTRUCT()
 struct FRigVMMemoryContainer
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() bool bUseNameMap;  // 0x0000, size 0x1
     UPROPERTY() ERigVMMemoryType MemoryType;  // 0x0001, size 0x1
     UPROPERTY() TArray<FRigVMRegister> Registers;  // 0x0008, size 0x10

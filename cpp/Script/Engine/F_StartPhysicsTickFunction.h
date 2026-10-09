@@ -4,7 +4,6 @@
 USTRUCT()
 struct FStartPhysicsTickFunction : public FTickFunction
 {
-
-    // Not reflected:
-    UWorld * Target;  // 0x0028
+public:
+    UWorld * Target;  // 0x0028, not reflected
 };

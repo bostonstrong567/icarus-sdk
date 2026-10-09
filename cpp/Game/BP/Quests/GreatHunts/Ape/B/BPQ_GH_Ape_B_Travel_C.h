@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_Ape_B_Travel_C : public ABPQ_Travel_C
 {
-public:
 };

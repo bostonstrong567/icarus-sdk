@@ -4,6 +4,7 @@
 USTRUCT()
 struct FCollectionParameterBase
 {
+public:
     UPROPERTY(EditAnywhere) FName ParameterName;  // 0x0000, size 0x8
     UPROPERTY() FGuid Id;  // 0x0008, size 0x10
 };

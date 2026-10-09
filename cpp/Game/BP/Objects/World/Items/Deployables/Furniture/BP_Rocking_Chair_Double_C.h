@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Rocking_Chair_Double_C : public ABP_ChairBase_C
 {
-public:
 };

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Extractor_Meta_C : public ABP_Extractor_C
 {
-public:
 };

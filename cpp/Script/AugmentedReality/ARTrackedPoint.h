@@ -5,5 +5,4 @@
 UCLASS()
 class UARTrackedPoint : public UARTrackedGeometry
 {
-public:
 };

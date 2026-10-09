@@ -4,5 +4,6 @@
 USTRUCT()
 struct FRBFEntry
 {
+public:
     UPROPERTY(EditAnywhere) TArray<float> Values;  // 0x0000, size 0x10
 };

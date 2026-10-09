@@ -5,5 +5,4 @@
 UCLASS()
 class UCrudeOilTable : public UIcarusDataTable
 {
-public:
 };

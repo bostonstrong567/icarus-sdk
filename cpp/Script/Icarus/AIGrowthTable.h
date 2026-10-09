@@ -5,5 +5,4 @@
 UCLASS()
 class UAIGrowthTable : public UIcarusDataTable
 {
-public:
 };

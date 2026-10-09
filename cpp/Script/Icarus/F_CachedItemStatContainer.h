@@ -4,6 +4,7 @@
 USTRUCT()
 struct FCachedItemStatContainer
 {
+public:
     UPROPERTY(Transient) FStatContainer StatContainer;  // 0x0000, size 0x108
     UPROPERTY(Transient) bool bHasBuilt;  // 0x0108, size 0x1
     UPROPERTY(Transient) bool bIsHeldItem;  // 0x0109, size 0x1

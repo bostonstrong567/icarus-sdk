@@ -4,6 +4,8 @@
 USTRUCT()
 struct FActorComponentInstanceData
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY() UObject* SourceComponentTemplate;  // 0x0008, size 0x8
     UPROPERTY() EComponentCreationMethod SourceComponentCreationMethod;  // 0x0010, size 0x1
     UPROPERTY() int32 SourceComponentTypeSerializedIndex;  // 0x0014, size 0x4

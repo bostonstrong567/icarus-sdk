@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNamedInterfaceDef
 {
+public:
     UPROPERTY() FName InterfaceName;  // 0x0000, size 0x8
     UPROPERTY() FString InterfaceClassName;  // 0x0008, size 0x10
 };

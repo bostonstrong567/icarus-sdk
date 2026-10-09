@@ -5,5 +5,4 @@
 UCLASS(Transient, Config=Engine)
 class UBP_ActionableBehaviour_CurvedSplinePlace_Crude_Oil_C : public UBP_ActionableBehaviour_CurvedSplinePlace_C
 {
-public:
 };

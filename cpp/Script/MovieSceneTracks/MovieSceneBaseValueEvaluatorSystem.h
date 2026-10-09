@@ -5,5 +5,4 @@
 UCLASS()
 class UMovieSceneBaseValueEvaluatorSystem : public UMovieSceneEntitySystem
 {
-public:
 };

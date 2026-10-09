@@ -4,7 +4,6 @@
 USTRUCT()
 struct FPointerToUberGraphFrame
 {
-
-    // Not reflected:
-    uint8 * RawPointer;  // 0x0000
+public:
+    uint8 * RawPointer;  // 0x0000, not reflected
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_MathTransformFromSRT : public FRigUnit_MathTransformBase
 {
+public:
     UPROPERTY() FVector Location;  // 0x0008, size 0xC
     UPROPERTY() FVector Rotation;  // 0x0014, size 0xC
     UPROPERTY() EControlRigRotationOrder RotationOrder;  // 0x0020, size 0x1

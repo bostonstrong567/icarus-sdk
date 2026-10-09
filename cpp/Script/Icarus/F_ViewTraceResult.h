@@ -4,6 +4,7 @@
 USTRUCT()
 struct FViewTraceResult
 {
+public:
     UPROPERTY(BlueprintReadWrite) FHitResult Hit;  // 0x0000, size 0x88
     UPROPERTY(BlueprintReadWrite) EViewTraceHitType Type;  // 0x0088, size 0x1
 };

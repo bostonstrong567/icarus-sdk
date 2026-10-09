@@ -4,6 +4,8 @@
 USTRUCT()
 struct FMovieScenePrimitiveMaterialTemplate : public FMovieSceneEvalTemplate
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() int32 MaterialIndex;  // 0x0020, size 0x4
     UPROPERTY() FMovieSceneObjectPathChannel MaterialChannel;  // 0x0028, size 0xC0
 };

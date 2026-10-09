@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_CollectionChain : public FRigUnit_CollectionBase
 {
+public:
     UPROPERTY() FRigElementKey FirstItem;  // 0x0008, size 0xC
     UPROPERTY() FRigElementKey LastItem;  // 0x0014, size 0xC
     UPROPERTY() bool Reverse;  // 0x0020, size 0x1

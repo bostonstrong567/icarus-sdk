@@ -6,7 +6,6 @@ UCLASS()
 class USubsystemBlueprintLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static UEngineSubsystem* GetEngineSubsystem(TSubclassOf<UEngineSubsystem> Class);  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) static UGameInstanceSubsystem* GetGameInstanceSubsystem(UObject* ContextObject, TSubclassOf<UGameInstanceSubsystem> Class);  // parameters 0x18
     UFUNCTION(BlueprintCallable, BlueprintPure) static ULocalPlayerSubsystem* GetLocalPlayerSubSystemFromPlayerController(APlayerController* PlayerController, TSubclassOf<ULocalPlayerSubsystem> Class);  // parameters 0x18

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FItemDLCData
 {
+public:
     UPROPERTY() FItemsStaticRowHandle RowHandle;  // 0x0000, size 0x18
     UPROPERTY() FDLCPackageDataRowHandle DLC;  // 0x0018, size 0x18
 };

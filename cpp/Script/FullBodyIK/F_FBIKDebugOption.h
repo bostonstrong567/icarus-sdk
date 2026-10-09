@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFBIKDebugOption
 {
+public:
     UPROPERTY() bool bDrawDebugHierarchy;  // 0x0000, size 0x1
     UPROPERTY() bool bColorAngularMotionStrength;  // 0x0001, size 0x1
     UPROPERTY() bool bColorLinearMotionStrength;  // 0x0002, size 0x1

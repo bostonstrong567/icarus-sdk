@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_PRO_Ashlands_Story_Beacon_Icesheet_C : public ABPQ_Deploy_Count_C
 {
-public:
 };

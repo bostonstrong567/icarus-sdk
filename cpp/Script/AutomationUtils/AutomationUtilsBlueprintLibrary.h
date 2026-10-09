@@ -6,6 +6,5 @@ UCLASS()
 class UAutomationUtilsBlueprintLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void TakeGameplayAutomationScreenshot(FString ScreenshotName, float MaxGlobalError, float MaxLocalError, FString MapNameOverride);  // parameters 0x28
 };

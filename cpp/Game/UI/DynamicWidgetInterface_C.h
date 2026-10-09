@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UDynamicWidgetInterface_C : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable) void IsEscapeMenuDisabled(bool& Disabled);  // parameters 0x1
 };

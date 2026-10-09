@@ -5,5 +5,4 @@
 UCLASS()
 class URepGraphClassPoliciesTable : public UIcarusDataTable
 {
-public:
 };

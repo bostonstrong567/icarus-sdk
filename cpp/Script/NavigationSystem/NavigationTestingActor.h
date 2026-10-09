@@ -5,10 +5,8 @@
 UCLASS(Config=Engine)
 class ANavigationTestingActor : public AActor, public INavAgentInterface, public INavPathObserverInterface
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
-    UPROPERTY(Instanced) UCapsuleComponent* CapsuleComponent;  // 0x0230, size 0x8
-    UPROPERTY(EditAnywhere, Instanced) UNavigationInvokerComponent* InvokerComponent;  // 0x0238, size 0x8
-    UPROPERTY(EditAnywhere) uint8 bActAsNavigationInvoker : 1;  // 0x0240, mask 0x01
     UPROPERTY(EditAnywhere) FNavAgentProperties NavAgentProps;  // 0x0248, size 0x30
     UPROPERTY(EditAnywhere) FVector QueryingExtent;  // 0x0278, size 0xC
     UPROPERTY(Transient) ANavigationData* MyNavData;  // 0x0288, size 0x8
@@ -37,11 +35,13 @@ public:
     UPROPERTY(EditAnywhere) TSubclassOf<UNavigationQueryFilter> FilterClass;  // 0x02D0, size 0x8
     UPROPERTY(EditAnywhere, Transient) int32 ShowStepIndex;  // 0x02D8, size 0x4
     UPROPERTY(EditAnywhere) float OffsetFromCornersDistance;  // 0x02DC, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    FVector ClosestWallLocation;  // 0x02E0
-    TSharedPtr<FNavigationPath,1> LastPath;  // 0x02F0
-    TDelegate<void __cdecl(FNavigationPath *,enum ENavPathEvent::Type),FDefaultDelegateUserPolicy> PathObserver;  // 0x0300
+    FVector ClosestWallLocation;  // 0x02E0, not reflected
+    TSharedPtr<FNavigationPath,1> LastPath;  // 0x02F0, not reflected
+    TDelegate<void __cdecl(FNavigationPath *,enum ENavPathEvent::Type),FDefaultDelegateUserPolicy> PathObserver;  // 0x0300, not reflected
+private:
+    UPROPERTY(Instanced) UCapsuleComponent* CapsuleComponent;  // 0x0230, size 0x8
+    UPROPERTY(EditAnywhere, Instanced) UNavigationInvokerComponent* InvokerComponent;  // 0x0238, size 0x8
+    UPROPERTY(EditAnywhere) uint8 bActAsNavigationInvoker : 1;  // 0x0240, mask 0x01
 
     // Virtual functions that start here:
     //   BuildPathFindingQuery

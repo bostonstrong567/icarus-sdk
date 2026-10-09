@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFishDataFastArrayItem : public FFastArraySerializerItem
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FFishDataRowHandle FishRow;  // 0x000C, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 MaxQuality;  // 0x0024, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 MaxWeight;  // 0x0028, size 0x4

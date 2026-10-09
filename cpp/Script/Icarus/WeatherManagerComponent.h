@@ -7,12 +7,10 @@ class UWeatherManagerComponent : public UActorComponent
 {
 public:
     UPROPERTY(Replicated, ReplicatedUsing) TArray<FWeatherGameplayData> GameplayWeatherArray;  // 0x00B0, size 0x10
+    TMap<FBiomesEnum,FWeatherVisualData,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FBiomesEnum,FWeatherVisualData,0> > VisualWeatherMap;  // 0x00C0, not reflected
+    TMap<FBiomesEnum,FVector,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FBiomesEnum,FVector,0> > WindDirectionMap;  // 0x0110, not reflected
     UPROPERTY(BlueprintAssignable) FWeatherGameplayUpdated WeatherGameplayUpdated;  // 0x0160, size 0x1
     UPROPERTY(BlueprintAssignable) FWeatherVisualUpdated WeatherVisualUpdated;  // 0x0161, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<FBiomesEnum,FWeatherVisualData,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FBiomesEnum,FWeatherVisualData,0> > VisualWeatherMap;  // 0x00C0
-    TMap<FBiomesEnum,FVector,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FBiomesEnum,FVector,0> > WindDirectionMap;  // 0x0110
 
     UFUNCTION(BlueprintCallable) FWeatherGameplayData BP_GetGameplayWeather(const FBiomesEnum& Biome);  // parameters 0x50
     UFUNCTION(BlueprintCallable, BlueprintCosmetic) float GetAcidRain(const FBiomesEnum& Biome);  // parameters 0x14

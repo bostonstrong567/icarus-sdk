@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UWeatherAudioComponent : public USceneComponent
 {
 public:
-
     UFUNCTION(BlueprintNativeEvent) void UpdateWeatherAudio(bool bWeatherActive);  // parameters 0x1
 
     // Virtual functions that start here:

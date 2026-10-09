@@ -4,7 +4,6 @@
 USTRUCT()
 struct FBookmarkJumpToSettings : public FBookmarkBaseJumpToSettings
 {
-
-    // Not reflected:
-    bool bShouldRestorLevelVisibility;  // 0x0000
+public:
+    bool bShouldRestorLevelVisibility;  // 0x0000, not reflected
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMaterialProxySettings
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FIntPoint TextureSize;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float GutterSpace;  // 0x0008, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float MetallicConstant;  // 0x000C, size 0x4

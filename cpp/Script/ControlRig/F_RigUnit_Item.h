@@ -4,5 +4,6 @@
 USTRUCT()
 struct FRigUnit_Item : public FRigUnit
 {
+public:
     UPROPERTY() FRigElementKey Item;  // 0x0008, size 0xC
 };

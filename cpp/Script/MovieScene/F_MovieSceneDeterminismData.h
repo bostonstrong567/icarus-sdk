@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMovieSceneDeterminismData
 {
+public:
     UPROPERTY() TArray<FFrameTime> Fences;  // 0x0000, size 0x10
     UPROPERTY() bool bParentSequenceRequiresLowerFence;  // 0x0010, size 0x1
     UPROPERTY() bool bParentSequenceRequiresUpperFence;  // 0x0011, size 0x1

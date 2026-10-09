@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UBP_GOAPBaitInterface_C : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable) void GetModifierToApplyOnConsume(FModifierStatesRowHandle& Modifier, float& Lifetime);  // parameters 0x1C
 };

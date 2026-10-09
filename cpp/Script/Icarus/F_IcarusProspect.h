@@ -4,6 +4,7 @@
 USTRUCT()
 struct FIcarusProspect : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText DropName;  // 0x0018, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString DesignNotes;  // 0x0030, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText Description;  // 0x0040, size 0x18

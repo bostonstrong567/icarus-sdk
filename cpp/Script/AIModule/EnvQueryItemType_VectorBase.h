@@ -5,7 +5,6 @@
 UCLASS(Abstract)
 class UEnvQueryItemType_VectorBase : public UEnvQueryItemType
 {
-public:
 
     // Virtual functions that start here:
     //   GetItemLocation, GetItemRotation

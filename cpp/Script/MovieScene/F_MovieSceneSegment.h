@@ -4,10 +4,9 @@
 USTRUCT()
 struct FMovieSceneSegment
 {
-
-    // Not reflected:
-    TRange<FFrameNumber> Range;  // 0x0000
-    FMovieSceneSegmentIdentifier ID;  // 0x0010
-    bool bAllowEmpty;  // 0x0014
-    TArray<FSectionEvaluationData,TInlineAllocator<4,TSizedDefaultAllocator<32> > > Impls;  // 0x0018
+public:
+    TRange<FFrameNumber> Range;  // 0x0000, not reflected
+    FMovieSceneSegmentIdentifier ID;  // 0x0010, not reflected
+    bool bAllowEmpty;  // 0x0014, not reflected
+    TArray<FSectionEvaluationData,TInlineAllocator<4,TSizedDefaultAllocator<32> > > Impls;  // 0x0018, not reflected
 };

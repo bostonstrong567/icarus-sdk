@@ -4,6 +4,7 @@
 USTRUCT()
 struct FGeometryCollectionSizeSpecificData
 {
+public:
     UPROPERTY(EditAnywhere) float MaxSize;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere) ECollisionTypeEnum CollisionType;  // 0x0004, size 0x1
     UPROPERTY(EditAnywhere) EImplicitTypeEnum ImplicitType;  // 0x0005, size 0x1

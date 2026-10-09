@@ -5,5 +5,4 @@
 UCLASS(Abstract, MinimalAPI)
 class UPropertyAccess : public UInterface
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFormatArgumentData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString ArgumentName;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TEnumAsByte<EFormatArgumentType> ArgumentValueType;  // 0x0010, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText ArgumentValue;  // 0x0018, size 0x18

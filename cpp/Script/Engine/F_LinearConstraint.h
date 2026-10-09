@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLinearConstraint : public FConstraintBaseParams
 {
+public:
     UPROPERTY(EditAnywhere) float Limit;  // 0x0014, size 0x4
     UPROPERTY(EditAnywhere) TEnumAsByte<ELinearConstraintMotion> XMotion;  // 0x0018, size 0x1
     UPROPERTY(EditAnywhere) TEnumAsByte<ELinearConstraintMotion> YMotion;  // 0x0019, size 0x1

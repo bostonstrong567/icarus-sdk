@@ -6,7 +6,6 @@ UCLASS(Transient)
 class UAssetRegistryHelpers : public UObject
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static FAssetData CreateAssetData(UObject* InAsset, bool bAllowBlueprintClass);  // parameters 0x70
     UFUNCTION(BlueprintCallable, BlueprintPure) static UObject* GetAsset(const FAssetData& InAssetData);  // parameters 0x68
     UFUNCTION(BlueprintCallable, BlueprintPure) static TScriptInterface<IAssetRegistry> GetAssetRegistry();  // parameters 0x10

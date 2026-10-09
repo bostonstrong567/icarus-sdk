@@ -5,18 +5,19 @@
 UCLASS(Config=Engine)
 class AWorldBossManager : public AIcarusActor
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
-    UPROPERTY() TArray<FSpawnedWorldBossData> SpawnedBossConfig;  // 0x02C0, size 0x10
     UPROPERTY(BlueprintAssignable) FWorldBossKilledSignature WorldBossKilled;  // 0x02D0, size 0x10
     UPROPERTY() TArray<AWorldBossSpawner*> WorldBossSpawners;  // 0x02E0, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bHasReloaded;  // 0x02F0, private
-    int32 CurrentBossID;  // 0x02F4, private
-    FTimerHandle RespawnTimer;  // 0x02F8, private
-    FProspectListRowHandle CurrentProspectRow;  // 0x0300, private
-    TMap<FWorldBossesRowHandle,FVector2D,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FWorldBossesRowHandle,FVector2D,0> > CurrentWorldBossConfig;  // 0x0318, private
-
+protected:
+    UPROPERTY() TArray<FSpawnedWorldBossData> SpawnedBossConfig;  // 0x02C0, size 0x10
+private:
+    bool bHasReloaded;  // 0x02F0, not reflected
+    int32 CurrentBossID;  // 0x02F4, not reflected
+    FTimerHandle RespawnTimer;  // 0x02F8, not reflected
+    FProspectListRowHandle CurrentProspectRow;  // 0x0300, not reflected
+    TMap<FWorldBossesRowHandle,FVector2D,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FWorldBossesRowHandle,FVector2D,0> > CurrentWorldBossConfig;  // 0x0318, not reflected
+public:
     UFUNCTION(BlueprintCallable) void CleanupExistingWorldBosses();
     UFUNCTION(BlueprintCallable) void DestroyExistingWorldBoss(AWorldBossSpawner* WorldBoss, bool bOnlyDestroyDeadBosses, bool bIgnoreAliveRelevantBosses);  // parameters 0xA
     UFUNCTION() bool DoesBossConfigRequireReset() const;  // parameters 0x1

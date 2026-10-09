@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Payload_Frag_Grenade_Rudimentary_C : public ABP_Payload_Frag_Grenade_C
 {
-public:
 };

@@ -6,12 +6,10 @@ UCLASS(MinimalAPI)
 class UTexture2DDynamic : public UTexture
 {
 public:
+    int32 SizeX;  // 0x0178, not reflected
+    int32 SizeY;  // 0x017C, not reflected
     UPROPERTY(Transient) TEnumAsByte<EPixelFormat> Format;  // 0x0180, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    int32 SizeX;  // 0x0178
-    int32 SizeY;  // 0x017C
-    uint8 : 1 bIsResolveTarget;  // 0x0181
-    int32 NumMips;  // 0x0184
-    ESamplerAddressMode SamplerAddressMode;  // 0x0188
+    uint8 : 1 bIsResolveTarget;  // 0x0181, not reflected
+    int32 NumMips;  // 0x0184, not reflected
+    ESamplerAddressMode SamplerAddressMode;  // 0x0188, not reflected
 };

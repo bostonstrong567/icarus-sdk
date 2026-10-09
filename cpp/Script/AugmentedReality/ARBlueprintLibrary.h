@@ -6,7 +6,6 @@ UCLASS()
 class UARBlueprintLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static bool AddManualEnvironmentCaptureProbe(FVector Location, FVector Extent);  // parameters 0x19
     UFUNCTION(BlueprintCallable) static UARCandidateImage* AddRuntimeCandidateImage(UARSessionConfig* SessionConfig, UTexture2D* CandidateTexture, FString FriendlyName, float PhysicalWidth);  // parameters 0x30
     UFUNCTION(BlueprintCallable) static bool AddTrackedPointWithName(const FTransform& WorldTransform, FString PointName, bool bDeletePointsWithSameName);  // parameters 0x42

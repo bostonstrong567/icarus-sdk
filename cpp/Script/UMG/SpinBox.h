@@ -5,6 +5,7 @@
 UCLASS()
 class USpinBox : public UWidget
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere) float Value;  // 0x0108, size 0x4
     UPROPERTY() FGetFloat ValueDelegate;  // 0x010C, size 0x10
@@ -25,6 +26,7 @@ public:
     UPROPERTY(BlueprintAssignable) FOnSpinBoxValueCommittedEvent OnValueCommitted;  // 0x04C8, size 0x10
     UPROPERTY(BlueprintAssignable) FOnSpinBoxBeginSliderMovement OnBeginSliderMovement;  // 0x04D8, size 0x10
     UPROPERTY(BlueprintAssignable) FOnSpinBoxValueChangedEvent OnEndSliderMovement;  // 0x04E8, size 0x10
+protected:
     UPROPERTY(EditAnywhere) uint8 bOverride_MinValue : 1;  // 0x04F8, mask 0x01
     UPROPERTY(EditAnywhere) uint8 bOverride_MaxValue : 1;  // 0x04F8, mask 0x02
     UPROPERTY(EditAnywhere) uint8 bOverride_MinSliderValue : 1;  // 0x04F8, mask 0x04
@@ -33,10 +35,8 @@ public:
     UPROPERTY(EditAnywhere) float MaxValue;  // 0x0500, size 0x4
     UPROPERTY(EditAnywhere) float MinSliderValue;  // 0x0504, size 0x4
     UPROPERTY(EditAnywhere) float MaxSliderValue;  // 0x0508, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SSpinBox<float>,0> MySpinBox;  // 0x0510, protected
-
+    TSharedPtr<SSpinBox<float>,0> MySpinBox;  // 0x0510, not reflected
+public:
     UFUNCTION(BlueprintCallable) void ClearMaxSliderValue();
     UFUNCTION(BlueprintCallable) void ClearMaxValue();
     UFUNCTION(BlueprintCallable) void ClearMinSliderValue();

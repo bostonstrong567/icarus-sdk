@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSubstanceGraphDesc
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 Index;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FString Label;  // 0x0008, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FString Description;  // 0x0018, size 0x10

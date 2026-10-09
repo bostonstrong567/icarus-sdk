@@ -5,5 +5,4 @@
 UCLASS()
 class UInterpTrackInstColorScale : public UInterpTrackInst
 {
-public:
 };

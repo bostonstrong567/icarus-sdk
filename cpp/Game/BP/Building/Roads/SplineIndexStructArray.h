@@ -4,5 +4,6 @@
 USTRUCT()
 struct SplineIndexStructArray
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<SplineIndexStruct> SplineIdexStructs;  // 0x0000, size 0x10
 };

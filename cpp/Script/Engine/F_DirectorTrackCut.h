@@ -4,6 +4,7 @@
 USTRUCT()
 struct FDirectorTrackCut
 {
+public:
     UPROPERTY() float Time;  // 0x0000, size 0x4
     UPROPERTY() float TransitionTime;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere) FName TargetCamGroup;  // 0x0008, size 0x8

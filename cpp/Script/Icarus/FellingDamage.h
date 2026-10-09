@@ -5,5 +5,4 @@
 UCLASS(Const)
 class UFellingDamage : public UIcarusDamageType
 {
-public:
 };

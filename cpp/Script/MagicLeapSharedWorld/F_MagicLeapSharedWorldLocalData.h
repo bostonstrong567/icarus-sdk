@@ -4,5 +4,6 @@
 USTRUCT()
 struct FMagicLeapSharedWorldLocalData
 {
+public:
     UPROPERTY(BlueprintReadWrite) TArray<FMagicLeapSharedWorldPinData> LocalPins;  // 0x0000, size 0x10
 };

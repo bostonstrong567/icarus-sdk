@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNetViewer
 {
+public:
     UPROPERTY() UNetConnection* Connection;  // 0x0000, size 0x8
     UPROPERTY() AActor* InViewer;  // 0x0008, size 0x8
     UPROPERTY() AActor* ViewTarget;  // 0x0010, size 0x8

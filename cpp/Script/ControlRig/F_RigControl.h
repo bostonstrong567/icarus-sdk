@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigControl : public FRigElement
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ERigControlType ControlType;  // 0x0018, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName DisplayName;  // 0x001C, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FName ParentName;  // 0x0024, size 0x8

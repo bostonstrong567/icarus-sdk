@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSkeletalMeshClothBuildParams
 {
+public:
     UPROPERTY(EditAnywhere) TWeakObjectPtr<UClothingAssetBase> TargetAsset;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) int32 TargetLod;  // 0x0008, size 0x4
     UPROPERTY(EditAnywhere) bool bRemapParameters;  // 0x000C, size 0x1

@@ -5,5 +5,4 @@
 UCLASS()
 class UGroupedInstancedMapDataTable : public UIcarusDataTable
 {
-public:
 };

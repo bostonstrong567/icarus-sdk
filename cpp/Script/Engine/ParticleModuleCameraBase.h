@@ -5,5 +5,4 @@
 UCLASS(Abstract, EditInlineNew)
 class UParticleModuleCameraBase : public UParticleModule
 {
-public:
 };

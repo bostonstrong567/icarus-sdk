@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class UIcarusMissionNPCRecorderComponent : public UIcarusNPCRecorderComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, SaveGame) FName MissionNPCDataRowName;  // 0x01E0, size 0x8
 };

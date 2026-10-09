@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UBP_BallisticFunctionLibrary_C : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static void CreateCriticalHitResult(FHitResult InPredictedHit, FName CriticalHitBone, UObject* __WorldContext, FHitResult& OutCriticalHit);  // parameters 0x120
     UFUNCTION(BlueprintCallable) static UBallisticPoolManager* GetBallisticPoolManager(UObject* __WorldContext);  // parameters 0x10
     UFUNCTION(BlueprintCallable) static void GetClosestBoneAlongProjectilePrediction(FPredictProjectilePathResult InPredictionData, AActor* InActor, UObject* __WorldContext, FName& HitBone, UPrimitiveComponent*& HitComponent);  // parameters 0xD8

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FGPUSpriteResourceData
 {
+public:
     UPROPERTY() TArray<FColor> QuantizedColorSamples;  // 0x0000, size 0x10
     UPROPERTY() TArray<FColor> QuantizedMiscSamples;  // 0x0010, size 0x10
     UPROPERTY() TArray<FColor> QuantizedSimulationAttrSamples;  // 0x0020, size 0x10

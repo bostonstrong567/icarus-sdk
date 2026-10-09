@@ -5,11 +5,12 @@
 UCLASS(Config=Engine)
 class AResourceSplineActorBase : public ASplineActorBase
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<UResourceNetworkComponent*> StartAtComponents;  // 0x0230, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<UResourceNetworkComponent*> EndAtComponents;  // 0x0240, size 0x10
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) AResourceNetwork* Network;  // 0x0250, size 0x8
-
+public:
     UFUNCTION(BlueprintCallable) void AddLinkedComponentAtEnd(UResourceNetworkComponent* Component);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void AddLinkedComponentAtStart(UResourceNetworkComponent* Component);  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) TArray<UResourceNetworkComponent*> GetAllLinkedComponents() const;  // parameters 0x10

@@ -5,5 +5,4 @@
 UCLASS(Transient)
 class UAnimSequencerInstance : public UAnimInstance, public ISequencerAnimationSupport
 {
-public:
 };

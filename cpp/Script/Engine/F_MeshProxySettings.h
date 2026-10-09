@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMeshProxySettings
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 ScreenSize;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float VoxelSize;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FMaterialProxySettings MaterialSettings;  // 0x0008, size 0x88

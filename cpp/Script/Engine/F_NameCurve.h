@@ -4,5 +4,6 @@
 USTRUCT()
 struct FNameCurve : public FIndexedCurve
 {
+public:
     UPROPERTY(EditAnywhere) TArray<FNameCurveKey> Keys;  // 0x0068, size 0x10
 };

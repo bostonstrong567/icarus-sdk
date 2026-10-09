@@ -5,8 +5,8 @@
 UCLASS(Config=Engine)
 class AEmitter : public AActor
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UParticleSystemComponent* ParticleSystemComponent;  // 0x0220, size 0x8
     UPROPERTY() uint8 bDestroyOnSystemFinish : 1;  // 0x0228, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bPostUpdateTickGroup : 1;  // 0x0228, mask 0x02
     UPROPERTY(Replicated, ReplicatedUsing) uint8 bCurrentlyActive : 1;  // 0x0228, mask 0x04
@@ -14,7 +14,9 @@ public:
     UPROPERTY(BlueprintAssignable) FParticleBurstSignature OnParticleBurst;  // 0x0240, size 0x10
     UPROPERTY(BlueprintAssignable) FParticleDeathSignature OnParticleDeath;  // 0x0250, size 0x10
     UPROPERTY(BlueprintAssignable) FParticleCollisionSignature OnParticleCollide;  // 0x0260, size 0x10
-
+private:
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UParticleSystemComponent* ParticleSystemComponent;  // 0x0220, size 0x8
+public:
     UFUNCTION(BlueprintCallable) void Activate();
     UFUNCTION(BlueprintCallable) void Deactivate();
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsActive() const;  // parameters 0x1

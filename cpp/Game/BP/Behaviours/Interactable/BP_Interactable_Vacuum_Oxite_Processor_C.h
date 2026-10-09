@@ -5,5 +5,4 @@
 UCLASS(Transient, EditInlineNew, Config=Engine)
 class UBP_Interactable_Vacuum_Oxite_Processor_C : public UBP_Interactable_Vacuum_Oxite_C
 {
-public:
 };

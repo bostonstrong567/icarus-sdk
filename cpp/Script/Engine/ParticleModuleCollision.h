@@ -11,6 +11,7 @@ public:
     UPROPERTY(EditAnywhere) FRawDistributionFloat MaxCollisions;  // 0x00C0, size 0x30
     UPROPERTY(EditAnywhere) TEnumAsByte<EParticleCollisionComplete> CollisionCompletionOption;  // 0x00F0, size 0x1
     UPROPERTY(EditAnywhere) TArray<TEnumAsByte<EObjectTypeQuery>> CollisionTypes;  // 0x00F8, size 0x10
+    FCollisionObjectQueryParams ObjectParams;  // 0x0108, not reflected
     UPROPERTY(EditAnywhere) uint8 bApplyPhysics : 1;  // 0x0110, mask 0x01
     UPROPERTY(EditAnywhere) uint8 bIgnoreTriggerVolumes : 1;  // 0x0110, mask 0x02
     UPROPERTY(EditAnywhere) FRawDistributionFloat ParticleMass;  // 0x0118, size 0x30
@@ -23,9 +24,6 @@ public:
     UPROPERTY(EditAnywhere) uint8 bCollideOnlyIfVisible : 1;  // 0x0188, mask 0x02
     UPROPERTY(EditAnywhere) uint8 bIgnoreSourceActor : 1;  // 0x0188, mask 0x04
     UPROPERTY(EditAnywhere) float MaxCollisionDistance;  // 0x018C, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    FCollisionObjectQueryParams ObjectParams;  // 0x0108
 
     // Virtual functions that start here:
     //   PerformCollisionCheck

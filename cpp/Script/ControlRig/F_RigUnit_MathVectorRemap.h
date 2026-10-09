@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_MathVectorRemap : public FRigUnit_MathVectorBase
 {
+public:
     UPROPERTY() FVector Value;  // 0x0008, size 0xC
     UPROPERTY() FVector SourceMinimum;  // 0x0014, size 0xC
     UPROPERTY() FVector SourceMaximum;  // 0x0020, size 0xC

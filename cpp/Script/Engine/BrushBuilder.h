@@ -5,10 +5,12 @@
 UCLASS(Abstract, MinimalAPI)
 class UBrushBuilder : public UObject
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY() FString BitmapFilename;  // 0x0028, size 0x10
     UPROPERTY() FString ToolTip;  // 0x0038, size 0x10
     UPROPERTY(Transient) uint8 NotifyBadParams : 1;  // 0x0048, mask 0x01
+protected:
     UPROPERTY() TArray<FVector> Vertices;  // 0x0050, size 0x10
     UPROPERTY() TArray<FBuilderPoly> Polys;  // 0x0060, size 0x10
     UPROPERTY() FName Layer;  // 0x0070, size 0x8

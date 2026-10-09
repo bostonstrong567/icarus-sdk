@@ -4,5 +4,6 @@
 USTRUCT()
 struct FVirtualKeyboardOptions
 {
+public:
     UPROPERTY(EditAnywhere) bool bEnableAutocorrect;  // 0x0000, size 0x1
 };

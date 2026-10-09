@@ -4,5 +4,6 @@
 USTRUCT()
 struct FDatasmithAssetImportOptions
 {
+public:
     UPROPERTY() FName PackagePath;  // 0x0000, size 0x8
 };

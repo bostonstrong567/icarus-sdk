@@ -5,6 +5,7 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UMagicLeapARPinComponent : public USceneComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString ObjectUID;  // 0x01F8, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 UserIndex;  // 0x0208, size 0x4
@@ -16,22 +17,21 @@ public:
     UPROPERTY(BlueprintAssignable) FPersistentEntityPinned OnPersistentEntityPinned;  // 0x0270, size 0x10
     UPROPERTY(BlueprintAssignable) FPersistentEntityPinLost OnPersistentEntityPinLost;  // 0x0280, size 0x10
     UPROPERTY(BlueprintAssignable) FMagicLeapARPinDataLoadAttemptCompleted OnPinDataLoadAttemptCompleted;  // 0x0290, size 0x10
+private:
     UPROPERTY() FGuid PinnedCFUID;  // 0x02A0, size 0x10
     UPROPERTY(Instanced) USceneComponent* PinnedSceneComponent;  // 0x02B0, size 0x8
     UPROPERTY() UMagicLeapARPinSaveGame* PinData;  // 0x02B8, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FTransform OldComponentWorldTransform;  // 0x02C0, private
-    FTransform OldCFUIDTransform;  // 0x02F0, private
-    FTransform NewComponentWorldTransform;  // 0x0320, private
-    FTransform NewCFUIDTransform;  // 0x0350, private
-    bool bHasValidPin;  // 0x0380, private
-    bool bDataRestored;  // 0x0381, private
-    bool bAttemptedPinningAfterDataRestoration;  // 0x0382, private
-    bool bPinFoundInEnvironmentPrevFrame;  // 0x0383, private
-    TDelegate<void __cdecl(FString const &,int,bool),FDefaultDelegateUserPolicy> SaveGameDelegate;  // 0x0388, private
-    TDelegate<void __cdecl(FString const &,int,USaveGame *),FDefaultDelegateUserPolicy> LoadGameDelegate;  // 0x0398, private
-
+    FTransform OldComponentWorldTransform;  // 0x02C0, not reflected
+    FTransform OldCFUIDTransform;  // 0x02F0, not reflected
+    FTransform NewComponentWorldTransform;  // 0x0320, not reflected
+    FTransform NewCFUIDTransform;  // 0x0350, not reflected
+    bool bHasValidPin;  // 0x0380, not reflected
+    bool bDataRestored;  // 0x0381, not reflected
+    bool bAttemptedPinningAfterDataRestoration;  // 0x0382, not reflected
+    bool bPinFoundInEnvironmentPrevFrame;  // 0x0383, not reflected
+    TDelegate<void __cdecl(FString const &,int,bool),FDefaultDelegateUserPolicy> SaveGameDelegate;  // 0x0388, not reflected
+    TDelegate<void __cdecl(FString const &,int,USaveGame *),FDefaultDelegateUserPolicy> LoadGameDelegate;  // 0x0398, not reflected
+public:
     UFUNCTION(BlueprintCallable) bool AttemptPinDataRestoration();  // parameters 0x1
     UFUNCTION(BlueprintCallable) void AttemptPinDataRestorationAsync();
     UFUNCTION(BlueprintCallable) UMagicLeapARPinSaveGame* GetPinData(TSubclassOf<UMagicLeapARPinSaveGame> PinDataClass);  // parameters 0x10

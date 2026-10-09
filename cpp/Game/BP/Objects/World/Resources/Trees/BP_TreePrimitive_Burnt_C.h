@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UBP_TreePrimitive_Burnt_C : public UBP_TreePrimitive_C
 {
-public:
 };

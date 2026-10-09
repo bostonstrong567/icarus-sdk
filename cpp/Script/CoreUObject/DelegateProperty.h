@@ -6,7 +6,5 @@ UCLASS()
 class UDelegateProperty : public UProperty
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    UFunction * SignatureFunction;  // 0x0070
+    UFunction * SignatureFunction;  // 0x0070, not reflected
 };

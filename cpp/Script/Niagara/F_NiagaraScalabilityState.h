@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNiagaraScalabilityState
 {
+public:
     UPROPERTY(EditAnywhere) float Significance;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere) uint8 bCulled : 1;  // 0x0004, mask 0x01
     UPROPERTY(EditAnywhere) uint8 bPreviousCulled : 1;  // 0x0004, mask 0x02

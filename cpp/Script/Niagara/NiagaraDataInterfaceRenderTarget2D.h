@@ -5,6 +5,7 @@
 UCLASS(EditInlineNew)
 class UNiagaraDataInterfaceRenderTarget2D : public UNiagaraDataInterfaceRWBase
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere) FIntPoint Size;  // 0x00D8, size 0x8
     UPROPERTY(EditAnywhere) ENiagaraMipMapGeneration MipMapGeneration;  // 0x00E0, size 0x1
@@ -12,8 +13,7 @@ public:
     UPROPERTY(EditAnywhere) uint8 bInheritUserParameterSettings : 1;  // 0x00E2, mask 0x01
     UPROPERTY(EditAnywhere) uint8 bOverrideFormat : 1;  // 0x00E2, mask 0x02
     UPROPERTY(EditAnywhere) FNiagaraUserParameterBinding RenderTargetUserParameter;  // 0x00E8, size 0x20
+protected:
+    TMap<unsigned __int64,FRenderTarget2DRWInstanceData_GameThread *,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<unsigned __int64,FRenderTarget2DRWInstanceData_GameThread *,0> > SystemInstancesToProxyData_GT;  // 0x0108, not reflected
     UPROPERTY(Transient) TMap<uint64, UTextureRenderTarget2D*> ManagedRenderTargets;  // 0x0158, size 0x50
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<unsigned __int64,FRenderTarget2DRWInstanceData_GameThread *,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<unsigned __int64,FRenderTarget2DRWInstanceData_GameThread *,0> > SystemInstancesToProxyData_GT;  // 0x0108, protected
 };

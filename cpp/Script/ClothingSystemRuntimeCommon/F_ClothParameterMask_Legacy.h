@@ -4,6 +4,7 @@
 USTRUCT()
 struct FClothParameterMask_Legacy
 {
+public:
     UPROPERTY() FName MaskName;  // 0x0000, size 0x8
     UPROPERTY() EWeightMapTargetCommon CurrentTarget;  // 0x0008, size 0x1
     UPROPERTY(Deprecated) float MaxValue;  // 0x000C, size 0x4

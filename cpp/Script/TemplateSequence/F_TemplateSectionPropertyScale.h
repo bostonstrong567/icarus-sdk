@@ -4,6 +4,7 @@
 USTRUCT()
 struct FTemplateSectionPropertyScale
 {
+public:
     UPROPERTY() FGuid ObjectBinding;  // 0x0000, size 0x10
     UPROPERTY() FMovieScenePropertyBinding PropertyBinding;  // 0x0010, size 0x14
     UPROPERTY() ETemplateSectionPropertyScaleType PropertyScaleType;  // 0x0024, size 0x4

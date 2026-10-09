@@ -6,7 +6,6 @@ UCLASS()
 class UItemableLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToItemableTable(FName Name, FItemableData Data, FItemableRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x119
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakItemableEnum(FItemableEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FItemableRowHandle CastToItemableRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

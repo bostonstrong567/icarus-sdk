@@ -5,5 +5,4 @@
 UCLASS(Transient)
 class USingleClickToolBuilder : public UInteractiveToolBuilder
 {
-public:
 };

@@ -5,7 +5,6 @@
 UCLASS(Abstract, Transient)
 class UCrowdManagerBase : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   CleanUp, OnNavDataRegistered, OnNavDataUnregistered, Tick

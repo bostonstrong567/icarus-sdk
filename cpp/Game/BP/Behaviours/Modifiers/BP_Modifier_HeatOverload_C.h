@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UBP_Modifier_HeatOverload_C : public UBP_ModifierStateBehaviour_AfflictionHeat_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void CanHeal(bool& CanHeal);  // parameters 0x1
 };

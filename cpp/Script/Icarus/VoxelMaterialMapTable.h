@@ -5,5 +5,4 @@
 UCLASS()
 class UVoxelMaterialMapTable : public UIcarusDataTable
 {
-public:
 };

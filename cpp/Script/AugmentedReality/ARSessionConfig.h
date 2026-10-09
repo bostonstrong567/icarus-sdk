@@ -5,6 +5,7 @@
 UCLASS()
 class UARSessionConfig : public UDataAsset
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere) bool bGenerateMeshDataFromTrackedGeometry;  // 0x0030, size 0x1
     UPROPERTY(EditAnywhere) bool bGenerateCollisionForMeshData;  // 0x0031, size 0x1
@@ -16,6 +17,7 @@ public:
     UPROPERTY(EditAnywhere) bool bUseSceneDepthForOcclusion;  // 0x0037, size 0x1
     UPROPERTY(EditAnywhere) bool bUseAutomaticImageScaleEstimation;  // 0x0038, size 0x1
     UPROPERTY(EditAnywhere) bool bUseStandardOnboardingUX;  // 0x0039, size 0x1
+protected:
     UPROPERTY(EditAnywhere) EARWorldAlignment WorldAlignment;  // 0x003A, size 0x1
     UPROPERTY(EditAnywhere) EARSessionType SessionType;  // 0x003B, size 0x1
     UPROPERTY(Deprecated) EARPlaneDetectionMode PlaneDetectionMode;  // 0x003C, size 0x1
@@ -53,7 +55,7 @@ public:
     UPROPERTY(EditAnywhere) TSubclassOf<UARGeoAnchorComponent> GeoAnchorComponentClass;  // 0x00F8, size 0x8
     UPROPERTY(EditAnywhere) UMaterialInterface* DefaultMeshMaterial;  // 0x0100, size 0x8
     UPROPERTY(EditAnywhere) UMaterialInterface* DefaultWireframeMeshMaterial;  // 0x0108, size 0x8
-
+public:
     UFUNCTION(BlueprintCallable) void AddCandidateImage(UARCandidateImage* NewCandidateImage);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void AddCandidateObject(UARCandidateObject* CandidateObject);  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) TArray<UARCandidateImage*> GetCandidateImageList() const;  // parameters 0x10

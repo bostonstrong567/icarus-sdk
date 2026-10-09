@@ -4,6 +4,7 @@
 USTRUCT()
 struct FDropship
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString Name;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EDropshipType Type;  // 0x0010, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 DropshipID;  // 0x0014, size 0x4

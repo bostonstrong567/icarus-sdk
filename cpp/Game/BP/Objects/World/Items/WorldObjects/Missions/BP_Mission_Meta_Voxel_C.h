@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Mission_Meta_Voxel_C : public ABP_VoxelRock_C
 {
-public:
 };

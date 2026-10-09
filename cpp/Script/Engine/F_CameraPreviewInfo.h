@@ -4,6 +4,7 @@
 USTRUCT()
 struct FCameraPreviewInfo
 {
+public:
     UPROPERTY(EditAnywhere) TSubclassOf<APawn> PawnClass;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) UAnimSequence* AnimSeq;  // 0x0008, size 0x8
     UPROPERTY(EditAnywhere) FVector Location;  // 0x0010, size 0xC

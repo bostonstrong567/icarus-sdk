@@ -6,7 +6,6 @@ UCLASS()
 class UKismetInternationalizationLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void ClearCurrentAssetGroupCulture(FName AssetGroup, bool SaveToConfig);  // parameters 0x9
     UFUNCTION(BlueprintCallable, BlueprintPure) static FString GetCultureDisplayName(FString Culture, bool Localized);  // parameters 0x28
     UFUNCTION(BlueprintCallable, BlueprintPure) static FString GetCurrentAssetGroupCulture(FName AssetGroup);  // parameters 0x18

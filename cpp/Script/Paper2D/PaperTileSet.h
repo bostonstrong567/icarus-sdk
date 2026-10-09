@@ -5,7 +5,8 @@
 UCLASS()
 class UPaperTileSet : public UObject
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FIntPoint TileSize;  // 0x0028, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) UTexture2D* TileSheet;  // 0x0030, size 0x8
     UPROPERTY(EditAnywhere) TArray<UTexture*> AdditionalSourceTextures;  // 0x0038, size 0x10

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_HAV_CactusA2_C : public ABP_DestructableHarvest_C
 {
-public:
 };

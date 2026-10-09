@@ -4,5 +4,6 @@
 USTRUCT()
 struct FNiagaraEmitterScalabilitySettingsArray
 {
+public:
     UPROPERTY(EditAnywhere) TArray<FNiagaraEmitterScalabilitySettings> Settings;  // 0x0000, size 0x10
 };

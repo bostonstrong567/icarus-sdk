@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_SettlementGate_Stone_C : public ABP_SettlementGate_C
 {
-public:
 };

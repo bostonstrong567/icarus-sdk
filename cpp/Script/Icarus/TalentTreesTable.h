@@ -5,5 +5,4 @@
 UCLASS()
 class UTalentTreesTable : public UIcarusDataTable
 {
-public:
 };

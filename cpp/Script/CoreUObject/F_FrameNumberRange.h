@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFrameNumberRange
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FFrameNumberRangeBound LowerBound;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FFrameNumberRangeBound UpperBound;  // 0x0008, size 0x8
 };

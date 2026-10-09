@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_CaveStaticMesh_C : public AStaticMeshActor
 {
-public:
 };

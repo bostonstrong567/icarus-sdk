@@ -5,19 +5,19 @@
 UCLASS(Config=Engine)
 class UBestiaryManagerComponent : public UActorComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintAssignable) FOnReceivedPlayerBestiary OnReceivedPlayerBestiary;  // 0x00B0, size 0x10
+protected:
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) FBestiaryFastArray BeastEntries;  // 0x00C0, size 0x158
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) FFishDataFastArray FishEntries;  // 0x0218, size 0x158
+    bool bServerHasLoadedData;  // 0x0370, not reflected
+    TMap<FBestiaryDataRowHandle,int,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FBestiaryDataRowHandle,int,0> > LastPointValues;  // 0x0378, not reflected
+    TMap<FFishDataRowHandle,FFishTypeTracking,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FFishDataRowHandle,FFishTypeTracking,0> > LastFishValues;  // 0x03C8, not reflected
     UPROPERTY(EditAnywhere) float AutoSaveRate;  // 0x0418, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bServerHasLoadedData;  // 0x0370, protected
-    TMap<FBestiaryDataRowHandle,int,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FBestiaryDataRowHandle,int,0> > LastPointValues;  // 0x0378, protected
-    TMap<FFishDataRowHandle,FFishTypeTracking,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FFishDataRowHandle,FFishTypeTracking,0> > LastFishValues;  // 0x03C8, protected
-    FTimerHandle BestiaryDataAutoSaveTimer;  // 0x0420, protected
-    bool bIsSaveDirty;  // 0x0428, protected
-
+    FTimerHandle BestiaryDataAutoSaveTimer;  // 0x0420, not reflected
+    bool bIsSaveDirty;  // 0x0428, not reflected
+public:
     UFUNCTION(BlueprintCallable) void AddFishDetails(const FFishTypeTracking& Fish);  // parameters 0x28
     UFUNCTION(BlueprintCallable) void Cheat_IncrementBeastPoints(const FBestiaryDataRowHandle& Entry, int32 AddPoints);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) void Cheat_IncrementFishCaught(const FFishDataRowHandle& FishRow, int32 AddNumCaught);  // parameters 0x1C

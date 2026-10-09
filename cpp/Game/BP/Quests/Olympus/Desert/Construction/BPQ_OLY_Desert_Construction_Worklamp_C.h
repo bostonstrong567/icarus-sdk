@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_OLY_Desert_Construction_Worklamp_C : public ABPQ_Deploy_Count_ItemStatic_C
 {
-public:
 };

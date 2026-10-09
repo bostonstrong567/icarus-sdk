@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABPQ_OLY_Glacier_Construction_Beds_C : public ABPQ_Deploy_Count_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void GetDescription(const FText& InDescription, FText& OutDescription, bool& bOutComplete);  // parameters 0x31
 };

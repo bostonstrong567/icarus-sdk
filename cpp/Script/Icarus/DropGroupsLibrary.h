@@ -6,7 +6,6 @@ UCLASS()
 class UDropGroupsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToDropGroupsTable(FName Name, FDropGroupCosmeticData Data, FDropGroupsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xE9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakDropGroupsEnum(FDropGroupsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FDropGroupsRowHandle CastToDropGroupsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

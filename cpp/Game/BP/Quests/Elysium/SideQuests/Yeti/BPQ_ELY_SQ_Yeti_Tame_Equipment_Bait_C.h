@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_ELY_SQ_Yeti_Tame_Equipment_Bait_C : public ABPQ_Collect_Item_C
 {
-public:
 };

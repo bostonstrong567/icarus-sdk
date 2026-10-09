@@ -6,7 +6,6 @@ UCLASS()
 class UKeybindContextsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToKeybindContextsTable(FName Name, FKeybindContext Data, FKeybindContextsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x61
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakKeybindContextsEnum(FKeybindContextsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FKeybindContextsRowHandle CastToKeybindContextsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

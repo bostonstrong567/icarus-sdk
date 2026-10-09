@@ -6,7 +6,6 @@ UCLASS()
 class UDecayableLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToDecayableTable(FName Name, FDecayableData Data, FDecayableRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x61
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakDecayableEnum(FDecayableEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FDecayableRowHandle CastToDecayableRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

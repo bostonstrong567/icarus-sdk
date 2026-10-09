@@ -4,5 +4,6 @@
 USTRUCT()
 struct FAIDataProviderBoolValue : public FAIDataProviderTypedValue
 {
+public:
     UPROPERTY(EditAnywhere) bool DefaultValue;  // 0x0030, size 0x1
 };

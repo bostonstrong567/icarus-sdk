@@ -24,13 +24,12 @@ public:
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) TArray<FQuestActor> RelevantPersistentActors;  // 0x0368, size 0x10
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) TArray<FQuestCharacter> RelevantPersistentCharacters;  // 0x0378, size 0x10
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) TArray<AQuest*> RegisteredInfo;  // 0x0388, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FTimerHandle MissionClearTimer;  // 0x0398, private
-    bool bInitialQuestAsyncLoadComplete;  // 0x03A0, private
-    TSubclassOf<AQuest> InitialQuestClass;  // 0x03A8, private
-    bool bInitialQuestSetup;  // 0x03B0, private
-
+private:
+    FTimerHandle MissionClearTimer;  // 0x0398, not reflected
+    bool bInitialQuestAsyncLoadComplete;  // 0x03A0, not reflected
+    TSubclassOf<AQuest> InitialQuestClass;  // 0x03A8, not reflected
+    bool bInitialQuestSetup;  // 0x03B0, not reflected
+public:
     UFUNCTION(BlueprintCallable) void ArtificiallyComplete();
     UFUNCTION(BlueprintCallable) void CancelDynamicQuest();
     UFUNCTION(BlueprintCallable) void CleanupQuests(bool bAbandoned);  // parameters 0x1

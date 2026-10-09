@@ -4,6 +4,8 @@
 USTRUCT()
 struct FFontData
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() FString FontFilename;  // 0x0000, size 0x10
     UPROPERTY() EFontHinting Hinting;  // 0x0010, size 0x1
     UPROPERTY() EFontLoadingPolicy LoadingPolicy;  // 0x0011, size 0x1

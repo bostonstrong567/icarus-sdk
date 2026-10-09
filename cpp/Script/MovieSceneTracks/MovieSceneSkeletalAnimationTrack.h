@@ -8,11 +8,9 @@ class UMovieSceneSkeletalAnimationTrack : public UMovieSceneNameableTrack, publi
 public:
     UPROPERTY() TArray<UMovieSceneSection*> AnimationSections;  // 0x0098, size 0x10
     UPROPERTY() bool bUseLegacySectionIndexBlend;  // 0x00A8, size 0x1
+    bool bAutoMatchClipsRootMotions;  // 0x00A9, not reflected
     UPROPERTY() FMovieSceneSkeletalAnimRootMotionTrackParams RootMotionParams;  // 0x00B0, size 0x30
     UPROPERTY(EditAnywhere) bool bBlendFirstChildOfRoot;  // 0x00E0, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bAutoMatchClipsRootMotions;  // 0x00A9
 
     // Virtual functions that start here:
     //   AddNewAnimation, AddNewAnimationOnRow

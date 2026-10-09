@@ -5,5 +5,4 @@
 UCLASS()
 class UCriticalHitAreaAudioDataTable : public UIcarusDataTable
 {
-public:
 };

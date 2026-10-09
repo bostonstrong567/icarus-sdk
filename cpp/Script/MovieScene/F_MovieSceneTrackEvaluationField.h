@@ -4,5 +4,6 @@
 USTRUCT()
 struct FMovieSceneTrackEvaluationField
 {
+public:
     UPROPERTY() TArray<FMovieSceneTrackEvaluationFieldEntry> Entries;  // 0x0000, size 0x10
 };

@@ -5,14 +5,12 @@
 UCLASS()
 class UPackageMap : public UObject
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bSuppressLogs;  // 0x0028, protected
-    bool bShouldTrackUnmappedGuids;  // 0x0029, protected
-    TSet<FNetworkGUID,DefaultKeyFuncs<FNetworkGUID,0>,FDefaultSetAllocator> TrackedUnmappedNetGuids;  // 0x0030, protected
-    TSet<FNetworkGUID,DefaultKeyFuncs<FNetworkGUID,0>,FDefaultSetAllocator> TrackedMappedDynamicNetGuids;  // 0x0080, protected
-    FString DebugContextString;  // 0x00D0, protected
+protected:
+    bool bSuppressLogs;  // 0x0028, not reflected
+    bool bShouldTrackUnmappedGuids;  // 0x0029, not reflected
+    TSet<FNetworkGUID,DefaultKeyFuncs<FNetworkGUID,0>,FDefaultSetAllocator> TrackedUnmappedNetGuids;  // 0x0030, not reflected
+    TSet<FNetworkGUID,DefaultKeyFuncs<FNetworkGUID,0>,FDefaultSetAllocator> TrackedMappedDynamicNetGuids;  // 0x0080, not reflected
+    FString DebugContextString;  // 0x00D0, not reflected
 
     // Virtual functions that start here:
     //   GetNetGUIDFromObject, GetNetGUIDStats, GetObjectFromNetGUID, IsGUIDBroken, LogDebugInfo

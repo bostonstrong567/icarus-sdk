@@ -5,7 +5,6 @@
 UCLASS(Transient, NotPlaceable, Config=Game)
 class ADebugCameraHUD : public AHUD
 {
-public:
 
     // Virtual functions that start here:
     //   DisplayMaterials

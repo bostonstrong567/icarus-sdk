@@ -4,6 +4,7 @@
 USTRUCT()
 struct FDestructibleChunkParameters
 {
+public:
     UPROPERTY(EditAnywhere) bool bIsSupportChunk;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere) bool bDoNotFracture;  // 0x0001, size 0x1
     UPROPERTY(EditAnywhere) bool bDoNotDamage;  // 0x0002, size 0x1

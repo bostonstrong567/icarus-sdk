@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Seat_Mount_Mammoth_C : public ABP_Seat_Mount_C
 {
-public:
 };

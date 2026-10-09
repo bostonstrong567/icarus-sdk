@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBuildableData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSubclassOf<UBuildableComponent> Behaviour;  // 0x0018, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FBuildingStabilityRowHandle Stability;  // 0x0020, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FBuildingTypesRowHandle Type;  // 0x0038, size 0x18

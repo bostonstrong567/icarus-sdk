@@ -7,7 +7,6 @@ class USoundNodeSoundClass : public USoundNode
 {
 public:
     UPROPERTY(EditAnywhere) USoundClass* SoundClassOverride;  // 0x0048, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bRetainingAudioDueToSoundClass;  // 0x0050, private
+private:
+    bool bRetainingAudioDueToSoundClass;  // 0x0050, not reflected
 };

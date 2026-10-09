@@ -6,7 +6,6 @@ UCLASS()
 class UFlagsMultiRowHandleLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static void Break(FFlagsMultiRowHandle MultiRowHandle, EFlagsTableType& OutEnum, FName& OutName);  // parameters 0x24
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool EqualEqual_FlagsMultiRowHandleFAccountFlagsRowHandle(FFlagsMultiRowHandle MultiHandle, FAccountFlagsRowHandle RowHandle);  // parameters 0x31
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool EqualEqual_FlagsMultiRowHandleFCharacterFlagsRowHandle(FFlagsMultiRowHandle MultiHandle, FCharacterFlagsRowHandle RowHandle);  // parameters 0x31

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_HitchingPost_Wall_C : public ABP_HitchingPost_C
 {
-public:
 };

@@ -5,7 +5,8 @@
 UCLASS(Abstract)
 class UBTTask_GameplayTaskBase : public UBTTaskNode
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere) uint8 bWaitForGameplayTask : 1;  // 0x0070, mask 0x01
 
     // Virtual functions that start here:

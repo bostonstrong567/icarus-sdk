@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UBP_SecondaryWidgetInterface_C : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable) void GetWidgetClass(TSubclassOf<UUserWidget>& Widget);  // parameters 0x8
 };

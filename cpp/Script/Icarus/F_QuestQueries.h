@@ -4,5 +4,6 @@
 USTRUCT()
 struct FQuestQueries : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FGameplayTagQuery Query;  // 0x0018, size 0x48
 };

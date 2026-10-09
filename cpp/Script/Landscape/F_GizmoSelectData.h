@@ -4,7 +4,6 @@
 USTRUCT()
 struct FGizmoSelectData
 {
-
-    // Not reflected:
-    TMap<ULandscapeLayerInfoObject *,float,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<ULandscapeLayerInfoObject *,float,0> > WeightDataMap;  // 0x0000
+public:
+    TMap<ULandscapeLayerInfoObject *,float,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<ULandscapeLayerInfoObject *,float,0> > WeightDataMap;  // 0x0000, not reflected
 };

@@ -4,9 +4,8 @@
 USTRUCT()
 struct FTextureSource
 {
-
-    // Not reflected:
-    FUntypedBulkData2<unsigned char> BulkData;  // 0x0000
-    uint8 * LockedMipData;  // 0x0028
-    uint32 NumLockedMips;  // 0x0030
+private:
+    FUntypedBulkData2<unsigned char> BulkData;  // 0x0000, not reflected
+    uint8 * LockedMipData;  // 0x0028, not reflected
+    uint32 NumLockedMips;  // 0x0030, not reflected
 };

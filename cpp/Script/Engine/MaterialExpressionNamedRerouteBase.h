@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class UMaterialExpressionNamedRerouteBase : public UMaterialExpressionRerouteBase
 {
-public:
 };

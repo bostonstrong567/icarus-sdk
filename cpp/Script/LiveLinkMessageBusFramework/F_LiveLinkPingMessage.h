@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLiveLinkPingMessage
 {
+public:
     UPROPERTY() FGuid PollRequest;  // 0x0000, size 0x10
     UPROPERTY() int32 LiveLinkVersion;  // 0x0010, size 0x4
 };

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_ELY_SQ_Trials_Build_Craft_C : public ABPQ_Collect_Item_WithName_C
 {
-public:
 };

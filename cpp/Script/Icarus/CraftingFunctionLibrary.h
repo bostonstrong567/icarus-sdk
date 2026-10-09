@@ -6,7 +6,6 @@ UCLASS()
 class UCraftingFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static TArray<FCraftingInput> CreateRecipeInputItemData(const FProcessorRecipesRowHandle& Input, AActor* CraftingActor, AActor* ProcessingActor);  // parameters 0x38
     UFUNCTION(BlueprintCallable) static TArray<FQueryInput> CreateRecipeInputQueryData(const FProcessorRecipesRowHandle& Input, AActor* CraftingActor, AActor* ProcessingActor);  // parameters 0x38
     UFUNCTION(BlueprintCallable) static TArray<FResourceItem> CreateRecipeInputResourceData(const FProcessorRecipesRowHandle& Input, AActor* CraftingActor, AActor* ProcessingActor);  // parameters 0x38

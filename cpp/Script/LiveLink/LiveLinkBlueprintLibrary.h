@@ -6,7 +6,6 @@ UCLASS()
 class ULiveLinkBlueprintLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static int32 ChildCount(FLiveLinkTransform& LiveLinkTransform);  // parameters 0x24
     UFUNCTION(BlueprintCallable, BlueprintPure) static void ComponentSpaceTransform(FLiveLinkTransform& LiveLinkTransform, FTransform& Transform);  // parameters 0x50
     UFUNCTION(BlueprintCallable) static bool EvaluateLiveLinkFrame(FLiveLinkSubjectRepresentation SubjectRepresentation, FLiveLinkBaseBlueprintData& OutBlueprintData);  // parameters 0x19

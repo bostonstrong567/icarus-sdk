@@ -4,5 +4,6 @@
 USTRUCT()
 struct FCustomPrimitiveData
 {
+public:
     UPROPERTY(EditAnywhere) TArray<float> Data;  // 0x0000, size 0x10
 };

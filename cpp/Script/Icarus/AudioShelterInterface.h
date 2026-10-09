@@ -6,6 +6,5 @@ UCLASS(Abstract)
 class UAudioShelterInterface : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintNativeEvent) float GetAudioShelterValue(AIcarusPlayerCharacter* Player) const;  // parameters 0xC
 };

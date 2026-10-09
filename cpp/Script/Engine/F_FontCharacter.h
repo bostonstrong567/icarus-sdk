@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFontCharacter
 {
+public:
     UPROPERTY(EditAnywhere) int32 StartU;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere) int32 StartV;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere) int32 USize;  // 0x0008, size 0x4

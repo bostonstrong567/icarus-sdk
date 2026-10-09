@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAnimPhysSphericalLimit
 {
+public:
     UPROPERTY(EditAnywhere) FBoneReference DrivingBone;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere) FVector SphereLocalOffset;  // 0x0010, size 0xC
     UPROPERTY(EditAnywhere) float LimitRadius;  // 0x001C, size 0x4

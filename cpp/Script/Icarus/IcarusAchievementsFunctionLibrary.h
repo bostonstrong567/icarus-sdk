@@ -6,7 +6,6 @@ UCLASS()
 class UIcarusAchievementsFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void ResetAllAchievements(APlayerController* Player);  // parameters 0x8
     UFUNCTION(BlueprintCallable) static void ResetAllStats(APlayerController* Player);  // parameters 0x8
 };

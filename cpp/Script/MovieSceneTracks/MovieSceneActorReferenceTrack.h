@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UMovieSceneActorReferenceTrack : public UMovieScenePropertyTrack, public IMovieSceneTrackTemplateProducer
 {
-public:
 };

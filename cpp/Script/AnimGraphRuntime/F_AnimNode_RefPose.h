@@ -4,5 +4,6 @@
 USTRUCT()
 struct FAnimNode_RefPose : public FAnimNode_Base
 {
+public:
     UPROPERTY() TEnumAsByte<ERefPoseType> RefPoseType;  // 0x0010, size 0x1
 };

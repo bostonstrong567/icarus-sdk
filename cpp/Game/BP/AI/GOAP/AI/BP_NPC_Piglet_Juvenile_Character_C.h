@@ -6,6 +6,5 @@ UCLASS(Config=Game)
 class ABP_NPC_Piglet_Juvenile_Character_C : public ABP_NPC_Juvenile_Domesticated_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintImplementableEvent) FVector GetDamageSourceLocation(UAnimMontage* Montage, FName SectionName);  // parameters 0x1C
 };

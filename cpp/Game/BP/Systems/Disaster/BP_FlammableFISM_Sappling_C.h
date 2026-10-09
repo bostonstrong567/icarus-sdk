@@ -6,7 +6,6 @@ UCLASS(EditInlineNew, Config=Engine)
 class UBP_FlammableFISM_Sappling_C : public UBP_FlammableFISM_ResourceNode_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void CombustingEnter(UFlammableInstanceFLOD* Instance);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void CombustingExit(UFlammableInstanceFLOD* Instance);  // parameters 0x8
 };

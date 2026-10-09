@@ -4,6 +4,7 @@
 USTRUCT()
 struct FQuartzClockSettings
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FQuartzTimeSignature TimeSignature;  // 0x0000, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bIgnoreLevelChange;  // 0x0018, size 0x1
 };

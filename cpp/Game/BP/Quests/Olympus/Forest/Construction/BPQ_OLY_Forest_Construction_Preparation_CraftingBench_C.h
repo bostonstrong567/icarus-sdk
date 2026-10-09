@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_OLY_Forest_Construction_Preparation_CraftingBench_C : public ABPQ_Collect_Item_C
 {
-public:
 };

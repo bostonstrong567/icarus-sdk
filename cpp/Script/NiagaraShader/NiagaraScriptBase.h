@@ -5,7 +5,6 @@
 UCLASS(Abstract, MinimalAPI)
 class UNiagaraScriptBase : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   GetSimulationStageMetaData, ModifyCompilationEnvironment

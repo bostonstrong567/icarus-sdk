@@ -4,11 +4,11 @@
 USTRUCT()
 struct FAnimNode_Slot : public FAnimNode_Base
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FPoseLink Source;  // 0x0010, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName SlotName;  // 0x0020, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bAlwaysUpdateSourcePose;  // 0x0028, size 0x1
-
-    // Not reflected:
-    FSlotNodeWeightInfo WeightData;  // 0x002C
-    FGraphTraversalCounter SlotNodeInitializationCounter;  // 0x0038
+protected:
+    FSlotNodeWeightInfo WeightData;  // 0x002C, not reflected
+    FGraphTraversalCounter SlotNodeInitializationCounter;  // 0x0038, not reflected
 };

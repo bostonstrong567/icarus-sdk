@@ -4,6 +4,7 @@
 USTRUCT()
 struct FWTStaticMesh
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UStaticMesh* Mesh;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<UMaterialInterface*> MaterialOverrides;  // 0x0008, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FTransform Transform;  // 0x0020, size 0x30

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_PRO_Story5_FindScanner_C : public ABPQ_Travel_C
 {
-public:
 };

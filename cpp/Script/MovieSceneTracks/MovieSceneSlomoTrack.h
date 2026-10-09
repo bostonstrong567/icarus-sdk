@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UMovieSceneSlomoTrack : public UMovieSceneFloatTrack, public IMovieSceneTrackTemplateProducer
 {
-public:
 };

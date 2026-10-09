@@ -4,5 +4,6 @@
 USTRUCT()
 struct FRichImageRow : public FTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere) FSlateBrush Brush;  // 0x0008, size 0x88
 };

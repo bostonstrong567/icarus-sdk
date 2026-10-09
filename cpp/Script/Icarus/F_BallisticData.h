@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBallisticData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<UBallisticComponent> Behaviour;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float Damage;  // 0x0040, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 DamageVariationPercentage;  // 0x0044, size 0x4

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_CollectionIntersection : public FRigUnit_CollectionBase
 {
+public:
     UPROPERTY() FRigElementKeyCollection A;  // 0x0008, size 0x10
     UPROPERTY() FRigElementKeyCollection B;  // 0x0018, size 0x10
     UPROPERTY() FRigElementKeyCollection Collection;  // 0x0028, size 0x10

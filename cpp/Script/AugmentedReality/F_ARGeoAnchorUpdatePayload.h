@@ -4,6 +4,7 @@
 USTRUCT()
 struct FARGeoAnchorUpdatePayload
 {
+public:
     UPROPERTY(BlueprintReadOnly) FARSessionPayload SessionPayload;  // 0x0000, size 0x18
     UPROPERTY(BlueprintReadWrite) FTransform WorldTransform;  // 0x0020, size 0x30
     UPROPERTY(BlueprintReadOnly) float Longitude;  // 0x0050, size 0x4

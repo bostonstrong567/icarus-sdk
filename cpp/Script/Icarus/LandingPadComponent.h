@@ -5,10 +5,11 @@
 UCLASS(Config=Engine)
 class ULandingPadComponent : public UActorComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY(EditAnywhere) int32 TimeBuilt;  // 0x00B0, size 0x4
     UPROPERTY(EditAnywhere) FPlayerCharacterID PlayerID;  // 0x00B8, size 0x18
-
+public:
     UFUNCTION(BlueprintCallable) void AssignPlayer(const FPlayerCharacterID& InPlayerID);  // parameters 0x18
     UFUNCTION(BlueprintCallable) void ClearAssignedPlayer();
     UFUNCTION(BlueprintCallable, BlueprintPure) FPlayerCharacterID GetPlayerID() const;  // parameters 0x18

@@ -5,7 +5,6 @@
 UCLASS(Abstract, Transient)
 class UInteractiveToolBuilder : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   BuildTool, CanBuildTool

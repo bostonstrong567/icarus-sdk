@@ -6,6 +6,5 @@ UCLASS()
 class UTraitFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static UTraitComponent* GetTrait(AActor* Actor, TSubclassOf<UTraitComponent> TraitClass, EValid& Paths);  // parameters 0x20
 };

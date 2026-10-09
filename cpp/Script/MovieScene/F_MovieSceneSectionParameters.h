@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMovieSceneSectionParameters
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FFrameNumber StartFrameOffset;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bCanLoop;  // 0x0004, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FFrameNumber EndFrameOffset;  // 0x0008, size 0x4

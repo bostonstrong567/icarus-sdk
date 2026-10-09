@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSlateMeshVertex
 {
+public:
     UPROPERTY() FVector2D Position;  // 0x0000, size 0x8
     UPROPERTY() FColor Color;  // 0x0008, size 0x4
     UPROPERTY() FVector2D UV0;  // 0x000C, size 0x8

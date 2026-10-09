@@ -8,20 +8,19 @@ class UTalentModelInterface_Const : public UObject
 public:
     UPROPERTY(BlueprintAssignable) FOnModelStateChanged OnModelStateChanged;  // 0x0028, size 0x10
     UPROPERTY(BlueprintAssignable) FOnModelTalentStateChanged OnModelTalentStateChanged;  // 0x0038, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TScriptInterface<ITalentControllerInterface> Controller;  // 0x0048, protected
-    TArray<FTalentArchetypesRowHandle,TSizedDefaultAllocator<32> > Archetypes;  // 0x0058, protected
-    TArray<FTalentTreesRowHandle,TSizedDefaultAllocator<32> > TalentTrees;  // 0x0068, protected
-    TArray<FTalentsRowHandle,TSizedDefaultAllocator<32> > Talents;  // 0x0078, protected
-    TMap<FTalentsRowHandle,FTalentModelData,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FTalentsRowHandle,FTalentModelData,0> > TalentDataMap;  // 0x0088, protected
-    int32 AvailablePoints;  // 0x00D8, protected
-    int32 ForcedPoints;  // 0x00DC, protected
-    int32 Level;  // 0x00E0, protected
-    bool bRefreshLock;  // 0x00E4, protected
-    bool bBroadcastLock;  // 0x00E5, protected
-    bool bQueuedBroadcast;  // 0x00E6, protected
-
+protected:
+    TScriptInterface<ITalentControllerInterface> Controller;  // 0x0048, not reflected
+    TArray<FTalentArchetypesRowHandle,TSizedDefaultAllocator<32> > Archetypes;  // 0x0058, not reflected
+    TArray<FTalentTreesRowHandle,TSizedDefaultAllocator<32> > TalentTrees;  // 0x0068, not reflected
+    TArray<FTalentsRowHandle,TSizedDefaultAllocator<32> > Talents;  // 0x0078, not reflected
+    TMap<FTalentsRowHandle,FTalentModelData,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FTalentsRowHandle,FTalentModelData,0> > TalentDataMap;  // 0x0088, not reflected
+    int32 AvailablePoints;  // 0x00D8, not reflected
+    int32 ForcedPoints;  // 0x00DC, not reflected
+    int32 Level;  // 0x00E0, not reflected
+    bool bRefreshLock;  // 0x00E4, not reflected
+    bool bBroadcastLock;  // 0x00E5, not reflected
+    bool bQueuedBroadcast;  // 0x00E6, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) bool CanUnlockTalent(const FTalentsRowHandle& Talent, int32 Rank, bool bIgnoreLockedState) const;  // parameters 0x1E
     UFUNCTION(BlueprintCallable, BlueprintPure) bool DoesModelContainTalent(const FTalentsRowHandle& Talent) const;  // parameters 0x19
     UFUNCTION(BlueprintCallable, BlueprintPure) TArray<FTalentArchetypesRowHandle> GetArchetypes() const;  // parameters 0x10

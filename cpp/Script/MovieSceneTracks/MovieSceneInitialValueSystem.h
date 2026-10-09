@@ -5,5 +5,4 @@
 UCLASS()
 class UMovieSceneInitialValueSystem : public UMovieSceneEntityInstantiatorSystem
 {
-public:
 };

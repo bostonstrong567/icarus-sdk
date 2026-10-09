@@ -8,11 +8,10 @@ class UAchievementsUnlockProxy : public UOnlineBlueprintCallProxyBase
 public:
     UPROPERTY(BlueprintAssignable) FEmptyOnlineDelegate OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FEmptyOnlineDelegate OnFailure;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TWeakObjectPtr<APlayerController,FWeakObjectPtr> PlayerControllerWeakPtr;  // 0x0050, private
-    UObject * WorldContextObject;  // 0x0058, private
-    TArray<FString,TSizedDefaultAllocator<32> > AchievementIds;  // 0x0060, private
-
+private:
+    TWeakObjectPtr<APlayerController,FWeakObjectPtr> PlayerControllerWeakPtr;  // 0x0050, not reflected
+    UObject * WorldContextObject;  // 0x0058, not reflected
+    TArray<FString,TSizedDefaultAllocator<32> > AchievementIds;  // 0x0060, not reflected
+public:
     UFUNCTION(BlueprintCallable) static UAchievementsUnlockProxy* UnlockAchievements(UObject* WorldContextObject, APlayerController* PlayerController, const TArray<FString>& AchievementIds);  // parameters 0x28
 };

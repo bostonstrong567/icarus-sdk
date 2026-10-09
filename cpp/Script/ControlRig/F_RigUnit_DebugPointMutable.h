@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_DebugPointMutable : public FRigUnit_DebugBaseMutable
 {
+public:
     UPROPERTY() FVector Vector;  // 0x0068, size 0xC
     UPROPERTY() ERigUnitDebugPointMode Mode;  // 0x0074, size 0x1
     UPROPERTY() FLinearColor Color;  // 0x0078, size 0x10

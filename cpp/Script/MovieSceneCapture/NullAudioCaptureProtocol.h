@@ -5,5 +5,4 @@
 UCLASS()
 class UNullAudioCaptureProtocol : public UMovieSceneAudioCaptureProtocolBase
 {
-public:
 };

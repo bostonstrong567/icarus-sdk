@@ -6,7 +6,6 @@ UCLASS()
 class UDLCPackageDataLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToDLCPackageDataTable(FName Name, FDLCPackageData Data, FDLCPackageDataRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x121
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakDLCPackageDataEnum(FDLCPackageDataEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FDLCPackageDataRowHandle CastToDLCPackageDataRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

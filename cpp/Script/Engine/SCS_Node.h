@@ -5,6 +5,7 @@
 UCLASS(MinimalAPI)
 class USCS_Node : public UObject
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY() TSubclassOf<UObject> ComponentClass;  // 0x0028, size 0x8
     UPROPERTY(Instanced) UActorComponent* ComponentTemplate;  // 0x0030, size 0x8
@@ -16,5 +17,6 @@ public:
     UPROPERTY() TArray<USCS_Node*> ChildNodes;  // 0x00A0, size 0x10
     UPROPERTY(EditAnywhere) TArray<FBPVariableMetaDataEntry> MetaDataArray;  // 0x00B0, size 0x10
     UPROPERTY() FGuid VariableGuid;  // 0x00C0, size 0x10
+private:
     UPROPERTY() FName InternalVariableName;  // 0x00D0, size 0x8
 };

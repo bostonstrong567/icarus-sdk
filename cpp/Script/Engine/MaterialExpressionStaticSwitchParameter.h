@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UMaterialExpressionStaticSwitchParameter : public UMaterialExpressionStaticBoolParameter
 {
-public:
 };

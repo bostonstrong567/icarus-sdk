@@ -5,5 +5,4 @@
 UCLASS()
 class UActorComponentInstanceDataTransientOuter : public UObject
 {
-public:
 };

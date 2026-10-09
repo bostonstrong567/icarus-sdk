@@ -6,6 +6,5 @@ UCLASS()
 class UImageWriteBlueprintLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void ExportToDisk(UTexture* Texture, FString Filename, const FImageWriteOptions& Options);  // parameters 0x80
 };

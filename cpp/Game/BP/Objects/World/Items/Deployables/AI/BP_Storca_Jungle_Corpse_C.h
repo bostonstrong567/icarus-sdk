@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABP_Storca_Jungle_Corpse_C : public ABP_GOAP_Corpse_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void OnSkinnedStateUpdated();
 };

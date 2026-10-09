@@ -5,5 +5,4 @@
 UCLASS()
 class UUInt64Property : public UNumericProperty
 {
-public:
 };

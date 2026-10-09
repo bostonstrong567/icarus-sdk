@@ -4,6 +4,7 @@
 USTRUCT()
 struct FVoxelSetupData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EVoxelResourceCategory ResourceCategory;  // 0x0018, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FItemTemplateRowHandle ResourceType;  // 0x001C, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FItemTemplateRowHandle SecondaryResourceType;  // 0x0034, size 0x18

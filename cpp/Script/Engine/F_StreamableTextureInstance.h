@@ -4,10 +4,9 @@
 USTRUCT()
 struct FStreamableTextureInstance
 {
-
-    // Not reflected:
-    FBoxSphereBounds Bounds;  // 0x0000
-    float MinDistance;  // 0x001C
-    float MaxDistance;  // 0x0020
-    float TexelFactor;  // 0x0024
+public:
+    FBoxSphereBounds Bounds;  // 0x0000, not reflected
+    float MinDistance;  // 0x001C, not reflected
+    float MaxDistance;  // 0x0020, not reflected
+    float TexelFactor;  // 0x0024, not reflected
 };

@@ -8,9 +8,8 @@ class UUpdateChallengeProgressCallbackProxyGen : public UOnlineBlueprintCallProx
 public:
     UPROPERTY(BlueprintAssignable) FOnUpdateChallengeProgressEventSignature OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FOnUpdateChallengeProgressEventSignature OnFail;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FReqUpdateChallengeProgress ReqUpdateChallengeProgress;  // 0x0050, private
-
+private:
+    FReqUpdateChallengeProgress ReqUpdateChallengeProgress;  // 0x0050, not reflected
+public:
     UFUNCTION(BlueprintCallable) static UUpdateChallengeProgressCallbackProxyGen* UpdateChallengeProgress(const FReqUpdateChallengeProgress& Request);  // parameters 0x30
 };

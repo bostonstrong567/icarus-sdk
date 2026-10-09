@@ -6,7 +6,6 @@ UCLASS()
 class UInteractableLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToInteractableTable(FName Name, FInteractableData Data, FInteractableRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x89
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakInteractableEnum(FInteractableEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FInteractableRowHandle CastToInteractableRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

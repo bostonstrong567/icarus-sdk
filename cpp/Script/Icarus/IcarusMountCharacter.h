@@ -5,11 +5,9 @@
 UCLASS(Abstract, Config=Game)
 class AIcarusMountCharacter : public AIcarusNPCGOAPCharacter
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UEnvQuery* TeleportEQS;  // 0x0A78, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FSurvivalTriggersRowHandle SurvivalTriggersRowHandle;  // 0x0A80, size 0x18
-    UPROPERTY(Replicated, ReplicatedUsing, BlueprintReadOnly) int32 CachedWeightValue;  // 0x0A98, size 0x4
-    UPROPERTY(BlueprintAssignable) FMountWeightUpdated OnMountWeightUpdated;  // 0x0AA0, size 0x10
     UPROPERTY(Instanced, BlueprintReadOnly) UIcarusMapIconComponent* MapIconComponent;  // 0x0AF0, size 0x8
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) FString MountName;  // 0x0AF8, size 0x10
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) FPlayerCharacterID OwnerCharacterID;  // 0x0B08, size 0x18
@@ -25,21 +23,24 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) AActor* TemporaryFollowTarget;  // 0x0B70, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bIgnoreDebugLoggingOnEndPlay;  // 0x0B78, size 0x1
     UPROPERTY(EditAnywhere, Replicated, SaveGame, BlueprintReadWrite) bool bIsWildTame;  // 0x0B79, size 0x1
-    UPROPERTY() TArray<UAnimMontage*> LoadedAnimations;  // 0x0B80, size 0x10
-    UPROPERTY() TMap<int32, UAnimMontage*> ActiveTemporaryStats;  // 0x0BA0, size 0x50
+protected:
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FSurvivalTriggersRowHandle SurvivalTriggersRowHandle;  // 0x0A80, size 0x18
+    UPROPERTY(Replicated, ReplicatedUsing, BlueprintReadOnly) int32 CachedWeightValue;  // 0x0A98, size 0x4
+    UPROPERTY(BlueprintAssignable) FMountWeightUpdated OnMountWeightUpdated;  // 0x0AA0, size 0x10
     UPROPERTY() FTimerHandle ResetNumTimesFellOutOfWorldTimerHandle;  // 0x0BF0, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FModifierStatesRowHandle CurrentHungerModifier;  // 0x0AB0, private
-    FModifierStatesRowHandle CurrentThirstModifier;  // 0x0AC8, private
-    bool bTriggerWeightUpdate;  // 0x0AE0, private
-    int32 OverburdenedModifier;  // 0x0AE4, private
-    int32 CachedWeightCapacity;  // 0x0AE8, private
-    bool bConvertedStatsRequireUpdate;  // 0x0B90, private
-    FTimerHandle SetOwnerIDTimerHandle;  // 0x0B98, private
-    FVector LastWalkingLocation;  // 0x0BF8, protected
-    int32 NumTimesFellOutOfWorld;  // 0x0C04, protected
-
+    FVector LastWalkingLocation;  // 0x0BF8, not reflected
+    int32 NumTimesFellOutOfWorld;  // 0x0C04, not reflected
+private:
+    FModifierStatesRowHandle CurrentHungerModifier;  // 0x0AB0, not reflected
+    FModifierStatesRowHandle CurrentThirstModifier;  // 0x0AC8, not reflected
+    bool bTriggerWeightUpdate;  // 0x0AE0, not reflected
+    int32 OverburdenedModifier;  // 0x0AE4, not reflected
+    int32 CachedWeightCapacity;  // 0x0AE8, not reflected
+    UPROPERTY() TArray<UAnimMontage*> LoadedAnimations;  // 0x0B80, size 0x10
+    bool bConvertedStatsRequireUpdate;  // 0x0B90, not reflected
+    FTimerHandle SetOwnerIDTimerHandle;  // 0x0B98, not reflected
+    UPROPERTY() TMap<int32, UAnimMontage*> ActiveTemporaryStats;  // 0x0BA0, size 0x50
+public:
     UFUNCTION() void AddRequiredTemperatureStats();
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) void AddTemporaryStatsForMontage(TMap<FBaseStatsEnum, int32> TemporaryStats, UAnimMontage* Montage);  // parameters 0x58
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) void Dismounted(AIcarusPlayerCharacter* Player);  // parameters 0x8

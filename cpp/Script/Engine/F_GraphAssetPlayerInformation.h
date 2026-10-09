@@ -4,5 +4,6 @@
 USTRUCT()
 struct FGraphAssetPlayerInformation
 {
+public:
     UPROPERTY() TArray<int32> PlayerNodeIndices;  // 0x0000, size 0x10
 };

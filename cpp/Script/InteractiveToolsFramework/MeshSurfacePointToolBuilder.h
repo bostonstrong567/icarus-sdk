@@ -6,9 +6,7 @@ UCLASS(Transient)
 class UMeshSurfacePointToolBuilder : public UInteractiveToolBuilder
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    IToolStylusStateProviderAPI * StylusAPI;  // 0x0028
+    IToolStylusStateProviderAPI * StylusAPI;  // 0x0028, not reflected
 
     // Virtual functions that start here:
     //   CreateNewTool, InitializeNewTool

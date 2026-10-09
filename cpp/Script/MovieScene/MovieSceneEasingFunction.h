@@ -6,6 +6,5 @@ UCLASS(Abstract)
 class UMovieSceneEasingFunction : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintImplementableEvent) float OnEvaluate(float Interp) const;  // parameters 0x8
 };

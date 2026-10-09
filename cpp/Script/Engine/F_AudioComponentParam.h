@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAudioComponentParam
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName ParamName;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float FloatParam;  // 0x0008, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool BoolParam;  // 0x000C, size 0x1

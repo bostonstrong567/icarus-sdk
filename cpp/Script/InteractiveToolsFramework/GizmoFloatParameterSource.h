@@ -6,7 +6,6 @@ UCLASS(Abstract)
 class UGizmoFloatParameterSource : public UInterface
 {
 public:
-
     UFUNCTION() void BeginModify();
     UFUNCTION() void EndModify();
     UFUNCTION() float GetParameter() const;  // parameters 0x4

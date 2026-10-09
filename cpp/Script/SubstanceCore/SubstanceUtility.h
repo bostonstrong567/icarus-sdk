@@ -6,7 +6,6 @@ UCLASS(MinimalAPI)
 class USubstanceUtility : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AsyncRendering(USubstanceGraphInstance* InstancesToRender);  // parameters 0x8
     UFUNCTION(BlueprintCallable) static void ClearCache();
     UFUNCTION(BlueprintCallable) static void CopyInputParameters(USubstanceGraphInstance* SourceGraphInstance, USubstanceGraphInstance* DestGraphInstance);  // parameters 0x10

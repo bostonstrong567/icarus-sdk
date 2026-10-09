@@ -5,5 +5,4 @@
 UCLASS()
 class UMovieSceneNodeGroupCollection : public UObject
 {
-public:
 };

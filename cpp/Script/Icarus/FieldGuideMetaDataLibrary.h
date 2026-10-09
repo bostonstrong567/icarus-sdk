@@ -6,7 +6,6 @@ UCLASS()
 class UFieldGuideMetaDataLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToFieldGuideMetaDataTable(FName Name, FFieldGuideMetaData Data, FFieldGuideMetaDataRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x111
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakFieldGuideMetaDataEnum(FFieldGuideMetaDataEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FFieldGuideMetaDataRowHandle CastToFieldGuideMetaDataRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -4,11 +4,10 @@
 USTRUCT()
 struct FCCDIKChainLink
 {
-
-    // Not reflected:
-    FTransform Transform;  // 0x0000
-    FTransform LocalTransform;  // 0x0030
-    int32 TransformIndex;  // 0x0060
-    TArray<int,TSizedDefaultAllocator<32> > ChildZeroLengthTransformIndices;  // 0x0068
-    float CurrentAngleDelta;  // 0x0078
+public:
+    FTransform Transform;  // 0x0000, not reflected
+    FTransform LocalTransform;  // 0x0030, not reflected
+    int32 TransformIndex;  // 0x0060, not reflected
+    TArray<int,TSizedDefaultAllocator<32> > ChildZeroLengthTransformIndices;  // 0x0068, not reflected
+    float CurrentAngleDelta;  // 0x0078, not reflected
 };

@@ -6,6 +6,5 @@ UCLASS(EditInlineNew, Config=Engine)
 class UW_PostProcessEntry_ToggleCollision_C : public UW_PostProcessEntry_Checkbox_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void UpdatePostProcess(FPostProcessSettings& Settings);  // parameters 0x560
 };

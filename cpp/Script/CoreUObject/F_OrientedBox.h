@@ -4,6 +4,7 @@
 USTRUCT()
 struct FOrientedBox
 {
+public:
     UPROPERTY(EditAnywhere, SaveGame) FVector Center;  // 0x0000, size 0xC
     UPROPERTY(EditAnywhere, SaveGame) FVector AxisX;  // 0x000C, size 0xC
     UPROPERTY(EditAnywhere, SaveGame) FVector AxisY;  // 0x0018, size 0xC

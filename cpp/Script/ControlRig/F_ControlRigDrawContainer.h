@@ -4,5 +4,6 @@
 USTRUCT()
 struct FControlRigDrawContainer
 {
+public:
     UPROPERTY(EditAnywhere) TArray<FControlRigDrawInstruction> Instructions;  // 0x0008, size 0x10
 };

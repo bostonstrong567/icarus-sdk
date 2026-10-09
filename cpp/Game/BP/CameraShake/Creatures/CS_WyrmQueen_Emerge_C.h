@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UCS_WyrmQueen_Emerge_C : public UMatineeCameraShake
 {
-public:
 };

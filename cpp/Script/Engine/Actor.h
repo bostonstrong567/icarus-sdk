@@ -5,16 +5,13 @@
 UCLASS(Config=Engine)
 class AActor : public UObject
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere) FActorTickFunction PrimaryActorTick;  // 0x0028, size 0x30
     UPROPERTY() uint8 bNetTemporary : 1;  // 0x0058, mask 0x01
     UPROPERTY() uint8 bNetStartup : 1;  // 0x0058, mask 0x02
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bOnlyRelevantToOwner : 1;  // 0x0058, mask 0x04
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bAlwaysRelevant : 1;  // 0x0058, mask 0x08
-    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing) uint8 bReplicateMovement : 1;  // 0x0058, mask 0x10
-    UPROPERTY(EditAnywhere, Replicated, Interp, BlueprintReadOnly) uint8 bHidden : 1;  // 0x0058, mask 0x20
-    UPROPERTY(Replicated) uint8 bTearOff : 1;  // 0x0058, mask 0x40
-    UPROPERTY() uint8 bForceNetAddressable : 1;  // 0x0058, mask 0x80
     UPROPERTY(Transient) uint8 bExchangedRoles : 1;  // 0x0059, mask 0x01
     UPROPERTY(EditAnywhere) uint8 bNetLoadOnClient : 1;  // 0x0059, mask 0x02
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bNetUseOwnerRelevancy : 1;  // 0x0059, mask 0x04
@@ -22,8 +19,6 @@ public:
     UPROPERTY(EditAnywhere) uint8 bRelevantForLevelBounds : 1;  // 0x0059, mask 0x10
     UPROPERTY(EditAnywhere) uint8 bReplayRewindable : 1;  // 0x0059, mask 0x20
     UPROPERTY(EditAnywhere) uint8 bAllowTickBeforeBeginPlay : 1;  // 0x0059, mask 0x40
-    UPROPERTY(BlueprintReadWrite) uint8 bAutoDestroyWhenFinished : 1;  // 0x0059, mask 0x80
-    UPROPERTY(EditAnywhere, Replicated, SaveGame, BlueprintReadWrite) uint8 bCanBeDamaged : 1;  // 0x005A, mask 0x01
     UPROPERTY(EditAnywhere) uint8 bBlockInput : 1;  // 0x005A, mask 0x02
     UPROPERTY() uint8 bCollideWhenPlacing : 1;  // 0x005A, mask 0x04
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bFindCameraComponentWhenViewTarget : 1;  // 0x005A, mask 0x08
@@ -32,21 +27,9 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bEnableAutoLODGeneration : 1;  // 0x005A, mask 0x40
     UPROPERTY(EditAnywhere) uint8 bIsEditorOnlyActor : 1;  // 0x005A, mask 0x80
     UPROPERTY() uint8 bActorSeamlessTraveled : 1;  // 0x005B, mask 0x01
-    UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bReplicates : 1;  // 0x005B, mask 0x02
-    UPROPERTY(EditAnywhere) uint8 bCanBeInCluster : 1;  // 0x005B, mask 0x04
-    UPROPERTY() uint8 bAllowReceiveTickEventOnDedicatedServer : 1;  // 0x005B, mask 0x08
-    UPROPERTY() uint8 bActorEnableCollision : 1;  // 0x005C, mask 0x08
-    UPROPERTY(Transient) uint8 bActorIsBeingDestroyed : 1;  // 0x005C, mask 0x10
-    UPROPERTY(EditAnywhere) EActorUpdateOverlapsMethod UpdateOverlapsMethodDuringLevelStreaming;  // 0x005D, size 0x1
-    UPROPERTY(EditAnywhere, Config) EActorUpdateOverlapsMethod DefaultUpdateOverlapsMethodDuringLevelStreaming;  // 0x005E, size 0x1
-    UPROPERTY(Replicated, Transient) TEnumAsByte<ENetRole> RemoteRole;  // 0x005F, size 0x1
-    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing) FRepMovement ReplicatedMovement;  // 0x0060, size 0x34
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float InitialLifeSpan;  // 0x0094, size 0x4
     UPROPERTY(BlueprintReadWrite) float CustomTimeDilation;  // 0x0098, size 0x4
-    UPROPERTY(Replicated, ReplicatedUsing, Transient) FRepAttachment AttachmentReplication;  // 0x00A0, size 0x40
-    UPROPERTY(Replicated, ReplicatedUsing) AActor* Owner;  // 0x00E0, size 0x8
-    UPROPERTY() FName NetDriverName;  // 0x00E8, size 0x8
-    UPROPERTY(Replicated) TEnumAsByte<ENetRole> Role;  // 0x00F0, size 0x1
+    float CreationTime;  // 0x009C, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<ENetDormancy> NetDormancy;  // 0x00F1, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ESpawnActorCollisionHandlingMethod SpawnCollisionHandlingMethod;  // 0x00F2, size 0x1
     UPROPERTY(EditAnywhere) TEnumAsByte<EAutoReceiveInput> AutoReceiveInput;  // 0x00F3, size 0x1
@@ -57,12 +40,9 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float NetUpdateFrequency;  // 0x0108, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float MinNetUpdateFrequency;  // 0x010C, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float NetPriority;  // 0x0110, size 0x4
-    UPROPERTY(Replicated, ReplicatedUsing, BlueprintReadWrite) APawn* Instigator;  // 0x0118, size 0x8
     UPROPERTY(Transient) TArray<AActor*> Children;  // 0x0120, size 0x10
-    UPROPERTY(Instanced, BlueprintReadOnly) USceneComponent* RootComponent;  // 0x0130, size 0x8
-    UPROPERTY(Transient) TArray<AMatineeActor*> ControllingMatineeActors;  // 0x0138, size 0x10
     UPROPERTY() TArray<FName> Layers;  // 0x0150, size 0x10
-    UPROPERTY(Instanced) TWeakObjectPtr<UChildActorComponent> ParentComponent;  // 0x0160, size 0x8
+    uint8 : 1 bActorIsBeingConstructed;  // 0x0168, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FName> Tags;  // 0x0170, size 0x10
     UPROPERTY(BlueprintAssignable) FTakeAnyDamageSignature OnTakeAnyDamage;  // 0x0180, size 0x1
     UPROPERTY(BlueprintAssignable) FTakePointDamageSignature OnTakePointDamage;  // 0x0181, size 0x1
@@ -80,27 +60,48 @@ public:
     UPROPERTY(BlueprintAssignable) FActorHitSignature OnActorHit;  // 0x018D, size 0x1
     UPROPERTY(BlueprintAssignable) FActorDestroyedSignature OnDestroyed;  // 0x018E, size 0x1
     UPROPERTY(BlueprintAssignable) FActorEndPlaySignature OnEndPlay;  // 0x018F, size 0x1
-    UPROPERTY() TArray<UActorComponent*> InstanceComponents;  // 0x01F0, size 0x10
     UPROPERTY() TArray<UActorComponent*> BlueprintCreatedComponents;  // 0x0200, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint8 : 1 bNetCheckedInitialPhysicsState;  // 0x005B, protected
-    uint8 : 1 bHasFinishedSpawning;  // 0x005B, private
-    uint8 : 1 bActorInitialized;  // 0x005B, private
-    uint8 : 1 bActorBeginningPlayFromLevelStreaming;  // 0x005B, private
-    uint8 : 1 bTickFunctionsRegistered;  // 0x005C, private
-    uint8 : 1 bHasDeferredComponentRegistration;  // 0x005C, private
-    uint8 : 1 bRunningUserConstructionScript;  // 0x005C, private
-    uint8 : 1 bActorWantsDestroyDuringBeginPlay;  // 0x005C, private
-    AActor::EActorBeginPlayState : 2 ActorHasBegunPlay;  // 0x005C, private
-    float CreationTime;  // 0x009C
-    float LastRenderTime;  // 0x0114, private
-    FTimerHandle TimerHandle_LifeSpanExpired;  // 0x0148, protected
-    uint8 : 1 bActorIsBeingConstructed;  // 0x0168
-    TArray<UActorComponent *,TSizedDefaultAllocator<32> > ReplicatedComponents;  // 0x0190, protected
-    TSet<UActorComponent *,DefaultKeyFuncs<UActorComponent *,0>,FDefaultSetAllocator> OwnedComponents;  // 0x01A0, private
-    FRenderCommandFence DetachFence;  // 0x0210
-
+    FRenderCommandFence DetachFence;  // 0x0210, not reflected
+protected:
+    uint8 : 1 bNetCheckedInitialPhysicsState;  // 0x005B, not reflected
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bReplicates : 1;  // 0x005B, mask 0x02
+    UPROPERTY(EditAnywhere) uint8 bCanBeInCluster : 1;  // 0x005B, mask 0x04
+    UPROPERTY() uint8 bAllowReceiveTickEventOnDedicatedServer : 1;  // 0x005B, mask 0x08
+    UPROPERTY(EditAnywhere) EActorUpdateOverlapsMethod UpdateOverlapsMethodDuringLevelStreaming;  // 0x005D, size 0x1
+    UPROPERTY() FName NetDriverName;  // 0x00E8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadOnly) USceneComponent* RootComponent;  // 0x0130, size 0x8
+    UPROPERTY(Transient) TArray<AMatineeActor*> ControllingMatineeActors;  // 0x0138, size 0x10
+    FTimerHandle TimerHandle_LifeSpanExpired;  // 0x0148, not reflected
+    TArray<UActorComponent *,TSizedDefaultAllocator<32> > ReplicatedComponents;  // 0x0190, not reflected
+private:
+    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing) uint8 bReplicateMovement : 1;  // 0x0058, mask 0x10
+    UPROPERTY(EditAnywhere, Replicated, Interp, BlueprintReadOnly) uint8 bHidden : 1;  // 0x0058, mask 0x20
+    UPROPERTY(Replicated) uint8 bTearOff : 1;  // 0x0058, mask 0x40
+    UPROPERTY() uint8 bForceNetAddressable : 1;  // 0x0058, mask 0x80
+    UPROPERTY(BlueprintReadWrite) uint8 bAutoDestroyWhenFinished : 1;  // 0x0059, mask 0x80
+    UPROPERTY(EditAnywhere, Replicated, SaveGame, BlueprintReadWrite) uint8 bCanBeDamaged : 1;  // 0x005A, mask 0x01
+    uint8 : 1 bActorBeginningPlayFromLevelStreaming;  // 0x005B, not reflected
+    uint8 : 1 bActorInitialized;  // 0x005B, not reflected
+    uint8 : 1 bHasFinishedSpawning;  // 0x005B, not reflected
+    AActor::EActorBeginPlayState : 2 ActorHasBegunPlay;  // 0x005C, not reflected
+    uint8 : 1 bActorWantsDestroyDuringBeginPlay;  // 0x005C, not reflected
+    uint8 : 1 bHasDeferredComponentRegistration;  // 0x005C, not reflected
+    uint8 : 1 bRunningUserConstructionScript;  // 0x005C, not reflected
+    uint8 : 1 bTickFunctionsRegistered;  // 0x005C, not reflected
+    UPROPERTY() uint8 bActorEnableCollision : 1;  // 0x005C, mask 0x08
+    UPROPERTY(Transient) uint8 bActorIsBeingDestroyed : 1;  // 0x005C, mask 0x10
+    UPROPERTY(EditAnywhere, Config) EActorUpdateOverlapsMethod DefaultUpdateOverlapsMethodDuringLevelStreaming;  // 0x005E, size 0x1
+    UPROPERTY(Replicated, Transient) TEnumAsByte<ENetRole> RemoteRole;  // 0x005F, size 0x1
+    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing) FRepMovement ReplicatedMovement;  // 0x0060, size 0x34
+    UPROPERTY(Replicated, ReplicatedUsing, Transient) FRepAttachment AttachmentReplication;  // 0x00A0, size 0x40
+    UPROPERTY(Replicated, ReplicatedUsing) AActor* Owner;  // 0x00E0, size 0x8
+    UPROPERTY(Replicated) TEnumAsByte<ENetRole> Role;  // 0x00F0, size 0x1
+    float LastRenderTime;  // 0x0114, not reflected
+    UPROPERTY(Replicated, ReplicatedUsing, BlueprintReadWrite) APawn* Instigator;  // 0x0118, size 0x8
+    UPROPERTY(Instanced) TWeakObjectPtr<UChildActorComponent> ParentComponent;  // 0x0160, size 0x8
+    TSet<UActorComponent *,DefaultKeyFuncs<UActorComponent *,0>,FDefaultSetAllocator> OwnedComponents;  // 0x01A0, not reflected
+    UPROPERTY() TArray<UActorComponent*> InstanceComponents;  // 0x01F0, size 0x10
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) bool ActorHasTag(FName Tag) const;  // parameters 0x9
     UFUNCTION(BlueprintCallable) UActorComponent* AddComponent(FName TemplateName, bool bManualAttachment, const FTransform& RelativeTransform, UObject* ComponentTemplateContext, bool bDeferredFinish);  // parameters 0x58
     UFUNCTION(BlueprintCallable) UActorComponent* AddComponentByClass(TSubclassOf<UActorComponent> Class, bool bManualAttachment, const FTransform& RelativeTransform, bool bDeferredFinish);  // parameters 0x50

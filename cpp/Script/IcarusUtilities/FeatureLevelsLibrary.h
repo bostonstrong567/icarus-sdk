@@ -6,7 +6,6 @@ UCLASS()
 class UFeatureLevelsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToFeatureLevelsTable(FName Name, FFeatureLevelData Data, FFeatureLevelsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xB9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakFeatureLevelsEnum(FFeatureLevelsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FFeatureLevelsRowHandle CastToFeatureLevelsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

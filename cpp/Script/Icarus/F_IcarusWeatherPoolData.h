@@ -4,6 +4,7 @@
 USTRUCT()
 struct FIcarusWeatherPoolData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FWeatherPoolEntry> WeatherEvents;  // 0x0018, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<FWeatherPoolEntryMeta> ContainedTiers;  // 0x0028, size 0x10
 };

@@ -5,8 +5,6 @@
 UCLASS(Config=Game)
 class AIcarusDropShipSpawnLocator : public APawn
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    FNavAgentProperties NavAgentProps;  // 0x0280, private
+private:
+    FNavAgentProperties NavAgentProps;  // 0x0280, not reflected
 };

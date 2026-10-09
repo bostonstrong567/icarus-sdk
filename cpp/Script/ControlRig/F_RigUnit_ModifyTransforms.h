@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_ModifyTransforms : public FRigUnit_HighlevelBaseMutable
 {
+public:
     UPROPERTY() TArray<FRigUnit_ModifyTransforms_PerItem> ItemToModify;  // 0x0068, size 0x10
     UPROPERTY() float Weight;  // 0x0078, size 0x4
     UPROPERTY() float WeightMinimum;  // 0x007C, size 0x4

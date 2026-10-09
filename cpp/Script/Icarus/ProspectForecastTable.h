@@ -5,5 +5,4 @@
 UCLASS()
 class UProspectForecastTable : public UIcarusDataTable
 {
-public:
 };

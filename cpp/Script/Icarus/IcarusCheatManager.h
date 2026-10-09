@@ -5,5 +5,4 @@
 UCLASS()
 class UIcarusCheatManager : public UCheatManager
 {
-public:
 };

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Ape_Lab_Lake_C : public ABP_InteractableLake_C
 {
-public:
 };

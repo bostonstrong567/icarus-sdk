@@ -6,9 +6,7 @@ UCLASS(Abstract, Const, EditInlineNew)
 class UAnimNotifyState : public UObject
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bIsNativeBranchingPoint;  // 0x0028
+    bool bIsNativeBranchingPoint;  // 0x0028, not reflected
 
     UFUNCTION(BlueprintNativeEvent) FString GetNotifyName() const;  // parameters 0x10
     UFUNCTION(BlueprintImplementableEvent) bool Received_NotifyBegin(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation, float TotalDuration) const;  // parameters 0x15

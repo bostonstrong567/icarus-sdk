@@ -5,7 +5,6 @@
 UCLASS(Abstract)
 class UGenlockedCustomTimeStep : public UFixedFrameRateCustomTimeStep
 {
-public:
 
     // Virtual functions that start here:
     //   GetExpectedSyncCountDelta, GetLastSyncCountDelta, GetSyncRate, IsLastSyncDataValid, WaitForSync

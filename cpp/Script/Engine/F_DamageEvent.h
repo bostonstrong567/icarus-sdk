@@ -4,5 +4,6 @@
 USTRUCT()
 struct FDamageEvent
 {
+public:
     UPROPERTY() TSubclassOf<UDamageType> DamageTypeClass;  // 0x0008, size 0x8
 };

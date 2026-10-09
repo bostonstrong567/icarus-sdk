@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class UMatineeInterface : public UInterface
 {
-public:
 };

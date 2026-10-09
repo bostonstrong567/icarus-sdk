@@ -20,13 +20,12 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 CaptureSortPriority;  // 0x0248, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bUseRayTracingIfEnabled;  // 0x024C, size 0x1
     UPROPERTY(EditAnywhere, Interp, BlueprintReadWrite) TArray<FEngineShowFlagsSetting> ShowFlagSettings;  // 0x0250, size 0x10
+    FEngineShowFlags ShowFlags;  // 0x0260, not reflected
+    EStereoscopicPass CaptureStereoPass;  // 0x0288, not reflected
     UPROPERTY(EditAnywhere, Interp, BlueprintReadWrite) FString ProfilingEventName;  // 0x0290, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FEngineShowFlags ShowFlags;  // 0x0260
-    EStereoscopicPass CaptureStereoPass;  // 0x0288
-    TIndirectArray<FSceneViewStateReference,TSizedDefaultAllocator<32> > ViewStates;  // 0x02A0, protected
-
+protected:
+    TIndirectArray<FSceneViewStateReference,TSizedDefaultAllocator<32> > ViewStates;  // 0x02A0, not reflected
+public:
     UFUNCTION(BlueprintCallable) void ClearHiddenComponents();
     UFUNCTION(BlueprintCallable) void ClearShowOnlyComponents();
     UFUNCTION(BlueprintCallable) void HideActorComponents(AActor* InActor, bool bIncludeFromChildActors);  // parameters 0x9

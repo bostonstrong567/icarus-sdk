@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UIFireTransformProvider_C : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable) void GetFireTransform(bool& Success, FTransform& FireTransform);  // parameters 0x40
 };

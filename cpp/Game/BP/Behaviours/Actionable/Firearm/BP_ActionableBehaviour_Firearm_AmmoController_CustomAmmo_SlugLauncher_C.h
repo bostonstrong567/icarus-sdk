@@ -6,7 +6,6 @@ UCLASS(Transient, Config=Engine)
 class UBP_ActionableBehaviour_Firearm_AmmoController_CustomAmmo_SlugLauncher_C : public UBP_ActionableBehaviour_Firearm_AmmoController_CustomAmmo_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) void CanReload(bool& CanReload);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void CheckAmmo(bool bInitial);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void ConsumeAmmo(int32 Amount);  // parameters 0x4

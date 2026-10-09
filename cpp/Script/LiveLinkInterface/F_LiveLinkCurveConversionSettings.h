@@ -4,5 +4,6 @@
 USTRUCT()
 struct FLiveLinkCurveConversionSettings
 {
+public:
     UPROPERTY(EditAnywhere) TMap<FString, FSoftObjectPath> CurveConversionAssetMap;  // 0x0000, size 0x50
 };

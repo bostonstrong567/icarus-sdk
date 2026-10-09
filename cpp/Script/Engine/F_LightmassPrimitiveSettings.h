@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLightmassPrimitiveSettings
 {
+public:
     UPROPERTY(EditAnywhere) uint8 bUseTwoSidedLighting : 1;  // 0x0000, mask 0x01
     UPROPERTY(EditAnywhere) uint8 bShadowIndirectOnly : 1;  // 0x0000, mask 0x02
     UPROPERTY(EditAnywhere) uint8 bUseEmissiveForStaticLighting : 1;  // 0x0000, mask 0x04

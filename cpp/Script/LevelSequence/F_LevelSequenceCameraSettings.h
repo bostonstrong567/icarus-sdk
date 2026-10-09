@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLevelSequenceCameraSettings
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bOverrideAspectRatioAxisConstraint;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TEnumAsByte<EAspectRatioAxisConstraint> AspectRatioAxisConstraint;  // 0x0001, size 0x1
 };

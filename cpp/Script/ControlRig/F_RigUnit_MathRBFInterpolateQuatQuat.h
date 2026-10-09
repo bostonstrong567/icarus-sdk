@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_MathRBFInterpolateQuatQuat : public FRigUnit_MathRBFInterpolateQuatBase
 {
+public:
     UPROPERTY() TArray<FMathRBFInterpolateQuatQuat_Target> Targets;  // 0x00D0, size 0x10
     UPROPERTY() FQuat Output;  // 0x00E0, size 0x10
 };

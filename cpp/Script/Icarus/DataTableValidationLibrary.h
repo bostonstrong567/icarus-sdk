@@ -5,19 +5,18 @@
 UCLASS()
 class UDataTableValidationLibrary : public UObject
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
+    TArray<TSharedPtr<DataValidation::FRowResult,0>,TSizedDefaultAllocator<32> > AllMessages;  // 0x0028, not reflected
+    TMap<enum DataValidation::EValidateResult,TArray<FString,TSizedDefaultAllocator<32> >,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<enum DataValidation::EValidateResult,TArray<FString,TSizedDefaultAllocator<32> >,0> > LastMessages;  // 0x0038, not reflected
+    TArray<TSharedPtr<DataValidation::FCountResult,0>,TSizedDefaultAllocator<32> > Counts;  // 0x0088, not reflected
+    FRowHandle CurrentRowHandle;  // 0x0098, not reflected
+    DataValidation::EValidateResult LastError;  // 0x00B0, not reflected
+    DataValidation::EValidateResult RecordError;  // 0x00B4, not reflected
+    bool bRecording;  // 0x00B8, not reflected
     UPROPERTY() TMap<TSubclassOf<UObject>, TWeakObjectPtr<AActor>> TempTestActors;  // 0x00C0, size 0x50
     UPROPERTY() UWorld* TempTestWorld;  // 0x0110, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<TSharedPtr<DataValidation::FRowResult,0>,TSizedDefaultAllocator<32> > AllMessages;  // 0x0028, private
-    TMap<enum DataValidation::EValidateResult,TArray<FString,TSizedDefaultAllocator<32> >,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<enum DataValidation::EValidateResult,TArray<FString,TSizedDefaultAllocator<32> >,0> > LastMessages;  // 0x0038, private
-    TArray<TSharedPtr<DataValidation::FCountResult,0>,TSizedDefaultAllocator<32> > Counts;  // 0x0088, private
-    FRowHandle CurrentRowHandle;  // 0x0098, private
-    DataValidation::EValidateResult LastError;  // 0x00B0, private
-    DataValidation::EValidateResult RecordError;  // 0x00B4, private
-    bool bRecording;  // 0x00B8, private
-
+public:
     UFUNCTION(BlueprintCallable) void Detail(FString Message);  // parameters 0x10
     UFUNCTION(BlueprintCallable) void Error(FString Message);  // parameters 0x10
     UFUNCTION(BlueprintCallable) void Fatal(FString Message);  // parameters 0x10

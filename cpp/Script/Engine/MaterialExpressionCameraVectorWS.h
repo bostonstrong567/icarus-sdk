@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UMaterialExpressionCameraVectorWS : public UMaterialExpression
 {
-public:
 };

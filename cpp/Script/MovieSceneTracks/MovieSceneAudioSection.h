@@ -5,7 +5,8 @@
 UCLASS()
 class UMovieSceneAudioSection : public UMovieSceneSection
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY(EditAnywhere) USoundBase* Sound;  // 0x00E8, size 0x8
     UPROPERTY(EditAnywhere) FFrameNumber StartFrameOffset;  // 0x00F0, size 0x4
     UPROPERTY(Deprecated) float StartOffset;  // 0x00F4, size 0x4
@@ -22,7 +23,7 @@ public:
     UPROPERTY() FOnQueueSubtitles OnQueueSubtitles;  // 0x0308, size 0x10
     UPROPERTY() FOnAudioFinished OnAudioFinished;  // 0x0318, size 0x10
     UPROPERTY() FOnAudioPlaybackPercent OnAudioPlaybackPercent;  // 0x0328, size 0x10
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) USoundBase* GetSound() const;  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) FFrameNumber GetStartOffset() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable) void SetSound(USoundBase* InSound);  // parameters 0x8

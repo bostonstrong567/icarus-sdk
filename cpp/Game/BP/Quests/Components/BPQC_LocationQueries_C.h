@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UBPQC_LocationQueries_C : public UBPQC_AnimalSwarm_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void GetAtmosphere(FAtmospheresRowHandle& Atmosphere);  // parameters 0x18
     UFUNCTION(BlueprintCallable) void GetBiome(FBiomesRowHandle& Biome);  // parameters 0x18
 };

@@ -5,11 +5,9 @@
 UCLASS()
 class UInstancedLevelStreamingBinding : public ULevelStreamingBinding
 {
+private:
+    FString UniqueName;  // 0x0050, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    FString UniqueName;  // 0x0050, private
-
     UFUNCTION() void OnDynamicStreamingLevelUnloaded();
 
     // Virtual functions that start here:

@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI, Config=EditorPerProjectUserSettings)
 class UTestMovieSceneSubSection : public UMovieSceneSubSection
 {
-public:
 };

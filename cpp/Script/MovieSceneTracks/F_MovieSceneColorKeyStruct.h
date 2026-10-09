@@ -4,9 +4,8 @@
 USTRUCT()
 struct FMovieSceneColorKeyStruct : public FMovieSceneKeyStruct
 {
+public:
     UPROPERTY(EditAnywhere) FLinearColor Color;  // 0x0008, size 0x10
     UPROPERTY(EditAnywhere) FFrameNumber Time;  // 0x0018, size 0x4
-
-    // Not reflected:
-    FMovieSceneKeyStructHelper KeyStructInterop;  // 0x0020
+    FMovieSceneKeyStructHelper KeyStructInterop;  // 0x0020, not reflected
 };

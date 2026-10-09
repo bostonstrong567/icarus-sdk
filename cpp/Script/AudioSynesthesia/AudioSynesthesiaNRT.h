@@ -5,5 +5,4 @@
 UCLASS(Abstract, EditInlineNew)
 class UAudioSynesthesiaNRT : public UAudioAnalyzerNRT
 {
-public:
 };

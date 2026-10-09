@@ -4,6 +4,7 @@
 USTRUCT()
 struct FConstraintProfileProperties
 {
+public:
     UPROPERTY(EditAnywhere) float ProjectionLinearTolerance;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere) float ProjectionAngularTolerance;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere) float ProjectionLinearAlpha;  // 0x0008, size 0x4

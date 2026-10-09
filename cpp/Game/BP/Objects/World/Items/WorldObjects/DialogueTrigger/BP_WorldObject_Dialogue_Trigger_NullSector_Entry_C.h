@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_WorldObject_Dialogue_Trigger_NullSector_Entry_C : public ABP_WorldObject_Dialogue_Trigger_C
 {
-public:
 };

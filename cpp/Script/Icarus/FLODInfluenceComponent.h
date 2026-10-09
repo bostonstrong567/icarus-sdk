@@ -5,11 +5,13 @@
 UCLASS(Config=Engine)
 class UFLODInfluenceComponent : public UActorComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bTryRegisterSelf;  // 0x00B0, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bHasRegisteredAsInfluence;  // 0x00B1, size 0x1
+private:
     UPROPERTY(EditAnywhere) TArray<FFLODInstanceInfluence> ActiveInstanceInfluences;  // 0x00B8, size 0x10
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) TArray<FFLODInstanceInfluence> GetActiveInstanceInfluences() const;  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) bool HasRegisteredToFLOD() const;  // parameters 0x1
     UFUNCTION(BlueprintNativeEvent) void OnActiveInfluencedInstanceAdded(const FFLODInstanceInfluence& InstanceInfluence);  // parameters 0x20

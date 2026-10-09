@@ -5,6 +5,7 @@
 UCLASS(Abstract, EditInlineNew)
 class URootMotionModifier : public UObject
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintReadOnly) TWeakObjectPtr<UAnimSequenceBase> Animation;  // 0x0028, size 0x8
     UPROPERTY(BlueprintReadOnly) float StartTime;  // 0x0030, size 0x4
@@ -17,6 +18,7 @@ public:
     UPROPERTY() FOnRootMotionModifierDelegate OnActivateDelegate;  // 0x0084, size 0x10
     UPROPERTY() FOnRootMotionModifierDelegate OnUpdateDelegate;  // 0x0094, size 0x10
     UPROPERTY() FOnRootMotionModifierDelegate OnDeactivateDelegate;  // 0x00A4, size 0x10
+private:
     UPROPERTY() ERootMotionModifierState State;  // 0x00B4, size 0x1
 
     // Virtual functions that start here:

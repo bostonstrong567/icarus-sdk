@@ -4,5 +4,6 @@
 USTRUCT()
 struct FCameraShakeStartParams
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bIsRestarting;  // 0x0000, size 0x1
 };

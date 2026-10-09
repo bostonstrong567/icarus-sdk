@@ -5,5 +5,4 @@
 UCLASS(Abstract, EditInlineNew)
 class UParticleModuleParameterBase : public UParticleModule
 {
-public:
 };

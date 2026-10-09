@@ -5,13 +5,12 @@
 UCLASS(Abstract, Config=Engine)
 class UNavCollisionBase : public UObject
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
+    uint32 : 1 bHasConvexGeometry;  // 0x0028, not reflected
     UPROPERTY(EditAnywhere, Config) uint8 bIsDynamicObstacle : 1;  // 0x0028, mask 0x01
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint32 : 1 bHasConvexGeometry;  // 0x0028, protected
-    FNavCollisionConvex TriMeshCollision;  // 0x0030, protected
-    FNavCollisionConvex ConvexCollision;  // 0x0050, protected
+    FNavCollisionConvex TriMeshCollision;  // 0x0030, not reflected
+    FNavCollisionConvex ConvexCollision;  // 0x0050, not reflected
 
     // Virtual functions that start here:
     //   DrawSimpleGeom, ExportGeometry, GetNavigationModifier, Setup

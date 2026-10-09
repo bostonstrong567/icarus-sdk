@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UBP_SpawnFilter_PopulationCheck_DroneScout_C : public UBP_SpawnFilter_PopulationCheck_C
 {
-public:
 };

@@ -4,7 +4,6 @@
 USTRUCT()
 struct FInstancedStaticMeshMappingInfo
 {
-
-    // Not reflected:
-    FStaticLightingTextureMapping_InstancedStaticMesh * Mapping;  // 0x0000
+public:
+    FStaticLightingTextureMapping_InstancedStaticMesh * Mapping;  // 0x0000, not reflected
 };

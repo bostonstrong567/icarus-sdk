@@ -20,11 +20,9 @@ public:
     UPROPERTY(EditAnywhere, Config) bool bCustomDLSSBinaryExists;  // 0x0058, size 0x1
     UPROPERTY(EditAnywhere, Config) bool bAllowOTAUpdate;  // 0x0059, size 0x1
     UPROPERTY(EditAnywhere, Config) EDLSSPreset DLAAPreset;  // 0x005A, size 0x1
+    EDLSSPreset DLSSUltraQualityPreset;  // 0x005B, not reflected
     UPROPERTY(EditAnywhere, Config) EDLSSPreset DLSSQualityPreset;  // 0x005C, size 0x1
     UPROPERTY(EditAnywhere, Config) EDLSSPreset DLSSBalancedPreset;  // 0x005D, size 0x1
     UPROPERTY(EditAnywhere, Config) EDLSSPreset DLSSPerformancePreset;  // 0x005E, size 0x1
     UPROPERTY(EditAnywhere, Config) EDLSSPreset DLSSUltraPerformancePreset;  // 0x005F, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    EDLSSPreset DLSSUltraQualityPreset;  // 0x005B
 };

@@ -5,39 +5,40 @@
 UCLASS(Transient)
 class UAnimInstance : public UObject
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(Transient) USkeleton* CurrentSkeleton;  // 0x0028, size 0x8
     UPROPERTY(EditAnywhere) TEnumAsByte<ERootMotionMode> RootMotionMode;  // 0x0030, size 0x1
+    uint8 : 1 bCreatedByLinkedAnimGraph;  // 0x0031, not reflected
+    uint8 : 1 bNeedsUpdate;  // 0x0031, not reflected
     UPROPERTY() uint8 bUseMultiThreadedAnimationUpdate : 1;  // 0x0031, mask 0x01
     UPROPERTY() uint8 bUsingCopyPoseFromMesh : 1;  // 0x0031, mask 0x02
     UPROPERTY(EditAnywhere) uint8 bReceiveNotifiesFromLinkedInstances : 1;  // 0x0031, mask 0x10
     UPROPERTY(EditAnywhere) uint8 bPropagateNotifiesToLinkedInstances : 1;  // 0x0031, mask 0x20
-    UPROPERTY(Transient) uint8 bQueueMontageEvents : 1;  // 0x0031, mask 0x40
     UPROPERTY(BlueprintAssignable) FOnMontageBlendingOutStartedMCDelegate OnMontageBlendingOut;  // 0x0038, size 0x10
     UPROPERTY(BlueprintAssignable) FOnMontageStartedMCDelegate OnMontageStarted;  // 0x0048, size 0x10
     UPROPERTY(BlueprintAssignable) FOnMontageEndedMCDelegate OnMontageEnded;  // 0x0058, size 0x10
     UPROPERTY(BlueprintAssignable) FOnAllMontageInstancesEndedMCDelegate OnAllMontageInstancesEnded;  // 0x0068, size 0x10
+    TArray<FAnimMontageInstance *,TSizedDefaultAllocator<32> > MontageInstances;  // 0x0078, not reflected
+    ETeleportType PendingDynamicResetTeleportType;  // 0x00F8, not reflected
     UPROPERTY(Transient) FAnimNotifyQueue NotifyQueue;  // 0x0100, size 0x70
     UPROPERTY(Transient) TArray<FAnimNotifyEvent> ActiveAnimNotifyState;  // 0x0170, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint8 : 1 bNeedsUpdate;  // 0x0031
-    uint8 : 1 bCreatedByLinkedAnimGraph;  // 0x0031
-    TArray<FAnimMontageInstance *,TSizedDefaultAllocator<32> > MontageInstances;  // 0x0078
-    TMap<UAnimMontage *,FAnimMontageInstance *,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<UAnimMontage *,FAnimMontageInstance *,0> > ActiveMontagesMap;  // 0x0088, protected
-    TArray<FQueuedMontageBlendingOutEvent,TSizedDefaultAllocator<32> > QueuedMontageBlendingOutEvents;  // 0x00D8, private
-    TArray<FQueuedMontageEndedEvent,TSizedDefaultAllocator<32> > QueuedMontageEndedEvents;  // 0x00E8, private
-    ETeleportType PendingDynamicResetTeleportType;  // 0x00F8
-    FGraphTraversalCounter DebugDataCounter;  // 0x0180
-    TMap<FName,FMontageActiveSlotTracker,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,FMontageActiveSlotTracker,0> > SlotWeightTracker;  // 0x0190, private
-    TMap<FName,TMulticastDelegate<void __cdecl(void),FDefaultDelegateUserPolicy>,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,TMulticastDelegate<void __cdecl(void),FDefaultDelegateUserPolicy>,0> > ExternalNotifyHandlers;  // 0x01E0, private
-    FAnimMontageInstance * RootMotionMontageInstance;  // 0x0230, private
-    TArray<UAnimInstance::FQueuedRootMotionBlend,TSizedDefaultAllocator<32> > RootMotionBlendQueue;  // 0x0238, private
-    FRootMotionMovementParams ExtractedRootMotion;  // 0x0250, private
-    FAnimInstanceProxy * AnimInstanceProxy;  // 0x0290, protected
-    FPlayMontageAnimNotifyDelegate OnPlayMontageNotifyBegin;  // 0x0298
-    FPlayMontageAnimNotifyDelegate OnPlayMontageNotifyEnd;  // 0x02A8
-
+    FGraphTraversalCounter DebugDataCounter;  // 0x0180, not reflected
+    FPlayMontageAnimNotifyDelegate OnPlayMontageNotifyBegin;  // 0x0298, not reflected
+    FPlayMontageAnimNotifyDelegate OnPlayMontageNotifyEnd;  // 0x02A8, not reflected
+protected:
+    TMap<UAnimMontage *,FAnimMontageInstance *,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<UAnimMontage *,FAnimMontageInstance *,0> > ActiveMontagesMap;  // 0x0088, not reflected
+    FAnimInstanceProxy * AnimInstanceProxy;  // 0x0290, not reflected
+private:
+    UPROPERTY(Transient) uint8 bQueueMontageEvents : 1;  // 0x0031, mask 0x40
+    TArray<FQueuedMontageBlendingOutEvent,TSizedDefaultAllocator<32> > QueuedMontageBlendingOutEvents;  // 0x00D8, not reflected
+    TArray<FQueuedMontageEndedEvent,TSizedDefaultAllocator<32> > QueuedMontageEndedEvents;  // 0x00E8, not reflected
+    TMap<FName,FMontageActiveSlotTracker,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,FMontageActiveSlotTracker,0> > SlotWeightTracker;  // 0x0190, not reflected
+    TMap<FName,TMulticastDelegate<void __cdecl(void),FDefaultDelegateUserPolicy>,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,TMulticastDelegate<void __cdecl(void),FDefaultDelegateUserPolicy>,0> > ExternalNotifyHandlers;  // 0x01E0, not reflected
+    FAnimMontageInstance * RootMotionMontageInstance;  // 0x0230, not reflected
+    TArray<UAnimInstance::FQueuedRootMotionBlend,TSizedDefaultAllocator<32> > RootMotionBlendQueue;  // 0x0238, not reflected
+    FRootMotionMovementParams ExtractedRootMotion;  // 0x0250, not reflected
+public:
     UFUNCTION(BlueprintImplementableEvent) void BlueprintBeginPlay();
     UFUNCTION(BlueprintImplementableEvent) void BlueprintInitializeAnimation();
     UFUNCTION(BlueprintImplementableEvent) void BlueprintLinkedAnimationLayersInitialized();

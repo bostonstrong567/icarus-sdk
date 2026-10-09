@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI, Config=Engine)
 class ABlockingVolume : public AVolume
 {
-public:
 };

@@ -5,7 +5,10 @@
 UCLASS(Config=Engine)
 class UPaperTileMapComponent : public UMeshComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) UPaperTileMap* TileMap;  // 0x04C0, size 0x8
+private:
     UPROPERTY(Deprecated) int32 MapWidth;  // 0x0478, size 0x4
     UPROPERTY(Deprecated) int32 MapHeight;  // 0x047C, size 0x4
     UPROPERTY(Deprecated) int32 TileWidth;  // 0x0480, size 0x4
@@ -16,8 +19,7 @@ public:
     UPROPERTY(EditAnywhere) FLinearColor TileMapColor;  // 0x04A8, size 0x10
     UPROPERTY(EditAnywhere) int32 UseSingleLayerIndex;  // 0x04B8, size 0x4
     UPROPERTY(EditAnywhere) bool bUseSingleLayer;  // 0x04BC, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadOnly) UPaperTileMap* TileMap;  // 0x04C0, size 0x8
-
+public:
     UFUNCTION(BlueprintCallable) UPaperTileLayer* AddNewLayer();  // parameters 0x8
     UFUNCTION(BlueprintCallable) void CreateNewTileMap(int32 MapWidth, int32 MapHeight, int32 TileWidth, int32 TileHeight, float PixelsPerUnrealUnit, bool bCreateLayer);  // parameters 0x15
     UFUNCTION(BlueprintCallable, BlueprintPure) FLinearColor GetLayerColor(int32 Layer) const;  // parameters 0x14

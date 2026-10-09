@@ -4,6 +4,7 @@
 USTRUCT()
 struct FThermalData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 InnerRadius;  // 0x0018, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 OuterRadius;  // 0x001C, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float EffectFalloff;  // 0x0020, size 0x4
@@ -14,8 +15,7 @@ struct FThermalData : public FIcarusTableRowBase
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bStartsEnabled;  // 0x0044, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSubclassOf<UNavAreaBase> FireNavigationModifierClass;  // 0x0048, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float FireNavigationModifierRadius;  // 0x0050, size 0x4
-
-    // Not reflected:
-    int32 InnerRadiusSquared;  // 0x0054
-    int32 OuterRadiusSquared;  // 0x0058
+private:
+    int32 InnerRadiusSquared;  // 0x0054, not reflected
+    int32 OuterRadiusSquared;  // 0x0058, not reflected
 };

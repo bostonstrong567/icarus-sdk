@@ -5,17 +5,17 @@
 UCLASS(Abstract, Config=Engine)
 class UTalentControllerComponent : public UActorComponent, public ITalentControllerInterface
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintAssignable) FOnModelViewChanged OnModelViewChangedEvent;  // 0x00B8, size 0x10
+protected:
     UPROPERTY() UTalentModelInterface* Model;  // 0x00C8, size 0x8
     UPROPERTY(Instanced) UTalentViewInterface* View;  // 0x00D0, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FTalentModelViewsRowHandle ModelView;  // 0x00D8, protected
-    bool bIsInteractionEnabled;  // 0x00F0, protected
-    bool bUsesFlags;  // 0x00F1, protected
-    bool bRequiresCharacter;  // 0x00F2, protected
-
+    FTalentModelViewsRowHandle ModelView;  // 0x00D8, not reflected
+    bool bIsInteractionEnabled;  // 0x00F0, not reflected
+    bool bUsesFlags;  // 0x00F1, not reflected
+    bool bRequiresCharacter;  // 0x00F2, not reflected
+public:
     UFUNCTION(BlueprintCallable) void BP_ForceRefresh();
     UFUNCTION() void NativeModelStateChanged(UTalentModelInterface_Const* InModel);  // parameters 0x8
     UFUNCTION() void OnAccountFlagsUpdated();

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_LiveLinkGetTransformByName : public FRigUnit_LiveLinkBase
 {
+public:
     UPROPERTY() FSubjectFrameHandle SubjectFrame;  // 0x0008, size 0x18
     UPROPERTY() FName TransformName;  // 0x0020, size 0x8
     UPROPERTY() EBoneGetterSetterMode Space;  // 0x0028, size 0x1

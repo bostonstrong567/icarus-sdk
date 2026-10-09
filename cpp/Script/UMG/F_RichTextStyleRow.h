@@ -4,5 +4,6 @@
 USTRUCT()
 struct FRichTextStyleRow : public FTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere) FTextBlockStyle TextStyle;  // 0x0008, size 0x270
 };

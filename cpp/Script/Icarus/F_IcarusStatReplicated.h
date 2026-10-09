@@ -4,6 +4,7 @@
 USTRUCT()
 struct FIcarusStatReplicated
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FStatsEnum Stat;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Value;  // 0x0010, size 0x4
 };

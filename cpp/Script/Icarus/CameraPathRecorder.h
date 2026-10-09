@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class ACameraPathRecorder : public AActor
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FComponentReference TargetComponent;  // 0x0220, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) AActor* ReferenceActor;  // 0x0248, size 0x8
@@ -17,16 +18,15 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FCameraPath CurrentPath;  // 0x0270, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadOnly) ECameraPathMode Mode;  // 0x0298, size 0x1
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UCameraComponent* PlaybackCamera;  // 0x02A0, size 0x8
+private:
     UPROPERTY(Transient, Instanced) USceneComponent* RuntimeTargetOverride;  // 0x02A8, size 0x8
     UPROPERTY(Transient) AActor* CachedViewTarget;  // 0x02B0, size 0x8
     UPROPERTY(Transient, Instanced) UPostProcessComponent* SourcePostProcess;  // 0x02B8, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bViewTakenOver;  // 0x02C0, private
-    float ElapsedTime;  // 0x02C4, private
-    float PlaybackTime;  // 0x02C8, private
-    float TimeSinceLastSample;  // 0x02CC, private
-
+    bool bViewTakenOver;  // 0x02C0, not reflected
+    float ElapsedTime;  // 0x02C4, not reflected
+    float PlaybackTime;  // 0x02C8, not reflected
+    float TimeSinceLastSample;  // 0x02CC, not reflected
+public:
     UFUNCTION(BlueprintCallable) void ClearPath();
     UFUNCTION(BlueprintCallable, BlueprintPure) bool DoesPathExist(FString InFilename) const;  // parameters 0x11
     UFUNCTION(BlueprintCallable, BlueprintPure) void EvaluatePathAtTime(float InTime, AActor* InReference, FTransform& OutWorldTransform, float& OutFOV) const;  // parameters 0x44

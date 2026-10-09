@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFarmingSeedAudioData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UFMODEvent> PlantedSound;  // 0x0000, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UFMODEvent> HarvestedSound;  // 0x0028, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UFMODEvent> ClearedSound;  // 0x0050, size 0x28

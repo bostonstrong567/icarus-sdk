@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ULandscapeGizmoRenderComponent : public UPrimitiveComponent
 {
-public:
 };

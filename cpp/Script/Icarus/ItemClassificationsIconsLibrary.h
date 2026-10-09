@@ -6,7 +6,6 @@ UCLASS()
 class UItemClassificationsIconsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToItemClassificationsIconsTable(FName Name, FItemClassificationsIconsData Data, FItemClassificationsIconsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x71
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakItemClassificationsIconsEnum(FItemClassificationsIconsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FItemClassificationsIconsRowHandle CastToItemClassificationsIconsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

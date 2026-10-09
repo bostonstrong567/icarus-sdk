@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class UEngineSubsystem : public UDynamicSubsystem
 {
-public:
 };

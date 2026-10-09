@@ -4,6 +4,7 @@
 USTRUCT()
 struct FInterpCurveQuat
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FInterpCurvePointQuat> Points;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bIsLooped;  // 0x0010, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float LoopKeyOffset;  // 0x0014, size 0x4

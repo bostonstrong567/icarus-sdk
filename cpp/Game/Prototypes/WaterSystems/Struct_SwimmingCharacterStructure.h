@@ -4,6 +4,7 @@
 USTRUCT()
 struct Struct_SwimmingCharacterStructure
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ACharacter* SwimmingCharacterReference;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float InitialSwimSpeed;  // 0x0008, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FRotator InitialSwimRotationRate;  // 0x000C, size 0xC

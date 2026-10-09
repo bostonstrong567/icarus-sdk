@@ -5,5 +5,4 @@
 UCLASS()
 class UControlRigBlueprintGeneratedClass : public UBlueprintGeneratedClass
 {
-public:
 };

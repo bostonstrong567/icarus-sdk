@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Carved_Nightstand_E_C : public ABP_DeployableContainerBase_C
 {
-public:
 };

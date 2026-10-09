@@ -5,5 +5,4 @@
 UCLASS(Transient, EditInlineNew)
 class ULevelStreamingPersistent : public ULevelStreaming
 {
-public:
 };

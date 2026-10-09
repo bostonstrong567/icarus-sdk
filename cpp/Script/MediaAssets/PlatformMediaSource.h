@@ -5,6 +5,7 @@
 UCLASS(EditInlineNew)
 class UPlatformMediaSource : public UMediaSource
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() UMediaSource* MediaSource;  // 0x0080, size 0x8
 };

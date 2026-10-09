@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ATriggerBox : public ATriggerBase
 {
-public:
 };

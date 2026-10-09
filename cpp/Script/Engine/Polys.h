@@ -6,7 +6,5 @@ UCLASS(MinimalAPI)
 class UPolys : public UObject
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<FPoly,TSizedDefaultAllocator<32> > Element;  // 0x0028
+    TArray<FPoly,TSizedDefaultAllocator<32> > Element;  // 0x0028, not reflected
 };

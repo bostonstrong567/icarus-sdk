@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_BatNest_Geothermal_C : public ABP_BatNest_C
 {
-public:
 };

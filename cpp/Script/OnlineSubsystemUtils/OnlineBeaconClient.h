@@ -5,16 +5,16 @@
 UCLASS(Transient, NotPlaceable, Config=Engine)
 class AOnlineBeaconClient : public AOnlineBeacon
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY() AOnlineBeaconHostObject* BeaconOwner;  // 0x0250, size 0x8
     UPROPERTY() UNetConnection* BeaconConnection;  // 0x0258, size 0x8
     UPROPERTY() EBeaconConnectionState ConnectionState;  // 0x0260, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    TDelegate<void __cdecl(void),FDefaultDelegateUserPolicy> HostConnectionFailure;  // 0x0268, protected
-    FTimerHandle TimerHandle_OnFailure;  // 0x0278, protected
-    FEncryptionData EncryptionData;  // 0x0280, private
-
+    TDelegate<void __cdecl(void),FDefaultDelegateUserPolicy> HostConnectionFailure;  // 0x0268, not reflected
+    FTimerHandle TimerHandle_OnFailure;  // 0x0278, not reflected
+private:
+    FEncryptionData EncryptionData;  // 0x0280, not reflected
+public:
     UFUNCTION(Client, Reliable, BlueprintNativeEvent) void ClientOnConnected();
 
     // Virtual functions that start here:

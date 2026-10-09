@@ -24,13 +24,11 @@ public:
     UPROPERTY(EditAnywhere) uint8 RenderDirectLine : 1;  // 0x00F8, mask 0x02
     UPROPERTY(EditAnywhere) uint8 RenderLines : 1;  // 0x00F8, mask 0x04
     UPROPERTY(EditAnywhere) uint8 RenderTessellation : 1;  // 0x00F8, mask 0x08
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<UParticleModuleBeamSource *,TSizedDefaultAllocator<32> > LOD_BeamModule_Source;  // 0x0100
-    TArray<UParticleModuleBeamTarget *,TSizedDefaultAllocator<32> > LOD_BeamModule_Target;  // 0x0110
-    TArray<UParticleModuleBeamNoise *,TSizedDefaultAllocator<32> > LOD_BeamModule_Noise;  // 0x0120
-    TArray<UParticleModuleBeamModifier *,TSizedDefaultAllocator<32> > LOD_BeamModule_SourceModifier;  // 0x0130
-    TArray<UParticleModuleBeamModifier *,TSizedDefaultAllocator<32> > LOD_BeamModule_TargetModifier;  // 0x0140
+    TArray<UParticleModuleBeamSource *,TSizedDefaultAllocator<32> > LOD_BeamModule_Source;  // 0x0100, not reflected
+    TArray<UParticleModuleBeamTarget *,TSizedDefaultAllocator<32> > LOD_BeamModule_Target;  // 0x0110, not reflected
+    TArray<UParticleModuleBeamNoise *,TSizedDefaultAllocator<32> > LOD_BeamModule_Noise;  // 0x0120, not reflected
+    TArray<UParticleModuleBeamModifier *,TSizedDefaultAllocator<32> > LOD_BeamModule_SourceModifier;  // 0x0130, not reflected
+    TArray<UParticleModuleBeamModifier *,TSizedDefaultAllocator<32> > LOD_BeamModule_TargetModifier;  // 0x0140, not reflected
 
     // Virtual functions that start here:
     //   GetDataPointerOffsets, GetDataPointers

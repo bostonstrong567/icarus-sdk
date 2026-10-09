@@ -4,5 +4,6 @@
 USTRUCT()
 struct FRootMotionSourceStatus
 {
+public:
     UPROPERTY() uint8 Flags;  // 0x0000, size 0x1
 };

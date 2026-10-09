@@ -6,7 +6,6 @@ UCLASS(Abstract, MinimalAPI)
 class UAssetRegistry : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable) bool GetAllAssets(TArray<FAssetData>& OutAssetData, bool bIncludeOnlyOnDiskAssets) const;  // parameters 0x12
     UFUNCTION(BlueprintCallable) void GetAllCachedPaths(TArray<FString>& OutPathList) const;  // parameters 0x10
     UFUNCTION(BlueprintCallable) FAssetData GetAssetByObjectPath(FName ObjectPath, bool bIncludeOnlyOnDiskAssets) const;  // parameters 0x70

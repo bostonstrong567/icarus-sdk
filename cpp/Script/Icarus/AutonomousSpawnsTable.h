@@ -5,5 +5,4 @@
 UCLASS()
 class UAutonomousSpawnsTable : public UIcarusDataTable
 {
-public:
 };

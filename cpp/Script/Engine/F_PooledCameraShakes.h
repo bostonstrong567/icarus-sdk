@@ -4,5 +4,6 @@
 USTRUCT()
 struct FPooledCameraShakes
 {
+public:
     UPROPERTY() TArray<UCameraShakeBase*> PooledShakes;  // 0x0000, size 0x10
 };

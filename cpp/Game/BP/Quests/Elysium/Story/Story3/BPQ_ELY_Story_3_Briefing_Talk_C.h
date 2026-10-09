@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABPQ_ELY_Story_3_Briefing_Talk_C : public ABPQ_ELY_Story_1_Eden_Mo_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool Check();  // parameters 0x1
 };

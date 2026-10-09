@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFactionMission : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FMissionObjectiveEntry> MissionObjectives;  // 0x0018, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FFactionInfoRowHandle Faction;  // 0x0028, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FMissionTypesRowHandle> Types;  // 0x0040, size 0x10

@@ -6,7 +6,6 @@ UCLASS()
 class UKismetStringLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static FString BuildString_Bool(FString AppendTo, FString Prefix, bool InBool, FString Suffix);  // parameters 0x48
     UFUNCTION(BlueprintCallable, BlueprintPure) static FString BuildString_Color(FString AppendTo, FString Prefix, FLinearColor InColor, FString Suffix);  // parameters 0x50
     UFUNCTION(BlueprintCallable, BlueprintPure) static FString BuildString_Float(FString AppendTo, FString Prefix, float InFloat, FString Suffix);  // parameters 0x48

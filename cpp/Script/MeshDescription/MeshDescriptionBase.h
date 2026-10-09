@@ -5,12 +5,10 @@
 UCLASS()
 class UMeshDescriptionBase : public UObject
 {
+protected:
+    FMeshDescription MeshDescription;  // 0x0028, not reflected
+    TUniquePtr<FMeshAttributes,TDefaultDelete<FMeshAttributes> > RequiredAttributes;  // 0x0388, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    FMeshDescription MeshDescription;  // 0x0028, protected
-    TUniquePtr<FMeshAttributes,TDefaultDelete<FMeshAttributes> > RequiredAttributes;  // 0x0388, protected
-
     UFUNCTION(BlueprintCallable) void ComputePolygonTriangulation(FPolygonID PolygonID);  // parameters 0x4
     UFUNCTION(BlueprintCallable) FEdgeID CreateEdge(FVertexID VertexID0, FVertexID VertexID1);  // parameters 0xC
     UFUNCTION(BlueprintCallable) void CreateEdgeWithID(FEdgeID EdgeID, FVertexID VertexID0, FVertexID VertexID1);  // parameters 0xC

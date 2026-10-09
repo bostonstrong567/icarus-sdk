@@ -4,6 +4,8 @@
 USTRUCT()
 struct FGameplayTagQuery
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY(EditAnywhere) int32 TokenStreamVersion;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere) TArray<FGameplayTag> TagDictionary;  // 0x0008, size 0x10
     UPROPERTY(EditAnywhere) TArray<uint8> QueryTokenStream;  // 0x0018, size 0x10

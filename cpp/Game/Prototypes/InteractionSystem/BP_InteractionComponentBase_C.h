@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UBP_InteractionComponentBase_C : public UActorComponent
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) void GetCurrentInteraction(ABP_InteractionSceneBase_C*& CurrentInteraction);  // parameters 0x8
 };

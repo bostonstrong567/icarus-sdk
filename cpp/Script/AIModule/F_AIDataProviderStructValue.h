@@ -4,7 +4,6 @@
 USTRUCT()
 struct FAIDataProviderStructValue : public FAIDataProviderValue
 {
-
-    // Not reflected:
-    FString StructName;  // 0x0020
+public:
+    FString StructName;  // 0x0020, not reflected
 };

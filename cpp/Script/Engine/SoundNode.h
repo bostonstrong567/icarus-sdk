@@ -7,10 +7,8 @@ class USoundNode : public UObject
 {
 public:
     UPROPERTY() TArray<USoundNode*> ChildNodes;  // 0x0028, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FRandomStream RandomStream;  // 0x0038
-    bool bIsRetainingAudio;  // 0x0040
+    FRandomStream RandomStream;  // 0x0038, not reflected
+    bool bIsRetainingAudio;  // 0x0040, not reflected
 
     // Virtual functions that start here:
     //   CreateStartingConnectors, GetAllNodes, GetDuration, GetMaxChildNodes, GetMaxDistance

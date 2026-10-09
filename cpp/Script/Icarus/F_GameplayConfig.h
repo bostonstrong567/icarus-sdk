@@ -4,5 +4,6 @@
 USTRUCT()
 struct FGameplayConfig : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float FloatValue;  // 0x0018, size 0x4
 };

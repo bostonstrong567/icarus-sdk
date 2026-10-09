@@ -5,5 +5,4 @@
 UCLASS()
 class UPlayerTalentModel : public UTalentModelInterface
 {
-public:
 };

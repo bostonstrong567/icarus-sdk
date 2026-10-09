@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class AELY_SQ_Igloo_Setup_Oxygen_C : public ABPQ_Deploy_Count_List_C
 {
-public:
 };

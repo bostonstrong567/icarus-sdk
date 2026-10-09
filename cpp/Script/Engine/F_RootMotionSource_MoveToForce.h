@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRootMotionSource_MoveToForce : public FRootMotionSource
 {
+public:
     UPROPERTY() FVector StartLocation;  // 0x0098, size 0xC
     UPROPERTY() FVector TargetLocation;  // 0x00A4, size 0xC
     UPROPERTY() bool bRestrictSpeedToExpected;  // 0x00B0, size 0x1

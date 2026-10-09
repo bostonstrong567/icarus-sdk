@@ -5,5 +5,4 @@
 UCLASS()
 class UModifierStateCondition : public UObject
 {
-public:
 };

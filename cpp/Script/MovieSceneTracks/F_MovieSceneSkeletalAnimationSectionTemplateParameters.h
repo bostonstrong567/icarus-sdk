@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMovieSceneSkeletalAnimationSectionTemplateParameters : public FMovieSceneSkeletalAnimationParams
 {
+public:
     UPROPERTY() FFrameNumber SectionStartTime;  // 0x00D8, size 0x4
     UPROPERTY() FFrameNumber SectionEndTime;  // 0x00DC, size 0x4
 };

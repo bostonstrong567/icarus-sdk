@@ -4,5 +4,6 @@
 USTRUCT()
 struct FRadialMenuData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FRadialMenuOption> RadialOptions;  // 0x0018, size 0x10
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct OverlapSignature
 {
+public:
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UPrimitiveComponent* OverlappedComponent;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) AActor* OtherActor;  // 0x0008, size 0x8
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UPrimitiveComponent* OtherComp;  // 0x0010, size 0x8

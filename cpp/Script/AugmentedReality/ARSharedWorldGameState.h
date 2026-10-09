@@ -12,9 +12,8 @@ public:
     UPROPERTY(BlueprintReadOnly) int32 ARWorldBytesTotal;  // 0x02B4, size 0x4
     UPROPERTY(BlueprintReadOnly) int32 PreviewImageBytesDelivered;  // 0x02B8, size 0x4
     UPROPERTY(BlueprintReadOnly) int32 ARWorldBytesDelivered;  // 0x02BC, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bFiredCompletionEvent;  // 0x02C0, private
-
+private:
+    bool bFiredCompletionEvent;  // 0x02C0, not reflected
+public:
     UFUNCTION(BlueprintImplementableEvent) void K2_OnARWorldMapIsReady();
 };

@@ -5,13 +5,12 @@
 UCLASS()
 class UWeatherAudioSubsystem : public UWorldSubsystem
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() TMap<FBiomesRowHandle, FWeatherAudioSubsystemBiomeRecord> BiomeRecords;  // 0x0030, size 0x50
     UPROPERTY() AWeatherController* WeatherController;  // 0x0080, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FTimerHandle InitWithControllerTimerHandle;  // 0x0088, private
-
+    FTimerHandle InitWithControllerTimerHandle;  // 0x0088, not reflected
+public:
     UFUNCTION() void OnWeatherUpdated();
     UFUNCTION(BlueprintCallable) void SubscribeToWeatherUpdates(UWeatherAudioComponent* WeatherAudioComponent, FBiomesRowHandle Biome);  // parameters 0x20
 };

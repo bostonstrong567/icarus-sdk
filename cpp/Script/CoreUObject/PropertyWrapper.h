@@ -5,8 +5,6 @@
 UCLASS()
 class UPropertyWrapper : public UObject
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    FProperty * DestProperty;  // 0x0028, protected
+protected:
+    FProperty * DestProperty;  // 0x0028, not reflected
 };

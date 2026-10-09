@@ -4,6 +4,7 @@
 USTRUCT()
 struct FResourceNetworkInspectorData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FIcarusResourcesEnum SelectedResourceType;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bRequireFullUpdate;  // 0x0010, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FCompactNetworkDeviceData> SupplyDevices;  // 0x0018, size 0x10

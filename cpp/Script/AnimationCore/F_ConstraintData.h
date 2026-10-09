@@ -4,6 +4,7 @@
 USTRUCT()
 struct FConstraintData
 {
+public:
     UPROPERTY() FConstraintDescriptor Constraint;  // 0x0000, size 0x10
     UPROPERTY() float Weight;  // 0x0010, size 0x4
     UPROPERTY() bool bMaintainOffset;  // 0x0014, size 0x1

@@ -6,11 +6,9 @@ UCLASS(EditInlineNew)
 class USubmixEffectFilterPreset : public USoundEffectSubmixPreset
 {
 public:
+    FWindowsCriticalSection SettingsCritSect;  // 0x0068, not reflected
+    FSubmixEffectFilterSettings SettingsCopy;  // 0x0090, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSubmixEffectFilterSettings Settings;  // 0x009C, size 0xC
-
-    // Not reflected: the engine's scripting cannot see these.
-    FWindowsCriticalSection SettingsCritSect;  // 0x0068
-    FSubmixEffectFilterSettings SettingsCopy;  // 0x0090
 
     UFUNCTION(BlueprintCallable) void SetFilterAlgorithm(ESubmixFilterAlgorithm InAlgorithm);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void SetFilterCutoffFrequency(float InFrequency);  // parameters 0x4

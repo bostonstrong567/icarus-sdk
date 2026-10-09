@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigHierarchyCopyPasteContent
 {
+public:
     UPROPERTY() TArray<ERigElementType> Types;  // 0x0000, size 0x10
     UPROPERTY() TArray<FString> Contents;  // 0x0010, size 0x10
     UPROPERTY() TArray<FTransform> LocalTransforms;  // 0x0020, size 0x10

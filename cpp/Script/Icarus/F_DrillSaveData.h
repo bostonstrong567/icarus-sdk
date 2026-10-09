@@ -4,6 +4,7 @@
 USTRUCT()
 struct FDrillSaveData
 {
+public:
     UPROPERTY(SaveGame, BlueprintReadWrite) bool bDrillActive;  // 0x0000, size 0x1
     UPROPERTY(SaveGame, BlueprintReadWrite) bool bDrillCanAutoRestart;  // 0x0001, size 0x1
 };

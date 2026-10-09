@@ -6,7 +6,6 @@ UCLASS()
 class UBlueprintUnlocksLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToBlueprintUnlocksTable(FName Name, FBlueprintUnlock Data, FBlueprintUnlocksRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x79
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakBlueprintUnlocksEnum(FBlueprintUnlocksEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FBlueprintUnlocksRowHandle CastToBlueprintUnlocksRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

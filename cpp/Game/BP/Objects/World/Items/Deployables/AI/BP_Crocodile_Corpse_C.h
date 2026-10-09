@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Crocodile_Corpse_C : public ABP_GOAP_Corpse_C
 {
-public:
 };

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Building_Floor_Diagonal_Curved_Wood_Refined_B_C : public ABP_Building_Floor_Diagonal_Curved_C
 {
-public:
 };

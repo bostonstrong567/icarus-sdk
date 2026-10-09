@@ -5,7 +5,6 @@
 UCLASS(MinimalAPI)
 class UMaterialExpressionTextureSampleParameter2DArray : public UMaterialExpressionTextureSampleParameter
 {
-public:
 
     // Virtual functions that start here:
     //   GetRequirements

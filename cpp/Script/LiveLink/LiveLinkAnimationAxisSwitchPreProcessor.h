@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew)
 class ULiveLinkAnimationAxisSwitchPreProcessor : public ULiveLinkTransformAxisSwitchPreProcessor
 {
-public:
 };

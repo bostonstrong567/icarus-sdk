@@ -5,7 +5,8 @@
 UCLASS(Config=Engine)
 class UTargetRangeControllerRecorderComponent : public UActorStateRecorderComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(SaveGame) FHighScoreRecord HighScore;  // 0x01C0, size 0x28
     UPROPERTY(SaveGame) float RoundTime;  // 0x01E8, size 0x4
 };

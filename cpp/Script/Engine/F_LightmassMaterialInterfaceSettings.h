@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLightmassMaterialInterfaceSettings
 {
+public:
     UPROPERTY() float EmissiveBoost;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere) float DiffuseBoost;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere) float ExportResolutionScale;  // 0x0008, size 0x4

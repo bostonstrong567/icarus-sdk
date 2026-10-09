@@ -5,5 +5,4 @@
 UCLASS()
 class UObjectProperty : public UObjectPropertyBase
 {
-public:
 };

@@ -5,10 +5,8 @@
 UCLASS(Config=Engine)
 class ASeatBase : public AIcarusActor
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
-    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) TWeakObjectPtr<AIcarusPlayerCharacter> AttachedPlayer;  // 0x02C0, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FName AttachSocketName;  // 0x02C8, size 0x8
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) USceneComponent* AttachComponent;  // 0x02D0, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float MinViewPitch;  // 0x02D8, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float MaxViewPitch;  // 0x02DC, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float MinViewYaw;  // 0x02E0, size 0x4
@@ -16,7 +14,11 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bAllowCameraControl;  // 0x02E8, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bIgnoreOutOfBoundsCheck;  // 0x02E9, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bMaintainControlRotationOnEntry;  // 0x02EA, size 0x1
-
+protected:
+    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) TWeakObjectPtr<AIcarusPlayerCharacter> AttachedPlayer;  // 0x02C0, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FName AttachSocketName;  // 0x02C8, size 0x8
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) USceneComponent* AttachComponent;  // 0x02D0, size 0x8
+public:
     UFUNCTION(BlueprintNativeEvent) void AttachPlayerToSeat(AIcarusPlayerCharacter* PlayerCharacter, const FRotator& EnterRotation);  // parameters 0x14
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) bool CanPlayerEnterSeat(AIcarusPlayerCharacter* PlayerCharacter) const;  // parameters 0x9
     UFUNCTION(BlueprintNativeEvent) void DetachPlayerFromSeat(AIcarusPlayerCharacter* PlayerCharacter, const FVector& ExitLocation, const FRotator& ExitRotation, bool bChangeSeat);  // parameters 0x21

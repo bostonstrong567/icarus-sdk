@@ -6,6 +6,5 @@ UCLASS()
 class UCheatOverlayFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static UCheatOverlayBase* GetCheatOverlay(UObject* WorldContextObject);  // parameters 0x10
 };

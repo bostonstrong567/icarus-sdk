@@ -6,7 +6,6 @@ UCLASS()
 class UAssetTagsSubsystem : public UEngineSubsystem
 {
 public:
-
     UFUNCTION(BlueprintCallable) bool CollectionExists(FName Name);  // parameters 0x9
     UFUNCTION(BlueprintCallable) TArray<FAssetData> GetAssetsInCollection(FName Name);  // parameters 0x18
     UFUNCTION(BlueprintCallable) TArray<FName> GetCollections();  // parameters 0x10

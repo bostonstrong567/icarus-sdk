@@ -5,5 +5,4 @@
 UCLASS()
 class UStaminaActionCostsTable : public UIcarusDataTable
 {
-public:
 };

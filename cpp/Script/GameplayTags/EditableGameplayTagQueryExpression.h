@@ -5,5 +5,4 @@
 UCLASS(Abstract, Transient, EditInlineNew)
 class UEditableGameplayTagQueryExpression : public UObject
 {
-public:
 };

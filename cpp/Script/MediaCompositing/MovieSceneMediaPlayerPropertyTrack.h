@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UMovieSceneMediaPlayerPropertyTrack : public UMovieScenePropertyTrack, public IMovieSceneTrackTemplateProducer
 {
-public:
 };

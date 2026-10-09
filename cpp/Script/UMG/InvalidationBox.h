@@ -5,13 +5,12 @@
 UCLASS()
 class UInvalidationBox : public UContentWidget
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere) bool bCanCache;  // 0x0120, size 0x1
     UPROPERTY(Deprecated) bool CacheRelativeTransforms;  // 0x0121, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SInvalidationPanel,0> MyInvalidationPanel;  // 0x0128, protected
-
+    TSharedPtr<SInvalidationPanel,0> MyInvalidationPanel;  // 0x0128, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) bool GetCanCache() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable) void InvalidateCache();
     UFUNCTION(BlueprintCallable) void SetCanCache(bool CanCache);  // parameters 0x1

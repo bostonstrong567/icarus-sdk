@@ -4,8 +4,7 @@
 USTRUCT()
 struct FBlockerVolume
 {
-
-    // Not reflected:
-    FTransform Transform;  // 0x0000
-    FVector Extent;  // 0x0030
+public:
+    FTransform Transform;  // 0x0000, not reflected
+    FVector Extent;  // 0x0030, not reflected
 };

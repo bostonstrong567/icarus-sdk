@@ -5,5 +5,4 @@
 UCLASS()
 class UBTDecorator_ConditionalLoop : public UBTDecorator_Blackboard
 {
-public:
 };

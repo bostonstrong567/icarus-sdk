@@ -4,7 +4,6 @@
 USTRUCT()
 struct FParticleSystemReplayFrame
 {
-
-    // Not reflected:
-    TArray<FParticleEmitterReplayFrame,TSizedDefaultAllocator<32> > Emitters;  // 0x0000
+public:
+    TArray<FParticleEmitterReplayFrame,TSizedDefaultAllocator<32> > Emitters;  // 0x0000, not reflected
 };

@@ -5,14 +5,15 @@
 UCLASS()
 class UMovieSceneParameterSection : public UMovieSceneSection
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY() TArray<FBoolParameterNameAndCurve> BoolParameterNamesAndCurves;  // 0x00E8, size 0x10
     UPROPERTY() TArray<FScalarParameterNameAndCurve> ScalarParameterNamesAndCurves;  // 0x00F8, size 0x10
     UPROPERTY() TArray<FVector2DParameterNameAndCurves> Vector2DParameterNamesAndCurves;  // 0x0108, size 0x10
     UPROPERTY() TArray<FVectorParameterNameAndCurves> VectorParameterNamesAndCurves;  // 0x0118, size 0x10
     UPROPERTY() TArray<FColorParameterNameAndCurves> ColorParameterNamesAndCurves;  // 0x0128, size 0x10
     UPROPERTY() TArray<FTransformParameterNameAndCurves> TransformParameterNamesAndCurves;  // 0x0138, size 0x10
-
+public:
     UFUNCTION(BlueprintCallable) void AddBoolParameterKey(FName InParameterName, FFrameNumber InTime, bool InValue);  // parameters 0xD
     UFUNCTION(BlueprintCallable) void AddColorParameterKey(FName InParameterName, FFrameNumber InTime, FLinearColor InValue);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) void AddScalarParameterKey(FName InParameterName, FFrameNumber InTime, float InValue);  // parameters 0x10

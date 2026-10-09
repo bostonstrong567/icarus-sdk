@@ -5,7 +5,6 @@
 UCLASS(Abstract, EditInlineNew)
 class UStereoLayerShape : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   ApplyShape

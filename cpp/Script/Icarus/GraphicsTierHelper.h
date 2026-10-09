@@ -6,6 +6,5 @@ UCLASS()
 class UGraphicsTierHelper : public UObject
 {
 public:
-
     UFUNCTION(BlueprintCallable) static FIcarusGraphicsExtraInfo GetExtraInfo();  // parameters 0x48
 };

@@ -4,5 +4,6 @@
 USTRUCT()
 struct FGOAPProperties : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName Description;  // 0x0018, size 0x8
 };

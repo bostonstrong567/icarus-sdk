@@ -4,5 +4,6 @@
 USTRUCT()
 struct FReqGetUserProfile
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString UserID;  // 0x0000, size 0x10
 };

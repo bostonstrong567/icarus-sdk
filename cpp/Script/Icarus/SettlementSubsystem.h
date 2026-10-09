@@ -5,9 +5,10 @@
 UCLASS()
 class USettlementSubsystem : public UWorldSubsystem
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() TArray<TWeakObjectPtr<ASettlement>> Settlements;  // 0x0030, size 0x10
-
+public:
     UFUNCTION(BlueprintCallable) void AddSettlement(ASettlement* Settlement);  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) TArray<ASettlement*> GetAllSettlements() const;  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) static FVector GetBufferZone();  // parameters 0xC

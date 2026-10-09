@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFontImportOptionsData
 {
+public:
     UPROPERTY(EditAnywhere) FString FontName;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere) float Height;  // 0x0010, size 0x4
     UPROPERTY(EditAnywhere) uint8 bEnableAntialiasing : 1;  // 0x0014, mask 0x01

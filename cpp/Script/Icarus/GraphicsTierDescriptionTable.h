@@ -5,5 +5,4 @@
 UCLASS()
 class UGraphicsTierDescriptionTable : public UIcarusDataTable
 {
-public:
 };

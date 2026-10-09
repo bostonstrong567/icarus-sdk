@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_RG_E_Shipment_Steel_C : public ABPQ_Common_Deliver_C
 {
-public:
 };

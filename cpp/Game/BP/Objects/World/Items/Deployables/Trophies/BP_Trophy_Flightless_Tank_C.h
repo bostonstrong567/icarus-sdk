@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Trophy_Flightless_Tank_C : public ABP_DeployableBase_C
 {
-public:
 };

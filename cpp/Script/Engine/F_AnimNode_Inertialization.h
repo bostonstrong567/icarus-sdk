@@ -4,16 +4,16 @@
 USTRUCT()
 struct FAnimNode_Inertialization : public FAnimNode_Base
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FPoseLink Source;  // 0x0010, size 0x10
-
-    // Not reflected:
-    TArray<FInertializationPose,TSizedDefaultAllocator<32> > PoseSnapshots;  // 0x0020
-    float DeltaTime;  // 0x0030
-    float RequestedDuration;  // 0x0034
-    ETeleportType TeleportType;  // 0x0038
-    EInertializationState InertializationState;  // 0x0039
-    float InertializationElapsedTime;  // 0x003C
-    float InertializationDuration;  // 0x0040
-    float InertializationDeficit;  // 0x0044
-    FInertializationPoseDiff InertializationPoseDiff;  // 0x0048
+private:
+    TArray<FInertializationPose,TSizedDefaultAllocator<32> > PoseSnapshots;  // 0x0020, not reflected
+    float DeltaTime;  // 0x0030, not reflected
+    float RequestedDuration;  // 0x0034, not reflected
+    ETeleportType TeleportType;  // 0x0038, not reflected
+    EInertializationState InertializationState;  // 0x0039, not reflected
+    float InertializationElapsedTime;  // 0x003C, not reflected
+    float InertializationDuration;  // 0x0040, not reflected
+    float InertializationDeficit;  // 0x0044, not reflected
+    FInertializationPoseDiff InertializationPoseDiff;  // 0x0048, not reflected
 };

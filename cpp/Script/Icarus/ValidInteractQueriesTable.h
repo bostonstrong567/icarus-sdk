@@ -5,5 +5,4 @@
 UCLASS()
 class UValidInteractQueriesTable : public UIcarusDataTable
 {
-public:
 };

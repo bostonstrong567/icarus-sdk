@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBPFriendInfo
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString DisplayName;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString RealName;  // 0x0010, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EBPOnlinePresenceState OnlineState;  // 0x0020, size 0x1

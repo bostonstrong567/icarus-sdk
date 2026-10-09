@@ -5,5 +5,4 @@
 UCLASS()
 class USlateWidgetStyleContainerBase : public UObject, public ISlateWidgetStyleContainerInterface
 {
-public:
 };

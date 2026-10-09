@@ -5,5 +5,4 @@
 UCLASS()
 class UOneOffAccolade : public UAccoladeImpl
 {
-public:
 };

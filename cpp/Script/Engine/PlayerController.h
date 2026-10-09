@@ -5,6 +5,7 @@
 UCLASS(NotPlaceable, Config=Game)
 class APlayerController : public AController
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY() UPlayer* Player;  // 0x0298, size 0x8
     UPROPERTY() APawn* AcknowledgedPawn;  // 0x02A0, size 0x8
@@ -14,9 +15,12 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TSubclassOf<APlayerCameraManager> PlayerCameraManagerClass;  // 0x02C0, size 0x8
     UPROPERTY(EditAnywhere) bool bAutoManageActiveCameraTarget;  // 0x02C8, size 0x1
     UPROPERTY(Replicated) FRotator TargetViewRotation;  // 0x02CC, size 0xC
+    FRotator BlendedTargetViewRotation;  // 0x02D8, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float SmoothTargetViewRotationSpeed;  // 0x02E4, size 0x4
+    float LocalPlayerCachedLODDistanceFactor;  // 0x02E8, not reflected
     UPROPERTY() TArray<AActor*> HiddenActors;  // 0x02F0, size 0x10
     UPROPERTY() TArray<TWeakObjectPtr<UPrimitiveComponent>> HiddenPrimitiveComponents;  // 0x0300, size 0x10
+    bool bRenderPrimitiveComponents;  // 0x0310, not reflected
     UPROPERTY() float LastSpectatorStateSynchTime;  // 0x0314, size 0x4
     UPROPERTY(Transient) FVector LastSpectatorSyncLocation;  // 0x0318, size 0xC
     UPROPERTY(Transient) FRotator LastSpectatorSyncRotation;  // 0x0324, size 0xC
@@ -25,10 +29,21 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TSubclassOf<UCheatManager> CheatClass;  // 0x0340, size 0x8
     UPROPERTY(Transient) UPlayerInput* PlayerInput;  // 0x0348, size 0x8
     UPROPERTY(Transient) TArray<FActiveForceFeedbackEffect> ActiveForceFeedbackEffects;  // 0x0350, size 0x10
+    TSharedPtr<FActiveHapticFeedbackEffect,0> ActiveHapticEffect_Left;  // 0x0380, not reflected
+    TSharedPtr<FActiveHapticFeedbackEffect,0> ActiveHapticEffect_Right;  // 0x0390, not reflected
+    TSharedPtr<FActiveHapticFeedbackEffect,0> ActiveHapticEffect_Gun;  // 0x03A0, not reflected
+    FForceFeedbackValues ForceFeedbackValues;  // 0x03B0, not reflected
+    TArray<FName,TSizedDefaultAllocator<32> > PendingMapChangeLevelNames;  // 0x03C0, not reflected
+    uint32 : 1 bCinematicMode;  // 0x03D0, not reflected
+    uint32 : 1 bHidePawnInCinematicMode;  // 0x03D0, not reflected
+    uint32 : 1 bIsUsingStreamingVolumes;  // 0x03D0, not reflected
+    uint32 : 1 bShortConnectTimeOut;  // 0x03D0, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bPlayerIsWaiting : 1;  // 0x03D0, mask 0x10
     UPROPERTY() uint8 NetPlayerIndex;  // 0x03D4, size 0x1
+    FPlayerMuteList MuteList;  // 0x03D8, not reflected
     UPROPERTY() UNetConnection* PendingSwapConnection;  // 0x0410, size 0x8
     UPROPERTY() UNetConnection* NetConnection;  // 0x0418, size 0x8
+    FRotator RotationInput;  // 0x0420, not reflected
     UPROPERTY(EditAnywhere, Config, BlueprintReadWrite) float InputYawScale;  // 0x042C, size 0x4
     UPROPERTY(EditAnywhere, Config, BlueprintReadWrite) float InputPitchScale;  // 0x0430, size 0x4
     UPROPERTY(EditAnywhere, Config, BlueprintReadWrite) float InputRollScale;  // 0x0434, size 0x4
@@ -47,55 +62,41 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float HitResultTraceDistance;  // 0x0454, size 0x4
     UPROPERTY() uint16 SeamlessTravelCount;  // 0x0458, size 0x2
     UPROPERTY() uint16 LastCompletedSeamlessTravelCount;  // 0x045A, size 0x2
-    UPROPERTY(Instanced) UInputComponent* InactiveStateInputComponent;  // 0x04D0, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bShouldPerformFullTickWhenPaused : 1;  // 0x04D8, mask 0x04
-    UPROPERTY() UTouchInterface* CurrentTouchInterface;  // 0x04F0, size 0x8
-    UPROPERTY() ASpectatorPawn* SpectatorPawn;  // 0x0548, size 0x8
-    UPROPERTY() bool bIsLocalPlayerController;  // 0x0554, size 0x1
-    UPROPERTY(Replicated) FVector SpawnLocation;  // 0x0558, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bFreezeWorldComposition;  // 0x056C, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FVector CachedCameraLocation;  // 0x0570, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FRotator CachedCameraRotation;  // 0x057C, size 0xC
-
-    // Not reflected: the engine's scripting cannot see these.
-    FRotator BlendedTargetViewRotation;  // 0x02D8
-    float LocalPlayerCachedLODDistanceFactor;  // 0x02E8
-    bool bRenderPrimitiveComponents;  // 0x0310
-    TSortedMap<unsigned __int64,APlayerController::FDynamicForceFeedbackAction,TSizedDefaultAllocator<32>,TLess<unsigned __int64 const > > DynamicForceFeedbacks;  // 0x0360, private
-    TSortedMap<int,FDynamicForceFeedbackDetails *,TSizedDefaultAllocator<32>,TLess<int const > > LatentDynamicForceFeedbacks;  // 0x0370, private
-    TSharedPtr<FActiveHapticFeedbackEffect,0> ActiveHapticEffect_Left;  // 0x0380
-    TSharedPtr<FActiveHapticFeedbackEffect,0> ActiveHapticEffect_Right;  // 0x0390
-    TSharedPtr<FActiveHapticFeedbackEffect,0> ActiveHapticEffect_Gun;  // 0x03A0
-    FForceFeedbackValues ForceFeedbackValues;  // 0x03B0
-    TArray<FName,TSizedDefaultAllocator<32> > PendingMapChangeLevelNames;  // 0x03C0
-    uint32 : 1 bShortConnectTimeOut;  // 0x03D0
-    uint32 : 1 bCinematicMode;  // 0x03D0
-    uint32 : 1 bHidePawnInCinematicMode;  // 0x03D0
-    uint32 : 1 bIsUsingStreamingVolumes;  // 0x03D0
-    FPlayerMuteList MuteList;  // 0x03D8
-    FRotator RotationInput;  // 0x0420
-    TWeakObjectPtr<UPrimitiveComponent,FWeakObjectPtr> CurrentClickablePrimitive;  // 0x045C, protected
-    TWeakObjectPtr<UPrimitiveComponent,FWeakObjectPtr>[11] CurrentTouchablePrimitives;  // 0x0464, protected
-    TArray<TWeakObjectPtr<UInputComponent,FWeakObjectPtr>,TSizedDefaultAllocator<32> > CurrentInputStack;  // 0x04C0, protected
-    uint32 : 1 bCinemaDisableInputMove;  // 0x04D8, protected
-    uint32 : 1 bCinemaDisableInputLook;  // 0x04D8, protected
-    uint32 : 1 bInputEnabled;  // 0x04D8, private
-    TSharedPtr<SVirtualJoystick,0> VirtualJoystick;  // 0x04E0, protected
-    FTimerHandle TimerHandle_UnFreeze;  // 0x04F8, protected
-    FTimerHandle TimerHandle_DelayedPrepareMapChange;  // 0x0500, private
-    FTimerHandle TimerHandle_ClientCommitMapChange;  // 0x0508, private
-    uint32 : 1 bOverrideAudioListener;  // 0x0510, protected
-    uint32 : 1 bOverrideAudioAttenuationListener;  // 0x0510, protected
-    TWeakObjectPtr<USceneComponent,FWeakObjectPtr> AudioListenerComponent;  // 0x0514, protected
-    TWeakObjectPtr<USceneComponent,FWeakObjectPtr> AudioListenerAttenuationComponent;  // 0x051C, protected
-    FVector AudioListenerLocationOverride;  // 0x0524, protected
-    FRotator AudioListenerRotationOverride;  // 0x0530, protected
-    FVector AudioListenerAttenuationOverride;  // 0x053C, protected
-    float LastRetryPlayerTime;  // 0x0550, private
-    float LastMovementUpdateTime;  // 0x0564, protected
-    float LastMovementHitch;  // 0x0568, protected
-    bool : 1 bDisableHaptics;  // 0x0588, private
-
+protected:
+    TWeakObjectPtr<UPrimitiveComponent,FWeakObjectPtr> CurrentClickablePrimitive;  // 0x045C, not reflected
+    TWeakObjectPtr<UPrimitiveComponent,FWeakObjectPtr>[11] CurrentTouchablePrimitives;  // 0x0464, not reflected
+    TArray<TWeakObjectPtr<UInputComponent,FWeakObjectPtr>,TSizedDefaultAllocator<32> > CurrentInputStack;  // 0x04C0, not reflected
+    UPROPERTY(Instanced) UInputComponent* InactiveStateInputComponent;  // 0x04D0, size 0x8
+    uint32 : 1 bCinemaDisableInputLook;  // 0x04D8, not reflected
+    uint32 : 1 bCinemaDisableInputMove;  // 0x04D8, not reflected
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bShouldPerformFullTickWhenPaused : 1;  // 0x04D8, mask 0x04
+    TSharedPtr<SVirtualJoystick,0> VirtualJoystick;  // 0x04E0, not reflected
+    UPROPERTY() UTouchInterface* CurrentTouchInterface;  // 0x04F0, size 0x8
+    FTimerHandle TimerHandle_UnFreeze;  // 0x04F8, not reflected
+    uint32 : 1 bOverrideAudioAttenuationListener;  // 0x0510, not reflected
+    uint32 : 1 bOverrideAudioListener;  // 0x0510, not reflected
+    TWeakObjectPtr<USceneComponent,FWeakObjectPtr> AudioListenerComponent;  // 0x0514, not reflected
+    TWeakObjectPtr<USceneComponent,FWeakObjectPtr> AudioListenerAttenuationComponent;  // 0x051C, not reflected
+    FVector AudioListenerLocationOverride;  // 0x0524, not reflected
+    FRotator AudioListenerRotationOverride;  // 0x0530, not reflected
+    FVector AudioListenerAttenuationOverride;  // 0x053C, not reflected
+    UPROPERTY(Replicated) FVector SpawnLocation;  // 0x0558, size 0xC
+    float LastMovementUpdateTime;  // 0x0564, not reflected
+    float LastMovementHitch;  // 0x0568, not reflected
+private:
+    TSortedMap<unsigned __int64,APlayerController::FDynamicForceFeedbackAction,TSizedDefaultAllocator<32>,TLess<unsigned __int64 const > > DynamicForceFeedbacks;  // 0x0360, not reflected
+    TSortedMap<int,FDynamicForceFeedbackDetails *,TSizedDefaultAllocator<32>,TLess<int const > > LatentDynamicForceFeedbacks;  // 0x0370, not reflected
+    uint32 : 1 bInputEnabled;  // 0x04D8, not reflected
+    FTimerHandle TimerHandle_DelayedPrepareMapChange;  // 0x0500, not reflected
+    FTimerHandle TimerHandle_ClientCommitMapChange;  // 0x0508, not reflected
+    UPROPERTY() ASpectatorPawn* SpectatorPawn;  // 0x0548, size 0x8
+    float LastRetryPlayerTime;  // 0x0550, not reflected
+    UPROPERTY() bool bIsLocalPlayerController;  // 0x0554, size 0x1
+    bool : 1 bDisableHaptics;  // 0x0588, not reflected
+public:
     UFUNCTION(BlueprintCallable) void ActivateTouchInterface(UTouchInterface* NewTouchInterface);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void AddPitchInput(float Val);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void AddRollInput(float Val);  // parameters 0x4

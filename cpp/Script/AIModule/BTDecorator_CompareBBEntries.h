@@ -5,7 +5,8 @@
 UCLASS()
 class UBTDecorator_CompareBBEntries : public UBTDecorator
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere) TEnumAsByte<EBlackBoardEntryComparison> Operator;  // 0x0068, size 0x1
     UPROPERTY(EditAnywhere) FBlackboardKeySelector BlackboardKeyA;  // 0x0070, size 0x28
     UPROPERTY(EditAnywhere) FBlackboardKeySelector BlackboardKeyB;  // 0x0098, size 0x28

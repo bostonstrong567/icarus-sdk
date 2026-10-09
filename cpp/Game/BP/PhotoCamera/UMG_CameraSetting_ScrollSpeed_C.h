@@ -6,6 +6,5 @@ UCLASS(EditInlineNew, Config=Engine)
 class UUMG_CameraSetting_ScrollSpeed_C : public UW_CameraEntry_GenericSlider_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetSliderValue();  // parameters 0x4
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_AnimEvalRichCurve : public FRigUnit_AnimBase
 {
+public:
     UPROPERTY() float Value;  // 0x0008, size 0x4
     UPROPERTY() FRuntimeFloatCurve Curve;  // 0x0010, size 0x88
     UPROPERTY() float SourceMinimum;  // 0x0098, size 0x4

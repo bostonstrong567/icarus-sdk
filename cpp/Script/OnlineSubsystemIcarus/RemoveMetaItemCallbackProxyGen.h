@@ -8,9 +8,8 @@ class URemoveMetaItemCallbackProxyGen : public UOnlineBlueprintCallProxyBase
 public:
     UPROPERTY(BlueprintAssignable) FOnRemoveMetaItemEventSignature OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FOnRemoveMetaItemEventSignature OnFail;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FReqRemoveMetaInventoryItem ReqRemoveMetaInventoryItem;  // 0x0050, private
-
+private:
+    FReqRemoveMetaInventoryItem ReqRemoveMetaInventoryItem;  // 0x0050, not reflected
+public:
     UFUNCTION(BlueprintCallable) static URemoveMetaItemCallbackProxyGen* RemoveMetaItem(const FReqRemoveMetaInventoryItem& Request);  // parameters 0x28
 };

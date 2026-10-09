@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRichCurveKey
 {
+public:
     UPROPERTY() TEnumAsByte<ERichCurveInterpMode> InterpMode;  // 0x0000, size 0x1
     UPROPERTY() TEnumAsByte<ERichCurveTangentMode> TangentMode;  // 0x0001, size 0x1
     UPROPERTY() TEnumAsByte<ERichCurveTangentWeightMode> TangentWeightMode;  // 0x0002, size 0x1

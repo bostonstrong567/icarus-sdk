@@ -4,6 +4,7 @@
 USTRUCT()
 struct FConsumableData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<FStatsEnum, int32> Stats;  // 0x0018, size 0x50
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FModifier Modifier;  // 0x0068, size 0x20
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName DescriptionText;  // 0x0088, size 0x8

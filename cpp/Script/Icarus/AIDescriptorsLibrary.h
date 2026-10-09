@@ -6,7 +6,6 @@ UCLASS()
 class UAIDescriptorsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToAIDescriptorsTable(FName Name, FAIDescriptor Data, FAIDescriptorsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x69
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakAIDescriptorsEnum(FAIDescriptorsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FAIDescriptorsRowHandle CastToAIDescriptorsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

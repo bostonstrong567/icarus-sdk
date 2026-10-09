@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Building_Wall_HalfPitch_Lower_Right_Thatch_C : public ABP_Building_Wall_HalfPitch_Lower_Right_C
 {
-public:
 };

@@ -5,6 +5,7 @@
 UCLASS(MinimalAPI)
 class UFMODEventParameterTrack : public UMovieSceneNameableTrack, public IMovieSceneTrackTemplateProducer
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() TArray<UMovieSceneSection*> Sections;  // 0x0098, size 0x10
 };

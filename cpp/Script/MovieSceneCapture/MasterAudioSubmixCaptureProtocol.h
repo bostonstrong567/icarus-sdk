@@ -5,13 +5,12 @@
 UCLASS(Config=EditorPerProjectUserSettings)
 class UMasterAudioSubmixCaptureProtocol : public UMovieSceneAudioCaptureProtocolBase
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, Config, BlueprintReadWrite) FString FileName;  // 0x0058, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    double TotalGameRecordingTime;  // 0x0068, protected
-    double TotalPlatformRecordingTime;  // 0x0070, protected
-    double GameRecordingStartTime;  // 0x0078, protected
-    double PlatformRecordingStartTime;  // 0x0080, protected
-    bool bHasSetup;  // 0x0088, protected
+    double TotalGameRecordingTime;  // 0x0068, not reflected
+    double TotalPlatformRecordingTime;  // 0x0070, not reflected
+    double GameRecordingStartTime;  // 0x0078, not reflected
+    double PlatformRecordingStartTime;  // 0x0080, not reflected
+    bool bHasSetup;  // 0x0088, not reflected
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAutomationExecutionEntry
 {
+public:
     UPROPERTY() FAutomationEvent Event;  // 0x0000, size 0x38
     UPROPERTY() FString Filename;  // 0x0038, size 0x10
     UPROPERTY() int32 LineNumber;  // 0x0048, size 0x4

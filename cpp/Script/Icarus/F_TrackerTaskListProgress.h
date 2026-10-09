@@ -4,5 +4,6 @@
 USTRUCT()
 struct FTrackerTaskListProgress
 {
+public:
     UPROPERTY(SaveGame, BlueprintReadOnly) TSet<FName> CompletedTasks;  // 0x0000, size 0x50
 };

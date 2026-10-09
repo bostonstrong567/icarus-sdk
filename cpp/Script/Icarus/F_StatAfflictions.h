@@ -4,6 +4,7 @@
 USTRUCT()
 struct FStatAfflictions : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FStatsEnum AfflictionStat;  // 0x0018, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FStatsEnum CriticalHitAfflictionStat;  // 0x0028, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FStatsEnum ResistanceStat;  // 0x0038, size 0x10

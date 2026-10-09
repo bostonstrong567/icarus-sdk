@@ -4,5 +4,6 @@
 USTRUCT()
 struct FRestrictedGameplayTagTableRow : public FGameplayTagTableRow
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bAllowNonRestrictedChildren;  // 0x0020, size 0x1
 };

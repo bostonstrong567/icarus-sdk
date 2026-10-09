@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_ParentSwitchConstraint : public FRigUnitMutable
 {
+public:
     UPROPERTY() FRigElementKey Subject;  // 0x0068, size 0xC
     UPROPERTY() int32 ParentIndex;  // 0x0074, size 0x4
     UPROPERTY() FRigElementKeyCollection Parents;  // 0x0078, size 0x10

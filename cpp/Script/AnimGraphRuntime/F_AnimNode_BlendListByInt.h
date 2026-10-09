@@ -4,5 +4,6 @@
 USTRUCT()
 struct FAnimNode_BlendListByInt : public FAnimNode_BlendListBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 ActiveChildIndex;  // 0x0098, size 0x4
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigidBodyState
 {
+public:
     UPROPERTY() FVector_NetQuantize100 Position;  // 0x0000, size 0xC
     UPROPERTY() FQuat Quaternion;  // 0x0010, size 0x10
     UPROPERTY() FVector_NetQuantize100 LinVel;  // 0x0020, size 0xC

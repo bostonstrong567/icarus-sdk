@@ -4,5 +4,6 @@
 USTRUCT()
 struct FRigInfluenceEntryModifier
 {
+public:
     UPROPERTY(EditAnywhere) TArray<FRigElementKey> AffectedList;  // 0x0000, size 0x10
 };

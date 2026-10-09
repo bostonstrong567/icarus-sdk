@@ -4,6 +4,7 @@
 USTRUCT()
 struct FVectorPair
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector StartPoint;  // 0x0000, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector EndPoint;  // 0x000C, size 0xC
 };

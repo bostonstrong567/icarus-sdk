@@ -24,16 +24,15 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float CameraRotationLagSpeed;  // 0x0224, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float CameraLagMaxTimeStep;  // 0x0228, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float CameraLagMaxDistance;  // 0x022C, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bIsCameraFixed;  // 0x0230
-    FVector UnfixedCameraPosition;  // 0x0234
-    FVector PreviousDesiredLoc;  // 0x0240
-    FVector PreviousArmOrigin;  // 0x024C
-    FRotator PreviousDesiredRot;  // 0x0258
-    FVector RelativeSocketLocation;  // 0x0264, protected
-    FQuat RelativeSocketRotation;  // 0x0270, protected
-
+    bool bIsCameraFixed;  // 0x0230, not reflected
+    FVector UnfixedCameraPosition;  // 0x0234, not reflected
+    FVector PreviousDesiredLoc;  // 0x0240, not reflected
+    FVector PreviousArmOrigin;  // 0x024C, not reflected
+    FRotator PreviousDesiredRot;  // 0x0258, not reflected
+protected:
+    FVector RelativeSocketLocation;  // 0x0264, not reflected
+    FQuat RelativeSocketRotation;  // 0x0270, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) FRotator GetTargetRotation() const;  // parameters 0xC
     UFUNCTION(BlueprintCallable, BlueprintPure) FVector GetUnfixedCameraPosition() const;  // parameters 0xC
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsCollisionFixApplied() const;  // parameters 0x1

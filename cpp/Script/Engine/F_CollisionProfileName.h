@@ -4,5 +4,6 @@
 USTRUCT()
 struct FCollisionProfileName
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FName Name;  // 0x0000, size 0x8
 };

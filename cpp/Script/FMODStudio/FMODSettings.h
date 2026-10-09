@@ -41,7 +41,5 @@ public:
     UPROPERTY(EditAnywhere, Config) FString OcclusionParameter;  // 0x0130, size 0x10
     UPROPERTY(EditAnywhere, Config) FString AmbientVolumeParameter;  // 0x0140, size 0x10
     UPROPERTY(EditAnywhere, Config) FString AmbientLPFParameter;  // 0x0150, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<FString,TSizedDefaultAllocator<32> > GeneratedFolders;  // 0x0160
+    TArray<FString,TSizedDefaultAllocator<32> > GeneratedFolders;  // 0x0160, not reflected
 };

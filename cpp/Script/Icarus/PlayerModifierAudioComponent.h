@@ -5,8 +5,9 @@
 UCLASS(Config=Engine)
 class UPlayerModifierAudioComponent : public UActorComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() TArray<UPlayerModifierSound*> Sounds;  // 0x00B0, size 0x10
-
+public:
     UFUNCTION() void HandleModifierEffectivenessUpdated(UModifierStateComponent* Modifier);  // parameters 0x8
 };

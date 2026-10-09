@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UGeneralEngineSettings : public UObject
 {
-public:
 };

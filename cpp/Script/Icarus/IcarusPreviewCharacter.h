@@ -13,12 +13,11 @@ public:
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UInventory* EquipmentInventory;  // 0x04E8, size 0x8
     UPROPERTY(BlueprintReadOnly) TArray<USkeletalMeshComponent*> ArmourComponents;  // 0x04F0, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool IsMale;  // 0x0500, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    FStreamableManager StreamableManager;  // 0x0508, private
-    TArray<TSharedPtr<FStreamableHandle,0>,TSizedDefaultAllocator<32> > EquipmentStreamingHandles;  // 0x05F0, private
-    bool HasSetupCosmetics;  // 0x0600, private
-
+private:
+    FStreamableManager StreamableManager;  // 0x0508, not reflected
+    TArray<TSharedPtr<FStreamableHandle,0>,TSizedDefaultAllocator<32> > EquipmentStreamingHandles;  // 0x05F0, not reflected
+    bool HasSetupCosmetics;  // 0x0600, not reflected
+public:
     UFUNCTION() USkeletalMeshComponent* FindOrCreateEquipmentComponent(int32 ForSlot, const FArmourData& WithData);  // parameters 0x310
     UFUNCTION() void OnEquipmentInventoryUpdated(UInventory* Inventory, int32 UpdatedSlot);  // parameters 0xC
     UFUNCTION(BlueprintNativeEvent) void SetupCharacterCosmetics();

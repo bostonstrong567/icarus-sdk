@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSettlementTimedModifierRecord
 {
+public:
     UPROPERTY(SaveGame) FName ModifierRow;  // 0x0000, size 0x8
     UPROPERTY(SaveGame) int32 RemovalDay;  // 0x0008, size 0x4
 };

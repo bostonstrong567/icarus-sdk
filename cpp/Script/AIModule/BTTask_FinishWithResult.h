@@ -5,6 +5,7 @@
 UCLASS()
 class UBTTask_FinishWithResult : public UBTTaskNode
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere) TEnumAsByte<EBTNodeResult> Result;  // 0x0070, size 0x1
 };

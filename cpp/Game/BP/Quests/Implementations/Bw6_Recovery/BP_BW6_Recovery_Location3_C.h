@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_BW6_Recovery_Location3_C : public ABP_BW6_Recovery_Location_C
 {
-public:
 };

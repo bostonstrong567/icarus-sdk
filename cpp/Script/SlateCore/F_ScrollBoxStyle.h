@@ -4,6 +4,7 @@
 USTRUCT()
 struct FScrollBoxStyle : public FSlateWidgetStyle
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSlateBrush TopShadowBrush;  // 0x0008, size 0x88
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSlateBrush BottomShadowBrush;  // 0x0090, size 0x88
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSlateBrush LeftShadowBrush;  // 0x0118, size 0x88

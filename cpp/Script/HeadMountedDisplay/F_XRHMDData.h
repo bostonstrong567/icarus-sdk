@@ -4,6 +4,7 @@
 USTRUCT()
 struct FXRHMDData
 {
+public:
     UPROPERTY(BlueprintReadOnly) bool bValid;  // 0x0000, size 0x1
     UPROPERTY(BlueprintReadOnly) FName DeviceName;  // 0x0004, size 0x8
     UPROPERTY(BlueprintReadOnly) FGuid ApplicationInstanceID;  // 0x000C, size 0x10

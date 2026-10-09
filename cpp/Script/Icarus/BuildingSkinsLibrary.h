@@ -6,7 +6,6 @@ UCLASS()
 class UBuildingSkinsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToBuildingSkinsTable(FName Name, FBuildingSkin Data, FBuildingSkinsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xD9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakBuildingSkinsEnum(FBuildingSkinsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FBuildingSkinsRowHandle CastToBuildingSkinsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

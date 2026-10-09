@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABP_Mission_IceMammoth_Corpse_Dressing_C : public ABP_Mission_IceMammoth_Corpse_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) void AddExtraLoot(TArray<FItemData>& ExtraLoot);  // parameters 0x10
 };

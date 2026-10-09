@@ -6,7 +6,6 @@ UCLASS()
 class UUsesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToUsesTable(FName Name, FUses Data, FUsesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x79
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakUsesEnum(FUsesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FUsesRowHandle CastToUsesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

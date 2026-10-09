@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_HAV_TU_Aspen_SML_RED_Var1_C : public ABP_DestructableHarvest_C
 {
-public:
 };

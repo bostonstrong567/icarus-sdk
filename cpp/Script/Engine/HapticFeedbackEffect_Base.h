@@ -5,7 +5,6 @@
 UCLASS(MinimalAPI)
 class UHapticFeedbackEffect_Base : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   GetDuration, GetValues, Initialize

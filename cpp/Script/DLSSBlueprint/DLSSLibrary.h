@@ -6,7 +6,6 @@ UCLASS(MinimalAPI)
 class UDLSSLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void EnableDLAA(bool bEnabled);  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void GetDLSSMinimumDriverVersion(int32& MinDriverVersionMajor, int32& MinDriverVersionMinor);  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) static UDLSSMode GetDLSSMode();  // parameters 0x1

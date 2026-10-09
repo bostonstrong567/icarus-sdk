@@ -6,7 +6,6 @@ UCLASS()
 class UCraftingModificationsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToCraftingModificationsTable(FName Name, FCraftingModifications Data, FCraftingModificationsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x99
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakCraftingModificationsEnum(FCraftingModificationsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FCraftingModificationsRowHandle CastToCraftingModificationsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

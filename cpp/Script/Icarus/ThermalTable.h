@@ -5,5 +5,4 @@
 UCLASS()
 class UThermalTable : public UIcarusDataTable
 {
-public:
 };

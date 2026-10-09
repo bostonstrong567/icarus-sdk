@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Rustic_Statue_Floor_C : public ABP_DeployableBase_C
 {
-public:
 };

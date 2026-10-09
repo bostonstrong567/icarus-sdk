@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UExampleCriticalHitShake_C : public UMatineeCameraShake
 {
-public:
 };

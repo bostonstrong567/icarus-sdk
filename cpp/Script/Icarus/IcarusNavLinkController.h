@@ -6,6 +6,5 @@ UCLASS(Abstract)
 class UIcarusNavLinkController : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintNativeEvent) bool IsLinkPathfindingAllowed(UObject* Querier) const;  // parameters 0x9
 };

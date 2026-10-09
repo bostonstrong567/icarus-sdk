@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_OLY_Forest_Construction_Chairs_C : public ABPQ_Deploy_Count_C
 {
-public:
 };

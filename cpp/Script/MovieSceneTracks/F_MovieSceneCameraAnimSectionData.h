@@ -4,13 +4,12 @@
 USTRUCT()
 struct FMovieSceneCameraAnimSectionData
 {
+public:
     UPROPERTY(EditAnywhere) UCameraAnim* CameraAnim;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) float PlayRate;  // 0x0008, size 0x4
     UPROPERTY(EditAnywhere) float PlayScale;  // 0x000C, size 0x4
     UPROPERTY(EditAnywhere) float BlendInTime;  // 0x0010, size 0x4
     UPROPERTY(EditAnywhere) float BlendOutTime;  // 0x0014, size 0x4
     UPROPERTY(EditAnywhere) bool bLooping;  // 0x0018, size 0x1
-
-    // Not reflected:
-    bool bRandomStartTime;  // 0x0019
+    bool bRandomStartTime;  // 0x0019, not reflected
 };

@@ -6,9 +6,7 @@ UCLASS(Transient)
 class UVoiceChannel : public UChannel
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<TSharedPtr<FVoicePacket,0>,TSizedDefaultAllocator<32> > VoicePackets;  // 0x0068
+    TArray<TSharedPtr<FVoicePacket,0>,TSizedDefaultAllocator<32> > VoicePackets;  // 0x0068, not reflected
 
     // Virtual functions that start here:
     //   AddVoicePacket

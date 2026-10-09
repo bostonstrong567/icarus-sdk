@@ -4,6 +4,7 @@
 USTRUCT()
 struct FActionData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSubclassOf<UActionableBehaviour> Behaviour;  // 0x0018, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UAnimMontage> TP_ActionMontage;  // 0x0020, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FSuccessAnimSet> TP_SuccessAnimations;  // 0x0048, size 0x10

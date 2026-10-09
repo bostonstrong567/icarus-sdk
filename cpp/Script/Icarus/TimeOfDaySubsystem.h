@@ -5,22 +5,23 @@
 UCLASS()
 class UTimeOfDaySubsystem : public UTickableWorldSubsystem
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintAssignable) FPlayersSleptNotifySignature OnPlayersSleptNotify;  // 0x0040, size 0x10
     UPROPERTY(BlueprintAssignable) FTimeOfDayDayChangedSignature TimeOfDayDayChanged;  // 0x0050, size 0x10
     UPROPERTY(BlueprintAssignable) FTimeOfDayHourChangedSignature TimeOfDayHourChanged;  // 0x0060, size 0x10
     UPROPERTY(BlueprintAssignable) FTimeOfDayMinuteChangedSignature TimeOfDayMinuteChanged;  // 0x0070, size 0x10
+protected:
     UPROPERTY() UCurveFloat* TimeScaleCurve;  // 0x0080, size 0x8
     UPROPERTY() float TimeScale;  // 0x0088, size 0x4
     UPROPERTY() float MinimumTimeStep;  // 0x008C, size 0x4
     UPROPERTY() AIcarusGameStateSurvival* CachedGameState;  // 0x0090, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FTimerHandle SleepCheckTimer;  // 0x0098, protected
-    UCurveFloat * FallbackCurve;  // 0x00A0, private
-    float FracTimeOfDayStep;  // 0x00A8, private
-    int32 CurrentDay;  // 0x00AC, private
-
+    FTimerHandle SleepCheckTimer;  // 0x0098, not reflected
+private:
+    UCurveFloat * FallbackCurve;  // 0x00A0, not reflected
+    float FracTimeOfDayStep;  // 0x00A8, not reflected
+    int32 CurrentDay;  // 0x00AC, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) void AttemptToSleep();
     UFUNCTION(BlueprintCallable) ESleepResult CanSleep();  // parameters 0x1
     UFUNCTION(BlueprintCallable) TSet<FModifierStatesRowHandle> GetAllSleepAffectingModifiers();  // parameters 0x50

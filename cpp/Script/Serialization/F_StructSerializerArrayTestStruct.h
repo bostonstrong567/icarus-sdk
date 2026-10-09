@@ -4,6 +4,7 @@
 USTRUCT()
 struct FStructSerializerArrayTestStruct
 {
+public:
     UPROPERTY() TArray<int32> Int32Array;  // 0x0000, size 0x10
     UPROPERTY() TArray<uint8> ByteArray;  // 0x0010, size 0x10
     UPROPERTY() int32 StaticSingleElement;  // 0x0020, size 0x4

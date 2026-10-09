@@ -4,6 +4,7 @@
 USTRUCT()
 struct FDatasmithMeshBuildSettingsTemplate
 {
+public:
     UPROPERTY() uint8 bUseMikkTSpace : 1;  // 0x0000, mask 0x01
     UPROPERTY() uint8 bRecomputeNormals : 1;  // 0x0000, mask 0x02
     UPROPERTY() uint8 bRecomputeTangents : 1;  // 0x0000, mask 0x04

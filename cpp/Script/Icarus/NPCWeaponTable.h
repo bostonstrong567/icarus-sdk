@@ -5,5 +5,4 @@
 UCLASS()
 class UNPCWeaponTable : public UIcarusDataTable
 {
-public:
 };

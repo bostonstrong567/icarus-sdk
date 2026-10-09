@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_FitChainToCurve_WorkData
 {
+public:
     UPROPERTY() float ChainLength;  // 0x0000, size 0x4
     UPROPERTY() TArray<FVector> ItemPositions;  // 0x0008, size 0x10
     UPROPERTY() TArray<float> ItemSegments;  // 0x0018, size 0x10

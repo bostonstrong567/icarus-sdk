@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAnimNode_HandIKRetargeting : public FAnimNode_SkeletalControlBase
 {
+public:
     UPROPERTY(EditAnywhere) FBoneReference RightHandFK;  // 0x00C8, size 0x10
     UPROPERTY(EditAnywhere) FBoneReference LeftHandFK;  // 0x00D8, size 0x10
     UPROPERTY(EditAnywhere) FBoneReference RightHandIK;  // 0x00E8, size 0x10

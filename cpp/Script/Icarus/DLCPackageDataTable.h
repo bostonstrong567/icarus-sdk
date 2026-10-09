@@ -5,5 +5,4 @@
 UCLASS()
 class UDLCPackageDataTable : public UIcarusDataTable
 {
-public:
 };

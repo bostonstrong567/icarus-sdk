@@ -18,12 +18,11 @@ public:
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) int32 CurrentLevel;  // 0x03B0, size 0x4
     UPROPERTY(BlueprintAssignable) FPawnLevelUpdated PawnLevelUpdated;  // 0x03B8, size 0x10
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) FGameplayTagContainer GameplayTags;  // 0x03D0, size 0x20
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bHasSetUpAI;  // 0x0329, protected
-    int32 CurrentModifierUID;  // 0x03C8, protected
-    TMap<enum EStats,int,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<enum EStats,int,0> > ActiveAuras;  // 0x03F0, protected
-
+protected:
+    bool bHasSetUpAI;  // 0x0329, not reflected
+    int32 CurrentModifierUID;  // 0x03C8, not reflected
+    TMap<enum EStats,int,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<enum EStats,int,0> > ActiveAuras;  // 0x03F0, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) TArray<AIcarusPlayerCharacter*> BP_GetAllDamagingPlayerCharacters() const;  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) bool CanHitDamageTarget(AActor* TargetActor, FHitResult InHit);  // parameters 0x91
     UFUNCTION(BlueprintNativeEvent) FAIRelationshipsRowHandle CheckForStatBasedAIRelationshipChange(const FAIRelationshipsRowHandle& PreviousRelationship);  // parameters 0x30

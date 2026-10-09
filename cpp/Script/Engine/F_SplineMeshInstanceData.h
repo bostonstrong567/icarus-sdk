@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSplineMeshInstanceData : public FSceneComponentInstanceData
 {
+public:
     UPROPERTY() FVector StartPos;  // 0x00B8, size 0xC
     UPROPERTY() FVector EndPos;  // 0x00C4, size 0xC
     UPROPERTY() FVector StartTangent;  // 0x00D0, size 0xC

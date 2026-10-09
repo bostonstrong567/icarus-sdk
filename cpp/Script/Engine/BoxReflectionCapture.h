@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI, Config=Engine)
 class ABoxReflectionCapture : public AReflectionCapture
 {
-public:
 };

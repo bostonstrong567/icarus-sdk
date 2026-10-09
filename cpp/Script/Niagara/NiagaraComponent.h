@@ -5,52 +5,52 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UNiagaraComponent : public UFXSystemComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
-    UPROPERTY(EditAnywhere) UNiagaraSystem* Asset;  // 0x0450, size 0x8
-    UPROPERTY(EditAnywhere) ENiagaraTickBehavior TickBehavior;  // 0x0458, size 0x1
-    UPROPERTY(EditAnywhere) int32 RandomSeedOffset;  // 0x045C, size 0x4
-    UPROPERTY() FNiagaraUserRedirectionParameterStore OverrideParameters;  // 0x0460, size 0xC8
-    UPROPERTY(EditAnywhere) uint8 bForceSolo : 1;  // 0x0528, mask 0x01
-    UPROPERTY(EditAnywhere) uint8 bEnableGpuComputeDebug : 1;  // 0x0528, mask 0x02
-    UPROPERTY() uint8 bAutoDestroy : 1;  // 0x0558, mask 0x01
-    UPROPERTY() uint8 bRenderingEnabled : 1;  // 0x0558, mask 0x02
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bAutoManageAttachment : 1;  // 0x0558, mask 0x04
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bAutoAttachWeldSimulatedBodies : 1;  // 0x0558, mask 0x08
     UPROPERTY() float MaxTimeBeforeForceUpdateTransform;  // 0x055C, size 0x4
     UPROPERTY(Transient) TArray<FNiagaraMaterialOverride> EmitterMaterials;  // 0x0560, size 0x10
+    ENCPoolMethod PoolingMethod;  // 0x0570, not reflected
     UPROPERTY(BlueprintAssignable) FOnNiagaraSystemFinished OnSystemFinished;  // 0x0578, size 0x10
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) TWeakObjectPtr<USceneComponent> AutoAttachParent;  // 0x0588, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName AutoAttachSocketName;  // 0x0590, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EAttachmentRule AutoAttachLocationRule;  // 0x0598, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EAttachmentRule AutoAttachRotationRule;  // 0x0599, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EAttachmentRule AutoAttachScaleRule;  // 0x059A, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    TUniquePtr<FNiagaraSystemInstance,TDefaultDelete<FNiagaraSystemInstance> > SystemInstance;  // 0x0530, private
-    ENiagaraAgeUpdateMode AgeUpdateMode;  // 0x0538, private
-    float DesiredAge;  // 0x053C, private
-    float LastHandledDesiredAge;  // 0x0540, private
-    bool bCanRenderWhileSeeking;  // 0x0544, private
-    float SeekDelta;  // 0x0548, private
-    bool bLockDesiredAgeDeltaTimeToSeekDelta;  // 0x054C, private
-    float MaxSimTime;  // 0x0550, private
-    bool bIsSeeking;  // 0x0554, private
-    ENCPoolMethod PoolingMethod;  // 0x0570
-    uint32 : 1 bAwaitingActivationDueToNotReady;  // 0x059C, private
-    uint32 : 1 bActivateShouldResetWhenReady;  // 0x059C, private
-    uint32 : 1 bDidAutoAttach;  // 0x059C, private
-    uint32 : 1 bAllowScalability;  // 0x059C, private
-    uint32 : 1 bIsCulledByScalability;  // 0x059C, private
-    uint32 : 1 bDuringUpdateContextReset;  // 0x059C, private
-    uint32 : 1 bNeedsUpdateEmitterMaterials;  // 0x059C, private
-    FVector SavedAutoAttachRelativeLocation;  // 0x05A0, private
-    FRotator SavedAutoAttachRelativeRotation;  // 0x05AC, private
-    FVector SavedAutoAttachRelativeScale3D;  // 0x05B8, private
-    FDelegateHandle AssetExposedParametersChangedHandle;  // 0x05C8, private
-    int32 ScalabilityManagerHandle;  // 0x05D0, private
-    float ForceUpdateTransformTime;  // 0x05D4, private
-    FBox CurrLocalBounds;  // 0x05D8, private
-
+private:
+    UPROPERTY(EditAnywhere) UNiagaraSystem* Asset;  // 0x0450, size 0x8
+    UPROPERTY(EditAnywhere) ENiagaraTickBehavior TickBehavior;  // 0x0458, size 0x1
+    UPROPERTY(EditAnywhere) int32 RandomSeedOffset;  // 0x045C, size 0x4
+    UPROPERTY() FNiagaraUserRedirectionParameterStore OverrideParameters;  // 0x0460, size 0xC8
+    UPROPERTY(EditAnywhere) uint8 bForceSolo : 1;  // 0x0528, mask 0x01
+    UPROPERTY(EditAnywhere) uint8 bEnableGpuComputeDebug : 1;  // 0x0528, mask 0x02
+    TUniquePtr<FNiagaraSystemInstance,TDefaultDelete<FNiagaraSystemInstance> > SystemInstance;  // 0x0530, not reflected
+    ENiagaraAgeUpdateMode AgeUpdateMode;  // 0x0538, not reflected
+    float DesiredAge;  // 0x053C, not reflected
+    float LastHandledDesiredAge;  // 0x0540, not reflected
+    bool bCanRenderWhileSeeking;  // 0x0544, not reflected
+    float SeekDelta;  // 0x0548, not reflected
+    bool bLockDesiredAgeDeltaTimeToSeekDelta;  // 0x054C, not reflected
+    float MaxSimTime;  // 0x0550, not reflected
+    bool bIsSeeking;  // 0x0554, not reflected
+    UPROPERTY() uint8 bAutoDestroy : 1;  // 0x0558, mask 0x01
+    UPROPERTY() uint8 bRenderingEnabled : 1;  // 0x0558, mask 0x02
+    uint32 : 1 bActivateShouldResetWhenReady;  // 0x059C, not reflected
+    uint32 : 1 bAllowScalability;  // 0x059C, not reflected
+    uint32 : 1 bAwaitingActivationDueToNotReady;  // 0x059C, not reflected
+    uint32 : 1 bDidAutoAttach;  // 0x059C, not reflected
+    uint32 : 1 bDuringUpdateContextReset;  // 0x059C, not reflected
+    uint32 : 1 bIsCulledByScalability;  // 0x059C, not reflected
+    uint32 : 1 bNeedsUpdateEmitterMaterials;  // 0x059C, not reflected
+    FVector SavedAutoAttachRelativeLocation;  // 0x05A0, not reflected
+    FRotator SavedAutoAttachRelativeRotation;  // 0x05AC, not reflected
+    FVector SavedAutoAttachRelativeScale3D;  // 0x05B8, not reflected
+    FDelegateHandle AssetExposedParametersChangedHandle;  // 0x05C8, not reflected
+    int32 ScalabilityManagerHandle;  // 0x05D0, not reflected
+    float ForceUpdateTransformTime;  // 0x05D4, not reflected
+    FBox CurrLocalBounds;  // 0x05D8, not reflected
+public:
     UFUNCTION(BlueprintCallable) void AdvanceSimulation(int32 TickCount, float TickDeltaSeconds);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void AdvanceSimulationByTime(float SimulateTime, float TickDeltaSeconds);  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) ENiagaraAgeUpdateMode GetAgeUpdateMode() const;  // parameters 0x1

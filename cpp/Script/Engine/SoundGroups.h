@@ -5,9 +5,8 @@
 UCLASS(Abstract, Config=Engine)
 class USoundGroups : public UObject
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY(Config) TArray<FSoundGroup> SoundGroupProfiles;  // 0x0028, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<enum ESoundGroup,FSoundGroup,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<enum ESoundGroup,FSoundGroup,0> > SoundGroupMap;  // 0x0038, private
+    TMap<enum ESoundGroup,FSoundGroup,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<enum ESoundGroup,FSoundGroup,0> > SoundGroupMap;  // 0x0038, not reflected
 };

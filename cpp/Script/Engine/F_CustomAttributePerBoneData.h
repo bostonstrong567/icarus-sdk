@@ -4,6 +4,7 @@
 USTRUCT()
 struct FCustomAttributePerBoneData
 {
+public:
     UPROPERTY(EditAnywhere) int32 BoneTreeIndex;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere) TArray<FCustomAttribute> Attributes;  // 0x0008, size 0x10
 };

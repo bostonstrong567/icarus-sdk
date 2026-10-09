@@ -25,10 +25,9 @@ public:
     UPROPERTY(BlueprintAssignable) FOnControllerCaptureBeginEvent OnControllerCaptureBegin;  // 0x04B8, size 0x10
     UPROPERTY(BlueprintAssignable) FOnControllerCaptureEndEvent OnControllerCaptureEnd;  // 0x04C8, size 0x10
     UPROPERTY(BlueprintAssignable) FOnFloatValueChangedEvent OnValueChanged;  // 0x04D8, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SSlider,0> MySlider;  // 0x04E8, protected
-
+protected:
+    TSharedPtr<SSlider,0> MySlider;  // 0x04E8, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetNormalizedValue() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetValue() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable) void SetIndentHandle(bool InValue);  // parameters 0x1

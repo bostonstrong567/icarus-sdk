@@ -4,5 +4,6 @@
 USTRUCT()
 struct FNPCBackgroundList
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FString> Backgrounds;  // 0x0000, size 0x10
 };

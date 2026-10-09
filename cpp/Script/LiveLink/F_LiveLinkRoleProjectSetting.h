@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLiveLinkRoleProjectSetting
 {
+public:
     UPROPERTY(EditAnywhere, Config) TSubclassOf<ULiveLinkRole> Role;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, Config) TSubclassOf<ULiveLinkSubjectSettings> SettingClass;  // 0x0008, size 0x8
     UPROPERTY(EditAnywhere, Config) TSubclassOf<ULiveLinkFrameInterpolationProcessor> FrameInterpolationProcessor;  // 0x0010, size 0x8

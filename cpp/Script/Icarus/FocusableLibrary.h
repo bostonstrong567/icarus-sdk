@@ -6,7 +6,6 @@ UCLASS()
 class UFocusableLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToFocusableTable(FName Name, FFocusableData Data, FFocusableRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x219
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakFocusableEnum(FFocusableEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FFocusableRowHandle CastToFocusableRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

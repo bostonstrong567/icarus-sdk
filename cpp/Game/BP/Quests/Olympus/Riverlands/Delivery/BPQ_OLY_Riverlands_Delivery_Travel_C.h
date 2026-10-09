@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABPQ_OLY_Riverlands_Delivery_Travel_C : public ABPQ_Travel_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool Check();  // parameters 0x1
 };

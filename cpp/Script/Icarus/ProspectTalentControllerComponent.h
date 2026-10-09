@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UProspectTalentControllerComponent : public UTalentControllerComponent
 {
-public:
 };

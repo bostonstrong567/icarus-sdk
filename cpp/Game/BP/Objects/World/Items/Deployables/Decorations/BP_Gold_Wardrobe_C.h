@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Gold_Wardrobe_C : public ABP_DeployableContainerBase_C
 {
-public:
 };

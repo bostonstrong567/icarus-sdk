@@ -4,6 +4,7 @@
 USTRUCT()
 struct FTreeRuntimeConstructArguments
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSubclassOf<ATreePrefab> TreePrefabClass;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName RootName;  // 0x0008, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<int32> TreePrimitivesMask;  // 0x0010, size 0x10

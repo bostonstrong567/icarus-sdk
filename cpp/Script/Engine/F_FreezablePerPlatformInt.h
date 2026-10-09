@@ -4,7 +4,6 @@
 USTRUCT()
 struct FFreezablePerPlatformInt
 {
-
-    // Not reflected:
-    int32 Default;  // 0x0000
+public:
+    int32 Default;  // 0x0000, not reflected
 };

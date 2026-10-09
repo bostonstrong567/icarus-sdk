@@ -5,7 +5,8 @@
 UCLASS(MinimalAPI, Config=Engine)
 class USkeletalMeshLODSettings : public UDataAsset
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, Config) FPerPlatformInt MinLod;  // 0x0030, size 0x4
     UPROPERTY(EditAnywhere, Config) FPerPlatformBool DisableBelowMinLodStripping;  // 0x0034, size 0x1
     UPROPERTY(EditAnywhere, Config) bool bOverrideLODStreamingSettings;  // 0x0035, size 0x1

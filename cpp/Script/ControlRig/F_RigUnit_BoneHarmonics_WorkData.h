@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_BoneHarmonics_WorkData
 {
+public:
     UPROPERTY() TArray<FCachedRigElement> CachedItems;  // 0x0000, size 0x10
     UPROPERTY() FVector WaveTime;  // 0x0010, size 0xC
 };

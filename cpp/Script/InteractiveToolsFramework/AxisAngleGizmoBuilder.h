@@ -5,5 +5,4 @@
 UCLASS(Transient)
 class UAxisAngleGizmoBuilder : public UInteractiveGizmoBuilder
 {
-public:
 };

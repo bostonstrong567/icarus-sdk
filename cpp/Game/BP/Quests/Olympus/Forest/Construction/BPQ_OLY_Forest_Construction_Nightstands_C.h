@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_OLY_Forest_Construction_Nightstands_C : public ABPQ_Deploy_Count_ItemStatic_C
 {
-public:
 };

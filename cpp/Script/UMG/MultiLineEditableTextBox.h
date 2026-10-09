@@ -22,10 +22,9 @@ public:
     UPROPERTY(Deprecated) FLinearColor ReadOnlyForegroundColor;  // 0x0C58, size 0x10
     UPROPERTY(BlueprintAssignable) FOnMultiLineEditableTextBoxChangedEvent OnTextChanged;  // 0x0C68, size 0x10
     UPROPERTY(BlueprintAssignable) FOnMultiLineEditableTextBoxCommittedEvent OnTextCommitted;  // 0x0C78, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SMultiLineEditableTextBox,0> MyEditableTextBlock;  // 0x0C88, protected
-
+protected:
+    TSharedPtr<SMultiLineEditableTextBox,0> MyEditableTextBlock;  // 0x0C88, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) FText GetHintText() const;  // parameters 0x18
     UFUNCTION(BlueprintCallable, BlueprintPure) FText GetText() const;  // parameters 0x18
     UFUNCTION(BlueprintCallable) void SetError(FText InError);  // parameters 0x18

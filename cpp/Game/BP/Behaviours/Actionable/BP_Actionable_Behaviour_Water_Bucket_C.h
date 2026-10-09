@@ -5,5 +5,4 @@
 UCLASS(Transient, Config=Engine)
 class UBP_Actionable_Behaviour_Water_Bucket_C : public UBP_Actionable_Behaviour_WateringCan_C
 {
-public:
 };

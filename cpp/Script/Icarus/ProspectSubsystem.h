@@ -5,14 +5,16 @@
 UCLASS()
 class UProspectSubsystem : public UGameInstanceSubsystem
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
-    UPROPERTY(EditAnywhere) FProspectInfo ActiveProspect;  // 0x0030, size 0xA0
-    UPROPERTY(EditAnywhere) TArray<FCustomGameSetting> CustomGameSettings;  // 0x00D0, size 0x10
     UPROPERTY(BlueprintAssignable) FCustomProspectStatsUpdatedSignature CustomProspectStatsUpdated;  // 0x00E0, size 0x10
     UPROPERTY(BlueprintReadWrite) ELobbyPrivacy SelectedLobbyPrivacy;  // 0x00F0, size 0x1
     UPROPERTY() bool bRequiresSessionUpdate;  // 0x00F1, size 0x1
+protected:
+    UPROPERTY(EditAnywhere) FProspectInfo ActiveProspect;  // 0x0030, size 0xA0
+    UPROPERTY(EditAnywhere) TArray<FCustomGameSetting> CustomGameSettings;  // 0x00D0, size 0x10
     UPROPERTY(EditAnywhere) FProspectSaveState ActiveProspectSaveState;  // 0x00F8, size 0xF8
-
+public:
     UFUNCTION(BlueprintCallable) static bool DeleteExistingLocalOutpost(FString OutpostName);  // parameters 0x11
     UFUNCTION(BlueprintCallable) static bool DeleteProspect(FString ProspectId, int32 ChrSlot);  // parameters 0x15
     UFUNCTION(BlueprintCallable, BlueprintPure) FIcarusProspect GetActiveProspectData() const;  // parameters 0x2D0

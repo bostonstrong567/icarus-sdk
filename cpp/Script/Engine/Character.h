@@ -5,19 +5,8 @@
 UCLASS(Config=Game)
 class ACharacter : public APawn
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) USkeletalMeshComponent* Mesh;  // 0x0280, size 0x8
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UCharacterMovementComponent* CharacterMovement;  // 0x0288, size 0x8
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UCapsuleComponent* CapsuleComponent;  // 0x0290, size 0x8
-    UPROPERTY() FBasedMovementInfo BasedMovement;  // 0x0298, size 0x30
-    UPROPERTY(Replicated, ReplicatedUsing) FBasedMovementInfo ReplicatedBasedMovement;  // 0x02C8, size 0x30
-    UPROPERTY(Replicated) float AnimRootMotionTranslationScale;  // 0x02F8, size 0x4
-    UPROPERTY() FVector BaseTranslationOffset;  // 0x02FC, size 0xC
-    UPROPERTY() FQuat BaseRotationOffset;  // 0x0310, size 0x10
-    UPROPERTY(Replicated) float ReplicatedServerLastTransformUpdateTimeStamp;  // 0x0320, size 0x4
-    UPROPERTY(Replicated, ReplicatedUsing) float ReplayLastTransformUpdateTimeStamp;  // 0x0324, size 0x4
-    UPROPERTY(Replicated) uint8 ReplicatedMovementMode;  // 0x0328, size 0x1
-    UPROPERTY() bool bInBaseReplication;  // 0x0329, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float CrouchedEyeHeight;  // 0x032C, size 0x4
     UPROPERTY(Replicated, ReplicatedUsing, BlueprintReadOnly) uint8 bIsCrouched : 1;  // 0x0330, mask 0x01
     UPROPERTY(Replicated, Transient) uint8 bProxyIsJumpForceApplied : 1;  // 0x0330, mask 0x02
@@ -37,18 +26,30 @@ public:
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) int32 JumpMaxCount;  // 0x0344, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 JumpCurrentCount;  // 0x0348, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 JumpCurrentCountPreJump;  // 0x034C, size 0x4
+    uint32 NumActorOverlapEventsCounter;  // 0x0350, not reflected
     UPROPERTY(BlueprintAssignable) FCharacterReachedApexSignature OnReachedJumpApex;  // 0x0358, size 0x10
+    FLandedSignature LandedDelegate;  // 0x0368, not reflected
     UPROPERTY(BlueprintAssignable) FMovementModeChangedSignature MovementModeChangedDelegate;  // 0x0378, size 0x10
     UPROPERTY(BlueprintAssignable) FCharacterMovementUpdatedSignature OnCharacterMovementUpdated;  // 0x0388, size 0x10
     UPROPERTY(Transient) FRootMotionSourceGroup SavedRootMotion;  // 0x0398, size 0x38
     UPROPERTY(Transient) FRootMotionMovementParams ClientRootMotionParams;  // 0x03D0, size 0x40
     UPROPERTY(Transient) TArray<FSimulatedRootMotionReplicatedMove> RootMotionRepMoves;  // 0x0410, size 0x10
     UPROPERTY(Replicated, ReplicatedUsing) FRepRootMotionMontage RepRootMotion;  // 0x0420, size 0x98
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint32 NumActorOverlapEventsCounter;  // 0x0350
-    FLandedSignature LandedDelegate;  // 0x0368
-
+protected:
+    UPROPERTY() FBasedMovementInfo BasedMovement;  // 0x0298, size 0x30
+    UPROPERTY(Replicated, ReplicatedUsing) FBasedMovementInfo ReplicatedBasedMovement;  // 0x02C8, size 0x30
+    UPROPERTY(Replicated) float AnimRootMotionTranslationScale;  // 0x02F8, size 0x4
+    UPROPERTY() FVector BaseTranslationOffset;  // 0x02FC, size 0xC
+    UPROPERTY() FQuat BaseRotationOffset;  // 0x0310, size 0x10
+    UPROPERTY(Replicated) float ReplicatedServerLastTransformUpdateTimeStamp;  // 0x0320, size 0x4
+    UPROPERTY(Replicated, ReplicatedUsing) float ReplayLastTransformUpdateTimeStamp;  // 0x0324, size 0x4
+    UPROPERTY(Replicated) uint8 ReplicatedMovementMode;  // 0x0328, size 0x1
+    UPROPERTY() bool bInBaseReplication;  // 0x0329, size 0x1
+private:
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) USkeletalMeshComponent* Mesh;  // 0x0280, size 0x8
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UCharacterMovementComponent* CharacterMovement;  // 0x0288, size 0x8
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UCapsuleComponent* CapsuleComponent;  // 0x0290, size 0x8
+public:
     UFUNCTION(BlueprintCallable) void CacheInitialMeshOffset(FVector MeshRelativeLocation, FRotator MeshRelativeRotation);  // parameters 0x18
     UFUNCTION(BlueprintCallable, BlueprintPure) bool CanCrouch() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) bool CanJump() const;  // parameters 0x1

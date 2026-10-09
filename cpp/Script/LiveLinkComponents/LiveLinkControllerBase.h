@@ -5,11 +5,9 @@
 UCLASS(Abstract, EditInlineNew)
 class ULiveLinkControllerBase : public UObject
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TWeakObjectPtr<UActorComponent,FWeakObjectPtr> AttachedComponent;  // 0x0028, protected
-    FLiveLinkSubjectRepresentation SelectedSubject;  // 0x0030, protected
+protected:
+    TWeakObjectPtr<UActorComponent,FWeakObjectPtr> AttachedComponent;  // 0x0028, not reflected
+    FLiveLinkSubjectRepresentation SelectedSubject;  // 0x0030, not reflected
 
     // Virtual functions that start here:
     //   Cleanup, GetDesiredComponentClass, GetSelectedSubject, IsRoleSupported, OnEvaluateRegistered

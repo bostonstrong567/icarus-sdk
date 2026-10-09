@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Rock_Golem_Spawner_Elemental_Mission_C : public ABP_Rock_Golem_Spawner_Elemental_C
 {
-public:
 };

@@ -15,11 +15,10 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UCurveFloat* HomingScaleCurve;  // 0x01F8, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UCurveFloat* HomingGravityScale;  // 0x0200, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float HomingNegativeZAccelerationMultiplier;  // 0x0208, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bHasReachedApex;  // 0x020C, private
-    float LastMoveTime;  // 0x0210, private
-    FVector ScalingMagnitudeStartPosition;  // 0x0214, private
-
+private:
+    bool bHasReachedApex;  // 0x020C, not reflected
+    float LastMoveTime;  // 0x0210, not reflected
+    FVector ScalingMagnitudeStartPosition;  // 0x0214, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) bool HasReachedApex() const;  // parameters 0x1
 };

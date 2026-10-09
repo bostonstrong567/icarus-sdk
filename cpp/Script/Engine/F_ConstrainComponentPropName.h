@@ -4,5 +4,6 @@
 USTRUCT()
 struct FConstrainComponentPropName
 {
+public:
     UPROPERTY(EditAnywhere) FName ComponentName;  // 0x0000, size 0x8
 };

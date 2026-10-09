@@ -5,5 +5,4 @@
 UCLASS()
 class UAISpawnRulesTable : public UIcarusDataTable
 {
-public:
 };

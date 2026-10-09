@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNiagaraDebuggerAcceptConnection
 {
+public:
     UPROPERTY(EditAnywhere) FGuid SessionId;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere) FGuid InstanceId;  // 0x0010, size 0x10
 };

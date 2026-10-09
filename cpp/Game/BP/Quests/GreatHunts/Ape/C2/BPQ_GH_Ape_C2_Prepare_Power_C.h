@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_Ape_C2_Prepare_Power_C : public ABPQ_Collect_Any_Item_C
 {
-public:
 };

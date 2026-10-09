@@ -5,5 +5,4 @@
 UCLASS(Config=Game)
 class ABP_NPC_LavaBroodling_WorldSpawn_C : public ABP_NPC_LavaBroodling_C
 {
-public:
 };

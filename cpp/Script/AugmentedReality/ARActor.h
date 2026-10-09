@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class AARActor : public AActor
 {
 public:
-
     UFUNCTION(BlueprintCallable) UARComponent* AddARComponent(TSubclassOf<UARComponent> InComponentClass, const FGuid& NativeID);  // parameters 0x20
 };

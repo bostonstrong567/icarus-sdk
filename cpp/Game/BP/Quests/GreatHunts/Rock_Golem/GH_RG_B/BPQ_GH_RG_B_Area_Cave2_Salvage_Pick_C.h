@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABPQ_GH_RG_B_Area_Cave2_Salvage_Pick_C : public ABPQ_Common_Deliver_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void GetDescription(const FText& InDescription, FText& OutDescription, bool& bOutComplete);  // parameters 0x31
 };

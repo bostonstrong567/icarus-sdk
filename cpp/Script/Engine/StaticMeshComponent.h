@@ -5,12 +5,12 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UStaticMeshComponent : public UMeshComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 ForcedLodModel;  // 0x0478, size 0x4
     UPROPERTY(Deprecated) int32 PreviousLODLevel;  // 0x047C, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 MinLOD;  // 0x0480, size 0x4
     UPROPERTY() int32 SubDivisionStepSize;  // 0x0484, size 0x4
-    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) UStaticMesh* StaticMesh;  // 0x0488, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FColor WireframeColorOverride;  // 0x0490, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bEvaluateWorldPositionOffset : 1;  // 0x0494, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bOverrideWireframeColor : 1;  // 0x0494, mask 0x02
@@ -32,7 +32,9 @@ public:
     UPROPERTY(Transient) TArray<FStaticMeshComponentLODInfo> LODData;  // 0x04A8, size 0x10
     UPROPERTY() TArray<FStreamingTextureBuildInfo> StreamingTextureData;  // 0x04B8, size 0x10
     UPROPERTY(EditAnywhere) FLightmassPrimitiveSettings LightmassSettings;  // 0x04C8, size 0x18
-
+private:
+    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) UStaticMesh* StaticMesh;  // 0x0488, size 0x8
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) void GetLocalBounds(FVector& Min, FVector& Max) const;  // parameters 0x18
     UFUNCTION() void OnRep_StaticMesh(UStaticMesh* OldStaticMesh);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void SetDistanceFieldSelfShadowBias(float NewValue);  // parameters 0x4

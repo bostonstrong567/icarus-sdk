@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class UInterface_PreviewMeshProvider : public UInterface
 {
-public:
 };

@@ -26,10 +26,9 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector InitialLinearVelocity;  // 0x0100, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector InitialAngularVelocity;  // 0x010C, size 0xC
     UPROPERTY(BlueprintAssignable) FOnChaosPhysicsCollision OnChaosPhysicsCollision;  // 0x0118, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FSkeletalMeshPhysicsProxy * PhysicsProxy;  // 0x0128, private
-    TUniquePtr<Chaos::FChaosPhysicsMaterial,TDefaultDelete<Chaos::FChaosPhysicsMaterial> > ChaosMaterial;  // 0x0130, private
-
+private:
+    FSkeletalMeshPhysicsProxy * PhysicsProxy;  // 0x0128, not reflected
+    TUniquePtr<Chaos::FChaosPhysicsMaterial,TDefaultDelete<Chaos::FChaosPhysicsMaterial> > ChaosMaterial;  // 0x0130, not reflected
+public:
     UFUNCTION(BlueprintImplementableEvent) void ReceivePhysicsCollision(const FChaosPhysicsCollisionInfo& CollisionInfo);  // parameters 0x70
 };

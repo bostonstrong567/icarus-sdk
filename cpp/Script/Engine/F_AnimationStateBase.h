@@ -4,5 +4,6 @@
 USTRUCT()
 struct FAnimationStateBase
 {
+public:
     UPROPERTY() FName StateName;  // 0x0000, size 0x8
 };

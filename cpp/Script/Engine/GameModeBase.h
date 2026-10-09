@@ -5,6 +5,7 @@
 UCLASS(Transient, NotPlaceable, Config=Game)
 class AGameModeBase : public AInfo
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintReadOnly) FString OptionsString;  // 0x0220, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSubclassOf<AGameSession> GameSessionClass;  // 0x0230, size 0x8
@@ -21,12 +22,11 @@ public:
     UPROPERTY(Transient) AServerStatReplicator* ServerStatReplicator;  // 0x0288, size 0x8
     UPROPERTY(EditAnywhere) FText DefaultPlayerName;  // 0x0290, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bUseSeamlessTravel : 1;  // 0x02A8, mask 0x01
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bStartPlayersAsSpectators : 1;  // 0x02A8, mask 0x02
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bPauseable : 1;  // 0x02A8, mask 0x04
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<TDelegate<bool __cdecl(void),FDefaultDelegateUserPolicy>,TSizedDefaultAllocator<32> > Pausers;  // 0x02B0, protected
-
+    TArray<TDelegate<bool __cdecl(void),FDefaultDelegateUserPolicy>,TSizedDefaultAllocator<32> > Pausers;  // 0x02B0, not reflected
+public:
     UFUNCTION(BlueprintNativeEvent) bool CanSpectate(APlayerController* Viewer, APlayerState* ViewTarget);  // parameters 0x11
     UFUNCTION(BlueprintCallable) void ChangeName(AController* Controller, FString NewName, bool bNameChange);  // parameters 0x19
     UFUNCTION(BlueprintNativeEvent) AActor* ChoosePlayerStart(AController* Player);  // parameters 0x10

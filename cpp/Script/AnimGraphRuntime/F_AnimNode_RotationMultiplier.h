@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAnimNode_RotationMultiplier : public FAnimNode_SkeletalControlBase
 {
+public:
     UPROPERTY(EditAnywhere) FBoneReference TargetBone;  // 0x00C8, size 0x10
     UPROPERTY(EditAnywhere) FBoneReference SourceBone;  // 0x00D8, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float Multiplier;  // 0x00E8, size 0x4

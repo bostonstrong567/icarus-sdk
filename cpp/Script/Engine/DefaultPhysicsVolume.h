@@ -5,5 +5,4 @@
 UCLASS(Transient, NotPlaceable, MinimalAPI, Config=Engine)
 class ADefaultPhysicsVolume : public APhysicsVolume
 {
-public:
 };

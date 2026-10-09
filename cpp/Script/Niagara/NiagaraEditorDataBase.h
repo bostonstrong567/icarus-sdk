@@ -5,5 +5,4 @@
 UCLASS(Abstract, MinimalAPI)
 class UNiagaraEditorDataBase : public UObject
 {
-public:
 };

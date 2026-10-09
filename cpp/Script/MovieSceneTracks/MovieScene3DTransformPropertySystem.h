@@ -5,5 +5,4 @@
 UCLASS()
 class UMovieScene3DTransformPropertySystem : public UMovieScenePropertySystem
 {
-public:
 };

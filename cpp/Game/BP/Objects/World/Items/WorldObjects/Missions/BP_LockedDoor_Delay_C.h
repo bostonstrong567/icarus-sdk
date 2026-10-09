@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABP_LockedDoor_Delay_C : public ABP_LockedDoor_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void WorldObject_Interact(AActor* Instigator);  // parameters 0x8
 };

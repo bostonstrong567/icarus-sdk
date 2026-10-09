@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLayerBlendInput
 {
+public:
     UPROPERTY(EditAnywhere) FName LayerName;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) TEnumAsByte<ELandscapeLayerBlendType> BlendType;  // 0x0008, size 0x1
     UPROPERTY() FExpressionInput LayerInput;  // 0x000C, size 0x14

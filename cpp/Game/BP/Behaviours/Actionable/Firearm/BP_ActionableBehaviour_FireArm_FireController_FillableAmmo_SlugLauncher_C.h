@@ -6,7 +6,6 @@ UCLASS(Transient, Config=Engine)
 class UBP_ActionableBehaviour_FireArm_FireController_FillableAmmo_SlugLauncher_C : public UBP_ActionableBehaviour_FireArm_FireController_FillableAmmo_C, public IAmmoDisplayInterface_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) TEnumAsByte<CanFireReturnType> CanFire();  // parameters 0x1
     UFUNCTION(BlueprintCallable) void GetCurrentAmmoInfo(TSoftObjectPtr<UTexture2D>& AmmoIcon, FText& CurrentAmmo, FText& TotalAmmo, FText& AmmoTextOverride, bool& HideReload, bool& IsFluid, FIcarusResourcesRowHandle& Resource, float& Percent);  // parameters 0x90
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetLaunchForce();  // parameters 0x4

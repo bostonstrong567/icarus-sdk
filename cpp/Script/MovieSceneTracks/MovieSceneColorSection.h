@@ -5,7 +5,8 @@
 UCLASS(MinimalAPI)
 class UMovieSceneColorSection : public UMovieSceneSection, public IMovieSceneEntityProvider
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() FMovieSceneFloatChannel RedCurve;  // 0x00F0, size 0xA0
     UPROPERTY() FMovieSceneFloatChannel GreenCurve;  // 0x0190, size 0xA0
     UPROPERTY() FMovieSceneFloatChannel BlueCurve;  // 0x0230, size 0xA0

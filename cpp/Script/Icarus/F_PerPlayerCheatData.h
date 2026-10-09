@@ -4,6 +4,7 @@
 USTRUCT()
 struct FPerPlayerCheatData
 {
+public:
     UPROPERTY() bool bGodMode;  // 0x0000, size 0x1
     UPROPERTY() bool bUnlimitedResources;  // 0x0001, size 0x1
     UPROPERTY() bool bAllRecipesUnlocked;  // 0x0002, size 0x1

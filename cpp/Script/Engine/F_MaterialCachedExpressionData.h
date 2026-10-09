@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMaterialCachedExpressionData
 {
+public:
     UPROPERTY() FMaterialCachedParameters Parameters;  // 0x0000, size 0x150
     UPROPERTY() TArray<UObject*> ReferencedTextures;  // 0x0150, size 0x10
     UPROPERTY() TArray<FMaterialFunctionInfo> FunctionInfos;  // 0x0160, size 0x10

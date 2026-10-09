@@ -4,6 +4,7 @@
 USTRUCT()
 struct FKSphereElem : public FKShapeElem
 {
+public:
     UPROPERTY(EditAnywhere) FVector Center;  // 0x0030, size 0xC
     UPROPERTY(EditAnywhere) float Radius;  // 0x003C, size 0x4
 };

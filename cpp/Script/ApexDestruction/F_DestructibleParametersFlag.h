@@ -4,6 +4,7 @@
 USTRUCT()
 struct FDestructibleParametersFlag
 {
+public:
     UPROPERTY(EditAnywhere) uint8 bAccumulateDamage : 1;  // 0x0000, mask 0x01
     UPROPERTY(EditAnywhere) uint8 bAssetDefinedSupport : 1;  // 0x0000, mask 0x02
     UPROPERTY(EditAnywhere) uint8 bWorldSupport : 1;  // 0x0000, mask 0x04

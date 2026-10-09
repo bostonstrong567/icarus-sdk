@@ -4,6 +4,7 @@
 USTRUCT()
 struct FChaosBreakEvent
 {
+public:
     UPROPERTY(Instanced, BlueprintReadOnly) UPrimitiveComponent* Component;  // 0x0000, size 0x8
     UPROPERTY(BlueprintReadOnly) FVector Location;  // 0x0008, size 0xC
     UPROPERTY(BlueprintReadOnly) FVector Velocity;  // 0x0014, size 0xC

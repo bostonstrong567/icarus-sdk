@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew)
 class UEnvQueryContext_Item : public UEnvQueryContext
 {
-public:
 };

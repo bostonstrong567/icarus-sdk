@@ -6,7 +6,6 @@ UCLASS(MinimalAPI)
 class UTalentLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static FString GenerateSearchStringForBlueprintTalent(FTalentsRowHandle Talent);  // parameters 0x28
     UFUNCTION(BlueprintCallable) static FString GenerateSearchStringForPlayerTalent(FTalentsRowHandle Talent);  // parameters 0x28
     UFUNCTION(BlueprintCallable) static FString GenerateSearchStringForProspectTalent(FTalentsRowHandle Talent);  // parameters 0x28

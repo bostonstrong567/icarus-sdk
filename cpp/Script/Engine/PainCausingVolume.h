@@ -13,9 +13,8 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bEntryPain : 1;  // 0x027C, mask 0x01
     UPROPERTY() uint8 BACKUP_bPainCausing : 1;  // 0x027C, mask 0x02
     UPROPERTY() AController* DamageInstigator;  // 0x0280, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FTimerHandle TimerHandle_PainTimer;  // 0x0288, protected
+protected:
+    FTimerHandle TimerHandle_PainTimer;  // 0x0288, not reflected
 
     // Virtual functions that start here:
     //   CausePainTo, PainTimer

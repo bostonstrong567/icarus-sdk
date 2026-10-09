@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UBPI_CHA_Head_Customization_C : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable) void Age_Update(FText Age);  // parameters 0x18
     UFUNCTION(BlueprintCallable) void BS_ControlSelect(FText TopName, FText BottomName, FText LeftName, FText RightName, bool ResetMatrix_);  // parameters 0x61
     UFUNCTION(BlueprintCallable) void BS_MatrixToggle(bool TopEnabled, bool BottomEnabled, bool LeftEnabled, bool RightEnabled);  // parameters 0x4

@@ -5,5 +5,4 @@
 UCLASS()
 class UFactionMissionsTable : public UIcarusDataTable
 {
-public:
 };

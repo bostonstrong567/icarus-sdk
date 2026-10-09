@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_Travel_Small_C : public ABPQ_Travel_C
 {
-public:
 };

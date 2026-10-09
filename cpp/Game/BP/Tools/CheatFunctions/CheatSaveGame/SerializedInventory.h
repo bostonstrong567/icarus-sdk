@@ -4,5 +4,6 @@
 USTRUCT()
 struct SerializedInventory
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FInventorySlot> Items;  // 0x0000, size 0x10
 };

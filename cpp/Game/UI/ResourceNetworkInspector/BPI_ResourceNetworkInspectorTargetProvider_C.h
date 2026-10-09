@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UBPI_ResourceNetworkInspectorTargetProvider_C : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable) void GetTargetNetworkType(FIcarusResourcesEnum& TargetNetworkType);  // parameters 0x10
 };

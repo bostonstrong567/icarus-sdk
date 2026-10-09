@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRangedWeaponData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector2D HipAccuracy;  // 0x0018, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector2D AdsAccuracy;  // 0x0020, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UCurveFloat* SwayCurve_X;  // 0x0028, size 0x8

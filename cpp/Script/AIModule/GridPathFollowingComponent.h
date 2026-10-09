@@ -5,15 +5,14 @@
 UCLASS(Config=Engine)
 class UGridPathFollowingComponent : public UPathFollowingComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(Transient) UNavLocalGridManager* GridManager;  // 0x0250, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    int32 ActiveGridIdx;  // 0x0258, protected
-    int32 ActiveGridId;  // 0x025C, protected
-    uint32 : 1 bIsPathEndInsideGrid;  // 0x0260, protected
-    uint32 : 1 bHasGridPath;  // 0x0260, protected
-    TArray<FVector,TSizedDefaultAllocator<32> > GridPathPoints;  // 0x0268, protected
-    int32 GridMoveSegmentEndIndex;  // 0x0278, protected
-    int32 MoveSegmentStartIndexOffGrid;  // 0x027C, protected
+    int32 ActiveGridIdx;  // 0x0258, not reflected
+    int32 ActiveGridId;  // 0x025C, not reflected
+    uint32 : 1 bHasGridPath;  // 0x0260, not reflected
+    uint32 : 1 bIsPathEndInsideGrid;  // 0x0260, not reflected
+    TArray<FVector,TSizedDefaultAllocator<32> > GridPathPoints;  // 0x0268, not reflected
+    int32 GridMoveSegmentEndIndex;  // 0x0278, not reflected
+    int32 MoveSegmentStartIndexOffGrid;  // 0x027C, not reflected
 };

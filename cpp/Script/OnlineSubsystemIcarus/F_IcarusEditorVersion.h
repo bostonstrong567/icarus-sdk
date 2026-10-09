@@ -4,5 +4,6 @@
 USTRUCT()
 struct FIcarusEditorVersion
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FIcarusBuildVersion Icarus;  // 0x0000, size 0x20
 };

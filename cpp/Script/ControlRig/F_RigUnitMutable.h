@@ -4,5 +4,6 @@
 USTRUCT()
 struct FRigUnitMutable : public FRigUnit
 {
+public:
     UPROPERTY(Transient) FControlRigExecuteContext ExecuteContext;  // 0x0008, size 0x60
 };

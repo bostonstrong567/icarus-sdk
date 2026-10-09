@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, MinimalAPI)
 class UNullNavSysConfig : public UNavigationSystemConfig
 {
-public:
 };

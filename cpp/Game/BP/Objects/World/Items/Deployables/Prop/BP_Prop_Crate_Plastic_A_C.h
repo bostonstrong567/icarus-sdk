@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Prop_Crate_Plastic_A_C : public ABP_DeployableContainerBase_C
 {
-public:
 };

@@ -5,7 +5,8 @@
 UCLASS()
 class UMovieSceneCompiledData : public UObject
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() FMovieSceneEvaluationTemplate EvaluationTemplate;  // 0x0028, size 0x160
     UPROPERTY() FMovieSceneSequenceHierarchy Hierarchy;  // 0x0188, size 0x118
     UPROPERTY() FMovieSceneEntityComponentField EntityComponentField;  // 0x02A0, size 0xF0
@@ -16,7 +17,5 @@ public:
     UPROPERTY() FMovieSceneSequenceCompilerMaskStruct AccumulatedMask;  // 0x03F0, size 0x1
     UPROPERTY() FMovieSceneSequenceCompilerMaskStruct AllocatedMask;  // 0x03F1, size 0x1
     UPROPERTY() EMovieSceneSequenceFlags AccumulatedFlags;  // 0x03F2, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    FMovieSceneCompiledSequenceFlagStruct CompiledFlags;  // 0x03F3, private
+    FMovieSceneCompiledSequenceFlagStruct CompiledFlags;  // 0x03F3, not reflected
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFastArraySerializerItem
 {
+public:
     UPROPERTY() int32 ReplicationID;  // 0x0000, size 0x4
     UPROPERTY() int32 ReplicationKey;  // 0x0004, size 0x4
     UPROPERTY() int32 MostRecentArrayReplicationKey;  // 0x0008, size 0x4

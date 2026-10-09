@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UNavFilter_LargeAI_C : public UIcarusNavQueryFilter
 {
-public:
 };

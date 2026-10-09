@@ -5,8 +5,6 @@
 UCLASS(MinimalAPI)
 class UTemplateSequencePropertyScalingEvaluatorSystem : public UMovieSceneEntitySystem
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<TTuple<UE::MovieScene::FInstanceHandle,FGuid,FName>,UTemplateSequencePropertyScalingEvaluatorSystem::FMultiPropertyScaleValue,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<TTuple<UE::MovieScene::FInstanceHandle,FGuid,FName>,UTemplateSequencePropertyScalingEvaluatorSystem::FMultiPropertyScaleValue,0> > PropertyScales;  // 0x0040, private
+private:
+    TMap<TTuple<UE::MovieScene::FInstanceHandle,FGuid,FName>,UTemplateSequencePropertyScalingEvaluatorSystem::FMultiPropertyScaleValue,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<TTuple<UE::MovieScene::FInstanceHandle,FGuid,FName>,UTemplateSequencePropertyScalingEvaluatorSystem::FMultiPropertyScaleValue,0> > PropertyScales;  // 0x0040, not reflected
 };

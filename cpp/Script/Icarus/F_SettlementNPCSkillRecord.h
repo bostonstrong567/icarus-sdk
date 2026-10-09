@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSettlementNPCSkillRecord
 {
+public:
     UPROPERTY(SaveGame) FName SkillRow;  // 0x0000, size 0x8
     UPROPERTY(SaveGame) float Xp;  // 0x0008, size 0x4
     UPROPERTY(SaveGame) float PassionMultiplier;  // 0x000C, size 0x4

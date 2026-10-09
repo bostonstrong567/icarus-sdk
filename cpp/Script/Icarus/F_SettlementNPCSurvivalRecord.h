@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSettlementNPCSurvivalRecord
 {
+public:
     UPROPERTY(SaveGame) int32 Hunger;  // 0x0000, size 0x4
     UPROPERTY(SaveGame) int32 Water;  // 0x0004, size 0x4
     UPROPERTY(SaveGame) int32 Oxygen;  // 0x0008, size 0x4

@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UCF_UnlockCharacterTalent_C : public UCF_UnlockTalent_Base_C
 {
-public:
 };

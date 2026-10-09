@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAnimNode_SequencePlayer : public FAnimNode_AssetPlayerBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UAnimSequenceBase* Sequence;  // 0x0038, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float PlayRateBasis;  // 0x0040, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float PlayRate;  // 0x0044, size 0x4

@@ -6,7 +6,6 @@ UCLASS()
 class UXRLoadingScreenFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddLoadingScreenSplash(UTexture* Texture, FVector Translation, FRotator Rotation, FVector2D Size, FRotator DeltaRotation, bool bClearBeforeAdd);  // parameters 0x35
     UFUNCTION(BlueprintCallable) static void ClearLoadingScreenSplashes();
     UFUNCTION(BlueprintCallable) static void HideLoadingScreen();

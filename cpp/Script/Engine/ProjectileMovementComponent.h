@@ -39,17 +39,17 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float InterpRotationTime;  // 0x0164, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float InterpLocationMaxLagDistance;  // 0x0168, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float InterpLocationSnapToTargetDistance;  // 0x016C, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint8 : 1 bInterpolationComplete;  // 0x00F9, protected
-    FVector PendingForceThisUpdate;  // 0x0170, protected
-    FVector InterpLocationOffset;  // 0x017C, protected
-    FVector InterpInitialLocationOffset;  // 0x0188, protected
-    TWeakObjectPtr<USceneComponent,FWeakObjectPtr> InterpolatedComponentPtr;  // 0x0194, protected
-    FQuat InterpRotationOffset;  // 0x01A0, protected
-    FQuat InterpInitialRotationOffset;  // 0x01B0, protected
-    FVector PendingForce;  // 0x01C0, private
-
+protected:
+    uint8 : 1 bInterpolationComplete;  // 0x00F9, not reflected
+    FVector PendingForceThisUpdate;  // 0x0170, not reflected
+    FVector InterpLocationOffset;  // 0x017C, not reflected
+    FVector InterpInitialLocationOffset;  // 0x0188, not reflected
+    TWeakObjectPtr<USceneComponent,FWeakObjectPtr> InterpolatedComponentPtr;  // 0x0194, not reflected
+    FQuat InterpRotationOffset;  // 0x01A0, not reflected
+    FQuat InterpInitialRotationOffset;  // 0x01B0, not reflected
+private:
+    FVector PendingForce;  // 0x01C0, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsInterpolationComplete() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsVelocityUnderSimulationThreshold() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) FVector LimitVelocity(FVector NewVelocity) const;  // parameters 0x18

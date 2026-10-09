@@ -5,11 +5,9 @@
 UCLASS()
 class UAudioCapture : public UAudioGenerator
 {
+protected:
+    Audio::FAudioCapture AudioCapture;  // 0x00A8, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    Audio::FAudioCapture AudioCapture;  // 0x00A8, protected
-
     UFUNCTION(BlueprintCallable) bool GetAudioCaptureDeviceInfo(FAudioCaptureDeviceInfo& OutInfo);  // parameters 0x11
     UFUNCTION(BlueprintCallable) bool IsCapturingAudio();  // parameters 0x1
     UFUNCTION(BlueprintCallable) void StartCapturingAudio();

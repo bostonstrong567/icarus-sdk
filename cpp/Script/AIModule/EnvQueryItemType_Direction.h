@@ -5,5 +5,4 @@
 UCLASS()
 class UEnvQueryItemType_Direction : public UEnvQueryItemType_VectorBase
 {
-public:
 };

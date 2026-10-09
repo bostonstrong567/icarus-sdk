@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UBPI_FireAlertable_C : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable) void NotifyOfFire(FVector FireLocation, bool& WasNotified);  // parameters 0xD
 };

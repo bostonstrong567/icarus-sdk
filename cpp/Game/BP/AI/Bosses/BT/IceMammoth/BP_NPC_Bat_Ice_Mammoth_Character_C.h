@@ -5,5 +5,4 @@
 UCLASS(Config=Game)
 class ABP_NPC_Bat_Ice_Mammoth_Character_C : public ABP_NPC_CaveBat_Character_C
 {
-public:
 };

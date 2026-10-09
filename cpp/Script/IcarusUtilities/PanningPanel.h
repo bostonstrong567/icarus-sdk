@@ -5,7 +5,9 @@
 UCLASS()
 class UPanningPanel : public UPanelWidget
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
+    TSharedPtr<SPanningPanel,0> PanningPanel;  // 0x0120, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FScrollBarStyle ScrollBarStyle;  // 0x0130, size 0x4D0
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EPanningDirection PanningDirection;  // 0x0600, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector2D ScrollBarThickness;  // 0x0604, size 0x8
@@ -19,10 +21,7 @@ public:
     UPROPERTY(BlueprintReadOnly) FVector2D PositionOverride;  // 0x062C, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bAllowScroll;  // 0x0634, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 OverScrollAmount;  // 0x0638, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SPanningPanel,0> PanningPanel;  // 0x0120, protected
-
+public:
     UFUNCTION(BlueprintCallable) UOverlaySlot* AddChildToOverlay(UWidget* Content);  // parameters 0x10
     UFUNCTION(BlueprintCallable) FVector2D GetPosition();  // parameters 0x8
     UFUNCTION(BlueprintCallable) void Refresh();

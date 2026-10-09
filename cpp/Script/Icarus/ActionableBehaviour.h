@@ -5,6 +5,7 @@
 UCLASS(Transient, MinimalAPI, Config=Engine)
 class UActionableBehaviour : public UTraitBehaviour
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(Replicated) TArray<EActionableEventType> ActionEventTypes;  // 0x00C0, size 0x10
     UPROPERTY(Replicated) FActionsRowHandle ActionRowHandle;  // 0x00D0, size 0x18
@@ -12,17 +13,16 @@ public:
     UPROPERTY(Replicated, ReplicatedUsing) TArray<FActionStaminaCostEventPairing> ReplicatedStaminaCosts;  // 0x0138, size 0x10
     UPROPERTY(BlueprintAssignable) FCooldownElapsedDelegate OnCooldownElapsed;  // 0x0148, size 0x10
     UPROPERTY(BlueprintReadWrite) FModifierStatesRowHandle ModifierRowHandle;  // 0x0158, size 0x18
+private:
+    TMap<enum EActionableEventType,int,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<enum EActionableEventType,int,0> > StaminaActionUIDs;  // 0x0170, not reflected
     UPROPERTY(Instanced) UCharacterState* OwnerActorState;  // 0x01C0, size 0x8
     UPROPERTY() AActor* OwnerActor;  // 0x01C8, size 0x8
+    bool bIsActionComplete;  // 0x01D0, not reflected
+    TSet<enum EActionableEventType,DefaultKeyFuncs<enum EActionableEventType,0>,FDefaultSetAllocator> AbortedActions;  // 0x01D8, not reflected
+    TMap<enum EActionableEventType,FName,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<enum EActionableEventType,FName,0> > StartStaminaNotifyNames;  // 0x0228, not reflected
+    TMap<enum EActionableEventType,FTimerHandle,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<enum EActionableEventType,FTimerHandle,0> > CooldownTimers;  // 0x0278, not reflected
     UPROPERTY() UIcarusAnimInstance* AnimatingMeshAnimInstance;  // 0x02C8, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<enum EActionableEventType,int,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<enum EActionableEventType,int,0> > StaminaActionUIDs;  // 0x0170, private
-    bool bIsActionComplete;  // 0x01D0, private
-    TSet<enum EActionableEventType,DefaultKeyFuncs<enum EActionableEventType,0>,FDefaultSetAllocator> AbortedActions;  // 0x01D8, private
-    TMap<enum EActionableEventType,FName,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<enum EActionableEventType,FName,0> > StartStaminaNotifyNames;  // 0x0228, private
-    TMap<enum EActionableEventType,FTimerHandle,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<enum EActionableEventType,FTimerHandle,0> > CooldownTimers;  // 0x0278, private
-
+public:
     UFUNCTION(BlueprintCallable) void AbortAction(EActionableEventType EventType, bool bApplyEndActionStaminaCost);  // parameters 0x2
     UFUNCTION(BlueprintCallable) void ActionComplete(EActionableEventType ActionType);  // parameters 0x1
     UFUNCTION(BlueprintNativeEvent) bool BP_ShouldApplyEndStaminaCost(EActionableEventType EventType);  // parameters 0x2

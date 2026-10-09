@@ -6,7 +6,6 @@ UCLASS()
 class UDamageTypeInfoLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToDamageTypeInfoTable(FName Name, FDamageTypeInfo Data, FDamageTypeInfoRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xB1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakDamageTypeInfoEnum(FDamageTypeInfoEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FDamageTypeInfoRowHandle CastToDamageTypeInfoRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

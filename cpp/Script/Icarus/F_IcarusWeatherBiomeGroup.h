@@ -4,5 +4,6 @@
 USTRUCT()
 struct FIcarusWeatherBiomeGroup : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FBiomesRowHandle> AvaliableBiomes;  // 0x0018, size 0x10
 };

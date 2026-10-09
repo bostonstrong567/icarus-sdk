@@ -6,7 +6,6 @@ UCLASS()
 class UIcarusCheatsFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void EvaluateAutomationScript(UObject* WorldContextObject, const TArray<FString>& ScriptLines, FLatentActionInfo LatentInfo);  // parameters 0x30
     UFUNCTION(BlueprintCallable) static void EvaluateCheatScript(UObject* WorldContextObject, const TArray<FString>& ScriptLines, FLatentActionInfo LatentInfo);  // parameters 0x30
     UFUNCTION(BlueprintCallable) static ACheatController* GetCheatController(UObject* WorldContextObject, int32 PlayerIndex, EValid& Paths);  // parameters 0x18

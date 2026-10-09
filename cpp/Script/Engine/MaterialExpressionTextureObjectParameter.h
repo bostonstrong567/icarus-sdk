@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UMaterialExpressionTextureObjectParameter : public UMaterialExpressionTextureSampleParameter
 {
-public:
 };

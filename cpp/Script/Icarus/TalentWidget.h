@@ -5,11 +5,12 @@
 UCLASS(EditInlineNew)
 class UTalentWidget : public UUserWidget
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FTalentsRowHandle Talent;  // 0x0260, size 0x18
     UPROPERTY(Instanced) TWeakObjectPtr<UTalentGraphWidget> CachedOwningGraphWidget;  // 0x0278, size 0x8
     UPROPERTY(Instanced) TWeakObjectPtr<UTalentTooltipWidget> CachedTooltipWidget;  // 0x0280, size 0x8
-
+public:
     UFUNCTION(BlueprintNativeEvent) void FillTooltip(UTalentTooltipWidget* NewTooltipWidget);  // parameters 0x8
     UFUNCTION(BlueprintImplementableEvent) FString GetStringForFilterSearch();  // parameters 0x10
     UFUNCTION() UWidget* GetTooltip();  // parameters 0x8

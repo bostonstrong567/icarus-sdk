@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFishSpawnConfig : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UGameplayTexture> SpawnMap;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FFIshSpawnZoneSetup> SpawnZones;  // 0x0040, size 0x10
 };

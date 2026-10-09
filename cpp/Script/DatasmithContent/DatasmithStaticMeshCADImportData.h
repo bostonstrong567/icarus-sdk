@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew)
 class UDatasmithStaticMeshCADImportData : public UDatasmithStaticMeshImportData
 {
-public:
 };

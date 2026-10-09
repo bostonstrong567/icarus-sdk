@@ -4,5 +4,6 @@
 USTRUCT()
 struct FMovieSceneEvaluationFieldSegmentPtr : public FMovieSceneEvaluationFieldTrackPtr
 {
+public:
     UPROPERTY() FMovieSceneSegmentIdentifier SegmentID;  // 0x0008, size 0x4
 };

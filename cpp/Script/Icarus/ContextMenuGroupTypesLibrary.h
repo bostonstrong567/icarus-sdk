@@ -6,7 +6,6 @@ UCLASS()
 class UContextMenuGroupTypesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToContextMenuGroupTypesTable(FName Name, FContextMenuGroupType Data, FContextMenuGroupTypesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x59
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakContextMenuGroupTypesEnum(FContextMenuGroupTypesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FContextMenuGroupTypesRowHandle CastToContextMenuGroupTypesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

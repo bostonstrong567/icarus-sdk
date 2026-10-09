@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UMaterialFunctionMaterialLayer : public UMaterialFunction
 {
-public:
 };

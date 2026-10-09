@@ -4,6 +4,7 @@
 USTRUCT()
 struct FPrefabLavaFlowPoint
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FTransform Transform;  // 0x0000, size 0x30
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float FlowSpeed;  // 0x0030, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float BaseToFlowing;  // 0x0034, size 0x4

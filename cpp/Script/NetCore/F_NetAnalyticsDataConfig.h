@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNetAnalyticsDataConfig
 {
+public:
     UPROPERTY(Config) FName DataName;  // 0x0000, size 0x8
     UPROPERTY(Config) bool bEnabled;  // 0x0008, size 0x1
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_SendEvent : public FRigUnitMutable
 {
+public:
     UPROPERTY() ERigEvent Event;  // 0x0068, size 0x1
     UPROPERTY() FRigElementKey Item;  // 0x006C, size 0xC
     UPROPERTY() float OffsetInSeconds;  // 0x0078, size 0x4

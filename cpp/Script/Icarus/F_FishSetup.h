@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFishSetup : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<AFishActor> FishActor;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float MovementSpeed;  // 0x0040, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector2D SizeRange;  // 0x0044, size 0x8

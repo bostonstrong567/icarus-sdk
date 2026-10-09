@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UCS_Wood_Bow_Fire_C : public UMatineeCameraShake
 {
-public:
 };

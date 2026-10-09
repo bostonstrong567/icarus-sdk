@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLevelSequencePlayerSnapshot
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FString MasterName;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FQualifiedFrameTime MasterTime;  // 0x0010, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FQualifiedFrameTime SourceTime;  // 0x0020, size 0x10

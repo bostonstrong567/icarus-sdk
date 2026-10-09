@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSettlementRaid : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float RaidStrength;  // 0x0018, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float RaidStrengthPerLevel;  // 0x001C, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FSettlementRaidWave> RaidSpawnWaves;  // 0x0020, size 0x10

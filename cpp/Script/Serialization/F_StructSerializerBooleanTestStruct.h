@@ -4,6 +4,7 @@
 USTRUCT()
 struct FStructSerializerBooleanTestStruct
 {
+public:
     UPROPERTY() bool BoolFalse;  // 0x0000, size 0x1
     UPROPERTY() bool BoolTrue;  // 0x0001, size 0x1
     UPROPERTY() uint8 Bitfield0 : 1;  // 0x0002, mask 0x01

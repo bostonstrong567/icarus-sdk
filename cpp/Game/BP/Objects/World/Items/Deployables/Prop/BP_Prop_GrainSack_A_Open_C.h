@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Prop_GrainSack_A_Open_C : public ABP_DeployableContainerBase_C
 {
-public:
 };

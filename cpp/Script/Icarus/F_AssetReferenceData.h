@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAssetReferenceData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EAssetType AssetType;  // 0x0018, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<UObject> SoftClassPtr;  // 0x0020, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UObject> SoftObjectPtr;  // 0x0048, size 0x28

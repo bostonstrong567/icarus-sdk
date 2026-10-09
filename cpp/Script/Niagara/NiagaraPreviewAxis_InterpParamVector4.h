@@ -5,7 +5,8 @@
 UCLASS(EditInlineNew)
 class UNiagaraPreviewAxis_InterpParamVector4 : public UNiagaraPreviewAxis_InterpParamBase
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY(EditAnywhere) FVector4 Min;  // 0x0040, size 0x10
     UPROPERTY(EditAnywhere) FVector4 Max;  // 0x0050, size 0x10
 };

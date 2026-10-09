@@ -4,6 +4,7 @@
 USTRUCT()
 struct FCriticalHitProjectile
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float TimeScale;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector CameraOffset;  // 0x0004, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FRotator CameraRotationOffset;  // 0x0010, size 0xC

@@ -5,5 +5,4 @@
 UCLASS()
 class UOreDepositTable : public UIcarusDataTable
 {
-public:
 };

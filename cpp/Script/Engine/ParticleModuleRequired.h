@@ -51,9 +51,8 @@ public:
     UPROPERTY(EditAnywhere) float EmitterDurationLow;  // 0x00F4, size 0x4
     UPROPERTY(EditAnywhere) FVector NormalsCylinderDirection;  // 0x00F8, size 0xC
     UPROPERTY(EditAnywhere) TArray<FName> NamedMaterialOverrides;  // 0x0108, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FSubUVDerivedData DerivedData;  // 0x0118, private
-    FRenderCommandFence ReleaseFence;  // 0x0128, private
-    FSubUVBoundingGeometryBuffer * BoundingGeometryBuffer;  // 0x0138, private
+private:
+    FSubUVDerivedData DerivedData;  // 0x0118, not reflected
+    FRenderCommandFence ReleaseFence;  // 0x0128, not reflected
+    FSubUVBoundingGeometryBuffer * BoundingGeometryBuffer;  // 0x0138, not reflected
 };

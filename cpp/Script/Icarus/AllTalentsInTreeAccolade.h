@@ -6,7 +6,6 @@ UCLASS()
 class UAllTalentsInTreeAccolade : public UAccoladeImpl
 {
 public:
-
     UFUNCTION(BlueprintNativeEvent) void CalculateTalentTotals(UTalentModelInterface_Const* Model, const FTalentTreesRowHandle& TreeHandle, int32& Spent, int32& Total);  // parameters 0x28
 
     // Virtual functions that start here:

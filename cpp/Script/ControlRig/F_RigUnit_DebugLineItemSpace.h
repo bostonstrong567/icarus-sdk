@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_DebugLineItemSpace : public FRigUnit_DebugBaseMutable
 {
+public:
     UPROPERTY() FVector A;  // 0x0068, size 0xC
     UPROPERTY() FVector B;  // 0x0074, size 0xC
     UPROPERTY() FLinearColor Color;  // 0x0080, size 0x10

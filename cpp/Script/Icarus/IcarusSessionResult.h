@@ -8,10 +8,8 @@ class UIcarusSessionResult : public UObject
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FIcarusSession SessionInfo;  // 0x0028, size 0x1C0
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 FriendCount;  // 0x01E8, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bDuplicate;  // 0x01EC
-    FString UniqueID;  // 0x01F0
+    bool bDuplicate;  // 0x01EC, not reflected
+    FString UniqueID;  // 0x01F0, not reflected
 
     UFUNCTION(BlueprintCallable, BlueprintPure) EMissionDifficulty GetDifficulty();  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) int64 GetDuration();  // parameters 0x8

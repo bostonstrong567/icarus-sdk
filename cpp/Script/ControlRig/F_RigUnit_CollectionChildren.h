@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_CollectionChildren : public FRigUnit_CollectionBase
 {
+public:
     UPROPERTY() FRigElementKey Parent;  // 0x0008, size 0xC
     UPROPERTY() bool bIncludeParent;  // 0x0014, size 0x1
     UPROPERTY() bool bRecursive;  // 0x0015, size 0x1

@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UUMG_WidgetHighlightBase_C : public UUserWidget
 {
-public:
 };

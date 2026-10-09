@@ -4,6 +4,7 @@
 USTRUCT()
 struct FEditorImportExportTestDefinition
 {
+public:
     UPROPERTY(EditAnywhere, Config) FFilePath ImportFilePath;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, Config) FString ExportFileExtension;  // 0x0010, size 0x10
     UPROPERTY(EditAnywhere, Config) bool bSkipExport;  // 0x0020, size 0x1

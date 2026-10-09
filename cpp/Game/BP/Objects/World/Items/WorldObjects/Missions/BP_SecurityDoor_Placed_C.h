@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_SecurityDoor_Placed_C : public ABP_SecurityDoor_C
 {
-public:
 };

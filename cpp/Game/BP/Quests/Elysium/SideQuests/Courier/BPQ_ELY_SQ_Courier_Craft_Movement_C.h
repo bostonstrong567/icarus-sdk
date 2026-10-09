@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_ELY_SQ_Courier_Craft_Movement_C : public ABPQ_Collect_Item_WithName_C
 {
-public:
 };

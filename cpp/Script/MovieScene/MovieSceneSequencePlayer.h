@@ -5,13 +5,19 @@
 UCLASS(Abstract)
 class UMovieSceneSequencePlayer : public UObject
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintAssignable) FOnMovieSceneSequencePlayerEvent OnPlay;  // 0x0260, size 0x10
     UPROPERTY(BlueprintAssignable) FOnMovieSceneSequencePlayerEvent OnPlayReverse;  // 0x0270, size 0x10
     UPROPERTY(BlueprintAssignable) FOnMovieSceneSequencePlayerEvent OnStop;  // 0x0280, size 0x10
     UPROPERTY(BlueprintAssignable) FOnMovieSceneSequencePlayerEvent OnPause;  // 0x0290, size 0x10
     UPROPERTY(BlueprintAssignable) FOnMovieSceneSequencePlayerEvent OnFinished;  // 0x02A0, size 0x10
+protected:
     UPROPERTY() TEnumAsByte<EMovieScenePlayerStatus> Status;  // 0x02B0, size 0x1
+    uint32 : 1 bIsEvaluating;  // 0x02B4, not reflected
+    uint32 : 1 bIsMainLevelUpdate;  // 0x02B4, not reflected
+    uint32 : 1 bPendingOnStartedPlaying;  // 0x02B4, not reflected
+    uint32 : 1 bSkipNextUpdate;  // 0x02B4, not reflected
     UPROPERTY(Replicated) uint8 bReversePlayback : 1;  // 0x02B4, mask 0x01
     UPROPERTY(Transient) UMovieSceneSequence* Sequence;  // 0x02B8, size 0x8
     UPROPERTY(Replicated) FFrameNumber StartTime;  // 0x02C0, size 0x4
@@ -20,26 +26,21 @@ public:
     UPROPERTY(Transient) int32 CurrentNumLoops;  // 0x02CC, size 0x4
     UPROPERTY(Replicated) FMovieSceneSequencePlaybackSettings PlaybackSettings;  // 0x02D0, size 0x14
     UPROPERTY(Transient) FMovieSceneRootEvaluationTemplateInstance RootTemplateInstance;  // 0x02E8, size 0xE8
+    FMovieScenePlaybackPosition PlayPosition;  // 0x03D0, not reflected
+    TSharedPtr<FMovieSceneSpawnRegister,0> SpawnRegister;  // 0x0428, not reflected
     UPROPERTY(Replicated) FMovieSceneSequenceReplProperties NetSyncProps;  // 0x0438, size 0x10
     UPROPERTY(Transient) TScriptInterface<IMovieScenePlaybackClient> PlaybackClient;  // 0x0448, size 0x10
     UPROPERTY(Transient) UMovieSceneSequenceTickManager* TickManager;  // 0x0458, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint32 : 1 bPendingOnStartedPlaying;  // 0x02B4, protected
-    uint32 : 1 bIsEvaluating;  // 0x02B4, protected
-    uint32 : 1 bIsMainLevelUpdate;  // 0x02B4, protected
-    uint32 : 1 bSkipNextUpdate;  // 0x02B4, protected
-    FMovieScenePlaybackPosition PlayPosition;  // 0x03D0, protected
-    TSharedPtr<FMovieSceneSpawnRegister,0> SpawnRegister;  // 0x0428, protected
-    FMovieSceneLatentActionManager LatentActionManager;  // 0x0460, protected
-    TSharedPtr<FMovieSceneTimeController,0> TimeController;  // 0x0478, protected
-    UMovieSceneSequencePlayer::FOnMovieSceneSequencePlayerUpdated OnMovieSceneSequencePlayerUpdate;  // 0x0488, private
-    TOptional<double> OldMaxTickRate;  // 0x04A0, private
-    TOptional<float> LastTickGameTimeSeconds;  // 0x04B0, private
-    TOptional<FFrameTime> PauseOnFrame;  // 0x04B8, private
-    TArray<TDelegate<void __cdecl(void),FDefaultDelegateUserPolicy>,TSizedDefaultAllocator<32> > PreEvaluationCallbacks;  // 0x04C8, private
-    TArray<TDelegate<void __cdecl(void),FDefaultDelegateUserPolicy>,TSizedDefaultAllocator<32> > PostEvaluationCallbacks;  // 0x04D8, private
-
+    FMovieSceneLatentActionManager LatentActionManager;  // 0x0460, not reflected
+    TSharedPtr<FMovieSceneTimeController,0> TimeController;  // 0x0478, not reflected
+private:
+    UMovieSceneSequencePlayer::FOnMovieSceneSequencePlayerUpdated OnMovieSceneSequencePlayerUpdate;  // 0x0488, not reflected
+    TOptional<double> OldMaxTickRate;  // 0x04A0, not reflected
+    TOptional<float> LastTickGameTimeSeconds;  // 0x04B0, not reflected
+    TOptional<FFrameTime> PauseOnFrame;  // 0x04B8, not reflected
+    TArray<TDelegate<void __cdecl(void),FDefaultDelegateUserPolicy>,TSizedDefaultAllocator<32> > PreEvaluationCallbacks;  // 0x04C8, not reflected
+    TArray<TDelegate<void __cdecl(void),FDefaultDelegateUserPolicy>,TSizedDefaultAllocator<32> > PostEvaluationCallbacks;  // 0x04D8, not reflected
+public:
     UFUNCTION(BlueprintCallable) void ChangePlaybackDirection();
     UFUNCTION(BlueprintCallable) TArray<UObject*> GetBoundObjects(FMovieSceneObjectBindingID ObjectBinding);  // parameters 0x28
     UFUNCTION(BlueprintCallable, BlueprintPure) FQualifiedFrameTime GetCurrentTime() const;  // parameters 0x10

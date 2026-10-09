@@ -4,5 +4,6 @@
 USTRUCT()
 struct FDragonData_CustomArmLengths
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FDragonData_ArmSizeStruct> CustomArmSizeArray;  // 0x0000, size 0x10
 };

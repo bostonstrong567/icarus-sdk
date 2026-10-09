@@ -5,7 +5,6 @@
 UCLASS()
 class UDataMigratorBase : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   ExecuteMigrator, GetDesiredDataVersion

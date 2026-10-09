@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMathRBFInterpolateQuatFloat_Target
 {
+public:
     UPROPERTY() FQuat Target;  // 0x0000, size 0x10
     UPROPERTY() float Value;  // 0x0010, size 0x4
 };

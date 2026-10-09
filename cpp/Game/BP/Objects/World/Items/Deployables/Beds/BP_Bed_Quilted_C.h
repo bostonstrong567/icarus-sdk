@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Bed_Quilted_C : public ABP_Bed_Wood_C
 {
-public:
 };

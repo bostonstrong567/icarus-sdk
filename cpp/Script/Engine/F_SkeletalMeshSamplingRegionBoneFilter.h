@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSkeletalMeshSamplingRegionBoneFilter
 {
+public:
     UPROPERTY(EditAnywhere) FName BoneName;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) uint8 bIncludeOrExclude : 1;  // 0x0008, mask 0x01
     UPROPERTY(EditAnywhere) uint8 bApplyToChildren : 1;  // 0x0008, mask 0x02

@@ -4,7 +4,6 @@
 USTRUCT()
 struct FMovieSceneEvaluationFieldEntityTree
 {
-
-    // Not reflected:
-    TMovieSceneEvaluationTree<FMovieSceneEvaluationFieldEntityTree::FEntityAndMetaDataIndex> SerializedData;  // 0x0000
+public:
+    TMovieSceneEvaluationTree<FMovieSceneEvaluationFieldEntityTree::FEntityAndMetaDataIndex> SerializedData;  // 0x0000, not reflected
 };

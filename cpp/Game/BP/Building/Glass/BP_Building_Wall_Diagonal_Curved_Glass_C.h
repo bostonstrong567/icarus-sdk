@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Building_Wall_Diagonal_Curved_Glass_C : public ABP_Building_Wall_Diagonal_Curved_C
 {
-public:
 };

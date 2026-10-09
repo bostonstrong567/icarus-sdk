@@ -6,7 +6,5 @@ UCLASS(Transient, Config=Engine)
 class USteamNetDriver : public UIpNetDriver
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bIsPassthrough;  // 0x07D0
+    bool bIsPassthrough;  // 0x07D0, not reflected
 };

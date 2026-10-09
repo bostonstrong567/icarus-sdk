@@ -5,5 +5,4 @@
 UCLASS()
 class UConsumableTable : public UIcarusDataTable
 {
-public:
 };

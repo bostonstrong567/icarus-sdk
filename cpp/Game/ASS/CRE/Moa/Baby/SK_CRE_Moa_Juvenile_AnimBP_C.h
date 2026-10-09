@@ -5,5 +5,4 @@
 UCLASS(Transient, Config=Engine)
 class USK_CRE_Moa_Juvenile_AnimBP_C : public USK_CRE_Moa_AnimBP_C
 {
-public:
 };

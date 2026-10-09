@@ -6,6 +6,5 @@ UCLASS()
 class UProspectFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static TMap<FWorldBossesRowHandle, FVector2D> GetWorldBossesForProspect(const FProspectListRowHandle& Prospect);  // parameters 0x68
 };

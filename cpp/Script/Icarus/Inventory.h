@@ -5,6 +5,7 @@
 UCLASS(Transient, Config=Engine)
 class UInventory : public UTraitBehaviour
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintAssignable) FOnInventoryItemChanged OnInventoryItemChanged;  // 0x00C8, size 0x10
     UPROPERTY(BlueprintAssignable) FOnAllInventoryItemsChanged OnAllInventoryItemsChanged;  // 0x00D8, size 0x10
@@ -25,25 +26,25 @@ public:
     UPROPERTY() TMap<FEquippableRowHandle, FEquippableModifierList> CurrentlyEquippedModifiers;  // 0x02A8, size 0x50
     UPROPERTY(BlueprintAssignable) FReplicatedStackMultipliersUpdatedSignature OnReplicatedStackMultipliersUpdated;  // 0x02F8, size 0x10
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) TArray<float> ReplicatedModifierStackMultipliers;  // 0x0308, size 0x10
+    TMap<FItemsStaticRowHandle,TArray<FInventoryBag,TSizedDefaultAllocator<32> >,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FItemsStaticRowHandle,TArray<FInventoryBag,TSizedDefaultAllocator<32> >,0> > BagCache;  // 0x0350, not reflected
+protected:
     UPROPERTY(Replicated) FInventoryInfoRowHandle InventoryInfoRowHandle;  // 0x0318, size 0x18
+private:
+    FTimerHandle RetryRegisterWithHUDTimer;  // 0x00C0, not reflected
+    bool TriggerWeightUpdate;  // 0x0330, not reflected
+    bool RemoveBypass;  // 0x0331, not reflected
+    bool bIgnoreQuery;  // 0x0332, not reflected
+    float CurrentSpoilTime;  // 0x0334, not reflected
     UPROPERTY(Replicated) float SpoilTickRate;  // 0x0338, size 0x4
+    float CurrentLeakTime;  // 0x033C, not reflected
+    float MaxLeakTime;  // 0x0340, not reflected
+    int32 AdditionalSlotableSlots;  // 0x0344, not reflected
+    int32 CachedSlotCount;  // 0x0348, not reflected
+    bool bShouldInvalidateStatContainerOnUpdate;  // 0x034C, not reflected
     UPROPERTY(Replicated, Instanced) TWeakObjectPtr<UInventory> ParentInventory;  // 0x03A0, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FTimerHandle RetryRegisterWithHUDTimer;  // 0x00C0, private
-    bool TriggerWeightUpdate;  // 0x0330, private
-    bool RemoveBypass;  // 0x0331, private
-    bool bIgnoreQuery;  // 0x0332, private
-    float CurrentSpoilTime;  // 0x0334, private
-    float CurrentLeakTime;  // 0x033C, private
-    float MaxLeakTime;  // 0x0340, private
-    int32 AdditionalSlotableSlots;  // 0x0344, private
-    int32 CachedSlotCount;  // 0x0348, private
-    bool bShouldInvalidateStatContainerOnUpdate;  // 0x034C, private
-    TMap<FItemsStaticRowHandle,TArray<FInventoryBag,TSizedDefaultAllocator<32> >,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FItemsStaticRowHandle,TArray<FInventoryBag,TSizedDefaultAllocator<32> >,0> > BagCache;  // 0x0350
-    TArray<int,TSizedDefaultAllocator<32> > PendingBagSlots;  // 0x03A8, private
-    bool bRegisteredForContainerManagerUpdate;  // 0x03B8, private
-
+    TArray<int,TSizedDefaultAllocator<32> > PendingBagSlots;  // 0x03A8, not reflected
+    bool bRegisteredForContainerManagerUpdate;  // 0x03B8, not reflected
+public:
     UFUNCTION() void AddEquippableModifier(UEquippableModifier* Modifier);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void AddSlots(int32 SlotsToAdd, FTagQueriesRowHandle QueryOverride);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) bool ApplyAlteration(int32 Location, FAlterationsRowHandle AlterationsRow);  // parameters 0x1D

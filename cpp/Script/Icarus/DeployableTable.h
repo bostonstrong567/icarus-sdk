@@ -5,5 +5,4 @@
 UCLASS()
 class UDeployableTable : public UIcarusDataTable
 {
-public:
 };

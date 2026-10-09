@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNiagaraCompilerTag
 {
+public:
     UPROPERTY() FNiagaraVariable Variable;  // 0x0000, size 0x20
     UPROPERTY() FString StringValue;  // 0x0020, size 0x10
 };

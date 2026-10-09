@@ -6,7 +6,6 @@ UCLASS()
 class UBiomeAudioDataLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToBiomeAudioDataTable(FName Name, FBiomeAudioData Data, FBiomeAudioDataRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xA9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakBiomeAudioDataEnum(FBiomeAudioDataEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FBiomeAudioDataRowHandle CastToBiomeAudioDataRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

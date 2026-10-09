@@ -4,6 +4,7 @@
 USTRUCT()
 struct FDistributionLookupTable
 {
+public:
     UPROPERTY() float TimeScale;  // 0x0000, size 0x4
     UPROPERTY() float TimeBias;  // 0x0004, size 0x4
     UPROPERTY() TArray<float> Values;  // 0x0008, size 0x10

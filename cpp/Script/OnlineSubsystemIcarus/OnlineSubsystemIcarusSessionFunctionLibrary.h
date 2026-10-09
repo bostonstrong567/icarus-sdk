@@ -6,7 +6,6 @@ UCLASS()
 class UOnlineSubsystemIcarusSessionFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void CancelMatchMaking(FName SessionName);  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) static FString GetAuthToken(int32 LocalUserNum);  // parameters 0x18
     UFUNCTION(BlueprintCallable, BlueprintPure) static FConnectionString GetConnectionString();  // parameters 0x38

@@ -8,11 +8,10 @@ class USteamWSRequestUGCDetailsCallbackProxy : public UOnlineBlueprintCallProxyB
 public:
     UPROPERTY(BlueprintAssignable) FBlueprintWorkshopDetailsDelegate OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FBlueprintWorkshopDetailsDelegate OnFailure;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    CCallResult<USteamWSRequestUGCDetailsCallbackProxy,SteamUGCQueryCompleted_t> m_callResultUGCRequestDetails;  // 0x0050, private
-    FBPSteamWorkshopID WorkShopID;  // 0x0078, private
-    UObject * WorldContextObject;  // 0x0080, private
-
+private:
+    CCallResult<USteamWSRequestUGCDetailsCallbackProxy,SteamUGCQueryCompleted_t> m_callResultUGCRequestDetails;  // 0x0050, not reflected
+    FBPSteamWorkshopID WorkShopID;  // 0x0078, not reflected
+    UObject * WorldContextObject;  // 0x0080, not reflected
+public:
     UFUNCTION(BlueprintCallable) static USteamWSRequestUGCDetailsCallbackProxy* GetWorkshopItemDetails(UObject* WorldContextObject, FBPSteamWorkshopID WorkShopID);  // parameters 0x18
 };

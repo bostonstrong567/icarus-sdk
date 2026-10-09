@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_ChainHarmonics : public FRigUnit_HighlevelBaseMutable
 {
+public:
     UPROPERTY() FName ChainRoot;  // 0x0068, size 0x8
     UPROPERTY() FVector Speed;  // 0x0070, size 0xC
     UPROPERTY() FRigUnit_ChainHarmonics_Reach Reach;  // 0x007C, size 0x28

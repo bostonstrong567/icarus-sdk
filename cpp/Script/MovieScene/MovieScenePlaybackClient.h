@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class UMovieScenePlaybackClient : public UInterface
 {
-public:
 };

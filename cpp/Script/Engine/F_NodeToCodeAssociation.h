@@ -4,9 +4,8 @@
 USTRUCT()
 struct FNodeToCodeAssociation
 {
-
-    // Not reflected:
-    TWeakObjectPtr<UEdGraphNode,FWeakObjectPtr> Node;  // 0x0000
-    TWeakObjectPtr<UFunction,FWeakObjectPtr> Scope;  // 0x0008
-    int32 Offset;  // 0x0010
+public:
+    TWeakObjectPtr<UEdGraphNode,FWeakObjectPtr> Node;  // 0x0000, not reflected
+    TWeakObjectPtr<UFunction,FWeakObjectPtr> Scope;  // 0x0008, not reflected
+    int32 Offset;  // 0x0010, not reflected
 };

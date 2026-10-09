@@ -6,8 +6,6 @@ UCLASS()
 class UEnumProperty : public UProperty
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    UNumericProperty * UnderlyingProp;  // 0x0070
-    UEnum * Enum;  // 0x0078
+    UNumericProperty * UnderlyingProp;  // 0x0070, not reflected
+    UEnum * Enum;  // 0x0078, not reflected
 };

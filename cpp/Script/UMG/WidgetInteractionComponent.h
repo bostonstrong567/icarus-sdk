@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class UWidgetInteractionComponent : public USceneComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintAssignable) FOnHoveredWidgetChanged OnHoveredWidgetChanged;  // 0x01F8, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 VirtualUserIndex;  // 0x0218, size 0x4
@@ -17,6 +18,11 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float DebugSphereLineThickness;  // 0x022C, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float DebugLineThickness;  // 0x0230, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FLinearColor DebugColor;  // 0x0234, size 0x10
+protected:
+    TSharedPtr<FSlateVirtualUserHandle,0> VirtualUser;  // 0x0208, not reflected
+    FWeakWidgetPath LastWidgetPath;  // 0x0248, not reflected
+    FModifierKeysState ModifierKeys;  // 0x0268, not reflected
+    TSet<FKey,DefaultKeyFuncs<FKey,0>,FDefaultSetAllocator> PressedKeys;  // 0x0270, not reflected
     UPROPERTY(Transient) FHitResult CustomHitResult;  // 0x02C0, size 0x88
     UPROPERTY(Transient) FVector2D LocalHitLocation;  // 0x0348, size 0x8
     UPROPERTY(Transient) FVector2D LastLocalHitLocation;  // 0x0350, size 0x8
@@ -25,13 +31,7 @@ public:
     UPROPERTY(Transient) bool bIsHoveredWidgetInteractable;  // 0x03E8, size 0x1
     UPROPERTY(Transient) bool bIsHoveredWidgetFocusable;  // 0x03E9, size 0x1
     UPROPERTY(Transient) bool bIsHoveredWidgetHitTestVisible;  // 0x03EA, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<FSlateVirtualUserHandle,0> VirtualUser;  // 0x0208, protected
-    FWeakWidgetPath LastWidgetPath;  // 0x0248, protected
-    FModifierKeysState ModifierKeys;  // 0x0268, protected
-    TSet<FKey,DefaultKeyFuncs<FKey,0>,FDefaultSetAllocator> PressedKeys;  // 0x0270, protected
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) FVector2D Get2DHitLocation() const;  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) UWidgetComponent* GetHoveredWidgetComponent() const;  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) FHitResult GetLastHitResult() const;  // parameters 0x88

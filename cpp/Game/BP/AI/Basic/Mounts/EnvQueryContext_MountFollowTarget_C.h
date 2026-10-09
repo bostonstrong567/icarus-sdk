@@ -6,6 +6,5 @@ UCLASS(EditInlineNew, Config=Engine)
 class UEnvQueryContext_MountFollowTarget_C : public UEnvQueryContext_BlueprintBase
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void ProvideSingleActor(UObject* QuerierObject, AActor* QuerierActor, AActor*& ResultingActor) const;  // parameters 0x18
 };

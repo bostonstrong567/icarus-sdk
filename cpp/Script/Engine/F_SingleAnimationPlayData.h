@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSingleAnimationPlayData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UAnimationAsset* AnimToPlay;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bSavedLooping : 1;  // 0x0008, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bSavedPlaying : 1;  // 0x0008, mask 0x02

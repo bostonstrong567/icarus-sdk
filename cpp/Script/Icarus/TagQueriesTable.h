@@ -5,5 +5,4 @@
 UCLASS()
 class UTagQueriesTable : public UIcarusDataTable
 {
-public:
 };

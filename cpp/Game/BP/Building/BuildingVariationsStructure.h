@@ -4,5 +4,6 @@
 USTRUCT()
 struct BuildingVariationsStructure
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<SoftBuildingGroupArray> BuildingTypes;  // 0x0000, size 0x10
 };

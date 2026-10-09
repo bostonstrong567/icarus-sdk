@@ -10,7 +10,5 @@ public:
     UPROPERTY(EditAnywhere) TEnumAsByte<EPhysicsType> PhysicsType;  // 0x0030, size 0x1
     UPROPERTY(EditAnywhere) TEnumAsByte<ECollisionTraceFlag> CollisionTraceFlag;  // 0x0031, size 0x1
     UPROPERTY(EditAnywhere) TEnumAsByte<EBodyCollisionResponse> CollisionReponse;  // 0x0032, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<physx::PxTriangleMesh *,TSizedDefaultAllocator<32> > TriMeshes;  // 0x0038
+    TArray<physx::PxTriangleMesh *,TSizedDefaultAllocator<32> > TriMeshes;  // 0x0038, not reflected
 };

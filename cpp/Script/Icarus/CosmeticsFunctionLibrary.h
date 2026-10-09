@@ -6,7 +6,6 @@ UCLASS()
 class UCosmeticsFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static bool IsDLCPackageInstalled(FDLCPackageDataRowHandle DLCPackage);  // parameters 0x19
     UFUNCTION(BlueprintCallable) static void LogDLCInfo();
 };

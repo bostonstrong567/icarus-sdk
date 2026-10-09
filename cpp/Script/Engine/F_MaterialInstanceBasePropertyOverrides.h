@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMaterialInstanceBasePropertyOverrides
 {
+public:
     UPROPERTY(EditAnywhere) uint8 bOverride_OpacityMaskClipValue : 1;  // 0x0000, mask 0x01
     UPROPERTY(EditAnywhere) uint8 bOverride_BlendMode : 1;  // 0x0000, mask 0x02
     UPROPERTY(EditAnywhere) uint8 bOverride_ShadingModel : 1;  // 0x0000, mask 0x04

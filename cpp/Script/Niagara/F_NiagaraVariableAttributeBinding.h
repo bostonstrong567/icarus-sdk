@@ -4,6 +4,8 @@
 USTRUCT()
 struct FNiagaraVariableAttributeBinding
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY() FNiagaraVariableBase ParamMapVariable;  // 0x0000, size 0xC
     UPROPERTY() FNiagaraVariable DataSetVariable;  // 0x0010, size 0x20
     UPROPERTY() FNiagaraVariable RootVariable;  // 0x0030, size 0x20

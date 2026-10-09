@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class USK_CRE_GhostCroc_Swimming_CtrlRig_C : public UControlRig
 {
-public:
 };

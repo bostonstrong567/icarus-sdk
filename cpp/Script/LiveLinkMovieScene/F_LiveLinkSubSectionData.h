@@ -4,5 +4,6 @@
 USTRUCT()
 struct FLiveLinkSubSectionData
 {
+public:
     UPROPERTY() TArray<FLiveLinkPropertyData> Properties;  // 0x0000, size 0x10
 };

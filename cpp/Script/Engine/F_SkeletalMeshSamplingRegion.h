@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSkeletalMeshSamplingRegion
 {
+public:
     UPROPERTY(EditAnywhere) FName Name;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) int32 LODIndex;  // 0x0008, size 0x4
     UPROPERTY(EditAnywhere) uint8 bSupportUniformlyDistributedSampling : 1;  // 0x000C, mask 0x01

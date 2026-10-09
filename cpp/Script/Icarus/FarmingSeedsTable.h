@@ -5,5 +5,4 @@
 UCLASS()
 class UFarmingSeedsTable : public UIcarusDataTable
 {
-public:
 };

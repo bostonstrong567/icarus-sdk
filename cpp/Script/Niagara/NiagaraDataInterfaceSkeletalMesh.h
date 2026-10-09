@@ -19,7 +19,5 @@ public:
     UPROPERTY(EditAnywhere) uint8 bExcludeBone : 1;  // 0x00B8, mask 0x01
     UPROPERTY(EditAnywhere) int32 UvSetIndex;  // 0x00BC, size 0x4
     UPROPERTY(EditAnywhere) bool bRequireCurrentFrameData;  // 0x00C0, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint32 ChangeId;  // 0x00C4
+    uint32 ChangeId;  // 0x00C4, not reflected
 };

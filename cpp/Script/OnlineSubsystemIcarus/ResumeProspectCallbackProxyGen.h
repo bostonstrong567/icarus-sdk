@@ -8,9 +8,8 @@ class UResumeProspectCallbackProxyGen : public UOnlineBlueprintCallProxyBase
 public:
     UPROPERTY(BlueprintAssignable) FOnResumeProspectEventSignature OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FOnResumeProspectEventSignature OnFail;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FReqResumeProspect ReqResumeProspect;  // 0x0050, private
-
+private:
+    FReqResumeProspect ReqResumeProspect;  // 0x0050, not reflected
+public:
     UFUNCTION(BlueprintCallable) static UResumeProspectCallbackProxyGen* ResumeProspect(const FReqResumeProspect& Request);  // parameters 0x20
 };

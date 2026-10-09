@@ -4,6 +4,7 @@
 USTRUCT()
 struct FPlayerStartingStats : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<FStatsEnum, int32> StatsGranted;  // 0x0018, size 0x50
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSurvivalTriggersRowHandle SurvivalTriggers;  // 0x0068, size 0x18
 };

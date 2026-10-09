@@ -4,5 +4,6 @@
 USTRUCT()
 struct FRigUnit_ControlName : public FRigUnit
 {
+public:
     UPROPERTY() FName Control;  // 0x0008, size 0x8
 };

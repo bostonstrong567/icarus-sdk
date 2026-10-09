@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFieldGuideRecipeInfo
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<FCraftingInput> CraftingInputsOut;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<FQueryInput> QueryInputsOut;  // 0x0010, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<FItemsStaticRowHandle> CraftedAtOut;  // 0x0020, size 0x10

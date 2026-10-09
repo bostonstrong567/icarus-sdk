@@ -6,9 +6,7 @@ UCLASS()
 class UMapProperty : public UProperty
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    UProperty * KeyProp;  // 0x0070
-    UProperty * ValueProp;  // 0x0078
-    FScriptMapLayout MapLayout;  // 0x0080
+    UProperty * KeyProp;  // 0x0070, not reflected
+    UProperty * ValueProp;  // 0x0078, not reflected
+    FScriptMapLayout MapLayout;  // 0x0080, not reflected
 };

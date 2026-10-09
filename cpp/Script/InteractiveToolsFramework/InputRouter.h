@@ -5,24 +5,24 @@
 UCLASS(Transient)
 class UInputRouter : public UObject
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY() bool bAutoInvalidateOnHover;  // 0x0028, size 0x1
     UPROPERTY() bool bAutoInvalidateOnCapture;  // 0x0029, size 0x1
+protected:
+    IToolsContextTransactionsAPI * TransactionsAPI;  // 0x0030, not reflected
     UPROPERTY() UInputBehaviorSet* ActiveInputBehaviors;  // 0x0038, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    IToolsContextTransactionsAPI * TransactionsAPI;  // 0x0030, protected
-    UInputBehavior * ActiveKeyboardCapture;  // 0x0040, protected
-    void * ActiveKeyboardCaptureOwner;  // 0x0048, protected
-    FInputCaptureData ActiveKeyboardCaptureData;  // 0x0050, protected
-    UInputBehavior * ActiveLeftCapture;  // 0x0060, protected
-    void * ActiveLeftCaptureOwner;  // 0x0068, protected
-    FInputCaptureData ActiveLeftCaptureData;  // 0x0070, protected
-    UInputBehavior * ActiveRightCapture;  // 0x0080, protected
-    void * ActiveRightCaptureOwner;  // 0x0088, protected
-    FInputCaptureData ActiveRightCaptureData;  // 0x0090, protected
-    UInputBehavior * ActiveLeftHoverCapture;  // 0x00A0, protected
-    void * ActiveLeftHoverCaptureOwner;  // 0x00A8, protected
+    UInputBehavior * ActiveKeyboardCapture;  // 0x0040, not reflected
+    void * ActiveKeyboardCaptureOwner;  // 0x0048, not reflected
+    FInputCaptureData ActiveKeyboardCaptureData;  // 0x0050, not reflected
+    UInputBehavior * ActiveLeftCapture;  // 0x0060, not reflected
+    void * ActiveLeftCaptureOwner;  // 0x0068, not reflected
+    FInputCaptureData ActiveLeftCaptureData;  // 0x0070, not reflected
+    UInputBehavior * ActiveRightCapture;  // 0x0080, not reflected
+    void * ActiveRightCaptureOwner;  // 0x0088, not reflected
+    FInputCaptureData ActiveRightCaptureData;  // 0x0090, not reflected
+    UInputBehavior * ActiveLeftHoverCapture;  // 0x00A0, not reflected
+    void * ActiveLeftHoverCaptureOwner;  // 0x00A8, not reflected
 
     // Virtual functions that start here:
     //   DeregisterSource, ForceTerminateAll, ForceTerminateSource, HasActiveMouseCapture, Initialize

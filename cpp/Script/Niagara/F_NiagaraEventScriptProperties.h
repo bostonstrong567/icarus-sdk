@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNiagaraEventScriptProperties : public FNiagaraEmitterScriptProperties
 {
+public:
     UPROPERTY(EditAnywhere) EScriptExecutionMode ExecutionMode;  // 0x0028, size 0x1
     UPROPERTY(EditAnywhere) uint32 SpawnNumber;  // 0x002C, size 0x4
     UPROPERTY(EditAnywhere) uint32 MaxEventsPerFrame;  // 0x0030, size 0x4

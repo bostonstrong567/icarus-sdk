@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class UMapManagerRecorderComponent : public UIcarusStateRecorderComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(SaveGame) FMapManagerRecord Record;  // 0x00D8, size 0x60
 };

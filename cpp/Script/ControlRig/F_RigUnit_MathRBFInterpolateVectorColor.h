@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_MathRBFInterpolateVectorColor : public FRigUnit_MathRBFInterpolateVectorBase
 {
+public:
     UPROPERTY() TArray<FMathRBFInterpolateVectorColor_Target> Targets;  // 0x00B0, size 0x10
     UPROPERTY() FLinearColor Output;  // 0x00C0, size 0x10
 };

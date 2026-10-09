@@ -15,22 +15,20 @@ public:
     UPROPERTY() uint8 bSharedCookedData : 1;  // 0x00A0, mask 0x20
     UPROPERTY() uint8 bGenerateMirroredCollision : 1;  // 0x00A0, mask 0x40
     UPROPERTY() uint8 bSupportUVsAndFaceRemap : 1;  // 0x00A0, mask 0x80
+    uint8 : 1 bCreatedPhysicsMeshes;  // 0x00A1, not reflected
+    uint8 : 1 bFailedToCreatePhysicsMeshes;  // 0x00A1, not reflected
+    uint8 : 1 bHasCookedCollisionData;  // 0x00A1, not reflected
+    uint8 : 1 bNeverNeedsCookedCollisionData;  // 0x00A1, not reflected
     UPROPERTY(EditAnywhere) UPhysicalMaterial* PhysMaterial;  // 0x00A8, size 0x8
     UPROPERTY(EditAnywhere) FWalkableSlopeOverride WalkableSlopeOverride;  // 0x00B0, size 0x10
+    FFormatContainer CookedFormatData;  // 0x00C0, not reflected
+    FGuid BodySetupGuid;  // 0x00D8, not reflected
+    FBodySetupUVInfo UVInfo;  // 0x00E8, not reflected
+    TArray<int,TSizedDefaultAllocator<32> > FaceRemap;  // 0x0118, not reflected
     UPROPERTY(EditAnywhere) FBodyInstance DefaultInstance;  // 0x0128, size 0x158
+    FFormatContainer * CookedFormatDataOverride;  // 0x0280, not reflected
     UPROPERTY() FVector BuildScale3D;  // 0x0288, size 0xC
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint8 : 1 bCreatedPhysicsMeshes;  // 0x00A1
-    uint8 : 1 bFailedToCreatePhysicsMeshes;  // 0x00A1
-    uint8 : 1 bHasCookedCollisionData;  // 0x00A1
-    uint8 : 1 bNeverNeedsCookedCollisionData;  // 0x00A1
-    FFormatContainer CookedFormatData;  // 0x00C0
-    FGuid BodySetupGuid;  // 0x00D8
-    FBodySetupUVInfo UVInfo;  // 0x00E8
-    TArray<int,TSizedDefaultAllocator<32> > FaceRemap;  // 0x0118
-    FFormatContainer * CookedFormatDataOverride;  // 0x0280
-    FPhysXCookHelper * CurrentCookHelper;  // 0x0298
+    FPhysXCookHelper * CurrentCookHelper;  // 0x0298, not reflected
 
     // Virtual functions that start here:
     //   CalculateMass, CreatePhysicsMeshes, GetVolume, InvalidatePhysicsData

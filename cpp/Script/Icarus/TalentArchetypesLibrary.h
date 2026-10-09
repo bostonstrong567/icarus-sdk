@@ -6,7 +6,6 @@ UCLASS()
 class UTalentArchetypesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToTalentArchetypesTable(FName Name, FTalentArchetype Data, FTalentArchetypesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xC1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakTalentArchetypesEnum(FTalentArchetypesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FTalentArchetypesRowHandle CastToTalentArchetypesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FXRGestureConfig
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bTap;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bHold;  // 0x0001, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ESpatialInputGestureAxis AxisGesture;  // 0x0002, size 0x1

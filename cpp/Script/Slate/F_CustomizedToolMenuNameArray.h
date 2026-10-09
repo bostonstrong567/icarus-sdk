@@ -4,5 +4,6 @@
 USTRUCT()
 struct FCustomizedToolMenuNameArray
 {
+public:
     UPROPERTY() TArray<FName> Names;  // 0x0000, size 0x10
 };

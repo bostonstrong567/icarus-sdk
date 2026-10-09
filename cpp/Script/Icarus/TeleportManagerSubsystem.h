@@ -5,7 +5,8 @@
 UCLASS()
 class UTeleportManagerSubsystem : public UWorldSubsystem
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() TMap<FString, FLoadedLevelInfo> LoadedLevelInfo;  // 0x0030, size 0x50
     UPROPERTY() TWeakObjectPtr<AIcarusPlayerCharacter> WaitingCharacter;  // 0x0080, size 0x8
     UPROPERTY() ULevelStreamingDynamic* WaitingLevel;  // 0x0088, size 0x8
@@ -13,10 +14,8 @@ public:
     UPROPERTY() TMap<int32, FRegisteredTeleporters> RegisteredBaseTeleports;  // 0x0098, size 0x50
     UPROPERTY() TMap<int32, FRegisteredTeleporters> RegisteredInstancedTeleports;  // 0x00E8, size 0x50
     UPROPERTY() TMap<int32, ABaseLevelCaveRecorderActor*> RegisteredRecorders;  // 0x0138, size 0x50
-
-    // Not reflected: the engine's scripting cannot see these.
-    FString LastLoadLevelUniqueLevelName;  // 0x0188, private
-
+    FString LastLoadLevelUniqueLevelName;  // 0x0188, not reflected
+public:
     UFUNCTION() void ClientLevelLoadHasCompleted();
     UFUNCTION() void Client_LoadLevel(const FTeleportInfo& TeleportInfo, const FVector& LocationToLoadLevel);  // parameters 0xCC
     UFUNCTION() void Client_UnloadLevel(FString UniqueLevelName);  // parameters 0x10

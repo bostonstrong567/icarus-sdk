@@ -5,5 +5,4 @@
 UCLASS()
 class UNumericProperty : public UProperty
 {
-public:
 };

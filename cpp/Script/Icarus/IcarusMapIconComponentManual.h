@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UIcarusMapIconComponentManual : public UIcarusMapIconComponent
 {
-public:
 };

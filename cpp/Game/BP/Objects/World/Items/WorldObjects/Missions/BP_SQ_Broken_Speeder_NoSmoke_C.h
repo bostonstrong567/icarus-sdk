@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_SQ_Broken_Speeder_NoSmoke_C : public ABP_WorldObject_C
 {
-public:
 };

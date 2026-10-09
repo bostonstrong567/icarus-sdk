@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_ELY_Story_4_Lab_Travel2_C : public ABPQ_Common_Travel_MapIcon_ClearedOnComplete_C
 {
-public:
 };

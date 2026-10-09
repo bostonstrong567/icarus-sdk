@@ -4,11 +4,10 @@
 USTRUCT()
 struct FMovieScene3DTransformKeyStruct : public FMovieSceneKeyStruct
 {
+public:
     UPROPERTY(EditAnywhere) FVector Location;  // 0x0008, size 0xC
     UPROPERTY(EditAnywhere) FRotator Rotation;  // 0x0014, size 0xC
     UPROPERTY(EditAnywhere) FVector Scale;  // 0x0020, size 0xC
     UPROPERTY(EditAnywhere) FFrameNumber Time;  // 0x002C, size 0x4
-
-    // Not reflected:
-    FMovieSceneKeyStructHelper KeyStructInterop;  // 0x0030
+    FMovieSceneKeyStructHelper KeyStructInterop;  // 0x0030, not reflected
 };

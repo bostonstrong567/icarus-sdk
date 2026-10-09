@@ -4,5 +4,6 @@
 USTRUCT()
 struct FDragonData_StickySocketStruct
 {
+public:
     UPROPERTY(EditAnywhere) TArray<FBoneSocketTarget> sticky_socket_array;  // 0x0000, size 0x10
 };

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UNavArea_LowHeight : public UNavArea
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSolverCollisionData
 {
+public:
     UPROPERTY() FVector Location;  // 0x0000, size 0xC
     UPROPERTY() FVector AccumulatedImpulse;  // 0x000C, size 0xC
     UPROPERTY() FVector Normal;  // 0x0018, size 0xC

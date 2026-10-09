@@ -5,7 +5,8 @@
 UCLASS()
 class URuntimeVirtualTexture : public UObject
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 TileCount;  // 0x0028, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 TileSize;  // 0x002C, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 TileBorderSize;  // 0x0030, size 0x4
@@ -20,12 +21,11 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TEnumAsByte<TextureGroup> LODGroup;  // 0x0040, size 0x1
     UPROPERTY(Deprecated) int32 Size;  // 0x0044, size 0x4
     UPROPERTY(Deprecated) URuntimeVirtualTextureStreamingProxy* StreamingTexture;  // 0x0048, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FRuntimeVirtualTextureRenderResource * Resource;  // 0x0050, private
-    FVector4[3] WorldToUVTransformParameters;  // 0x0060, private
-    FVector4 WorldHeightUnpackParameter;  // 0x0090, private
-
+private:
+    FRuntimeVirtualTextureRenderResource * Resource;  // 0x0050, not reflected
+    FVector4[3] WorldToUVTransformParameters;  // 0x0060, not reflected
+    FVector4 WorldHeightUnpackParameter;  // 0x0090, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) int32 GetPageTableSize() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) int32 GetSize() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) int32 GetTileBorderSize() const;  // parameters 0x4

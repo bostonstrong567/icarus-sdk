@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_SkeletalItem_Pistol_CHAC_C : public ABP_SkeletalItem_SGL_Pistol_C
 {
-public:
 };

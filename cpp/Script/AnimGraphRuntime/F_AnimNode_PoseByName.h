@@ -4,9 +4,9 @@
 USTRUCT()
 struct FAnimNode_PoseByName : public FAnimNode_PoseHandler
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName PoseName;  // 0x0080, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float PoseWeight;  // 0x0088, size 0x4
-
-    // Not reflected:
-    FName CurrentPoseName;  // 0x008C
+private:
+    FName CurrentPoseName;  // 0x008C, not reflected
 };

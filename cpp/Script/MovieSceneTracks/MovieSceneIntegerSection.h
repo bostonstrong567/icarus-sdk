@@ -5,6 +5,7 @@
 UCLASS(MinimalAPI)
 class UMovieSceneIntegerSection : public UMovieSceneSection, public IMovieSceneEntityProvider
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() FMovieSceneIntegerChannel IntegerCurve;  // 0x00F0, size 0x90
 };

@@ -8,9 +8,8 @@ class USyncAccountFlagsCallbackProxyGen : public UOnlineBlueprintCallProxyBase
 public:
     UPROPERTY(BlueprintAssignable) FOnSyncAccountFlagsEventSignature OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FOnSyncAccountFlagsEventSignature OnFail;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FReqSyncAccountFlags ReqSyncAccountFlags;  // 0x0050, private
-
+private:
+    FReqSyncAccountFlags ReqSyncAccountFlags;  // 0x0050, not reflected
+public:
     UFUNCTION(BlueprintCallable) static USyncAccountFlagsCallbackProxyGen* SyncAccountFlags(const FReqSyncAccountFlags& Request);  // parameters 0x28
 };

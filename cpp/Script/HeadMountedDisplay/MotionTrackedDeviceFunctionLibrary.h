@@ -6,7 +6,6 @@ UCLASS()
 class UMotionTrackedDeviceFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void DisableMotionTrackingForComponent(UMotionControllerComponent* MotionControllerComponent);  // parameters 0x8
     UFUNCTION(BlueprintCallable) static void DisableMotionTrackingOfAllControllers();
     UFUNCTION(BlueprintCallable) static void DisableMotionTrackingOfControllersForPlayer(int32 PlayerIndex);  // parameters 0x4

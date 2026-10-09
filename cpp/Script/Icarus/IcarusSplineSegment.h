@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UIcarusSplineSegment : public USceneComponent
 {
-public:
 };

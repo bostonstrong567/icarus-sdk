@@ -8,9 +8,8 @@ class URemoveSelectedDropshipCallbackProxyGen : public UOnlineBlueprintCallProxy
 public:
     UPROPERTY(BlueprintAssignable) FOnRemoveSelectedDropshipEventSignature OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FOnRemoveSelectedDropshipEventSignature OnFail;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FReqRemoveSelectedDropship ReqRemoveSelectedDropship;  // 0x0050, private
-
+private:
+    FReqRemoveSelectedDropship ReqRemoveSelectedDropship;  // 0x0050, not reflected
+public:
     UFUNCTION(BlueprintCallable) static URemoveSelectedDropshipCallbackProxyGen* RemoveSelectedDropship(const FReqRemoveSelectedDropship& Request);  // parameters 0x20
 };

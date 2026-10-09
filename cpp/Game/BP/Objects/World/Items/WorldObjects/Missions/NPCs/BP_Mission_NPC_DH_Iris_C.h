@@ -5,5 +5,4 @@
 UCLASS(Config=Game)
 class ABP_Mission_NPC_DH_Iris_C : public ABP_Mission_NPC_Base_C
 {
-public:
 };

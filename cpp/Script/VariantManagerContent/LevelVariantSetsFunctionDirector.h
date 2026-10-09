@@ -6,7 +6,5 @@ UCLASS()
 class ULevelVariantSetsFunctionDirector : public UObject
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMulticastDelegate<void __cdecl(ULevelVariantSetsFunctionDirector *),FDefaultDelegateUserPolicy> OnDestroy;  // 0x0028
+    TMulticastDelegate<void __cdecl(ULevelVariantSetsFunctionDirector *),FDefaultDelegateUserPolicy> OnDestroy;  // 0x0028, not reflected
 };

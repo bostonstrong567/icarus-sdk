@@ -5,7 +5,6 @@
 UCLASS(Abstract, EditInlineNew, Config=Engine)
 class USoundfieldEndpointSettingsBase : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   GetProxy

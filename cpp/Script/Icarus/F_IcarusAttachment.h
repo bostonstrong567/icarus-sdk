@@ -4,5 +4,6 @@
 USTRUCT()
 struct FIcarusAttachment : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FAlterationsRowHandle GrantedAlteration;  // 0x0018, size 0x18
 };

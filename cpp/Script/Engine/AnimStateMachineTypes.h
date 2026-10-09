@@ -5,5 +5,4 @@
 UCLASS()
 class UAnimStateMachineTypes : public UObject
 {
-public:
 };

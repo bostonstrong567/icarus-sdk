@@ -4,5 +4,6 @@
 USTRUCT()
 struct FEquippableModifierList
 {
+public:
     UPROPERTY() TArray<UEquippableModifier*> Modifiers;  // 0x0000, size 0x10
 };

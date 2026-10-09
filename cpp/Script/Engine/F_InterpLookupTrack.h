@@ -4,5 +4,6 @@
 USTRUCT()
 struct FInterpLookupTrack
 {
+public:
     UPROPERTY() TArray<FInterpLookupPoint> Points;  // 0x0000, size 0x10
 };

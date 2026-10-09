@@ -4,6 +4,7 @@
 USTRUCT()
 struct FARImageUpdatePayload
 {
+public:
     UPROPERTY(BlueprintReadOnly) FARSessionPayload SessionPayload;  // 0x0000, size 0x18
     UPROPERTY(BlueprintReadOnly) FTransform WorldTransform;  // 0x0020, size 0x30
     UPROPERTY(BlueprintReadOnly) UARCandidateImage* DetectedImage;  // 0x0050, size 0x8

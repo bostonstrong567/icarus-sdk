@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_SandMound_CollisionActor_C : public AStaticMeshActor
 {
-public:
 };

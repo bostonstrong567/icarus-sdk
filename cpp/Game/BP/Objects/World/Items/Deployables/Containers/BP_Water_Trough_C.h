@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Water_Trough_C : public ABP_Water_Trough_Base_C
 {
-public:
 };

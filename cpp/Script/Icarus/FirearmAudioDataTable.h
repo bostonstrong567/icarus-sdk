@@ -5,5 +5,4 @@
 UCLASS()
 class UFirearmAudioDataTable : public UIcarusDataTable
 {
-public:
 };

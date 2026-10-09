@@ -4,6 +4,7 @@
 USTRUCT()
 struct FColorParameterNameAndCurves
 {
+public:
     UPROPERTY() FName ParameterName;  // 0x0000, size 0x8
     UPROPERTY() FMovieSceneFloatChannel RedCurve;  // 0x0008, size 0xA0
     UPROPERTY() FMovieSceneFloatChannel GreenCurve;  // 0x00A8, size 0xA0

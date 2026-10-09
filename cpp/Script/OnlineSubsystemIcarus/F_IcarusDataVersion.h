@@ -4,5 +4,6 @@
 USTRUCT()
 struct FIcarusDataVersion
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Changelist;  // 0x0000, size 0x4
 };

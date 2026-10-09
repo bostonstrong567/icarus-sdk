@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNamedTransform
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FTransform Value;  // 0x0000, size 0x30
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName Name;  // 0x0030, size 0x8
 };

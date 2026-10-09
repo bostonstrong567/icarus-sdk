@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRepairableItem
 {
+public:
     UPROPERTY(BlueprintReadOnly) FItemData Item;  // 0x0000, size 0x1F0
     UPROPERTY(BlueprintReadOnly) ECanRepair Status;  // 0x01F0, size 0x1
     UPROPERTY(BlueprintReadOnly) int32 HealthPercent;  // 0x01F4, size 0x4

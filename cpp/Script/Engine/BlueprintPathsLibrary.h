@@ -6,7 +6,6 @@ UCLASS()
 class UBlueprintPathsLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static FString AutomationDir();  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) static FString AutomationLogDir();  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) static FString AutomationTransientDir();  // parameters 0x10

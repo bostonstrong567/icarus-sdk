@@ -4,6 +4,7 @@
 USTRUCT()
 struct FControlRigComponentMappedElement
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FComponentReference ComponentReference;  // 0x0000, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 TransformIndex;  // 0x0028, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName TransformName;  // 0x002C, size 0x8

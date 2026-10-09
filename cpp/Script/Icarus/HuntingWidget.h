@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew)
 class UHuntingWidget : public UUserWidget
 {
-public:
 };

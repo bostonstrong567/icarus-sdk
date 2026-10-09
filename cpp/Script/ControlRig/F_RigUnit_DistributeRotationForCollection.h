@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_DistributeRotationForCollection : public FRigUnit_HighlevelBaseMutable
 {
+public:
     UPROPERTY() FRigElementKeyCollection Items;  // 0x0068, size 0x10
     UPROPERTY() TArray<FRigUnit_DistributeRotation_Rotation> Rotations;  // 0x0078, size 0x10
     UPROPERTY() EControlRigAnimEasingType RotationEaseType;  // 0x0088, size 0x1

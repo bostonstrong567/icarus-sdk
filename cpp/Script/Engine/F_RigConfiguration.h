@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigConfiguration
 {
+public:
     UPROPERTY() URig* Rig;  // 0x0000, size 0x8
     UPROPERTY() TArray<FNameMapping> BoneMappingTable;  // 0x0008, size 0x10
 };

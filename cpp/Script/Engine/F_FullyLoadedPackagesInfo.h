@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFullyLoadedPackagesInfo
 {
+public:
     UPROPERTY() TEnumAsByte<EFullyLoadPackageType> FullyLoadType;  // 0x0000, size 0x1
     UPROPERTY() FString Tag;  // 0x0008, size 0x10
     UPROPERTY() TArray<FName> PackagesToLoad;  // 0x0018, size 0x10

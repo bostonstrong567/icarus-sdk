@@ -5,5 +5,4 @@
 UCLASS()
 class UBTDecorator_ReachedMoveGoal : public UBTDecorator
 {
-public:
 };

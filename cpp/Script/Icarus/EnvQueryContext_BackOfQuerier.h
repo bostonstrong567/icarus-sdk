@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, MinimalAPI)
 class UEnvQueryContext_BackOfQuerier : public UEnvQueryContext
 {
-public:
 };

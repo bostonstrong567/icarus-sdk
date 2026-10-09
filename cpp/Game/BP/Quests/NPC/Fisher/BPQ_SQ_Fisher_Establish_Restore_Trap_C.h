@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_SQ_Fisher_Establish_Restore_Trap_C : public ABPQ_Deploy_Count_Name_C
 {
-public:
 };

@@ -4,5 +4,6 @@
 USTRUCT()
 struct FMaterialAttributesInput : public FExpressionInput
 {
+public:
     UPROPERTY(Transient) int32 PropertyConnectedBitmask;  // 0x0014, size 0x4
 };

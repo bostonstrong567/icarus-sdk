@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_ELY_SQ_Lifeline_Recover_Simmons_Speak_C : public ABPQ_ELY_Story_1_Eden_Mo_C
 {
-public:
 };

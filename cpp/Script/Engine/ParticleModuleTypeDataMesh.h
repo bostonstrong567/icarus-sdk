@@ -7,6 +7,7 @@ class UParticleModuleTypeDataMesh : public UParticleModuleTypeDataBase
 {
 public:
     UPROPERTY(EditAnywhere) UStaticMesh* Mesh;  // 0x0030, size 0x8
+    FRandomStream RandomStream;  // 0x0038, not reflected
     UPROPERTY(EditAnywhere) float LODSizeScale;  // 0x0040, size 0x4
     UPROPERTY(EditAnywhere) uint8 bUseStaticMeshLODs : 1;  // 0x0044, mask 0x01
     UPROPERTY() uint8 CastShadows : 1;  // 0x0044, mask 0x02
@@ -23,7 +24,4 @@ public:
     UPROPERTY(EditAnywhere) uint8 bApplyParticleRotationAsSpin : 1;  // 0x0094, mask 0x01
     UPROPERTY(EditAnywhere) uint8 bFaceCameraDirectionRatherThanPosition : 1;  // 0x0094, mask 0x02
     UPROPERTY(EditAnywhere) uint8 bCollisionsConsiderPartilceSize : 1;  // 0x0094, mask 0x04
-
-    // Not reflected: the engine's scripting cannot see these.
-    FRandomStream RandomStream;  // 0x0038
 };

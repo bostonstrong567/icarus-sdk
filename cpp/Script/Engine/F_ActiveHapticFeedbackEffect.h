@@ -4,10 +4,10 @@
 USTRUCT()
 struct FActiveHapticFeedbackEffect
 {
+public:
     UPROPERTY() UHapticFeedbackEffect_Base* HapticEffect;  // 0x0000, size 0x8
-
-    // Not reflected:
-    bool bLoop;  // 0x0008
-    float PlayTime;  // 0x000C
-    float Scale;  // 0x0010
+    bool bLoop;  // 0x0008, not reflected
+private:
+    float PlayTime;  // 0x000C, not reflected
+    float Scale;  // 0x0010, not reflected
 };

@@ -5,11 +5,9 @@
 UCLASS()
 class UStatisticTrackerSubsystem : public UWorldSubsystem
 {
+private:
+    TMap<FString,FPlayerStatistics,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FString,FPlayerStatistics,0> > ProspectStatistics;  // 0x0030, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<FString,FPlayerStatistics,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FString,FPlayerStatistics,0> > ProspectStatistics;  // 0x0030, private
-
     UFUNCTION(BlueprintCallable) bool ClearTrackedStatisticsForPlayer(FString PlayerID);  // parameters 0x11
     UFUNCTION(BlueprintCallable, BlueprintPure) FPlayerStatistics GetTrackedStatisticsForPlayer(FString PlayerID) const;  // parameters 0x60
     UFUNCTION(BlueprintCallable) bool IncrementStatistic(FString PlayerID, FStatisticsRowHandle StatisticRow);  // parameters 0x29

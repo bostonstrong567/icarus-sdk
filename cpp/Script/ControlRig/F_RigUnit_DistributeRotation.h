@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_DistributeRotation : public FRigUnit_HighlevelBaseMutable
 {
+public:
     UPROPERTY() FName StartBone;  // 0x0068, size 0x8
     UPROPERTY() FName EndBone;  // 0x0070, size 0x8
     UPROPERTY() TArray<FRigUnit_DistributeRotation_Rotation> Rotations;  // 0x0078, size 0x10

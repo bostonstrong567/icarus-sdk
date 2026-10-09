@@ -5,5 +5,4 @@
 UCLASS()
 class UPathFollowingManager : public UObject
 {
-public:
 };

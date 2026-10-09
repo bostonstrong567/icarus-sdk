@@ -5,5 +5,4 @@
 UCLASS()
 class UMaterialExpressionParticleRandom : public UMaterialExpression
 {
-public:
 };

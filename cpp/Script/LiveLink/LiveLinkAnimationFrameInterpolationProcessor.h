@@ -5,8 +5,6 @@
 UCLASS(EditInlineNew)
 class ULiveLinkAnimationFrameInterpolationProcessor : public ULiveLinkBasicFrameInterpolationProcessor
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<ULiveLinkAnimationFrameInterpolationProcessor::FLiveLinkAnimationFrameInterpolationProcessorWorker,1> Instance;  // 0x0040, private
+private:
+    TSharedPtr<ULiveLinkAnimationFrameInterpolationProcessor::FLiveLinkAnimationFrameInterpolationProcessorWorker,1> Instance;  // 0x0040, not reflected
 };

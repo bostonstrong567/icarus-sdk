@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRepAttachment
 {
+public:
     UPROPERTY() AActor* AttachParent;  // 0x0000, size 0x8
     UPROPERTY() FVector_NetQuantize100 LocationOffset;  // 0x0008, size 0xC
     UPROPERTY() FVector_NetQuantize100 RelativeScale3D;  // 0x0014, size 0xC

@@ -5,7 +5,8 @@
 UCLASS(Config=Engine)
 class UCreatureAudioThreatTargetTrackComponent : public UCreatureAudioThreatComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY() TMap<ECreatureAudioThreatTargetType, float> CurrentTargets;  // 0x00E8, size 0x50
 
     // Virtual functions that start here:

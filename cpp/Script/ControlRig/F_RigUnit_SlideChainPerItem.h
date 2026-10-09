@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_SlideChainPerItem : public FRigUnit_HighlevelBaseMutable
 {
+public:
     UPROPERTY() FRigElementKeyCollection Items;  // 0x0068, size 0x10
     UPROPERTY() float SlideAmount;  // 0x0078, size 0x4
     UPROPERTY() bool bPropagateToChildren;  // 0x007C, size 0x1

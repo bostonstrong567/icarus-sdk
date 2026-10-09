@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Building_Wall_Curved_Half_L_Invert_Stone_C : public ABP_Building_Wall_Curved_Half_L_Invert_C
 {
-public:
 };

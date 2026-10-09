@@ -4,7 +4,6 @@
 USTRUCT()
 struct FAnimNode_Base
 {
-
-    // Not reflected:
-    const FExposedValueHandler * ExposedValueHandler;  // 0x0008
+private:
+    const FExposedValueHandler * ExposedValueHandler;  // 0x0008, not reflected
 };

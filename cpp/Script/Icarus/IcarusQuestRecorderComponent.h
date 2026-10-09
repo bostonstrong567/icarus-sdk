@@ -5,7 +5,8 @@
 UCLASS(Config=Engine)
 class UIcarusQuestRecorderComponent : public UActorStateRecorderComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(SaveGame) FName QuestName;  // 0x01C0, size 0x8
     UPROPERTY(SaveGame) TArray<FRelevantQuestActorRecord> RelevantActorRecords;  // 0x01C8, size 0x10
     UPROPERTY(SaveGame) TArray<FRelevantQuestActorRecord> RelevantCharacterRecords;  // 0x01D8, size 0x10

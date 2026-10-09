@@ -5,13 +5,13 @@
 UCLASS(Transient)
 class UIcarusCorpseAnimInstance : public UIcarusAnimInstance
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) AIcarusCorpse* OwningCorpse;  // 0x02D0, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) UAnimSequence* CarryAnim;  // 0x02D8, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FPoseSnapshot RagdollPose;  // 0x02E0, size 0x38
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bIsThirdPerson;  // 0x0318, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bIsCarried;  // 0x0319, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bHasHiddenInstigator;  // 0x031A, private
+private:
+    bool bHasHiddenInstigator;  // 0x031A, not reflected
 };

@@ -5,5 +5,4 @@
 UCLASS()
 class UScene : public UObject
 {
-public:
 };

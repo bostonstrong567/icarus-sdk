@@ -4,9 +4,8 @@
 USTRUCT()
 struct FInertializationPoseDiff
 {
-
-    // Not reflected:
-    TArray<FInertializationBoneDiff,TSizedDefaultAllocator<32> > BoneDiffs;  // 0x0000
-    TArray<FInertializationCurveDiff,TSizedDefaultAllocator<32> > CurveDiffs;  // 0x0010
-    EInertializationSpace InertializationSpace;  // 0x0020
+private:
+    TArray<FInertializationBoneDiff,TSizedDefaultAllocator<32> > BoneDiffs;  // 0x0000, not reflected
+    TArray<FInertializationCurveDiff,TSizedDefaultAllocator<32> > CurveDiffs;  // 0x0010, not reflected
+    EInertializationSpace InertializationSpace;  // 0x0020, not reflected
 };

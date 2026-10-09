@@ -7,15 +7,14 @@ class UClothingSimulationInteractor : public UObject
 {
 public:
     UPROPERTY() TMap<FName, UClothingInteractor*> ClothingInteractors;  // 0x0028, size 0x50
-
-    // Not reflected: the engine's scripting cannot see these.
-    int32 LastNumCloths;  // 0x0078, private
-    int32 LastNumKinematicParticles;  // 0x007C, private
-    int32 LastNumDynamicParticles;  // 0x0080, private
-    int32 LastNumIterations;  // 0x0084, private
-    int32 LastNumSubsteps;  // 0x0088, private
-    float LastSimulationTime;  // 0x008C, private
-
+private:
+    int32 LastNumCloths;  // 0x0078, not reflected
+    int32 LastNumKinematicParticles;  // 0x007C, not reflected
+    int32 LastNumDynamicParticles;  // 0x0080, not reflected
+    int32 LastNumIterations;  // 0x0084, not reflected
+    int32 LastNumSubsteps;  // 0x0088, not reflected
+    float LastSimulationTime;  // 0x008C, not reflected
+public:
     UFUNCTION(BlueprintCallable) void ClothConfigUpdated();
     UFUNCTION(BlueprintCallable) void DisableGravityOverride();
     UFUNCTION(BlueprintCallable) void EnableGravityOverride(const FVector& InVector);  // parameters 0xC

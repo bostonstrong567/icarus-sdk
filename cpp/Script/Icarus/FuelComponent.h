@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UFuelComponent : public UResourceNetworkComponent
 {
-public:
 };

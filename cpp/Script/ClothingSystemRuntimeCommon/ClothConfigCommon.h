@@ -5,7 +5,6 @@
 UCLASS(Abstract)
 class UClothConfigCommon : public UClothConfigBase
 {
-public:
 
     // Virtual functions that start here:
     //   MigrateFrom, MigrateTo

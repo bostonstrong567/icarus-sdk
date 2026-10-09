@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Prop_Mining_Rail_A_C : public ABP_DeployableBase_C
 {
-public:
 };

@@ -4,8 +4,7 @@
 USTRUCT()
 struct FMovieSceneEventParameters
 {
-
-    // Not reflected:
-    FSoftObjectPath StructType;  // 0x0000
-    TArray<unsigned char,TSizedDefaultAllocator<32> > StructBytes;  // 0x0018
+private:
+    FSoftObjectPath StructType;  // 0x0000, not reflected
+    TArray<unsigned char,TSizedDefaultAllocator<32> > StructBytes;  // 0x0018, not reflected
 };

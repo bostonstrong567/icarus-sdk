@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABPQ_GH_IM_C2_Test_Health_C : public ABPQ_Common_Object_Health_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool Check();  // parameters 0x1
 };

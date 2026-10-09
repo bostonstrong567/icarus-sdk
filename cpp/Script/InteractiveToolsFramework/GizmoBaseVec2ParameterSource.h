@@ -6,7 +6,5 @@ UCLASS()
 class UGizmoBaseVec2ParameterSource : public UObject, public IGizmoVec2ParameterSource
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMulticastDelegate<void __cdecl(IGizmoVec2ParameterSource *,FGizmoVec2ParameterChange),FDefaultDelegateUserPolicy> OnParameterChanged;  // 0x0030
+    TMulticastDelegate<void __cdecl(IGizmoVec2ParameterSource *,FGizmoVec2ParameterChange),FDefaultDelegateUserPolicy> OnParameterChanged;  // 0x0030, not reflected
 };

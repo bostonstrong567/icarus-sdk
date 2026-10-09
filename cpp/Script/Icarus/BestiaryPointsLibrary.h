@@ -6,7 +6,6 @@ UCLASS()
 class UBestiaryPointsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToBestiaryPointsTable(FName Name, FBestiaryPoints Data, FBestiaryPointsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x41
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakBestiaryPointsEnum(FBestiaryPointsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FBestiaryPointsRowHandle CastToBestiaryPointsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

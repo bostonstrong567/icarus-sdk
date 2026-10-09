@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Prop_TestTube_Rack_C : public ABP_DeployableContainerBase_C
 {
-public:
 };

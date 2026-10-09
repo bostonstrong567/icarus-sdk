@@ -5,5 +5,4 @@
 UCLASS()
 class UVoxelSetupDataTable : public UIcarusDataTable
 {
-public:
 };

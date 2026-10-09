@@ -4,5 +4,6 @@
 USTRUCT()
 struct FNiagaraEmitterScalabilityOverride : public FNiagaraEmitterScalabilitySettings
 {
+public:
     UPROPERTY(EditAnywhere) uint8 bOverrideSpawnCountScale : 1;  // 0x0038, mask 0x01
 };

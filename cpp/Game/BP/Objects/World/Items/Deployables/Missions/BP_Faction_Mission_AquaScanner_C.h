@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Faction_Mission_AquaScanner_C : public ABP_DeployableBase_C
 {
-public:
 };

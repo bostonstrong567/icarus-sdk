@@ -5,5 +5,4 @@
 UCLASS()
 class UWeatherActionsTable : public UIcarusDataTable
 {
-public:
 };

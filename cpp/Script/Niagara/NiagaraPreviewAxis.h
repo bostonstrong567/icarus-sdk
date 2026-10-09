@@ -6,7 +6,6 @@ UCLASS(Abstract, EditInlineNew)
 class UNiagaraPreviewAxis : public UObject
 {
 public:
-
     UFUNCTION(BlueprintNativeEvent) void ApplyToPreview(UNiagaraComponent* PreviewComponent, int32 PreviewIndex, bool bIsXAxis, FString& OutLabelText);  // parameters 0x20
     UFUNCTION(BlueprintNativeEvent) int32 Num();  // parameters 0x4
 

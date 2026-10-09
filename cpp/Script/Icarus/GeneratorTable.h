@@ -5,5 +5,4 @@
 UCLASS()
 class UGeneratorTable : public UIcarusDataTable
 {
-public:
 };

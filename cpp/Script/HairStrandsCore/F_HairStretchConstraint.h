@@ -4,6 +4,7 @@
 USTRUCT()
 struct FHairStretchConstraint
 {
+public:
     UPROPERTY(EditAnywhere) bool SolveStretch;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere) bool ProjectStretch;  // 0x0001, size 0x1
     UPROPERTY(EditAnywhere) float StretchDamping;  // 0x0004, size 0x4

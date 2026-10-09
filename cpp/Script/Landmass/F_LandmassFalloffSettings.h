@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLandmassFalloffSettings
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EBrushFalloffMode FalloffMode;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float FalloffAngle;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float FalloffWidth;  // 0x0008, size 0x4

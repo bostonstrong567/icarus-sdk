@@ -5,5 +5,4 @@
 UCLASS(Const, Config=Engine)
 class UDmgTypeBP_Environmental_C : public UDamageType
 {
-public:
 };

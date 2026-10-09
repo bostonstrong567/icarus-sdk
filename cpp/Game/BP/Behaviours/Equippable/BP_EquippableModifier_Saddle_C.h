@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UBP_EquippableModifier_Saddle_C : public UBP_EquippableModifier_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void GetEquippableStatsToAdd(TMap<FStatsEnum, int32>& Stats);  // parameters 0x50
 };

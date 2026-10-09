@@ -5,6 +5,7 @@
 UCLASS(MinimalAPI, Config=Engine)
 class ASphereReflectionCapture : public AReflectionCapture
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY(Instanced) UDrawSphereComponent* DrawCaptureRadius;  // 0x0228, size 0x8
 };

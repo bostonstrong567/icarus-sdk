@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UBP_ModifierStateBehaviour_TickDamage_Frost_C : public UBP_ModifierStateBehaviour_TickDamage_C
 {
-public:
 };

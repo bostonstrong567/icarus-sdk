@@ -5,21 +5,31 @@
 UCLASS(NotPlaceable, Config=Game)
 class AIcarusPlayerController : public AIcarusController, public IMutableGameplayTagInterface
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
-    UPROPERTY(Replicated, ReplicatedUsing) AIcarusPlayerCharacter* IcarusPlayerCharacter;  // 0x05A0, size 0x8
-    UPROPERTY(EditAnywhere) TSubclassOf<AContextMenuFactory> ContextMenuFactoryClass;  // 0x05A8, size 0x8
     UPROPERTY(EditAnywhere, Config, BlueprintReadWrite) float InputAimYawScale;  // 0x05B4, size 0x4
     UPROPERTY(EditAnywhere, Config, BlueprintReadWrite) float InputAimPitchScale;  // 0x05B8, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bFreeLook;  // 0x05BC, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FRotator FreeLookInput;  // 0x05C0, size 0xC
     UPROPERTY(BlueprintAssignable) FToggleThirdPersonSignature OnToggleThirdPerson;  // 0x05D0, size 0x10
-    UPROPERTY() bool bIsThirdPerson;  // 0x05E0, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bIsClientAdmin;  // 0x05E1, size 0x1
     UPROPERTY(BlueprintAssignable) FOnChatMessageReceived OnChatMessageReceived;  // 0x05E8, size 0x10
     UPROPERTY(BlueprintAssignable) FOnServerMessageReceived OnServerMessageReceived;  // 0x05F8, size 0x10
     UPROPERTY(BlueprintAssignable) FOnLocalMessageReceived OnLocalMessageReceived;  // 0x0608, size 0x10
     UPROPERTY(BlueprintAssignable) FOnViewTraceResultsUpdatedDelegate OnViewTraceResultsUpdated;  // 0x0618, size 0x10
     UPROPERTY(Replicated, BlueprintReadWrite) bool bCaptureViewTraces;  // 0x0628, size 0x1
+    UPROPERTY(BlueprintReadOnly) FServerFriendsUpdated OnServerFriendsUpdated;  // 0x06C0, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) float SyncBackendStateCooldown;  // 0x070C, size 0x4
+    UPROPERTY(BlueprintAssignable) FCharacterProgressionSynced OnCharacterProgressionSynced;  // 0x0710, size 0x1
+    UPROPERTY(BlueprintAssignable) FCharacterTalentsSynced OnCharacterTalentsSynced;  // 0x0728, size 0x1
+    UPROPERTY(BlueprintAssignable) FAccountTalentsSynced OnAccountTalentsSynced;  // 0x0740, size 0x1
+    UPROPERTY(BlueprintAssignable) FAccountFlagsSynced OnAccountFlagsSynced;  // 0x0758, size 0x1
+    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) FGameplayTagContainer GameplayTags;  // 0x0770, size 0x20
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FItemsStaticRowHandle LastFieldGuideItem;  // 0x0790, size 0x18
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FFieldGuideCategoriesRowHandle LastFieldGuideCategory;  // 0x07A8, size 0x18
+protected:
+    UPROPERTY(Replicated, ReplicatedUsing) AIcarusPlayerCharacter* IcarusPlayerCharacter;  // 0x05A0, size 0x8
+    UPROPERTY(EditAnywhere) TSubclassOf<AContextMenuFactory> ContextMenuFactoryClass;  // 0x05A8, size 0x8
     UPROPERTY(EditAnywhere) TMap<UObject*, FViewTraceRegistration> ViewTraceRegistrations;  // 0x0630, size 0x50
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<FViewTraceResult> ViewTraceResults;  // 0x0680, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float ViewTraceCapsuleRadius;  // 0x0690, size 0x4
@@ -29,42 +39,33 @@ public:
     UPROPERTY(Replicated, Instanced, BlueprintReadOnly) UBackendProxyComponent* BackendProxyComponent;  // 0x06A8, size 0x8
     UPROPERTY(Replicated, Instanced, BlueprintReadOnly) UPlayerDataComponent* PlayerDataComponent;  // 0x06B0, size 0x8
     UPROPERTY(Replicated, Instanced, BlueprintReadOnly) UBestiaryManagerComponent* BestiaryManagerComponent;  // 0x06B8, size 0x8
-    UPROPERTY(BlueprintReadOnly) FServerFriendsUpdated OnServerFriendsUpdated;  // 0x06C0, size 0x10
     UPROPERTY() UGetFriendsCallbackProxy* GetFriendsListCallBackProxy;  // 0x06D0, size 0x8
+    UPROPERTY(BlueprintReadOnly) bool bClientIsInitialisingPlayerProfile;  // 0x06FA, size 0x1
+    int32 ServerInitialisationChrSlot;  // 0x06FC, not reflected
+    int32 ServerRetryGetUserProfileCount;  // 0x0700, not reflected
+    int32 ServerRetryGetCharacterProfileCount;  // 0x0704, not reflected
+    int32 ServerRetryGetCharacterLoadout;  // 0x0708, not reflected
+    FTimerHandle UpdateCharacterProgressionDelayTimer;  // 0x0718, not reflected
+    bool bQueuedUpdateCharacterProgression;  // 0x0720, not reflected
+    int32 FailedUpdateCharacterProgressCount;  // 0x0724, not reflected
+    FTimerHandle UpdateCharacterTalentsDelayTimer;  // 0x0730, not reflected
+    bool bQueuedUpdateCharacterTalents;  // 0x0738, not reflected
+    int32 FailedUpdateCharacterTalentsCount;  // 0x073C, not reflected
+    FTimerHandle UpdateAccountTalentsDelayTimer;  // 0x0748, not reflected
+    bool bQueuedUpdateAccountTalents;  // 0x0750, not reflected
+    bool bPauseAccountTalentSync;  // 0x0751, not reflected
+    int32 FailedUpdateAccountTalentsCount;  // 0x0754, not reflected
+    FTimerHandle UpdateAccountFlagsDelayTimer;  // 0x0760, not reflected
+    bool bQueuedUpdateAccountFlags;  // 0x0768, not reflected
+    int32 FailedUpdateAccountFlagsCount;  // 0x076C, not reflected
+private:
+    int32 UIInputStack;  // 0x05B0, not reflected
+    UPROPERTY() bool bIsThirdPerson;  // 0x05E0, size 0x1
     UPROPERTY() TArray<FBPFriendInfo> ClientFriendsList;  // 0x06D8, size 0x10
     UPROPERTY() TArray<FString> FriendIds;  // 0x06E8, size 0x10
     UPROPERTY() bool bClientFriendsListReady;  // 0x06F8, size 0x1
     UPROPERTY() bool bServerFriendsReady;  // 0x06F9, size 0x1
-    UPROPERTY(BlueprintReadOnly) bool bClientIsInitialisingPlayerProfile;  // 0x06FA, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadOnly) float SyncBackendStateCooldown;  // 0x070C, size 0x4
-    UPROPERTY(BlueprintAssignable) FCharacterProgressionSynced OnCharacterProgressionSynced;  // 0x0710, size 0x1
-    UPROPERTY(BlueprintAssignable) FCharacterTalentsSynced OnCharacterTalentsSynced;  // 0x0728, size 0x1
-    UPROPERTY(BlueprintAssignable) FAccountTalentsSynced OnAccountTalentsSynced;  // 0x0740, size 0x1
-    UPROPERTY(BlueprintAssignable) FAccountFlagsSynced OnAccountFlagsSynced;  // 0x0758, size 0x1
-    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) FGameplayTagContainer GameplayTags;  // 0x0770, size 0x20
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FItemsStaticRowHandle LastFieldGuideItem;  // 0x0790, size 0x18
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FFieldGuideCategoriesRowHandle LastFieldGuideCategory;  // 0x07A8, size 0x18
-
-    // Not reflected: the engine's scripting cannot see these.
-    int32 UIInputStack;  // 0x05B0, private
-    int32 ServerInitialisationChrSlot;  // 0x06FC, protected
-    int32 ServerRetryGetUserProfileCount;  // 0x0700, protected
-    int32 ServerRetryGetCharacterProfileCount;  // 0x0704, protected
-    int32 ServerRetryGetCharacterLoadout;  // 0x0708, protected
-    FTimerHandle UpdateCharacterProgressionDelayTimer;  // 0x0718, protected
-    bool bQueuedUpdateCharacterProgression;  // 0x0720, protected
-    int32 FailedUpdateCharacterProgressCount;  // 0x0724, protected
-    FTimerHandle UpdateCharacterTalentsDelayTimer;  // 0x0730, protected
-    bool bQueuedUpdateCharacterTalents;  // 0x0738, protected
-    int32 FailedUpdateCharacterTalentsCount;  // 0x073C, protected
-    FTimerHandle UpdateAccountTalentsDelayTimer;  // 0x0748, protected
-    bool bQueuedUpdateAccountTalents;  // 0x0750, protected
-    bool bPauseAccountTalentSync;  // 0x0751, protected
-    int32 FailedUpdateAccountTalentsCount;  // 0x0754, protected
-    FTimerHandle UpdateAccountFlagsDelayTimer;  // 0x0760, protected
-    bool bQueuedUpdateAccountFlags;  // 0x0768, protected
-    int32 FailedUpdateAccountFlagsCount;  // 0x076C, protected
-
+public:
     UFUNCTION(BlueprintCallable) void AddForcedPitchInput(float Val);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void AddForcedYawInput(float Val);  // parameters 0x4
     UFUNCTION(BlueprintCallable, Client, Reliable, BlueprintNativeEvent) void AddLocalMessage(FString Message);  // parameters 0x10

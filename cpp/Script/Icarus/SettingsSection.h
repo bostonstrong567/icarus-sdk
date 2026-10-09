@@ -5,7 +5,8 @@
 UCLASS(EditInlineNew)
 class USettingsSection : public UUserWidget
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(Instanced, BlueprintReadOnly) USettingsView* SettingsView;  // 0x0260, size 0x8
     UPROPERTY(BlueprintReadOnly) FName SettingCategory;  // 0x0268, size 0x8
     UPROPERTY(BlueprintReadOnly) FName SettingSection;  // 0x0270, size 0x8
@@ -14,7 +15,7 @@ public:
     UPROPERTY(BlueprintReadOnly) bool bHasApply;  // 0x02E0, size 0x1
     UPROPERTY(BlueprintReadOnly) bool bHasReset;  // 0x02E1, size 0x1
     UPROPERTY(BlueprintReadOnly) bool bHasConfirm;  // 0x02E2, size 0x1
-
+public:
     UFUNCTION(BlueprintImplementableEvent) void AddWidgetToSection(USettingWidget* Widget);  // parameters 0x8
     UFUNCTION(BlueprintImplementableEvent) void ApplySettings();
     UFUNCTION(BlueprintImplementableEvent) void ConfirmSettings();

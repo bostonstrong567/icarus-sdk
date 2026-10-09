@@ -4,6 +4,7 @@
 USTRUCT()
 struct FOreDeposit : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FItemTemplateRowHandle ResourceType;  // 0x0018, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FHighlightableRowHandle HighlightableRow;  // 0x0030, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UMaterialInterface> RVTNodeMaterial_CF;  // 0x0048, size 0x28

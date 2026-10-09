@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_PRO_Nullsector_Story_Blocker_Equipment_C : public ABPQ_Collect_Item_C
 {
-public:
 };

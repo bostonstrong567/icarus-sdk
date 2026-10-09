@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMaterialLayersFunctions
 {
+public:
     UPROPERTY(EditAnywhere) TArray<UMaterialFunctionInterface*> Layers;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere) TArray<UMaterialFunctionInterface*> Blends;  // 0x0010, size 0x10
     UPROPERTY(EditAnywhere) TArray<bool> LayerStates;  // 0x0020, size 0x10

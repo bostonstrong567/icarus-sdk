@@ -4,6 +4,7 @@
 USTRUCT()
 struct FCharacterCosmetics
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Customization_Head;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Customization_Hair;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Customization_HairColor;  // 0x0008, size 0x4

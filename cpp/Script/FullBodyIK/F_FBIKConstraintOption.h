@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFBIKConstraintOption
 {
+public:
     UPROPERTY(EditAnywhere) FRigElementKey Item;  // 0x0000, size 0xC
     UPROPERTY(EditAnywhere) bool bEnabled;  // 0x000C, size 0x1
     UPROPERTY(EditAnywhere) bool bUseStiffness;  // 0x000D, size 0x1

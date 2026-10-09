@@ -4,6 +4,7 @@
 USTRUCT()
 struct FKeyBind
 {
+public:
     UPROPERTY(Config) FKey Key;  // 0x0000, size 0x18
     UPROPERTY(Config) FString Command;  // 0x0018, size 0x10
     UPROPERTY(Config) uint8 Control : 1;  // 0x0028, mask 0x01

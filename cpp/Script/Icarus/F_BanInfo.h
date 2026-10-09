@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBanInfo
 {
+public:
     UPROPERTY() FString AccountId;  // 0x0000, size 0x10
     UPROPERTY() FString AccountJson;  // 0x0010, size 0x10
     UPROPERTY() FText BanReason;  // 0x0020, size 0x18

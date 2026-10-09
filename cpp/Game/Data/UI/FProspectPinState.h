@@ -4,6 +4,7 @@
 USTRUCT()
 struct FProspectPinState
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TEnumAsByte<E_ProspectState> ProspectState;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FButtonStyle ButtonStyle;  // 0x0008, size 0x278
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<TEnumAsByte<E_ButtonState>, FSlateColor> TextColour;  // 0x0280, size 0x50

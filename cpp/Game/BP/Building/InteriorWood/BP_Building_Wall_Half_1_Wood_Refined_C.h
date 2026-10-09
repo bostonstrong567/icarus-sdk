@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Building_Wall_Half_1_Wood_Refined_C : public ABP_Building_Wall_Half_1_C
 {
-public:
 };

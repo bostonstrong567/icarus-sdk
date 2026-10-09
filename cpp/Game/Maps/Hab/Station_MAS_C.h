@@ -5,5 +5,4 @@
 UCLASS()
 class AStation_MAS_C : public ALevelScriptActor
 {
-public:
 };

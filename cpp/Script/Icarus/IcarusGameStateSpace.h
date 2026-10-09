@@ -5,5 +5,4 @@
 UCLASS(NotPlaceable, Config=Game)
 class AIcarusGameStateSpace : public AIcarusGameStateBase
 {
-public:
 };

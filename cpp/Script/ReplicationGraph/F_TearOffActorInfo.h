@@ -4,9 +4,8 @@
 USTRUCT()
 struct FTearOffActorInfo
 {
+public:
+    uint32 TearOffFrameNum;  // 0x0000, not reflected
     UPROPERTY() AActor* Actor;  // 0x0008, size 0x8
-
-    // Not reflected:
-    uint32 TearOffFrameNum;  // 0x0000
-    bool bHasReppedOnce;  // 0x0010
+    bool bHasReppedOnce;  // 0x0010, not reflected
 };

@@ -5,5 +5,4 @@
 UCLASS()
 class UGreatHuntsTable : public UIcarusDataTable
 {
-public:
 };

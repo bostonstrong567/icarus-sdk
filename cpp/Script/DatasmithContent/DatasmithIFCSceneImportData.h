@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew)
 class UDatasmithIFCSceneImportData : public UDatasmithSceneImportData
 {
-public:
 };

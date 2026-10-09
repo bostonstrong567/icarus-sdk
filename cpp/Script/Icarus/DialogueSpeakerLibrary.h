@@ -6,7 +6,6 @@ UCLASS()
 class UDialogueSpeakerLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToDialogueSpeakerTable(FName Name, FDialogueSpeaker Data, FDialogueSpeakerRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x51
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakDialogueSpeakerEnum(FDialogueSpeakerEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FDialogueSpeakerRowHandle CastToDialogueSpeakerRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

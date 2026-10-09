@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRiverSplineSetup
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector StartPosition;  // 0x0000, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector StartTangent;  // 0x000C, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector EndPosition;  // 0x0018, size 0xC

@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UMovieSceneSpawnSection : public UMovieSceneBoolSection, public IMovieSceneEntityProvider
 {
-public:
 };

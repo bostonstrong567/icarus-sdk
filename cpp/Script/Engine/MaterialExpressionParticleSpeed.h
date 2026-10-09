@@ -5,5 +5,4 @@
 UCLASS()
 class UMaterialExpressionParticleSpeed : public UMaterialExpression
 {
-public:
 };

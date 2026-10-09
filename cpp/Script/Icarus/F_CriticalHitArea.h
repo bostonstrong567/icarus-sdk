@@ -4,6 +4,7 @@
 USTRUCT()
 struct FCriticalHitArea : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FStatsEnum DamageReductionStat;  // 0x0018, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FStatsEnum DamageReductionMitigatingStat;  // 0x0028, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FStatsEnum DamageMultiplierStat;  // 0x0038, size 0x10

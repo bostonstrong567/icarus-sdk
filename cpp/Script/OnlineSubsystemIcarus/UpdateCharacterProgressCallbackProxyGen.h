@@ -8,9 +8,8 @@ class UUpdateCharacterProgressCallbackProxyGen : public UOnlineBlueprintCallProx
 public:
     UPROPERTY(BlueprintAssignable) FOnUpdateCharacterProgressEventSignature OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FOnUpdateCharacterProgressEventSignature OnFail;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FReqUpdateCharacterProgress ReqUpdateCharacterProgress;  // 0x0050, private
-
+private:
+    FReqUpdateCharacterProgress ReqUpdateCharacterProgress;  // 0x0050, not reflected
+public:
     UFUNCTION(BlueprintCallable) static UUpdateCharacterProgressCallbackProxyGen* UpdateCharacterProgress(const FReqUpdateCharacterProgress& Request);  // parameters 0x40
 };

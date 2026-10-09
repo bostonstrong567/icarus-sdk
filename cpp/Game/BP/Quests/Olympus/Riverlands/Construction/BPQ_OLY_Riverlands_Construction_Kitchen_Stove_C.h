@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_OLY_Riverlands_Construction_Kitchen_Stove_C : public ABPQ_Deploy_Count_C
 {
-public:
 };

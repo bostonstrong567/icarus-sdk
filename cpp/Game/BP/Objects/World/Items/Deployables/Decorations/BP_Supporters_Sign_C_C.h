@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Supporters_Sign_C_C : public ABP_Supporters_Sign_C
 {
-public:
 };

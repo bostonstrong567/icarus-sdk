@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSubmixEffectFilterSettings
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ESubmixFilterType FilterType;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ESubmixFilterAlgorithm FilterAlgorithm;  // 0x0001, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float FilterFrequency;  // 0x0004, size 0x4

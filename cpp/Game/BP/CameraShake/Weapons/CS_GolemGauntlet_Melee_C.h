@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UCS_GolemGauntlet_Melee_C : public UMatineeCameraShake
 {
-public:
 };

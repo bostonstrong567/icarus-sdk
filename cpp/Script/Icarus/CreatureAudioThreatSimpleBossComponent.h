@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UCreatureAudioThreatSimpleBossComponent : public UCreatureAudioThreatTargetTrackComponent
 {
-public:
 };

@@ -5,5 +5,4 @@
 UCLASS()
 class UOptionalResourceFlowsTable : public UIcarusDataTable
 {
-public:
 };

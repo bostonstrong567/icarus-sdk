@@ -11,10 +11,9 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float BarnDoorAngle;  // 0x0348, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float BarnDoorLength;  // 0x034C, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) UTexture* SourceTexture;  // 0x0350, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FRectLightRayTracingData * RayTracingData;  // 0x0358, private
-
+private:
+    FRectLightRayTracingData * RayTracingData;  // 0x0358, not reflected
+public:
     UFUNCTION(BlueprintCallable) void SetBarnDoorAngle(float NewValue);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void SetBarnDoorLength(float NewValue);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void SetSourceHeight(float NewValue);  // parameters 0x4

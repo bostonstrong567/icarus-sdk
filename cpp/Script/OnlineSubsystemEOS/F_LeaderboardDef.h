@@ -4,11 +4,10 @@
 USTRUCT()
 struct FLeaderboardDef
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString LeaderboardId;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString StatName;  // 0x0010, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int64 StartTime;  // 0x0020, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int64 EndTime;  // 0x0028, size 0x8
-
-    // Not reflected:
-    ELeaderboardAggregation Aggregation;  // 0x0030
+    ELeaderboardAggregation Aggregation;  // 0x0030, not reflected
 };

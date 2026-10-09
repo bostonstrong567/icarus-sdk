@@ -5,5 +5,4 @@
 UCLASS()
 class UBagPriorityTable : public UIcarusDataTable
 {
-public:
 };

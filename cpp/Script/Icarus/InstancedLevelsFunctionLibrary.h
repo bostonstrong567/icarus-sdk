@@ -6,7 +6,6 @@ UCLASS()
 class UInstancedLevelsFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static bool CheckMapHasNumberEntrances(FInstancedMapDataRowHandle Row, int32 Entrances);  // parameters 0x1D
     UFUNCTION(BlueprintCallable) static FEdInstancedLevelDetail GetInstancedLevelDetails(UObject* WorldContextObject);  // parameters 0xB0
     UFUNCTION(BlueprintCallable) static bool IsActorInsideWorldBounds(UObject* WorldContextObject, AActor* Actor);  // parameters 0x11

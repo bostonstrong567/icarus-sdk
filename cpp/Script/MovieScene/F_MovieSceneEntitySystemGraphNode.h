@@ -4,9 +4,8 @@
 USTRUCT()
 struct FMovieSceneEntitySystemGraphNode
 {
+public:
+    TSharedPtr<UE::MovieScene::FSystemTaskPrerequisites,0> Prerequisites;  // 0x0000, not reflected
+    TSharedPtr<UE::MovieScene::FSystemTaskPrerequisites,0> SubsequentTasks;  // 0x0010, not reflected
     UPROPERTY() UMovieSceneEntitySystem* System;  // 0x0020, size 0x8
-
-    // Not reflected:
-    TSharedPtr<UE::MovieScene::FSystemTaskPrerequisites,0> Prerequisites;  // 0x0000
-    TSharedPtr<UE::MovieScene::FSystemTaskPrerequisites,0> SubsequentTasks;  // 0x0010
 };

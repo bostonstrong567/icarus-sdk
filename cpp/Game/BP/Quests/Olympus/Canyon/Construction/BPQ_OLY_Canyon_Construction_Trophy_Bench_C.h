@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_OLY_Canyon_Construction_Trophy_Bench_C : public ABPQ_Deploy_Count_C
 {
-public:
 };

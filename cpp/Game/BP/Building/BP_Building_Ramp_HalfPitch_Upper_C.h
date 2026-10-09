@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Building_Ramp_HalfPitch_Upper_C : public ABP_Building_Ramp_C
 {
-public:
 };

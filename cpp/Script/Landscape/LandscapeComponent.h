@@ -5,6 +5,7 @@
 UCLASS(MinimalAPI, Config=Engine)
 class ULandscapeComponent : public UPrimitiveComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 SectionBaseX;  // 0x0450, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 SectionBaseY;  // 0x0454, size 0x4
@@ -24,10 +25,6 @@ public:
     UPROPERTY() FVector4 HeightmapScaleBias;  // 0x04F0, size 0x10
     UPROPERTY() FBox CachedLocalBox;  // 0x0500, size 0x1C
     UPROPERTY(Instanced) TLazyObjectPtr<ULandscapeHeightfieldCollisionComponent> CollisionComponent;  // 0x051C, size 0x1C
-    UPROPERTY() UTexture2D* HeightmapTexture;  // 0x0538, size 0x8
-    UPROPERTY() TArray<FWeightmapLayerAllocationInfo> WeightmapLayerAllocations;  // 0x0540, size 0x10
-    UPROPERTY() TArray<UTexture2D*> WeightmapTextures;  // 0x0550, size 0x10
-    UPROPERTY() ULandscapeLODStreamingProxy* LODStreamingProxy;  // 0x0560, size 0x8
     UPROPERTY() FGuid MapBuildDataId;  // 0x0568, size 0x10
     UPROPERTY(Deprecated) TArray<FGuid> IrrelevantLights;  // 0x0578, size 0x10
     UPROPERTY(EditAnywhere) int32 CollisionMipLevel;  // 0x0588, size 0x4
@@ -44,13 +41,16 @@ public:
     UPROPERTY(Deprecated) UMaterialInterface* MobileMaterialInterface;  // 0x05D8, size 0x8
     UPROPERTY() TArray<UMaterialInterface*> MobileMaterialInterfaces;  // 0x05E0, size 0x10
     UPROPERTY() TArray<UTexture2D*> MobileWeightmapTextures;  // 0x05F0, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FLandscapeComponentDerivedData PlatformData;  // 0x0600
-    TSharedRef<FLandscapeComponentGrassData,1> GrassData;  // 0x0640
-    TArray<FBox,TSizedDefaultAllocator<32> > ActiveExcludedBoxes;  // 0x0650
-    uint32 ChangeTag;  // 0x0660
-
+    FLandscapeComponentDerivedData PlatformData;  // 0x0600, not reflected
+    TSharedRef<FLandscapeComponentGrassData,1> GrassData;  // 0x0640, not reflected
+    TArray<FBox,TSizedDefaultAllocator<32> > ActiveExcludedBoxes;  // 0x0650, not reflected
+    uint32 ChangeTag;  // 0x0660, not reflected
+private:
+    UPROPERTY() UTexture2D* HeightmapTexture;  // 0x0538, size 0x8
+    UPROPERTY() TArray<FWeightmapLayerAllocationInfo> WeightmapLayerAllocations;  // 0x0540, size 0x10
+    UPROPERTY() TArray<UTexture2D*> WeightmapTextures;  // 0x0550, size 0x10
+    UPROPERTY() ULandscapeLODStreamingProxy* LODStreamingProxy;  // 0x0560, size 0x8
+public:
     UFUNCTION(BlueprintCallable) float EditorGetPaintLayerWeightAtLocation(const FVector& InLocation, ULandscapeLayerInfoObject* PaintLayer);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) float EditorGetPaintLayerWeightByNameAtLocation(const FVector& InLocation, FName InPaintLayerName);  // parameters 0x18
     UFUNCTION(BlueprintCallable, BlueprintPure) UMaterialInstanceDynamic* GetMaterialInstanceDynamic(int32 InIndex) const;  // parameters 0x10

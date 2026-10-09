@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_TwistBones_WorkData
 {
+public:
     UPROPERTY() TArray<FCachedRigElement> CachedItems;  // 0x0000, size 0x10
     UPROPERTY() TArray<float> ItemRatios;  // 0x0010, size 0x10
     UPROPERTY() TArray<FTransform> ItemTransforms;  // 0x0020, size 0x10

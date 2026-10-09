@@ -5,5 +5,4 @@
 UCLASS(Transient, Config=Engine)
 class USK_CRE_LavaBroodling_WorldSpawn_AnimBP_C : public USK_CRE_LavaBroodling_Skeleton_AnimBP_C
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FGOAPMotivation : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName Description;  // 0x0018, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float UpdateTick;  // 0x0020, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 MinValue;  // 0x0024, size 0x4

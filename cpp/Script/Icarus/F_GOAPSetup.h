@@ -4,6 +4,7 @@
 USTRUCT()
 struct FGOAPSetup : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FGOAPMotivationsRowHandle> Motivations;  // 0x0018, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FGOAPActionsRowHandle> Actions;  // 0x0028, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FGOAPGoalsRowHandle> Goals;  // 0x0038, size 0x10

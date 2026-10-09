@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UBP_AtmosphereFunctionLibrary_C : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static ABP_AtmosphereController_C* GetAtmosphereController(UObject* __WorldContext);  // parameters 0x10
 };

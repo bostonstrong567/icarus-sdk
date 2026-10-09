@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_ELY_Story_6_Briefing_Talk_C : public ABPQ_ELY_Story_1_Eden_Mo_C
 {
-public:
 };

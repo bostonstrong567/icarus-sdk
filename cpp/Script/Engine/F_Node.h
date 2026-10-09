@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNode
 {
+public:
     UPROPERTY(EditAnywhere) FName Name;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) FName ParentName;  // 0x0008, size 0x8
     UPROPERTY() FTransform Transform;  // 0x0010, size 0x30

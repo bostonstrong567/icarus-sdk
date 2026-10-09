@@ -6,7 +6,6 @@ UCLASS()
 class UGeneticLineagesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToGeneticLineagesTable(FName Name, FGeneticLineage Data, FGeneticLineagesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xF9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakGeneticLineagesEnum(FGeneticLineagesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FGeneticLineagesRowHandle CastToGeneticLineagesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

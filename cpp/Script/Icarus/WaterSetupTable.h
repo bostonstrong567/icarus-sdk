@@ -5,5 +5,4 @@
 UCLASS()
 class UWaterSetupTable : public UIcarusDataTable
 {
-public:
 };

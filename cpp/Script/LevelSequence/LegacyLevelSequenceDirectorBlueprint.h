@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ULegacyLevelSequenceDirectorBlueprint : public UBlueprint
 {
-public:
 };

@@ -6,7 +6,6 @@ UCLASS()
 class UDurableLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToDurableTable(FName Name, FDurableData Data, FDurableRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x61
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakDurableEnum(FDurableEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FDurableRowHandle CastToDurableRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

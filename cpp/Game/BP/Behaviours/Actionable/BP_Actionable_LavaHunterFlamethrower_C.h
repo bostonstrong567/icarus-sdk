@@ -5,5 +5,4 @@
 UCLASS(Transient, Config=Engine)
 class UBP_Actionable_LavaHunterFlamethrower_C : public UBP_Actionable_FlameThrower_C
 {
-public:
 };

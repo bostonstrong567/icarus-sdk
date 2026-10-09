@@ -5,13 +5,12 @@
 UCLASS(Config=Game)
 class UAIPerceptionStimuliSourceComponent : public UActorComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
+    uint32 : 1 bSuccessfullyRegistered;  // 0x00B0, not reflected
     UPROPERTY(EditAnywhere, Config, BlueprintReadOnly) uint8 bAutoRegisterAsSource : 1;  // 0x00B0, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<TSubclassOf<UAISense>> RegisterAsSourceForSenses;  // 0x00B8, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint32 : 1 bSuccessfullyRegistered;  // 0x00B0, protected
-
+public:
     UFUNCTION(BlueprintCallable) void RegisterForSense(TSubclassOf<UAISense> SenseClass);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void RegisterWithPerceptionSystem();
     UFUNCTION(BlueprintCallable) void UnregisterFromPerceptionSystem();

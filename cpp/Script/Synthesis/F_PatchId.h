@@ -4,5 +4,6 @@
 USTRUCT()
 struct FPatchId
 {
+public:
     UPROPERTY() int32 Id;  // 0x0000, size 0x4
 };

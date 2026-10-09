@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew)
 class UStereoLayerShapeQuad : public UStereoLayerShape
 {
-public:
 };

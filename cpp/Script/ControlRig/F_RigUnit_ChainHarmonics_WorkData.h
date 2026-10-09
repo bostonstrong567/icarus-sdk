@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_ChainHarmonics_WorkData
 {
+public:
     UPROPERTY() FVector Time;  // 0x0000, size 0xC
     UPROPERTY() TArray<FCachedRigElement> Items;  // 0x0010, size 0x10
     UPROPERTY() TArray<float> Ratio;  // 0x0020, size 0x10

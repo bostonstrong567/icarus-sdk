@@ -41,98 +41,97 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool isUsingOriginRebasing;  // 0x0164, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool alwaysSendOrigin;  // 0x0165, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool syncOwnershipChange;  // 0x0166, size 0x1
+    SmoothState * * stateBuffer;  // 0x0168, not reflected
+    int32 calculatedStateBufferSize;  // 0x0170, not reflected
+    int32 stateCount;  // 0x0174, not reflected
+    bool dontEasePosition;  // 0x0178, not reflected
+    bool dontEaseScale;  // 0x0179, not reflected
+    bool dontEaseRotation;  // 0x017A, not reflected
+    float lastTeleportOwnerTime;  // 0x017C, not reflected
+    float lastTimeStateWasSent;  // 0x0180, not reflected
+    FVector lastPositionWhenStateWasSent;  // 0x0184, not reflected
+    FQuat lastRotationWhenStateWasSent;  // 0x0190, not reflected
+    FVector lastScaleWhenStateWasSent;  // 0x01A0, not reflected
+    FVector lastVelocityWhenStateWasSent;  // 0x01AC, not reflected
+    FVector lastAngularVelocityWhenStateWasSent;  // 0x01B8, not reflected
+    AActor * realObjectToSync;  // 0x01C8, not reflected
+    UMovementComponent * movementComponent;  // 0x01D0, not reflected
+    UCharacterMovementComponent * characterMovementComponent;  // 0x01D8, not reflected
+    FIntVector lastOriginWhenStateWasSent;  // 0x01E0, not reflected
+    FIntVector lastOriginWhenStateWasReceived;  // 0x01EC, not reflected
     UPROPERTY(Instanced, BlueprintReadWrite) USceneComponent* realComponentToSync;  // 0x01F8, size 0x8
+    SmoothState * extrapolationEndState;  // 0x0200, not reflected
+    float extrapolationStopTime;  // 0x0208, not reflected
+    bool forceStateSend;  // 0x020C, not reflected
+    bool sendPosition;  // 0x020D, not reflected
+    bool sendRotation;  // 0x020E, not reflected
+    bool sendScale;  // 0x020F, not reflected
+    bool sendVelocity;  // 0x0210, not reflected
+    bool sendAngularVelocity;  // 0x0211, not reflected
+    bool sendMovementMode;  // 0x0212, not reflected
+    bool alwaysSendMovementMode;  // 0x0213, not reflected
+    bool isBeingUsed;  // 0x0214, not reflected
     UPROPERTY(BlueprintReadOnly) float interpolationTime;  // 0x0218, size 0x4
+    float ownerTime;  // 0x021C, not reflected
+    float lastTimeOwnerTimeWasSet;  // 0x0220, not reflected
+    SmoothState * sendingTempState;  // 0x0228, not reflected
+    SmoothState * targetTempState;  // 0x0230, not reflected
+    SmoothState * latestEndStateUsed;  // 0x0238, not reflected
+    FVector latestTeleportedFromPosition;  // 0x0240, not reflected
+    FQuat latestTeleportedFromRotation;  // 0x0250, not reflected
+    UPrimitiveComponent * primitiveComponent;  // 0x0260, not reflected
+    uint8 latestSentMovementMode;  // 0x0268, not reflected
+    TMap<USmoothSync *,bool,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<USmoothSync *,bool,0> > wasRelevant;  // 0x0270, not reflected
+    float approximateNetworkTimeOnOwner;  // 0x02C0, not reflected
+    int32 receivedStatesCounter;  // 0x02C4, not reflected
+    float updatedDeltaTime;  // 0x02C8, not reflected
+    bool isSimulatingPhysics;  // 0x02CC, not reflected
+    RestState restStatePosition;  // 0x02CD, not reflected
+    RestState restStateRotation;  // 0x02CE, not reflected
+    float samePositionCount;  // 0x02D0, not reflected
+    float sameRotationCount;  // 0x02D4, not reflected
+    bool changedPositionLastFrame;  // 0x02D8, not reflected
+    bool changedRotationLastFrame;  // 0x02D9, not reflected
+    float atRestThresholdCount;  // 0x02DC, not reflected
+    bool triedToExtrapolateTooFar;  // 0x02E0, not reflected
+    bool extrapolatedLastFrame;  // 0x02E1, not reflected
+    float timeSpentExtrapolating;  // 0x02E4, not reflected
+    bool sendAtPositionalRestMessage;  // 0x02E8, not reflected
+    bool sendAtRotationalRestMessage;  // 0x02E9, not reflected
+    FVector positionLastFrame;  // 0x02EC, not reflected
+    FIntVector originLastFrame;  // 0x02F8, not reflected
+    FQuat rotationLastFrame;  // 0x0310, not reflected
+    FVector linearVelocityLastFrame;  // 0x0320, not reflected
+    FVector angularVelocityLastFrame;  // 0x032C, not reflected
+    FVector latestReceivedVelocity;  // 0x0338, not reflected
+    FVector latestReceivedAngularVelocity;  // 0x0344, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float atRestPositionThreshold;  // 0x0350, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float atRestRotationThreshold;  // 0x0354, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<unsigned char,TSizedDefaultAllocator<32> > sendingCharArray;  // 0x00B0, private
-    int32 sendingCharArraySize;  // 0x00C0, private
-    TArray<unsigned char,TSizedDefaultAllocator<32> > readingCharArray;  // 0x00C8, private
-    int32 readingCharArraySize;  // 0x00D8, private
-    TArray<float,TSizedDefaultAllocator<32> > ownerTimeOffsets;  // 0x00E0, private
-    float averageOwnerTimeOffset;  // 0x00F0, private
-    int32 samePositionSentCount;  // 0x00F4, private
-    int32 sameRotationSentCount;  // 0x00F8, private
-    bool wasAttachedLastTick;  // 0x00FC, private
-    uint8 previousReceivedOwnerInt;  // 0x00FD, private
-    AController * owningControllerLastFrame;  // 0x0100, private
-    SmoothState * * stateBuffer;  // 0x0168
-    int32 calculatedStateBufferSize;  // 0x0170
-    int32 stateCount;  // 0x0174
-    bool dontEasePosition;  // 0x0178
-    bool dontEaseScale;  // 0x0179
-    bool dontEaseRotation;  // 0x017A
-    float lastTeleportOwnerTime;  // 0x017C
-    float lastTimeStateWasSent;  // 0x0180
-    FVector lastPositionWhenStateWasSent;  // 0x0184
-    FQuat lastRotationWhenStateWasSent;  // 0x0190
-    FVector lastScaleWhenStateWasSent;  // 0x01A0
-    FVector lastVelocityWhenStateWasSent;  // 0x01AC
-    FVector lastAngularVelocityWhenStateWasSent;  // 0x01B8
-    AActor * realObjectToSync;  // 0x01C8
-    UMovementComponent * movementComponent;  // 0x01D0
-    UCharacterMovementComponent * characterMovementComponent;  // 0x01D8
-    FIntVector lastOriginWhenStateWasSent;  // 0x01E0
-    FIntVector lastOriginWhenStateWasReceived;  // 0x01EC
-    SmoothState * extrapolationEndState;  // 0x0200
-    float extrapolationStopTime;  // 0x0208
-    bool forceStateSend;  // 0x020C
-    bool sendPosition;  // 0x020D
-    bool sendRotation;  // 0x020E
-    bool sendScale;  // 0x020F
-    bool sendVelocity;  // 0x0210
-    bool sendAngularVelocity;  // 0x0211
-    bool sendMovementMode;  // 0x0212
-    bool alwaysSendMovementMode;  // 0x0213
-    bool isBeingUsed;  // 0x0214
-    float ownerTime;  // 0x021C
-    float lastTimeOwnerTimeWasSet;  // 0x0220
-    SmoothState * sendingTempState;  // 0x0228
-    SmoothState * targetTempState;  // 0x0230
-    SmoothState * latestEndStateUsed;  // 0x0238
-    FVector latestTeleportedFromPosition;  // 0x0240
-    FQuat latestTeleportedFromRotation;  // 0x0250
-    UPrimitiveComponent * primitiveComponent;  // 0x0260
-    uint8 latestSentMovementMode;  // 0x0268
-    TMap<USmoothSync *,bool,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<USmoothSync *,bool,0> > wasRelevant;  // 0x0270
-    float approximateNetworkTimeOnOwner;  // 0x02C0
-    int32 receivedStatesCounter;  // 0x02C4
-    float updatedDeltaTime;  // 0x02C8
-    bool isSimulatingPhysics;  // 0x02CC
-    RestState restStatePosition;  // 0x02CD
-    RestState restStateRotation;  // 0x02CE
-    float samePositionCount;  // 0x02D0
-    float sameRotationCount;  // 0x02D4
-    bool changedPositionLastFrame;  // 0x02D8
-    bool changedRotationLastFrame;  // 0x02D9
-    float atRestThresholdCount;  // 0x02DC
-    bool triedToExtrapolateTooFar;  // 0x02E0
-    bool extrapolatedLastFrame;  // 0x02E1
-    float timeSpentExtrapolating;  // 0x02E4
-    bool sendAtPositionalRestMessage;  // 0x02E8
-    bool sendAtRotationalRestMessage;  // 0x02E9
-    FVector positionLastFrame;  // 0x02EC
-    FIntVector originLastFrame;  // 0x02F8
-    FQuat rotationLastFrame;  // 0x0310
-    FVector linearVelocityLastFrame;  // 0x0320
-    FVector angularVelocityLastFrame;  // 0x032C
-    FVector latestReceivedVelocity;  // 0x0338
-    FVector latestReceivedAngularVelocity;  // 0x0344
-    uint8 ownerChangeIndicator;  // 0x0358
-    const uint8 positionMask;  // 0x0359
-    const uint8 rotationMask;  // 0x035A
-    const uint8 scaleMask;  // 0x035B
-    const uint8 velocityMask;  // 0x035C
-    const uint8 angularVelocityMask;  // 0x035D
-    const uint8 movementModeMask;  // 0x035E
-    const uint8 atPositionalRestMask;  // 0x035F
-    const uint8 atRotationalRestMask;  // 0x0360
-    const uint8 originRebaseMask;  // 0x0361
-    bool ShouldCleanUp;  // 0x0362
-    bool IsTicking;  // 0x0363
-
+    uint8 ownerChangeIndicator;  // 0x0358, not reflected
+    const uint8 positionMask;  // 0x0359, not reflected
+    const uint8 rotationMask;  // 0x035A, not reflected
+    const uint8 scaleMask;  // 0x035B, not reflected
+    const uint8 velocityMask;  // 0x035C, not reflected
+    const uint8 angularVelocityMask;  // 0x035D, not reflected
+    const uint8 movementModeMask;  // 0x035E, not reflected
+    const uint8 atPositionalRestMask;  // 0x035F, not reflected
+    const uint8 atRotationalRestMask;  // 0x0360, not reflected
+    const uint8 originRebaseMask;  // 0x0361, not reflected
+    bool ShouldCleanUp;  // 0x0362, not reflected
+    bool IsTicking;  // 0x0363, not reflected
+private:
+    TArray<unsigned char,TSizedDefaultAllocator<32> > sendingCharArray;  // 0x00B0, not reflected
+    int32 sendingCharArraySize;  // 0x00C0, not reflected
+    TArray<unsigned char,TSizedDefaultAllocator<32> > readingCharArray;  // 0x00C8, not reflected
+    int32 readingCharArraySize;  // 0x00D8, not reflected
+    TArray<float,TSizedDefaultAllocator<32> > ownerTimeOffsets;  // 0x00E0, not reflected
+    float averageOwnerTimeOffset;  // 0x00F0, not reflected
+    int32 samePositionSentCount;  // 0x00F4, not reflected
+    int32 sameRotationSentCount;  // 0x00F8, not reflected
+    bool wasAttachedLastTick;  // 0x00FC, not reflected
+    uint8 previousReceivedOwnerInt;  // 0x00FD, not reflected
+    AController * owningControllerLastFrame;  // 0x0100, not reflected
+public:
     UFUNCTION(Server, BlueprintNativeEvent) void ClientSendsTransformToServer(TArray<uint8> value);  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsSmoothSyncEnabled() const;  // parameters 0x1
     UFUNCTION(NetMulticast, BlueprintNativeEvent) void ServerSendsTransformToEveryone(TArray<uint8> value);  // parameters 0x10

@@ -6,7 +6,6 @@ UCLASS()
 class UVanguardBPFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static bool ActorLineTraceSingle(UObject* WorldContextObject, AActor* TargetActor, FVector Start, FVector End, TEnumAsByte<ETraceTypeQuery> TraceChannel, bool bTraceComplex, TEnumAsByte<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);  // parameters 0xD9
     UFUNCTION(BlueprintCallable) static void AddActorComponent(AActor* Owner, TSubclassOf<UActorComponent> ActorComponentClass, UActorComponent*& OutComponent);  // parameters 0x18
     UFUNCTION(BlueprintCallable) static void AddActorComponentWithName(AActor* Owner, TSubclassOf<UActorComponent> ActorComponentClass, FName ComponentName, UActorComponent*& OutComponent);  // parameters 0x20

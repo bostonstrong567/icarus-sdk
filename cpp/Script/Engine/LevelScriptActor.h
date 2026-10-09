@@ -5,9 +5,10 @@
 UCLASS(NotPlaceable, Config=Engine)
 class ALevelScriptActor : public AActor
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() uint8 bInputEnabled : 1;  // 0x0220, mask 0x01
-
+public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintImplementableEvent) void LevelReset();
     UFUNCTION(BlueprintCallable) bool RemoteEvent(FName EventName);  // parameters 0x9
     UFUNCTION(BlueprintCallable) void SetCinematicMode(bool bCinematicMode, bool bHidePlayer, bool bAffectsHUD, bool bAffectsMovement, bool bAffectsTurning);  // parameters 0x5

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_STYX_C_Fishing_Hut_FishingBench_C : public ABPQ_Deploy_Count_Powered_C
 {
-public:
 };

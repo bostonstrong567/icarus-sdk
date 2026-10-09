@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UBPI_GenericAction_C : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable) void GenericAction();
     UFUNCTION(BlueprintCallable) void GenericActionWithCharacter(AIcarusPlayerCharacter* Character);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void GeneticActionInt(int32 Data);  // parameters 0x4

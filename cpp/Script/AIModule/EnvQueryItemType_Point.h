@@ -5,7 +5,6 @@
 UCLASS()
 class UEnvQueryItemType_Point : public UEnvQueryItemType_VectorBase
 {
-public:
 
     // Virtual functions that start here:
     //   GetItemNavLocation, SetItemNavLocation

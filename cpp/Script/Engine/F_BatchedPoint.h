@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBatchedPoint
 {
+public:
     UPROPERTY() FVector Position;  // 0x0000, size 0xC
     UPROPERTY() FLinearColor Color;  // 0x000C, size 0x10
     UPROPERTY() float PointSize;  // 0x001C, size 0x4

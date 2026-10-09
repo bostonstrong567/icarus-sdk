@@ -7,11 +7,10 @@ class UViewport : public UContentWidget
 {
 public:
     UPROPERTY(EditAnywhere) FLinearColor BackgroundColor;  // 0x0120, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SAutoRefreshViewport,0> ViewportWidget;  // 0x0130, protected
-    FEngineShowFlags ShowFlags;  // 0x0140, protected
-
+protected:
+    TSharedPtr<SAutoRefreshViewport,0> ViewportWidget;  // 0x0130, not reflected
+    FEngineShowFlags ShowFlags;  // 0x0140, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) FVector GetViewLocation() const;  // parameters 0xC
     UFUNCTION(BlueprintCallable, BlueprintPure) FRotator GetViewRotation() const;  // parameters 0xC
     UFUNCTION(BlueprintCallable, BlueprintPure) UWorld* GetViewportWorld() const;  // parameters 0x8

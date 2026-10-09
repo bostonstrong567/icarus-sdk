@@ -5,6 +5,7 @@
 UCLASS(MinimalAPI)
 class UFLODRecord : public UObject
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintAssignable) FOnRecordFISMChanged OnRecordFISMChanged;  // 0x0028, size 0x1
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) int32 RecordIndex;  // 0x002C, size 0x4
@@ -18,6 +19,7 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bHasInitialized;  // 0x02A0, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<ENetRole> RecordRole;  // 0x02A1, size 0x1
     UPROPERTY() TArray<int32> DestroyedDynamicInstances;  // 0x02A8, size 0x10
+private:
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing) TArray<uint32> DestroyedInstanceData;  // 0x02B8, size 0x10
     UPROPERTY(EditAnywhere, Replicated) FFLODRecordInstanceArray ReplicatedInstanceArray;  // 0x02C8, size 0x148
     UPROPERTY(EditAnywhere) TArray<FFLODRecordInstance> SanitizedInstances;  // 0x0410, size 0x10
@@ -27,10 +29,8 @@ public:
     UPROPERTY(EditAnywhere) int32 CheckPendingInstanceChangesFrame;  // 0x057C, size 0x4
     UPROPERTY(EditAnywhere) TArray<FFLODRecordPendingInstanceChange> PendingInstanceChanges;  // 0x0580, size 0x10
     UPROPERTY(EditAnywhere) FFLODRecordInstanceChangeSet ActiveInstanceChangeSet;  // 0x0590, size 0x30
-
-    // Not reflected: the engine's scripting cannot see these.
-    const FFLODDescription * CachedDescriptionRef;  // 0x05C0, private
-
+    const FFLODDescription * CachedDescriptionRef;  // 0x05C0, not reflected
+public:
     UFUNCTION(BlueprintCallable) int32 AddDynamicInstance(const FTransform& Transform);  // parameters 0x34
     UFUNCTION(BlueprintCallable) void DestroyInstances(TArray<int32> DestroyIndices);  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) FFLODDescription GetDescription() const;  // parameters 0x138

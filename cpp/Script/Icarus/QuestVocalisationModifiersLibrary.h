@@ -6,7 +6,6 @@ UCLASS()
 class UQuestVocalisationModifiersLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToQuestVocalisationModifiersTable(FName Name, FQuestVocalisationModifier Data, FQuestVocalisationModifiersRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x91
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakQuestVocalisationModifiersEnum(FQuestVocalisationModifiersEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FQuestVocalisationModifiersRowHandle CastToQuestVocalisationModifiersRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

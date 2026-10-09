@@ -6,7 +6,5 @@ UCLASS()
 class UArrayProperty : public UProperty
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    UProperty * Inner;  // 0x0070
+    UProperty * Inner;  // 0x0070, not reflected
 };

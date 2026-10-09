@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAnimNode_RigidBody : public FAnimNode_SkeletalControlBase
 {
+public:
     UPROPERTY(EditAnywhere) UPhysicsAsset* OverridePhysicsAsset;  // 0x00C8, size 0x8
     UPROPERTY(EditAnywhere) FVector OverrideWorldGravity;  // 0x0168, size 0xC
     UPROPERTY(EditAnywhere) FVector ExternalForce;  // 0x0174, size 0xC
@@ -23,49 +24,48 @@ struct FAnimNode_RigidBody : public FAnimNode_SkeletalControlBase
     UPROPERTY(EditAnywhere) uint8 bClampLinearTranslationLimitToRefPose : 1;  // 0x01FC, mask 0x10
     UPROPERTY(EditAnywhere) float WorldSpaceMinimumScale;  // 0x0200, size 0x4
     UPROPERTY(EditAnywhere) float EvaluationResetTime;  // 0x0204, size 0x4
-
-    // Not reflected:
-    FTransform PreviousCompWorldSpaceTM;  // 0x00D0
-    FTransform CurrentTransform;  // 0x0100
-    FTransform PreviousTransform;  // 0x0130
-    UPhysicsAsset * UsePhysicsAsset;  // 0x0160
-    ETeleportType ResetSimulatedTeleportType;  // 0x01FB
-    uint8 : 1 bEnabled;  // 0x0208
-    uint8 : 1 bSimulationStarted;  // 0x0208
-    uint8 : 1 bCheckForBodyTransformInit;  // 0x0208
-    float WorldTimeSeconds;  // 0x020C
-    float LastEvalTimeSeconds;  // 0x0210
-    float AccumulatedDeltaTime;  // 0x0214
-    float AnimPhysicsMinDeltaTime;  // 0x0218
-    bool bSimulateAnimPhysicsAfterReset;  // 0x021C
-    TWeakObjectPtr<USkeletalMeshComponent,FWeakObjectPtr> SkelMeshCompWeakPtr;  // 0x0220
-    ImmediatePhysics_PhysX::FSimulation * PhysicsSimulation;  // 0x0228
-    FSolverIterations SolverIterations;  // 0x0230
-    TArray<FAnimNode_RigidBody::FOutputBoneData,TSizedDefaultAllocator<32> > OutputBoneData;  // 0x0250
-    TArray<ImmediatePhysics_PhysX::FActorHandle *,TSizedDefaultAllocator<32> > Bodies;  // 0x0260
-    TArray<int,TSizedDefaultAllocator<32> > SkeletonBoneIndexToBodyIndex;  // 0x0270
-    TArray<FAnimNode_RigidBody::FBodyAnimData,TSizedDefaultAllocator<32> > BodyAnimData;  // 0x0280
-    TArray<FPhysicsConstraintHandle_PhysX *,TSizedDefaultAllocator<32> > Constraints;  // 0x0290
-    TArray<USkeletalMeshComponent::FPendingRadialForces,TSizedDefaultAllocator<32> > PendingRadialForces;  // 0x02A0
-    FPerSolverFieldSystem PerSolverField;  // 0x02B0
-    TMap<UPrimitiveComponent const *,FAnimNode_RigidBody::FWorldObject,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<UPrimitiveComponent const *,FAnimNode_RigidBody::FWorldObject,0> > ComponentsInSim;  // 0x0480
-    int32 ComponentsInSimTick;  // 0x04D0
-    FVector WorldSpaceGravity;  // 0x04D4
-    float TotalMass;  // 0x04E0
-    FSphere CachedBounds;  // 0x04E4
-    FCollisionQueryParams QueryParams;  // 0x04F8
-    FPhysScene_PhysX * PhysScene;  // 0x0568
-    const UWorld * UnsafeWorld;  // 0x0570
-    const AActor * UnsafeOwner;  // 0x0578
-    FBoneContainer CapturedBoneVelocityBoneContainer;  // 0x0580
-    FCSPose<FCompactHeapPose> CapturedBoneVelocityPose;  // 0x06D0
-    FCSPose<FCompactHeapPose> CapturedFrozenPose;  // 0x0718
-    FBlendedHeapCurve CapturedFrozenCurves;  // 0x0760
-    FVector PreviousComponentLinearVelocity;  // 0x0790
-    FTransform SimSpacePreviousComponentToWorld;  // 0x07A0
-    FTransform SimSpacePreviousBoneToComponent;  // 0x07D0
-    FVector SimSpacePreviousComponentLinearVelocity;  // 0x0800
-    FVector SimSpacePreviousComponentAngularVelocity;  // 0x080C
-    FVector SimSpacePreviousBoneLinearVelocity;  // 0x0818
-    FVector SimSpacePreviousBoneAngularVelocity;  // 0x0824
+private:
+    FTransform PreviousCompWorldSpaceTM;  // 0x00D0, not reflected
+    FTransform CurrentTransform;  // 0x0100, not reflected
+    FTransform PreviousTransform;  // 0x0130, not reflected
+    UPhysicsAsset * UsePhysicsAsset;  // 0x0160, not reflected
+    ETeleportType ResetSimulatedTeleportType;  // 0x01FB, not reflected
+    uint8 : 1 bCheckForBodyTransformInit;  // 0x0208, not reflected
+    uint8 : 1 bEnabled;  // 0x0208, not reflected
+    uint8 : 1 bSimulationStarted;  // 0x0208, not reflected
+    float WorldTimeSeconds;  // 0x020C, not reflected
+    float LastEvalTimeSeconds;  // 0x0210, not reflected
+    float AccumulatedDeltaTime;  // 0x0214, not reflected
+    float AnimPhysicsMinDeltaTime;  // 0x0218, not reflected
+    bool bSimulateAnimPhysicsAfterReset;  // 0x021C, not reflected
+    TWeakObjectPtr<USkeletalMeshComponent,FWeakObjectPtr> SkelMeshCompWeakPtr;  // 0x0220, not reflected
+    ImmediatePhysics_PhysX::FSimulation * PhysicsSimulation;  // 0x0228, not reflected
+    FSolverIterations SolverIterations;  // 0x0230, not reflected
+    TArray<FAnimNode_RigidBody::FOutputBoneData,TSizedDefaultAllocator<32> > OutputBoneData;  // 0x0250, not reflected
+    TArray<ImmediatePhysics_PhysX::FActorHandle *,TSizedDefaultAllocator<32> > Bodies;  // 0x0260, not reflected
+    TArray<int,TSizedDefaultAllocator<32> > SkeletonBoneIndexToBodyIndex;  // 0x0270, not reflected
+    TArray<FAnimNode_RigidBody::FBodyAnimData,TSizedDefaultAllocator<32> > BodyAnimData;  // 0x0280, not reflected
+    TArray<FPhysicsConstraintHandle_PhysX *,TSizedDefaultAllocator<32> > Constraints;  // 0x0290, not reflected
+    TArray<USkeletalMeshComponent::FPendingRadialForces,TSizedDefaultAllocator<32> > PendingRadialForces;  // 0x02A0, not reflected
+    FPerSolverFieldSystem PerSolverField;  // 0x02B0, not reflected
+    TMap<UPrimitiveComponent const *,FAnimNode_RigidBody::FWorldObject,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<UPrimitiveComponent const *,FAnimNode_RigidBody::FWorldObject,0> > ComponentsInSim;  // 0x0480, not reflected
+    int32 ComponentsInSimTick;  // 0x04D0, not reflected
+    FVector WorldSpaceGravity;  // 0x04D4, not reflected
+    float TotalMass;  // 0x04E0, not reflected
+    FSphere CachedBounds;  // 0x04E4, not reflected
+    FCollisionQueryParams QueryParams;  // 0x04F8, not reflected
+    FPhysScene_PhysX * PhysScene;  // 0x0568, not reflected
+    const UWorld * UnsafeWorld;  // 0x0570, not reflected
+    const AActor * UnsafeOwner;  // 0x0578, not reflected
+    FBoneContainer CapturedBoneVelocityBoneContainer;  // 0x0580, not reflected
+    FCSPose<FCompactHeapPose> CapturedBoneVelocityPose;  // 0x06D0, not reflected
+    FCSPose<FCompactHeapPose> CapturedFrozenPose;  // 0x0718, not reflected
+    FBlendedHeapCurve CapturedFrozenCurves;  // 0x0760, not reflected
+    FVector PreviousComponentLinearVelocity;  // 0x0790, not reflected
+    FTransform SimSpacePreviousComponentToWorld;  // 0x07A0, not reflected
+    FTransform SimSpacePreviousBoneToComponent;  // 0x07D0, not reflected
+    FVector SimSpacePreviousComponentLinearVelocity;  // 0x0800, not reflected
+    FVector SimSpacePreviousComponentAngularVelocity;  // 0x080C, not reflected
+    FVector SimSpacePreviousBoneLinearVelocity;  // 0x0818, not reflected
+    FVector SimSpacePreviousBoneAngularVelocity;  // 0x0824, not reflected
 };

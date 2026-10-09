@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAchievementsDef
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString AchievementId;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString UnlockedDisplayName;  // 0x0010, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString UnlockedDescription;  // 0x0020, size 0x10

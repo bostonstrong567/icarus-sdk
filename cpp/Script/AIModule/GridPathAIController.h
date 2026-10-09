@@ -5,5 +5,4 @@
 UCLASS(NotPlaceable, Config=Engine)
 class AGridPathAIController : public AAIController
 {
-public:
 };

@@ -5,14 +5,19 @@
 UCLASS(Abstract, EditInlineNew, Config=Engine)
 class USkinnedMeshComponent : public UMeshComponent, public ILODSyncInterface
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) USkeletalMesh* SkeletalMesh;  // 0x0480, size 0x8
     UPROPERTY(Instanced, BlueprintReadOnly) TWeakObjectPtr<USkinnedMeshComponent> MasterPoseComponent;  // 0x0488, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<ESkinCacheUsage> SkinCacheUsage;  // 0x0490, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<FVertexOffsetUsage> VertexOffsetUsage;  // 0x04A0, size 0x10
+    TArray<FActiveMorphTarget,TSizedDefaultAllocator<32> > ActiveMorphTargets;  // 0x0588, not reflected
+    TArray<float,TSizedDefaultAllocator<32> > MorphTargetWeights;  // 0x0598, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadOnly) UPhysicsAsset* PhysicsAssetOverride;  // 0x05A8, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 ForcedLodModel;  // 0x05B0, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 MinLodModel;  // 0x05B4, size 0x4
+    int32 PredictedLODLevel;  // 0x05B8, not reflected
+    float MaxDistanceFactor;  // 0x05BC, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float StreamingDistanceMultiplier;  // 0x05C0, size 0x4
     UPROPERTY(Transient) TArray<FSkelMeshComponentLODInfo> LODInfo;  // 0x05D0, size 0x10
     UPROPERTY(EditAnywhere, Config, Interp, BlueprintReadWrite) EVisibilityBasedAnimTickOption VisibilityBasedAnimTickOption;  // 0x0604, size 0x1
@@ -35,49 +40,45 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bDisplayDebugUpdateRateOptimizations : 1;  // 0x0608, mask 0x08
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bRenderStatic : 1;  // 0x0608, mask 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bIgnoreMasterPoseComponentLOD : 1;  // 0x0608, mask 0x20
-    UPROPERTY(Transient) uint8 bCachedLocalBoundsUpToDate : 1;  // 0x0609, mask 0x01
-    UPROPERTY(Transient) uint8 bForceMeshObjectUpdate : 1;  // 0x0609, mask 0x04
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float CapsuleIndirectShadowMinVisibility;  // 0x060C, size 0x4
+    FSkeletalMeshObject * MeshObject;  // 0x0610, not reflected
+    TDelegate<void __cdecl(FAnimUpdateRateParameters *),FDefaultDelegateUserPolicy> OnAnimUpdateRateParamsCreated;  // 0x0680, not reflected
+    FAnimUpdateRateParameters * AnimUpdateRateParams;  // 0x0690, not reflected
+protected:
+    TArray<unsigned char,TSizedDefaultAllocator<32> > PreviousBoneVisibilityStates;  // 0x04D0, not reflected
+    TArray<FTransform,TSizedDefaultAllocator<32> > PreviousComponentSpaceTransformsArray;  // 0x04E0, not reflected
+    int32 CurrentEditableComponentTransforms;  // 0x04F0, not reflected
+    int32 CurrentReadComponentTransforms;  // 0x04F4, not reflected
+    uint32 CurrentBoneTransformRevisionNumber;  // 0x04F8, not reflected
+    int32 MasterBoneMapCacheCount;  // 0x04FC, not reflected
+    TArray<TWeakObjectPtr<USkinnedMeshComponent,FWeakObjectPtr>,TSizedDefaultAllocator<32> > SlavePoseComponents;  // 0x0500, not reflected
+    TArray<int,TSizedDefaultAllocator<32> > MasterBoneMap;  // 0x0510, not reflected
+    TMap<int,USkinnedMeshComponent::FMissingMasterBoneCacheEntry,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<int,USkinnedMeshComponent::FMissingMasterBoneCacheEntry,0> > MissingMasterBoneMap;  // 0x0520, not reflected
+    TSortedMap<FName,FName,TSizedDefaultAllocator<32>,FNameFastLess> SocketOverrideLookup;  // 0x0570, not reflected
+    FSkelMeshRefPoseOverride * RefPoseOverride;  // 0x0580, not reflected
+    float ExternalInterpolationAlpha;  // 0x05C4, not reflected
+    float ExternalDeltaTime;  // 0x05C8, not reflected
+    TArray<unsigned char,TSizedDefaultAllocator<32> >[2] BoneVisibilityStates;  // 0x05E0, not reflected
+    ERHIFeatureLevel::Type CachedSceneFeatureLevel;  // 0x0600, not reflected
+    uint8 ExternalTickRate;  // 0x0605, not reflected
+    uint8 : 1 bHasValidBoneTransform;  // 0x0606, not reflected
+    uint8 : 1 bSkinWeightProfilePending;  // 0x0606, not reflected
+    uint8 : 1 bSkinWeightProfileSet;  // 0x0606, not reflected
+    uint8 : 1 bDoubleBufferedComponentSpaceTransforms;  // 0x0608, not reflected
+    uint8 : 1 bNeedToFlipSpaceBaseBuffers;  // 0x0608, not reflected
+    uint8 : 1 bBoneVisibilityDirty;  // 0x0609, not reflected
+    uint8 : 1 bExternalEvaluationRateLimited;  // 0x0609, not reflected
+    uint8 : 1 bExternalInterpolate;  // 0x0609, not reflected
+    uint8 : 1 bExternalTickRateControlled;  // 0x0609, not reflected
+    uint8 : 1 bExternalUpdate;  // 0x0609, not reflected
+    UPROPERTY(Transient) uint8 bCachedLocalBoundsUpToDate : 1;  // 0x0609, mask 0x01
+    FName CurrentSkinWeightProfileName;  // 0x0618, not reflected
     UPROPERTY(Transient) FBoxSphereBounds CachedWorldSpaceBounds;  // 0x0620, size 0x1C
     UPROPERTY(Transient) FMatrix CachedWorldToLocalTransform;  // 0x0640, size 0x40
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<FTransform,TSizedDefaultAllocator<32> >[2] ComponentSpaceTransformsArray;  // 0x04B0, private
-    TArray<unsigned char,TSizedDefaultAllocator<32> > PreviousBoneVisibilityStates;  // 0x04D0, protected
-    TArray<FTransform,TSizedDefaultAllocator<32> > PreviousComponentSpaceTransformsArray;  // 0x04E0, protected
-    int32 CurrentEditableComponentTransforms;  // 0x04F0, protected
-    int32 CurrentReadComponentTransforms;  // 0x04F4, protected
-    uint32 CurrentBoneTransformRevisionNumber;  // 0x04F8, protected
-    int32 MasterBoneMapCacheCount;  // 0x04FC, protected
-    TArray<TWeakObjectPtr<USkinnedMeshComponent,FWeakObjectPtr>,TSizedDefaultAllocator<32> > SlavePoseComponents;  // 0x0500, protected
-    TArray<int,TSizedDefaultAllocator<32> > MasterBoneMap;  // 0x0510, protected
-    TMap<int,USkinnedMeshComponent::FMissingMasterBoneCacheEntry,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<int,USkinnedMeshComponent::FMissingMasterBoneCacheEntry,0> > MissingMasterBoneMap;  // 0x0520, protected
-    TSortedMap<FName,FName,TSizedDefaultAllocator<32>,FNameFastLess> SocketOverrideLookup;  // 0x0570, protected
-    FSkelMeshRefPoseOverride * RefPoseOverride;  // 0x0580, protected
-    TArray<FActiveMorphTarget,TSizedDefaultAllocator<32> > ActiveMorphTargets;  // 0x0588
-    TArray<float,TSizedDefaultAllocator<32> > MorphTargetWeights;  // 0x0598
-    int32 PredictedLODLevel;  // 0x05B8
-    float MaxDistanceFactor;  // 0x05BC
-    float ExternalInterpolationAlpha;  // 0x05C4, protected
-    float ExternalDeltaTime;  // 0x05C8, protected
-    TArray<unsigned char,TSizedDefaultAllocator<32> >[2] BoneVisibilityStates;  // 0x05E0, protected
-    ERHIFeatureLevel::Type CachedSceneFeatureLevel;  // 0x0600, protected
-    uint8 ExternalTickRate;  // 0x0605, protected
-    uint8 : 1 bHasValidBoneTransform;  // 0x0606, protected
-    uint8 : 1 bSkinWeightProfileSet;  // 0x0606, protected
-    uint8 : 1 bSkinWeightProfilePending;  // 0x0606, protected
-    uint8 : 1 bDoubleBufferedComponentSpaceTransforms;  // 0x0608, protected
-    uint8 : 1 bNeedToFlipSpaceBaseBuffers;  // 0x0608, protected
-    uint8 : 1 bBoneVisibilityDirty;  // 0x0609, protected
-    uint8 : 1 bExternalTickRateControlled;  // 0x0609, protected
-    uint8 : 1 bExternalInterpolate;  // 0x0609, protected
-    uint8 : 1 bExternalUpdate;  // 0x0609, protected
-    uint8 : 1 bExternalEvaluationRateLimited;  // 0x0609, protected
-    FSkeletalMeshObject * MeshObject;  // 0x0610
-    FName CurrentSkinWeightProfileName;  // 0x0618, protected
-    TDelegate<void __cdecl(FAnimUpdateRateParameters *),FDefaultDelegateUserPolicy> OnAnimUpdateRateParamsCreated;  // 0x0680
-    FAnimUpdateRateParameters * AnimUpdateRateParams;  // 0x0690
-
+private:
+    TArray<FTransform,TSizedDefaultAllocator<32> >[2] ComponentSpaceTransformsArray;  // 0x04B0, not reflected
+    UPROPERTY(Transient) uint8 bForceMeshObjectUpdate : 1;  // 0x0609, mask 0x04
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) bool BoneIsChildOf(FName BoneName, FName ParentBoneName) const;  // parameters 0x11
     UFUNCTION(BlueprintCallable) void ClearSkinWeightOverride(int32 LODIndex);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void ClearSkinWeightProfile();

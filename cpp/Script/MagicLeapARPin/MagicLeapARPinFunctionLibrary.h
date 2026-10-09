@@ -6,7 +6,6 @@ UCLASS()
 class UMagicLeapARPinFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static FString ARPinIdToString(const FGuid& ARPinId);  // parameters 0x20
     UFUNCTION(BlueprintCallable) static void BindToOnMagicLeapARPinUpdatedDelegate(const FMagicLeapARPinUpdatedDelegate& Delegate);  // parameters 0x10
     UFUNCTION(BlueprintCallable) static void BindToOnMagicLeapContentBindingFoundDelegate(const FMagicLeapContentBindingFoundDelegate& Delegate);  // parameters 0x10

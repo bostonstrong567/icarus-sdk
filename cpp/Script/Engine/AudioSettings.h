@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class UAudioSettings : public UDeveloperSettings
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, Config) FSoftObjectPath DefaultSoundClassName;  // 0x0038, size 0x18
     UPROPERTY(EditAnywhere, Config) FSoftObjectPath DefaultMediaSoundClassName;  // 0x0050, size 0x18
@@ -30,10 +31,9 @@ public:
     UPROPERTY(EditAnywhere, Config) FString DialogueFilenameFormat;  // 0x0148, size 0x10
     UPROPERTY(EditAnywhere, Config) TArray<FSoundDebugEntry> DebugSounds;  // 0x0158, size 0x10
     UPROPERTY(EditAnywhere, Config) TArray<FDefaultAudioBusSettings> DefaultAudioBuses;  // 0x0168, size 0x10
+private:
     UPROPERTY(Transient) USoundClass* DefaultSoundClass;  // 0x0178, size 0x8
     UPROPERTY(Transient) USoundClass* DefaultMediaSoundClass;  // 0x0180, size 0x8
     UPROPERTY(Transient) USoundConcurrency* DefaultSoundConcurrency;  // 0x0188, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bIsAudioMixerEnabled;  // 0x0190, private
+    bool bIsAudioMixerEnabled;  // 0x0190, not reflected
 };

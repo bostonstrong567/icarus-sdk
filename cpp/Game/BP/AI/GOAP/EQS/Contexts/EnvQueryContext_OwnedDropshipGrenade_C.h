@@ -6,6 +6,5 @@ UCLASS(EditInlineNew, Config=Engine)
 class UEnvQueryContext_OwnedDropshipGrenade_C : public UEnvQueryContext_BlueprintBase
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void ProvideSingleLocation(UObject* QuerierObject, AActor* QuerierActor, FVector& ResultingLocation) const;  // parameters 0x1C
 };

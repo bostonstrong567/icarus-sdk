@@ -4,10 +4,9 @@
 USTRUCT()
 struct FMotionEvent : public FInputEvent
 {
-
-    // Not reflected:
-    FVector Tilt;  // 0x0018
-    FVector RotationRate;  // 0x0024
-    FVector Gravity;  // 0x0030
-    FVector Acceleration;  // 0x003C
+private:
+    FVector Tilt;  // 0x0018, not reflected
+    FVector RotationRate;  // 0x0024, not reflected
+    FVector Gravity;  // 0x0030, not reflected
+    FVector Acceleration;  // 0x003C, not reflected
 };

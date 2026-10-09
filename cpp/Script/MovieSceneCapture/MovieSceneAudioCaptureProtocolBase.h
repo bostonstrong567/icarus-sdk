@@ -5,5 +5,4 @@
 UCLASS(Abstract, Config=EditorPerProjectUserSettings)
 class UMovieSceneAudioCaptureProtocolBase : public UMovieSceneCaptureProtocolBase
 {
-public:
 };

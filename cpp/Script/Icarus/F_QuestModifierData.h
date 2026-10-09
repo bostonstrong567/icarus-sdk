@@ -4,5 +4,6 @@
 USTRUCT()
 struct FQuestModifierData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<UQuestModifierBase> OverrideClass;  // 0x0018, size 0x28
 };

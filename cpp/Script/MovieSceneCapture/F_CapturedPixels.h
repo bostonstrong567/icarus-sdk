@@ -4,7 +4,6 @@
 USTRUCT()
 struct FCapturedPixels
 {
-
-    // Not reflected:
-    TSharedPtr<FImagePixelData,1> ImageData;  // 0x0000
+public:
+    TSharedPtr<FImagePixelData,1> ImageData;  // 0x0000, not reflected
 };

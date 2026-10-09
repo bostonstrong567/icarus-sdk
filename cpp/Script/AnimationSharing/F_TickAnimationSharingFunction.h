@@ -4,7 +4,6 @@
 USTRUCT()
 struct FTickAnimationSharingFunction : public FTickFunction
 {
-
-    // Not reflected:
-    UAnimationSharingManager * Manager;  // 0x0028
+public:
+    UAnimationSharingManager * Manager;  // 0x0028, not reflected
 };

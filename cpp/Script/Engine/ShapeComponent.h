@@ -12,9 +12,8 @@ public:
     UPROPERTY() uint8 bDrawOnlyIfSelected : 1;  // 0x0464, mask 0x01
     UPROPERTY() uint8 bShouldCollideWhenPlacing : 1;  // 0x0464, mask 0x02
     UPROPERTY(EditAnywhere) uint8 bDynamicObstacle : 1;  // 0x0464, mask 0x04
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint8 : 1 bUseArchetypeBodySetup;  // 0x0464, protected
+protected:
+    uint8 : 1 bUseArchetypeBodySetup;  // 0x0464, not reflected
 
     // Virtual functions that start here:
     //   UpdateBodySetup

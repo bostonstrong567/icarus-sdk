@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMetaItemDelta
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString ItemUID;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FMetaItem MetaItem;  // 0x0010, size 0x40
 };

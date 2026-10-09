@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSourceEffectMidSideSpreaderSettings
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float SpreadAmount;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EStereoChannelMode InputMode;  // 0x0004, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EStereoChannelMode OutputMode;  // 0x0005, size 0x1

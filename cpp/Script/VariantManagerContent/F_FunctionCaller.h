@@ -4,5 +4,6 @@
 USTRUCT()
 struct FFunctionCaller
 {
+public:
     UPROPERTY() FName FunctionName;  // 0x0000, size 0x8
 };

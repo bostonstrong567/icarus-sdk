@@ -20,7 +20,6 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<TextureAddress> MipsAddressU;  // 0x019E, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<TextureAddress> MipsAddressV;  // 0x019F, size 0x1
     UPROPERTY() TEnumAsByte<EPixelFormat> OverrideFormat;  // 0x01A0, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    int32 NumMips;  // 0x01A4, private
+private:
+    int32 NumMips;  // 0x01A4, not reflected
 };

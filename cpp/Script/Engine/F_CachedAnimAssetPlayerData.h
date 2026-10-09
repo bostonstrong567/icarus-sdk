@@ -4,10 +4,10 @@
 USTRUCT()
 struct FCachedAnimAssetPlayerData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FName StateMachineName;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FName StateName;  // 0x0008, size 0x8
-
-    // Not reflected:
-    int32 Index;  // 0x0010
-    bool bInitialized;  // 0x0014
+private:
+    int32 Index;  // 0x0010, not reflected
+    bool bInitialized;  // 0x0014, not reflected
 };

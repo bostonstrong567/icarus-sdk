@@ -4,6 +4,7 @@
 USTRUCT()
 struct FCritialHitTarget
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float TimeScale;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float TimeLength;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float FOV;  // 0x0008, size 0x4

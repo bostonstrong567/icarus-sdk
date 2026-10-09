@@ -4,6 +4,8 @@
 USTRUCT()
 struct FTimeStretchCurve
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY(EditAnywhere) float SamplingRate;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere) float CurveValueMinPrecision;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere) TArray<FTimeStretchCurveMarker> Markers;  // 0x0008, size 0x10

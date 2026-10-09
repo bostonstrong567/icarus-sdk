@@ -6,7 +6,6 @@ UCLASS(Transient, Config=Engine)
 class UBP_ActionableBehaviour_Seed_Deploy_C : public UBP_ActionableBehaviour_DeployableBase_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void BlueprintDeploy(FTransform DeployTransform, AActor* FoundationActor, FItemData ItemData, int32 VarientIndex);  // parameters 0x22C
     UFUNCTION(BlueprintCallable) void CustomDeploymentCheck(AActor* HitActor, bool& ValidPlacement, FText& Reason);  // parameters 0x28
 };

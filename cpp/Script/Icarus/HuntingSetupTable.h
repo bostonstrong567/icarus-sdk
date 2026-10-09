@@ -5,5 +5,4 @@
 UCLASS()
 class UHuntingSetupTable : public UIcarusDataTable
 {
-public:
 };

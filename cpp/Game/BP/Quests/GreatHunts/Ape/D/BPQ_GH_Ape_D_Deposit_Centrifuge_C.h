@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_Ape_D_Deposit_Centrifuge_C : public ABPQ_Common_Deliver_C
 {
-public:
 };

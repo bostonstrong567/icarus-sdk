@@ -5,7 +5,6 @@
 UCLASS(Abstract, Transient, Config=Engine)
 class UNavigationSystemBase : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   AppendConfig, ApplyWorldOffset, CleanUp, Configure, GetMainNavData, InitializeForWorld

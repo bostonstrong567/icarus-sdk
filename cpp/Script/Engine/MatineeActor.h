@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class AMatineeActor : public AActor
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) UInterpData* MatineeData;  // 0x0220, size 0x8
     UPROPERTY() FName MatineeControllerName;  // 0x0228, size 0x8
@@ -34,15 +35,15 @@ public:
     UPROPERTY(Replicated, Transient) uint8 bPaused : 1;  // 0x0280, mask 0x04
     UPROPERTY(Replicated, Transient) uint8 bPendingStop : 1;  // 0x0280, mask 0x08
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) float InterpPosition;  // 0x0284, size 0x4
-    UPROPERTY(Replicated) uint8 ReplicationForceIsPlaying;  // 0x028C, size 0x1
+    float ClientSidePositionErrorTolerance;  // 0x0288, not reflected
     UPROPERTY(BlueprintAssignable) FOnMatineeEvent OnPlay;  // 0x0290, size 0x10
     UPROPERTY(BlueprintAssignable) FOnMatineeEvent OnStop;  // 0x02A0, size 0x10
     UPROPERTY(BlueprintAssignable) FOnMatineeEvent OnPause;  // 0x02B0, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    float ClientSidePositionErrorTolerance;  // 0x0288
-    FTimerHandle TimerHandle_CheckPriorityRefresh;  // 0x02C0, protected
-
+protected:
+    FTimerHandle TimerHandle_CheckPriorityRefresh;  // 0x02C0, not reflected
+private:
+    UPROPERTY(Replicated) uint8 ReplicationForceIsPlaying;  // 0x028C, size 0x1
+public:
     UFUNCTION(BlueprintCallable) void ChangePlaybackDirection();
     UFUNCTION(BlueprintCallable) void EnableGroupByName(FString GroupName, bool bEnable);  // parameters 0x11
     UFUNCTION(BlueprintCallable) void Pause();

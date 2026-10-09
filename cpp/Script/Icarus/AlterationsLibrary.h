@@ -6,7 +6,6 @@ UCLASS()
 class UAlterationsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToAlterationsTable(FName Name, FAlteration Data, FAlterationsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x109
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakAlterationsEnum(FAlterationsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FAlterationsRowHandle CastToAlterationsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

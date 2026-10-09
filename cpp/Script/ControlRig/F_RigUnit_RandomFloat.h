@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_RandomFloat : public FRigUnit_MathBase
 {
+public:
     UPROPERTY() int32 Seed;  // 0x0008, size 0x4
     UPROPERTY() float Minimum;  // 0x000C, size 0x4
     UPROPERTY() float Maximum;  // 0x0010, size 0x4

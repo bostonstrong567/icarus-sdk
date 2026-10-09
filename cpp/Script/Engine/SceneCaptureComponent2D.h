@@ -23,9 +23,7 @@ public:
     UPROPERTY(Transient, BlueprintReadWrite) uint8 bCameraCutThisFrame : 1;  // 0x089C, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bConsiderUnrenderedOpaquePixelAsFullyTranslucent : 1;  // 0x089C, mask 0x02
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bDisableFlipCopyGLES;  // 0x08A0, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<TWeakPtr<ISceneViewExtension,1>,TSizedDefaultAllocator<32> > SceneViewExtensions;  // 0x08A8
+    TArray<TWeakPtr<ISceneViewExtension,1>,TSizedDefaultAllocator<32> > SceneViewExtensions;  // 0x08A8, not reflected
 
     UFUNCTION(BlueprintCallable) void AddOrUpdateBlendable(TScriptInterface<IBlendableInterface> InBlendableObject, float InWeight);  // parameters 0x14
     UFUNCTION(BlueprintCallable) void CaptureScene();

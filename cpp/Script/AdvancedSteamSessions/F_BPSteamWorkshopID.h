@@ -4,7 +4,6 @@
 USTRUCT()
 struct FBPSteamWorkshopID
 {
-
-    // Not reflected:
-    uint64 SteamWorkshopID;  // 0x0000
+public:
+    uint64 SteamWorkshopID;  // 0x0000, not reflected
 };

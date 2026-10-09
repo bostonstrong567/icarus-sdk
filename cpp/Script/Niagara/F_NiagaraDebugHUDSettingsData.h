@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNiagaraDebugHUDSettingsData
 {
+public:
     UPROPERTY(EditAnywhere) bool bEnabled;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere) bool bValidateSystemSimulationDataBuffers;  // 0x0001, size 0x1
     UPROPERTY(EditAnywhere) bool bValidateParticleDataBuffers;  // 0x0002, size 0x1

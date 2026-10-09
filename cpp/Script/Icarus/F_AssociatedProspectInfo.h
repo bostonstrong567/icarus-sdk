@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAssociatedProspectInfo
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FProspectInfo AssociatedProspect;  // 0x0000, size 0xA0
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FLastProspectHostInfo HostedBy;  // 0x00A0, size 0x38
 };

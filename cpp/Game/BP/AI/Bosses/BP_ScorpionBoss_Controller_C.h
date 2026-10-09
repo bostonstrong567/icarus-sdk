@@ -5,5 +5,4 @@
 UCLASS(NotPlaceable, Config=Engine)
 class ABP_ScorpionBoss_Controller_C : public AIcarusNPCController
 {
-public:
 };

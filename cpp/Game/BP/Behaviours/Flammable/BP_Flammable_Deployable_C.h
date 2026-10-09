@@ -6,7 +6,6 @@ UCLASS(EditInlineNew, Config=Engine)
 class UBP_Flammable_Deployable_C : public UBP_Flammable_Actor_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintImplementableEvent) bool CanPropagate(EFlammablePropagationType PropagationType) const;  // parameters 0x2
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintImplementableEvent) FBoxSphereBounds GetLocalBounds() const;  // parameters 0x1C
 };

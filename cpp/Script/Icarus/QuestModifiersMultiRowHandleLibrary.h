@@ -6,7 +6,6 @@ UCLASS()
 class UQuestModifiersMultiRowHandleLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static void Break(FQuestModifiersMultiRowHandle MultiRowHandle, EQuestModifiersTableType& OutEnum, FName& OutName);  // parameters 0x24
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool EqualEqual_QuestModifiersMultiRowHandleFQuestEnemyModifiersRowHandle(FQuestModifiersMultiRowHandle MultiHandle, FQuestEnemyModifiersRowHandle RowHandle);  // parameters 0x31
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool EqualEqual_QuestModifiersMultiRowHandleFQuestVocalisationModifiersRowHandle(FQuestModifiersMultiRowHandle MultiHandle, FQuestVocalisationModifiersRowHandle RowHandle);  // parameters 0x31

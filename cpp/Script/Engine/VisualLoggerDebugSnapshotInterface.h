@@ -5,5 +5,4 @@
 UCLASS(Abstract, MinimalAPI)
 class UVisualLoggerDebugSnapshotInterface : public UInterface
 {
-public:
 };

@@ -5,5 +5,4 @@
 UCLASS()
 class UCustomGameStatsTable : public UIcarusDataTable
 {
-public:
 };

@@ -4,5 +4,6 @@
 USTRUCT()
 struct FGeneratorTraitRecord
 {
+public:
     UPROPERTY(SaveGame) bool bActive;  // 0x0000, size 0x1
 };

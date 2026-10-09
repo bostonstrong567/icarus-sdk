@@ -5,15 +5,14 @@
 UCLASS()
 class UVariant : public UObject
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() TArray<FVariantDependency> Dependencies;  // 0x0028, size 0x10
     UPROPERTY(Deprecated) FText DisplayText;  // 0x0038, size 0x18
+    FText DisplayText;  // 0x0050, not reflected
     UPROPERTY() TArray<UVariantObjectBinding*> ObjectBindings;  // 0x0068, size 0x10
     UPROPERTY() UTexture2D* Thumbnail;  // 0x0078, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FText DisplayText;  // 0x0050, private
-
+public:
     UFUNCTION() int32 AddDependency(FVariantDependency& Dependency);  // parameters 0x5C
     UFUNCTION() void DeleteDependency(int32 Index);  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) AActor* GetActor(int32 ActorIndex);  // parameters 0x10

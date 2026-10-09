@@ -5,5 +5,4 @@
 UCLASS()
 class UTransmutableTable : public UIcarusDataTable
 {
-public:
 };

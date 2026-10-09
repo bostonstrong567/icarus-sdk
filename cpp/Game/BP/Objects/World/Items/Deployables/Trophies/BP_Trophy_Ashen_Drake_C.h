@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Trophy_Ashen_Drake_C : public ABP_DeployableBase_C
 {
-public:
 };

@@ -6,7 +6,6 @@ UCLASS()
 class UAdvancedExternalUILibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void CloseWebURLUI();
     UFUNCTION(BlueprintCallable) static void ShowAccountUpgradeUI(FBPUniqueNetId PlayerRequestingAccountUpgradeUI, EBlueprintResultSwitch& Result);  // parameters 0x21
     UFUNCTION(BlueprintCallable) static void ShowFriendsUI(APlayerController* PlayerController, EBlueprintResultSwitch& Result);  // parameters 0x9

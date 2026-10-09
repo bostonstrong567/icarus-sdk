@@ -6,7 +6,6 @@ UCLASS()
 class UMissionNPCLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToMissionNPCTable(FName Name, FMissionNPCData Data, FMissionNPCRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x91
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakMissionNPCEnum(FMissionNPCEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FMissionNPCRowHandle CastToMissionNPCRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

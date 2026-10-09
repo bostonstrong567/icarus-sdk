@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAnimNode_ApplyMeshSpaceAdditive : public FAnimNode_Base
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FPoseLink Base;  // 0x0010, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FPoseLink Additive;  // 0x0020, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EAnimAlphaInputType AlphaInputType;  // 0x0030, size 0x1
@@ -14,7 +15,5 @@ struct FAnimNode_ApplyMeshSpaceAdditive : public FAnimNode_Base
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FInputScaleBias AlphaScaleBias;  // 0x0090, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FInputScaleBiasClamp AlphaScaleBiasClamp;  // 0x0098, size 0x30
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 LODThreshold;  // 0x00C8, size 0x4
-
-    // Not reflected:
-    float ActualAlpha;  // 0x00CC
+    float ActualAlpha;  // 0x00CC, not reflected
 };

@@ -4,8 +4,7 @@
 USTRUCT()
 struct FMovieSceneKeyTimeStruct : public FMovieSceneKeyStruct
 {
+public:
     UPROPERTY(EditAnywhere) FFrameNumber Time;  // 0x0008, size 0x4
-
-    // Not reflected:
-    FMovieSceneKeyStructHelper KeyStructInterop;  // 0x0010
+    FMovieSceneKeyStructHelper KeyStructInterop;  // 0x0010, not reflected
 };

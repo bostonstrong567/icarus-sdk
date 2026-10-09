@@ -4,5 +4,6 @@
 USTRUCT()
 struct FSkeletalMeshSamplingRegionMaterialFilter
 {
+public:
     UPROPERTY(EditAnywhere) FName MaterialName;  // 0x0000, size 0x8
 };

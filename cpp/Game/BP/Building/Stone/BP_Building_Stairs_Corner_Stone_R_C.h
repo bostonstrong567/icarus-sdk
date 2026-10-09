@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Building_Stairs_Corner_Stone_R_C : public ABP_Building_CornerStair_R_C
 {
-public:
 };

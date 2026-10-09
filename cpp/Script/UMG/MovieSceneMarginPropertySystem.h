@@ -5,5 +5,4 @@
 UCLASS()
 class UMovieSceneMarginPropertySystem : public UMovieScenePropertySystem
 {
-public:
 };

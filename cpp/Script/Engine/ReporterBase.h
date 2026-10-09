@@ -6,9 +6,7 @@ UCLASS(Abstract)
 class UReporterBase : public UObject
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bVisible;  // 0x0028
+    bool bVisible;  // 0x0028, not reflected
 
     // Virtual functions that start here:
     //   Draw, ToScreenSpace

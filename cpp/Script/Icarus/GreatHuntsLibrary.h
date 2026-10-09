@@ -6,7 +6,6 @@ UCLASS()
 class UGreatHuntsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToGreatHuntsTable(FName Name, FGreatHunt Data, FGreatHuntsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xD1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakGreatHuntsEnum(FGreatHuntsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FGreatHuntsRowHandle CastToGreatHuntsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

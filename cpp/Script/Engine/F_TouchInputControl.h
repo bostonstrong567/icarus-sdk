@@ -4,6 +4,7 @@
 USTRUCT()
 struct FTouchInputControl
 {
+public:
     UPROPERTY(EditAnywhere) UTexture2D* Image1;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) UTexture2D* Image2;  // 0x0008, size 0x8
     UPROPERTY(EditAnywhere) FVector2D Center;  // 0x0010, size 0x8

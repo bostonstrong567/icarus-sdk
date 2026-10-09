@@ -4,6 +4,7 @@
 USTRUCT()
 struct FChaosDestructionEvent
 {
+public:
     UPROPERTY(EditAnywhere) FVector Position;  // 0x0000, size 0xC
     UPROPERTY(EditAnywhere) FVector Normal;  // 0x000C, size 0xC
     UPROPERTY(EditAnywhere) FVector Velocity;  // 0x0018, size 0xC

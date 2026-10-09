@@ -6,7 +6,6 @@ UCLASS()
 class UBuildingLookupLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToBuildingLookupTable(FName Name, FBuildingLookup Data, FBuildingLookupRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x1F1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakBuildingLookupEnum(FBuildingLookupEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FBuildingLookupRowHandle CastToBuildingLookupRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

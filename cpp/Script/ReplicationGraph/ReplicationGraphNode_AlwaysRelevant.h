@@ -5,9 +5,8 @@
 UCLASS(Transient)
 class UReplicationGraphNode_AlwaysRelevant : public UReplicationGraphNode
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY() UReplicationGraphNode* ChildNode;  // 0x0050, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<UClass *,TSizedDefaultAllocator<32> > AlwaysRelevantClasses;  // 0x0058, protected
+    TArray<UClass *,TSizedDefaultAllocator<32> > AlwaysRelevantClasses;  // 0x0058, not reflected
 };

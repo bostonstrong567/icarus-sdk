@@ -5,16 +5,16 @@
 UCLASS(EditInlineNew, MinimalAPI)
 class UTalentTreeWidget : public UUserWidget
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintReadWrite) TMap<FTalentsRowHandle, UTalentWidget*> TalentsWidgetsMap;  // 0x0260, size 0x50
+protected:
     UPROPERTY(Instanced, BlueprintReadOnly) UTalentViewInterface* TalentView;  // 0x02B0, size 0x8
     UPROPERTY(Instanced, BlueprintReadOnly) UTalentTreeCanvas* TalentTreeCanvas;  // 0x02B8, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FTalentTreesRowHandle TalentTree;  // 0x02C0, size 0x18
     UPROPERTY(BlueprintReadOnly) TSet<FTalentsRowHandle> Talents;  // 0x02D8, size 0x50
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bQueueRefresh;  // 0x0328, protected
-
+    bool bQueueRefresh;  // 0x0328, not reflected
+public:
     UFUNCTION(BlueprintImplementableEvent) void ClearTalentTree() const;
     UFUNCTION(BlueprintImplementableEvent) FVector2D GetCanvasOffset(bool bAbsolute) const;  // parameters 0xC
     UFUNCTION(BlueprintImplementableEvent) FVector2D GetCanvasSize() const;  // parameters 0x8

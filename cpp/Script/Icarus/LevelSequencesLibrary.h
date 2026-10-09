@@ -6,7 +6,6 @@ UCLASS()
 class ULevelSequencesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToLevelSequencesTable(FName Name, FLevelSequencesData Data, FLevelSequencesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xB1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakLevelSequencesEnum(FLevelSequencesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FLevelSequencesRowHandle CastToLevelSequencesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

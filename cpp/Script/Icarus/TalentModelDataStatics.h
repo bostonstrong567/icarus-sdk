@@ -6,6 +6,5 @@ UCLASS()
 class UTalentModelDataStatics : public UObject
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakTalentModelData(const FTalentModelData& ModelData, int32& Rank, int32& MaxRank, ETalentState& State);  // parameters 0x19
 };

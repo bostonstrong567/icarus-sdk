@@ -5,10 +5,12 @@
 UCLASS(Abstract, Config=Engine)
 class ALight : public AActor
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
-    UPROPERTY(Instanced, BlueprintReadOnly) ULightComponent* LightComponent;  // 0x0220, size 0x8
     UPROPERTY(Replicated, ReplicatedUsing) uint8 bEnabled : 1;  // 0x0228, mask 0x01
-
+private:
+    UPROPERTY(Instanced, BlueprintReadOnly) ULightComponent* LightComponent;  // 0x0220, size 0x8
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetBrightness() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) FLinearColor GetLightColor() const;  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsEnabled() const;  // parameters 0x1

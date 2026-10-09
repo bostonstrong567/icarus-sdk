@@ -20,15 +20,14 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float ExternalTemp;  // 0x02B0, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 CurrentTemp;  // 0x02B4, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 PreviousTemp;  // 0x02B8, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    float LastColdBarPct;  // 0x02BC, private
-    float LastHotBarPct;  // 0x02C0, private
-    float LastColdInsulationBarPct;  // 0x02C4, private
-    float LastHotInsulationBarPct;  // 0x02C8, private
-    float LastInternalTempXPosition;  // 0x02CC, private
-    float LastExternalTempXPosition;  // 0x02D0, private
-
+private:
+    float LastColdBarPct;  // 0x02BC, not reflected
+    float LastHotBarPct;  // 0x02C0, not reflected
+    float LastColdInsulationBarPct;  // 0x02C4, not reflected
+    float LastHotInsulationBarPct;  // 0x02C8, not reflected
+    float LastInternalTempXPosition;  // 0x02CC, not reflected
+    float LastExternalTempXPosition;  // 0x02D0, not reflected
+public:
     UFUNCTION(BlueprintImplementableEvent) void CheckAnimations();
     UFUNCTION(BlueprintCallable) FLinearColor GetCurrentTemperatureColour();  // parameters 0x10
     UFUNCTION(BlueprintCallable) void UpdatePercentageBars(UProgressBar* ColdBar, UProgressBar* HotBar, UProgressBar* ColdInsulationBar, UProgressBar* HotInsulationBar);  // parameters 0x20

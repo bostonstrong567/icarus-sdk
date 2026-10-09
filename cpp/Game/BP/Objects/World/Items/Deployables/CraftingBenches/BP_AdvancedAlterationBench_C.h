@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABP_AdvancedAlterationBench_C : public ABP_AlterationBench_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) void ModifyAlterTime(float AlterTickTime, float& ModifiedAlterTickTime);  // parameters 0x8
 };

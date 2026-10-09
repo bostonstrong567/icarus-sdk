@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UInterpGroupInstDirector : public UInterpGroupInst
 {
-public:
 };

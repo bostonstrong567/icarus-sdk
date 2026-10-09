@@ -6,6 +6,5 @@ UCLASS()
 class UMouseCursorBinding : public UPropertyBinding
 {
 public:
-
     UFUNCTION() TEnumAsByte<EMouseCursor> GetValue() const;  // parameters 0x1
 };

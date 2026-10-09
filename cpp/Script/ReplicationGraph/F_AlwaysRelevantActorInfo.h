@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAlwaysRelevantActorInfo
 {
+public:
     UPROPERTY() UNetConnection* Connection;  // 0x0000, size 0x8
     UPROPERTY() AActor* LastViewer;  // 0x0008, size 0x8
     UPROPERTY() AActor* LastViewTarget;  // 0x0010, size 0x8

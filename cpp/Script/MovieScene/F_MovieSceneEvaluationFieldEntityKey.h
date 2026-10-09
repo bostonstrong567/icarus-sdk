@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMovieSceneEvaluationFieldEntityKey
 {
+public:
     UPROPERTY() TWeakObjectPtr<UObject> EntityOwner;  // 0x0000, size 0x8
     UPROPERTY() uint32 EntityID;  // 0x0008, size 0x4
 };

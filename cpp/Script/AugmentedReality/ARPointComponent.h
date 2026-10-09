@@ -5,9 +5,10 @@
 UCLASS(Config=Engine)
 class UARPointComponent : public UARComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(Replicated, ReplicatedUsing, BlueprintReadOnly) FARPointUpdatePayload ReplicatedPayload;  // 0x0278, size 0x1
-
+public:
     UFUNCTION(BlueprintImplementableEvent) void ReceiveAdd(const FARPointUpdatePayload& Payload);  // parameters 0x1
     UFUNCTION(BlueprintImplementableEvent) void ReceiveUpdate(const FARPointUpdatePayload& Payload);  // parameters 0x1
     UFUNCTION(Server, Reliable, BlueprintNativeEvent) void ServerUpdatePayload(FARPointUpdatePayload NewPayload);  // parameters 0x1

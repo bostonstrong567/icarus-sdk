@@ -4,6 +4,7 @@
 USTRUCT()
 struct FUseCondition
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FUsesRowHandle Use;  // 0x0000, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FGameplayTagContainer RequiredTags;  // 0x0018, size 0x20
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FStatComparison> RequiredStats;  // 0x0038, size 0x10

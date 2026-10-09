@@ -6,7 +6,6 @@ UCLASS()
 class USettlementBuildingsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToSettlementBuildingsTable(FName Name, FSettlementBuildingData Data, FSettlementBuildingsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x191
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakSettlementBuildingsEnum(FSettlementBuildingsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FSettlementBuildingsRowHandle CastToSettlementBuildingsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

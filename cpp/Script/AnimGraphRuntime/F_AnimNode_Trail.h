@@ -4,9 +4,12 @@
 USTRUCT()
 struct FAnimNode_Trail : public FAnimNode_SkeletalControlBase
 {
+public:
+    FTransform OldBaseTransform;  // 0x00D0, not reflected
     UPROPERTY(EditAnywhere) FBoneReference TrailBone;  // 0x0100, size 0x10
     UPROPERTY(EditAnywhere) int32 ChainLength;  // 0x0110, size 0x4
     UPROPERTY(EditAnywhere) TEnumAsByte<EAxis> ChainBoneAxis;  // 0x0114, size 0x1
+    uint8 : 1 bHadValidStrength;  // 0x0115, not reflected
     UPROPERTY(EditAnywhere) uint8 bInvertChainBoneAxis : 1;  // 0x0115, mask 0x01
     UPROPERTY(EditAnywhere) uint8 bLimitStretch : 1;  // 0x0115, mask 0x02
     UPROPERTY(EditAnywhere) uint8 bLimitRotation : 1;  // 0x0115, mask 0x04
@@ -24,12 +27,9 @@ struct FAnimNode_Trail : public FAnimNode_SkeletalControlBase
     UPROPERTY(EditAnywhere) FVector FakeVelocity;  // 0x020C, size 0xC
     UPROPERTY(EditAnywhere) FBoneReference BaseJoint;  // 0x0218, size 0x10
     UPROPERTY(EditAnywhere) float LastBoneRotationAnimAlphaBlend;  // 0x0228, size 0x4
-
-    // Not reflected:
-    FTransform OldBaseTransform;  // 0x00D0
-    uint8 : 1 bHadValidStrength;  // 0x0115
-    float ThisTimstep;  // 0x022C
-    TArray<FVector,TSizedDefaultAllocator<32> > TrailBoneLocations;  // 0x0230
-    TArray<FPerJointTrailSetup,TSizedDefaultAllocator<32> > PerJointTrailData;  // 0x0240
-    TArray<int,TSizedDefaultAllocator<32> > ChainBoneIndices;  // 0x0250
+    float ThisTimstep;  // 0x022C, not reflected
+    TArray<FVector,TSizedDefaultAllocator<32> > TrailBoneLocations;  // 0x0230, not reflected
+    TArray<FPerJointTrailSetup,TSizedDefaultAllocator<32> > PerJointTrailData;  // 0x0240, not reflected
+private:
+    TArray<int,TSizedDefaultAllocator<32> > ChainBoneIndices;  // 0x0250, not reflected
 };

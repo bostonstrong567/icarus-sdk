@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Well_Moss_C : public ABP_Well_C
 {
-public:
 };

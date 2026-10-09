@@ -5,8 +5,9 @@
 UCLASS(EditInlineNew)
 class UKeybindingWidget : public UIcarusWidget
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(BlueprintReadOnly) FKeybindingsRowHandle KeybindRow;  // 0x0298, size 0x18
-
+public:
     UFUNCTION(BlueprintImplementableEvent) void PostSetup();
 };

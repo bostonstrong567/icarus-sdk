@@ -6,7 +6,6 @@ UCLASS()
 class UProspectForecastLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToProspectForecastTable(FName Name, FProspectForecast Data, FProspectForecastRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x61
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakProspectForecastEnum(FProspectForecastEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FProspectForecastRowHandle CastToProspectForecastRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

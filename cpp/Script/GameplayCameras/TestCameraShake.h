@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew)
 class UTestCameraShake : public UCameraShakeBase
 {
-public:
 };

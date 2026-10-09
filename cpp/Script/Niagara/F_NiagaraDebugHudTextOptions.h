@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNiagaraDebugHudTextOptions
 {
+public:
     UPROPERTY(EditAnywhere, Config) ENiagaraDebugHudFont Font;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere) ENiagaraDebugHudHAlign HorizontalAlignment;  // 0x0004, size 0x1
     UPROPERTY(EditAnywhere) ENiagaraDebugHudVAlign VerticalAlignment;  // 0x0005, size 0x1

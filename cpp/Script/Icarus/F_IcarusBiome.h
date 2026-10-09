@@ -4,6 +4,7 @@
 USTRUCT()
 struct FIcarusBiome : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName BiomeName;  // 0x0018, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText DisplayName;  // 0x0020, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FColor Color;  // 0x0038, size 0x4

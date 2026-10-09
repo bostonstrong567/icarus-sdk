@@ -8,12 +8,11 @@ class ULogoutUserCallbackProxy : public UOnlineBlueprintCallProxyBase
 public:
     UPROPERTY(BlueprintAssignable) FEmptyOnlineDelegate OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FEmptyOnlineDelegate OnFailure;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TWeakObjectPtr<APlayerController,FWeakObjectPtr> PlayerControllerWeakPtr;  // 0x0050, private
-    TDelegate<void __cdecl(int,bool),FDefaultDelegateUserPolicy> Delegate;  // 0x0058, private
-    FDelegateHandle DelegateHandle;  // 0x0068, private
-    UObject * WorldContextObject;  // 0x0070, private
-
+private:
+    TWeakObjectPtr<APlayerController,FWeakObjectPtr> PlayerControllerWeakPtr;  // 0x0050, not reflected
+    TDelegate<void __cdecl(int,bool),FDefaultDelegateUserPolicy> Delegate;  // 0x0058, not reflected
+    FDelegateHandle DelegateHandle;  // 0x0068, not reflected
+    UObject * WorldContextObject;  // 0x0070, not reflected
+public:
     UFUNCTION(BlueprintCallable) static ULogoutUserCallbackProxy* LogoutUser(UObject* WorldContextObject, APlayerController* PlayerController);  // parameters 0x18
 };

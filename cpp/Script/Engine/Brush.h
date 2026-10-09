@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class ABrush : public AActor
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere) TEnumAsByte<EBrushType> BrushType;  // 0x0220, size 0x1
     UPROPERTY() FColor BrushColor;  // 0x0224, size 0x4
@@ -14,9 +15,10 @@ public:
     UPROPERTY() uint8 bPlaceableFromClassBrowser : 1;  // 0x022C, mask 0x04
     UPROPERTY() uint8 bNotForClientOrServer : 1;  // 0x022C, mask 0x08
     UPROPERTY(Instanced) UModel* Brush;  // 0x0230, size 0x8
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UBrushComponent* BrushComponent;  // 0x0238, size 0x8
     UPROPERTY() uint8 bInManipulation : 1;  // 0x0240, mask 0x01
     UPROPERTY() TArray<FGeomSelection> SavedSelections;  // 0x0248, size 0x10
+private:
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UBrushComponent* BrushComponent;  // 0x0238, size 0x8
 
     // Virtual functions that start here:
     //   GetWireColor, IsBrushShape, IsStaticBrush, IsVolumeBrush, RebuildNavigationData

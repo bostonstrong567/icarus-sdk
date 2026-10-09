@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_Ape_O1_Craft_Explosives_C : public ABPQ_Collect_Item_C
 {
-public:
 };

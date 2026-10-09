@@ -5,6 +5,7 @@
 UCLASS(MinimalAPI)
 class UMovieSceneStringSection : public UMovieSceneSection
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() FMovieSceneStringChannel StringCurve;  // 0x00E8, size 0xA0
 };

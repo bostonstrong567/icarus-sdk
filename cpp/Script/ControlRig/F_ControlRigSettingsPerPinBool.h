@@ -4,5 +4,6 @@
 USTRUCT()
 struct FControlRigSettingsPerPinBool
 {
+public:
     UPROPERTY(EditAnywhere) TMap<FString, bool> Values;  // 0x0000, size 0x50
 };

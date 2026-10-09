@@ -5,5 +5,4 @@
 UCLASS()
 class UTrackerAccolade : public UAccoladeImpl
 {
-public:
 };

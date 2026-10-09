@@ -4,6 +4,7 @@
 USTRUCT()
 struct FClientReceiveData
 {
+public:
     UPROPERTY() APlayerController* LocalPC;  // 0x0000, size 0x8
     UPROPERTY() FName MessageType;  // 0x0008, size 0x8
     UPROPERTY() int32 MessageIndex;  // 0x0010, size 0x4

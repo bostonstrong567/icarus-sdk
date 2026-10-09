@@ -4,7 +4,6 @@
 USTRUCT()
 struct FSkeletalMeshComponentEndPhysicsTickFunction : public FTickFunction
 {
-
-    // Not reflected:
-    USkeletalMeshComponent * Target;  // 0x0028
+public:
+    USkeletalMeshComponent * Target;  // 0x0028, not reflected
 };

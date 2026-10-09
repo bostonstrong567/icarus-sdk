@@ -4,6 +4,7 @@
 USTRUCT()
 struct FCustomDefine
 {
+public:
     UPROPERTY(EditAnywhere) FString DefineName;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere) FString DefineValue;  // 0x0010, size 0x10
 };

@@ -5,5 +5,4 @@
 UCLASS(Abstract, MinimalAPI)
 class UInterface_CollisionDataProvider : public UInterface
 {
-public:
 };

@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class UAIPerceptionListenerInterface : public UInterface
 {
-public:
 };

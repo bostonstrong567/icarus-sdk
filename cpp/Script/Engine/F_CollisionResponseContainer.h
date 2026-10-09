@@ -4,7 +4,9 @@
 USTRUCT()
 struct FCollisionResponseContainer
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<ECollisionResponse> WorldStatic;  // 0x0000, size 0x1
+    uint8[32] EnumArray;  // 0x0000, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<ECollisionResponse> WorldDynamic;  // 0x0001, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<ECollisionResponse> Pawn;  // 0x0002, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<ECollisionResponse> Visibility;  // 0x0003, size 0x1
@@ -36,7 +38,4 @@ struct FCollisionResponseContainer
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<ECollisionResponse> GameTraceChannel16;  // 0x001D, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<ECollisionResponse> GameTraceChannel17;  // 0x001E, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TEnumAsByte<ECollisionResponse> GameTraceChannel18;  // 0x001F, size 0x1
-
-    // Not reflected:
-    uint8[32] EnumArray;  // 0x0000
 };

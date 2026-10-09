@@ -5,5 +5,4 @@
 UCLASS(Abstract, Const, EditInlineNew)
 class UAnimMetaData : public UObject
 {
-public:
 };

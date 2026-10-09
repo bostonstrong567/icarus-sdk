@@ -5,7 +5,8 @@
 UCLASS(Config=Engine)
 class USettlementRecorderComponent : public UActorStateRecorderComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, SaveGame) int32 SettlementRecorderVersion;  // 0x01C0, size 0x4
     UPROPERTY(EditAnywhere, SaveGame) FString SettlementName;  // 0x01C8, size 0x10
     UPROPERTY(EditAnywhere, SaveGame) FName FactionTable;  // 0x01D8, size 0x8

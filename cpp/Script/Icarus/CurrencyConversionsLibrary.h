@@ -6,7 +6,6 @@ UCLASS()
 class UCurrencyConversionsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToCurrencyConversionsTable(FName Name, FCurrencyConversion Data, FCurrencyConversionsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x71
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakCurrencyConversionsEnum(FCurrencyConversionsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FCurrencyConversionsRowHandle CastToCurrencyConversionsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

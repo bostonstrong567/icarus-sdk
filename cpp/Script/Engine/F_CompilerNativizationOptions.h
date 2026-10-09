@@ -4,6 +4,7 @@
 USTRUCT()
 struct FCompilerNativizationOptions
 {
+public:
     UPROPERTY() FName PlatformName;  // 0x0000, size 0x8
     UPROPERTY() bool ServerOnlyPlatform;  // 0x0008, size 0x1
     UPROPERTY() bool ClientOnlyPlatform;  // 0x0009, size 0x1

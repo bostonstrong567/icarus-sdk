@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAchivementsStatInfo
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString StatName;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 ThresholdValue;  // 0x0010, size 0x4
 };

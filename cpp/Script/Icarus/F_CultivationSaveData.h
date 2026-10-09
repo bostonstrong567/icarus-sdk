@@ -4,6 +4,7 @@
 USTRUCT()
 struct FCultivationSaveData
 {
+public:
     UPROPERTY(SaveGame) FName Seed;  // 0x0000, size 0x8
     UPROPERTY(SaveGame) float GrowthTime;  // 0x0008, size 0x4
     UPROPERTY(SaveGame) int32 GrowthState;  // 0x000C, size 0x4

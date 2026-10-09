@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFLODRecordInstanceChange
 {
+public:
     UPROPERTY(EditAnywhere) int32 InstanceIndex;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere) FFLODRecordInstanceChangeDetails From;  // 0x0004, size 0x10
     UPROPERTY(EditAnywhere) FFLODRecordInstanceChangeDetails To;  // 0x0014, size 0x10

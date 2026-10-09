@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLivingItemUpgradeSlotData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector2D SlotPosition2D;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector2D PinPosition2D;  // 0x0008, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector2D PinBendPosition2D;  // 0x0010, size 0x8

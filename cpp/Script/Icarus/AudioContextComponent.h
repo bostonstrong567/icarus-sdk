@@ -5,22 +5,23 @@
 UCLASS(Config=Engine)
 class UAudioContextComponent : public UActorComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float MaxUpdateDistance;  // 0x00B0, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float OcclusionShelterContextThreshold;  // 0x00B4, size 0x4
     UPROPERTY(BlueprintAssignable) FAudioContextEnteredCave OnEnteredCave;  // 0x00B8, size 0x10
     UPROPERTY(BlueprintAssignable) FAudioContextExitedCave OnExitedCave;  // 0x00C8, size 0x10
+protected:
+    bool bIsLocalPlayer;  // 0x00D8, not reflected
     UPROPERTY(Replicated) EAudioShelterState ShelterState;  // 0x00D9, size 0x1
+private:
+    float DistSquaredToListener;  // 0x00DC, not reflected
+    FVector ListenerLocation;  // 0x00E0, not reflected
     UPROPERTY(Instanced) UAudioOcclusionComponent* OcclusionComponent;  // 0x00F0, size 0x8
     UPROPERTY() TArray<FAudioContextSubscriber> Subscribers;  // 0x00F8, size 0x10
     UPROPERTY() TMap<AActor*, FAudioContextCaveColliderSet> CaveOverlaps;  // 0x0108, size 0x50
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bIsLocalPlayer;  // 0x00D8, protected
-    float DistSquaredToListener;  // 0x00DC, private
-    FVector ListenerLocation;  // 0x00E0, private
-    bool bStaticCaveOverlapWasSet;  // 0x0158, private
-
+    bool bStaticCaveOverlapWasSet;  // 0x0158, not reflected
+public:
     UFUNCTION(BlueprintCallable) void AddCaveOverlap(AActor* Cave, UPrimitiveComponent* Collider);  // parameters 0x10
     UFUNCTION(BlueprintCallable) ECaveContextFMODParam GetCaveContextFMODParam();  // parameters 0x1
     UFUNCTION(BlueprintCallable) float GetCurrentOcclusion(FName TracePointName) const;  // parameters 0xC

@@ -6,7 +6,6 @@ UCLASS()
 class UMountsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToMountsTable(FName Name, FIcarusMount Data, FMountsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x1E1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakMountsEnum(FMountsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FMountsRowHandle CastToMountsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

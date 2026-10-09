@@ -6,7 +6,6 @@ UCLASS()
 class UKismetStringTableLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static TArray<FString> GetKeysFromStringTable(FName TableId);  // parameters 0x18
     UFUNCTION(BlueprintCallable, BlueprintPure) static TArray<FName> GetMetaDataIdsFromStringTableEntry(FName TableId, FString Key);  // parameters 0x28
     UFUNCTION(BlueprintCallable, BlueprintPure) static TArray<FName> GetRegisteredStringTables();  // parameters 0x10

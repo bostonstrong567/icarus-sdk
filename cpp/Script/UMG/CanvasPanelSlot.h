@@ -9,10 +9,9 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FAnchorData LayoutData;  // 0x0038, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bAutoSize;  // 0x0060, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 ZOrder;  // 0x0064, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    SConstraintCanvas::FSlot * Slot;  // 0x0068, private
-
+private:
+    SConstraintCanvas::FSlot * Slot;  // 0x0068, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) FVector2D GetAlignment() const;  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) FAnchors GetAnchors() const;  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) bool GetAutoSize() const;  // parameters 0x1

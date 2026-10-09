@@ -4,5 +4,6 @@
 USTRUCT()
 struct FRigUnit_AnimEasingType : public FRigUnit_AnimBase
 {
+public:
     UPROPERTY() EControlRigAnimEasingType Type;  // 0x0008, size 0x1
 };

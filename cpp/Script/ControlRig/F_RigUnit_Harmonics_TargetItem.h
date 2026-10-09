@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_Harmonics_TargetItem
 {
+public:
     UPROPERTY() FRigElementKey Item;  // 0x0000, size 0xC
     UPROPERTY() float Ratio;  // 0x000C, size 0x4
 };

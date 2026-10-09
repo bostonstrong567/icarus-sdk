@@ -5,11 +5,9 @@
 UCLASS()
 class UChaosClothingInteractor : public UClothingInteractor
 {
+private:
+    TArray<TDelegate<void __cdecl(Chaos::FClothingSimulationCloth *),FDefaultDelegateUserPolicy>,TSizedDefaultAllocator<32> > Commands;  // 0x0030, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<TDelegate<void __cdecl(Chaos::FClothingSimulationCloth *),FDefaultDelegateUserPolicy>,TSizedDefaultAllocator<32> > Commands;  // 0x0030, private
-
     UFUNCTION(BlueprintCallable) void ResetAndTeleport(bool bReset, bool bTeleport);  // parameters 0x2
     UFUNCTION(BlueprintCallable) void SetAerodynamics(float DragCoefficient, float LiftCoefficient, FVector WindVelocity);  // parameters 0x14
     UFUNCTION(BlueprintCallable) void SetAnimDrive(FVector2D AnimDriveStiffness, FVector2D AnimDriveDamping);  // parameters 0x10

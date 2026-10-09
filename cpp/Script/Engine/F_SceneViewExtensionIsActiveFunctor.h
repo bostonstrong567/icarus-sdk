@@ -4,8 +4,8 @@
 USTRUCT()
 struct FSceneViewExtensionIsActiveFunctor
 {
-
-    // Not reflected:
-    FGuid Guid;  // 0x0000
-    TFunction<TOptional<bool> __cdecl(ISceneViewExtension const *,FSceneViewExtensionContext const &)> IsActiveFunction;  // 0x0010
+public:
+    TFunction<TOptional<bool> __cdecl(ISceneViewExtension const *,FSceneViewExtensionContext const &)> IsActiveFunction;  // 0x0010, not reflected
+private:
+    FGuid Guid;  // 0x0000, not reflected
 };

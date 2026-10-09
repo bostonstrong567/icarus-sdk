@@ -4,5 +4,6 @@
 USTRUCT()
 struct FNavLinkCustomInstanceData : public FActorComponentInstanceData
 {
+public:
     UPROPERTY() uint32 NavLinkUserId;  // 0x0068, size 0x4
 };

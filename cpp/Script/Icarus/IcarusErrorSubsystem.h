@@ -5,11 +5,9 @@
 UCLASS()
 class UIcarusErrorSubsystem : public UGameInstanceSubsystem
 {
+private:
+    TQueue<TTuple<enum EErrorCodes,FString>,1> ErrorCodesForTitleScreen;  // 0x0030, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TQueue<TTuple<enum EErrorCodes,FString>,1> ErrorCodesForTitleScreen;  // 0x0030, private
-
     UFUNCTION(BlueprintCallable) void PushError(FErrorCodesEnum ErrorCode, EErrorTarget Target, EErrorAction ErrorAction, FString ErrorInfo);  // parameters 0x28
     UFUNCTION(BlueprintCallable) void RequestErrorsForAction(EErrorAction Action);  // parameters 0x1
 };

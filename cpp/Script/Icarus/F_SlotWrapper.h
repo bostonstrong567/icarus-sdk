@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSlotWrapper
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector SocketWorldLocation;  // 0x0000, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FRotator SocketRotation;  // 0x000C, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector SocketScale;  // 0x0018, size 0xC

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAnimSyncMarker
 {
+public:
     UPROPERTY(BlueprintReadOnly) FName MarkerName;  // 0x0000, size 0x8
     UPROPERTY(BlueprintReadOnly) float Time;  // 0x0008, size 0x4
 };

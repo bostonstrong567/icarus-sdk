@@ -6,7 +6,6 @@ UCLASS()
 class UBlueprintMapLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void Map_Add(const TMap<int32, int32>& TargetMap, const int32& Key, const int32& Value);  // parameters 0x58
     UFUNCTION(BlueprintCallable) static void Map_Clear(const TMap<int32, int32>& TargetMap);  // parameters 0x50
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool Map_Contains(const TMap<int32, int32>& TargetMap, const int32& Key);  // parameters 0x55

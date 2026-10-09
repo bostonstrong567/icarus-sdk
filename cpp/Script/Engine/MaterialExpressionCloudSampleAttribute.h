@@ -5,5 +5,4 @@
 UCLASS()
 class UMaterialExpressionCloudSampleAttribute : public UMaterialExpression
 {
-public:
 };

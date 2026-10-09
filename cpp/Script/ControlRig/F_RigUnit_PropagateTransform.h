@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_PropagateTransform : public FRigUnitMutable
 {
+public:
     UPROPERTY() FRigElementKey Item;  // 0x0068, size 0xC
     UPROPERTY() bool bRecomputeGlobal;  // 0x0074, size 0x1
     UPROPERTY() bool bApplyToChildren;  // 0x0075, size 0x1

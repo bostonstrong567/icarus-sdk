@@ -6,6 +6,5 @@ UCLASS(Abstract)
 class UPossessTargetInterface : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) bool IsThirdPersonToggleBlocked() const;  // parameters 0x1
 };

@@ -6,7 +6,6 @@ UCLASS()
 class UEyeTrackerFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static bool GetGazeData(FEyeTrackerGazeData& OutGazeData);  // parameters 0x29
     UFUNCTION(BlueprintCallable) static bool GetStereoGazeData(FEyeTrackerStereoGazeData& OutGazeData);  // parameters 0x41
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool IsEyeTrackerConnected();  // parameters 0x1

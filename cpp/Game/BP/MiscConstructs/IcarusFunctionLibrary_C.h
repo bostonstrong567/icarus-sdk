@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UIcarusFunctionLibrary_C : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddReverseLinesToVectorPairArray(TArray<VectorPair>& VectorPairs, UObject* __WorldContext, TArray<VectorPair>& PairsWithReversed);  // parameters 0x28
     UFUNCTION(BlueprintCallable) static void FilterActorListBySoftClasses(TArray<AActor*>& InActors, TArray<TSoftClassPtr<AActor>>& InClassFilter, UObject* __WorldContext, TArray<AActor*>& OutActors);  // parameters 0x38
     UFUNCTION(BlueprintCallable) static void FormatRawSecondsToTimeLength(int32 SecondsInput, UObject* __WorldContext, FString& Formatted);  // parameters 0x20

@@ -4,6 +4,7 @@
 USTRUCT()
 struct F_ChallengeState
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSlateColor TitleTextColour;  // 0x0000, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FLinearColor BaseBackgroundColour;  // 0x0028, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FSlateColor RewardTextColour;  // 0x0038, size 0x28

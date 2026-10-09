@@ -4,10 +4,9 @@
 USTRUCT()
 struct FRigUnit_MathRBFInterpolateQuatWorkData
 {
-
-    // Not reflected:
-    TRBFInterpolator<FQuat> Interpolator;  // 0x0000
-    TArray<FQuat,TSizedDefaultAllocator<32> > Targets;  // 0x0070
-    uint64 Hash;  // 0x0080
-    bool bAreTargetsConstant;  // 0x0088
+public:
+    TRBFInterpolator<FQuat> Interpolator;  // 0x0000, not reflected
+    TArray<FQuat,TSizedDefaultAllocator<32> > Targets;  // 0x0070, not reflected
+    uint64 Hash;  // 0x0080, not reflected
+    bool bAreTargetsConstant;  // 0x0088, not reflected
 };

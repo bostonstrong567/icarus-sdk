@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Prop_Enzyme_PropagationUnit_C : public ABP_DeployableBase_C
 {
-public:
 };

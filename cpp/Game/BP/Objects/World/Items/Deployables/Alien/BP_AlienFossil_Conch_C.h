@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_AlienFossil_Conch_C : public ABP_DeployableBase_C
 {
-public:
 };

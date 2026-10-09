@@ -5,7 +5,8 @@
 UCLASS(MinimalAPI)
 class UMovieSceneWidgetMaterialTrack : public UMovieSceneMaterialTrack, public IMovieSceneTrackTemplateProducer
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() TArray<FName> BrushPropertyNamePath;  // 0x00A8, size 0x10
     UPROPERTY() FName TrackName;  // 0x00B8, size 0x8
 };

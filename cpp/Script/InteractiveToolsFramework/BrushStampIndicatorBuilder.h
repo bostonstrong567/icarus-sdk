@@ -5,5 +5,4 @@
 UCLASS(Transient)
 class UBrushStampIndicatorBuilder : public UInteractiveGizmoBuilder
 {
-public:
 };

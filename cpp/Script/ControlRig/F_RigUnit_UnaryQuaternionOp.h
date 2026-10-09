@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_UnaryQuaternionOp : public FRigUnit
 {
+public:
     UPROPERTY() FQuat Argument;  // 0x0010, size 0x10
     UPROPERTY() FQuat Result;  // 0x0020, size 0x10
 };

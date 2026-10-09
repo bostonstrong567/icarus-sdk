@@ -5,6 +5,7 @@
 UCLASS(Config=Game)
 class AIcarusPlayerCharacter : public AIcarusCharacter
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float NextAllowedInteractTime;  // 0x0748, size 0x4
     UPROPERTY(BlueprintAssignable) FFocusedItemUpdated OnFocusedItemUpdated;  // 0x0754, size 0x1
@@ -40,17 +41,16 @@ public:
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UIcarusMapIconComponent* PlayerMapIcon;  // 0x0A70, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName EyeSocketName;  // 0x0A78, size 0x8
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) TArray<FItemsStaticRowHandle> CosmeticArmourOverrides;  // 0x0A80, size 0x10
-    UPROPERTY() APlayerState* CachedPlayerState;  // 0x0B80, size 0x8
     UPROPERTY(BlueprintReadWrite) bool bPlayerUIHidden;  // 0x0B88, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    float LastCachedInteractableHitTime;  // 0x074C, private
-    float MinTimeBetweenReplicatedHitUpdates;  // 0x0750, private
-    FStreamableManager StreamableManager;  // 0x0A90, private
-    bool HasSetupCosmetics;  // 0x0B78, private
-    bool bNeedsArmourUpdate;  // 0x0B79, private
-    bool bNeedsCosmeticArmourRefresh;  // 0x0B7A, private
-
+private:
+    float LastCachedInteractableHitTime;  // 0x074C, not reflected
+    float MinTimeBetweenReplicatedHitUpdates;  // 0x0750, not reflected
+    FStreamableManager StreamableManager;  // 0x0A90, not reflected
+    bool HasSetupCosmetics;  // 0x0B78, not reflected
+    bool bNeedsArmourUpdate;  // 0x0B79, not reflected
+    bool bNeedsCosmeticArmourRefresh;  // 0x0B7A, not reflected
+    UPROPERTY() APlayerState* CachedPlayerState;  // 0x0B80, size 0x8
+public:
     UFUNCTION() void CheckShouldRefreshEquipmentInventory(UInventory* Inventory, int32 UpdatedSlotNum);  // parameters 0xC
     UFUNCTION(BlueprintCallable) void ClearEquipmentInventory();
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void ClientSetCharacterVisibility(bool bIsVisible);  // parameters 0x1

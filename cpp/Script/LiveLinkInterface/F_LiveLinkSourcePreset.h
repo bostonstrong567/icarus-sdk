@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLiveLinkSourcePreset
 {
+public:
     UPROPERTY(EditAnywhere) FGuid Guid;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere) ULiveLinkSourceSettings* Settings;  // 0x0010, size 0x8
     UPROPERTY(EditAnywhere) FText SourceType;  // 0x0018, size 0x18

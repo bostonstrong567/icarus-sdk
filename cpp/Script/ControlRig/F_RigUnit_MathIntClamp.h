@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_MathIntClamp : public FRigUnit_MathIntBase
 {
+public:
     UPROPERTY() int32 Value;  // 0x0008, size 0x4
     UPROPERTY() int32 Minimum;  // 0x000C, size 0x4
     UPROPERTY() int32 Maximum;  // 0x0010, size 0x4

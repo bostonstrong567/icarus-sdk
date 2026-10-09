@@ -5,5 +5,4 @@
 UCLASS()
 class UEnergyTable : public UIcarusDataTable
 {
-public:
 };

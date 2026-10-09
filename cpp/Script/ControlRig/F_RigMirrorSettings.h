@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigMirrorSettings
 {
+public:
     UPROPERTY(EditAnywhere) TEnumAsByte<EAxis> MirrorAxis;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere) TEnumAsByte<EAxis> AxisToFlip;  // 0x0001, size 0x1
     UPROPERTY(EditAnywhere) FString OldName;  // 0x0008, size 0x10

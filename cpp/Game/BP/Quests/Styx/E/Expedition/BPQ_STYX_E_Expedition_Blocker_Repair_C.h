@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_STYX_E_Expedition_Blocker_Repair_C : public ABPQ_Common_Craft_C
 {
-public:
 };

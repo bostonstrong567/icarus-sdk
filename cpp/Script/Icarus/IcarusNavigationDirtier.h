@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class UIcarusNavigationDirtier : public UActorComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bTryDirtyOnTick;  // 0x00B0, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bRegenerateOnDirty;  // 0x00B1, size 0x1
@@ -13,8 +14,9 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<UObject*> AffectedObjects;  // 0x00B8, size 0x10
     UPROPERTY(BlueprintAssignable) FPreDirtyNavmeshSignature OnPreDirtyNavmesh;  // 0x00C8, size 0x10
     UPROPERTY(BlueprintAssignable) FPostDirtyNavmeshSignature OnPostDirtyNavmesh;  // 0x00D8, size 0x10
+protected:
     UPROPERTY(BlueprintReadOnly) AIcarusActor* IcarusActorOwner;  // 0x00E8, size 0x8
-
+public:
     UFUNCTION(BlueprintCallable) void AddAffectedObject(UObject* Object);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void ClearAffectedObjects();
     UFUNCTION(BlueprintCallable, BlueprintPure) AIcarusActor* GetOwningIcarusActor();  // parameters 0x8

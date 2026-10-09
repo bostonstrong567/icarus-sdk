@@ -5,9 +5,9 @@
 UCLASS(Config=Engine)
 class USplineRecorderComponent : public UActorStateRecorderComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(SaveGame) FRecordedSplineActorStruct Record;  // 0x01C0, size 0x88
-
-    // Not reflected: the engine's scripting cannot see these.
-    int32 CollidedSplineID;  // 0x0248, private
+private:
+    int32 CollidedSplineID;  // 0x0248, not reflected
 };

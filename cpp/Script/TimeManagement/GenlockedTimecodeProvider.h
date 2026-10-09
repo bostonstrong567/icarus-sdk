@@ -7,10 +7,9 @@ class UGenlockedTimecodeProvider : public UTimecodeProvider
 {
 public:
     UPROPERTY(EditAnywhere) bool bUseGenlockToCount;  // 0x0030, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    FQualifiedFrameTime LastFrameTime;  // 0x0034, protected
-    FQualifiedFrameTime LastFetchedFrameTime;  // 0x0044, protected
+protected:
+    FQualifiedFrameTime LastFrameTime;  // 0x0034, not reflected
+    FQualifiedFrameTime LastFetchedFrameTime;  // 0x0044, not reflected
 
     // Virtual functions that start here:
     //   CorrectFromGenlock

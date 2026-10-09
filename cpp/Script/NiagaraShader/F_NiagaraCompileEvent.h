@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNiagaraCompileEvent
 {
+public:
     UPROPERTY() FNiagaraCompileEventSeverity Severity;  // 0x0000, size 0x1
     UPROPERTY() FString Message;  // 0x0008, size 0x10
     UPROPERTY() FString ShortDescription;  // 0x0018, size 0x10

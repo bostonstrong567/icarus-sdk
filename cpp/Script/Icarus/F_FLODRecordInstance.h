@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFLODRecordInstance : public FFastArraySerializerItem
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 InstanceIndex;  // 0x000C, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 LevelIndex;  // 0x0010, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TWeakObjectPtr<AActor> Actor;  // 0x0014, size 0x8

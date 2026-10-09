@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Rustic_Wardrobe_B_C : public ABP_DeployableContainerBase_C
 {
-public:
 };

@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class UMovieSceneEntityProvider : public UInterface
 {
-public:
 };

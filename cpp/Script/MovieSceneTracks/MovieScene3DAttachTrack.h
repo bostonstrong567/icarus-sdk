@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UMovieScene3DAttachTrack : public UMovieScene3DConstraintTrack
 {
-public:
 };

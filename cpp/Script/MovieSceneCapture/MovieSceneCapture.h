@@ -15,20 +15,19 @@ public:
     UPROPERTY(EditAnywhere, Config, BlueprintReadWrite) bool bCloseEditorWhenCaptureStarts;  // 0x00E9, size 0x1
     UPROPERTY(EditAnywhere, Config, BlueprintReadWrite) FString AdditionalCommandLineArguments;  // 0x00F0, size 0x10
     UPROPERTY(EditAnywhere, Transient, BlueprintReadWrite) FString InheritedCommandLineArguments;  // 0x0100, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<ICaptureStrategy,0> CaptureStrategy;  // 0x0110, protected
-    TOptional<FCaptureProtocolInitSettings> InitSettings;  // 0x0120, protected
-    bool bFinalizeWhenReady;  // 0x0140, protected
-    FMovieSceneCaptureHandle Handle;  // 0x0144, protected
-    FCachedMetrics CachedMetrics;  // 0x0148, protected
-    TMap<FString,FStringFormatArg,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FString,FStringFormatArg,0> > FormatMappings;  // 0x0160, protected
-    bool bCapturing;  // 0x01B0, protected
-    bool bIsAudioCapturePass;  // 0x01B1, protected
-    int32 FrameNumberOffset;  // 0x01B4, protected
-    UMovieSceneCapture::FOnCaptureFinished OnCaptureFinishedDelegate;  // 0x01B8, protected
-    Scalability::FQualityLevels CachedQualityLevels;  // 0x01D0, protected
-
+protected:
+    TSharedPtr<ICaptureStrategy,0> CaptureStrategy;  // 0x0110, not reflected
+    TOptional<FCaptureProtocolInitSettings> InitSettings;  // 0x0120, not reflected
+    bool bFinalizeWhenReady;  // 0x0140, not reflected
+    FMovieSceneCaptureHandle Handle;  // 0x0144, not reflected
+    FCachedMetrics CachedMetrics;  // 0x0148, not reflected
+    TMap<FString,FStringFormatArg,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FString,FStringFormatArg,0> > FormatMappings;  // 0x0160, not reflected
+    bool bCapturing;  // 0x01B0, not reflected
+    bool bIsAudioCapturePass;  // 0x01B1, not reflected
+    int32 FrameNumberOffset;  // 0x01B4, not reflected
+    UMovieSceneCapture::FOnCaptureFinished OnCaptureFinishedDelegate;  // 0x01B8, not reflected
+    Scalability::FQualityLevels CachedQualityLevels;  // 0x01D0, not reflected
+public:
     UFUNCTION(BlueprintCallable) UMovieSceneCaptureProtocolBase* GetAudioCaptureProtocol();  // parameters 0x8
     UFUNCTION(BlueprintCallable) UMovieSceneCaptureProtocolBase* GetImageCaptureProtocol();  // parameters 0x8
     UFUNCTION(BlueprintCallable) void SetAudioCaptureProtocolType(TSubclassOf<UMovieSceneCaptureProtocolBase> ProtocolType);  // parameters 0x8

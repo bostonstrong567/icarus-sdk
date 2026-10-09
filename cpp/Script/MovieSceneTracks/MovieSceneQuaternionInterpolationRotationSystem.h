@@ -5,5 +5,4 @@
 UCLASS()
 class UMovieSceneQuaternionInterpolationRotationSystem : public UMovieSceneEntitySystem
 {
-public:
 };

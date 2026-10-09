@@ -4,6 +4,7 @@
 USTRUCT()
 struct FWeatherAction
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FWeatherActionsRowHandle Action;  // 0x0000, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float TimeInSeconds;  // 0x0018, size 0x4
 };

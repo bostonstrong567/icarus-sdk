@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSessionFilters
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ESessionFilterState Friends;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ESessionFilterState Locked;  // 0x0001, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ESessionFilterState Version;  // 0x0002, size 0x1

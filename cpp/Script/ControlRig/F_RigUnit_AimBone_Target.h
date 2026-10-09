@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_AimBone_Target
 {
+public:
     UPROPERTY(EditAnywhere) float Weight;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere) FVector Axis;  // 0x0004, size 0xC
     UPROPERTY(EditAnywhere) FVector Target;  // 0x0010, size 0xC

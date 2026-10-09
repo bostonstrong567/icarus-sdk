@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UUMG_RemoveOnlyContainer_C : public UUMG_Chest_C
 {
-public:
 };

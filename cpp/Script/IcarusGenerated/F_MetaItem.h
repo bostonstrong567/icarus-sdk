@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMetaItem
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString ItemStaticRow;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FDynamicProperty> Properties;  // 0x0010, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FStat> Stats;  // 0x0020, size 0x10

@@ -5,5 +5,4 @@
 UCLASS()
 class UVoxelDistributionRegionTable : public UIcarusDataTable
 {
-public:
 };

@@ -5,7 +5,8 @@
 UCLASS(EditInlineNew)
 class UEnvQueryGenerator_Cone : public UEnvQueryGenerator_ProjectedPoints
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere) FAIDataProviderFloatValue AlignedPointsDistance;  // 0x0080, size 0x38
     UPROPERTY(EditAnywhere) FAIDataProviderFloatValue ConeDegrees;  // 0x00B8, size 0x38
     UPROPERTY(EditAnywhere) FAIDataProviderFloatValue AngleStep;  // 0x00F0, size 0x38

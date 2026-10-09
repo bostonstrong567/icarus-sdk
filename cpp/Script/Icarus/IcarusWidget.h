@@ -10,10 +10,9 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FFlagsMultiRowHandle RequiredFlag;  // 0x0278, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bOverrideVisibilityIfFeatureLevelDisabled;  // 0x0290, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ESlateVisibility FeatureLevelVisibilityOverride;  // 0x0291, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    EFeatureLevelCheckResult CachedFeatureLevelCheckResult;  // 0x0292, protected
-
+protected:
+    EFeatureLevelCheckResult CachedFeatureLevelCheckResult;  // 0x0292, not reflected
+public:
     UFUNCTION() void CheckMeetsFeatureLevelRequirements();
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void FocusIcarusWidget();
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void FocusUpdated(bool bNewFocus);  // parameters 0x1

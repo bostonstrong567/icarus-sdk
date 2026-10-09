@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class UActorState : public UActorComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintReadOnly) FIcarusDamagePacket LastDamagePacket;  // 0x00B0, size 0xD8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bKeepRecentDamageEvents;  // 0x0188, size 0x1
@@ -31,23 +32,23 @@ public:
     UPROPERTY(Replicated, ReplicatedUsing, BlueprintReadOnly) FBiomesRowHandle CurrentBiome;  // 0x01F8, size 0x18
     UPROPERTY(Replicated, ReplicatedUsing) EAliveState CurrentAliveState;  // 0x0210, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bSkipStatContainerChecks;  // 0x0211, size 0x1
+protected:
+    UPROPERTY() bool bHasHealthRegen;  // 0x0264, size 0x1
+    UPROPERTY() int32 BiomeModifierID;  // 0x0268, size 0x4
+private:
+    FTimerHandle ClearStaleDamagePacketsHandle;  // 0x01A0, not reflected
+    float WeatherTimeCycle;  // 0x01A8, not reflected
+    float WeatherTimeElapsedTime;  // 0x01AC, not reflected
     UPROPERTY(Instanced) UIcarusStatContainer* OwnerStatContainer;  // 0x0218, size 0x8
+    float HealthRegenTime;  // 0x0220, not reflected
+    float HealthRegenCycle;  // 0x0224, not reflected
+    int32 HealthAddedPerCycle;  // 0x0228, not reflected
     UPROPERTY() FBiomesRowHandle BiomeOverride;  // 0x022C, size 0x18
     UPROPERTY() FAtmospheresRowHandle AtmosphereOverride;  // 0x0244, size 0x18
     UPROPERTY() bool BlockBiomeUpdate;  // 0x025C, size 0x1
     UPROPERTY() bool BlockAtmosphereUpdate;  // 0x025D, size 0x1
-    UPROPERTY() bool bHasHealthRegen;  // 0x0264, size 0x1
-    UPROPERTY() int32 BiomeModifierID;  // 0x0268, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    FTimerHandle ClearStaleDamagePacketsHandle;  // 0x01A0, private
-    float WeatherTimeCycle;  // 0x01A8, private
-    float WeatherTimeElapsedTime;  // 0x01AC, private
-    float HealthRegenTime;  // 0x0220, private
-    float HealthRegenCycle;  // 0x0224, private
-    int32 HealthAddedPerCycle;  // 0x0228, private
-    int32 CurrentUID;  // 0x0260, private
-
+    int32 CurrentUID;  // 0x0260, not reflected
+public:
     UFUNCTION(BlueprintCallable) void AddHealth(int32 Amount);  // parameters 0x4
     UFUNCTION() bool CanRegenerateHealth() const;  // parameters 0x1
     UFUNCTION() int32 ConsumeNextUID();  // parameters 0x4

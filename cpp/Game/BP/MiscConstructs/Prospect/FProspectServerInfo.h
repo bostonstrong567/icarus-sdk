@@ -4,6 +4,7 @@
 USTRUCT()
 struct FProspectServerInfo
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FProspectInfo ProspectInfo;  // 0x0000, size 0xA0
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FBlueprintSessionResult Session;  // 0x00A0, size 0x108
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool FromServer;  // 0x01A8, size 0x1

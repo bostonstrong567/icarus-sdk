@@ -15,10 +15,9 @@ public:
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) int32 DynamicState;  // 0x0148, size 0x4
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) int32 GunCurrentMagSize;  // 0x014C, size 0x4
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) int32 CurrentAmmoType;  // 0x0150, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<enum EActionableEventType,FActionTimer,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<enum EActionableEventType,FActionTimer,0> > ActionTimers;  // 0x00F0, private
-
+private:
+    TMap<enum EActionableEventType,FActionTimer,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<enum EActionableEventType,FActionTimer,0> > ActionTimers;  // 0x00F0, not reflected
+public:
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable, BlueprintNativeEvent) void Action(AActor* InvokingActor, EActionableEventType ActionType, EActionableTrigger ActionTrigger, bool bClientPrediction);  // parameters 0xB
     UFUNCTION(BlueprintCallable, BlueprintPure) bool GetActionData(FActionsRowHandle ActionRowHandle, FActionData& OutData) const;  // parameters 0x119
     UFUNCTION(BlueprintCallable, BlueprintPure) bool GetActionableData(FActionableData& OutData) const;  // parameters 0x89

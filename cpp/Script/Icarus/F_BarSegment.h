@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBarSegment
 {
+public:
     UPROPERTY(BlueprintReadWrite) TSoftObjectPtr<UTexture2D> Icon;  // 0x0000, size 0x28
     UPROPERTY(BlueprintReadWrite) int32 SegmentSize;  // 0x0028, size 0x4
 };

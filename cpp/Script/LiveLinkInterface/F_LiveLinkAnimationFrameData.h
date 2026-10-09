@@ -4,5 +4,6 @@
 USTRUCT()
 struct FLiveLinkAnimationFrameData : public FLiveLinkBaseFrameData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FTransform> Transforms;  // 0x00A0, size 0x10
 };

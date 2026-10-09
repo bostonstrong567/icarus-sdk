@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Sandwyrm_Spit_C : public ABP_SandWorm_Spit_C
 {
-public:
 };

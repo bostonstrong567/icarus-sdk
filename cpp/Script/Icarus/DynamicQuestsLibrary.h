@@ -6,7 +6,6 @@ UCLASS()
 class UDynamicQuestsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToDynamicQuestsTable(FName Name, FDynamicQuest Data, FDynamicQuestsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xB1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakDynamicQuestsEnum(FDynamicQuestsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FDynamicQuestsRowHandle CastToDynamicQuestsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

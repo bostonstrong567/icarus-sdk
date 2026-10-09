@@ -4,6 +4,7 @@
 USTRUCT()
 struct FModifierStateAudioData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftObjectPtr<UFMODEvent> PlayerModifierAddedSound;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bReplayOnStack;  // 0x0040, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float CooldownTime;  // 0x0044, size 0x4

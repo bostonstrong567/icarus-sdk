@@ -6,6 +6,5 @@ UCLASS(NotPlaceable, Config=Engine)
 class ABP_NPC_RockGolemJuvenile_Controller_C : public ABP_IcarusNPCGOAPController_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) float GetActorThreat(AActor* PerceivedActor, bool bIgnoreRelationships);  // parameters 0x10
 };

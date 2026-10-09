@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_OLY_Forest_WS_Stockpile_Support_C : public ABPQ_Retrieve_Item_And_Spawn_Crate_C
 {
-public:
 };

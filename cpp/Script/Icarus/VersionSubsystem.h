@@ -5,10 +5,11 @@
 UCLASS()
 class UVersionSubsystem : public UGameInstanceSubsystem
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY() FIcarusGameVersion IcarusVersion;  // 0x0030, size 0x30
     UPROPERTY() FIcarusBackendVersion BackendVersion;  // 0x0060, size 0xC
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) FIcarusBackendVersion GetBackendVersion() const;  // parameters 0xC
     UFUNCTION(BlueprintCallable, BlueprintPure) FString GetFormattedVersion(EIcarusGameVersionFlags VersionMask) const;  // parameters 0x18
     UFUNCTION(BlueprintCallable) static FString GetFormattedVersionString(const FIcarusGameVersion& Version, EIcarusGameVersionFlags VersionMask);  // parameters 0x48

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FHeaderRowStyle : public FSlateWidgetStyle
 {
+public:
     UPROPERTY(EditAnywhere) FTableColumnHeaderStyle ColumnStyle;  // 0x0008, size 0x4D0
     UPROPERTY(EditAnywhere) FTableColumnHeaderStyle LastColumnStyle;  // 0x04D8, size 0x4D0
     UPROPERTY(EditAnywhere) FSplitterStyle ColumnSplitterStyle;  // 0x09A8, size 0x118

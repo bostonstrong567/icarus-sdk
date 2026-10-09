@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMapIconsData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<UUserWidget> WidgetClass;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UTexture2D* MapIcon;  // 0x0040, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FColor Color;  // 0x0048, size 0x4

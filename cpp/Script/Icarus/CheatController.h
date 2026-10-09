@@ -5,9 +5,10 @@
 UCLASS(Config=Engine)
 class ACheatController : public AActor
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(Replicated) FPerPlayerCheatData PerPlayerCheats;  // 0x0220, size 0x4
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool IsBuildingIntegrityDisabled(UObject* WorldContextObject);  // parameters 0x9
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool IsGodModeEnabled(AActor* Actor);  // parameters 0x9
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool IsLandMinesExploDisabled(UObject* WorldContextObject);  // parameters 0x9

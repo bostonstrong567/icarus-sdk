@@ -6,7 +6,6 @@ UCLASS(Abstract)
 class UThreatAudioInterface : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintNativeEvent) EMusicConditionCombatState GetCombatMusicConditionOverride(AIcarusPlayerCharacter* TargetPlayer, float Threat);  // parameters 0xD
     UFUNCTION(BlueprintNativeEvent) float GetThreatToPlayer(AIcarusPlayerCharacter* TargetPlayer);  // parameters 0xC
 };

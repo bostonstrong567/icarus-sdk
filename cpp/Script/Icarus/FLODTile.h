@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class AFLODTile : public AInfo
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) FName TileName;  // 0x0220, size 0x8
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) float RelevanceRadius;  // 0x0228, size 0x4
@@ -17,13 +18,12 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) int32 DebugRecordIndex;  // 0x028C, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<UMaterialInterface*> DebugInstanceCurrentMaterials;  // 0x0290, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) UMaterialInterface* DebugPhysicsInstancesMaterial;  // 0x02A0, size 0x8
+    TMulticastDelegate<void __cdecl(bool),FDefaultDelegateUserPolicy> OnDebugInstancesCurrentChanged;  // 0x02A8, not reflected
+protected:
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing) TArray<UFLODRecord*> ReplicatedRecords;  // 0x02C0, size 0x10
     UPROPERTY(Replicated) bool bReadingGameStateFromDatabase;  // 0x02D0, size 0x1
     UPROPERTY(Instanced) UFLODTileRecorderComponent* Recorder;  // 0x02D8, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMulticastDelegate<void __cdecl(bool),FDefaultDelegateUserPolicy> OnDebugInstancesCurrentChanged;  // 0x02A8
-
+public:
     UFUNCTION(BlueprintCallable) void DebugDestroyAllInstances(int32 RecordIndex, bool bRestore);  // parameters 0x5
     UFUNCTION(BlueprintCallable, BlueprintPure) UFLODFISMComponent* FindFISMFromRecordIndex(int32 RecordIndex) const;  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) UFLODRecord* FindRecordByRecordIndex(int32 RecordIndex) const;  // parameters 0x10

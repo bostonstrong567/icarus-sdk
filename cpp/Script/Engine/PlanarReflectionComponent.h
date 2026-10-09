@@ -20,11 +20,10 @@ public:
     UPROPERTY(EditAnywhere) float AngleFromPlaneFadeEnd;  // 0x02E0, size 0x4
     UPROPERTY(EditAnywhere) bool bShowPreviewPlane;  // 0x02E4, size 0x1
     UPROPERTY(EditAnywhere) bool bRenderSceneTwoSided;  // 0x02E5, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    FRenderCommandFence ReleaseResourcesFence;  // 0x02E8, private
-    FPlanarReflectionSceneProxy * SceneProxy;  // 0x02F8, private
-    FPlanarReflectionRenderTarget * RenderTarget;  // 0x0300, private
-    FMatrix[2] ProjectionWithExtraFOV;  // 0x0310, private
-    int32 PlanarReflectionId;  // 0x0390, private
+private:
+    FRenderCommandFence ReleaseResourcesFence;  // 0x02E8, not reflected
+    FPlanarReflectionSceneProxy * SceneProxy;  // 0x02F8, not reflected
+    FPlanarReflectionRenderTarget * RenderTarget;  // 0x0300, not reflected
+    FMatrix[2] ProjectionWithExtraFOV;  // 0x0310, not reflected
+    int32 PlanarReflectionId;  // 0x0390, not reflected
 };

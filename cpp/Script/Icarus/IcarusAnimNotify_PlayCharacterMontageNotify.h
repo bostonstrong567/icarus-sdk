@@ -5,5 +5,4 @@
 UCLASS(Const, EditInlineNew)
 class UIcarusAnimNotify_PlayCharacterMontageNotify : public UAnimNotify_PlayMontageNotify
 {
-public:
 };

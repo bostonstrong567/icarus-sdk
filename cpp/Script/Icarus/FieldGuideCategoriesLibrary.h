@@ -6,7 +6,6 @@ UCLASS()
 class UFieldGuideCategoriesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToFieldGuideCategoriesTable(FName Name, FFieldGuideCategories Data, FFieldGuideCategoriesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xB9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakFieldGuideCategoriesEnum(FFieldGuideCategoriesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FFieldGuideCategoriesRowHandle CastToFieldGuideCategoriesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

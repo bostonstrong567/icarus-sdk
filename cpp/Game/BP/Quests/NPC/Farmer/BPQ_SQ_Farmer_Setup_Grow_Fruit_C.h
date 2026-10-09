@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_SQ_Farmer_Setup_Grow_Fruit_C : public ABPQ_Collect_Item_With_Tag_C
 {
-public:
 };

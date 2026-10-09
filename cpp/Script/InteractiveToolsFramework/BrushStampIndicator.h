@@ -20,10 +20,9 @@ public:
     UPROPERTY() float SecondaryLineThickness;  // 0x0078, size 0x4
     UPROPERTY() FLinearColor SecondaryLineColor;  // 0x007C, size 0x10
     UPROPERTY(Instanced) UPrimitiveComponent* AttachedComponent;  // 0x0090, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    UPrimitiveComponent * ScaleInitializedComponent;  // 0x0098, protected
-    FVector InitialComponentScale;  // 0x00A0, protected
+protected:
+    UPrimitiveComponent * ScaleInitializedComponent;  // 0x0098, not reflected
+    FVector InitialComponentScale;  // 0x00A0, not reflected
 
     // Virtual functions that start here:
     //   Update

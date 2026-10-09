@@ -5,6 +5,7 @@
 UCLASS(Transient, NotPlaceable, Config=Game)
 class AHUD : public AActor
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintReadOnly) APlayerController* PlayerOwner;  // 0x0220, size 0x8
     UPROPERTY(BlueprintReadOnly) uint8 bLostFocusPaused : 1;  // 0x0228, mask 0x01
@@ -15,22 +16,22 @@ public:
     UPROPERTY(BlueprintReadWrite) uint8 bShowOverlays : 1;  // 0x0230, mask 0x02
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bEnableDebugTextShadow : 1;  // 0x0230, mask 0x04
     UPROPERTY() TArray<AActor*> PostRenderedActors;  // 0x0238, size 0x10
+    float LastHUDRenderTime;  // 0x0248, not reflected
+    float RenderDelta;  // 0x024C, not reflected
     UPROPERTY(Config) TArray<FName> DebugDisplay;  // 0x0250, size 0x10
     UPROPERTY(Config) TArray<FName> ToggledDebugCategories;  // 0x0260, size 0x10
+    TArray<FHUDHitBox,TSizedDefaultAllocator<32> > HitBoxMap;  // 0x02A0, not reflected
+    TArray<FHUDHitBox *,TSizedDefaultAllocator<32> > HitBoxHits;  // 0x02B0, not reflected
+    TSet<FName,DefaultKeyFuncs<FName,0>,FDefaultSetAllocator> HitBoxesOver;  // 0x02C0, not reflected
+protected:
     UPROPERTY() UCanvas* Canvas;  // 0x0270, size 0x8
     UPROPERTY() UCanvas* DebugCanvas;  // 0x0278, size 0x8
     UPROPERTY() TArray<FDebugTextInfo> DebugTextList;  // 0x0280, size 0x10
     UPROPERTY() TSubclassOf<AActor> ShowDebugTargetDesiredClass;  // 0x0290, size 0x8
     UPROPERTY() AActor* ShowDebugTargetActor;  // 0x0298, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    uint8 : 1 bShowDebugForReticleTarget;  // 0x0230, private
-    float LastHUDRenderTime;  // 0x0248
-    float RenderDelta;  // 0x024C
-    TArray<FHUDHitBox,TSizedDefaultAllocator<32> > HitBoxMap;  // 0x02A0
-    TArray<FHUDHitBox *,TSizedDefaultAllocator<32> > HitBoxHits;  // 0x02B0
-    TSet<FName,DefaultKeyFuncs<FName,0>,FDefaultSetAllocator> HitBoxesOver;  // 0x02C0
-
+private:
+    uint8 : 1 bShowDebugForReticleTarget;  // 0x0230, not reflected
+public:
     UFUNCTION(Client, Reliable, BlueprintNativeEvent) void AddDebugText(FString DebugText, AActor* SrcActor, float Duration, FVector Offset, FVector DesiredOffset, FColor TextColor, bool bSkipOverwriteCheck, bool bAbsoluteLocation, bool bKeepAttachedToActor, UFont* InFont, float FontScale, bool bDrawShadow);  // parameters 0x4D
     UFUNCTION(BlueprintCallable) void AddHitBox(FVector2D Position, FVector2D Size, FName InName, bool bConsumesInput, int32 Priority);  // parameters 0x20
     UFUNCTION(BlueprintCallable, BlueprintPure) void Deproject(float ScreenX, float ScreenY, FVector& WorldPosition, FVector& WorldDirection) const;  // parameters 0x20

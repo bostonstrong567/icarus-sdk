@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLiveLinkSourceDebugInfo
 {
+public:
     UPROPERTY(EditAnywhere) FLiveLinkSubjectName SubjectName;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) int32 SnapshotIndex;  // 0x0008, size 0x4
     UPROPERTY(EditAnywhere) int32 NumberOfBufferAtSnapshot;  // 0x000C, size 0x4

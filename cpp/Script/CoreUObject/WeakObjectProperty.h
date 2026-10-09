@@ -5,5 +5,4 @@
 UCLASS()
 class UWeakObjectProperty : public UObjectPropertyBase
 {
-public:
 };

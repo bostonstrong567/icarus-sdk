@@ -6,7 +6,6 @@ UCLASS(Abstract)
 class UARDependencyHandler : public UObject
 {
 public:
-
     UFUNCTION(BlueprintCallable) void CheckARServiceAvailability(UObject* WorldContextObject, FLatentActionInfo LatentInfo, EARServiceAvailability& OutAvailability);  // parameters 0x21
     UFUNCTION(BlueprintCallable) static UARDependencyHandler* GetARDependencyHandler();  // parameters 0x8
     UFUNCTION(BlueprintCallable) void InstallARService(UObject* WorldContextObject, FLatentActionInfo LatentInfo, EARServiceInstallRequestResult& OutInstallResult);  // parameters 0x21

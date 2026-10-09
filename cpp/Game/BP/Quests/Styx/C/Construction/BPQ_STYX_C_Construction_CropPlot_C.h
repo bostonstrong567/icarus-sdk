@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_STYX_C_Construction_CropPlot_C : public ABPQ_Deploy_Count_List_C
 {
-public:
 };

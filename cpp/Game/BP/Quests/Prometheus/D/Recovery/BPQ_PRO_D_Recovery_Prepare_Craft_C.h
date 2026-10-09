@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class ABPQ_PRO_D_Recovery_Prepare_Craft_C : public ABPQ_Collect_Item_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void GetDescription(const FText& InDescription, FText& OutDescription, bool& bOutComplete);  // parameters 0x31
 };

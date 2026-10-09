@@ -5,18 +5,13 @@
 UCLASS(Abstract, Transient, Config=Engine)
 class UEngine : public UObject
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
-    UPROPERTY() UFont* TinyFont;  // 0x0030, size 0x8
     UPROPERTY(EditAnywhere, Config) FSoftObjectPath TinyFontName;  // 0x0038, size 0x18
-    UPROPERTY() UFont* SmallFont;  // 0x0050, size 0x8
     UPROPERTY(EditAnywhere, Config) FSoftObjectPath SmallFontName;  // 0x0058, size 0x18
-    UPROPERTY() UFont* MediumFont;  // 0x0070, size 0x8
     UPROPERTY(EditAnywhere, Config) FSoftObjectPath MediumFontName;  // 0x0078, size 0x18
-    UPROPERTY() UFont* LargeFont;  // 0x0090, size 0x8
     UPROPERTY(EditAnywhere, Config) FSoftObjectPath LargeFontName;  // 0x0098, size 0x18
-    UPROPERTY() UFont* SubtitleFont;  // 0x00B0, size 0x8
     UPROPERTY(EditAnywhere, Config) FSoftObjectPath SubtitleFontName;  // 0x00B8, size 0x18
-    UPROPERTY() TArray<UFont*> AdditionalFonts;  // 0x00D0, size 0x10
     UPROPERTY(EditAnywhere, Config) TArray<FString> AdditionalFontNames;  // 0x00E0, size 0x10
     UPROPERTY() TSubclassOf<UConsole> ConsoleClass;  // 0x00F0, size 0x8
     UPROPERTY(EditAnywhere, Config) FSoftClassPath ConsoleClassName;  // 0x00F8, size 0x18
@@ -138,12 +133,14 @@ public:
     UPROPERTY(Config) FSoftObjectPath WeightMapPlaceholderTextureName;  // 0x0740, size 0x18
     UPROPERTY() UTexture2D* LightMapDensityTexture;  // 0x0758, size 0x8
     UPROPERTY(Config) FSoftObjectPath LightMapDensityTextureName;  // 0x0760, size 0x18
+    IEngineLoop * EngineLoop;  // 0x0778, not reflected
     UPROPERTY() UGameViewportClient* GameViewport;  // 0x0780, size 0x8
     UPROPERTY() TArray<FString> DeferredCommands;  // 0x0788, size 0x10
     UPROPERTY(EditAnywhere, Config) float NearClipPlane;  // 0x0798, size 0x4
     UPROPERTY(EditAnywhere, Config) uint8 bSubtitlesEnabled : 1;  // 0x079C, mask 0x01
     UPROPERTY(EditAnywhere, Config) uint8 bSubtitlesForcedOff : 1;  // 0x079C, mask 0x02
     UPROPERTY(EditAnywhere, Config) int32 MaximumLoopIterationCount;  // 0x07A0, size 0x4
+    uint32 : 1 bForceDisableFrameRateSmoothing;  // 0x07A4, not reflected
     UPROPERTY(EditAnywhere, Config) uint8 bCanBlueprintsTickByDefault : 1;  // 0x07A4, mask 0x01
     UPROPERTY(EditAnywhere, Config) uint8 bOptimizeAnimBlueprintMemberVariableAccess : 1;  // 0x07A4, mask 0x02
     UPROPERTY(EditAnywhere, Config) uint8 bAllowMultiThreadedAnimationUpdate : 1;  // 0x07A4, mask 0x04
@@ -152,9 +149,7 @@ public:
     UPROPERTY(EditAnywhere, Config) uint8 bUseFixedFrameRate : 1;  // 0x07A4, mask 0x40
     UPROPERTY(EditAnywhere, Config) float FixedFrameRate;  // 0x07A8, size 0x4
     UPROPERTY(EditAnywhere, Config) FFloatRange SmoothedFrameRateRange;  // 0x07AC, size 0x10
-    UPROPERTY(Transient) UEngineCustomTimeStep* CustomTimeStep;  // 0x07C0, size 0x8
     UPROPERTY(EditAnywhere, Config) FSoftClassPath CustomTimeStepClassName;  // 0x07E8, size 0x18
-    UPROPERTY(Transient) UTimecodeProvider* TimecodeProvider;  // 0x0800, size 0x8
     UPROPERTY(EditAnywhere, Config) FSoftClassPath TimecodeProviderClassName;  // 0x0828, size 0x18
     UPROPERTY(EditAnywhere, Config) bool bGenerateDefaultTimecode;  // 0x0840, size 0x1
     UPROPERTY(EditAnywhere, Config) FFrameRate GenerateDefaultTimecodeFrameRate;  // 0x0844, size 0x8
@@ -192,77 +187,83 @@ public:
     UPROPERTY(Config) float NetClientTicksPerSecond;  // 0x0900, size 0x4
     UPROPERTY(Config) float DisplayGamma;  // 0x0904, size 0x4
     UPROPERTY(EditAnywhere, Config) float MinDesiredFrameRate;  // 0x0908, size 0x4
+    UPROPERTY(Config) uint8 bEnableOnScreenDebugMessages : 1;  // 0x0960, mask 0x01
+    UPROPERTY(Transient) uint8 bEnableOnScreenDebugMessagesDisplay : 1;  // 0x0960, mask 0x02
+    UPROPERTY(Config) uint8 bSuppressMapWarnings : 1;  // 0x0960, mask 0x04
+    UPROPERTY(Config) uint8 bDisableAILogging : 1;  // 0x0960, mask 0x08
+    UPROPERTY(Config) uint32 bEnableVisualLogRecordingOnStart;  // 0x0964, size 0x4
+    UPROPERTY(Transient) uint8 bLockReadOnlyLevels : 1;  // 0x096C, mask 0x01
+    UPROPERTY(Config) FString ParticleEventManagerClassPath;  // 0x0970, size 0x10
+    UPROPERTY(Transient) float SelectionHighlightIntensity;  // 0x0980, size 0x4
+    UPROPERTY(Transient) float BSPSelectionHighlightIntensity;  // 0x0984, size 0x4
+    UPROPERTY(Transient) float SelectionHighlightIntensityBillboards;  // 0x0988, size 0x4
+    TWeakObjectPtr<AMatineeActor,FWeakObjectPtr> ActiveMatinee;  // 0x098C, not reflected
+    TDelegate<void __cdecl(FViewport *),FDefaultDelegateUserPolicy> * BeginStreamingPauseDelegate;  // 0x0998, not reflected
+    TDelegate<void __cdecl(void),FDefaultDelegateUserPolicy> * EndStreamingPauseDelegate;  // 0x09A0, not reflected
+    TMulticastDelegate<void __cdecl(void),FDefaultDelegateUserPolicy> PreRenderDelegate;  // 0x09A8, not reflected
+    TMulticastDelegate<void __cdecl(void),FDefaultDelegateUserPolicy> PostRenderDelegate;  // 0x09C0, not reflected
+    UEngine::FOnTravelFailure TravelFailureEvent;  // 0x09D8, not reflected
+    UEngine::FOnNetworkFailure NetworkFailureEvent;  // 0x09F0, not reflected
+    UEngine::FOnNetworkLagStateChanged NetworkLagStateChangedEvent;  // 0x0A08, not reflected
+    UEngine::FOnNetworkDDoSEscalation NetworkDDoSEscalationEvent;  // 0x0A20, not reflected
+    bool bIsInitialized;  // 0x0A38, not reflected
+    TSharedPtr<IStereoRendering,1> StereoRenderingDevice;  // 0x0AD0, not reflected
+    TSharedPtr<IXRTrackingSystem,1> XRSystem;  // 0x0AE0, not reflected
+    TSharedPtr<FSceneViewExtensions,0> ViewExtensions;  // 0x0AF0, not reflected
+    TSharedPtr<IEyeTracker,1> EyeTrackingDevice;  // 0x0B00, not reflected
+    TMulticastDelegate<void __cdecl(enum EFrameHitchType,float),FDefaultDelegateUserPolicy> OnHitchDetectedDelegate;  // 0x0B10, not reflected
+    UPROPERTY(Transient, Config) TArray<FNetDriverDefinition> NetDriverDefinitions;  // 0x0BD0, size 0x10
+    UPROPERTY(Config) TArray<FString> ServerActors;  // 0x0BE0, size 0x10
+    UPROPERTY() TArray<FString> RuntimeServerActors;  // 0x0BF0, size 0x10
+    UPROPERTY(Config) float NetErrorLogInterval;  // 0x0C00, size 0x4
+    UPROPERTY(Transient) uint8 bStartedLoadMapMovie : 1;  // 0x0C04, mask 0x01
+protected:
+    FAudioDeviceManager * AudioDeviceManager;  // 0x0A50, not reflected
+    FAudioDeviceHandle MainAudioDeviceHandle;  // 0x0A58, not reflected
+    TSharedPtr<IMessageRpcClient,0> PortalRpcClient;  // 0x0B28, not reflected
+    TSharedPtr<IPortalRpcLocator,0> PortalRpcLocator;  // 0x0B38, not reflected
+    TSharedPtr<FTypeContainer,0> ServiceDependencies;  // 0x0B48, not reflected
+    TSharedPtr<IPortalServiceLocator,0> ServiceLocator;  // 0x0B58, not reflected
+    TSharedPtr<FPerformanceTrackingChart,0> ActivePerformanceChart;  // 0x0B68, not reflected
+    TArray<TSharedPtr<IPerformanceDataConsumer,0>,TSizedDefaultAllocator<32> > ActivePerformanceDataConsumers;  // 0x0B78, not reflected
+    float RunningAverageDeltaTime;  // 0x0B88, not reflected
+    UEngine::FWorldAddedEvent WorldAddedEvent;  // 0x0B90, not reflected
+    UEngine::FWorldDestroyedEvent WorldDestroyedEvent;  // 0x0BA8, not reflected
+    TIndirectArray<FWorldContext,TSizedDefaultAllocator<32> > WorldList;  // 0x0C10, not reflected
+    UPROPERTY() int32 NextWorldContextHandle;  // 0x0C20, size 0x4
+private:
+    UPROPERTY() UFont* TinyFont;  // 0x0030, size 0x8
+    UPROPERTY() UFont* SmallFont;  // 0x0050, size 0x8
+    UPROPERTY() UFont* MediumFont;  // 0x0070, size 0x8
+    UPROPERTY() UFont* LargeFont;  // 0x0090, size 0x8
+    UPROPERTY() UFont* SubtitleFont;  // 0x00B0, size 0x8
+    UPROPERTY() TArray<UFont*> AdditionalFonts;  // 0x00D0, size 0x10
+    UPROPERTY(Transient) UEngineCustomTimeStep* CustomTimeStep;  // 0x07C0, size 0x8
+    TMulticastDelegate<void __cdecl(void),FDefaultDelegateUserPolicy> CustomTimeStepChangedEvent;  // 0x07C8, not reflected
+    bool bIsCurrentCustomTimeStepInitialized;  // 0x07E0, not reflected
+    UPROPERTY(Transient) UTimecodeProvider* TimecodeProvider;  // 0x0800, size 0x8
+    TMulticastDelegate<void __cdecl(void),FDefaultDelegateUserPolicy> TimecodeProviderChangedEvent;  // 0x0808, not reflected
+    bool bIsCurrentTimecodeProviderInitialized;  // 0x0820, not reflected
     UPROPERTY(Config) FLinearColor DefaultSelectedMaterialColor;  // 0x090C, size 0x10
     UPROPERTY(Transient) FLinearColor SelectedMaterialColor;  // 0x091C, size 0x10
     UPROPERTY(Transient) FLinearColor SelectionOutlineColor;  // 0x092C, size 0x10
     UPROPERTY(Transient) FLinearColor SubduedSelectionOutlineColor;  // 0x093C, size 0x10
     UPROPERTY(Transient) FLinearColor SelectedMaterialColorOverride;  // 0x094C, size 0x10
     UPROPERTY(Transient) bool bIsOverridingSelectedColor;  // 0x095C, size 0x1
-    UPROPERTY(Config) uint8 bEnableOnScreenDebugMessages : 1;  // 0x0960, mask 0x01
-    UPROPERTY(Transient) uint8 bEnableOnScreenDebugMessagesDisplay : 1;  // 0x0960, mask 0x02
-    UPROPERTY(Config) uint8 bSuppressMapWarnings : 1;  // 0x0960, mask 0x04
-    UPROPERTY(Config) uint8 bDisableAILogging : 1;  // 0x0960, mask 0x08
-    UPROPERTY(Config) uint32 bEnableVisualLogRecordingOnStart;  // 0x0964, size 0x4
     UPROPERTY(Transient) int32 ScreenSaverInhibitorSemaphore;  // 0x0968, size 0x4
-    UPROPERTY(Transient) uint8 bLockReadOnlyLevels : 1;  // 0x096C, mask 0x01
-    UPROPERTY(Config) FString ParticleEventManagerClassPath;  // 0x0970, size 0x10
-    UPROPERTY(Transient) float SelectionHighlightIntensity;  // 0x0980, size 0x4
-    UPROPERTY(Transient) float BSPSelectionHighlightIntensity;  // 0x0984, size 0x4
-    UPROPERTY(Transient) float SelectionHighlightIntensityBillboards;  // 0x0988, size 0x4
-    UPROPERTY(Transient, Config) TArray<FNetDriverDefinition> NetDriverDefinitions;  // 0x0BD0, size 0x10
-    UPROPERTY(Config) TArray<FString> ServerActors;  // 0x0BE0, size 0x10
-    UPROPERTY() TArray<FString> RuntimeServerActors;  // 0x0BF0, size 0x10
-    UPROPERTY(Config) float NetErrorLogInterval;  // 0x0C00, size 0x4
-    UPROPERTY(Transient) uint8 bStartedLoadMapMovie : 1;  // 0x0C04, mask 0x01
-    UPROPERTY() int32 NextWorldContextHandle;  // 0x0C20, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    IEngineLoop * EngineLoop;  // 0x0778
-    uint32 : 1 bForceDisableFrameRateSmoothing;  // 0x07A4
-    TMulticastDelegate<void __cdecl(void),FDefaultDelegateUserPolicy> CustomTimeStepChangedEvent;  // 0x07C8, private
-    bool bIsCurrentCustomTimeStepInitialized;  // 0x07E0, private
-    TMulticastDelegate<void __cdecl(void),FDefaultDelegateUserPolicy> TimecodeProviderChangedEvent;  // 0x0808, private
-    bool bIsCurrentTimecodeProviderInitialized;  // 0x0820, private
-    TWeakObjectPtr<AMatineeActor,FWeakObjectPtr> ActiveMatinee;  // 0x098C
-    TDelegate<void __cdecl(FViewport *),FDefaultDelegateUserPolicy> * BeginStreamingPauseDelegate;  // 0x0998
-    TDelegate<void __cdecl(void),FDefaultDelegateUserPolicy> * EndStreamingPauseDelegate;  // 0x09A0
-    TMulticastDelegate<void __cdecl(void),FDefaultDelegateUserPolicy> PreRenderDelegate;  // 0x09A8
-    TMulticastDelegate<void __cdecl(void),FDefaultDelegateUserPolicy> PostRenderDelegate;  // 0x09C0
-    UEngine::FOnTravelFailure TravelFailureEvent;  // 0x09D8
-    UEngine::FOnNetworkFailure NetworkFailureEvent;  // 0x09F0
-    UEngine::FOnNetworkLagStateChanged NetworkLagStateChangedEvent;  // 0x0A08
-    UEngine::FOnNetworkDDoSEscalation NetworkDDoSEscalationEvent;  // 0x0A20
-    bool bIsInitialized;  // 0x0A38
-    uint64 LastGCFrame;  // 0x0A40, private
-    float TimeSinceLastPendingKillPurge;  // 0x0A48, private
-    bool bFullPurgeTriggered;  // 0x0A4C, private
-    bool bShouldDelayGarbageCollect;  // 0x0A4D, private
-    FAudioDeviceManager * AudioDeviceManager;  // 0x0A50, protected
-    FAudioDeviceHandle MainAudioDeviceHandle;  // 0x0A58, protected
-    TArray<FScreenMessageString,TSizedDefaultAllocator<32> > PriorityScreenMessages;  // 0x0A70, private
-    TMap<int,FScreenMessageString,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<int,FScreenMessageString,0> > ScreenMessages;  // 0x0A80, private
-    TSharedPtr<IStereoRendering,1> StereoRenderingDevice;  // 0x0AD0
-    TSharedPtr<IXRTrackingSystem,1> XRSystem;  // 0x0AE0
-    TSharedPtr<FSceneViewExtensions,0> ViewExtensions;  // 0x0AF0
-    TSharedPtr<IEyeTracker,1> EyeTrackingDevice;  // 0x0B00
-    TMulticastDelegate<void __cdecl(enum EFrameHitchType,float),FDefaultDelegateUserPolicy> OnHitchDetectedDelegate;  // 0x0B10
-    TSharedPtr<IMessageRpcClient,0> PortalRpcClient;  // 0x0B28, protected
-    TSharedPtr<IPortalRpcLocator,0> PortalRpcLocator;  // 0x0B38, protected
-    TSharedPtr<FTypeContainer,0> ServiceDependencies;  // 0x0B48, protected
-    TSharedPtr<IPortalServiceLocator,0> ServiceLocator;  // 0x0B58, protected
-    TSharedPtr<FPerformanceTrackingChart,0> ActivePerformanceChart;  // 0x0B68, protected
-    TArray<TSharedPtr<IPerformanceDataConsumer,0>,TSizedDefaultAllocator<32> > ActivePerformanceDataConsumers;  // 0x0B78, protected
-    float RunningAverageDeltaTime;  // 0x0B88, protected
-    UEngine::FWorldAddedEvent WorldAddedEvent;  // 0x0B90, protected
-    UEngine::FWorldDestroyedEvent WorldDestroyedEvent;  // 0x0BA8, protected
-    FRunnableThread * ScreenSaverInhibitor;  // 0x0BC0, private
-    FScreenSaverInhibitor * ScreenSaverInhibitorRunnable;  // 0x0BC8, private
-    bool bIsVanillaProduct;  // 0x0C08, private
-    TIndirectArray<FWorldContext,TSizedDefaultAllocator<32> > WorldList;  // 0x0C10, protected
-    TUniqueObj<FSubsystemCollection<UEngineSubsystem> > EngineSubsystemCollection;  // 0x0C28, private
-    TArray<UEngine::FEngineStatFuncs,TSizedDefaultAllocator<32> > EngineStats;  // 0x0C30, private
-    UEngine::FErrorsAndWarningsCollector ErrorsAndWarningsCollector;  // 0x0C40, private
-    FDelegateHandle HandleScreenshotCapturedDelegateHandle;  // 0x0CF0, private
+    uint64 LastGCFrame;  // 0x0A40, not reflected
+    float TimeSinceLastPendingKillPurge;  // 0x0A48, not reflected
+    bool bFullPurgeTriggered;  // 0x0A4C, not reflected
+    bool bShouldDelayGarbageCollect;  // 0x0A4D, not reflected
+    TArray<FScreenMessageString,TSizedDefaultAllocator<32> > PriorityScreenMessages;  // 0x0A70, not reflected
+    TMap<int,FScreenMessageString,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<int,FScreenMessageString,0> > ScreenMessages;  // 0x0A80, not reflected
+    FRunnableThread * ScreenSaverInhibitor;  // 0x0BC0, not reflected
+    FScreenSaverInhibitor * ScreenSaverInhibitorRunnable;  // 0x0BC8, not reflected
+    bool bIsVanillaProduct;  // 0x0C08, not reflected
+    TUniqueObj<FSubsystemCollection<UEngineSubsystem> > EngineSubsystemCollection;  // 0x0C28, not reflected
+    TArray<UEngine::FEngineStatFuncs,TSizedDefaultAllocator<32> > EngineStats;  // 0x0C30, not reflected
+    UEngine::FErrorsAndWarningsCollector ErrorsAndWarningsCollector;  // 0x0C40, not reflected
+    FDelegateHandle HandleScreenshotCapturedDelegateHandle;  // 0x0CF0, not reflected
 
     // Virtual functions that start here:
     //   AllowSelectTranslucent, AreEditorAnalyticsEnabled, Browse, CancelAllPending, CancelPending

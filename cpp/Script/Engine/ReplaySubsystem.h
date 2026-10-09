@@ -7,7 +7,6 @@ class UReplaySubsystem : public UGameInstanceSubsystem
 {
 public:
     UPROPERTY(EditAnywhere) bool bLoadDefaultMapOnStop;  // 0x0030, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    TWeakObjectPtr<UReplayNetConnection,FWeakObjectPtr> ReplayConnection;  // 0x0034, private
+private:
+    TWeakObjectPtr<UReplayNetConnection,FWeakObjectPtr> ReplayConnection;  // 0x0034, not reflected
 };

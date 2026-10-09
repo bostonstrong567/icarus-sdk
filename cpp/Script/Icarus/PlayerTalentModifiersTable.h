@@ -5,5 +5,4 @@
 UCLASS()
 class UPlayerTalentModifiersTable : public UIcarusDataTable
 {
-public:
 };

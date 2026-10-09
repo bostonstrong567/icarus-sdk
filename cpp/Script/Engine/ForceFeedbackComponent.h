@@ -16,10 +16,9 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UForceFeedbackAttenuation* AttenuationSettings;  // 0x0208, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FForceFeedbackAttenuationSettings AttenuationOverrides;  // 0x0210, size 0xB0
     UPROPERTY(BlueprintAssignable) FOnForceFeedbackFinished OnForceFeedbackFinished;  // 0x02C0, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    float PlayTime;  // 0x02D0, private
-
+private:
+    float PlayTime;  // 0x02D0, not reflected
+public:
     UFUNCTION(BlueprintCallable) void AdjustAttenuation(const FForceFeedbackAttenuationSettings& InAttenuationSettings);  // parameters 0xB0
     UFUNCTION(BlueprintCallable, BlueprintPure) bool BP_GetAttenuationSettingsToApply(FForceFeedbackAttenuationSettings& OutAttenuationSettings) const;  // parameters 0xB1
     UFUNCTION(BlueprintCallable) void Play(float StartTime);  // parameters 0x4

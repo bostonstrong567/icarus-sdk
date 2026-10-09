@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAssetEditorOrbitCameraPosition
 {
+public:
     UPROPERTY() bool bIsSet;  // 0x0000, size 0x1
     UPROPERTY() FVector CamOrbitPoint;  // 0x0004, size 0xC
     UPROPERTY() FVector CamOrbitZoom;  // 0x0010, size 0xC

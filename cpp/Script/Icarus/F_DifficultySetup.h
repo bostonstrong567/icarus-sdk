@@ -4,6 +4,7 @@
 USTRUCT()
 struct FDifficultySetup
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FProspectStatsRowHandle> DifficultyStats;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FProspectForecastRowHandle Forecast;  // 0x0010, size 0x18
 };

@@ -5,5 +5,4 @@
 UCLASS(Const)
 class UFrostDamage : public UIcarusDamageType
 {
-public:
 };

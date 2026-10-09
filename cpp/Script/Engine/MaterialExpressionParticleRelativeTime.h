@@ -5,5 +5,4 @@
 UCLASS()
 class UMaterialExpressionParticleRelativeTime : public UMaterialExpression
 {
-public:
 };

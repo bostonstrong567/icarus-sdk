@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRepGraphClassPolicy : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere) TSoftClassPtr<AActor> Class;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere) FString Description;  // 0x0040, size 0x10
     UPROPERTY(EditAnywhere) EClassRepPolicy Policy;  // 0x0050, size 0x1

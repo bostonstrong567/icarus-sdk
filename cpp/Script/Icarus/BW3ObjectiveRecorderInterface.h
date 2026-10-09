@@ -6,7 +6,6 @@ UCLASS(Abstract, MinimalAPI)
 class UBW3ObjectiveRecorderInterface : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintNativeEvent) void GetObjectiveState(int32& State);  // parameters 0x4
     UFUNCTION(BlueprintNativeEvent) void SetObjectiveState(int32 State);  // parameters 0x4
 };

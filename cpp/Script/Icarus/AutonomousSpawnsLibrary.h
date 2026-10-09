@@ -6,7 +6,6 @@ UCLASS()
 class UAutonomousSpawnsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToAutonomousSpawnsTable(FName Name, FAutonomousSpawnData Data, FAutonomousSpawnsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xD9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakAutonomousSpawnsEnum(FAutonomousSpawnsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FAutonomousSpawnsRowHandle CastToAutonomousSpawnsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

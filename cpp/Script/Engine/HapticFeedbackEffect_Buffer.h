@@ -8,7 +8,6 @@ class UHapticFeedbackEffect_Buffer : public UHapticFeedbackEffect_Base
 public:
     UPROPERTY(EditAnywhere) TArray<uint8> Amplitudes;  // 0x0028, size 0x10
     UPROPERTY(EditAnywhere) int32 SampleRate;  // 0x0038, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    FHapticFeedbackBuffer HapticBuffer;  // 0x0040, private
+private:
+    FHapticFeedbackBuffer HapticBuffer;  // 0x0040, not reflected
 };

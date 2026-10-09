@@ -5,11 +5,13 @@
 UCLASS(EditInlineNew)
 class UNiagaraDataInterfaceRenderTargetCube : public UNiagaraDataInterfaceRWBase
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere) int32 Size;  // 0x00D8, size 0x4
     UPROPERTY(EditAnywhere) TEnumAsByte<ETextureRenderTargetFormat> OverrideRenderTargetFormat;  // 0x00DC, size 0x1
     UPROPERTY(EditAnywhere) uint8 bInheritUserParameterSettings : 1;  // 0x00DD, mask 0x01
     UPROPERTY(EditAnywhere) uint8 bOverrideFormat : 1;  // 0x00DD, mask 0x02
     UPROPERTY(EditAnywhere) FNiagaraUserParameterBinding RenderTargetUserParameter;  // 0x00E0, size 0x20
+protected:
     UPROPERTY(Transient) TMap<uint64, UTextureRenderTargetCube*> ManagedRenderTargets;  // 0x0100, size 0x50
 };

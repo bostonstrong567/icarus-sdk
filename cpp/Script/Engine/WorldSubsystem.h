@@ -5,7 +5,6 @@
 UCLASS(Abstract)
 class UWorldSubsystem : public USubsystem
 {
-public:
 
     // Virtual functions that start here:
     //   DoesSupportWorldType

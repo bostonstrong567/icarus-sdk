@@ -7,7 +7,5 @@ class UGizmoScaledTransformSource : public UGizmoBaseTransformSource
 {
 public:
     UPROPERTY() TScriptInterface<IGizmoTransformSource> ChildTransformSource;  // 0x0048, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FSeparateScaleProvider ScaleProvider;  // 0x0060
+    FSeparateScaleProvider ScaleProvider;  // 0x0060, not reflected
 };

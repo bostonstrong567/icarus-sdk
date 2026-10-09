@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UBP_UIProjectionComponent_Hunting_C : public UBP_UIProjectionComponent_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) void GetNextClueDistance(float& Distance);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void GetWidgetLocation(FVector& Location);  // parameters 0xC
 };

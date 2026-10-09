@@ -6,7 +6,6 @@ UCLASS()
 class UUMGFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static bool AnyChildrenVisible(UPanelWidget* PanelWidget);  // parameters 0x9
     UFUNCTION(BlueprintCallable) static void CopyToClipboard(FString Text);  // parameters 0x10
     UFUNCTION(BlueprintCallable) static TArray<FText> FormatTimeLengthDigital(int32 Seconds);  // parameters 0x18

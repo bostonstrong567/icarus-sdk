@@ -5,20 +5,21 @@
 UCLASS(NotPlaceable, Config=Game)
 class AIcarusPlayerControllerServer : public AIcarusPlayerController
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
+    bool bHasVerifiedLoadout;  // 0x07C0, not reflected
     UPROPERTY(BlueprintAssignable) FServerProspectListChanged OnServerProspectListChanged;  // 0x07C8, size 0x10
     UPROPERTY(BlueprintAssignable) FOnPrepareProspect OnPrepareProspect;  // 0x07D8, size 0x10
     UPROPERTY(BlueprintAssignable) FOnPermissionChanged OnLaunchPermissionChanged;  // 0x07E8, size 0x10
     UPROPERTY(BlueprintAssignable) FOnPermissionChanged OnDeletePermissionChanged;  // 0x07F8, size 0x10
+protected:
     UPROPERTY(EditAnywhere) FServerProspectListResponseMulti RequestProspectListCallback;  // 0x0808, size 0x10
+    bool bRequestProspectListInProgress;  // 0x0818, not reflected
+    bool bClientWasKicked;  // 0x0819, not reflected
+private:
     UPROPERTY(Replicated, ReplicatedUsing) bool bHasLaunchPermission;  // 0x081A, size 0x1
     UPROPERTY(Replicated, ReplicatedUsing) bool bHasDeletePermission;  // 0x081B, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bHasVerifiedLoadout;  // 0x07C0
-    bool bRequestProspectListInProgress;  // 0x0818, protected
-    bool bClientWasKicked;  // 0x0819, protected
-
+public:
     UFUNCTION(BlueprintCallable) void ClaimAndLaunchProspect(FProspectInfo Prospect);  // parameters 0xA0
     UFUNCTION(Client, Reliable, BlueprintNativeEvent) void ClientPrepareProspect(FProspectInfo Prospect, bool bIsResuming);  // parameters 0xA1
     UFUNCTION(Client, Reliable, BlueprintNativeEvent) void ClientProspectListUpdated();

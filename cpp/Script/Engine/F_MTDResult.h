@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMTDResult
 {
+public:
     UPROPERTY() FVector Direction;  // 0x0000, size 0xC
     UPROPERTY() float Distance;  // 0x000C, size 0x4
 };

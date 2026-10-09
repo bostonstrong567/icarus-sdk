@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMetaResourceNodeInfo : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TSoftClassPtr<AResourceDeposit> ResourceBP;  // 0x0018, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FOreDepositRowHandle Resource;  // 0x0040, size 0x18
 };

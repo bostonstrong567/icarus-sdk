@@ -5,5 +5,4 @@
 UCLASS()
 class UFieldGuideSetsTable : public UIcarusDataTable
 {
-public:
 };

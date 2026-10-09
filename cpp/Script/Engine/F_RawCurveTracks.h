@@ -4,5 +4,6 @@
 USTRUCT()
 struct FRawCurveTracks
 {
+public:
     UPROPERTY() TArray<FFloatCurve> FloatCurves;  // 0x0000, size 0x10
 };

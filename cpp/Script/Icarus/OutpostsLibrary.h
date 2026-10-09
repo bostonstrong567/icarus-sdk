@@ -6,7 +6,6 @@ UCLASS()
 class UOutpostsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToOutpostsTable(FName Name, FOutpost Data, FOutpostsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x91
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakOutpostsEnum(FOutpostsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FOutpostsRowHandle CastToOutpostsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

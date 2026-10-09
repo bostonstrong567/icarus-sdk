@@ -5,14 +5,15 @@
 UCLASS(Config=Engine)
 class AAudioVolume : public AVolume
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float Priority;  // 0x0258, size 0x4
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) uint8 bEnabled : 1;  // 0x025C, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FReverbSettings Settings;  // 0x0260, size 0x20
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FInteriorSettings AmbientZoneSettings;  // 0x0280, size 0x24
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<FAudioVolumeSubmixSendSettings> SubmixSendSettings;  // 0x02A8, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<FAudioVolumeSubmixOverrideSettings> SubmixOverrideSettings;  // 0x02B8, size 0x10
-
+public:
     UFUNCTION() void OnRep_bEnabled();
     UFUNCTION(BlueprintCallable) void SetEnabled(bool bNewEnabled);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void SetInteriorSettings(const FInteriorSettings& NewInteriorSettings);  // parameters 0x24

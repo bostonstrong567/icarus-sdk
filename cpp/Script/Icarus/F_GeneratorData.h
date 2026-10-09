@@ -4,6 +4,7 @@
 USTRUCT()
 struct FGeneratorData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FIcarusResourcesEnum Resource;  // 0x0018, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 GenerationRate;  // 0x0028, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float GenerationRatio;  // 0x002C, size 0x4

@@ -5,5 +5,4 @@
 UCLASS(Config=Game)
 class ABP_NPC_Raptor_Juvenile_Character_Desert_C : public ABP_NPC_Raptor_Juvenile_Character_C
 {
-public:
 };

@@ -5,23 +5,22 @@
 UCLASS(Config=Engine)
 class UBlackboardComponent : public UActorComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(Transient, Instanced) UBrainComponent* BrainComp;  // 0x00B0, size 0x8
     UPROPERTY(EditAnywhere) UBlackboardData* DefaultBlackboardAsset;  // 0x00B8, size 0x8
     UPROPERTY(Transient) UBlackboardData* BlackboardAsset;  // 0x00C0, size 0x8
+    TArray<unsigned char,TSizedDefaultAllocator<32> > ValueMemory;  // 0x00C8, not reflected
+    TArray<unsigned short,TSizedDefaultAllocator<32> > ValueOffsets;  // 0x00D8, not reflected
     UPROPERTY(Transient) TArray<UBlackboardKeyType*> KeyInstances;  // 0x00E8, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<unsigned char,TSizedDefaultAllocator<32> > ValueMemory;  // 0x00C8, protected
-    TArray<unsigned short,TSizedDefaultAllocator<32> > ValueOffsets;  // 0x00D8, protected
-    int32 NotifyObserversRecursionCount;  // 0x00F8, protected
-    int32 ObserversToRemoveCount;  // 0x00FC, protected
-    TMultiMap<unsigned char,UBlackboardComponent::FOnBlackboardChangeNotificationInfo,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<unsigned char,UBlackboardComponent::FOnBlackboardChangeNotificationInfo,1> > Observers;  // 0x0100, protected
-    TMultiMap<UObject *,FDelegateHandle,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<UObject *,FDelegateHandle,1> > ObserverHandles;  // 0x0150, protected
-    TArray<unsigned char,TSizedDefaultAllocator<32> > QueuedUpdates;  // 0x01A0, protected
-    uint32 : 1 bPausedNotifies;  // 0x01B0, protected
-    uint32 : 1 bSynchronizedKeyPopulated;  // 0x01B0, protected
-
+    int32 NotifyObserversRecursionCount;  // 0x00F8, not reflected
+    int32 ObserversToRemoveCount;  // 0x00FC, not reflected
+    TMultiMap<unsigned char,UBlackboardComponent::FOnBlackboardChangeNotificationInfo,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<unsigned char,UBlackboardComponent::FOnBlackboardChangeNotificationInfo,1> > Observers;  // 0x0100, not reflected
+    TMultiMap<UObject *,FDelegateHandle,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<UObject *,FDelegateHandle,1> > ObserverHandles;  // 0x0150, not reflected
+    TArray<unsigned char,TSizedDefaultAllocator<32> > QueuedUpdates;  // 0x01A0, not reflected
+    uint32 : 1 bPausedNotifies;  // 0x01B0, not reflected
+    uint32 : 1 bSynchronizedKeyPopulated;  // 0x01B0, not reflected
+public:
     UFUNCTION(BlueprintCallable) void ClearValue(const FName& KeyName);  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) bool GetLocationFromEntry(const FName& KeyName, FVector& ResultLocation) const;  // parameters 0x15
     UFUNCTION(BlueprintCallable, BlueprintPure) bool GetRotationFromEntry(const FName& KeyName, FRotator& ResultRotation) const;  // parameters 0x15

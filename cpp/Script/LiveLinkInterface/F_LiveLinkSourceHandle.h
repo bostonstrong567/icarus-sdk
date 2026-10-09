@@ -4,7 +4,6 @@
 USTRUCT()
 struct FLiveLinkSourceHandle
 {
-
-    // Not reflected:
-    TSharedPtr<ILiveLinkSource,0> SourcePointer;  // 0x0008
+public:
+    TSharedPtr<ILiveLinkSource,0> SourcePointer;  // 0x0008, not reflected
 };

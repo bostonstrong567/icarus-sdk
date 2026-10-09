@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMovieSceneMediaSectionParams
 {
+public:
     UPROPERTY(Instanced) UMediaSoundComponent* MediaSoundComponent;  // 0x0000, size 0x8
     UPROPERTY() UMediaSource* MediaSource;  // 0x0008, size 0x8
     UPROPERTY() UMediaTexture* MediaTexture;  // 0x0010, size 0x8

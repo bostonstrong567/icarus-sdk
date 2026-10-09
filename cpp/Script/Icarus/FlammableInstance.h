@@ -5,10 +5,12 @@
 UCLASS()
 class UFlammableInstance : public UObject, public IMultiPointAudioNodeInterface
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
-    UPROPERTY() TMap<int32, UFlammableInstance*> QueuedAsyncPayloadInstances;  // 0x00A8, size 0x50
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bForceNextTickTemperatureUpdate;  // 0x00F8, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bDebugInstance;  // 0x00F9, size 0x1
+    FOctreeElementId2 OctreeElementId;  // 0x00FC, not reflected
+protected:
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UFlammableComponent* FlammableComponent;  // 0x0108, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FFlammableTargetIgnite IgnitionTarget;  // 0x0110, size 0x30
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float CurrentInstanceTime;  // 0x0140, size 0x4
@@ -31,13 +33,12 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FBoxSphereBounds CachedLocalBounds;  // 0x01FC, size 0x1C
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FTransform CachedWorldTransform;  // 0x0220, size 0x30
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TMap<UFlammableInstance*, FBox> CachedInstanceTouchingBoxes;  // 0x0250, size 0x50
-
-    // Not reflected: the engine's scripting cannot see these.
-    UFlammableInstance::FCacheIntersectingBoxesAsyncPayload QueuedAsyncPayload;  // 0x0030, private
-    FOctreeElementId2 OctreeElementId;  // 0x00FC
-    FFlammableAudioData AudioData;  // 0x02A0, private
-    FVector AudioLocation;  // 0x02A8, private
-
+private:
+    UFlammableInstance::FCacheIntersectingBoxesAsyncPayload QueuedAsyncPayload;  // 0x0030, not reflected
+    UPROPERTY() TMap<int32, UFlammableInstance*> QueuedAsyncPayloadInstances;  // 0x00A8, size 0x50
+    FFlammableAudioData AudioData;  // 0x02A0, not reflected
+    FVector AudioLocation;  // 0x02A8, not reflected
+public:
     UFUNCTION(BlueprintCallable) void DebugVisualStats(float DeltaSeconds) const;  // parameters 0x4
     UFUNCTION(BlueprintCallable) void Extinguish(float InExtinguishRampTimeAmount, float InExtinguishTimeAmount, bool bStopCombustionImmediately);  // parameters 0x9
     UFUNCTION(BlueprintCallable, BlueprintPure) TArray<UFlammableState*> GetAllFlammableStates() const;  // parameters 0x10

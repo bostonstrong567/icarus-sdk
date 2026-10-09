@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_AccumulateVectorLerp : public FRigUnit_AccumulateBase
 {
+public:
     UPROPERTY() FVector TargetValue;  // 0x0008, size 0xC
     UPROPERTY() FVector InitialValue;  // 0x0014, size 0xC
     UPROPERTY() float Blend;  // 0x0020, size 0x4

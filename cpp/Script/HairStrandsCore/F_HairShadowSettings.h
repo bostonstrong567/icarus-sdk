@@ -4,6 +4,7 @@
 USTRUCT()
 struct FHairShadowSettings
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float HairShadowDensity;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float HairRaytracingRadiusScale;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bUseHairRaytracingGeometry;  // 0x0008, size 0x1

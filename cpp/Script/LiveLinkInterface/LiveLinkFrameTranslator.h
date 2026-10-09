@@ -5,7 +5,6 @@
 UCLASS(Abstract, EditInlineNew)
 class ULiveLinkFrameTranslator : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   FetchWorker, GetFromRole, GetToRole

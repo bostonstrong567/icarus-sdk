@@ -4,8 +4,7 @@
 USTRUCT()
 struct FPSCPoolElem
 {
+public:
     UPROPERTY(Transient, Instanced) UParticleSystemComponent* PSC;  // 0x0000, size 0x8
-
-    // Not reflected:
-    float LastUsedTime;  // 0x0008
+    float LastUsedTime;  // 0x0008, not reflected
 };

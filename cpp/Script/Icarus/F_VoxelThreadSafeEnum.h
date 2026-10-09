@@ -4,8 +4,8 @@
 USTRUCT()
 struct FVoxelThreadSafeEnum
 {
-
-    // Not reflected:
-    FThreadStateChanged OnThreadStateChanged;  // 0x0000
-    volatile int32 Flags;  // 0x0010
+public:
+    FThreadStateChanged OnThreadStateChanged;  // 0x0000, not reflected
+private:
+    volatile int32 Flags;  // 0x0010, not reflected
 };

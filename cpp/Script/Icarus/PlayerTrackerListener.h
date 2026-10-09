@@ -7,13 +7,12 @@ class UPlayerTrackerListener : public UGeneratedPlayerTrackerListener
 {
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<FPlayerTrackersRowHandle, int32> PlayerTrackers;  // 0x0030, size 0x50
+    TMultiMap<FPlayerTrackerCategoriesRowHandle,FPlayerTrackersRowHandle,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FPlayerTrackerCategoriesRowHandle,FPlayerTrackersRowHandle,1> > PlayerTrackerCategories;  // 0x0080, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<FPlayerTrackersRowHandle, FTrackerTaskListProgress> PlayerTaskListTrackers;  // 0x00D0, size 0x50
     UPROPERTY(EditAnywhere) float SaveTimerDuration;  // 0x0120, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMultiMap<FPlayerTrackerCategoriesRowHandle,FPlayerTrackersRowHandle,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FPlayerTrackerCategoriesRowHandle,FPlayerTrackersRowHandle,1> > PlayerTrackerCategories;  // 0x0080
-    FTimerHandle SaveTimer;  // 0x0128, private
-
+private:
+    FTimerHandle SaveTimer;  // 0x0128, not reflected
+public:
     UFUNCTION(BlueprintCallable) void CheckEntireTalentTreeUnlockedTask(AIcarusPlayerCharacter* Player, FAccoladesRowHandle Accolade);  // parameters 0x20
     UFUNCTION(BlueprintCallable) void CheckOffTaskRow(AIcarusPlayerCharacter* Player, FAccoladesRowHandle Accolade, FRowHandle TaskRow);  // parameters 0x38
     UFUNCTION(BlueprintCallable) FTrackerTaskListProgress GetPlayerTaskListTracker(AIcarusPlayerCharacter* Player, FPlayerTrackersRowHandle PlayerTracker);  // parameters 0x70

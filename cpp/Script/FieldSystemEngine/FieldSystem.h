@@ -6,7 +6,5 @@ UCLASS()
 class UFieldSystem : public UObject
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<FFieldSystemCommand,TSizedDefaultAllocator<32> > Commands;  // 0x0028
+    TArray<FFieldSystemCommand,TSizedDefaultAllocator<32> > Commands;  // 0x0028, not reflected
 };

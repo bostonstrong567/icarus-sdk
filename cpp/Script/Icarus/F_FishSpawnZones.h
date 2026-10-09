@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFishSpawnZones : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<FFishDataEnum, int32> SpawnList;  // 0x0018, size 0x50
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float ZoneFishQuality;  // 0x0068, size 0x4
 };

@@ -6,7 +6,6 @@ UCLASS()
 class UTimeManagementBlueprintLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static FFrameNumber Add_FrameNumberFrameNumber(FFrameNumber A, FFrameNumber B);  // parameters 0xC
     UFUNCTION(BlueprintCallable, BlueprintPure) static FFrameNumber Add_FrameNumberInteger(FFrameNumber A, int32 B);  // parameters 0xC
     UFUNCTION(BlueprintCallable, BlueprintPure) static int32 Conv_FrameNumberToInteger(const FFrameNumber& InFrameNumber);  // parameters 0x8

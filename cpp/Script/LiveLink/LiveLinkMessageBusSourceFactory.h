@@ -5,5 +5,4 @@
 UCLASS()
 class ULiveLinkMessageBusSourceFactory : public ULiveLinkSourceFactory
 {
-public:
 };

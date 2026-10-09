@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_BW6_ScanLocation1_C : public ABP_BW6_Scan_ScanLocation_C
 {
-public:
 };

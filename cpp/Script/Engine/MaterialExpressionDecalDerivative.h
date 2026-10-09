@@ -5,5 +5,4 @@
 UCLASS()
 class UMaterialExpressionDecalDerivative : public UMaterialExpression
 {
-public:
 };

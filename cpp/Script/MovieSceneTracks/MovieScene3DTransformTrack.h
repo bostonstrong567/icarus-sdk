@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UMovieScene3DTransformTrack : public UMovieScenePropertyTrack
 {
-public:
 };

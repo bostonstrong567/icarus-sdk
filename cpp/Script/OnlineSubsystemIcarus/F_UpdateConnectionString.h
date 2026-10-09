@@ -4,6 +4,7 @@
 USTRUCT()
 struct FUpdateConnectionString
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString MatchId;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FConnectionString ConnectionString;  // 0x0010, size 0x38
 };

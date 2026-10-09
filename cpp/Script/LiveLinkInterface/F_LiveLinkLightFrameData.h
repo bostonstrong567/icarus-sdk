@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLiveLinkLightFrameData : public FLiveLinkTransformFrameData
 {
+public:
     UPROPERTY(EditAnywhere, Interp, BlueprintReadWrite) float Temperature;  // 0x00D0, size 0x4
     UPROPERTY(EditAnywhere, Interp, BlueprintReadWrite) float Intensity;  // 0x00D4, size 0x4
     UPROPERTY(EditAnywhere, Interp, BlueprintReadWrite) FColor LightColor;  // 0x00D8, size 0x4

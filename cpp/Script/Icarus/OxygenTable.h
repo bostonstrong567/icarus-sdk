@@ -5,5 +5,4 @@
 UCLASS()
 class UOxygenTable : public UIcarusDataTable
 {
-public:
 };

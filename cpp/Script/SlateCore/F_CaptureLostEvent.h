@@ -4,8 +4,7 @@
 USTRUCT()
 struct FCaptureLostEvent
 {
-
-    // Not reflected:
-    int32 UserIndex;  // 0x0000
-    int32 PointerIndex;  // 0x0004
+public:
+    int32 UserIndex;  // 0x0000, not reflected
+    int32 PointerIndex;  // 0x0004, not reflected
 };

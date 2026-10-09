@@ -4,5 +4,6 @@
 USTRUCT()
 struct FRichCurve : public FRealCurve
 {
+public:
     UPROPERTY(EditAnywhere) TArray<FRichCurveKey> Keys;  // 0x0070, size 0x10
 };

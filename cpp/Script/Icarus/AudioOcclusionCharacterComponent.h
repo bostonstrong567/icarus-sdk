@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UAudioOcclusionCharacterComponent : public UAudioOcclusionSocketTraceComponent
 {
-public:
 };

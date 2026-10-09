@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNiagaraEmitterCompiledData
 {
+public:
     UPROPERTY() TArray<FName> SpawnAttributes;  // 0x0000, size 0x10
     UPROPERTY() FNiagaraVariable EmitterSpawnIntervalVar;  // 0x0010, size 0x20
     UPROPERTY() FNiagaraVariable EmitterInterpSpawnStartDTVar;  // 0x0030, size 0x20

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class AProp_Science_Tray_B_C : public ABP_DeployableBase_C
 {
-public:
 };

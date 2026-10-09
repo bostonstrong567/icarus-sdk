@@ -6,6 +6,5 @@ UCLASS(Transient, Config=Engine)
 class UBP_ActionableBehaviour_Mound_Deploy_C : public UBP_ActionableBehaviour_DeployableBase_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void OnDeploy(ADeployable* SpawnedDeployable);  // parameters 0x8
 };

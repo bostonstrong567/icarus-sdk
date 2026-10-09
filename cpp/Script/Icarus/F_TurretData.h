@@ -4,6 +4,7 @@
 USTRUCT()
 struct FTurretData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector2D MuzzlePitchExtents;  // 0x0018, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float MuzzleYawExtents;  // 0x0020, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector2D MuzzleMoveSpeed;  // 0x0024, size 0x8

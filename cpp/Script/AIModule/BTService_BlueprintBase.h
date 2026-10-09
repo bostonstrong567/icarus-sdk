@@ -5,19 +5,18 @@
 UCLASS(Abstract)
 class UBTService_BlueprintBase : public UBTService
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(Transient) AAIController* AIOwner;  // 0x0070, size 0x8
     UPROPERTY(Transient) AActor* ActorOwner;  // 0x0078, size 0x8
+    TArray<FProperty *,TSizedDefaultAllocator<32> > PropertyData;  // 0x0080, not reflected
+    uint32 : 2 ReceiveActivationImplementations;  // 0x0090, not reflected
+    uint32 : 2 ReceiveDeactivationImplementations;  // 0x0090, not reflected
+    uint32 : 2 ReceiveSearchStartImplementations;  // 0x0090, not reflected
+    uint32 : 2 ReceiveTickImplementations;  // 0x0090, not reflected
     UPROPERTY(EditAnywhere) uint8 bShowPropertyDetails : 1;  // 0x0090, mask 0x01
     UPROPERTY(EditAnywhere) uint8 bShowEventDetails : 1;  // 0x0090, mask 0x02
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<FProperty *,TSizedDefaultAllocator<32> > PropertyData;  // 0x0080, protected
-    uint32 : 2 ReceiveTickImplementations;  // 0x0090, protected
-    uint32 : 2 ReceiveActivationImplementations;  // 0x0090, protected
-    uint32 : 2 ReceiveDeactivationImplementations;  // 0x0090, protected
-    uint32 : 2 ReceiveSearchStartImplementations;  // 0x0090, protected
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsServiceActive() const;  // parameters 0x1
     UFUNCTION(BlueprintImplementableEvent) void ReceiveActivation(AActor* OwnerActor);  // parameters 0x8
     UFUNCTION(BlueprintImplementableEvent) void ReceiveActivationAI(AAIController* OwnerController, APawn* ControlledPawn);  // parameters 0x10

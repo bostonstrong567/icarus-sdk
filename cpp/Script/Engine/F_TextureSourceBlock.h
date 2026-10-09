@@ -4,6 +4,7 @@
 USTRUCT()
 struct FTextureSourceBlock
 {
+public:
     UPROPERTY(EditAnywhere) int32 BlockX;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere) int32 BlockY;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere) int32 SizeX;  // 0x0008, size 0x4

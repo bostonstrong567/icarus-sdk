@@ -6,7 +6,6 @@ UCLASS()
 class UMusicQuestConditionsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToMusicQuestConditionsTable(FName Name, FMusicQuestCondition Data, FMusicQuestConditionsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x39
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakMusicQuestConditionsEnum(FMusicQuestConditionsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FMusicQuestConditionsRowHandle CastToMusicQuestConditionsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

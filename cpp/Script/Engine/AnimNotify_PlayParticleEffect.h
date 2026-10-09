@@ -12,9 +12,8 @@ public:
     UPROPERTY(EditAnywhere) FVector Scale;  // 0x0058, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 Attached : 1;  // 0x0080, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FName SocketName;  // 0x0084, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FQuat RotationOffsetQuat;  // 0x0070, private
+private:
+    FQuat RotationOffsetQuat;  // 0x0070, not reflected
 
     // Virtual functions that start here:
     //   SpawnParticleSystem

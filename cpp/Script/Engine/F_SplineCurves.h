@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSplineCurves
 {
+public:
     UPROPERTY() FInterpCurveVector Position;  // 0x0000, size 0x18
     UPROPERTY() FInterpCurveQuat Rotation;  // 0x0018, size 0x18
     UPROPERTY() FInterpCurveVector Scale;  // 0x0030, size 0x18

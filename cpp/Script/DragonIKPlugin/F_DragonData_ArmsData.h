@@ -4,6 +4,7 @@
 USTRUCT()
 struct FDragonData_ArmsData
 {
+public:
     UPROPERTY(EditAnywhere) FBoneReference Clavicle_Bone;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere) FBoneReference Shoulder_Bone_Name;  // 0x0010, size 0x10
     UPROPERTY(EditAnywhere) FBoneReference Elbow_Bone_Name;  // 0x0020, size 0x10
@@ -35,10 +36,8 @@ struct FDragonData_ArmsData
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector2D Shoulder_Outer_Clamp;  // 0x00E8, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector2D ForeArm_Angle_Limit;  // 0x00F0, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float Twist_Offset_Reverse;  // 0x00F8, size 0x4
-
-    // Not reflected:
-    float last_shoulder_angle;  // 0x00FC
-    float last_forarm_angle;  // 0x0100
-    FRotator last_clavicle_rotation;  // 0x0104
-    FRotator last_hand_rotation;  // 0x0110
+    float last_shoulder_angle;  // 0x00FC, not reflected
+    float last_forarm_angle;  // 0x0100, not reflected
+    FRotator last_clavicle_rotation;  // 0x0104, not reflected
+    FRotator last_hand_rotation;  // 0x0110, not reflected
 };

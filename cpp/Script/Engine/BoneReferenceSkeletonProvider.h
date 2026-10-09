@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class UBoneReferenceSkeletonProvider : public UInterface
 {
-public:
 };

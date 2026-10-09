@@ -6,7 +6,6 @@ UCLASS(Config=Game)
 class UBTTask_PerformAction_SpitAttack_TundraMonkey_C : public UBTTask_PerformAction_SpitAttack_C
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) void GetActionStats(TMap<FStatsEnum, int32>& ActionStats) const;  // parameters 0x50
     UFUNCTION(BlueprintCallable) void OnProjectileHit(FHitResult Hit);  // parameters 0x88
 };

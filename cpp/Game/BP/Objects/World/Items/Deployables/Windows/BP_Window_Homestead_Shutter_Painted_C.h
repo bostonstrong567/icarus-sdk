@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Window_Homestead_Shutter_Painted_C : public ABP_Window_Homestead_Shutter_C
 {
-public:
 };

@@ -14,10 +14,9 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool ShouldDeferPaintingAfterWindowContent;  // 0x014A, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool UseApplicationMenuStack;  // 0x014B, size 0x1
     UPROPERTY(BlueprintAssignable) FOnMenuOpenChangedEvent OnMenuOpenChanged;  // 0x0150, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SMenuAnchor,0> MyMenuAnchor;  // 0x0160, protected
-
+protected:
+    TSharedPtr<SMenuAnchor,0> MyMenuAnchor;  // 0x0160, not reflected
+public:
     UFUNCTION(BlueprintCallable) void Close();
     UFUNCTION(BlueprintCallable) void FitInWindow(bool bFit);  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) FVector2D GetMenuPosition() const;  // parameters 0x8

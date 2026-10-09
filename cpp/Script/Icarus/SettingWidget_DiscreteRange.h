@@ -6,7 +6,6 @@ UCLASS(EditInlineNew)
 class USettingWidget_DiscreteRange : public USettingWidget
 {
 public:
-
     UFUNCTION(BlueprintImplementableEvent) void SetOptions(const TArray<FText>& Options);  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void SetValueIndex(int32 Index, bool bForceRefresh);  // parameters 0x5
 };

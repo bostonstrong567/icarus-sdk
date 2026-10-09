@@ -4,6 +4,7 @@
 USTRUCT()
 struct FGravestoneDataRecord
 {
+public:
     UPROPERTY(SaveGame) FPoseSnapshotRecorder DeathPose;  // 0x0000, size 0x38
     UPROPERTY(SaveGame) FVector DeathVelocity;  // 0x0038, size 0xC
     UPROPERTY(SaveGame) FCharacterCosmeticsRecorder PlayerCosmetics;  // 0x0048, size 0xC8

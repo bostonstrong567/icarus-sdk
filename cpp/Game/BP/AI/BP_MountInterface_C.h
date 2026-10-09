@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UBP_MountInterface_C : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable) void GetMountCombatBehaviour(EMountCombatBehaviourState& CombatBehaviour);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void GetMountConsumptionBehaviour(EMountConsumptionBehaviourState& ConsumptionBehaviour);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void GetMountGrazingBehaviour(EMountGrazingBehaviourState& GrazingBehaviour);  // parameters 0x1

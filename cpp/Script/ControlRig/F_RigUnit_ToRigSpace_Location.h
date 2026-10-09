@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_ToRigSpace_Location : public FRigUnit
 {
+public:
     UPROPERTY() FVector Location;  // 0x0008, size 0xC
     UPROPERTY() FVector Global;  // 0x0014, size 0xC
 };

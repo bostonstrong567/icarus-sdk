@@ -15,7 +15,6 @@ public:
     UPROPERTY(EditAnywhere) FAIDataProviderFloatValue ItemHeightOffset;  // 0x0250, size 0x38
     UPROPERTY(EditAnywhere) FAIDataProviderFloatValue ContextHeightOffset;  // 0x0288, size 0x38
     UPROPERTY(EditAnywhere) TSubclassOf<UEnvQueryContext> Context;  // 0x02C0, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FEnvTraceData TraceData;  // 0x02C8, private
+private:
+    FEnvTraceData TraceData;  // 0x02C8, not reflected
 };

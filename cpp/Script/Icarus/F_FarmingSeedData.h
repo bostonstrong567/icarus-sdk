@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFarmingSeedData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FItemRewardsRowHandle CropRewards;  // 0x0018, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FItemRewardsRowHandle DecayedRewards;  // 0x0030, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FFarmingSeedAudioData Audio;  // 0x0048, size 0x78

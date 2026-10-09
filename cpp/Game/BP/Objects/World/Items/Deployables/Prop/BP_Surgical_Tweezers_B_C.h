@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Surgical_Tweezers_B_C : public ABP_DeployableBase_C
 {
-public:
 };

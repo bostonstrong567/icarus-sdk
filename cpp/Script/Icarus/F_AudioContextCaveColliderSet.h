@@ -4,5 +4,6 @@
 USTRUCT()
 struct FAudioContextCaveColliderSet
 {
+public:
     UPROPERTY() TSet<UPrimitiveComponent*> Colliders;  // 0x0000, size 0x50
 };

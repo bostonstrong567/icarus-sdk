@@ -4,6 +4,7 @@
 USTRUCT()
 struct FPakMetaDetail
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FPakFileDetails MissingFilesPak;  // 0x0000, size 0x20
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FPakFileDetails BadFileSizesPak;  // 0x0020, size 0x20
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FPakFileDetails ExtraFilesPak;  // 0x0040, size 0x20

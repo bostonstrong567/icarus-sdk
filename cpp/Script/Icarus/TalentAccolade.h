@@ -5,5 +5,4 @@
 UCLASS()
 class UTalentAccolade : public UAccoladeImpl
 {
-public:
 };

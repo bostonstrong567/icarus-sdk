@@ -5,6 +5,7 @@
 UCLASS()
 class UMaterialShaderQualitySettings : public UObject
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() TMap<FName, UShaderPlatformQualitySettings*> ForwardSettingMap;  // 0x0028, size 0x50
 };

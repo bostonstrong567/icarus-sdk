@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_StaticItem_SplineTool_Electricity_C : public ABP_StaticItem_SplineTool_Base_C
 {
-public:
 };

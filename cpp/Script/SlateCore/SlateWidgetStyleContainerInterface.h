@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class USlateWidgetStyleContainerInterface : public UInterface
 {
-public:
 };

@@ -6,7 +6,6 @@ UCLASS(Abstract)
 class UIcarusAISpawnFilter : public UObject
 {
 public:
-
     UFUNCTION(BlueprintNativeEvent) bool IsSpawnLocationValid(AActor* WorldContext, const FVector& InLocation, const TMap<FString, int32>& FilterParams);  // parameters 0x69
 
     // Virtual functions that start here:

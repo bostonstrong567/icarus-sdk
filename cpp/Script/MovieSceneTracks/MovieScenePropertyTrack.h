@@ -5,8 +5,10 @@
 UCLASS(Abstract)
 class UMovieScenePropertyTrack : public UMovieSceneNameableTrack
 {
-public:
-    UPROPERTY(Instanced) UMovieSceneSection* SectionToKey;  // 0x0090, size 0x8
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY() FMovieScenePropertyBinding PropertyBinding;  // 0x0098, size 0x14
     UPROPERTY() TArray<UMovieSceneSection*> Sections;  // 0x00B0, size 0x10
+private:
+    UPROPERTY(Instanced) UMovieSceneSection* SectionToKey;  // 0x0090, size 0x8
 };

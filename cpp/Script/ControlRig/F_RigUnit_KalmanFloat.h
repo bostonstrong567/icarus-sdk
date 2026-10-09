@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_KalmanFloat : public FRigUnit_SimBase
 {
+public:
     UPROPERTY() float Value;  // 0x0008, size 0x4
     UPROPERTY() int32 BufferSize;  // 0x000C, size 0x4
     UPROPERTY() float Result;  // 0x0010, size 0x4

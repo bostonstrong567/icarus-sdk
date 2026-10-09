@@ -6,7 +6,6 @@ UCLASS()
 class UFlammableLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToFlammableTable(FName Name, FFlammableData Data, FFlammableRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xA9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakFlammableEnum(FFlammableEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FFlammableRowHandle CastToFlammableRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

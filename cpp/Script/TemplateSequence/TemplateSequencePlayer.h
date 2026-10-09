@@ -5,10 +5,8 @@
 UCLASS()
 class UTemplateSequencePlayer : public UMovieSceneSequencePlayer
 {
+private:
+    TWeakObjectPtr<UWorld,FWeakObjectPtr> World;  // 0x04E8, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TWeakObjectPtr<UWorld,FWeakObjectPtr> World;  // 0x04E8, private
-
     UFUNCTION(BlueprintCallable) static UTemplateSequencePlayer* CreateTemplateSequencePlayer(UObject* WorldContextObject, UTemplateSequence* TemplateSequence, FMovieSceneSequencePlaybackSettings Settings, ATemplateSequenceActor*& OutActor);  // parameters 0x38
 };

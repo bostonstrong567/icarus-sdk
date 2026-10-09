@@ -4,5 +4,6 @@
 USTRUCT()
 struct FReqCommonStorage
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString Key;  // 0x0000, size 0x10
 };

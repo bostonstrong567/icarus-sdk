@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLiveLinkFrameData
 {
+public:
     UPROPERTY() TArray<FTransform> Transforms;  // 0x0000, size 0x10
     UPROPERTY() TArray<FLiveLinkCurveElement> CurveElements;  // 0x0010, size 0x10
     UPROPERTY() FLiveLinkWorldTime WorldTime;  // 0x0020, size 0x10

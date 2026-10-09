@@ -4,5 +4,6 @@
 USTRUCT()
 struct FRigUnit_SpaceName : public FRigUnit
 {
+public:
     UPROPERTY() FName Space;  // 0x0008, size 0x8
 };

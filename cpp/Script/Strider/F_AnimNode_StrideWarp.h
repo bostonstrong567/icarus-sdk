@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAnimNode_StrideWarp : public FAnimNode_SkeletalControlBase
 {
+public:
     UPROPERTY(EditAnywhere) float StrideScale;  // 0x00C8, size 0x4
     UPROPERTY(EditAnywhere) float Direction;  // 0x00CC, size 0x4
     UPROPERTY(EditAnywhere) float Twist;  // 0x00D0, size 0x4
@@ -12,10 +13,9 @@ struct FAnimNode_StrideWarp : public FAnimNode_SkeletalControlBase
     UPROPERTY(EditAnywhere) FHipAdjustment HipAdjustment;  // 0x0140, size 0x18
     UPROPERTY(EditAnywhere) TArray<FLimbDefinition> Limbs;  // 0x0158, size 0x10
     UPROPERTY(EditAnywhere) TArray<FBoneReference> AdditionalBonesToAdjustWithHips;  // 0x0168, size 0x10
-
-    // Not reflected:
-    float LastHipShift;  // 0x0178
-    float DeltaTime;  // 0x017C
-    bool bValidCheckResult;  // 0x0180
-    FAnimInstanceProxy * AnimInstanceProxy;  // 0x0188
+private:
+    float LastHipShift;  // 0x0178, not reflected
+    float DeltaTime;  // 0x017C, not reflected
+    bool bValidCheckResult;  // 0x0180, not reflected
+    FAnimInstanceProxy * AnimInstanceProxy;  // 0x0188, not reflected
 };

@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UCS_GolemGauntlet_Hammerfist_C : public UMatineeCameraShake
 {
-public:
 };

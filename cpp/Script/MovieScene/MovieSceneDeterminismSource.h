@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class UMovieSceneDeterminismSource : public UInterface
 {
-public:
 };

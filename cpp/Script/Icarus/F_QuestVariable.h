@@ -4,6 +4,7 @@
 USTRUCT()
 struct FQuestVariable
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString VariableName;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bVariable;  // 0x0010, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float fVariable;  // 0x0014, size 0x4

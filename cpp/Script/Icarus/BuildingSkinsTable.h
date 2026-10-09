@@ -5,5 +5,4 @@
 UCLASS()
 class UBuildingSkinsTable : public UIcarusDataTable
 {
-public:
 };

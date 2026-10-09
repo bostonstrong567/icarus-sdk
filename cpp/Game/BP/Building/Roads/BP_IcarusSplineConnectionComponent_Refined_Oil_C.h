@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UBP_IcarusSplineConnectionComponent_Refined_Oil_C : public UBP_IcarusSplineConnectionComponent_C
 {
-public:
 };

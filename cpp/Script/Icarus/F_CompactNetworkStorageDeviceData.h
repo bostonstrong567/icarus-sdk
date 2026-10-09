@@ -4,6 +4,7 @@
 USTRUCT()
 struct FCompactNetworkStorageDeviceData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) AIcarusActor* IcarusActor;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EDeviceState DeviceState;  // 0x0008, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 FlowRateCurrent;  // 0x000C, size 0x4

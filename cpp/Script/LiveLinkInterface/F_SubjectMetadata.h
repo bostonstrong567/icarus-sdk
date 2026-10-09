@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSubjectMetadata
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<FName, FString> StringMetadata;  // 0x0000, size 0x50
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimecode SceneTimecode;  // 0x0050, size 0x14
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FFrameRate SceneFramerate;  // 0x0064, size 0x8

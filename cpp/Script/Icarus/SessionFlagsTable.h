@@ -5,5 +5,4 @@
 UCLASS()
 class USessionFlagsTable : public UIcarusDataTable
 {
-public:
 };

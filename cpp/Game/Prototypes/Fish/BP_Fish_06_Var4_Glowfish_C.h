@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Fish_06_Var4_Glowfish_C : public ABP_Fish_06_Glowfish_C
 {
-public:
 };

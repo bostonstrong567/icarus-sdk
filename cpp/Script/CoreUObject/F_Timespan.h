@@ -4,7 +4,6 @@
 USTRUCT()
 struct FTimespan
 {
-
-    // Not reflected:
-    int64 Ticks;  // 0x0000
+private:
+    int64 Ticks;  // 0x0000, not reflected
 };

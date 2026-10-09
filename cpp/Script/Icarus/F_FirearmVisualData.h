@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFirearmVisualData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bUsesPreviewItem;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EFirearmAttachType PreviewItemAttachType;  // 0x0001, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName PreviewItemAttachSocket1P;  // 0x0004, size 0x8

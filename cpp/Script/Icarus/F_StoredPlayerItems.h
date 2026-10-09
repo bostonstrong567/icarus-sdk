@@ -4,5 +4,6 @@
 USTRUCT()
 struct FStoredPlayerItems
 {
+public:
     UPROPERTY() TArray<FItemData> Items;  // 0x0000, size 0x10
 };

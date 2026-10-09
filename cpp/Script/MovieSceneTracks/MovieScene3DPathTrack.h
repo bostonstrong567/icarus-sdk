@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UMovieScene3DPathTrack : public UMovieScene3DConstraintTrack, public IMovieSceneTrackTemplateProducer
 {
-public:
 };

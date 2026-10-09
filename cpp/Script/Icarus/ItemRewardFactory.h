@@ -6,7 +6,6 @@ UCLASS()
 class UItemRewardFactory : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static TArray<FItemData> GenerateHarvestedItemRewards(const TArray<FItemRewardEntry>& ItemRewards, float ResourceRewardModifier, float SeedRewardMultiplier, UIcarusStatContainer* HarvestingActorStats, UIcarusStatContainer* CropPlotActorStats, UObject* WorldContextObject);  // parameters 0x40
     UFUNCTION(BlueprintCallable, BlueprintPure) static FItemData GenerateItemData(const FItemReward& ItemReward, UObject* WorldContextObject);  // parameters 0x220
     UFUNCTION(BlueprintCallable) static FItemData GenerateItemFromReward(const FItemRewardEntry& ItemReward, UObject* WorldContextObject);  // parameters 0x280

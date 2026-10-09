@@ -22,10 +22,9 @@ public:
     UPROPERTY(EditAnywhere) uint8 bOverride_MaxDesiredHeight : 1;  // 0x0150, mask 0x20
     UPROPERTY(EditAnywhere) uint8 bOverride_MinAspectRatio : 1;  // 0x0150, mask 0x40
     UPROPERTY(EditAnywhere) uint8 bOverride_MaxAspectRatio : 1;  // 0x0150, mask 0x80
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SBox,0> MySizeBox;  // 0x0120, protected
-
+protected:
+    TSharedPtr<SBox,0> MySizeBox;  // 0x0120, not reflected
+public:
     UFUNCTION(BlueprintCallable) void ClearHeightOverride();
     UFUNCTION(BlueprintCallable) void ClearMaxAspectRatio();
     UFUNCTION(BlueprintCallable) void ClearMaxDesiredHeight();

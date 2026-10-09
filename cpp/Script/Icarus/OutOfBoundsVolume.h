@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class AOutOfBoundsVolume : public APhysicsVolume
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_AimItem : public FRigUnit_HighlevelBaseMutable
 {
+public:
     UPROPERTY() FRigElementKey Item;  // 0x0068, size 0xC
     UPROPERTY() FRigUnit_AimItem_Target Primary;  // 0x0074, size 0x2C
     UPROPERTY() FRigUnit_AimItem_Target Secondary;  // 0x00A0, size 0x2C

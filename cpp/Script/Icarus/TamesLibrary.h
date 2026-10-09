@@ -6,7 +6,6 @@ UCLASS()
 class UTamesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToTamesTable(FName Name, FIcarusTamingData Data, FTamesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x161
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakTamesEnum(FTamesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FTamesRowHandle CastToTamesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

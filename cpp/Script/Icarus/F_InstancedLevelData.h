@@ -4,11 +4,10 @@
 USTRUCT()
 struct FInstancedLevelData
 {
-
-    // Not reflected:
-    int32 SelectedSlot;  // 0x0000
-    FVector LoadedLocation;  // 0x0004
-    FString UniqueLevelName;  // 0x0010
-    FInstancedBlobSave InstancedSave;  // 0x0020
-    TArray<int,TSizedDefaultAllocator<32> > InstancedInventories;  // 0x0060
+public:
+    int32 SelectedSlot;  // 0x0000, not reflected
+    FVector LoadedLocation;  // 0x0004, not reflected
+    FString UniqueLevelName;  // 0x0010, not reflected
+    FInstancedBlobSave InstancedSave;  // 0x0020, not reflected
+    TArray<int,TSizedDefaultAllocator<32> > InstancedInventories;  // 0x0060, not reflected
 };

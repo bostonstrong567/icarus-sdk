@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_ToRigSpace_Rotation : public FRigUnit
 {
+public:
     UPROPERTY() FQuat Rotation;  // 0x0010, size 0x10
     UPROPERTY() FQuat Global;  // 0x0020, size 0x10
 };

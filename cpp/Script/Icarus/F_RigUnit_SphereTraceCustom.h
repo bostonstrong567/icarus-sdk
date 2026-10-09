@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_SphereTraceCustom : public FRigUnit
 {
+public:
     UPROPERTY() FVector Start;  // 0x0008, size 0xC
     UPROPERTY() FVector End;  // 0x0014, size 0xC
     UPROPERTY() TEnumAsByte<ECollisionChannel> Channel;  // 0x0020, size 0x1

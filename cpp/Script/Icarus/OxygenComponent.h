@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UOxygenComponent : public UResourceNetworkComponent
 {
-public:
 };

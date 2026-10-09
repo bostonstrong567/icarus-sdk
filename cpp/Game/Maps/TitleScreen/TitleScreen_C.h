@@ -5,5 +5,4 @@
 UCLASS()
 class ATitleScreen_C : public ALevelScriptActor
 {
-public:
 };

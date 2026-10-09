@@ -4,6 +4,7 @@
 USTRUCT()
 struct FWidgetTransform
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector2D Translation;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector2D Scale;  // 0x0008, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector2D Shear;  // 0x0010, size 0x8

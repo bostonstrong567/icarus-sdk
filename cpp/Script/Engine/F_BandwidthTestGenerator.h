@@ -4,9 +4,8 @@
 USTRUCT()
 struct FBandwidthTestGenerator
 {
+public:
     UPROPERTY() TArray<FBandwidthTestItem> ReplicatedBuffers;  // 0x0000, size 0x10
-
-    // Not reflected:
-    double TimeForNextSpike;  // 0x0010
-    double SpikePeriodInSec;  // 0x0018
+    double TimeForNextSpike;  // 0x0010, not reflected
+    double SpikePeriodInSec;  // 0x0018, not reflected
 };

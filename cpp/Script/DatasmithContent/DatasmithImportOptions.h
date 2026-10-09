@@ -18,7 +18,5 @@ public:
     UPROPERTY(EditAnywhere, Config, BlueprintReadWrite) FDatasmithReimportOptions ReimportOptions;  // 0x0044, size 0x2
     UPROPERTY(BlueprintReadWrite) FString FileName;  // 0x0048, size 0x10
     UPROPERTY(BlueprintReadWrite) FString FilePath;  // 0x0058, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bUseSameOptions;  // 0x0068
+    bool bUseSameOptions;  // 0x0068, not reflected
 };

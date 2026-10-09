@@ -4,11 +4,10 @@
 USTRUCT()
 struct FSlotEvaluationPose
 {
+public:
     UPROPERTY() TEnumAsByte<EAdditiveAnimationType> AdditiveType;  // 0x0000, size 0x1
     UPROPERTY() float Weight;  // 0x0004, size 0x4
-
-    // Not reflected:
-    FCompactPose Pose;  // 0x0008
-    FBlendedCurve Curve;  // 0x0020
-    FStackCustomAttributes Attributes;  // 0x0050
+    FCompactPose Pose;  // 0x0008, not reflected
+    FBlendedCurve Curve;  // 0x0020, not reflected
+    FStackCustomAttributes Attributes;  // 0x0050, not reflected
 };

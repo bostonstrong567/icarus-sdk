@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, MinimalAPI)
 class USoundNodeMature : public USoundNode
 {
-public:
 };

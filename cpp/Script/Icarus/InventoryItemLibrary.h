@@ -6,7 +6,6 @@ UCLASS()
 class UInventoryItemLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static int32 AddContainerActorCapacity(AIcarusActor* Actor, FIcarusResourcesEnum Resource, int32 Units);  // parameters 0x20
     UFUNCTION(BlueprintCallable) static int32 AddContainerItemCapacity(UInventory* Inventory, int32 InventoryLocation, FIcarusResourcesEnum Resource, int32 Units);  // parameters 0x28
     UFUNCTION(BlueprintCallable) static int32 AttemptToFillItemsInInventory(UInventory* Inventory, FIcarusResourcesEnum Type, int32 Units);  // parameters 0x20

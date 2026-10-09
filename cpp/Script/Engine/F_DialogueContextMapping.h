@@ -4,6 +4,7 @@
 USTRUCT()
 struct FDialogueContextMapping
 {
+public:
     UPROPERTY(EditAnywhere) FDialogueContext Context;  // 0x0000, size 0x18
     UPROPERTY(EditAnywhere) USoundWave* SoundWave;  // 0x0018, size 0x8
     UPROPERTY(EditAnywhere) FString LocalizationKeyFormat;  // 0x0020, size 0x10

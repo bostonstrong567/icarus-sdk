@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UMovieSceneNiagaraSystemTrack : public UMovieSceneNiagaraTrack, public IMovieSceneTrackTemplateProducer
 {
-public:
 };

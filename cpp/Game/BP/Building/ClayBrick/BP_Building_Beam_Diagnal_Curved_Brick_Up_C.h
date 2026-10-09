@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Building_Beam_Diagnal_Curved_Brick_Up_C : public ABP_Building_Beam_Diagnal_Curved_Up_C
 {
-public:
 };

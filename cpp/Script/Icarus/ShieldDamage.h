@@ -5,5 +5,4 @@
 UCLASS(Const)
 class UShieldDamage : public UIcarusDamageType
 {
-public:
 };

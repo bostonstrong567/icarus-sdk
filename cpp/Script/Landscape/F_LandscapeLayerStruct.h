@@ -4,5 +4,6 @@
 USTRUCT()
 struct FLandscapeLayerStruct
 {
+public:
     UPROPERTY() ULandscapeLayerInfoObject* LayerInfoObj;  // 0x0000, size 0x8
 };

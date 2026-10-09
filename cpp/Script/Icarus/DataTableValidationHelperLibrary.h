@@ -6,6 +6,5 @@ UCLASS()
 class UDataTableValidationHelperLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void GetTextureInfo(UTexture* Texture, FVector& ImportedSize, FVector& DisplayedSize, FVector& MaxSizeInGame, int32& ResourceSize, bool& bHasAlphaChannel, FString& Method, FString& Format, int32& CombinedLODBias, int32& NumMips);  // parameters 0x60
 };

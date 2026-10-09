@@ -4,5 +4,6 @@
 USTRUCT()
 struct FNiagaraOutlinerData
 {
+public:
     UPROPERTY(EditAnywhere) TMap<FString, FNiagaraOutlinerWorldData> WorldData;  // 0x0000, size 0x50
 };

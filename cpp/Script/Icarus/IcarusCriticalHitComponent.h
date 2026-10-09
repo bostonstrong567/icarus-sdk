@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UIcarusCriticalHitComponent : public UActorComponent
 {
 public:
-
     UFUNCTION(BlueprintImplementableEvent) void BP_SetDebug(bool bDebug);  // parameters 0x1
     UFUNCTION(BlueprintImplementableEvent) void BP_SetIgnoreDamage(bool bIgnore);  // parameters 0x1
     UFUNCTION(BlueprintImplementableEvent) void BP_SetLuckyBuffer(float NewLuckyBuffer);  // parameters 0x4

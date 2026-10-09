@@ -4,8 +4,7 @@
 USTRUCT()
 struct FLiveLinkTransform
 {
-
-    // Not reflected:
-    TSharedPtr<FCachedSubjectFrame,0> CachedFrame;  // 0x0008
-    int32 TransformIndex;  // 0x0018
+private:
+    TSharedPtr<FCachedSubjectFrame,0> CachedFrame;  // 0x0008, not reflected
+    int32 TransformIndex;  // 0x0018, not reflected
 };

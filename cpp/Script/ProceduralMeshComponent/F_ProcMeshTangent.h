@@ -4,6 +4,7 @@
 USTRUCT()
 struct FProcMeshTangent
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector TangentX;  // 0x0000, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bFlipTangentY;  // 0x000C, size 0x1
 };

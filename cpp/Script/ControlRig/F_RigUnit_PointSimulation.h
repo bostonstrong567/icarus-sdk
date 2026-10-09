@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_PointSimulation : public FRigUnit_SimBaseMutable
 {
+public:
     UPROPERTY() TArray<FCRSimPoint> Points;  // 0x0068, size 0x10
     UPROPERTY() TArray<FCRSimLinearSpring> Links;  // 0x0078, size 0x10
     UPROPERTY() TArray<FCRSimPointForce> Forces;  // 0x0088, size 0x10

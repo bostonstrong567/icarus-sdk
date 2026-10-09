@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_PlayerFist_C : public ASkeletalItem
 {
-public:
 };

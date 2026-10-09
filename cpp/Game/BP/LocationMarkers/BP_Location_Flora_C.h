@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Location_Flora_C : public AMapIconProxyActor_C
 {
-public:
 };

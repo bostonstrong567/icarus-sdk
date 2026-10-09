@@ -5,13 +5,12 @@
 UCLASS(Config=Engine)
 class UGeometryCacheTrack : public UObject
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere) float Duration;  // 0x0028, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<FMatrix,TSizedDefaultAllocator<32> > MatrixSamples;  // 0x0030, protected
-    TArray<float,TSizedDefaultAllocator<32> > MatrixSampleTimes;  // 0x0040, protected
-    uint32 NumMaterials;  // 0x0050, protected
+    TArray<FMatrix,TSizedDefaultAllocator<32> > MatrixSamples;  // 0x0030, not reflected
+    TArray<float,TSizedDefaultAllocator<32> > MatrixSampleTimes;  // 0x0040, not reflected
+    uint32 NumMaterials;  // 0x0050, not reflected
 
     // Virtual functions that start here:
     //   AddMatrixSample, GetDuration, GetHash, GetMaxSampleTime, GetMeshDataAtTime, GetSampleInfo

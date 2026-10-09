@@ -5,11 +5,9 @@
 UCLASS()
 class UMovieSceneInterrogatedPropertyInstantiatorSystem : public UMovieSceneEntityInstantiatorSystem
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    UE::MovieScene::TOverlappingEntityTracker<UE::MovieScene::FInterrogationKey,UMovieSceneInterrogatedPropertyInstantiatorSystem::FPropertyInfo> PropertyTracker;  // 0x0040, private
-    UE::MovieScene::FComponentMask CleanFastPathMask;  // 0x01A8, private
-    UE::MovieScene::FBuiltInComponentTypes * BuiltInComponents;  // 0x01D0, private
-    UE::MovieScene::FPropertyRecomposerImpl RecomposerImpl;  // 0x01D8, private
+private:
+    UE::MovieScene::TOverlappingEntityTracker<UE::MovieScene::FInterrogationKey,UMovieSceneInterrogatedPropertyInstantiatorSystem::FPropertyInfo> PropertyTracker;  // 0x0040, not reflected
+    UE::MovieScene::FComponentMask CleanFastPathMask;  // 0x01A8, not reflected
+    UE::MovieScene::FBuiltInComponentTypes * BuiltInComponents;  // 0x01D0, not reflected
+    UE::MovieScene::FPropertyRecomposerImpl RecomposerImpl;  // 0x01D8, not reflected
 };

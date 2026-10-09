@@ -5,6 +5,7 @@
 UCLASS(EditInlineNew)
 class UAISenseEvent_Hearing : public UAISenseEvent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FAINoiseEvent Event;  // 0x0028, size 0x30
 };

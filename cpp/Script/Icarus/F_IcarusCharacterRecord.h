@@ -4,5 +4,6 @@
 USTRUCT()
 struct FIcarusCharacterRecord
 {
+public:
     UPROPERTY(SaveGame) int32 CurrentHealth;  // 0x0000, size 0x4
 };

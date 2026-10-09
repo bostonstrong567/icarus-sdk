@@ -5,6 +5,7 @@
 UCLASS()
 class UBTTask_WaitBlackboardTime : public UBTTask_Wait
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere) FBlackboardKeySelector BlackboardKey;  // 0x0078, size 0x28
 };

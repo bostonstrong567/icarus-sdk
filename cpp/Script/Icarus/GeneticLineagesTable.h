@@ -5,5 +5,4 @@
 UCLASS()
 class UGeneticLineagesTable : public UIcarusDataTable
 {
-public:
 };

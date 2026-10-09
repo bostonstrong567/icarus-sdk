@@ -4,6 +4,7 @@
 USTRUCT()
 struct FQuartzQuantizationBoundary
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EQuartzCommandQuantization Quantization;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float Multiplier;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EQuarztQuantizationReference CountingReferencePoint;  // 0x0008, size 0x1

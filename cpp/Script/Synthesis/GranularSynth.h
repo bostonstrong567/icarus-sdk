@@ -5,16 +5,15 @@
 UCLASS(Config=Engine)
 class UGranularSynth : public USynthComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(Transient) USoundWave* GranulatedSoundWave;  // 0x06C0, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    Audio::FGranularSynth GranularSynth;  // 0x06C8, protected
-    Audio::FSoundWavePCMLoader SoundWaveLoader;  // 0x0A48, protected
-    bool bIsLoaded;  // 0x0A70, protected
-    bool bRegistered;  // 0x0A71, protected
-    bool bIsLoading;  // 0x0A72, protected
-
+    Audio::FGranularSynth GranularSynth;  // 0x06C8, not reflected
+    Audio::FSoundWavePCMLoader SoundWaveLoader;  // 0x0A48, not reflected
+    bool bIsLoaded;  // 0x0A70, not reflected
+    bool bRegistered;  // 0x0A71, not reflected
+    bool bIsLoading;  // 0x0A72, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetCurrentPlayheadTime() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetSampleDuration() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsLoaded() const;  // parameters 0x1

@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UMovieSceneSpawnablesSystem : public UMovieSceneEntitySystem
 {
-public:
 };

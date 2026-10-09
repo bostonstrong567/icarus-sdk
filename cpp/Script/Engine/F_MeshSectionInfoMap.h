@@ -4,5 +4,6 @@
 USTRUCT()
 struct FMeshSectionInfoMap
 {
+public:
     UPROPERTY() TMap<uint32, FMeshSectionInfo> Map;  // 0x0000, size 0x50
 };

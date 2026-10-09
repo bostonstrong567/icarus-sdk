@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class UMovieScenePreAnimatedStateSystemInterface : public UInterface
 {
-public:
 };

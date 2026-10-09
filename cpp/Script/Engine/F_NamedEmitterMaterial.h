@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNamedEmitterMaterial
 {
+public:
     UPROPERTY(EditAnywhere) FName Name;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) UMaterialInterface* Material;  // 0x0008, size 0x8
 };

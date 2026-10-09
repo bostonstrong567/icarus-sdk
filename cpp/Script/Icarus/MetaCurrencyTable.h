@@ -5,5 +5,4 @@
 UCLASS()
 class UMetaCurrencyTable : public UIcarusDataTable
 {
-public:
 };

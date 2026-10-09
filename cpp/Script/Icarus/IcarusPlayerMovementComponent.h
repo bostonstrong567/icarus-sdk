@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class UIcarusPlayerMovementComponent : public UCharacterMovementComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bSwimming;  // 0x0AF0, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float FluidFriction;  // 0x0AF4, size 0x4
@@ -12,10 +13,7 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float LadderExitTolerance;  // 0x0B00, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float LadderAngleOffset;  // 0x0B04, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bMaxOutLadderVelocity;  // 0x0B08, size 0x1
-    UPROPERTY() FTransform LadderStart;  // 0x0B20, size 0x30
-    UPROPERTY() FTransform LadderEnd;  // 0x0B50, size 0x30
-    UPROPERTY() float CurrentWaterDepth;  // 0x0B80, size 0x4
-    UPROPERTY() bool bIsInShallowWater;  // 0x0B84, size 0x1
+    FTimerHandle LadderExitTimer;  // 0x0B10, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float AvoidanceVelocityAlpha;  // 0x0B88, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bUseInterpolatedRotationRate;  // 0x0B8C, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float DeltaTimeMultiplier;  // 0x0B90, size 0x4
@@ -32,16 +30,19 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bWantsToSprint : 1;  // 0x0C56, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bWantsToAim : 1;  // 0x0C56, mask 0x02
     UPROPERTY(EditAnywhere, BlueprintReadOnly) uint8 bWantsToReloadWeapon : 1;  // 0x0C56, mask 0x04
+    float CachedDefaultGravityScale;  // 0x0C58, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float BackwardsMovementSpeedMultiplier;  // 0x0C5C, size 0x4
+protected:
+    UPROPERTY() FTransform LadderStart;  // 0x0B20, size 0x30
+    UPROPERTY() FTransform LadderEnd;  // 0x0B50, size 0x30
+    UPROPERTY() float CurrentWaterDepth;  // 0x0B80, size 0x4
+    UPROPERTY() bool bIsInShallowWater;  // 0x0B84, size 0x1
     UPROPERTY() AActor* CurrentTrap;  // 0x0C60, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FTimerHandle LadderExitTimer;  // 0x0B10
-    FRotator LastFrameInterpolatedRotationRate;  // 0x0B9C, private
-    float LastSlideTime;  // 0x0C50, private
-    float CachedDefaultGravityScale;  // 0x0C58
-    bool bWasFlyingWithAnimRootMotion;  // 0x0C68, private
-
+private:
+    FRotator LastFrameInterpolatedRotationRate;  // 0x0B9C, not reflected
+    float LastSlideTime;  // 0x0C50, not reflected
+    bool bWasFlyingWithAnimRootMotion;  // 0x0C68, not reflected
+public:
     UFUNCTION(BlueprintCallable) void EnterLadder(ULadderComponent* Ladder);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void EnterWater();
     UFUNCTION(BlueprintCallable) void ExitLadder();

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSolverIterations
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float FixedTimeStep;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 SolverIterations;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 JointIterations;  // 0x0008, size 0x4

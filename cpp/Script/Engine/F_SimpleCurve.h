@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSimpleCurve : public FRealCurve
 {
+public:
     UPROPERTY() TEnumAsByte<ERichCurveInterpMode> InterpMode;  // 0x0070, size 0x1
     UPROPERTY(EditAnywhere) TArray<FSimpleCurveKey> Keys;  // 0x0078, size 0x10
 };

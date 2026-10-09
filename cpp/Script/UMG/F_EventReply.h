@@ -4,7 +4,6 @@
 USTRUCT()
 struct FEventReply
 {
-
-    // Not reflected:
-    FReply NativeReply;  // 0x0000
+public:
+    FReply NativeReply;  // 0x0000, not reflected
 };

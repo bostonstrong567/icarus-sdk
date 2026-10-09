@@ -5,7 +5,6 @@
 UCLASS(NotPlaceable, Config=Game)
 class AParticleEventManager : public AActor
 {
-public:
 
     // Virtual functions that start here:
     //   HandleParticleBurstEvents, HandleParticleCollisionEvents, HandleParticleDeathEvents

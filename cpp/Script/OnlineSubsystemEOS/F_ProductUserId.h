@@ -4,7 +4,6 @@
 USTRUCT()
 struct FProductUserId
 {
-
-    // Not reflected:
-    EOS_ProductUserIdDetails * ProductUserId;  // 0x0000
+public:
+    EOS_ProductUserIdDetails * ProductUserId;  // 0x0000, not reflected
 };

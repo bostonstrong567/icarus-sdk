@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMovieSceneCameraShakeSectionData
 {
+public:
     UPROPERTY(EditAnywhere) TSubclassOf<UCameraShakeBase> ShakeClass;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) float PlayScale;  // 0x0008, size 0x4
     UPROPERTY(EditAnywhere) ECameraShakePlaySpace PlaySpace;  // 0x000C, size 0x1

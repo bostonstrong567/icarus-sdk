@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UCS_LavaHunter_PreEruption_C : public UMatineeCameraShake
 {
-public:
 };

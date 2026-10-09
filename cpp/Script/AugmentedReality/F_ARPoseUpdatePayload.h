@@ -4,6 +4,7 @@
 USTRUCT()
 struct FARPoseUpdatePayload
 {
+public:
     UPROPERTY(BlueprintReadWrite) FTransform WorldTransform;  // 0x0000, size 0x30
     UPROPERTY(BlueprintReadWrite) TArray<FTransform> JointTransforms;  // 0x0030, size 0x10
 };

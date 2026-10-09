@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMatchMakingFilter : public FTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString MatchName;  // 0x0008, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName MatchCode;  // 0x0018, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString Description;  // 0x0020, size 0x10

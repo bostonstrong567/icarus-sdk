@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_BlendTransform : public FRigUnit
 {
+public:
     UPROPERTY() FTransform Source;  // 0x0010, size 0x30
     UPROPERTY() TArray<FBlendTarget> Targets;  // 0x0040, size 0x10
     UPROPERTY() FTransform Result;  // 0x0050, size 0x30

@@ -5,6 +5,7 @@
 UCLASS(NotPlaceable, Config=Engine)
 class ARecastNavMesh : public ANavigationData
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere) uint8 bDrawTriangleEdges : 1;  // 0x0428, mask 0x01
     UPROPERTY(EditAnywhere, Config) uint8 bDrawPolyEdges : 1;  // 0x0428, mask 0x02
@@ -61,17 +62,16 @@ public:
     UPROPERTY(Config) uint8 bStoreEmptyTileLayers : 1;  // 0x0499, mask 0x01
     UPROPERTY(Config) uint8 bUseVirtualFilters : 1;  // 0x0499, mask 0x02
     UPROPERTY(Config) uint8 bAllowNavLinkAsPathEnd : 1;  // 0x0499, mask 0x04
-    UPROPERTY(Config) uint8 bUseVoxelCache : 1;  // 0x0499, mask 0x08
-    UPROPERTY(Config) float TileSetUpdateInterval;  // 0x049C, size 0x4
     UPROPERTY(EditAnywhere, Config) float HeuristicScale;  // 0x04A0, size 0x4
     UPROPERTY(EditAnywhere, Config) float VerticalDeviationFromGroundCompensation;  // 0x04A4, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMulticastDelegate<void __cdecl(void),FDefaultDelegateUserPolicy> OnNavMeshUpdate;  // 0x04A8
-    uint32 NavMeshVersion;  // 0x04C0, private
-    FPImplRecastNavMesh * RecastNavMeshImpl;  // 0x04C8, private
-    int32 BatchQueryCounter;  // 0x04D0, private
-
+    TMulticastDelegate<void __cdecl(void),FDefaultDelegateUserPolicy> OnNavMeshUpdate;  // 0x04A8, not reflected
+private:
+    UPROPERTY(Config) uint8 bUseVoxelCache : 1;  // 0x0499, mask 0x08
+    UPROPERTY(Config) float TileSetUpdateInterval;  // 0x049C, size 0x4
+    uint32 NavMeshVersion;  // 0x04C0, not reflected
+    FPImplRecastNavMesh * RecastNavMeshImpl;  // 0x04C8, not reflected
+    int32 BatchQueryCounter;  // 0x04D0, not reflected
+public:
     UFUNCTION(BlueprintCallable) bool K2_ReplaceAreaInTileBounds(FBox Bounds, TSubclassOf<UNavArea> OldArea, TSubclassOf<UNavArea> NewArea, bool ReplaceLinks);  // parameters 0x32
 
     // Virtual functions that start here:

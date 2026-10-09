@@ -5,5 +5,4 @@
 UCLASS()
 class UMapSearchAreaTable : public UIcarusDataTable
 {
-public:
 };

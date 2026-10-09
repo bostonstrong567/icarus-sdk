@@ -6,7 +6,6 @@ UCLASS(Abstract)
 class UDensityAudioInterface : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintNativeEvent) FVector2D GetDistanceRange();  // parameters 0x8
     UFUNCTION(BlueprintNativeEvent) FVector GetLocation();  // parameters 0xC
     UFUNCTION(BlueprintNativeEvent) TSubclassOf<UObject> GetTargetClass();  // parameters 0x8

@@ -4,5 +4,6 @@
 USTRUCT()
 struct FAnimTrack
 {
+public:
     UPROPERTY(EditAnywhere) TArray<FAnimSegment> AnimSegments;  // 0x0000, size 0x10
 };

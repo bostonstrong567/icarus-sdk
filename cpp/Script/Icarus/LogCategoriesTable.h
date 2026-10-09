@@ -5,5 +5,4 @@
 UCLASS()
 class ULogCategoriesTable : public UIcarusDataTable
 {
-public:
 };

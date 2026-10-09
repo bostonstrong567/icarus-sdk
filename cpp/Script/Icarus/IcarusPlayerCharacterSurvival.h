@@ -5,18 +5,11 @@
 UCLASS(Config=Game)
 class AIcarusPlayerCharacterSurvival : public AIcarusPlayerCharacter
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintReadOnly) bool bIsHoldingJump;  // 0x0B90, size 0x1
-    UPROPERTY() bool bWantsAutoRun;  // 0x0B91, size 0x1
-    UPROPERTY() bool bHasMovementInputBeenReleased;  // 0x0B92, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<UIcarusStatContainer*> NearbyComfortAffectingActors;  // 0x0B98, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 CachedComfortLevel;  // 0x0BA8, size 0x4
-    UPROPERTY(EditAnywhere) bool bClientFrozenMovement;  // 0x0C10, size 0x1
-    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing) bool bServerFrozenMovement;  // 0x0C11, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bActualFrozenMovement;  // 0x0C12, size 0x1
-    UPROPERTY(EditAnywhere) UScopedViewportBlocker* FrozenMovementViewportBlocker;  // 0x0C18, size 0x8
-    UPROPERTY() bool bIsSpectateTarget;  // 0x0C20, size 0x1
-    UPROPERTY(Instanced) UInstancedLevelLoadBlocker* InstancedLevelLoadBlocker;  // 0x0C28, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float base_turn_rate;  // 0x0C30, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float base_look_up_rate;  // 0x0C34, size 0x4
     UPROPERTY(Replicated, BlueprintReadOnly) float PlayerPitch;  // 0x0C38, size 0x4
@@ -37,18 +30,26 @@ public:
     UPROPERTY(BlueprintAssignable) FOnPlayersSlept OnPlayersSlept;  // 0x0D08, size 0x10
     UPROPERTY(BlueprintAssignable) FOnInventoryWeightChanged OnInventoryWeightChanged;  // 0x0D18, size 0x10
     UPROPERTY(BlueprintAssignable) FOnPerspectiveUpdated OnPerspectiveUpdated;  // 0x0D28, size 0x10
+protected:
+    UPROPERTY() bool bWantsAutoRun;  // 0x0B91, size 0x1
+    UPROPERTY() bool bHasMovementInputBeenReleased;  // 0x0B92, size 0x1
+    UPROPERTY(EditAnywhere) bool bClientFrozenMovement;  // 0x0C10, size 0x1
+    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing) bool bServerFrozenMovement;  // 0x0C11, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bActualFrozenMovement;  // 0x0C12, size 0x1
+    UPROPERTY(EditAnywhere) UScopedViewportBlocker* FrozenMovementViewportBlocker;  // 0x0C18, size 0x8
+    UPROPERTY() bool bIsSpectateTarget;  // 0x0C20, size 0x1
+    UPROPERTY(Instanced) UInstancedLevelLoadBlocker* InstancedLevelLoadBlocker;  // 0x0C28, size 0x8
+    FBestiaryDataRowHandle LastBestiaryDamageCauser;  // 0x0D38, not reflected
     UPROPERTY(Replicated, BlueprintReadOnly) FTransform LastInstancedLevelEntry;  // 0x0D50, size 0x30
-
-    // Not reflected: the engine's scripting cannot see these.
-    FModifierStatesRowHandle CurrentOxygenModifier;  // 0x0BAC, private
-    FModifierStatesRowHandle CurrentFoodModifier;  // 0x0BC4, private
-    FModifierStatesRowHandle CurrentWaterModifier;  // 0x0BDC, private
-    FModifierStatesRowHandle CurrentRadiationModifer;  // 0x0BF4, private
-    int32 OverburdenedModifier;  // 0x0C0C, private
-    TTuple<float,float> DeltaMouseInput;  // 0x0C90, private
-    TMap<FName,FItemStaticData,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,FItemStaticData,0> > MetaCurrencies;  // 0x0C98, private
-    FBestiaryDataRowHandle LastBestiaryDamageCauser;  // 0x0D38, protected
-
+private:
+    FModifierStatesRowHandle CurrentOxygenModifier;  // 0x0BAC, not reflected
+    FModifierStatesRowHandle CurrentFoodModifier;  // 0x0BC4, not reflected
+    FModifierStatesRowHandle CurrentWaterModifier;  // 0x0BDC, not reflected
+    FModifierStatesRowHandle CurrentRadiationModifer;  // 0x0BF4, not reflected
+    int32 OverburdenedModifier;  // 0x0C0C, not reflected
+    TTuple<float,float> DeltaMouseInput;  // 0x0C90, not reflected
+    TMap<FName,FItemStaticData,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,FItemStaticData,0> > MetaCurrencies;  // 0x0C98, not reflected
+public:
     UFUNCTION() void AddPitch(float value);  // parameters 0x4
     UFUNCTION() void AddYaw(float value);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void CacheNearbyComfortAffectingActors(AActor* BedActor);  // parameters 0x8

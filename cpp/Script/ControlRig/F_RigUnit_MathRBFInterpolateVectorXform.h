@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_MathRBFInterpolateVectorXform : public FRigUnit_MathRBFInterpolateVectorBase
 {
+public:
     UPROPERTY() TArray<FMathRBFInterpolateVectorXform_Target> Targets;  // 0x00B0, size 0x10
     UPROPERTY() FTransform Output;  // 0x00C0, size 0x30
 };

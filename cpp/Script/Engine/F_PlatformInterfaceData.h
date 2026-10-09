@@ -4,6 +4,7 @@
 USTRUCT()
 struct FPlatformInterfaceData
 {
+public:
     UPROPERTY() FName DataName;  // 0x0000, size 0x8
     UPROPERTY() TEnumAsByte<EPlatformInterfaceDataType> Type;  // 0x0008, size 0x1
     UPROPERTY() int32 IntValue;  // 0x000C, size 0x4

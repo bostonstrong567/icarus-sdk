@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_ELY_SQ_Lifeline_Recover_Washington_Collect_C : public ABPQ_Collect_Item_C
 {
-public:
 };

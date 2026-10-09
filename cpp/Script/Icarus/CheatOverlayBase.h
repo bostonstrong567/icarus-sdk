@@ -5,23 +5,24 @@
 UCLASS(EditInlineNew, MinimalAPI)
 class UCheatOverlayBase : public UUserWidget
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintAssignable) FOnScriptQueueFinished OnScriptQueueFinished;  // 0x0270, size 0x10
+    TMulticastDelegate<void __cdecl(void),FDefaultDelegateUserPolicy> NativeOnScriptQueueFinished;  // 0x0280, not reflected
     UPROPERTY(BlueprintAssignable) FOnCheatScriptFinished OnCheatScriptFinished;  // 0x0298, size 0x10
+    TQueue<FString,1> ScriptQueue;  // 0x02C0, not reflected
+    bool bWaiting;  // 0x02D0, not reflected
+    bool bShow;  // 0x02D1, not reflected
+    bool bPendingReloadCheats;  // 0x02D2, not reflected
+    TMap<FString,FStringFormatArg,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FString,FStringFormatArg,0> > VariableMap;  // 0x02D8, not reflected
+    UCheatFunctionBase * LastTopWidget;  // 0x0328, not reflected
+    FString LastKey;  // 0x0330, not reflected
+protected:
     UPROPERTY(BlueprintReadWrite) TArray<UCheatFunctionBase*> CheatFunctionWidgets;  // 0x02A8, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<FString,TSizedDefaultAllocator<32> > BeginPlayScript;  // 0x0260, private
-    TMulticastDelegate<void __cdecl(void),FDefaultDelegateUserPolicy> NativeOnScriptQueueFinished;  // 0x0280
-    TQueue<FString,1> ScriptQueue;  // 0x02C0
-    bool bWaiting;  // 0x02D0
-    bool bShow;  // 0x02D1
-    bool bPendingReloadCheats;  // 0x02D2
-    TMap<FString,FStringFormatArg,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FString,FStringFormatArg,0> > VariableMap;  // 0x02D8
-    UCheatFunctionBase * LastTopWidget;  // 0x0328
-    FString LastKey;  // 0x0330
-    bool bReloadedCheatsThisFrame;  // 0x0340, private
-
+private:
+    TArray<FString,TSizedDefaultAllocator<32> > BeginPlayScript;  // 0x0260, not reflected
+    bool bReloadedCheatsThisFrame;  // 0x0340, not reflected
+public:
     UFUNCTION(BlueprintImplementableEvent) void AddCheat(UCheatFunctionBase* Widget);  // parameters 0x8
     UFUNCTION(BlueprintImplementableEvent) void AddCustomAutomationFunction(FString Name, const TArray<FString>& ScriptLines, FString Description);  // parameters 0x30
     UFUNCTION(BlueprintImplementableEvent) void AddCustomFunction(FString Name, const TArray<FString>& ScriptLines, FString Description);  // parameters 0x30

@@ -6,7 +6,6 @@ UCLASS()
 class UCollectableNotesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToCollectableNotesTable(FName Name, FCollectableNote Data, FCollectableNotesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xA9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakCollectableNotesEnum(FCollectableNotesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FCollectableNotesRowHandle CastToCollectableNotesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

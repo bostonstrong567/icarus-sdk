@@ -6,7 +6,6 @@ UCLASS()
 class ULanguagesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToLanguagesTable(FName Name, FLanguagesData Data, FLanguagesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x41
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakLanguagesEnum(FLanguagesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FLanguagesRowHandle CastToLanguagesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

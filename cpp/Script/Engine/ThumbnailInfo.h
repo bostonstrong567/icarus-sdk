@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UThumbnailInfo : public UObject
 {
-public:
 };

@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class ALevelSequenceActor : public AActor, public IMovieSceneSequenceActor, public IMovieScenePlaybackClient, public IMovieSceneBindingOwnerInterface
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FMovieSceneSequencePlaybackSettings PlaybackSettings;  // 0x0238, size 0x14
     UPROPERTY(Replicated, Transient, Instanced, BlueprintReadOnly) ULevelSequencePlayer* SequencePlayer;  // 0x0250, size 0x8
@@ -16,9 +17,10 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bOverrideInstanceData : 1;  // 0x0288, mask 0x02
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bReplicatePlayback : 1;  // 0x0288, mask 0x04
     UPROPERTY(Instanced, BlueprintReadWrite) UObject* DefaultInstanceData;  // 0x0290, size 0x8
+private:
     UPROPERTY(Instanced) ULevelSequenceBurnIn* BurnInInstance;  // 0x0298, size 0x8
     UPROPERTY() bool bShowBurnin;  // 0x02A0, size 0x1
-
+public:
     UFUNCTION(BlueprintCallable) void AddBinding(FMovieSceneObjectBindingID Binding, AActor* Actor, bool bAllowBindingsFromAsset);  // parameters 0x21
     UFUNCTION(BlueprintCallable) void AddBindingByTag(FName BindingTag, AActor* Actor, bool bAllowBindingsFromAsset);  // parameters 0x11
     UFUNCTION(BlueprintCallable, BlueprintPure) FMovieSceneObjectBindingID FindNamedBinding(FName Tag) const;  // parameters 0x20

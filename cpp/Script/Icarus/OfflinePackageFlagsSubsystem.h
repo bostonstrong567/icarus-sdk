@@ -5,12 +5,11 @@
 UCLASS()
 class UOfflinePackageFlagsSubsystem : public UGameInstanceSubsystem
 {
+protected:
+    TArray<int,TSizedDefaultAllocator<32> > CachedPackageFlags;  // 0x0030, not reflected
+private:
+    bool bHasFetchedPackageFlags;  // 0x0040, not reflected
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<int,TSizedDefaultAllocator<32> > CachedPackageFlags;  // 0x0030, protected
-    bool bHasFetchedPackageFlags;  // 0x0040, private
-
     UFUNCTION(BlueprintCallable) bool FetchAndGrantPackageFlagsForCurrentUser(FString PlayerID, TArray<int32>& PackageFlags, FString& FailReason);  // parameters 0x31
     UFUNCTION(BlueprintCallable) bool HasPackageFlag(FString PlayerID, const FDLCPackageDataRowHandle& PackageFlag);  // parameters 0x29
     UFUNCTION(BlueprintCallable) static bool LoadFlagsFromFile(FString PlayerID, TArray<int32>& AccountFlags);  // parameters 0x21

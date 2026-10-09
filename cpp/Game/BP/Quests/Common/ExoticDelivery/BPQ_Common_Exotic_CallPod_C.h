@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_Common_Exotic_CallPod_C : public ABPQ_Deploy_Count_C
 {
-public:
 };

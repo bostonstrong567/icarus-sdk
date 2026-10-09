@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UMaterialExpressionPixelDepth : public UMaterialExpression
 {
-public:
 };

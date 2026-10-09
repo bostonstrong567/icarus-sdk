@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_GH_Ape_F_Prepare_Grenades_C : public ABPQ_Collect_Item_C
 {
-public:
 };

@@ -6,7 +6,6 @@ UCLASS()
 class UMobilePatchingLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static FString GetActiveDeviceProfileName();  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) static UMobileInstalledContent* GetInstalledContent(FString InstallDirectory);  // parameters 0x18
     UFUNCTION(BlueprintCallable, BlueprintPure) static TArray<FString> GetSupportedPlatformNames();  // parameters 0x10

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FQuestActor
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString ActorName;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) AIcarusActor* RelevantActor;  // 0x0010, size 0x8
 };

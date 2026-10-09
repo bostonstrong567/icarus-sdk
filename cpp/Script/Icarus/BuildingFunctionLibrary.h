@@ -6,7 +6,6 @@ UCLASS()
 class UBuildingFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static TArray<FVectorPair> AddReverseLinesToVectorPairArray(const TArray<FVectorPair>& VectorPairs);  // parameters 0x20
     UFUNCTION(BlueprintCallable) static FBuildingPiecesRowHandle GetBuildingUpgrade(ABuildingBase* Building, FBuildingTypesEnum Type);  // parameters 0x30
     UFUNCTION(BlueprintCallable) static int32 GetBuildingVariation(ABuildingBase* Building);  // parameters 0xC

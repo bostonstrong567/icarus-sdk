@@ -4,5 +4,6 @@
 USTRUCT()
 struct FInstancedStaticMeshInstanceData
 {
+public:
     UPROPERTY(EditAnywhere) FMatrix Transform;  // 0x0000, size 0x40
 };

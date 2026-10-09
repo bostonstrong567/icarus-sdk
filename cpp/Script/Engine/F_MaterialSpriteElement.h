@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMaterialSpriteElement
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UMaterialInterface* Material;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UCurveFloat* DistanceToOpacityCurve;  // 0x0008, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bSizeIsInScreenSpace : 1;  // 0x0010, mask 0x01

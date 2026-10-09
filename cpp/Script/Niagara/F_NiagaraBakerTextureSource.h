@@ -4,5 +4,6 @@
 USTRUCT()
 struct FNiagaraBakerTextureSource
 {
+public:
     UPROPERTY(EditAnywhere) FName SourceName;  // 0x0000, size 0x8
 };

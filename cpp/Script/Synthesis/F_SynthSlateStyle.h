@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSynthSlateStyle : public FSlateWidgetStyle
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ESynthSlateSizeType SizeType;  // 0x0008, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ESynthSlateColorStyle ColorStyle;  // 0x0009, size 0x1
 };

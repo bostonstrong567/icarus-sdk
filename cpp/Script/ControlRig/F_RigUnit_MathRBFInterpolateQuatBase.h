@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_MathRBFInterpolateQuatBase : public FRigUnit_MathRBFInterpolateBase
 {
+public:
     UPROPERTY() FQuat Input;  // 0x0010, size 0x10
     UPROPERTY() ERBFQuatDistanceType DistanceFunction;  // 0x0020, size 0x1
     UPROPERTY() ERBFKernelType SmoothingFunction;  // 0x0021, size 0x1

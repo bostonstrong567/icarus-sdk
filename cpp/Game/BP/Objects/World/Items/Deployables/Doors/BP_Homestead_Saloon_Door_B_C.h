@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Homestead_Saloon_Door_B_C : public ABP_Homestead_Saloon_Door_C
 {
-public:
 };

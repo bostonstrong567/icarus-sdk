@@ -4,7 +4,6 @@
 USTRUCT()
 struct FCharacterEvent : public FInputEvent
 {
-
-    // Not reflected:
-    wchar_t Character;  // 0x0018
+private:
+    wchar_t Character;  // 0x0018, not reflected
 };

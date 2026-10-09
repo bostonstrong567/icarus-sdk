@@ -6,13 +6,12 @@ UCLASS(Transient)
 class UKeyAsModifierInputBehavior : public UInputBehavior
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TFunction<bool __cdecl(FInputDeviceState const &)> ModifierCheckFunc;  // 0x0030
-    IModifierToggleBehaviorTarget * Target;  // 0x0070, protected
-    FKey ModifierKey;  // 0x0078, protected
-    FInputBehaviorModifierStates Modifiers;  // 0x0090, protected
-    FKey PressedButton;  // 0x00F0, protected
+    TFunction<bool __cdecl(FInputDeviceState const &)> ModifierCheckFunc;  // 0x0030, not reflected
+protected:
+    IModifierToggleBehaviorTarget * Target;  // 0x0070, not reflected
+    FKey ModifierKey;  // 0x0078, not reflected
+    FInputBehaviorModifierStates Modifiers;  // 0x0090, not reflected
+    FKey PressedButton;  // 0x00F0, not reflected
 
     // Virtual functions that start here:
     //   Initialize

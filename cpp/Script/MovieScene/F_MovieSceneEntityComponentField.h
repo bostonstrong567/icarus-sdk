@@ -4,6 +4,8 @@
 USTRUCT()
 struct FMovieSceneEntityComponentField
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() FMovieSceneEvaluationFieldEntityTree PersistentEntityTree;  // 0x0000, size 0x60
     UPROPERTY() FMovieSceneEvaluationFieldEntityTree OneShotEntityTree;  // 0x0060, size 0x60
     UPROPERTY() TArray<FMovieSceneEvaluationFieldEntity> Entities;  // 0x00C0, size 0x10

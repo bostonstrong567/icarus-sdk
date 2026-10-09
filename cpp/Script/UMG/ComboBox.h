@@ -9,7 +9,6 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<UObject*> Items;  // 0x0108, size 0x10
     UPROPERTY(EditAnywhere) FGenerateWidgetForObject OnGenerateWidgetEvent;  // 0x0118, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bIsFocusable;  // 0x0128, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<SComboBox<UObject *>,0> MyComboBox;  // 0x0130, protected
+protected:
+    TSharedPtr<SComboBox<UObject *>,0> MyComboBox;  // 0x0130, not reflected
 };

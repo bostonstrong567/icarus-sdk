@@ -4,10 +4,13 @@
 USTRUCT()
 struct FCRSimPointContainer : public FCRSimContainer
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+public:
     UPROPERTY() TArray<FCRSimPoint> Points;  // 0x0018, size 0x10
     UPROPERTY() TArray<FCRSimLinearSpring> Springs;  // 0x0028, size 0x10
     UPROPERTY() TArray<FCRSimPointForce> Forces;  // 0x0038, size 0x10
     UPROPERTY() TArray<FCRSimSoftCollision> CollisionVolumes;  // 0x0048, size 0x10
     UPROPERTY() TArray<FCRSimPointConstraint> Constraints;  // 0x0058, size 0x10
+protected:
     UPROPERTY() TArray<FCRSimPoint> PreviousStep;  // 0x0068, size 0x10
 };

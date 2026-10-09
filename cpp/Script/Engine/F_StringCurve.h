@@ -4,6 +4,7 @@
 USTRUCT()
 struct FStringCurve : public FIndexedCurve
 {
+public:
     UPROPERTY(EditAnywhere) FString DefaultValue;  // 0x0068, size 0x10
     UPROPERTY(EditAnywhere) TArray<FStringCurveKey> Keys;  // 0x0078, size 0x10
 };

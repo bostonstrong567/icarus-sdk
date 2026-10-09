@@ -4,6 +4,8 @@
 USTRUCT()
 struct FComponentKey
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() TSubclassOf<UObject> OwnerClass;  // 0x0000, size 0x8
     UPROPERTY() FName SCSVariableName;  // 0x0008, size 0x8
     UPROPERTY() FGuid AssociatedGuid;  // 0x0010, size 0x10

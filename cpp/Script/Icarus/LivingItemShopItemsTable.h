@@ -5,5 +5,4 @@
 UCLASS()
 class ULivingItemShopItemsTable : public UIcarusDataTable
 {
-public:
 };

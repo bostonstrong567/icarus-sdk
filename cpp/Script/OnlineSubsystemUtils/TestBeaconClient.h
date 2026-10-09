@@ -6,7 +6,6 @@ UCLASS(Transient, NotPlaceable, Config=Engine)
 class ATestBeaconClient : public AOnlineBeaconClient
 {
 public:
-
     UFUNCTION(Client, Reliable, BlueprintNativeEvent) void ClientPing();
     UFUNCTION(Server, Reliable, BlueprintNativeEvent) void ServerPong();
 

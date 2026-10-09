@@ -5,5 +5,4 @@
 UCLASS(Abstract, MinimalAPI)
 class UNiagaraEditorParametersAdapterBase : public UObject
 {
-public:
 };

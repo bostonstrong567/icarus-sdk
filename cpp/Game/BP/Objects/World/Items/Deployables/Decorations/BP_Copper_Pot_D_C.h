@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Copper_Pot_D_C : public ABP_DeployableBase_C
 {
-public:
 };

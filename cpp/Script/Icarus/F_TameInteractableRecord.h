@@ -4,6 +4,7 @@
 USTRUCT()
 struct FTameInteractableRecord
 {
+public:
     UPROPERTY(SaveGame, BlueprintReadOnly) TArray<int32> WhitelistedActors;  // 0x0008, size 0x10
     UPROPERTY(SaveGame, BlueprintReadOnly) bool bIsWhitelistOnly;  // 0x0018, size 0x1
 };

@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class UArcadeMachineRecorderComponent : public UDeployableRecorderComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(SaveGame) TArray<FArcadeMachineScore> PlayerScores;  // 0x0290, size 0x10
 };

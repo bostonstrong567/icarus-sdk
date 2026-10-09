@@ -10,7 +10,5 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EFontHinting Hinting;  // 0x0040, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EFontLoadingPolicy LoadingPolicy;  // 0x0041, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EFontLayoutMethod LayoutMethod;  // 0x0042, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedRef<FFontFaceData,1> FontFaceData;  // 0x0048
+    TSharedRef<FFontFaceData,1> FontFaceData;  // 0x0048, not reflected
 };

@@ -5,5 +5,4 @@
 UCLASS()
 class UClothingSimulationFactoryNv : public UClothingSimulationFactory
 {
-public:
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FTemplateSequenceBindingOverrideData
 {
+public:
     UPROPERTY(EditAnywhere) TWeakObjectPtr<UObject> Object;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) bool bOverridesDefault;  // 0x0008, size 0x1
 };

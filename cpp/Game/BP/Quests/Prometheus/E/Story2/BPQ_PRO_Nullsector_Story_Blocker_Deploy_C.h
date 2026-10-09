@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_PRO_Nullsector_Story_Blocker_Deploy_C : public ABPQ_Deploy_Count_C
 {
-public:
 };

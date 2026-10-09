@@ -4,6 +4,7 @@
 USTRUCT()
 struct FDockTabStyle : public FSlateWidgetStyle
 {
+public:
     UPROPERTY(EditAnywhere) FButtonStyle CloseButtonStyle;  // 0x0008, size 0x278
     UPROPERTY(EditAnywhere) FSlateBrush NormalBrush;  // 0x0280, size 0x88
     UPROPERTY(EditAnywhere) FSlateBrush ActiveBrush;  // 0x0308, size 0x88

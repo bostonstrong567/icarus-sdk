@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UNavTestRenderingComponent : public UPrimitiveComponent
 {
-public:
 };

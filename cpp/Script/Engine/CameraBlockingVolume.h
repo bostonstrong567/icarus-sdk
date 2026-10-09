@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ACameraBlockingVolume : public AVolume
 {
-public:
 };

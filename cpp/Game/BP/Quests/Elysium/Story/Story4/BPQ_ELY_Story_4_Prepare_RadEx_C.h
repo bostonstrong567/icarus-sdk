@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_ELY_Story_4_Prepare_RadEx_C : public ABPQ_Collect_Any_Item_C
 {
-public:
 };

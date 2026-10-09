@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UBP_TemperatureSingleton_C : public UTemperatureSingleton
 {
-public:
 };

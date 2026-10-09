@@ -5,18 +5,17 @@
 UCLASS(Transient)
 class UQuartzClockHandle : public UObject
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
+    TSharedPtr<Audio::FShareableQuartzCommandQueue,1> CommandQueuePtr;  // 0x0028, not reflected
+    TArray<UQuartzClockHandle::CommandDelegateGameThreadData,TSizedDefaultAllocator<32> > QuantizedCommandDelegates;  // 0x0038, not reflected
+    UQuartzClockHandle::MetronomeDelegateGameThreadData[18] MetronomeDelegates;  // 0x0048, not reflected
     UPROPERTY(Transient) UQuartzSubsystem* QuartzSubsystem;  // 0x0168, size 0x8
+    FName ClockHandleId;  // 0x0170, not reflected
+    FName CurrentClockId;  // 0x0178, not reflected
+    bool bConnectedToClock;  // 0x0180, not reflected
     UPROPERTY(Transient) UWorld* WorldPtr;  // 0x0188, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    TSharedPtr<Audio::FShareableQuartzCommandQueue,1> CommandQueuePtr;  // 0x0028, private
-    TArray<UQuartzClockHandle::CommandDelegateGameThreadData,TSizedDefaultAllocator<32> > QuantizedCommandDelegates;  // 0x0038, private
-    UQuartzClockHandle::MetronomeDelegateGameThreadData[18] MetronomeDelegates;  // 0x0048, private
-    FName ClockHandleId;  // 0x0170, private
-    FName CurrentClockId;  // 0x0178, private
-    bool bConnectedToClock;  // 0x0180, private
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetBeatsPerMinute(UObject* WorldContextObject) const;  // parameters 0xC
     UFUNCTION(BlueprintCallable) FQuartzTransportTimeStamp GetCurrentTimestamp(UObject* WorldContextObject);  // parameters 0x18
     UFUNCTION(BlueprintCallable) float GetDurationOfQuantizationTypeInSeconds(UObject* WorldContextObject, const EQuartzCommandQuantization& QuantizationType, float Multiplier);  // parameters 0x14

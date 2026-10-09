@@ -5,9 +5,7 @@
 UCLASS()
 class UMovieScenePiecewiseIntegerBlenderSystem : public UMovieSceneBlenderSystem
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    UE::MovieScene::FIntegerAccumulationBuffers AccumulationBuffers;  // 0x0068, private
-    UE::MovieScene::FCachedEntityManagerState ChannelRelevancyCache;  // 0x00A8, private
+private:
+    UE::MovieScene::FIntegerAccumulationBuffers AccumulationBuffers;  // 0x0068, not reflected
+    UE::MovieScene::FCachedEntityManagerState ChannelRelevancyCache;  // 0x00A8, not reflected
 };

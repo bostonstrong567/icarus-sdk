@@ -5,6 +5,7 @@
 UCLASS(NotPlaceable, Config=Game)
 class AIcarusGameStateSurvival : public AIcarusGameStateBase
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UWeatherManagerComponent* WeatherManager;  // 0x02B0, size 0x8
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UAuraManagerComponent* AuraManager;  // 0x02B8, size 0x8
@@ -22,6 +23,7 @@ public:
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) bool GOAPDebugging;  // 0x033A, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bThermalComponentDebugging;  // 0x033B, size 0x1
     UPROPERTY(Replicated, BlueprintReadWrite) int32 GlobalEnvTempModifier;  // 0x033C, size 0x4
+    FThermalComponentsUpdatedSignature OnThermalComponentsUpdated;  // 0x0340, not reflected
     UPROPERTY(BlueprintAssignable) FSeedInitialisedSignature OnSeedInitialised;  // 0x0350, size 0x10
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) int32 Seed;  // 0x0360, size 0x4
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) bool bSeedInitialised;  // 0x0364, size 0x1
@@ -33,38 +35,37 @@ public:
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) int32 DynamicQuestSeed;  // 0x0384, size 0x4
     UPROPERTY(BlueprintAssignable) FOnUITimeUpdated OnUITimeUpdated;  // 0x0388, size 0x10
     UPROPERTY(Replicated) float ReplicatedLastSessionProspectGameTime;  // 0x0398, size 0x4
-    UPROPERTY(Replicated) FGlobalCheatData GlobalCheatData;  // 0x039C, size 0x3
-    UPROPERTY() TMap<FString, int32> PreviouslyAssignedPlayerColors;  // 0x03A0, size 0x50
-    UPROPERTY() UGameplayTexture* TemperatureMap;  // 0x03F8, size 0x8
-    UPROPERTY() FVector2D TemperatureMapRange;  // 0x0400, size 0x8
-    UPROPERTY() UGameplayTexture* BiomeMap;  // 0x0408, size 0x8
-    UPROPERTY() UGameplayTexture* BoundsMap;  // 0x0410, size 0x8
-    UPROPERTY() UGameplayTexture* BoundsOverrideMap;  // 0x0418, size 0x8
-    UPROPERTY() FText UITimeText;  // 0x0420, size 0x18
-    UPROPERTY() TArray<UThermalComponent*> ThermalComponents;  // 0x0438, size 0x10
-    UPROPERTY(Replicated) int32 LevelTimeElapsedSec;  // 0x0448, size 0x4
     UPROPERTY(Replicated, ReplicatedUsing) TArray<FSessionFlagsRowHandle> SessionFlags;  // 0x0450, size 0x10
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) bool bIsOpenWorldProspect;  // 0x0460, size 0x1
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) bool bIsOutpostProspect;  // 0x0461, size 0x1
     UPROPERTY(BlueprintAssignable) FRepopulateDynamicQuestsSignature OnRepopulateDynamicQuests;  // 0x0468, size 0x10
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) TArray<FTimeLockedMissionInfo> LockedMissions;  // 0x0478, size 0x10
     UPROPERTY(BlueprintAssignable) FOnLockedMissionsUpdated OnLockedMissionsUpdated;  // 0x0488, size 0x10
-    UPROPERTY(Replicated, ReplicatedUsing) FProspectInfo ReplicatedActiveProspect;  // 0x0498, size 0xA0
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) FNetworkingStatus NetworkingStatus;  // 0x0540, size 0x60
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) float ReplicatedTimeBetweenSaves;  // 0x05A0, size 0x4
-    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing) FVector2D MeteorDirection;  // 0x05A4, size 0x8
     UPROPERTY(BlueprintAssignable) FOnMeteorsIncoming OnMeteorsIncoming;  // 0x05B0, size 0x10
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) int32 ServerFps;  // 0x05C0, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UCurveFloat* RadiationStrengthCurve;  // 0x05C8, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<TWeakObjectPtr<AVoxelResource,FWeakObjectPtr>,TSizedDefaultAllocator<32> > PendingVoxelResourceInits;  // 0x0320, private
-    FTimerHandle PendingVoxelInitsTimerHandle;  // 0x0330, private
-    bool bHasQueuedDeferredVoxelInit;  // 0x0338, private
-    FThermalComponentsUpdatedSignature OnThermalComponentsUpdated;  // 0x0340
-    int32 PlayerColorIndex;  // 0x03F0, protected
-    bool bHasDoneFirstLockedMissionsUpdate;  // 0x0538, private
-
+protected:
+    UPROPERTY(Replicated) FGlobalCheatData GlobalCheatData;  // 0x039C, size 0x3
+    UPROPERTY() TMap<FString, int32> PreviouslyAssignedPlayerColors;  // 0x03A0, size 0x50
+    int32 PlayerColorIndex;  // 0x03F0, not reflected
+    UPROPERTY() UGameplayTexture* TemperatureMap;  // 0x03F8, size 0x8
+    UPROPERTY() FVector2D TemperatureMapRange;  // 0x0400, size 0x8
+    UPROPERTY() UGameplayTexture* BiomeMap;  // 0x0408, size 0x8
+    UPROPERTY() UGameplayTexture* BoundsMap;  // 0x0410, size 0x8
+    UPROPERTY() UGameplayTexture* BoundsOverrideMap;  // 0x0418, size 0x8
+    UPROPERTY() FText UITimeText;  // 0x0420, size 0x18
+private:
+    TArray<TWeakObjectPtr<AVoxelResource,FWeakObjectPtr>,TSizedDefaultAllocator<32> > PendingVoxelResourceInits;  // 0x0320, not reflected
+    FTimerHandle PendingVoxelInitsTimerHandle;  // 0x0330, not reflected
+    bool bHasQueuedDeferredVoxelInit;  // 0x0338, not reflected
+    UPROPERTY() TArray<UThermalComponent*> ThermalComponents;  // 0x0438, size 0x10
+    UPROPERTY(Replicated) int32 LevelTimeElapsedSec;  // 0x0448, size 0x4
+    UPROPERTY(Replicated, ReplicatedUsing) FProspectInfo ReplicatedActiveProspect;  // 0x0498, size 0xA0
+    bool bHasDoneFirstLockedMissionsUpdate;  // 0x0538, not reflected
+    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing) FVector2D MeteorDirection;  // 0x05A4, size 0x8
+public:
     UFUNCTION(BlueprintCallable) void DeregisterThermalComponent(UThermalComponent* Component);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void GenerateResourceTypeForVoxelActor(AVoxelResource* VoxelResourceActor);  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) int32 GetLevelTimeElapsedSec() const;  // parameters 0x4

@@ -4,12 +4,11 @@
 USTRUCT()
 struct FIKChainLink
 {
-
-    // Not reflected:
-    FVector Location;  // 0x0000
-    float Length;  // 0x000C
-    FVector LinkAxisZ;  // 0x0010
-    FVector RealBendDir;  // 0x001C
-    FVector BaseBendDir;  // 0x0028
-    FName BoneName;  // 0x0034
+public:
+    FVector Location;  // 0x0000, not reflected
+    float Length;  // 0x000C, not reflected
+    FVector LinkAxisZ;  // 0x0010, not reflected
+    FVector RealBendDir;  // 0x001C, not reflected
+    FVector BaseBendDir;  // 0x0028, not reflected
+    FName BoneName;  // 0x0034, not reflected
 };

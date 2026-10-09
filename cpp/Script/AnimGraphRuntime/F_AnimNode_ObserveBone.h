@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAnimNode_ObserveBone : public FAnimNode_SkeletalControlBase
 {
+public:
     UPROPERTY(EditAnywhere) FBoneReference BoneToObserve;  // 0x00C8, size 0x10
     UPROPERTY(EditAnywhere) TEnumAsByte<EBoneControlSpace> DisplaySpace;  // 0x00D8, size 0x1
     UPROPERTY(EditAnywhere) bool bRelativeToRefPose;  // 0x00D9, size 0x1

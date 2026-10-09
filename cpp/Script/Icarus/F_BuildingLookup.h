@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBuildingLookup : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText PieceName;  // 0x0018, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool AccumulationEnabled;  // 0x0030, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FBuildingPiecesRowHandle Thatch;  // 0x0034, size 0x18

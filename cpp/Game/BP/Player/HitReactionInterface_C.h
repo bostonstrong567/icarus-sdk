@@ -6,6 +6,5 @@ UCLASS(Config=Engine)
 class UHitReactionInterface_C : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable) void OnHitSuccessful(AActor* HitActor, AActor* DamageCauser, EStealthAttackType StealthAttack, bool KillCam);  // parameters 0x12
 };

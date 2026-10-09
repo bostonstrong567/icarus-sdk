@@ -6,7 +6,6 @@ UCLASS()
 class UCriticalHitAreaAudioDataLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToCriticalHitAreaAudioDataTable(FName Name, FCriticalHitAreaAudioData Data, FCriticalHitAreaAudioDataRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x69
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakCriticalHitAreaAudioDataEnum(FCriticalHitAreaAudioDataEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FCriticalHitAreaAudioDataRowHandle CastToCriticalHitAreaAudioDataRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

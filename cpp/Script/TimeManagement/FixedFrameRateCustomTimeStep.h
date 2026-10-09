@@ -5,7 +5,6 @@
 UCLASS(Abstract)
 class UFixedFrameRateCustomTimeStep : public UEngineCustomTimeStep
 {
-public:
 
     // Virtual functions that start here:
     //   GetFixedFrameRate

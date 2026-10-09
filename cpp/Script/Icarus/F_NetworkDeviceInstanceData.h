@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNetworkDeviceInstanceData
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) AIcarusActor* DeviceActor;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EDeviceState State;  // 0x0008, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bHasPriority;  // 0x0009, size 0x1

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_OLY_Desert_Survey_Resupply_C : public ABPQ_Common_RequestResupply_C
 {
-public:
 };

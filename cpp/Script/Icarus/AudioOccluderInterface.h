@@ -6,6 +6,5 @@ UCLASS(Abstract)
 class UAudioOccluderInterface : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintNativeEvent) float GetOcclusionValue() const;  // parameters 0x4
 };

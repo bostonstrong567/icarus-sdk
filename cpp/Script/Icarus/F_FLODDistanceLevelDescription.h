@@ -4,6 +4,7 @@
 USTRUCT()
 struct FFLODDistanceLevelDescription
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TSoftClassPtr<AActor> Actor;  // 0x0000, size 0x28
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float InfluenceDistance;  // 0x0028, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) FItemTemplateRowHandle ActorItemTemplate;  // 0x002C, size 0x18

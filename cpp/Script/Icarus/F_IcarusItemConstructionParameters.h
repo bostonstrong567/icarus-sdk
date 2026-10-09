@@ -4,6 +4,7 @@
 USTRUCT()
 struct FIcarusItemConstructionParameters
 {
+public:
     UPROPERTY(EditAnywhere, SaveGame, BlueprintReadWrite) bool bSimulatePhysics;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, SaveGame, BlueprintReadOnly) FString MeshAssetPath;  // 0x0008, size 0x10
     UPROPERTY(EditAnywhere, SaveGame, BlueprintReadWrite) FName CollisionProfile;  // 0x0018, size 0x8

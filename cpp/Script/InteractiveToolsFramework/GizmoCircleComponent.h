@@ -12,8 +12,7 @@ public:
     UPROPERTY(EditAnywhere) int32 NumSides;  // 0x0484, size 0x4
     UPROPERTY(EditAnywhere) bool bViewAligned;  // 0x0488, size 0x1
     UPROPERTY(EditAnywhere) bool bOnlyAllowFrontFacingHits;  // 0x0489, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bRenderVisibility;  // 0x048A, private
-    bool bCircleIsViewPlaneParallel;  // 0x048B, private
+private:
+    bool bRenderVisibility;  // 0x048A, not reflected
+    bool bCircleIsViewPlaneParallel;  // 0x048B, not reflected
 };

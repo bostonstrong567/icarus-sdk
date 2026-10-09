@@ -4,6 +4,7 @@
 USTRUCT()
 struct FIcarusPlayerChatMessage
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString PlayerID;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString PlayerName;  // 0x0010, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UTexture2D* PlayerIcon;  // 0x0020, size 0x8

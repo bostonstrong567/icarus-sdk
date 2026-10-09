@@ -4,5 +4,6 @@
 USTRUCT()
 struct FTransformBaseConstraint
 {
+public:
     UPROPERTY(EditAnywhere) TArray<FRigTransformConstraint> TransformConstraints;  // 0x0000, size 0x10
 };

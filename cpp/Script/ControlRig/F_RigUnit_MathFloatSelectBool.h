@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_MathFloatSelectBool : public FRigUnit_MathFloatBase
 {
+public:
     UPROPERTY() bool Condition;  // 0x0008, size 0x1
     UPROPERTY() float IfTrue;  // 0x000C, size 0x4
     UPROPERTY() float IfFalse;  // 0x0010, size 0x4

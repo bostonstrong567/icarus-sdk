@@ -6,7 +6,6 @@ UCLASS()
 class UAISpawnRulesLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToAISpawnRulesTable(FName Name, FAISpawnRuleData Data, FAISpawnRulesRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xB9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakAISpawnRulesEnum(FAISpawnRulesEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FAISpawnRulesRowHandle CastToAISpawnRulesRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

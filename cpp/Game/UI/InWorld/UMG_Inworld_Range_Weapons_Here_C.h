@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UUMG_Inworld_Range_Weapons_Here_C : public UUserWidget
 {
-public:
 };

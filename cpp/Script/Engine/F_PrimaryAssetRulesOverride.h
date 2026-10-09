@@ -4,6 +4,7 @@
 USTRUCT()
 struct FPrimaryAssetRulesOverride
 {
+public:
     UPROPERTY(EditAnywhere) FPrimaryAssetId PrimaryAssetId;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere) FPrimaryAssetRules Rules;  // 0x0010, size 0xC
 };

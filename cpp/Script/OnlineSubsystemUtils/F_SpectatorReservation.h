@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSpectatorReservation
 {
+public:
     UPROPERTY(Transient) FUniqueNetIdRepl SpectatorId;  // 0x0000, size 0x28
     UPROPERTY(Transient) FPlayerReservation Spectator;  // 0x0028, size 0x50
 };

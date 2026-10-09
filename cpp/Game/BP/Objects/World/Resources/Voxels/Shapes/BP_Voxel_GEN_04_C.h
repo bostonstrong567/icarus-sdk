@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Voxel_GEN_04_C : public ABP_VoxelRock_C
 {
-public:
 };

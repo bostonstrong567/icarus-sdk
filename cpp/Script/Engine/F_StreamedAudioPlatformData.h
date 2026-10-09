@@ -4,9 +4,8 @@
 USTRUCT()
 struct FStreamedAudioPlatformData
 {
-
-    // Not reflected:
-    int32 NumChunks;  // 0x0000
-    FName AudioFormat;  // 0x0004
-    TIndirectArray<FStreamedAudioChunk,TSizedDefaultAllocator<32> > Chunks;  // 0x0010
+public:
+    int32 NumChunks;  // 0x0000, not reflected
+    FName AudioFormat;  // 0x0004, not reflected
+    TIndirectArray<FStreamedAudioChunk,TSizedDefaultAllocator<32> > Chunks;  // 0x0010, not reflected
 };

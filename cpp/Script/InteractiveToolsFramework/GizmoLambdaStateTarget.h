@@ -6,8 +6,6 @@ UCLASS()
 class UGizmoLambdaStateTarget : public UObject, public IGizmoStateTarget
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TUniqueFunction<void __cdecl(void)> BeginUpdateFunction;  // 0x0030
-    TUniqueFunction<void __cdecl(void)> EndUpdateFunction;  // 0x0070
+    TUniqueFunction<void __cdecl(void)> BeginUpdateFunction;  // 0x0030, not reflected
+    TUniqueFunction<void __cdecl(void)> EndUpdateFunction;  // 0x0070, not reflected
 };

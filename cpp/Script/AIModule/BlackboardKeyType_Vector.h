@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew)
 class UBlackboardKeyType_Vector : public UBlackboardKeyType
 {
-public:
 };

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_CatBowl_Water_C : public ABP_Pet_Bowl_Water_Base_C
 {
-public:
 };

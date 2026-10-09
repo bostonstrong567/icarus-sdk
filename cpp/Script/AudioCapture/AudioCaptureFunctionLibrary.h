@@ -6,6 +6,5 @@ UCLASS()
 class UAudioCaptureFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static UAudioCapture* CreateAudioCapture();  // parameters 0x8
 };

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_WorldBossSpawner_SandWorm_C : public ABP_WorldBossSpawner_C
 {
-public:
 };

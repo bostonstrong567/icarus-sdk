@@ -5,7 +5,8 @@
 UCLASS(MinimalAPI)
 class UMovieSceneEventSection : public UMovieSceneSection
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY(Deprecated) FNameCurve Events;  // 0x00E8, size 0x78
     UPROPERTY() FMovieSceneEventSectionData EventData;  // 0x0160, size 0x88
 };

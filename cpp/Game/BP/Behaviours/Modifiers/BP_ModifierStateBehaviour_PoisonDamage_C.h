@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UBP_ModifierStateBehaviour_PoisonDamage_C : public UBP_ModifierStateBehaviour_TickDamage_C
 {
-public:
 };

@@ -8,9 +8,8 @@ class UMoveMetaInventoryItemCallbackProxyGen : public UOnlineBlueprintCallProxyB
 public:
     UPROPERTY(BlueprintAssignable) FOnMoveMetaInventoryItemEventSignature OnSuccess;  // 0x0030, size 0x10
     UPROPERTY(BlueprintAssignable) FOnMoveMetaInventoryItemEventSignature OnFail;  // 0x0040, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    FReqMoveMetaInventoryItem ReqMoveMetaInventoryItem;  // 0x0050, private
-
+private:
+    FReqMoveMetaInventoryItem ReqMoveMetaInventoryItem;  // 0x0050, not reflected
+public:
     UFUNCTION(BlueprintCallable) static UMoveMetaInventoryItemCallbackProxyGen* MoveMetaInventoryItem(const FReqMoveMetaInventoryItem& Request);  // parameters 0x48
 };

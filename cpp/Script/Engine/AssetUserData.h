@@ -5,7 +5,6 @@
 UCLASS(Abstract, EditInlineNew)
 class UAssetUserData : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   Draw, PostEditChangeOwner

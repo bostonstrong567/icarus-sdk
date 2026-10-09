@@ -5,5 +5,4 @@
 UCLASS()
 class UPropertyValueSoftObject : public UPropertyValue
 {
-public:
 };

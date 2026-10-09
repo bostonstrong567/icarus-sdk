@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_CCDIK_RotationLimitPerItem
 {
+public:
     UPROPERTY() FRigElementKey Item;  // 0x0000, size 0xC
     UPROPERTY() float Limit;  // 0x000C, size 0x4
 };

@@ -4,7 +4,6 @@
 USTRUCT()
 struct FBlueprintSessionResult
 {
-
-    // Not reflected:
-    FOnlineSessionSearchResult OnlineResult;  // 0x0000
+public:
+    FOnlineSessionSearchResult OnlineResult;  // 0x0000, not reflected
 };

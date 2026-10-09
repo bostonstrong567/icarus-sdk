@@ -6,13 +6,12 @@ UCLASS()
 class UEnum : public UField
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    FString CppType;  // 0x0030
-    TArray<TTuple<FName,__int64>,TSizedDefaultAllocator<32> > Names;  // 0x0040, protected
-    UEnum::ECppForm CppForm;  // 0x0050, protected
-    EEnumFlags EnumFlags;  // 0x0054, protected
-    FText (*)(int32) EnumDisplayNameFn;  // 0x0058, protected
+    FString CppType;  // 0x0030, not reflected
+protected:
+    TArray<TTuple<FName,__int64>,TSizedDefaultAllocator<32> > Names;  // 0x0040, not reflected
+    UEnum::ECppForm CppForm;  // 0x0050, not reflected
+    EEnumFlags EnumFlags;  // 0x0054, not reflected
+    FText (*)(int32) EnumDisplayNameFn;  // 0x0058, not reflected
 
     // Virtual functions that start here:
     //   GenerateFullEnumName, GetAuthoredNameStringByIndex, GetDisplayNameTextByIndex, ResolveEnumerator

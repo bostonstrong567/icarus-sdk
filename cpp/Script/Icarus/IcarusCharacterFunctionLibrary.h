@@ -6,6 +6,5 @@ UCLASS()
 class UIcarusCharacterFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static int32 CalculatePlayerLevel(int32 ExperiencePoints, FCharacterGrowthRowHandle GrowthRowHandle);  // parameters 0x20
 };

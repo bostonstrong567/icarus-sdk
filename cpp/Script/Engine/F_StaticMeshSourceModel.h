@@ -4,6 +4,7 @@
 USTRUCT()
 struct FStaticMeshSourceModel
 {
+public:
     UPROPERTY(EditAnywhere) FMeshBuildSettings BuildSettings;  // 0x0000, size 0x30
     UPROPERTY(EditAnywhere) FMeshReductionSettings ReductionSettings;  // 0x0030, size 0x24
     UPROPERTY(Deprecated) float LODDistance;  // 0x0054, size 0x4

@@ -4,6 +4,7 @@
 USTRUCT()
 struct TreeSetupProperties
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<FBaseStatsEnum, int32> Stats;  // 0x0000, size 0x50
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float CollisionDetachThreshold;  // 0x0050, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float CollisionDetachInvScaleMultiplier;  // 0x0054, size 0x4

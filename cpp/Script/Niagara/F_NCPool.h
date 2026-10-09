@@ -4,5 +4,6 @@
 USTRUCT()
 struct FNCPool
 {
+public:
     UPROPERTY(Transient) TArray<FNCPoolElement> FreeElements;  // 0x0000, size 0x10
 };

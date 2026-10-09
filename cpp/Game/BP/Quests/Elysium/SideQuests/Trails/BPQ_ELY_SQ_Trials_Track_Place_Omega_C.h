@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_ELY_SQ_Trials_Track_Place_Omega_C : public ABPQ_ELY_SQ_Trials_Track_Place_Alpha_C
 {
-public:
 };

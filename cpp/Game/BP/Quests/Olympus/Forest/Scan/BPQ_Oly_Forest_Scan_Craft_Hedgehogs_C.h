@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_Oly_Forest_Scan_Craft_Hedgehogs_C : public ABPQ_Collect_Item_WithName_C
 {
-public:
 };

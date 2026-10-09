@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSpriteGeometryShape
 {
+public:
     UPROPERTY(EditAnywhere) ESpriteShapeType ShapeType;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere) TArray<FVector2D> Vertices;  // 0x0008, size 0x10
     UPROPERTY(EditAnywhere) FVector2D BoxSize;  // 0x0018, size 0x8

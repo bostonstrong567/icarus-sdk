@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UMaterialExpressionSkinningVertexOffsets : public UMaterialExpression
 {
-public:
 };

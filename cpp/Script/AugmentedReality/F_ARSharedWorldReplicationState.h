@@ -4,6 +4,7 @@
 USTRUCT()
 struct FARSharedWorldReplicationState
 {
+public:
     UPROPERTY(BlueprintReadOnly) int32 PreviewImageOffset;  // 0x0000, size 0x4
     UPROPERTY(BlueprintReadOnly) int32 ARWorldOffset;  // 0x0004, size 0x4
 };

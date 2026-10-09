@@ -5,17 +5,17 @@
 UCLASS(Config=Engine)
 class UEquippableModifier : public UActorComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(Instanced, BlueprintReadOnly) UInventory* Inventory;  // 0x00B0, size 0x8
     UPROPERTY(BlueprintReadOnly) int32 InventorySlot;  // 0x00B8, size 0x4
     UPROPERTY(BlueprintReadOnly) FEquippableRowHandle EquippableRow;  // 0x00BC, size 0x18
     UPROPERTY(BlueprintReadOnly) int32 CachedUID;  // 0x00D4, size 0x4
+private:
     UPROPERTY() bool SelfDestruct;  // 0x00D8, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bWantsToReinitialise;  // 0x00D9, private
-    float StackedModifierMultiplier;  // 0x00DC, private
-
+    bool bWantsToReinitialise;  // 0x00D9, not reflected
+    float StackedModifierMultiplier;  // 0x00DC, not reflected
+public:
     UFUNCTION() void ArmourSlotUpdated(UInventory* SourceInventory, int32 Location);  // parameters 0xC
     UFUNCTION(BlueprintNativeEvent) bool CheckTickConditions();  // parameters 0x1
     UFUNCTION(BlueprintNativeEvent) void EquippedTick(float DeltaTime);  // parameters 0x4

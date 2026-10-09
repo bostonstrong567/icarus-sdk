@@ -6,7 +6,6 @@ UCLASS()
 class UCharacterGrowthLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToCharacterGrowthTable(FName Name, FCharacterGrowth Data, FCharacterGrowthRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x69
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakCharacterGrowthEnum(FCharacterGrowthEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FCharacterGrowthRowHandle CastToCharacterGrowthRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

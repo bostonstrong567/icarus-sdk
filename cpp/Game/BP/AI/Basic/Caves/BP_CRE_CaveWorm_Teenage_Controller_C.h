@@ -5,5 +5,4 @@
 UCLASS(NotPlaceable, Config=Engine)
 class ABP_CRE_CaveWorm_Teenage_Controller_C : public ABP_FactionBoss_Controller_SandWorm_C
 {
-public:
 };

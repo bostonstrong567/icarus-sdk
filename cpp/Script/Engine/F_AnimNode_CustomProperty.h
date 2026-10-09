@@ -4,11 +4,11 @@
 USTRUCT()
 struct FAnimNode_CustomProperty : public FAnimNode_Base
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY() TArray<FName> SourcePropertyNames;  // 0x0010, size 0x10
     UPROPERTY() TArray<FName> DestPropertyNames;  // 0x0020, size 0x10
     UPROPERTY(Transient) UObject* TargetInstance;  // 0x0030, size 0x8
-
-    // Not reflected:
-    TArray<FProperty *,TSizedDefaultAllocator<32> > SourceProperties;  // 0x0038
-    TArray<FProperty *,TSizedDefaultAllocator<32> > DestProperties;  // 0x0048
+    TArray<FProperty *,TSizedDefaultAllocator<32> > SourceProperties;  // 0x0038, not reflected
+    TArray<FProperty *,TSizedDefaultAllocator<32> > DestProperties;  // 0x0048, not reflected
 };

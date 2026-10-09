@@ -4,6 +4,8 @@
 USTRUCT()
 struct FNavigationFilterFlags
 {
+public:
+    uint16 Packed;  // 0x0000, not reflected
     UPROPERTY(EditAnywhere) uint8 bNavFlag0 : 1;  // 0x0000, mask 0x01
     UPROPERTY(EditAnywhere) uint8 bNavFlag1 : 1;  // 0x0000, mask 0x02
     UPROPERTY(EditAnywhere) uint8 bNavFlag2 : 1;  // 0x0000, mask 0x04
@@ -20,7 +22,4 @@ struct FNavigationFilterFlags
     UPROPERTY(EditAnywhere) uint8 bNavFlag13 : 1;  // 0x0001, mask 0x20
     UPROPERTY(EditAnywhere) uint8 bNavFlag14 : 1;  // 0x0001, mask 0x40
     UPROPERTY(EditAnywhere) uint8 bNavFlag15 : 1;  // 0x0001, mask 0x80
-
-    // Not reflected:
-    uint16 Packed;  // 0x0000
 };

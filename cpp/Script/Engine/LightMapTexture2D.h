@@ -6,7 +6,5 @@ UCLASS(MinimalAPI)
 class ULightMapTexture2D : public UTexture2D
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    ELightMapFlags LightmapFlags;  // 0x01A0
+    ELightMapFlags LightmapFlags;  // 0x01A0, not reflected
 };

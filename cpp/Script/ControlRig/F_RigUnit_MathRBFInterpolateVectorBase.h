@@ -4,6 +4,7 @@
 USTRUCT()
 struct FRigUnit_MathRBFInterpolateVectorBase : public FRigUnit_MathRBFInterpolateBase
 {
+public:
     UPROPERTY() FVector Input;  // 0x0008, size 0xC
     UPROPERTY() ERBFVectorDistanceType DistanceFunction;  // 0x0014, size 0x1
     UPROPERTY() ERBFKernelType SmoothingFunction;  // 0x0015, size 0x1

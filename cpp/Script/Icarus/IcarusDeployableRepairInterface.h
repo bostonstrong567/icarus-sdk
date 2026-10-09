@@ -6,7 +6,6 @@ UCLASS(Abstract)
 class UIcarusDeployableRepairInterface : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) bool CanRepairItem(const FItemData& Item) const;  // parameters 0x1F1
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) bool RepairHasShelter(AIcarusPlayerCharacter* CraftingPlayer) const;  // parameters 0x9
 };

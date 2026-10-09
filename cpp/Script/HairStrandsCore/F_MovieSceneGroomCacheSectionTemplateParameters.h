@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMovieSceneGroomCacheSectionTemplateParameters : public FMovieSceneGroomCacheParams
 {
+public:
     UPROPERTY() FFrameNumber SectionStartTime;  // 0x0020, size 0x4
     UPROPERTY() FFrameNumber SectionEndTime;  // 0x0024, size 0x4
 };

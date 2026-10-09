@@ -5,6 +5,7 @@
 UCLASS(MinimalAPI)
 class UMovieSceneNiagaraVectorParameterTrack : public UMovieSceneNiagaraParameterTrack, public IMovieSceneTrackTemplateProducer
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY() int32 ChannelsUsed;  // 0x00C8, size 0x4
 };

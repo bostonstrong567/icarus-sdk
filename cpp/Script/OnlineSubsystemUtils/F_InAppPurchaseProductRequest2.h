@@ -4,6 +4,7 @@
 USTRUCT()
 struct FInAppPurchaseProductRequest2
 {
+public:
     UPROPERTY(BlueprintReadWrite) FString ProductIdentifier;  // 0x0000, size 0x10
     UPROPERTY(BlueprintReadWrite) bool bIsConsumable;  // 0x0010, size 0x1
 };

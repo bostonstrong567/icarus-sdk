@@ -4,5 +4,6 @@
 USTRUCT()
 struct FHintsData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText Text;  // 0x0018, size 0x18
 };

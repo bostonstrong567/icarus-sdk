@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UUMG_TalentArchetype_Orbital_C : public UUMG_TalentArchetype_Player_C
 {
-public:
 };

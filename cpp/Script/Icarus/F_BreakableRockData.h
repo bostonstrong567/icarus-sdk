@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBreakableRockData : public FIcarusTableRowBase
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FItemRewardsRowHandle ItemReward;  // 0x0018, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FItemTemplateRowHandle PyriticCrustItemType;  // 0x0030, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FDurableRowHandle Durable;  // 0x0048, size 0x18

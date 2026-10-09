@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class UFLODTileRecorderComponent : public UIcarusStateRecorderComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(SaveGame) FFLODTileRecorderRecord Record;  // 0x00E0, size 0x60
 };

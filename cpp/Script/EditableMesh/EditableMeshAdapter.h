@@ -5,7 +5,6 @@
 UCLASS(Abstract)
 class UEditableMeshAdapter : public UObject
 {
-public:
 
     // Virtual functions that start here:
     //   InitializeFromEditableMesh, IsCommitted, IsCommittedAsInstance, OnAssignPolygonsToPolygonGroups

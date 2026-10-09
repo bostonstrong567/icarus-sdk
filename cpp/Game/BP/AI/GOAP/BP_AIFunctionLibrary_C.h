@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UBP_AIFunctionLibrary_C : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void ApplyRandomDebuffModifier(AActor* TargetActor, AIcarusCharacter* InstigatingCharacter, UObject* __WorldContext);  // parameters 0x18
     UFUNCTION(BlueprintCallable) static void CanTargetActorBeAttacked(AActor* TargetActor, AActor* Attacker, UObject* __WorldContext, bool& CanAttack);  // parameters 0x19
     UFUNCTION(BlueprintCallable) static void CheckLineOfSightToTarget(AController* Controller, AActor* Target, float DesiredDotLimit, bool UseControlRotation, bool Use2DDotChecks, UObject* __WorldContext, bool& ControllerHasLineOfSightToTarget, bool& IsTargetWithinControllerView, bool& IsControllerWithinTargetView) const;  // parameters 0x23

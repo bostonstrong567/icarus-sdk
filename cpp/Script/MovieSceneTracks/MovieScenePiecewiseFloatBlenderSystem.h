@@ -5,12 +5,10 @@
 UCLASS()
 class UMovieScenePiecewiseFloatBlenderSystem : public UMovieSceneBlenderSystem, public IMovieSceneFloatDecomposer
 {
-public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    UE::MovieScene::FAccumulationBuffers AccumulationBuffers;  // 0x0070, private
-    UE::MovieScene::FComponentMask BlendedResultMask;  // 0x00B0, private
-    UE::MovieScene::FComponentMask BlendedPropertyMask;  // 0x00D8, private
-    UE::MovieScene::FCachedEntityManagerState ChannelRelevancyCache;  // 0x0100, private
-    TBitArray<FDefaultBitArrayAllocator> CachedRelevantProperties;  // 0x0108, private
+private:
+    UE::MovieScene::FAccumulationBuffers AccumulationBuffers;  // 0x0070, not reflected
+    UE::MovieScene::FComponentMask BlendedResultMask;  // 0x00B0, not reflected
+    UE::MovieScene::FComponentMask BlendedPropertyMask;  // 0x00D8, not reflected
+    UE::MovieScene::FCachedEntityManagerState ChannelRelevancyCache;  // 0x0100, not reflected
+    TBitArray<FDefaultBitArrayAllocator> CachedRelevantProperties;  // 0x0108, not reflected
 };

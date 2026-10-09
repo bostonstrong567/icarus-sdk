@@ -5,5 +5,4 @@
 UCLASS()
 class UMetaResourceNodesTable : public UIcarusDataTable
 {
-public:
 };

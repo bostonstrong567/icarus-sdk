@@ -4,5 +4,6 @@
 USTRUCT()
 struct FCachedPoseIndices
 {
+public:
     UPROPERTY() TArray<int32> OrderedSavedPoseNodeIndices;  // 0x0000, size 0x10
 };

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSourceEffectChorusSettings
 {
+public:
     UPROPERTY() float Depth;  // 0x0000, size 0x4
     UPROPERTY() float Frequency;  // 0x0004, size 0x4
     UPROPERTY() float Feedback;  // 0x0008, size 0x4

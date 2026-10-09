@@ -4,12 +4,11 @@
 USTRUCT()
 struct FControlRigSequencerAnimInstanceProxy : public FAnimSequencerInstanceProxy
 {
-
-    // Not reflected:
-    FAnimNode_LayeredBoneBlend LayeredBoneBlendNode;  // 0x0A10
-    FAnimNode_LayeredBoneBlend AdditiveLayeredBoneBlendNode;  // 0x0AD0
-    FAnimNode_BlendListByBool BoolBlendNode;  // 0x0B90
-    FAnimNode_SequencePlayer PreviewPlayerNode;  // 0x0C30
-    bool bLayeredBlendChanged;  // 0x0CB0
-    bool bAdditiveLayeredBlendChanged;  // 0x0CB1
+private:
+    FAnimNode_LayeredBoneBlend LayeredBoneBlendNode;  // 0x0A10, not reflected
+    FAnimNode_LayeredBoneBlend AdditiveLayeredBoneBlendNode;  // 0x0AD0, not reflected
+    FAnimNode_BlendListByBool BoolBlendNode;  // 0x0B90, not reflected
+    FAnimNode_SequencePlayer PreviewPlayerNode;  // 0x0C30, not reflected
+    bool bLayeredBlendChanged;  // 0x0CB0, not reflected
+    bool bAdditiveLayeredBlendChanged;  // 0x0CB1, not reflected
 };

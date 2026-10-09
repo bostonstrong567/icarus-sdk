@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_SkeletalItem_Grenade_Launcher_C : public ASkeletalItem
 {
-public:
 };

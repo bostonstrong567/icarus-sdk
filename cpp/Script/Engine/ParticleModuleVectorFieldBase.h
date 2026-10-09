@@ -5,5 +5,4 @@
 UCLASS(Abstract, EditInlineNew)
 class UParticleModuleVectorFieldBase : public UParticleModule
 {
-public:
 };

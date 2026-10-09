@@ -4,5 +4,6 @@
 USTRUCT()
 struct FPlane : public FVector
 {
+public:
     UPROPERTY(EditAnywhere, SaveGame, BlueprintReadWrite) float W;  // 0x000C, size 0x4
 };

@@ -5,8 +5,10 @@
 UCLASS(Config=Engine)
 class UGeometryCacheComponent : public UMeshComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) UGeometryCache* GeometryCache;  // 0x0478, size 0x8
+protected:
     UPROPERTY(EditAnywhere, Interp, BlueprintReadWrite) bool bRunning;  // 0x0480, size 0x1
     UPROPERTY(EditAnywhere, Interp, BlueprintReadWrite) bool bLooping;  // 0x0481, size 0x1
     UPROPERTY(EditAnywhere) bool bExtrapolateFrames;  // 0x0482, size 0x1
@@ -15,14 +17,12 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float MotionVectorScale;  // 0x048C, size 0x4
     UPROPERTY(EditAnywhere) int32 NumTracks;  // 0x0490, size 0x4
     UPROPERTY(EditAnywhere, Transient) float ElapsedTime;  // 0x0494, size 0x4
+    FBoxSphereBounds LocalBounds;  // 0x0498, not reflected
+    TArray<FTrackRenderData,TSizedDefaultAllocator<32> > TrackSections;  // 0x04B8, not reflected
+    float PlayDirection;  // 0x04C8, not reflected
     UPROPERTY(BlueprintReadOnly) float Duration;  // 0x04CC, size 0x4
     UPROPERTY(EditAnywhere) bool bManualTick;  // 0x04D0, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    FBoxSphereBounds LocalBounds;  // 0x0498, protected
-    TArray<FTrackRenderData,TSizedDefaultAllocator<32> > TrackSections;  // 0x04B8, protected
-    float PlayDirection;  // 0x04C8, protected
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetAnimationTime() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetDuration() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetMotionVectorScale() const;  // parameters 0x4

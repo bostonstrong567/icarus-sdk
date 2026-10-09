@@ -4,6 +4,7 @@
 USTRUCT()
 struct FAimConstraintDescription : public FConstraintDescriptionEx
 {
+public:
     UPROPERTY(EditAnywhere) FAxis LookAt_Axis;  // 0x0010, size 0x10
     UPROPERTY(EditAnywhere) FAxis LookUp_Axis;  // 0x0020, size 0x10
     UPROPERTY(EditAnywhere) bool bUseLookUp;  // 0x0030, size 0x1

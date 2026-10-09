@@ -4,6 +4,7 @@
 USTRUCT()
 struct FIcarusSession
 {
+public:
     UPROPERTY(BlueprintReadWrite) FProspectInfo ProspectInfo;  // 0x0000, size 0xA0
     UPROPERTY(BlueprintReadWrite) FBlueprintSessionResult Session;  // 0x00A0, size 0x108
     UPROPERTY(BlueprintReadWrite) bool FromServer;  // 0x01A8, size 0x1

@@ -16,14 +16,13 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FLinearColor VertexColorFromConfidenceOne;  // 0x0230, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float UpdateInterval;  // 0x0240, size 0x4
     UPROPERTY(Transient, Instanced) UMRMeshComponent* MRMesh;  // 0x0248, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    FMockDataMeshTrackerImpl * Impl;  // 0x0250, private
-    float LastUpdateTime;  // 0x0258, private
-    float CurrentTime;  // 0x025C, private
-    int32 UpdateCount;  // 0x0260, private
-    int32 NumBlocks;  // 0x0264, private
-
+private:
+    FMockDataMeshTrackerImpl * Impl;  // 0x0250, not reflected
+    float LastUpdateTime;  // 0x0258, not reflected
+    float CurrentTime;  // 0x025C, not reflected
+    int32 UpdateCount;  // 0x0260, not reflected
+    int32 NumBlocks;  // 0x0264, not reflected
+public:
     UFUNCTION(BlueprintCallable) void ConnectMRMesh(UMRMeshComponent* InMRMeshPtr);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void DisconnectMRMesh(UMRMeshComponent* InMRMeshPtr);  // parameters 0x8
 };

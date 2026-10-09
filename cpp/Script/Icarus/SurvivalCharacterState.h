@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class USurvivalCharacterState : public UCharacterState
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(BlueprintAssignable) FConsumedFood OnConsumedFood;  // 0x0320, size 0x1
     UPROPERTY(BlueprintAssignable) FConsumedWater OnConsumedWater;  // 0x0321, size 0x1
@@ -28,23 +29,22 @@ public:
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) int32 MinRadiation;  // 0x0354, size 0x4
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) int32 MaxRadiation;  // 0x0358, size 0x4
     UPROPERTY(BlueprintAssignable) FRadiationUpdated OnRadiationUpdated;  // 0x035C, size 0x1
+private:
+    float FoodConsumptionTime;  // 0x0360, not reflected
+    float FoodConsumptionCycle;  // 0x0364, not reflected
+    int32 FoodConsumedPerCycle;  // 0x0368, not reflected
+    float WaterConsumptionTime;  // 0x036C, not reflected
+    float WaterConsumptionCycle;  // 0x0370, not reflected
+    int32 WaterConsumedPerCycle;  // 0x0374, not reflected
+    float OxygenConsumptionTime;  // 0x0378, not reflected
+    float OxygenConsumptionCycle;  // 0x037C, not reflected
+    int32 OxygenConsumedPerCycle;  // 0x0380, not reflected
+    float EnvironmentUpdateCycle;  // 0x0384, not reflected
+    float EnvironmentTime;  // 0x0388, not reflected
+    float PendingDeltaTemperature;  // 0x038C, not reflected
+    bool bSurvivalTickEnabled;  // 0x0390, not reflected
     UPROPERTY() UTemperatureSingleton* TemperatureSingleton;  // 0x0398, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    float FoodConsumptionTime;  // 0x0360, private
-    float FoodConsumptionCycle;  // 0x0364, private
-    int32 FoodConsumedPerCycle;  // 0x0368, private
-    float WaterConsumptionTime;  // 0x036C, private
-    float WaterConsumptionCycle;  // 0x0370, private
-    int32 WaterConsumedPerCycle;  // 0x0374, private
-    float OxygenConsumptionTime;  // 0x0378, private
-    float OxygenConsumptionCycle;  // 0x037C, private
-    int32 OxygenConsumedPerCycle;  // 0x0380, private
-    float EnvironmentUpdateCycle;  // 0x0384, private
-    float EnvironmentTime;  // 0x0388, private
-    float PendingDeltaTemperature;  // 0x038C, private
-    bool bSurvivalTickEnabled;  // 0x0390, private
-
+public:
     UFUNCTION(BlueprintCallable) void AddFood(int32 Amount);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void AddOxygen(int32 Amount);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void AddRadiation(int32 Amount);  // parameters 0x4

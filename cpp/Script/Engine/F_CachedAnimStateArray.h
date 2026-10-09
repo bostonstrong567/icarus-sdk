@@ -4,9 +4,9 @@
 USTRUCT()
 struct FCachedAnimStateArray
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) TArray<FCachedAnimStateData> States;  // 0x0000, size 0x10
-
-    // Not reflected:
-    bool bCheckedValidity;  // 0x0010
-    bool bCachedIsValid;  // 0x0011
+private:
+    bool bCheckedValidity;  // 0x0010, not reflected
+    bool bCachedIsValid;  // 0x0011, not reflected
 };

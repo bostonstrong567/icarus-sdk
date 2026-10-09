@@ -6,8 +6,6 @@ UCLASS()
 class ULandscapeInfoMap : public UObject
 {
 public:
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<FGuid,ULandscapeInfo *,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FGuid,ULandscapeInfo *,0> > Map;  // 0x0028
-    TWeakObjectPtr<UWorld,FWeakObjectPtr> World;  // 0x0078
+    TMap<FGuid,ULandscapeInfo *,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FGuid,ULandscapeInfo *,0> > Map;  // 0x0028, not reflected
+    TWeakObjectPtr<UWorld,FWeakObjectPtr> World;  // 0x0078, not reflected
 };

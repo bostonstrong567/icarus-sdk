@@ -11,9 +11,7 @@ public:
     UPROPERTY() int32 Tag;  // 0x003C, size 0x4
     UPROPERTY() FString StringResponse;  // 0x0040, size 0x10
     UPROPERTY() TArray<uint8> BinaryResponse;  // 0x0050, size 0x10
-
-    // Not reflected: the engine's scripting cannot see these.
-    TMap<FString,FString,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FString,FString,0> > Headers;  // 0x0060
+    TMap<FString,FString,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FString,FString,0> > Headers;  // 0x0060, not reflected
 
     UFUNCTION() void GetHeader(int32 HeaderIndex, FString& Header, FString& Value);  // parameters 0x28
     UFUNCTION() FString GetHeaderValue(FString HeaderName);  // parameters 0x20

@@ -5,5 +5,4 @@
 UCLASS(EditInlineNew, Config=Engine)
 class UCS_MeteorImpact_C : public UMatineeCameraShake
 {
-public:
 };

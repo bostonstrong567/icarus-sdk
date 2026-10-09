@@ -4,6 +4,8 @@
 USTRUCT()
 struct FAudioEQEffect : public FAudioEffectParameters
 {
+public:
+    double RootTime;  // 0x0008, not reflected
     UPROPERTY(EditAnywhere) float FrequencyCenter0;  // 0x0010, size 0x4
     UPROPERTY(EditAnywhere) float Gain0;  // 0x0014, size 0x4
     UPROPERTY(EditAnywhere) float Bandwidth0;  // 0x0018, size 0x4
@@ -16,7 +18,4 @@ struct FAudioEQEffect : public FAudioEffectParameters
     UPROPERTY(EditAnywhere) float FrequencyCenter3;  // 0x0034, size 0x4
     UPROPERTY(EditAnywhere) float Gain3;  // 0x0038, size 0x4
     UPROPERTY(EditAnywhere) float Bandwidth3;  // 0x003C, size 0x4
-
-    // Not reflected:
-    double RootTime;  // 0x0008
 };

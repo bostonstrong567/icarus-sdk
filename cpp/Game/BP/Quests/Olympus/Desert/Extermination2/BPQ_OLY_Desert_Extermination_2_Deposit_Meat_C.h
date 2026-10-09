@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_OLY_Desert_Extermination_2_Deposit_Meat_C : public ABPQ_OLY_Desert_Extermination_2_Deposit_Base_C
 {
-public:
 };

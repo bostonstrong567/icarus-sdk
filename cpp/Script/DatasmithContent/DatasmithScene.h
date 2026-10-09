@@ -5,5 +5,4 @@
 UCLASS()
 class UDatasmithScene : public UObject, public IInterface_AssetUserData
 {
-public:
 };

@@ -5,11 +5,13 @@
 UCLASS(Config=Engine)
 class UFloatingPawnMovement : public UPawnMovementComponent
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float MaxSpeed;  // 0x0138, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float Acceleration;  // 0x013C, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float Deceleration;  // 0x0140, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float TurningBoost;  // 0x0144, size 0x4
+protected:
     UPROPERTY(Transient) uint8 bPositionCorrected : 1;  // 0x0148, mask 0x01
 
     // Virtual functions that start here:

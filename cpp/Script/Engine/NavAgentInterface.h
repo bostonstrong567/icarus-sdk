@@ -5,5 +5,4 @@
 UCLASS(Abstract, MinimalAPI)
 class UNavAgentInterface : public UInterface
 {
-public:
 };

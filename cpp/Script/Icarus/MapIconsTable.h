@@ -5,5 +5,4 @@
 UCLASS()
 class UMapIconsTable : public UIcarusDataTable
 {
-public:
 };

@@ -4,5 +4,6 @@
 USTRUCT()
 struct FItemRecordAlterationData
 {
+public:
     UPROPERTY(SaveGame) FName Alteration;  // 0x0000, size 0x8
 };

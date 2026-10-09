@@ -5,14 +5,13 @@
 UCLASS(EditInlineNew)
 class UStaminaBarBase : public UUserWidget
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
+    float LastStamina;  // 0x0260, not reflected
+    float LastMaxStamina;  // 0x0264, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float LowStaminaPct;  // 0x0268, size 0x4
     UPROPERTY() TWeakObjectPtr<APawn> LastPlayerPawn;  // 0x026C, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    float LastStamina;  // 0x0260, protected
-    float LastMaxStamina;  // 0x0264, protected
-
+public:
     UFUNCTION(BlueprintImplementableEvent) void ResetStaminaUI(float CurrentStamina, float MaxStamina, float StaminaPct, EStaminaBracket CurrentBracket);  // parameters 0xD
     UFUNCTION(BlueprintImplementableEvent) void UpdateStaminaUI(float CurrentStamina, float MaxStamina, float StaminaPct, EStaminaBracket CurrentBracket, EStaminaBracket LastBracket);  // parameters 0xE
 };

@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class UWorldTalentManagerRecorderComponent : public UActorStateRecorderComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(SaveGame) TArray<FWorldTalentRecord> WorldTalentRecords;  // 0x01C0, size 0x10
 };

@@ -5,5 +5,4 @@
 UCLASS()
 class URTXGIVolumesTable : public UIcarusDataTable
 {
-public:
 };

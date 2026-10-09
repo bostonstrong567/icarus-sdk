@@ -4,6 +4,7 @@
 USTRUCT()
 struct FIcarusGOAPProperty
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) EGOAPProperty Key;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bValue;  // 0x0001, size 0x1
 };

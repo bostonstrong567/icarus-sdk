@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class AHuntingClue : public AIcarusActor
 {
-public:
 };

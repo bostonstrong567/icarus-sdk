@@ -7,7 +7,5 @@ class UNiagaraDataInterfaceCurlNoise : public UNiagaraDataInterface
 {
 public:
     UPROPERTY(EditAnywhere) uint32 Seed;  // 0x0038, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    FVector OffsetFromSeed;  // 0x003C
+    FVector OffsetFromSeed;  // 0x003C, not reflected
 };

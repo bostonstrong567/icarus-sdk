@@ -6,7 +6,6 @@ UCLASS()
 class UFlammableTargetFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool CanIgniteFlammableTarget(UObject* WorldContextObject, const FFlammableTargetIgnite& Target);  // parameters 0x39
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool EqualEqual_FlammableTargetFlammableTarget(const FFlammableTarget& A, const FFlammableTarget& B);  // parameters 0x51
     UFUNCTION(BlueprintCallable, BlueprintPure) static FFlammableTarget FlammableTargetExtinguishToFlammableTarget(const FFlammableTargetExtinguish& Target);  // parameters 0x60

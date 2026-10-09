@@ -4,6 +4,7 @@
 USTRUCT()
 struct FLiveLinkTime
 {
+public:
     UPROPERTY(EditAnywhere) double WorldTime;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere) FQualifiedFrameTime SceneTime;  // 0x0008, size 0x10
 };

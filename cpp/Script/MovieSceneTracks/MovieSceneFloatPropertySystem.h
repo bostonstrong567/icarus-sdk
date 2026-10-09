@@ -5,5 +5,4 @@
 UCLASS()
 class UMovieSceneFloatPropertySystem : public UMovieScenePropertySystem
 {
-public:
 };

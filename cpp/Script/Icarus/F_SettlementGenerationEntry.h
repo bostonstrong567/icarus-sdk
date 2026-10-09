@@ -4,6 +4,7 @@
 USTRUCT()
 struct FSettlementGenerationEntry
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FSettlementGenerationOutput> Outputs;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FStatsEnum RateStat;  // 0x0010, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ESettlementNPCActivity RequiredActivity;  // 0x0020, size 0x1

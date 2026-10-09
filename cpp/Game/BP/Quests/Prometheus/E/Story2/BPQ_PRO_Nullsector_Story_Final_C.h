@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_PRO_Nullsector_Story_Final_C : public ABPQ_Travel_C
 {
-public:
 };

@@ -6,7 +6,6 @@ UCLASS()
 class URadialMenuDataLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToRadialMenuDataTable(FName Name, FRadialMenuData Data, FRadialMenuDataRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x49
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakRadialMenuDataEnum(FRadialMenuDataEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FRadialMenuDataRowHandle CastToRadialMenuDataRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

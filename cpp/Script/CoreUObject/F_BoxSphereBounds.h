@@ -4,6 +4,7 @@
 USTRUCT()
 struct FBoxSphereBounds
 {
+public:
     UPROPERTY(EditAnywhere, SaveGame, BlueprintReadWrite) FVector Origin;  // 0x0000, size 0xC
     UPROPERTY(EditAnywhere, SaveGame, BlueprintReadWrite) FVector BoxExtent;  // 0x000C, size 0xC
     UPROPERTY(EditAnywhere, SaveGame, BlueprintReadWrite) float SphereRadius;  // 0x0018, size 0x4

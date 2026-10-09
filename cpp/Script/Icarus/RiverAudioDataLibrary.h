@@ -6,7 +6,6 @@ UCLASS()
 class URiverAudioDataLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToRiverAudioDataTable(FName Name, FRiverAudioData Data, FRiverAudioDataRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x69
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakRiverAudioDataEnum(FRiverAudioDataEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FRiverAudioDataRowHandle CastToRiverAudioDataRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

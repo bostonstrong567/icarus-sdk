@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMatchUpdate
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString MatchId;  // 0x0000, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FMatchMakingRequest MatchReq;  // 0x0010, size 0x20
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bMatchFound;  // 0x0030, size 0x1

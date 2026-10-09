@@ -24,15 +24,14 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float InitialMaxSpeed;  // 0x064C, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float InitialAccel;  // 0x0650, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadOnly) float InitialDecel;  // 0x0654, size 0x4
-
-    // Not reflected: the engine's scripting cannot see these.
-    FVector2D LastTouchDragLocation;  // 0x0658, private
-    FVector LastOrbitPawnLocation;  // 0x0660, private
-    FVector OrbitPivot;  // 0x066C, private
-    float OrbitRadius;  // 0x0678, private
-    int32 LastViewModeSettingsIndex;  // 0x067C, private
-    FString CurrSelectedBuffer;  // 0x0680, private
-
+private:
+    FVector2D LastTouchDragLocation;  // 0x0658, not reflected
+    FVector LastOrbitPawnLocation;  // 0x0660, not reflected
+    FVector OrbitPivot;  // 0x066C, not reflected
+    float OrbitRadius;  // 0x0678, not reflected
+    int32 LastViewModeSettingsIndex;  // 0x067C, not reflected
+    FString CurrSelectedBuffer;  // 0x0680, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) AActor* GetSelectedActor() const;  // parameters 0x8
     UFUNCTION(BlueprintImplementableEvent) void ReceiveOnActivate(APlayerController* OriginalPC);  // parameters 0x8
     UFUNCTION(BlueprintImplementableEvent) void ReceiveOnActorSelected(AActor* NewSelectedActor, const FVector& SelectHitLocation, const FVector& SelectHitNormal, const FHitResult& Hit);  // parameters 0xA8

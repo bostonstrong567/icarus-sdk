@@ -4,14 +4,14 @@
 USTRUCT()
 struct FAnimNode_PoseSnapshot : public FAnimNode_Base
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName SnapshotName;  // 0x0010, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FPoseSnapshot Snapshot;  // 0x0018, size 0x38
     UPROPERTY(EditAnywhere, BlueprintReadWrite) ESnapshotSourceMode Mode;  // 0x0050, size 0x1
-
-    // Not reflected:
-    TArray<int,TSizedDefaultAllocator<32> > SourceBoneMapping;  // 0x0058
-    TArray<FName,TSizedDefaultAllocator<32> > TargetBoneNames;  // 0x0068
-    FName MappedSourceMeshName;  // 0x0078
-    FName MappedTargetMeshName;  // 0x0080
-    FName TargetBoneNameMesh;  // 0x0088
+private:
+    TArray<int,TSizedDefaultAllocator<32> > SourceBoneMapping;  // 0x0058, not reflected
+    TArray<FName,TSizedDefaultAllocator<32> > TargetBoneNames;  // 0x0068, not reflected
+    FName MappedSourceMeshName;  // 0x0078, not reflected
+    FName MappedTargetMeshName;  // 0x0080, not reflected
+    FName TargetBoneNameMesh;  // 0x0088, not reflected
 };

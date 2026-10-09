@@ -5,5 +5,4 @@
 UCLASS()
 class UFloatChannelEvaluatorSystem : public UMovieSceneEntitySystem
 {
-public:
 };

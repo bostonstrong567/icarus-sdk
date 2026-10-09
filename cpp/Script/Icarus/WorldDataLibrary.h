@@ -6,7 +6,6 @@ UCLASS()
 class UWorldDataLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToWorldDataTable(FName Name, FWorldData Data, FWorldDataRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x181
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakWorldDataEnum(FWorldDataEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FWorldDataRowHandle CastToWorldDataRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

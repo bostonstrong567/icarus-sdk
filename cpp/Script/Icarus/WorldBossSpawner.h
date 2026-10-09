@@ -5,6 +5,7 @@
 UCLASS(Config=Engine)
 class AWorldBossSpawner : public AIcarusActor
 {
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) FWorldBossesRowHandle WorldBoss;  // 0x02C0, size 0x18
     UPROPERTY(BlueprintAssignable) FSpawnerBecomeRelevantSignature SpawnerBecomeRelevant;  // 0x02D8, size 0x10
@@ -19,11 +20,11 @@ public:
     UPROPERTY(Instanced, BlueprintReadOnly) UWorldBossBehaviour* Behaviour;  // 0x0338, size 0x8
     UPROPERTY(BlueprintReadOnly) bool bKillBossAfterSpawn;  // 0x0340, size 0x1
     UPROPERTY(BlueprintReadWrite) bool bAutoCleanUp;  // 0x0341, size 0x1
+protected:
     UPROPERTY(BlueprintReadOnly) AActor* SpawnedBossActor;  // 0x0348, size 0x8
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bIsPendingCleanup;  // 0x0350, private
-
+private:
+    bool bIsPendingCleanup;  // 0x0350, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) AActor* GetSpawnedBossActor() const;  // parameters 0x8
     UFUNCTION() void InitialiseSpawner(const FWorldBossesRowHandle& InWorldBoss, int32 ID, bool bIsBossDead);  // parameters 0x1D
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsSpawnerPendingCleanup() const;  // parameters 0x1

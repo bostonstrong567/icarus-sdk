@@ -4,6 +4,7 @@
 USTRUCT()
 struct FInventoryBag
 {
+public:
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) TWeakObjectPtr<UInventory> Inventory;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 CurrentSlotIndex;  // 0x0008, size 0x4
 };

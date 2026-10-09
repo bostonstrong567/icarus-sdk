@@ -5,5 +5,4 @@
 UCLASS(MinimalAPI)
 class UMovieSceneVisibilityTrack : public UMovieSceneBoolTrack
 {
-public:
 };

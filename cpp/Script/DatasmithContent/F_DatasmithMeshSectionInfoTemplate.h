@@ -4,5 +4,6 @@
 USTRUCT()
 struct FDatasmithMeshSectionInfoTemplate
 {
+public:
     UPROPERTY() int32 MaterialIndex;  // 0x0000, size 0x4
 };

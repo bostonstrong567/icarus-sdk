@@ -4,7 +4,6 @@
 USTRUCT()
 struct FRigElementKeyCollection
 {
-
-    // Not reflected:
-    TArray<FRigElementKey,TSizedDefaultAllocator<32> > Keys;  // 0x0000
+protected:
+    TArray<FRigElementKey,TSizedDefaultAllocator<32> > Keys;  // 0x0000, not reflected
 };

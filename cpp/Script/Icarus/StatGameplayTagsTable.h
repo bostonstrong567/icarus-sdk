@@ -5,5 +5,4 @@
 UCLASS()
 class UStatGameplayTagsTable : public UIcarusDataTable
 {
-public:
 };

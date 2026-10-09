@@ -4,12 +4,11 @@
 USTRUCT()
 struct FIcarusGameVersion
 {
-
-    // Not reflected:
-    int32 Major;  // 0x0000
-    int32 Minor;  // 0x0004
-    int32 Patch;  // 0x0008
-    int32 Changelist;  // 0x000C
-    FString BuildType;  // 0x0010
-    FString FeatureLevel;  // 0x0020
+public:
+    int32 Major;  // 0x0000, not reflected
+    int32 Minor;  // 0x0004, not reflected
+    int32 Patch;  // 0x0008, not reflected
+    int32 Changelist;  // 0x000C, not reflected
+    FString BuildType;  // 0x0010, not reflected
+    FString FeatureLevel;  // 0x0020, not reflected
 };

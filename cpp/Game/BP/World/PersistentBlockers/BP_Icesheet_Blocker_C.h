@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABP_Icesheet_Blocker_C : public ABP_Destructible_Blocker_C
 {
-public:
 };

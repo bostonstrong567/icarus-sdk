@@ -5,5 +5,4 @@
 UCLASS()
 class UFlammableTable : public UIcarusDataTable
 {
-public:
 };

@@ -6,7 +6,6 @@ UCLASS()
 class UTerrainsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToTerrainsTable(FName Name, FIcarusTerrain Data, FTerrainsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x1A1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakTerrainsEnum(FTerrainsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FTerrainsRowHandle CastToTerrainsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

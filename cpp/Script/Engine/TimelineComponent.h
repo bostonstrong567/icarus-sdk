@@ -5,10 +5,11 @@
 UCLASS(MinimalAPI, Config=Engine)
 class UTimelineComponent : public UActorComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+private:
     UPROPERTY(Replicated, ReplicatedUsing) FTimeline TheTimeline;  // 0x00B0, size 0x98
     UPROPERTY() uint8 bIgnoreTimeDilation : 1;  // 0x0148, mask 0x01
-
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) bool GetIgnoreTimeDilation() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetPlayRate() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetPlaybackPosition() const;  // parameters 0x4

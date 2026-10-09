@@ -4,5 +4,6 @@
 USTRUCT()
 struct FPerBoneBlendWeights
 {
+public:
     UPROPERTY() TArray<FPerBoneBlendWeight> BoneBlendWeights;  // 0x0000, size 0x10
 };

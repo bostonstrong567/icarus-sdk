@@ -6,7 +6,6 @@ UCLASS()
 class UCriticalHitAreasLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToCriticalHitAreasTable(FName Name, FCriticalHitArea Data, FCriticalHitAreasRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xC1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakCriticalHitAreasEnum(FCriticalHitAreasEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FCriticalHitAreasRowHandle CastToCriticalHitAreasRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

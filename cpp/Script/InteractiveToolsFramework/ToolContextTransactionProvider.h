@@ -5,5 +5,4 @@
 UCLASS(Abstract)
 class UToolContextTransactionProvider : public UInterface
 {
-public:
 };

@@ -8,9 +8,13 @@ class UFMODAudioComponent : public USceneComponent
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UFMODEvent* Event;  // 0x01F8, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<FName, float> ParameterCache;  // 0x0200, size 0x50
+    bool bDefaultParameterValuesCached;  // 0x0250, not reflected
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FString ProgrammerSoundName;  // 0x0258, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) uint8 bEnableTimelineCallbacks : 1;  // 0x0268, mask 0x01
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bUseListenerRotation;  // 0x026C, size 0x1
+    float[5] StoredProperties;  // 0x0270, not reflected
+    uint32 : 1 bApplyAmbientVolumes;  // 0x0284, not reflected
+    uint32 : 1 bApplyOcclusionParameter;  // 0x0284, not reflected
     UPROPERTY() uint8 bAutoDestroy : 1;  // 0x0284, mask 0x01
     UPROPERTY() uint8 bStopWhenOwnerDestroyed : 1;  // 0x0284, mask 0x02
     UPROPERTY(BlueprintAssignable) FOnEventStopped OnEventStopped;  // 0x0288, size 0x10
@@ -18,34 +22,29 @@ public:
     UPROPERTY(BlueprintAssignable) FOnTimelineBeat OnTimelineBeat;  // 0x02A8, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FFMODAttenuationDetails AttenuationDetails;  // 0x02B8, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FFMODOcclusionDetails OcclusionDetails;  // 0x02C4, size 0x3
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bDefaultParameterValuesCached;  // 0x0250
-    float[5] StoredProperties;  // 0x0270
-    uint32 : 1 bApplyAmbientVolumes;  // 0x0284
-    uint32 : 1 bApplyOcclusionParameter;  // 0x0284
-    FMOD::Studio::EventInstance * StudioInstance;  // 0x02C8
-    IFMODStudioModule * Module;  // 0x02D0, private
-    double InteriorLastUpdateTime;  // 0x02D8, private
-    float SourceInteriorVolume;  // 0x02E0, private
-    float SourceInteriorLPF;  // 0x02E4, private
-    float CurrentInteriorVolume;  // 0x02E8, private
-    float CurrentInteriorLPF;  // 0x02EC, private
-    float AmbientVolume;  // 0x02F0, private
-    float AmbientLPF;  // 0x02F4, private
-    float LastVolume;  // 0x02F8, private
-    float LastLPF;  // 0x02FC, private
-    bool wasOccluded;  // 0x0300, private
-    FMOD_STUDIO_PARAMETER_ID OcclusionID;  // 0x0304, private
-    FMOD_STUDIO_PARAMETER_ID AmbientVolumeID;  // 0x030C, private
-    FMOD_STUDIO_PARAMETER_ID AmbientLPFID;  // 0x0314, private
-    FWindowsCriticalSection CallbackLock;  // 0x0320, private
-    TArray<FTimelineMarkerProperties,TSizedDefaultAllocator<32> > CallbackMarkerQueue;  // 0x0348, private
-    TArray<FTimelineBeatProperties,TSizedDefaultAllocator<32> > CallbackBeatQueue;  // 0x0358, private
-    FMOD::Sound * ProgrammerSound;  // 0x0368, private
-    bool NeedDestroyProgrammerSoundCallback;  // 0x0370, private
-    int32 EventLength;  // 0x0374, private
-
+    FMOD::Studio::EventInstance * StudioInstance;  // 0x02C8, not reflected
+private:
+    IFMODStudioModule * Module;  // 0x02D0, not reflected
+    double InteriorLastUpdateTime;  // 0x02D8, not reflected
+    float SourceInteriorVolume;  // 0x02E0, not reflected
+    float SourceInteriorLPF;  // 0x02E4, not reflected
+    float CurrentInteriorVolume;  // 0x02E8, not reflected
+    float CurrentInteriorLPF;  // 0x02EC, not reflected
+    float AmbientVolume;  // 0x02F0, not reflected
+    float AmbientLPF;  // 0x02F4, not reflected
+    float LastVolume;  // 0x02F8, not reflected
+    float LastLPF;  // 0x02FC, not reflected
+    bool wasOccluded;  // 0x0300, not reflected
+    FMOD_STUDIO_PARAMETER_ID OcclusionID;  // 0x0304, not reflected
+    FMOD_STUDIO_PARAMETER_ID AmbientVolumeID;  // 0x030C, not reflected
+    FMOD_STUDIO_PARAMETER_ID AmbientLPFID;  // 0x0314, not reflected
+    FWindowsCriticalSection CallbackLock;  // 0x0320, not reflected
+    TArray<FTimelineMarkerProperties,TSizedDefaultAllocator<32> > CallbackMarkerQueue;  // 0x0348, not reflected
+    TArray<FTimelineBeatProperties,TSizedDefaultAllocator<32> > CallbackBeatQueue;  // 0x0358, not reflected
+    FMOD::Sound * ProgrammerSound;  // 0x0368, not reflected
+    bool NeedDestroyProgrammerSoundCallback;  // 0x0370, not reflected
+    int32 EventLength;  // 0x0374, not reflected
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure) int32 GetLength() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable) float GetParameter(FName Name);  // parameters 0xC
     UFUNCTION(BlueprintCallable) void GetParameterValue(FName Name, float& UserValue, float& FinalValue);  // parameters 0x10

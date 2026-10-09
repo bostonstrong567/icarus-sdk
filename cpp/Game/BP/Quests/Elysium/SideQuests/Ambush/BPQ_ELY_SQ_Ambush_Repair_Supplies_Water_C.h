@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_ELY_SQ_Ambush_Repair_Supplies_Water_C : public ABPQ_Common_Deliver_Tag_C
 {
-public:
 };

@@ -6,7 +6,6 @@ UCLASS(Config=Engine)
 class UBP_WeatherResourceModifierInterface_C : public UInterface
 {
 public:
-
     UFUNCTION(BlueprintCallable) void ClearWeatherResourceModifier();
     UFUNCTION(BlueprintCallable) void GetWeatherResourceModifierStrengthAndType(int32 BaseModifierEffectiveness, FModifierStatesRowHandle Modifier, int32& PowerModifierEffectiveness, int32& WaterModifierEffectiveness);  // parameters 0x24
 };

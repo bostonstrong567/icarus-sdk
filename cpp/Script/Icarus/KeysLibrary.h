@@ -6,7 +6,6 @@ UCLASS()
 class UKeysLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToKeysTable(FName Name, FKeyData Data, FKeysRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x69
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakKeysEnum(FKeysEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FKeysRowHandle CastToKeysRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

@@ -4,6 +4,7 @@
 USTRUCT()
 struct FNamedVector
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector Value;  // 0x0000, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName Name;  // 0x000C, size 0x8
 };

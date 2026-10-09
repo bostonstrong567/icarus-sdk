@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMotionWarpingTarget
 {
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FName Name;  // 0x0000, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector Location;  // 0x0008, size 0xC
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FRotator Rotation;  // 0x0014, size 0xC

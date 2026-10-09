@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ABPQ_SQ_Fisher_Establish_Equipment_Crop_C : public ABPQ_Collect_Item_WithName_C
 {
-public:
 };

@@ -6,7 +6,6 @@ UCLASS()
 class UCharacterStartingStatsLibrary : public URowLibrary
 {
 public:
-
     UFUNCTION(BlueprintCallable) static void AddRowToCharacterStartingStatsTable(FName Name, FPlayerStartingStats Data, FCharacterStartingStatsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0xA1
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakCharacterStartingStatsEnum(FCharacterStartingStatsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FCharacterStartingStatsRowHandle CastToCharacterStartingStatsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34

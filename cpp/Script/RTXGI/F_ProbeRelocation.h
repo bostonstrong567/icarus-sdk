@@ -4,6 +4,7 @@
 USTRUCT()
 struct FProbeRelocation
 {
+public:
     UPROPERTY(EditAnywhere) bool AutomaticProbeRelocation;  // 0x0000, size 0x1
     UPROPERTY(EditAnywhere) float ProbeMinFrontfaceDistance;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere) float ProbeBackfaceThreshold;  // 0x0008, size 0x4

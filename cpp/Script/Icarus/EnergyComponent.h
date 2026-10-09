@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UEnergyComponent : public UResourceNetworkComponent
 {
-public:
 };

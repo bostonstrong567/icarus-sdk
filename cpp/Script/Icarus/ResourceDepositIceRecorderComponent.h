@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class UResourceDepositIceRecorderComponent : public UResourceDepositRecorderComponent
 {
-public:
 };

@@ -5,5 +5,4 @@
 UCLASS(Config=Engine)
 class ATriggerSphere : public ATriggerBase
 {
-public:
 };

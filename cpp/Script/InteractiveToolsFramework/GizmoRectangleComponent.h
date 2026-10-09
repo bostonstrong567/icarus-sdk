@@ -14,9 +14,8 @@ public:
     UPROPERTY(EditAnywhere) float LengthY;  // 0x0494, size 0x4
     UPROPERTY(EditAnywhere) float Thickness;  // 0x0498, size 0x4
     UPROPERTY(EditAnywhere) uint8 SegmentFlags;  // 0x049C, size 0x1
-
-    // Not reflected: the engine's scripting cannot see these.
-    bool bFlippedX;  // 0x049D, private
-    bool bFlippedY;  // 0x049E, private
-    bool bRenderVisibility;  // 0x049F, private
+private:
+    bool bFlippedX;  // 0x049D, not reflected
+    bool bFlippedY;  // 0x049E, not reflected
+    bool bRenderVisibility;  // 0x049F, not reflected
 };

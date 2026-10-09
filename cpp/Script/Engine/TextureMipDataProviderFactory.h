@@ -5,7 +5,6 @@
 UCLASS(Abstract, EditInlineNew)
 class UTextureMipDataProviderFactory : public UAssetUserData
 {
-public:
 
     // Virtual functions that start here:
     //   AllocateMipDataProvider

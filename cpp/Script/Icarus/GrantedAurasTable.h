@@ -5,5 +5,4 @@
 UCLASS()
 class UGrantedAurasTable : public UIcarusDataTable
 {
-public:
 };

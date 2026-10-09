@@ -5,5 +5,4 @@
 UCLASS()
 class UCharacterStartingStatsTable : public UIcarusDataTable
 {
-public:
 };

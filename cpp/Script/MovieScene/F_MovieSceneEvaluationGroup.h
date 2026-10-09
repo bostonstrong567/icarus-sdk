@@ -4,6 +4,7 @@
 USTRUCT()
 struct FMovieSceneEvaluationGroup
 {
+public:
     UPROPERTY() TArray<FMovieSceneEvaluationGroupLUTIndex> LUTIndices;  // 0x0000, size 0x10
     UPROPERTY() TArray<FMovieSceneFieldEntry_EvaluationTrack> TrackLUT;  // 0x0010, size 0x10
     UPROPERTY() TArray<FMovieSceneFieldEntry_ChildTemplate> SectionLUT;  // 0x0020, size 0x10

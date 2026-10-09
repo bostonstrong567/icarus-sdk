@@ -5,5 +5,4 @@
 UCLASS()
 class UFuelTable : public UIcarusDataTable
 {
-public:
 };

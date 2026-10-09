@@ -5,16 +5,16 @@
 UCLASS(Config=Engine)
 class UARFaceComponent : public UARComponent
 {
-public:
+    // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadOnly) EARFaceTransformMixing TransformSetting;  // 0x0278, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bUpdateVertexNormal;  // 0x0279, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bFaceOutOfScreen;  // 0x027A, size 0x1
     UPROPERTY(Replicated, ReplicatedUsing, BlueprintReadOnly) FARFaceUpdatePayload ReplicatedPayload;  // 0x0280, size 0x40
-
-    // Not reflected: the engine's scripting cannot see these.
-    TArray<FAccumulatedNormal,TSizedDefaultAllocator<32> > AccumulatedNormals;  // 0x02C0, private
-    TArray<FPackedNormal,TSizedDefaultAllocator<32> > TangentData;  // 0x02D0, private
-
+private:
+    TArray<FAccumulatedNormal,TSizedDefaultAllocator<32> > AccumulatedNormals;  // 0x02C0, not reflected
+    TArray<FPackedNormal,TSizedDefaultAllocator<32> > TangentData;  // 0x02D0, not reflected
+public:
     UFUNCTION(BlueprintImplementableEvent) void ReceiveAdd(const FARFaceUpdatePayload& Payload);  // parameters 0x40
     UFUNCTION(BlueprintImplementableEvent) void ReceiveUpdate(const FARFaceUpdatePayload& Payload);  // parameters 0x40
     UFUNCTION(Server, Reliable, BlueprintNativeEvent) void ServerUpdatePayload(FARFaceUpdatePayload NewPayload);  // parameters 0x40

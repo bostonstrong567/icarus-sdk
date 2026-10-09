@@ -4,8 +4,7 @@
 USTRUCT()
 struct FGeometryCollectionRepData
 {
-
-    // Not reflected:
-    TArray<FGeometryCollectionRepPose,TSizedDefaultAllocator<32> > Poses;  // 0x0000
-    int32 Version;  // 0x0010
+public:
+    TArray<FGeometryCollectionRepPose,TSizedDefaultAllocator<32> > Poses;  // 0x0000, not reflected
+    int32 Version;  // 0x0010, not reflected
 };

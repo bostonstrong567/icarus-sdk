@@ -4,6 +4,7 @@
 USTRUCT()
 struct FClothConstraintSetupNv
 {
+public:
     UPROPERTY(EditAnywhere) float Stiffness;  // 0x0000, size 0x4
     UPROPERTY(EditAnywhere) float StiffnessMultiplier;  // 0x0004, size 0x4
     UPROPERTY(EditAnywhere) float StretchLimit;  // 0x0008, size 0x4

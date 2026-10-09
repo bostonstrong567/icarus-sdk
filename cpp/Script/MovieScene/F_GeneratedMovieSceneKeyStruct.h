@@ -4,7 +4,6 @@
 USTRUCT()
 struct FGeneratedMovieSceneKeyStruct
 {
-
-    // Not reflected:
-    TFunction<void __cdecl(FPropertyChangedEvent const &)> OnPropertyChangedEvent;  // 0x0010
+public:
+    TFunction<void __cdecl(FPropertyChangedEvent const &)> OnPropertyChangedEvent;  // 0x0010, not reflected
 };

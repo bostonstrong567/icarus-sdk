@@ -6,7 +6,6 @@ UCLASS(EditInlineNew, Config=Engine)
 class UUMG_CameraSetting_FOV_C : public UW_CameraEntry_GenericSlider_C
 {
 public:
-
     UFUNCTION(BlueprintCallable) void ManualIncrease(float Increase);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void UpdatePostProcess(FPostProcessSettings& Settings);  // parameters 0x560
 };
