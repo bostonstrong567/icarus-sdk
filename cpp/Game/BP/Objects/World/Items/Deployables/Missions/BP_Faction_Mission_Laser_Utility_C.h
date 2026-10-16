@@ -20,7 +20,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure) TArray<UDecalComponent*> GetLaserDecals();  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) TArray<UNiagaraComponent*> GetLaserImpacts();  // parameters 0x10
     UFUNCTION(BlueprintCallable) void GetLaserSourceLocation(FVector& Location, FVector& ForwardVector);  // parameters 0x18
-    UFUNCTION(BlueprintCallable, BlueprintPure) void GetObjectTypes(TArray<TEnumAsByte<EObjectTypeQuery>>& ObjectTypes);  // parameters 0x10
+    UFUNCTION(BlueprintCallable, BlueprintPure) void GetObjectTypes(const TArray<TEnumAsByte<EObjectTypeQuery>>& ObjectTypes);  // parameters 0x10
     UFUNCTION(BlueprintAuthorityOnly, BlueprintImplementableEvent) void IcarusBeginPlay();
     UFUNCTION(BlueprintCallable) void OnDeviceFullyPowered();
     UFUNCTION(BlueprintCallable) void OnRep_Burning();

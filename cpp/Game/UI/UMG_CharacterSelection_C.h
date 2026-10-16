@@ -90,4 +90,5 @@ public:
     UFUNCTION(BlueprintCallable) void UpdateAbandonProspectPrompt();
     UFUNCTION(BlueprintCallable) void UpdateDeleteCharacterPrompt();
     UFUNCTION(BlueprintCallable) void UpdateLobby();
+    UFUNCTION(BlueprintCallable) void UpdatePreviewVisiblity(const FOnlineProfileCharacter& OnlineProfileCharacter);  // parameters 0xF0
 };

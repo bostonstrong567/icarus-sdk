@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ResResetCharacter
-// size 0xF8, declared in Icarus/Source/IcarusGenerated/Public/Struct/ResResetCharacter.h
+// size 0xF8, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/ResetCharacterCallbackProxyGen.generated.h
 
 USTRUCT()
 struct FResResetCharacter

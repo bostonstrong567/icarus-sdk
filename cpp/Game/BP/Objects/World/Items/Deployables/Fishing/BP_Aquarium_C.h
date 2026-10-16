@@ -1,6 +1,6 @@
 // /Game/BP/Objects/World/Items/Deployables/Fishing/BP_Aquarium.BP_Aquarium_C
 // Derives from: ABP_Deployable_PowerToggleableBase_C > ABP_DeployableBase_C > ADeployable > AIcarusItem > AIcarusActor > AActor > UObject
-// size 0x83C, a blueprint class, blueprint
+// size 0x840, a blueprint class, blueprint
 
 UCLASS(Config=Engine)
 class ABP_Aquarium_C : public ABP_Deployable_PowerToggleableBase_C
@@ -35,6 +35,7 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UMaterialInterface* OffMaterial;  // 0x0828, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UMaterialInterface* OnMaterial;  // 0x0830, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 MaterialSlot;  // 0x0838, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 ComfortModifierUID;  // 0x083C, size 0x4
 
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void DeployableTick(float DeltaSeconds);  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void Deployable_Interact(AActor* Interactor);  // parameters 0x8

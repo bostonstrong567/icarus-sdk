@@ -1,6 +1,6 @@
 // /Game/BP/Objects/World/Items/Deployables/Fishing/BP_Fish_Wall_Mount.BP_Fish_Wall_Mount_C
 // Derives from: ABP_DeployableBase_C > ADeployable > AIcarusItem > AIcarusActor > AActor > UObject
-// size 0x938, a blueprint class, blueprint
+// size 0x93C, a blueprint class, blueprint
 
 UCLASS(Config=Engine)
 class ABP_Fish_Wall_Mount_C : public ABP_DeployableBase_C
@@ -11,6 +11,7 @@ public:
     UPROPERTY(Instanced, BlueprintReadWrite) UWidgetComponent* Widget;  // 0x0738, size 0x8
     UPROPERTY(Instanced, BlueprintReadWrite) USkeletalMeshComponent* SK_Fish;  // 0x0740, size 0x8, named "SK Fish"
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) FItemData FishData;  // 0x0748, size 0x1F0
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 ComfortModifierUID;  // 0x0938, size 0x4
 
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void Deployable_Interact(AActor* Interactor);  // parameters 0x8
     UFUNCTION() void ExecuteUbergraph_BP_Fish_Wall_Mount(int32 EntryPoint);  // parameters 0x4

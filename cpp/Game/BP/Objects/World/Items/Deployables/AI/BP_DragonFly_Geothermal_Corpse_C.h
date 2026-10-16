@@ -1,0 +1,8 @@
+// /Game/BP/Objects/World/Items/Deployables/AI/BP_DragonFly_Geothermal_Corpse.BP_DragonFly_Geothermal_Corpse_C
+// Derives from: ABP_DragonFly_Corpse_C > ABP_GOAP_Corpse_C > AIcarusGOAPCorpseBase > AIcarusCorpse > ASkeletalItem > AIcarusItem > AIcarusActor > AActor > UObject
+// size 0x799, a blueprint class, blueprint
+
+UCLASS(Config=Engine)
+class ABP_DragonFly_Geothermal_Corpse_C : public ABP_DragonFly_Corpse_C
+{
+};

@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ReqUpdateTrackedStats
-// size 0x38, declared in Icarus/Source/IcarusGenerated/Public/Struct/ReqUpdateTrackedStats.h
+// size 0x38, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/UpdateTrackedStatsCallbackProxyGen.generated.h
 
 USTRUCT()
 struct FReqUpdateTrackedStats

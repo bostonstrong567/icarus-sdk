@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ReqTalentRefund
-// size 0x20, declared in Icarus/Source/IcarusGenerated/Public/Struct/ReqTalentRefund.h
+// size 0x20, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/TalentRefundCallbackProxyGen.generated.h
 
 USTRUCT()
 struct FReqTalentRefund

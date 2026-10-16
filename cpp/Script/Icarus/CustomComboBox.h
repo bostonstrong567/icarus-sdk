@@ -1,6 +1,6 @@
 // /Script/Icarus.CustomComboBox
 // Derives from: UWidget > UVisual > UObject
-// size 0x598, declared in Icarus/Source/Icarus/UI/CustomComboBox.h
+// size 0x5A8, declared in Icarus/Source/Icarus/UI/CustomComboBox.h
 
 UCLASS()
 class UCustomComboBox : public UWidget
@@ -8,18 +8,21 @@ class UCustomComboBox : public UWidget
     // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
     UPROPERTY(EditAnywhere) FComboButtonStyle ComboStyle;  // 0x0108, size 0x3B8
-    UPROPERTY(BlueprintAssignable) FOnItemSet OnItemSet;  // 0x04C0, size 0x10
+    UPROPERTY(EditAnywhere) bool bUseGrid;  // 0x04C0, size 0x1
+    UPROPERTY(EditAnywhere) int32 GridRows;  // 0x04C4, size 0x4
+    UPROPERTY(EditAnywhere) FVector2D GridItemSize;  // 0x04C8, size 0x8
+    UPROPERTY(BlueprintAssignable) FOnItemSet OnItemSet;  // 0x04D0, size 0x10
 protected:
-    TSharedPtr<SComboButton,0> ComboButton;  // 0x04D0, not reflected
-    TSharedPtr<SContentBox,0> ComboButtonContent;  // 0x04E0, not reflected
-    TSharedPtr<SSearchBox,0> ComboButtonSearchBox;  // 0x04F0, not reflected
-    TSharedPtr<SListView<TSharedPtr<FWidgetItem,0> >,0> ComboButtonListView;  // 0x0500, not reflected
-    UPROPERTY() TArray<UUserWidget*> WidgetsRef;  // 0x0510, size 0x10
-    TMap<FString,TSharedPtr<FWidgetItem,0>,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FString,TSharedPtr<FWidgetItem,0>,0> > Items;  // 0x0520, not reflected
-    TArray<TSharedPtr<FWidgetItem,0>,TSizedDefaultAllocator<32> > FilteredItems;  // 0x0570, not reflected
-    FString CurrentFilterText;  // 0x0580, not reflected
-    bool bOpening;  // 0x0590, not reflected
-    bool bHideSearchBox;  // 0x0591, not reflected
+    TSharedPtr<SComboButton,0> ComboButton;  // 0x04E0, not reflected
+    TSharedPtr<SContentBox,0> ComboButtonContent;  // 0x04F0, not reflected
+    TSharedPtr<SSearchBox,0> ComboButtonSearchBox;  // 0x0500, not reflected
+    TSharedPtr<SListView<TSharedPtr<FWidgetItem,0> >,0> ComboButtonListView;  // 0x0510, not reflected
+    UPROPERTY() TArray<UUserWidget*> WidgetsRef;  // 0x0520, size 0x10
+    TMap<FString,TSharedPtr<FWidgetItem,0>,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FString,TSharedPtr<FWidgetItem,0>,0> > Items;  // 0x0530, not reflected
+    TArray<TSharedPtr<FWidgetItem,0>,TSizedDefaultAllocator<32> > FilteredItems;  // 0x0580, not reflected
+    FString CurrentFilterText;  // 0x0590, not reflected
+    bool bOpening;  // 0x05A0, not reflected
+    bool bHideSearchBox;  // 0x05A1, not reflected
 public:
     UFUNCTION(BlueprintCallable) void AddItem(FString Name, UUserWidget* Widget);  // parameters 0x18
     UFUNCTION(BlueprintCallable) void ClearChildren();

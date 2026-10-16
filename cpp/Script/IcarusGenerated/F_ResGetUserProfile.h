@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ResGetUserProfile
-// size 0x50, declared in Icarus/Source/IcarusGenerated/Public/Struct/ResGetUserProfile.h
+// size 0x50, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/GetUserProfileCallbackProxyGen.generated.h
 
 USTRUCT()
 struct FResGetUserProfile

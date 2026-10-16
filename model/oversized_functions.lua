@@ -4,7 +4,7 @@
 -- blueprint one. Keyed by the function's path as the game's files spell it. The running game may show a name
 -- in another letter case or with a space at its end, so whatever reads this looks a path up in lower case
 -- with spaces at the end dropped, on both sides.
--- Build f8a8fc7d39e2431f9f2454bb7bb2c74f-1: 317 functions (170 native, 144 blueprint, 3 delegate signatures).
+-- Build 0679b3f6302a4b8893b7f2ddabe05d56-1: 318 functions (170 native, 145 blueprint, 3 delegate signatures).
 return {
   ["/Script/Icarus.TalentViewsLibrary:AddRowToTalentViewsTable"] = 7144,
   ["/Script/Icarus.TalentViewsLibrary:GetTalentViewsStruct"] = 7136,
@@ -63,6 +63,7 @@ return {
   ["/Script/Icarus.ItemsStaticLibrary:GetItemsStaticStruct"] = 1192,
   ["/Script/Icarus.PlayerDataComponent:GetLoadoutForProspect"] = 1160,
   ["/Script/Icarus.InventoryItemLibrary:CreateCustomItem"] = 1032,
+  ["/Game/UI/Windows/UMG_Fishing.UMG_Fishing_C:StartCatchingFish"] = 1016,
   ["/Script/Icarus.StatsFunctionLibrary:CompareItemStats"] = 1016,
   ["/Script/Icarus.InventoryItemLibrary:CanCombineItems"] = 1008,
   ["/Script/Icarus.InventoryItemLibrary:GetAmmoItem"] = 1008,

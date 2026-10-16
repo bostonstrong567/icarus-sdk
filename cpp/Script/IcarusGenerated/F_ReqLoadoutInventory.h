@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ReqLoadoutInventory
-// size 0x18, declared in Icarus/Source/IcarusGenerated/Public/Struct/ReqLoadoutInventory.h
+// size 0x18, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/GetLoadoutInventoryCallbackProxyGen.generated.h
 
 USTRUCT()
 struct FReqLoadoutInventory

@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ReqUpdateCosmetics
-// size 0x98, declared in Icarus/Source/IcarusGenerated/Public/Struct/ReqUpdateCosmetics.h
+// size 0x98, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/UpdateCosmeticsCallbackProxyGen.generated.h
 
 USTRUCT()
 struct FReqUpdateCosmetics

@@ -1,21 +1,23 @@
 // /Game/BP/Objects/World/Items/Deployables/Containers/BP_ArmourStand.BP_ArmourStand_C
 // Derives from: ABP_DeployableContainerBase_C > ABP_DeployableBase_C > ADeployable > AIcarusItem > AIcarusActor > AActor > UObject
-// size 0x7E5, a blueprint class, blueprint
+// size 0x7ED, a blueprint class, blueprint
 
 UCLASS(Config=Engine)
 class ABP_ArmourStand_C : public ABP_DeployableContainerBase_C
 {
 public:
     UPROPERTY(Transient) FPointerToUberGraphFrame UberGraphFrame;  // 0x0750, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool NeedsUpdate;  // 0x0758, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<TSubclassOf<UObject>> Stored_Classes;  // 0x0760, size 0x10, named "Stored Classes"
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<UObject*> Stored_Objects;  // 0x0770, size 0x10, named "Stored Objects"
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<USkeletalMeshComponent*, FItemData> CurrentlyEquippedItems;  // 0x0780, size 0x50
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<UAnimSequence*> AnimationPoses;  // 0x07D0, size 0x10
-    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, SaveGame, BlueprintReadWrite) int32 CurrentAnimPose;  // 0x07E0, size 0x4
-    UPROPERTY(EditAnywhere, Replicated, SaveGame, BlueprintReadWrite) bool SwapBackpack;  // 0x07E4, size 0x1
+    UPROPERTY(Instanced, BlueprintReadWrite) UCameraComponent* Camera;  // 0x0758, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool NeedsUpdate;  // 0x0760, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<TSubclassOf<UObject>> Stored_Classes;  // 0x0768, size 0x10, named "Stored Classes"
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<UObject*> Stored_Objects;  // 0x0778, size 0x10, named "Stored Objects"
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<USkeletalMeshComponent*, FItemData> CurrentlyEquippedItems;  // 0x0788, size 0x50
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<UAnimSequence*> AnimationPoses;  // 0x07D8, size 0x10
+    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, SaveGame, BlueprintReadWrite) int32 CurrentAnimPose;  // 0x07E8, size 0x4
+    UPROPERTY(EditAnywhere, Replicated, SaveGame, BlueprintReadWrite) bool SwapBackpack;  // 0x07EC, size 0x1
 
     UFUNCTION(BlueprintImplementableEvent) void DeployableTick(float DeltaSeconds);  // parameters 0x4
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void Deployable_Interact(AActor* Interactor);  // parameters 0x8
     UFUNCTION() void ExecuteUbergraph_BP_ArmourStand(int32 EntryPoint);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void GetArmourDataSoftObjects(TArray<TSoftObjectPtr<USkeletalMesh>>& SoftMeshes, TArray<TSoftClassPtr<UAnimInstance>>& SoftAnimBPs);  // parameters 0x20
     UFUNCTION(BlueprintAuthorityOnly, BlueprintImplementableEvent) void IcarusBeginPlay();

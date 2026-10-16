@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ReqUnpackageLoadout
-// size 0x18, declared in Icarus/Source/IcarusGenerated/Public/Struct/ReqUnpackageLoadout.h
+// size 0x18, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/UnpackageLoadoutCallbackProxyGen.generated.h
 
 USTRUCT()
 struct FReqUnpackageLoadout

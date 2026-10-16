@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ResPackageLoadout
-// size 0x108, declared in Icarus/Source/IcarusGenerated/Public/Struct/ResPackageLoadout.h
+// size 0x108, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/PackageLoadoutCallbackProxyGen.generated.h
 
 USTRUCT()
 struct FResPackageLoadout

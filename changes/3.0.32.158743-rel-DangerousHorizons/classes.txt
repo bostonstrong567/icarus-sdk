@@ -1,0 +1,90 @@
+Old: the model of build f8a8fc7d39e2431f9f2454bb7bb2c74f-1 written 2026-10-09 20:41
+New: the model of build 0679b3f6302a4b8893b7f2ddabe05d56-1 written 2026-10-16 23:19
+Classes: 6 added, 0 removed, 0 renamed, 16 changed
+Structs: 0 added, 0 removed, 0 renamed, 1 changed
+Enums: 0 added, 0 removed, 0 renamed, 0 changed
++ class /Game/BP/MiscConstructs/Comfort/BP_ComfortFunctionLibrary.BP_ComfortFunctionLibrary_C : BlueprintFunctionLibrary
++ class /Game/BP/Objects/World/Items/Deployables/AI/BP_DragonFly_Geothermal_Corpse.BP_DragonFly_Geothermal_Corpse_C : BP_DragonFly_Corpse_C
++ class /Game/BP/Objects/World/Items/Deployables/AI/BP_Koala_Sheep_Corpse.BP_Koala_Sheep_Corpse_C : BP_GOAP_Corpse_C
++ class /Game/BP/Objects/World/Items/Deployables/Dehumidifier/BP_Workshop_Dehumidifier.BP_Workshop_Dehumidifier_C : BP_DeployableBase_C
++ class /Game/BP/Objects/World/Resources/Trees/BP_Tree_JU_Banyan_SML_Var1.BP_Tree_JU_Banyan_SML_Var1_C : BP_TreePrefab_Moss_C
++ class /Game/BP/Objects/World/Resources/Trees/BP_Tree_JU_Banyan_SML_Var1_Burnt.BP_Tree_JU_Banyan_SML_Var1_Burnt_C : BP_TreePrefab_Burnt_C
+~ class /Game/ASS/CHA/1ST/1ST_NewRig/1ST_CHA_RIG_AnimBP.1ST_CHA_RIG_AnimBP_C
+    - property AnimGraphNode_ComponentToLocalSpace_3: Struct<AnimNode_ConvertComponentToLocalSpace>
+    - property AnimGraphNode_LocalToComponentSpace_3: Struct<AnimNode_ConvertLocalToComponentSpace>
+~ class /Game/ASS/ENV/ATM/BP_AtmosphereController.BP_AtmosphereController_C
+    + property PostProcess_CO: Object<PostProcessComponent>
+    + property PostProcess_JU_Light: Object<PostProcessComponent>
+    + property PostProcess_DC_Eden: Object<PostProcessComponent>
+    + property PostProcess_DC_Elysium: Object<PostProcessComponent>
+    + property PostProcess_JU: Object<PostProcessComponent>
+    + property PostProcess_TU: Object<PostProcessComponent>
+    + property PostProcess_GT: Object<PostProcessComponent>
+~ class /Game/BP/AI/SpawnBehaviours/BP_AISpawnBehaviour_AroundPlayers.BP_AISpawnBehaviour_AroundPlayers_C
+    + function CheckCampaignCompletion(CanSpawn: Bool)
+~ class /Game/BP/Behaviours/Flammable/BP_Flammable_Building.BP_Flammable_Building_C
+    + function MultiRemoveVFX()
+    + function RemoveVFX()
+~ class /Game/BP/MiscConstructs/BP_PlayerCosmeticsFunctionLibrary.BP_PlayerCosmeticsFunctionLibrary_C
+    + function FindFaceShapeKey(NameHash: Int, __WorldContext: Object<Object>, Key: Str)
+    + function GetFaceShapeData(Key: Str, IsMale: Bool, __WorldContext: Object<Object>, HeadShapeName: Name, Normal: Object<Texture>)
+    + function FaceBlendWeights(Top: Float, Bottom: Float, Left: Float, Right: Float, TopOn: Bool, BottomOn: Bool, LeftOn: Bool, RightOn: Bool, __WorldContext: Object<Object>, TopWeight: Float, BottomWeight: Float, LeftWeight: Float, RightWeight: Float)
+    + function Find Face Morph(Mesh: Object<SkinnedMeshComponent>, HeadMorph: Name, __WorldContext: Object<Object>, Morph: Name)
+    + function ApplyFaceShapesToPrimitive(MeshComp: Object<Object>, Cosmetics: Struct<CharacterCosmetics>, __WorldContext: Object<Object>)
+~ class /Game/BP/Objects/World/Items/Deployables/Containers/BP_ArmourStand.BP_ArmourStand_C
+    + property Camera: Object<CameraComponent>
+    + function Deployable_Interact(Interactor: Object<Actor>)
+~ class /Game/BP/Objects/World/Items/Deployables/Containers/BP_ArmourStand_T4.BP_ArmourStand_T4_C
+    + property BP_IcarusSpotLight: Object<BP_IcarusSpotLight_C>
+    + property SK_DEP_Armor_Stand_T4_Case: Object<SkeletalMeshComponent>
+    + property DeviceIsOn: Bool
+    - property ArmorCase: Object<SkeletalMeshComponent>
+    + function OnDeviceOnStateChanged(bIsOn: Bool)
+    + function IcarusBeginPlay()
+    + function RepairArmor()
+    + function OnRep_DeviceIsOn()
+~ class /Game/BP/Objects/World/Items/Deployables/Cooking/BP_Smoker_T4.BP_Smoker_T4_C
+    + property NS_Smoke1: Object<NiagaraComponent>
+    + property SM_DEP_Roaster_T4: Object<StaticMeshComponent>
+    - property BP_IcarusPointLight: Object<BP_IcarusPointLight_C>
+    - property BP_UIProjectionLocation: Object<BP_UIProjectionLocation_C>
+    - property Scene_Effects: Object<SceneComponent>
+    - function ProcessorStateUpdated(bIsActive: Bool)
+    - function GeneratorStateUpdate(Active: Bool)
+~ class /Game/BP/Objects/World/Items/Deployables/Fishing/BP_Aquarium.BP_Aquarium_C
+    + property ComfortModifierUID: Int
+~ class /Game/BP/Objects/World/Items/Deployables/Fishing/BP_Fish_Wall_Mount.BP_Fish_Wall_Mount_C
+    + property ComfortModifierUID: Int
+~ class /Game/BP/Settlement/BP_Settlement.BP_Settlement_C
+    + property FMODAudio: Object<FMODAudioComponent>
+~ class /Game/BP/UI/InventoryPlayer/BP_Character_Preview.BP_Character_Preview_C
+    + function InitFace()
+    - function SkinUpdate(Slider_Tone: Float, Slider_ToneBlend: Float, Slider_Hemoglobin: Float)
+    - function AffectedMeshW Helmet(Hair: Object<SkeletalMesh>, Beard: Object<SkeletalMesh>)
+~ class /Game/UI/UMG_CharacterBlending_DropBox.UMG_CharacterBlending_DropBox_C
+    + property FaceIcon: Object<UMG_FaceIcon_C>
+    + function Tick(MyGeometry: Struct<Geometry>, InDeltaTime: Float)
+~ class /Game/UI/UMG_CharacterSelection.UMG_CharacterSelection_C
+    + function UpdatePreviewVisiblity(OnlineProfileCharacter: Struct<OnlineProfileCharacter>)
+~ class /Game/UI/Windows/UMG_Fishing.UMG_Fishing_C
+    + property Background: Object<Border>
+    + property CatchBoxBorder: Object<HorizontalBox>
+    + property Corner1: Object<Image>
+    + property Corner2: Object<Image>
+    + property Corner3: Object<Image>
+    + property Corner4: Object<Image>
+    + property FishBox: Object<Overlay>
+    + property FishImage_1: Object<Image>
+    + property LureBox: Object<Overlay>
+    + property LureIcon: Object<Image>
+    + property Outline: Object<Border>
+    + property HasFoundBiome: Bool
+    + function OnLoaded_AA2603A94131712FB30430969197527B(Loaded: Object<Object>)
+    + function OnLoaded_3AFF794A415218479E289AADCD46432B(Loaded: Object<Object>)
+    ~ function StartCatchingFish(Fish: Struct<ItemData>) -> (Fish: Struct<ItemData>, Lure: Struct<ItemData>, Biome: Struct<BiomesRowHandle>)
+~ class /Script/Icarus.CustomComboBox
+    + property bUseGrid: Bool
+    + property GridRows: Int
+    + property GridItemSize: Struct<Vector2D>
+~ struct /Script/Icarus.AutonomousSpawnData
+    + property GreatHuntCampaignSpawner: Bool

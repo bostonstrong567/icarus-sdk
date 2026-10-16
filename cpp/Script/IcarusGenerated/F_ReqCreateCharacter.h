@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ReqCreateCharacter
-// size 0x90, declared in Icarus/Source/IcarusGenerated/Public/Struct/ReqCreateCharacter.h
+// size 0x90, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/CreateCharacterCallbackProxyGen.generated.h
 
 USTRUCT()
 struct FReqCreateCharacter

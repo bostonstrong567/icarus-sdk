@@ -13,9 +13,11 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintImplementableEvent) bool CanPropagate(EFlammablePropagationType PropagationType) const;  // parameters 0x2
     UFUNCTION() void ExecuteUbergraph_BP_Flammable_Building(int32 EntryPoint);  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintImplementableEvent) FBoxSphereBounds GetLocalBounds() const;  // parameters 0x1C
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable) void MultiRemoveVFX();
     UFUNCTION(BlueprintCallable) void OnFlammableInstanceState_Combusting_Enter(UFlammableInstance* Instance, UFlammableState* State);  // parameters 0x10
     UFUNCTION(BlueprintCallable) void OnFlammableInstanceState_Combusting_Tick(UFlammableInstance* Instance, UFlammableState* State, float DeltaSeconds);  // parameters 0x14
     UFUNCTION(BlueprintImplementableEvent) void ReceiveBeginPlay();
+    UFUNCTION(BlueprintCallable) void RemoveVFX();
     UFUNCTION(BlueprintCallable) void SetupBuildingCosmetics();
     UFUNCTION(BlueprintCallable) void SetupCosmetics();
     UFUNCTION(BlueprintCallable) void TeardownCosmetics();

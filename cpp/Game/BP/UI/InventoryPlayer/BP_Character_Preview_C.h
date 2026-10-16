@@ -91,7 +91,6 @@ public:
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) USkeletalMeshComponent* HelmetMesh;  // 0x08E8, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool MaleSelected;  // 0x08F0, size 0x1
 
-    UFUNCTION(BlueprintCallable, BlueprintPure) void AffectedMeshW_Helmet(USkeletalMesh*& Hair, USkeletalMesh*& Beard);  // parameters 0x10, named "AffectedMeshW Helmet"
     UFUNCTION(BlueprintCallable) void Age_Update(FText Age);  // parameters 0x18
     UFUNCTION(BlueprintCallable) void BS_ControlSelect(FText TopName, FText BottomName, FText LeftName, FText RightName, bool ResetMatrix_);  // parameters 0x61
     UFUNCTION(BlueprintCallable) void BS_MatrixToggle(bool TopEnabled, bool BottomEnabled, bool LeftEnabled, bool RightEnabled);  // parameters 0x4
@@ -110,12 +109,12 @@ public:
     UFUNCTION(BlueprintCallable) void HeadAndNormalsUpdate(const FText& Top, const FText& Bottom, const FText& Left, const FText& Right);  // parameters 0x60
     UFUNCTION(BlueprintCallable) void HeadGetData(TArray<ST_ChaCustom_HairColors>& HairColorList, TArray<ST_ChaCustom_EyeColors>& EyeColorList, TArray<FName>& ComplexionType);  // parameters 0x30
     UFUNCTION(BlueprintCallable) void HelmetToggle(bool Helmet, bool Hood, bool Rebreather);  // parameters 0x3
+    UFUNCTION(BlueprintCallable) void InitFace();
     UFUNCTION(BlueprintCallable) void InitializeDefaults();
     UFUNCTION(BlueprintImplementableEvent) void ReceiveBeginPlay();
     UFUNCTION(BlueprintCallable, BlueprintPure) void ResolveVisibility(bool& Visible);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void ScarUpdate(float ID);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void SkinColorUpdate(float Tone, float ToneBlend, float Hemoglobin);  // parameters 0xC
-    UFUNCTION(BlueprintCallable) void SkinUpdate(float Slider_Tone, float Slider_ToneBlend, float Slider_Hemoglobin);  // parameters 0xC
     UFUNCTION(BlueprintCallable) void Swap_Beard(int32 ID);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void Swap_Eyebrow(int32 ID);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void Swap_Hair(int32 HairStyleID);  // parameters 0x4

@@ -1,14 +1,14 @@
 // /Game/BP/AI/SpawnBehaviours/BP_AISpawnBehaviour_AroundPlayers_GroundSpawner.BP_AISpawnBehaviour_AroundPlayers_GroundSpawner_C
 // Derives from: UBP_AISpawnBehaviour_AroundPlayers_C > UAISpawnBehaviour > UObject
-// size 0x170, a blueprint class, blueprint
+// size 0x178, a blueprint class, blueprint
 
 UCLASS(Config=Engine)
 class UBP_AISpawnBehaviour_AroundPlayers_GroundSpawner_C : public UBP_AISpawnBehaviour_AroundPlayers_C
 {
 public:
-    UPROPERTY(Transient) FPointerToUberGraphFrame UberGraphFrame;  // 0x0160, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float MinTimeBetweenSpawns;  // 0x0168, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float LastSpawnTime;  // 0x016C, size 0x4
+    UPROPERTY(Transient) FPointerToUberGraphFrame UberGraphFrame;  // 0x0168, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float MinTimeBetweenSpawns;  // 0x0170, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float LastSpawnTime;  // 0x0174, size 0x4
 
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool CanCleanupAI(AActor* AI);  // parameters 0x9
     UFUNCTION(BlueprintCallable) void DoSpawn(UObject* Context, FVector SpawnLocation);  // parameters 0x14

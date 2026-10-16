@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ResJoinProspect
-// size 0xA8, declared in Icarus/Source/IcarusGenerated/Public/Struct/ResJoinProspect.h
+// size 0xA8, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/JoinProspectCallbackProxyGen.generated.h
 
 USTRUCT()
 struct FResJoinProspect

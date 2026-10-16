@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ResSelectEnvirosuit
-// size 0x60, declared in Icarus/Source/IcarusGenerated/Public/Struct/ResSelectEnvirosuit.h
+// size 0x60, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/SelectEnvirosuitCallbackProxyGen.generated.h
 
 USTRUCT()
 struct FResSelectEnvirosuit

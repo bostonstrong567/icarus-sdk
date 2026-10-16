@@ -1,18 +1,18 @@
 // /Script/Icarus.AISpawnBehaviour
 // Derives from: UObject
-// size 0x120, declared in Icarus/Source/Icarus/AI/AISpawnBehaviour.h
+// size 0x128, declared in Icarus/Source/Icarus/AI/AISpawnBehaviour.h
 
 UCLASS()
 class UAISpawnBehaviour : public UObject
 {
     // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
-    UPROPERTY(EditAnywhere, BlueprintReadOnly) FAutonomousSpawnData SpawnData;  // 0x0028, size 0xB8
-    UPROPERTY(EditAnywhere, BlueprintReadOnly) FAutonomousSpawnsRowHandle SpawnsRowHandle;  // 0x00E0, size 0x18
-    UPROPERTY(BlueprintAssignable) FSpawnCompleteSignature SpawnComplete;  // 0x00F8, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<AActor*> SpawnedAI;  // 0x0108, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) FAutonomousSpawnData SpawnData;  // 0x0028, size 0xC0
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) FAutonomousSpawnsRowHandle SpawnsRowHandle;  // 0x00E8, size 0x18
+    UPROPERTY(BlueprintAssignable) FSpawnCompleteSignature SpawnComplete;  // 0x0100, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<AActor*> SpawnedAI;  // 0x0110, size 0x10
 private:
-    UPROPERTY() TSubclassOf<AIcarusActor> CachedActorSpawnClass;  // 0x0118, size 0x8
+    UPROPERTY() TSubclassOf<AIcarusActor> CachedActorSpawnClass;  // 0x0120, size 0x8
 public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) bool CanCleanupAI(AActor* AI);  // parameters 0x9
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) void CleanupAI(AActor* AI);  // parameters 0x8

@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ResUnlockCharacterFlags
-// size 0x18, declared in Icarus/Source/IcarusGenerated/Public/Struct/ResUnlockCharacterFlags.h
+// size 0x18, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/UnlockCharacterFlagsCallbackProxyGen.generated.h
 
 USTRUCT()
 struct FResUnlockCharacterFlags

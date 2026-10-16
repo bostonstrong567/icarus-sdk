@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ResMoveMetaInventoryItem
-// size 0x18, declared in Icarus/Source/IcarusGenerated/Public/Struct/ResMoveMetaInventoryItem.h
+// size 0x18, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/MoveMetaInventoryItemCallbackProxyGen.generated.h
 
 USTRUCT()
 struct FResMoveMetaInventoryItem

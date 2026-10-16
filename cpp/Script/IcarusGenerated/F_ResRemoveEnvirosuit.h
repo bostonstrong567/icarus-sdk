@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ResRemoveEnvirosuit
-// size 0x60, declared in Icarus/Source/IcarusGenerated/Public/Struct/ResRemoveEnvirosuit.h
+// size 0x60, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/RemoveEnvirosuitCallbackProxyGen.generated.h
 
 USTRUCT()
 struct FResRemoveEnvirosuit
