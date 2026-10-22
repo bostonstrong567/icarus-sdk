@@ -17,6 +17,38 @@
 ---@field SM_JU_Banyan_SML_Var1_R_T1_T1_T1_B4 StaticMeshComponent
 ---@field SM_JU_Banyan_SML_Var1_R_T1_T1_T1_B5 StaticMeshComponent
 
+---@class BP_Tree_JU_Banyan_SML_Var2_Burnt_C : BP_TreePrefab_Burnt_C
+---@field SM_JU_Banyan_SML_Var2_Burnt_R StaticMeshComponent
+---@field SM_JU_Banyan_SML_Var2_Burnt_R_T1 StaticMeshComponent
+
+---@class BP_Tree_JU_Banyan_SML_Var2_C : BP_TreePrefab_Moss_C
+---@field SM_JU_Banyan_SML_Var2_R StaticMeshComponent
+---@field SM_JU_Banyan_SML_Var2_R_T1 StaticMeshComponent
+---@field SM_JU_Banyan_SML_Var2_R_T1_L1 StaticMeshComponent
+---@field SM_JU_Banyan_SML_Var2_R_T1_T1 StaticMeshComponent
+---@field SM_JU_Banyan_SML_Var2_R_T1_T1_B1 StaticMeshComponent
+---@field SM_JU_Banyan_SML_Var2_R_T1_T1_B2 StaticMeshComponent
+---@field SM_JU_Banyan_SML_Var2_R_T1_T1_T1 StaticMeshComponent
+---@field SM_JU_Banyan_SML_Var2_R_T1_T1_T1_B1 StaticMeshComponent
+---@field SM_JU_Banyan_SML_Var2_R_T1_T1_T1_B2 StaticMeshComponent
+---@field SM_JU_Banyan_SML_Var2_R_T1_T1_T1_B3 StaticMeshComponent
+
+---@class BP_Tree_JU_Banyan_SML_Var3_Burnt_C : BP_TreePrefab_Burnt_C
+---@field SM_JU_Banyan_SML_Var3_Burnt_R StaticMeshComponent
+---@field SM_JU_Banyan_SML_Var3_Burnt_R_T1 StaticMeshComponent
+
+---@class BP_Tree_JU_Banyan_SML_Var3_C : BP_TreePrefab_Moss_C
+---@field SM_JU_Banyan_SML_Var3_R StaticMeshComponent
+---@field SM_JU_Banyan_SML_Var3_R_T1 StaticMeshComponent
+---@field SM_JU_Banyan_SML_Var3_R_T1_L1 StaticMeshComponent
+---@field SM_JU_Banyan_SML_Var3_R_T1_T1 StaticMeshComponent
+---@field SM_JU_Banyan_SML_Var3_R_T1_T1_T1 StaticMeshComponent
+---@field SM_JU_Banyan_SML_Var3_R_T1_T1_T1_B1 StaticMeshComponent
+---@field SM_JU_Banyan_SML_Var3_R_T1_T1_T1_B2 StaticMeshComponent
+---@field SM_JU_Banyan_SML_Var3_R_T1_T1_T1_B3 StaticMeshComponent
+---@field SM_JU_Banyan_SML_Var3_R_T1_T1_T1_B4 StaticMeshComponent
+---@field SM_JU_Banyan_SML_Var3_R_T1_T1_T1_B5 StaticMeshComponent
+
 ---@class BP_Tree_JU_Banyan_Var1_Burnt_C : BP_TreePrefab_Burnt_C
 ---@field SM_JU_Banyan_Med_Var1_Burnt_R StaticMeshComponent
 ---@field SM_JU_Banyan_Med_Var1_Burnt_R_T1 StaticMeshComponent

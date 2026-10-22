@@ -44,6 +44,7 @@
 ---@field TetherCleanupTimer TimerHandle
 ---@field TetheredAIMap table<Actor, ActorArrayStruct>
 ---@field WeatherControllerRef BP_WeatherController_C
+---@field ["Check Campaign Completion"] fun(self: BP_AISpawner_C, Completed: boolean)
 ---@field ["Check Manual Spawn"] fun(self: BP_AISpawner_C, AISetup: AISetupEnum|{}, CanSpawn: boolean)
 ---@field CheckAIDistance fun(self: BP_AISpawner_C, AI: BP_IcarusNPCGOAPCharacter_C?) Wax refuses this call from Lua.
 ---@field CheckLocation fun(self: BP_AISpawner_C, Location: Vector|{}, Found: boolean)

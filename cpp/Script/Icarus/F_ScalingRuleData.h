@@ -1,5 +1,5 @@
 // /Script/Icarus.ScalingRuleData
-// size 0x98, declared in Icarus/Source/Icarus/DataStructs/Scaling/ScalingRuleData.h
+// size 0x98, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/Icarus/ScalingRulesLibrary.generated.h
 
 USTRUCT()
 struct FScalingRuleData : public FIcarusTableRowBase

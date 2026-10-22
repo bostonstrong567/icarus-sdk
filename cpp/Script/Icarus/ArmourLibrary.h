@@ -6,12 +6,12 @@ UCLASS()
 class UArmourLibrary : public URowLibrary
 {
 public:
-    UFUNCTION(BlueprintCallable) static void AddRowToArmourTable(FName Name, FArmourData Data, FArmourRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x321
+    UFUNCTION(BlueprintCallable) static void AddRowToArmourTable(FName Name, FArmourData Data, FArmourRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x339
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakArmourEnum(FArmourEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FArmourRowHandle CastToArmourRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool EqualEqual_EnumEnum(FArmourEnum A, FArmourEnum B);  // parameters 0x21
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool EqualEqual_FArmourRowHandleFArmourRowHandle(FArmourRowHandle RowHandleA, FArmourRowHandle RowHandleB);  // parameters 0x31
-    UFUNCTION(BlueprintCallable) static void GetArmourStruct(FArmourRowHandle RowHandle, FArmourData& Armour, EValid& Paths);  // parameters 0x319
+    UFUNCTION(BlueprintCallable) static void GetArmourStruct(FArmourRowHandle RowHandle, FArmourData& Armour, EValid& Paths);  // parameters 0x331
     UFUNCTION() static FName IntToName(int32 IntValue);  // parameters 0xC
     UFUNCTION(BlueprintCallable, BlueprintPure) static FArmourEnum IntToStruct(int32 IntValue);  // parameters 0x18
     UFUNCTION() static bool IsValidName(FName NameValue);  // parameters 0x9

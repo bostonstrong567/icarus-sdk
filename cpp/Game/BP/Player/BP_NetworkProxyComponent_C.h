@@ -133,6 +133,8 @@ public:
     UFUNCTION(BlueprintCallable, Server, Reliable) void Proxy_ArcadeMachineEndAction(ABP_Colony_Arcade_Machine_C* ArcadeMachineActor, FArcadeMachineScore ScoreResult);  // parameters 0x38
     UFUNCTION(BlueprintCallable, Server, Reliable) void Proxy_ArmourStandBackpackToggle(ADeployable* ArmourStand, bool SwapBackpacks);  // parameters 0x9
     UFUNCTION(BlueprintCallable, Server, Reliable) void Proxy_ArmourStandSwap(ADeployable* ArmourStand, AIcarusCharacter* Character);  // parameters 0x10
+    UFUNCTION(BlueprintCallable, Server) void Proxy_BuildingSetNPC(ASettlementBuilding* Building, int32 SlotIndex, const FGuid& NpcId);  // parameters 0x1C
+    UFUNCTION(BlueprintCallable, Server) void Proxy_BuildingSetTask(ASettlementBuilding* Building, int32 Slot, const FSettlementTasksRowHandle& Task);  // parameters 0x24
     UFUNCTION(BlueprintCallable, Server, Reliable) void Proxy_CatchFishCheat(AIcarusPlayerController* Controller, AIcarusPlayerCharacter* Character);  // parameters 0x10
     UFUNCTION(BlueprintCallable, Server, Reliable) void Proxy_CatchFishInZoneCheat(AIcarusPlayerController* Controller, AIcarusPlayerCharacter* Character, FFishSpawnZonesRowHandle Zone);  // parameters 0x28
     UFUNCTION(BlueprintCallable, Server) void Proxy_Cheat_AddItemSet(AIcarusPlayerController* Controller, FString Name);  // parameters 0x18
@@ -140,6 +142,7 @@ public:
     UFUNCTION(BlueprintCallable, Server, Reliable) void Proxy_ClaimSettlement(AActor* StarterActor, FString SettlementName);  // parameters 0x18
     UFUNCTION(BlueprintCallable, Server, Reliable) void Proxy_ClientDropshipReady(AIcarusRocket* Dropship);  // parameters 0x8
     UFUNCTION(BlueprintCallable, Server, Reliable) void Proxy_DeconstructBuilding(ASettlementBuilding* Building);  // parameters 0x8
+    UFUNCTION(BlueprintCallable, Server) void Proxy_DestroyConstruction(ASettlementBuilding* Buidling);  // parameters 0x8
     UFUNCTION(BlueprintCallable, Server, Reliable) void Proxy_DestroyInventoryStack(UInventory* Inventory, int32 Location, AIcarusPlayerController* Player, bool bRefundPartCost);  // parameters 0x19
     UFUNCTION(BlueprintCallable, Server, Reliable) void Proxy_DestroyMountActors(const TArray<AIcarusMountCharacter*>& Mounts);  // parameters 0x10
     UFUNCTION(BlueprintCallable, Server) void Proxy_DropAllInventoryStacks(UInventory* Inventory, int32 Location, AIcarusPlayerCharacter* FromPlayer);  // parameters 0x18
@@ -165,6 +168,7 @@ public:
     UFUNCTION(BlueprintCallable, Server, Reliable) void Proxy_SetMountGrazingState(AIcarusMountCharacter* Mount, EMountGrazingBehaviourState NewState);  // parameters 0x9
     UFUNCTION(BlueprintCallable, Server, Reliable) void Proxy_SetMountMovementState(AIcarusMountCharacter* Mount, EMountMovementBehaviourState NewState);  // parameters 0x9
     UFUNCTION(BlueprintCallable, Server, Reliable) void Proxy_SetMountName(AIcarusMountCharacter* Mount, FString Name);  // parameters 0x18
+    UFUNCTION(BlueprintCallable, Server) void Proxy_SetNPCTaskAssignment(ASettlement* Settlment, ASettlementBuilding* Building, const FGuid& NpcId);  // parameters 0x20
     UFUNCTION(BlueprintCallable, Server, Reliable) void Proxy_SetNearbyCreaturesCombatBehaviour(EMountCombatBehaviourState NewCombatBehaviour, int32 NearbyRadius);  // parameters 0x8
     UFUNCTION(BlueprintCallable, Server, Reliable) void Proxy_SetNearbyCreaturesMovementBehaviour(EMountMovementBehaviourState NewMovementBehaviour, int32 NearbyRadius);  // parameters 0x8
     UFUNCTION(BlueprintCallable, Server, Reliable) void Proxy_SetResourceComponentState(UResourceComponent* Component, FIcarusResourcesEnum ResourceType, bool State);  // parameters 0x19

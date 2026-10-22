@@ -392,6 +392,7 @@
 ---@field Validate_SettlementNPCTaskTypes_RowHandle fun(self: DataTableValidationLibrary, RowHandle: SettlementNPCTaskTypesRowHandle|{})
 ---@field Validate_SettlementNPCTraits_RowHandle fun(self: DataTableValidationLibrary, RowHandle: SettlementNPCTraitsRowHandle|{})
 ---@field Validate_SettlementRaids_RowHandle fun(self: DataTableValidationLibrary, RowHandle: SettlementRaidsRowHandle|{})
+---@field Validate_SettlementTasks_RowHandle fun(self: DataTableValidationLibrary, RowHandle: SettlementTasksRowHandle|{})
 ---@field Validate_Slotable_RowHandle fun(self: DataTableValidationLibrary, RowHandle: SlotableRowHandle|{})
 ---@field Validate_SortTypePriority_RowHandle fun(self: DataTableValidationLibrary, RowHandle: SortTypePriorityRowHandle|{})
 ---@field Validate_StaminaActionCosts_RowHandle fun(self: DataTableValidationLibrary, RowHandle: StaminaActionCostsRowHandle|{})

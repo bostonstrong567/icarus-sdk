@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ReqSyncAccountTalents
-// size 0x20, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/SyncAccountTalentsCallbackProxyGen.generated.h
+// size 0x20, declared in Icarus/Source/IcarusGenerated/Public/Struct/ReqSyncAccountTalents.h
 
 USTRUCT()
 struct FReqSyncAccountTalents

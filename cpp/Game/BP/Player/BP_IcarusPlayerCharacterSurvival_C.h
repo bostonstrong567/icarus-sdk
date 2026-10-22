@@ -1,182 +1,183 @@
 // /Game/BP/Player/BP_IcarusPlayerCharacterSurvival.BP_IcarusPlayerCharacterSurvival_C
 // Derives from: AIcarusPlayerCharacterSurvival > AIcarusPlayerCharacter > AIcarusCharacter > ACharacter > APawn > AActor > UObject
-// size 0x1408, a blueprint class, blueprint
+// size 0x1418, a blueprint class, blueprint
 
 UCLASS(Config=Game)
 class ABP_IcarusPlayerCharacterSurvival_C : public AIcarusPlayerCharacterSurvival, public IICameraInterface_C, public IHitReactionInterface_C, public IBP_CaveComponentInterface_C, public IBP_PlayerAudio_AnimNotify_Interface_C, public IInventoryModerator
 {
 public:
-    UPROPERTY(Transient) FPointerToUberGraphFrame UberGraphFrame;  // 0x0D80, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UPostProcessComponent* PostProcess_Underwater_Lava;  // 0x0D88, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UPostProcessComponent* PostProcess_Underwater_Swamp;  // 0x0D90, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UBP_PlayerLoadoutComponent_C* BP_PlayerLoadoutComponent;  // 0x0D98, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UBoxComponent* PP_Container;  // 0x0DA0, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UPostProcessComponent* PostProcess_Underwater_Day;  // 0x0DA8, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UPostProcessComponent* PostProcess_Underwater_Night;  // 0x0DB0, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UPostProcessComponent* PostProcess_Lensflare;  // 0x0DB8, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UPostProcessComponent* PostProcess_EnterWater;  // 0x0DC0, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UPostProcessComponent* PostProcess_OutOfWater;  // 0x0DC8, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UPostProcessComponent* PostProcess_Water;  // 0x0DD0, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UPostProcessComponent* HighlightablePostProcess;  // 0x0DD8, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UPostProcessComponent* ActionablePostProcess;  // 0x0DE0, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UPostProcessComponent* PostProcess_Heat;  // 0x0DE8, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UPostProcessComponent* PostProcess_Thermal;  // 0x0DF0, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UPostProcessComponent* PostProcess_DamageIndicator;  // 0x0DF8, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UPostProcessComponent* PostProcess_Underwater;  // 0x0E00, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UPostProcessComponent* PostProcess_Cold;  // 0x0E08, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UShelteredModifierComponent* ShelteredModifier;  // 0x0E10, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UCapsuleComponent* ClothAffector;  // 0x0E18, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UBP_UIProjectionComponent_Player_C* BP_UIProjectionComponent_Player;  // 0x0E20, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UBP_Flammable_Player_C* BP_Flammable_Player;  // 0x0E28, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UAudioOcclusionComponent* AudioOcclusion;  // 0x0E30, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UBP_ItemManipulationComponent_C* BP_ItemManipulationComponent;  // 0x0E38, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) USphereComponent* WeightCollider;  // 0x0E40, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UBP_PlayerMusicComponent_C* BP_PlayerMusicComponent;  // 0x0E48, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UNiagaraComponent* UnderwaterFX;  // 0x0E50, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* UnderwaterVolume;  // 0x0E58, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UBP_PlayerMovementAudioComponent_C* BP_PlayerMovementAudioComponent;  // 0x0E60, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UExperienceComponent* Experience;  // 0x0E68, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) USceneComponent* NameMarkerLocation;  // 0x0E70, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UBP_PlayerBuildingPlacement_C* BP_PlayerBuildingPlacement;  // 0x0E78, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UChildActorComponent* BP_RVT_FoliagePersistant;  // 0x0E80, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UBP_PlayerEnvironmentalAudioComponent_C* BP_PlayerEnvironmentalAudioComponent;  // 0x0E88, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UBP_ShelteredComponent_C* BP_ShelteredComponent;  // 0x0E90, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UBP_GroundSurfaceChecker_C* BP_GroundSurfaceChecker;  // 0x0E98, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) USkeletalMeshComponent* TPMeshFull;  // 0x0EA0, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UBP_PlayerEffectsComponent_C* BP_PlayerEffectsComponent;  // 0x0EA8, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) USceneComponent* FPSpotlightAttach;  // 0x0EB0, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) USceneComponent* TPSpotlightAttach;  // 0x0EB8, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) USkeletalMeshComponent* TPMeshSimple;  // 0x0EC0, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UBP_SwimmingComponent_C* BP_SwimmingComponent;  // 0x0EC8, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) USceneComponent* DamageDirectionPivot;  // 0x0ED0, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UCameraComponent* FPCamera;  // 0x0ED8, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) USkeletalMeshComponent* FPMesh;  // 0x0EE0, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) USceneComponent* BowLocator;  // 0x0EE8, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UBP_PlayerCameraComponent_C* BP_PlayerCameraComponent;  // 0x0EF0, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UBP_Weight_C* BP_Weight;  // 0x0EF8, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UProcessingComponent* Processing;  // 0x0F00, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UWidgetComponent* PlayerNameWidget;  // 0x0F08, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UArrowComponent* Arrow1;  // 0x0F10, size 0x8
-    UPROPERTY() float PP_ExitWater_Line_205F5B6F4CBC44F0C618AB9DF54C52A8;  // 0x0F18, size 0x4
-    UPROPERTY() float PP_ExitWater_Time_205F5B6F4CBC44F0C618AB9DF54C52A8;  // 0x0F1C, size 0x4
-    UPROPERTY() TEnumAsByte<ETimelineDirection> PP_ExitWater__Direction_205F5B6F4CBC44F0C618AB9DF54C52A8;  // 0x0F20, size 0x1
-    UPROPERTY(Instanced, BlueprintReadWrite) UTimelineComponent* PP_ExitWater;  // 0x0F28, size 0x8
-    UPROPERTY() float PP_EnterWater_Time_BC5B894041D4A44E3CB9059F469AE474;  // 0x0F30, size 0x4
-    UPROPERTY() TEnumAsByte<ETimelineDirection> PP_EnterWater__Direction_BC5B894041D4A44E3CB9059F469AE474;  // 0x0F34, size 0x1
-    UPROPERTY(Instanced, BlueprintReadWrite) UTimelineComponent* PP_EnterWater;  // 0x0F38, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool JumpRequested;  // 0x0F40, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float TurnRate;  // 0x0F44, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float LookUpRate;  // 0x0F48, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool IsItemActionPlaying;  // 0x0F4C, size 0x1
-    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) AIcarusItem* FocusedItem;  // 0x0F50, size 0x8
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) USkeletalMeshComponent* ActiveMesh;  // 0x0F58, size 0x8
-    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) ABP_Grid_Base_C* RemoteFocusedGrid;  // 0x0F60, size 0x8
-    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) ABP_ObjectSlot_C* CurrentSlotConnection;  // 0x0F68, size 0x8
-    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) bool IsLocalCrafting;  // 0x0F70, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FProcessingUpdated ProcessingUpdated;  // 0x0F78, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool ClientHasAuthority;  // 0x0F88, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float DefaultFPCameraFOV;  // 0x0F8C, size 0x4
-    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) AIcarusItem* UtilityItem;  // 0x0F90, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<UUMG_DamageIndicator_C*> DamageIndicatorWidgets;  // 0x0F98, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTransform ADSOffset;  // 0x0FB0, size 0x30
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) UMaterialInstanceDynamic* PPDamageMat;  // 0x0FE0, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float PPDamageTakenIntensity;  // 0x0FE8, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) AActor* LastDamageCauser;  // 0x0FF0, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector LastDamageLocation;  // 0x0FF8, size 0xC
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) UMaterialInstanceDynamic* PPDamageAppliedMat;  // 0x1008, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) UCurveFloat* HeartbeatCurve;  // 0x1010, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 LastStamina;  // 0x1018, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float PPDamageDealtIntensity;  // 0x101C, size 0x4
-    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) int32 CurrentWeight;  // 0x1020, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FAttachedSeatChanged AttachedSeatChanged;  // 0x1028, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 CurrentStamina;  // 0x1038, size 0x4
-    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) int32 OverburnedUID;  // 0x103C, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float FootstepCooldownEndTime;  // 0x1040, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FAfflictionTrigger Afflication_Threshold_Overheating;  // 0x1044, size 0x30
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FAfflictionTrigger Afflication_Threshold_HeatOverload;  // 0x1074, size 0x30
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FAfflictionTrigger Afflication_Threshold_Chilled;  // 0x10A4, size 0x30
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FAfflictionTrigger Afflication_Threshold_Freezing;  // 0x10D4, size 0x30
-    UPROPERTY(EditAnywhere, BlueprintReadOnly) float FootstepMaxPlayDistanceSquared;  // 0x1104, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FAbortInteraction AbortInteraction;  // 0x1108, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) UAnimMontage* TPWaveEmote;  // 0x1118, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) UAnimMontage* FPWaveEmote;  // 0x1120, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) AIcarusActor* CachedInteractionRaycastHit;  // 0x1128, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FUtilityItemChanged UtilityItemChanged;  // 0x1130, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FUnderwaterChanged UnderwaterChanged;  // 0x1140, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) UMaterialInstanceDynamic* HelmetMatRef;  // 0x1150, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimerHandle SwimmingTimer;  // 0x1158, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Swimming_UID;  // 0x1160, size 0x4, named "Swimming UID"
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool BlockPostprocess;  // 0x1164, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FFireModeChanged FireModeChanged;  // 0x1168, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FFocusedItemUpdated FocusedItemUpdated;  // 0x1178, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool OutOfWaterPPEnabled;  // 0x1188, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float OutOfWaterPPLength;  // 0x118C, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float OutOfWaterPPFadeOutLength;  // 0x1190, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) UMaterialInstanceDynamic* WaterPPMaterial;  // 0x1198, size 0x8
-    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) bool IsTravellingInDropship;  // 0x11A0, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FTravellingInDropshipChanged TravellingInDropshipChanged;  // 0x11A8, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool ToggleCrouch;  // 0x11B8, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool HasValidFocusMontage;  // 0x11B9, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FPoseSnapshot DeathPose;  // 0x11C0, size 0x38
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) UMaterialInstanceDynamic* WaterEnterPPMaterial;  // 0x11F8, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool CameFromUnderwater;  // 0x1200, size 0x1
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UUMG_GOAPWorldStats_C* GOAPWorldStatsRef;  // 0x1208, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool GOAPWorldStatsActive;  // 0x1210, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimerHandle AltInteractionTimer;  // 0x1218, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float LastDamageYaw;  // 0x1220, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float LastDamageTime;  // 0x1224, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FOnCosmeticDamageEffects OnCosmeticDamageEffects;  // 0x1228, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) AIcarusCharacter* Host;  // 0x1238, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool IsUnderwater;  // 0x1240, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool InteractPressed;  // 0x1241, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool CameraIsUnderwater;  // 0x1242, size 0x1
-    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) bool IsDead;  // 0x1243, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<FKeybindingsRowHandle, FTimerHandle> KeybindHoldTimerHandles;  // 0x1248, size 0x50
-    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FBuildingRepairWarningChanged BuildingRepairWarningChanged;  // 0x1298, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool ShowRepairWarning;  // 0x12A8, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float DefaultVignetteIntensity;  // 0x12AC, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) UCurveFloat* CameraShakeCurve;  // 0x12B0, size 0x8
-    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) bool ServerIsCurrentlyInCave;  // 0x12B8, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool ToggleSprint;  // 0x12B9, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float LastMovementInputTime;  // 0x12BC, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float MovementInputEndDelay;  // 0x12C0, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float MovementInputEndThreshold;  // 0x12C4, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) AActor* CurrentCaveActor;  // 0x12C8, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool GracePeriodActive;  // 0x12D0, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 UtilitySlotIndex;  // 0x12D4, size 0x4
-    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) bool BackpackMeshHidden;  // 0x12D8, size 0x1
-    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) AIcarusItem* LightItem;  // 0x12E0, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FVisionItemChanged VisionItemChanged;  // 0x12E8, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FOnFootstep OnFootstep;  // 0x12F8, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool IsHoldingCrouch;  // 0x1308, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimerHandle PlayerOutOfWorldTimer;  // 0x1310, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector LastGroundedWorldLocation;  // 0x1318, size 0xC
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float TimeStartedFalling;  // 0x1324, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float LastGroundedLocationTeleportTime;  // 0x1328, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float InteractHoldTime;  // 0x132C, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float AltInteractHoldTime;  // 0x1330, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadOnly) float FootstepJumpLandMaxWaterDepth;  // 0x1334, size 0x4
-    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) AIcarusItem* SecondaryFocusedItem;  // 0x1338, size 0x8
-    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) int32 OffHandFocusedSlot;  // 0x1340, size 0x4
-    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) bool ShieldOnBack;  // 0x1344, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 MiamsaModifierID;  // 0x1348, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Miamsa_Effectiveness;  // 0x134C, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 FocusedSlot;  // 0x1350, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) AIcarusActor* BedActor;  // 0x1358, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 OffhandStatUID;  // 0x1360, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool ShowUpgradeWarning;  // 0x1364, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FBuildingUpgradeWarningChanged BuildingUpgradeWarningChanged;  // 0x1368, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool ShowShearingWarning;  // 0x1378, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FShearingWarningChanged ShearingWarningChanged;  // 0x1380, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<AIcarusItem*, FVector> LightSlotItemDefaultOffset;  // 0x1390, size 0x50
-    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FOnAltInteract OnAltInteract;  // 0x13E0, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float NonFlyingBrakingFriction;  // 0x13F0, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float NonFlyingMaxAcceleration;  // 0x13F4, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float DesiredHeatPPBlend;  // 0x13F8, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float DesiredColdPPBlend;  // 0x13FC, size 0x4
-    UPROPERTY(EditAnywhere, Replicated, SaveGame, BlueprintReadWrite) AIcarusMountCharacter* FocusedTame;  // 0x1400, size 0x8
+    UPROPERTY(Transient) FPointerToUberGraphFrame UberGraphFrame;  // 0x0D90, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UPostProcessComponent* PostProcess_Underwater_Lava;  // 0x0D98, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UPostProcessComponent* PostProcess_Underwater_Swamp;  // 0x0DA0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UBP_PlayerLoadoutComponent_C* BP_PlayerLoadoutComponent;  // 0x0DA8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UBoxComponent* PP_Container;  // 0x0DB0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UPostProcessComponent* PostProcess_Underwater_Day;  // 0x0DB8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UPostProcessComponent* PostProcess_Underwater_Night;  // 0x0DC0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UPostProcessComponent* PostProcess_Lensflare;  // 0x0DC8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UPostProcessComponent* PostProcess_EnterWater;  // 0x0DD0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UPostProcessComponent* PostProcess_OutOfWater;  // 0x0DD8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UPostProcessComponent* PostProcess_Water;  // 0x0DE0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UPostProcessComponent* HighlightablePostProcess;  // 0x0DE8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UPostProcessComponent* ActionablePostProcess;  // 0x0DF0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UPostProcessComponent* PostProcess_Heat;  // 0x0DF8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UPostProcessComponent* PostProcess_Thermal;  // 0x0E00, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UPostProcessComponent* PostProcess_DamageIndicator;  // 0x0E08, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UPostProcessComponent* PostProcess_Underwater;  // 0x0E10, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UPostProcessComponent* PostProcess_Cold;  // 0x0E18, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UShelteredModifierComponent* ShelteredModifier;  // 0x0E20, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UCapsuleComponent* ClothAffector;  // 0x0E28, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UBP_UIProjectionComponent_Player_C* BP_UIProjectionComponent_Player;  // 0x0E30, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UBP_Flammable_Player_C* BP_Flammable_Player;  // 0x0E38, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UAudioOcclusionComponent* AudioOcclusion;  // 0x0E40, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UBP_ItemManipulationComponent_C* BP_ItemManipulationComponent;  // 0x0E48, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) USphereComponent* WeightCollider;  // 0x0E50, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UBP_PlayerMusicComponent_C* BP_PlayerMusicComponent;  // 0x0E58, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UNiagaraComponent* UnderwaterFX;  // 0x0E60, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* UnderwaterVolume;  // 0x0E68, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UBP_PlayerMovementAudioComponent_C* BP_PlayerMovementAudioComponent;  // 0x0E70, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UExperienceComponent* Experience;  // 0x0E78, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) USceneComponent* NameMarkerLocation;  // 0x0E80, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UBP_PlayerBuildingPlacement_C* BP_PlayerBuildingPlacement;  // 0x0E88, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UChildActorComponent* BP_RVT_FoliagePersistant;  // 0x0E90, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UBP_PlayerEnvironmentalAudioComponent_C* BP_PlayerEnvironmentalAudioComponent;  // 0x0E98, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UBP_ShelteredComponent_C* BP_ShelteredComponent;  // 0x0EA0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UBP_GroundSurfaceChecker_C* BP_GroundSurfaceChecker;  // 0x0EA8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) USkeletalMeshComponent* TPMeshFull;  // 0x0EB0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UBP_PlayerEffectsComponent_C* BP_PlayerEffectsComponent;  // 0x0EB8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) USceneComponent* FPSpotlightAttach;  // 0x0EC0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) USceneComponent* TPSpotlightAttach;  // 0x0EC8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) USkeletalMeshComponent* TPMeshSimple;  // 0x0ED0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UBP_SwimmingComponent_C* BP_SwimmingComponent;  // 0x0ED8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) USceneComponent* DamageDirectionPivot;  // 0x0EE0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UCameraComponent* FPCamera;  // 0x0EE8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) USkeletalMeshComponent* FPMesh;  // 0x0EF0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) USceneComponent* BowLocator;  // 0x0EF8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UBP_PlayerCameraComponent_C* BP_PlayerCameraComponent;  // 0x0F00, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UBP_Weight_C* BP_Weight;  // 0x0F08, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UProcessingComponent* Processing;  // 0x0F10, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UWidgetComponent* PlayerNameWidget;  // 0x0F18, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UArrowComponent* Arrow1;  // 0x0F20, size 0x8
+    UPROPERTY() float PP_ExitWater_Line_205F5B6F4CBC44F0C618AB9DF54C52A8;  // 0x0F28, size 0x4
+    UPROPERTY() float PP_ExitWater_Time_205F5B6F4CBC44F0C618AB9DF54C52A8;  // 0x0F2C, size 0x4
+    UPROPERTY() TEnumAsByte<ETimelineDirection> PP_ExitWater__Direction_205F5B6F4CBC44F0C618AB9DF54C52A8;  // 0x0F30, size 0x1
+    UPROPERTY(Instanced, BlueprintReadWrite) UTimelineComponent* PP_ExitWater;  // 0x0F38, size 0x8
+    UPROPERTY() float PP_EnterWater_Time_BC5B894041D4A44E3CB9059F469AE474;  // 0x0F40, size 0x4
+    UPROPERTY() TEnumAsByte<ETimelineDirection> PP_EnterWater__Direction_BC5B894041D4A44E3CB9059F469AE474;  // 0x0F44, size 0x1
+    UPROPERTY(Instanced, BlueprintReadWrite) UTimelineComponent* PP_EnterWater;  // 0x0F48, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool JumpRequested;  // 0x0F50, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float TurnRate;  // 0x0F54, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float LookUpRate;  // 0x0F58, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool IsItemActionPlaying;  // 0x0F5C, size 0x1
+    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) AIcarusItem* FocusedItem;  // 0x0F60, size 0x8
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) USkeletalMeshComponent* ActiveMesh;  // 0x0F68, size 0x8
+    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) ABP_Grid_Base_C* RemoteFocusedGrid;  // 0x0F70, size 0x8
+    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) ABP_ObjectSlot_C* CurrentSlotConnection;  // 0x0F78, size 0x8
+    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) bool IsLocalCrafting;  // 0x0F80, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FProcessingUpdated ProcessingUpdated;  // 0x0F88, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool ClientHasAuthority;  // 0x0F98, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float DefaultFPCameraFOV;  // 0x0F9C, size 0x4
+    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) AIcarusItem* UtilityItem;  // 0x0FA0, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<UUMG_DamageIndicator_C*> DamageIndicatorWidgets;  // 0x0FA8, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTransform ADSOffset;  // 0x0FC0, size 0x30
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) UMaterialInstanceDynamic* PPDamageMat;  // 0x0FF0, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float PPDamageTakenIntensity;  // 0x0FF8, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) AActor* LastDamageCauser;  // 0x1000, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector LastDamageLocation;  // 0x1008, size 0xC
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) UMaterialInstanceDynamic* PPDamageAppliedMat;  // 0x1018, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) UCurveFloat* HeartbeatCurve;  // 0x1020, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 LastStamina;  // 0x1028, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float PPDamageDealtIntensity;  // 0x102C, size 0x4
+    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) int32 CurrentWeight;  // 0x1030, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FAttachedSeatChanged AttachedSeatChanged;  // 0x1038, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 CurrentStamina;  // 0x1048, size 0x4
+    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) int32 OverburnedUID;  // 0x104C, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float FootstepCooldownEndTime;  // 0x1050, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FAfflictionTrigger Afflication_Threshold_Overheating;  // 0x1054, size 0x30
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FAfflictionTrigger Afflication_Threshold_HeatOverload;  // 0x1084, size 0x30
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FAfflictionTrigger Afflication_Threshold_Chilled;  // 0x10B4, size 0x30
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FAfflictionTrigger Afflication_Threshold_Freezing;  // 0x10E4, size 0x30
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) float FootstepMaxPlayDistanceSquared;  // 0x1114, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FAbortInteraction AbortInteraction;  // 0x1118, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) UAnimMontage* TPWaveEmote;  // 0x1128, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) UAnimMontage* FPWaveEmote;  // 0x1130, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) AIcarusActor* CachedInteractionRaycastHit;  // 0x1138, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FUtilityItemChanged UtilityItemChanged;  // 0x1140, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FUnderwaterChanged UnderwaterChanged;  // 0x1150, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) UMaterialInstanceDynamic* HelmetMatRef;  // 0x1160, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimerHandle SwimmingTimer;  // 0x1168, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Swimming_UID;  // 0x1170, size 0x4, named "Swimming UID"
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool BlockPostprocess;  // 0x1174, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FFireModeChanged FireModeChanged;  // 0x1178, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FFocusedItemUpdated FocusedItemUpdated;  // 0x1188, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool OutOfWaterPPEnabled;  // 0x1198, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float OutOfWaterPPLength;  // 0x119C, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float OutOfWaterPPFadeOutLength;  // 0x11A0, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) UMaterialInstanceDynamic* WaterPPMaterial;  // 0x11A8, size 0x8
+    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) bool IsTravellingInDropship;  // 0x11B0, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FTravellingInDropshipChanged TravellingInDropshipChanged;  // 0x11B8, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool ToggleCrouch;  // 0x11C8, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool HasValidFocusMontage;  // 0x11C9, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FPoseSnapshot DeathPose;  // 0x11D0, size 0x38
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) UMaterialInstanceDynamic* WaterEnterPPMaterial;  // 0x1208, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool CameFromUnderwater;  // 0x1210, size 0x1
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UUMG_GOAPWorldStats_C* GOAPWorldStatsRef;  // 0x1218, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool GOAPWorldStatsActive;  // 0x1220, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimerHandle AltInteractionTimer;  // 0x1228, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float LastDamageYaw;  // 0x1230, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float LastDamageTime;  // 0x1234, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FOnCosmeticDamageEffects OnCosmeticDamageEffects;  // 0x1238, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) AIcarusCharacter* Host;  // 0x1248, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool IsUnderwater;  // 0x1250, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool InteractPressed;  // 0x1251, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool CameraIsUnderwater;  // 0x1252, size 0x1
+    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) bool IsDead;  // 0x1253, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<FKeybindingsRowHandle, FTimerHandle> KeybindHoldTimerHandles;  // 0x1258, size 0x50
+    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FBuildingRepairWarningChanged BuildingRepairWarningChanged;  // 0x12A8, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool ShowRepairWarning;  // 0x12B8, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float DefaultVignetteIntensity;  // 0x12BC, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) UCurveFloat* CameraShakeCurve;  // 0x12C0, size 0x8
+    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) bool ServerIsCurrentlyInCave;  // 0x12C8, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool ToggleSprint;  // 0x12C9, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float LastMovementInputTime;  // 0x12CC, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float MovementInputEndDelay;  // 0x12D0, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float MovementInputEndThreshold;  // 0x12D4, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) AActor* CurrentCaveActor;  // 0x12D8, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool GracePeriodActive;  // 0x12E0, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 UtilitySlotIndex;  // 0x12E4, size 0x4
+    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) bool BackpackMeshHidden;  // 0x12E8, size 0x1
+    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) AIcarusItem* LightItem;  // 0x12F0, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FVisionItemChanged VisionItemChanged;  // 0x12F8, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FOnFootstep OnFootstep;  // 0x1308, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool IsHoldingCrouch;  // 0x1318, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimerHandle PlayerOutOfWorldTimer;  // 0x1320, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector LastGroundedWorldLocation;  // 0x1328, size 0xC
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float TimeStartedFalling;  // 0x1334, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float LastGroundedLocationTeleportTime;  // 0x1338, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float InteractHoldTime;  // 0x133C, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float AltInteractHoldTime;  // 0x1340, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) float FootstepJumpLandMaxWaterDepth;  // 0x1344, size 0x4
+    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) AIcarusItem* SecondaryFocusedItem;  // 0x1348, size 0x8
+    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) int32 OffHandFocusedSlot;  // 0x1350, size 0x4
+    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) bool ShieldOnBack;  // 0x1354, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 MiamsaModifierID;  // 0x1358, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Miamsa_Effectiveness;  // 0x135C, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 FocusedSlot;  // 0x1360, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) AIcarusActor* BedActor;  // 0x1368, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 OffhandStatUID;  // 0x1370, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool ShowUpgradeWarning;  // 0x1374, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FBuildingUpgradeWarningChanged BuildingUpgradeWarningChanged;  // 0x1378, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool ShowShearingWarning;  // 0x1388, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FShearingWarningChanged ShearingWarningChanged;  // 0x1390, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<AIcarusItem*, FVector> LightSlotItemDefaultOffset;  // 0x13A0, size 0x50
+    UPROPERTY(EditAnywhere, BlueprintAssignable, BlueprintReadWrite) FOnAltInteract OnAltInteract;  // 0x13F0, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float NonFlyingBrakingFriction;  // 0x1400, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float NonFlyingMaxAcceleration;  // 0x1404, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float DesiredHeatPPBlend;  // 0x1408, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float DesiredColdPPBlend;  // 0x140C, size 0x4
+    UPROPERTY(EditAnywhere, Replicated, SaveGame, BlueprintReadWrite) AIcarusMountCharacter* FocusedTame;  // 0x1410, size 0x8
 
     UFUNCTION(BlueprintCallable) void AbortInteraction__DelegateSignature();
+    UFUNCTION(BlueprintCallable) void ApplyCosmeticComponentTags(UActorComponent* Mesh, const FRowHandle& ArmorRow);  // parameters 0x20
     UFUNCTION(BlueprintCallable) void AttachedSeatChanged__DelegateSignature();
     UFUNCTION(BlueprintCallable) void AutoEquipShield();
     UFUNCTION(BlueprintCallable) void Backpack_OnDroppingOverflowItem(const FItemData& Item);  // parameters 0x1F0
@@ -211,7 +212,7 @@ public:
     UFUNCTION(BlueprintCallable) void FocusedItemUpdated__DelegateSignature(AIcarusItem* FocusedItem);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void ForceSyncFocusedItem();
     UFUNCTION(BlueprintCallable) void Get_Underwater_PP_Settings_Component(AActor* WaterActor, UPostProcessComponent*& Component);  // parameters 0x10, named "Get Underwater PP Settings Component"
-    UFUNCTION(BlueprintCallable) void GetArmourStructWithOverride(FArmourRowHandle InArmourRow, FArmourData& Armour, bool& Success);  // parameters 0x319
+    UFUNCTION(BlueprintCallable) void GetArmourStructWithOverride(FArmourRowHandle InArmourRow, FArmourData& Armour, bool& Success);  // parameters 0x331
     UFUNCTION(BlueprintCallable, BlueprintPure) ABP_IcarusPlayerControllerSurvival_C* GetBPIcarusPlayerController();  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintImplementableEvent) int32 GetCurrentInventoryWeight() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintImplementableEvent) EProspectLocation GetCurrentProspectLocation() const;  // parameters 0x1
@@ -290,9 +291,11 @@ public:
     UFUNCTION(BlueprintCallable) void Inventory_BeginPlay();
     UFUNCTION(BlueprintCallable, BlueprintPure) void Is_Night_Time(bool& NightTime);  // parameters 0x1, named "Is Night Time"
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintImplementableEvent) bool IsClothSimEnabled();  // parameters 0x1
+    UFUNCTION(BlueprintCallable) void IsHelmetShowing(bool& HelmetShowing);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void IsPlayerCovered(bool& Covered);  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintImplementableEvent) bool IsSlotValidForItem(UInventoryComponent* Inventory, FInventoryIDEnum InventoryID, FItemData Item, int32 SlotIndex) const;  // parameters 0x20D
     UFUNCTION(BlueprintImplementableEvent) void K2_OnMovementModeChanged(TEnumAsByte<EMovementMode> PrevMovementMode, TEnumAsByte<EMovementMode> NewMovementMode, uint8 PrevCustomMode, uint8 NewCustomMode);  // parameters 0x4
+    UFUNCTION(BlueprintCallable) void LinkFacePiecesToHead();
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable) void MULTI_OnFocusedItemBroken();
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable) void MULTI_OnPlayersSlept();
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable) void MULTI_PlayItemDroppedSound(FItemAudioDataRowHandle ItemAudio, FVector DropLocation);  // parameters 0x24
@@ -402,6 +405,7 @@ public:
     UFUNCTION(BlueprintCallable, Server, Reliable) void Server_FocusAndUseItemFromMenu(UInventory* Inventory, int32 Slot, FUsesEnum Use);  // parameters 0x20
     UFUNCTION(BlueprintCallable, Server, Reliable) void Server_PlayWaveAnim();
     UFUNCTION(BlueprintCallable, Server, Reliable) void Server_SetCaveState(bool IsInCave);  // parameters 0x1
+    UFUNCTION(BlueprintCallable, Server, Reliable) void Server_SetRebreather(int32 RebreatherHash);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void Set_Post_Process_Visibility(bool Block);  // parameters 0x1, named "Set Post Process Visibility"
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void SetADSOffset(const FTransform& NewOffset);  // parameters 0x30
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void SetAimVignetteIntensity(float NewIntensityTarget, float InterpSpeed);  // parameters 0x8
@@ -426,6 +430,7 @@ public:
     UFUNCTION(BlueprintCallable) void StatsUpdated();
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintImplementableEvent) bool StripItemTags(UInventoryComponent* Inventory, FInventoryIDEnum InventoryID, FItemData Item, int32 SlotIndex, FGameplayTagContainer& ItemTags) const;  // parameters 0x231
     UFUNCTION(BlueprintCallable, BlueprintPure) void SurfaceIsLiquid(TEnumAsByte<EPhysicalSurface> Surface, bool& IsLiquid);  // parameters 0x2
+    UFUNCTION(BlueprintCallable) void SwapFacePiecesForHelmet(const FCharacterCosmetics& CharacterCosmetic);  // parameters 0x80
     UFUNCTION(BlueprintCallable) void TickDamageIndicators();
     UFUNCTION(BlueprintCallable) void TickExposurePostProcess();
     UFUNCTION(BlueprintCallable) void TickPostProcessing(float DeltaTime);  // parameters 0x4

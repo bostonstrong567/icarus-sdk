@@ -15,9 +15,9 @@ public:
     UPROPERTY(Instanced, BlueprintReadWrite) UBorder* MainBorder;  // 0x0290, size 0x8
     UPROPERTY(Instanced, BlueprintReadWrite) UButton* MainButton;  // 0x0298, size 0x8
     UPROPERTY(Instanced, BlueprintReadWrite) UImage* PasswordRequired;  // 0x02A0, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UTextBlock* PingText;  // 0x02A8, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UTextBlock* PlayerCount;  // 0x02B0, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) USizeBox* Privacy;  // 0x02B8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) USizeBox* PingBox;  // 0x02A8, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UTextBlock* PingText;  // 0x02B0, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UTextBlock* PlayerCount;  // 0x02B8, size 0x8
     UPROPERTY(Instanced, BlueprintReadWrite) UTextBlock* ProspectDifficulty;  // 0x02C0, size 0x8
     UPROPERTY(Instanced, BlueprintReadWrite) UTextBlock* ProspectName;  // 0x02C8, size 0x8
     UPROPERTY(Instanced, BlueprintReadWrite) UTextBlock* ProspectTime;  // 0x02D0, size 0x8

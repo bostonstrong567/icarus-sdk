@@ -9,7 +9,7 @@ public:
     UPROPERTY(Transient) FPointerToUberGraphFrame UberGraphFrame;  // 0x04E8, size 0x8
     UPROPERTY(Instanced, BlueprintReadWrite) USceneComponent* DefaultSceneRoot;  // 0x04F0, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 AmountToSpawn;  // 0x04F8, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<AActor*> SpawnedActors;  // 0x0500, size 0x10
+    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) TArray<AActor*> SpawnedActors;  // 0x0500, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float SpawnRadius;  // 0x0510, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float MaxPlayerDistance;  // 0x0514, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector SpawnLocation;  // 0x0518, size 0xC
@@ -50,6 +50,7 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool ShouldSpawnGroup;  // 0x07E0, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FStatsRowHandle IceMammothWorldStat;  // 0x07E4, size 0x18
 
+    UFUNCTION(BlueprintCallable, BlueprintPure) void Check_Campaign_Completion(bool& Completed);  // parameters 0x1, named "Check Campaign Completion"
     UFUNCTION(BlueprintCallable, BlueprintPure) void Check_Manual_Spawn(FAISetupEnum AISetup, bool& CanSpawn);  // parameters 0x11, named "Check Manual Spawn"
     UFUNCTION(BlueprintCallable) void CheckAIDistance(ABP_IcarusNPCGOAPCharacter_C* AI);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void CheckLocation(FVector Location, bool& Found) const;  // parameters 0xD

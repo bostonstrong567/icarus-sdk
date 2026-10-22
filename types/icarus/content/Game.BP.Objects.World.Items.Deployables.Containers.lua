@@ -51,12 +51,17 @@
 ---@field CaseOpen boolean
 ---@field DeviceIsOn boolean
 ---@field IsInteracting boolean
+---@field Repairing boolean
 ---@field SK_DEP_Armor_Stand_T4_Case SkeletalMeshComponent
+---@field AttemptArmorRepair fun(self: BP_ArmourStand_T4_C)
+---@field CanRepair fun(self: BP_ArmourStand_T4_C, CanRepair: boolean)
 ---@field IcarusBeginPlay fun(self: BP_ArmourStand_T4_C)
 ---@field OnBecomeInteractedWith fun(self: BP_ArmourStand_T4_C)
 ---@field OnDeviceOnStateChanged fun(self: BP_ArmourStand_T4_C, bIsOn: boolean)
 ---@field OnNoLongerInteractedWith fun(self: BP_ArmourStand_T4_C)
+---@field OnRep_CaseOpen fun(self: BP_ArmourStand_T4_C)
 ---@field OnRep_DeviceIsOn fun(self: BP_ArmourStand_T4_C)
+---@field OnRep_IsInteracting fun(self: BP_ArmourStand_T4_C)
 ---@field ReceiveBeginPlay fun(self: BP_ArmourStand_T4_C)
 ---@field RepairArmor fun(self: BP_ArmourStand_T4_C)
 ---@field ToggleOpen fun(self: BP_ArmourStand_T4_C)

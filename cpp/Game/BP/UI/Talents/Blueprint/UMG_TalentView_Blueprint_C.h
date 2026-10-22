@@ -1,6 +1,6 @@
 // /Game/BP/UI/Talents/Blueprint/UMG_TalentView_Blueprint.UMG_TalentView_Blueprint_C
 // Derives from: UTalentViewInterface > UUserWidget > UWidget > UVisual > UObject
-// size 0x360, a blueprint class, widget
+// size 0x391, a blueprint class, widget
 
 UCLASS(EditInlineNew, Config=Engine)
 class UUMG_TalentView_Blueprint_C : public UTalentViewInterface
@@ -24,12 +24,22 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<UUMG_TalentArchetype_Player_C*> Buttons;  // 0x02E8, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FText AvailableTalents;  // 0x02F8, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<FTalentArchetypesRowHandle, TSoftObjectPtr<UTexture2D>> Backgrounds;  // 0x0310, size 0x50
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) ETalentSearchFocusMode SearchFocusMode;  // 0x0360, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FTalentArchetypesRowHandle> SearchMatchedArchetypes;  // 0x0368, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTalentsRowHandle SearchCurrentTierMatch;  // 0x0378, size 0x18
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bEnableTabHighlighting;  // 0x0390, size 0x1
 
     UFUNCTION() void BndEvt__UMG_TalentView_Blueprint_RefreshButton_K2Node_ComponentBoundEvent_1_Clicked__DelegateSignature();
     UFUNCTION() void ExecuteUbergraph_UMG_TalentView_Blueprint(int32 EntryPoint);  // parameters 0x4
+    UFUNCTION(BlueprintCallable) void FocusTalent(FTalentsRowHandle Talent);  // parameters 0x18
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintImplementableEvent) UTalentGraphWidget* GetGraphWidget() const;  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) TArray<UTalentTreeWidget*> GetTalentTreeWidgets();  // parameters 0x10
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void HandleSearchResults(const FTalentsRowHandle& CurrentTierMatch, const FTalentsRowHandle& BestMatch, const TArray<FTalentArchetypesRowHandle>& MatchedArchetypes, bool bAllowFocus);  // parameters 0x41
     UFUNCTION(BlueprintCallable) void OnClick(FTalentArchetypesRowHandle Archetype);  // parameters 0x18
     UFUNCTION(BlueprintImplementableEvent) void OnModelViewChanged(UTalentModelInterface* InModel, UTalentViewInterface* InView);  // parameters 0x10
+    UFUNCTION(BlueprintCallable) void RefocusSearchOnCurrentTier();
+    UFUNCTION(BlueprintCallable) void RefreshTierTabSearchHighlights();
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void RequestFocusTalent(FTalentsRowHandle Talent);  // parameters 0x18
+    UFUNCTION(BlueprintCallable) void SetSearchText(FText Text);  // parameters 0x18
     UFUNCTION(BlueprintCallable) void Setup();
 };

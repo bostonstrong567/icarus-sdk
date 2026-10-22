@@ -68,6 +68,7 @@
 ---@field DisplayIcarusError fun(self: UserInterfaceBase, OutgoingError: ErrorCodesEnum|{}, ErrorInfo: string)
 ---@field FocusDynamicWidget fun(self: UserInterfaceBase, DynamicWidget: UserWidget?)
 ---@field GetConfirmationPopup fun(self: UserInterfaceBase): ConfirmationPopupBase
+---@field OpenTechTreeToTalent fun(self: UserInterfaceBase, Talent: TalentsRowHandle|{}, SearchText: string)
 ---@field WidgetFocusGained fun(self: UserInterfaceBase, Widget: IcarusWidget?)
 ---@field WidgetFocusLost fun(self: UserInterfaceBase, Widget: IcarusWidget?)
 

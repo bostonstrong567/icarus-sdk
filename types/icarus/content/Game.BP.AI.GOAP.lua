@@ -1385,10 +1385,7 @@
 
 ---@class BP_NPC_Horse_Juvenile_Character_C : BP_IcarusNPCGOAPCharacter_Juvenile_C
 ---@field GFur GFurComponent
----@field ViewTargetActor_0 Actor
----@field GetCurrentAnimationTarget_0 fun(self: BP_NPC_Horse_Juvenile_Character_C): Actor
 ---@field GetDamageSourceLocation fun(self: BP_NPC_Horse_Juvenile_Character_C, Montage: AnimMontage?, SectionName: string): Vector
----@field IsPointWithinFOV_0 fun(self: BP_NPC_Horse_Juvenile_Character_C, TargetLocation: Vector|{}, DotLimit: number): boolean
 
 ---@class BP_NPC_IceMammoth_O1_Controller_C : BP_IcarusNPCGOAPController_C
 ---@field GetActorThreat fun(self: BP_NPC_IceMammoth_O1_Controller_C, PerceivedActor: Actor?, bIgnoreRelationships: boolean): number
@@ -1604,10 +1601,7 @@
 
 ---@class BP_NPC_Lamb_Juvenile_Character_C : BP_NPC_Juvenile_Domesticated_C
 ---@field GFur GFurComponent
----@field ViewTargetActor_0 Actor
----@field GetCurrentAnimationTarget_0 fun(self: BP_NPC_Lamb_Juvenile_Character_C): Actor
 ---@field GetDamageSourceLocation fun(self: BP_NPC_Lamb_Juvenile_Character_C, Montage: AnimMontage?, SectionName: string): Vector
----@field IsPointWithinFOV_0 fun(self: BP_NPC_Lamb_Juvenile_Character_C, TargetLocation: Vector|{}, DotLimit: number): boolean
 
 ---@class BP_NPC_LavaBomber_Character_C : BP_IcarusNPCGOAPCharacter_C
 ---@field Alert SceneComponent
@@ -1780,10 +1774,7 @@
 
 ---@class BP_NPC_Moa_Juvenile_Character_C : BP_IcarusNPCGOAPCharacter_Juvenile_C
 ---@field GFur GFurComponent
----@field ViewTargetActor_0 Actor
----@field GetCurrentAnimationTarget_0 fun(self: BP_NPC_Moa_Juvenile_Character_C): Actor
 ---@field GetDamageSourceLocation fun(self: BP_NPC_Moa_Juvenile_Character_C, Montage: AnimMontage?, SectionName: string): Vector
----@field IsPointWithinFOV_0 fun(self: BP_NPC_Moa_Juvenile_Character_C, TargetLocation: Vector|{}, DotLimit: number): boolean
 
 ---@class BP_NPC_Needler_Character_C : BP_IcarusNPCGOAPCharacter_C
 ---@field Alert SceneComponent
@@ -1907,8 +1898,7 @@
 ---@field GetDamageSourceLocation fun(self: BP_NPC_Raptor_Desert_Character_C, Montage: AnimMontage?, SectionName: string): Vector
 
 ---@class BP_NPC_Raptor_Juvenile_Character_C : BP_IcarusNPCGOAPCharacter_Juvenile_C
----@field BP_UIProjectionLocation BP_UIProjectionLocation_C
----@field ViewTargetActor_0 Actor
+---@field Alert SceneComponent
 ---@field GetDamageSourceLocation fun(self: BP_NPC_Raptor_Juvenile_Character_C, Montage: AnimMontage?, SectionName: string): Vector
 
 ---@class BP_NPC_Raptor_Juvenile_Character_Desert_C : BP_NPC_Raptor_Juvenile_Character_C
@@ -1964,8 +1954,6 @@
 ---@field CritArea_Back_2 CapsuleComponent
 ---@field CritArea_Jaw_1 CapsuleComponent
 ---@field CritArea_Jaw_2 CapsuleComponent
----@field CritArea_Left_Leg CapsuleComponent
----@field CritArea_Right_Leg CapsuleComponent
 ---@field EnrageEndTimeline TimelineComponent
 ---@field EnrageEndTimeline_EmissiveAlpha_CED2A1C045DCA9A341C04F82AED8CC4B number
 ---@field EnrageEndTimeline__Direction_CED2A1C045DCA9A341C04F82AED8CC4B ETimelineDirection
@@ -2050,10 +2038,6 @@
 ---@field Alert SceneComponent
 ---@field BP_HuntingClueSpawner BP_HuntingClueSpawner_C
 ---@field CleanUpTimerHandle TimerHandle
----@field CriticalArea_Body_Strong SphereComponent
----@field CriticalArea_LegL_Weak SphereComponent
----@field CriticalArea_LegR_Weak SphereComponent
----@field CriticalArea_Tail_Weak SphereComponent
 ---@field EmergeTimer TimerHandle
 ---@field FastestActiveState EGOAPProperty
 ---@field HasEmerged boolean
@@ -2063,7 +2047,6 @@
 ---@field CompleteEmerge fun(self: BP_NPC_SandScuttle_Character_C)
 ---@field FindFloorAngle fun(self: BP_NPC_SandScuttle_Character_C, Angle: number)
 ---@field GetAlertWidgetLocation fun(self: BP_NPC_SandScuttle_Character_C, Location: Vector|{})
----@field GetCriticalHitAreas fun(self: BP_NPC_SandScuttle_Character_C): table<PrimitiveComponent, CriticalHitAreasEnum>
 ---@field GetDamageSourceLocation fun(self: BP_NPC_SandScuttle_Character_C, Montage: AnimMontage?, SectionName: string): Vector
 ---@field OnRep_HasEmerged fun(self: BP_NPC_SandScuttle_Character_C)
 ---@field ReceiveBeginPlay fun(self: BP_NPC_SandScuttle_Character_C)
@@ -2181,7 +2164,6 @@
 
 ---@class BP_NPC_Slinker_Juvenile_Character_C : BP_IcarusNPCGOAPCharacter_Juvenile_C
 ---@field GFur GFurComponent
----@field ViewTargetActor_0 Actor
 ---@field GetDamageSourceLocation fun(self: BP_NPC_Slinker_Juvenile_Character_C, Montage: AnimMontage?, SectionName: string): Vector
 
 ---@class BP_NPC_Slug_Controller_C : BP_NPC_Generic_Controller_C
@@ -2411,7 +2393,6 @@
 
 ---@class BP_NPC_Snow_Wolf_Juvenile_C : BP_IcarusNPCGOAPCharacter_Juvenile_C
 ---@field GFur GFurComponent
----@field ViewTargetActor_0 Actor
 ---@field GetDamageSourceLocation fun(self: BP_NPC_Snow_Wolf_Juvenile_C, Montage: AnimMontage?, SectionName: string): Vector
 
 ---@class BP_NPC_Spider_Character_C : BP_IcarusNPCGOAPCharacter_C
@@ -2452,10 +2433,7 @@
 
 ---@class BP_NPC_SwampBird_Juvenile_Character_C : BP_IcarusNPCGOAPCharacter_Juvenile_C
 ---@field GFur GFurComponent
----@field ViewTargetActor_0 Actor
----@field GetCurrentAnimationTarget_0 fun(self: BP_NPC_SwampBird_Juvenile_Character_C): Actor
 ---@field GetDamageSourceLocation fun(self: BP_NPC_SwampBird_Juvenile_Character_C, Montage: AnimMontage?, SectionName: string): Vector
----@field IsPointWithinFOV_0 fun(self: BP_NPC_SwampBird_Juvenile_Character_C, TargetLocation: Vector|{}, DotLimit: number): boolean
 
 ---@class BP_NPC_Swamp_Quadruped_Character_C : BP_IcarusNPCGOAPCharacter_C
 ---@field Alert SceneComponent
@@ -2510,7 +2488,6 @@
 
 ---@class BP_NPC_Tundra_Monkey_Juvenile_C : BP_IcarusNPCGOAPCharacter_Juvenile_C
 ---@field GFur GFurComponent
----@field ViewTargetActor_0 Actor
 ---@field GetDamageSourceLocation fun(self: BP_NPC_Tundra_Monkey_Juvenile_C, Montage: AnimMontage?, SectionName: string): Vector
 
 ---@class BP_NPC_Tusker_Character_C : BP_IcarusNPCGOAPCharacter_C
@@ -2531,10 +2508,7 @@
 
 ---@class BP_NPC_Tusker_Juvenile_Character_C : BP_IcarusNPCGOAPCharacter_Juvenile_C
 ---@field GFur GFurComponent
----@field ViewTargetActor_0 Actor
----@field GetCurrentAnimationTarget_0 fun(self: BP_NPC_Tusker_Juvenile_Character_C): Actor
 ---@field GetDamageSourceLocation fun(self: BP_NPC_Tusker_Juvenile_Character_C, Montage: AnimMontage?, SectionName: string): Vector
----@field IsPointWithinFOV_0 fun(self: BP_NPC_Tusker_Juvenile_Character_C, TargetLocation: Vector|{}, DotLimit: number): boolean
 
 ---@class BP_NPC_WolfDesert_Character_C : BP_IcarusNPCGOAPCharacter_C
 ---@field Alert SceneComponent
@@ -2555,7 +2529,6 @@
 
 ---@class BP_NPC_Wolf_Conifier_Juvenile_C : BP_IcarusNPCGOAPCharacter_Juvenile_C
 ---@field GFur GFurComponent
----@field ViewTargetActor_0 Actor
 ---@field GetDamageSourceLocation fun(self: BP_NPC_Wolf_Conifier_Juvenile_C, Montage: AnimMontage?, SectionName: string): Vector
 
 ---@class BP_NPC_Wolf_Pack_Character_C : BP_IcarusNPCGOAPCharacter_C
@@ -2582,10 +2555,7 @@
 
 ---@class BP_NPC_Wooly_Zebra_Juvenile_Character_C : BP_IcarusNPCGOAPCharacter_Juvenile_C
 ---@field GFur GFurComponent
----@field ViewTargetActor_0 Actor
----@field GetCurrentAnimationTarget_0 fun(self: BP_NPC_Wooly_Zebra_Juvenile_Character_C): Actor
 ---@field GetDamageSourceLocation fun(self: BP_NPC_Wooly_Zebra_Juvenile_Character_C, Montage: AnimMontage?, SectionName: string): Vector
----@field IsPointWithinFOV_0 fun(self: BP_NPC_Wooly_Zebra_Juvenile_Character_C, TargetLocation: Vector|{}, DotLimit: number): boolean
 
 ---@class BP_NPC_Yeti_Character_C : BP_IcarusNPCGOAPCharacter_C
 ---@field Alert SceneComponent

@@ -486,6 +486,7 @@
 ---@field OnRaidReadyToResolve GameDelegate
 ---@field OnRaidResolved GameDelegate
 ---@field OnSettlementTalentsChanged GameDelegate
+---@field OnSlotTaskChanged GameDelegate
 ---@field OnTaskCompletedEvent GameDelegate
 ---@field OnVisitorArrived GameDelegate
 ---@field OnVisitorLeft GameDelegate
@@ -540,10 +541,12 @@
 ---@field AddToStorage fun(self: Settlement, Items: CraftingInput[], Resources: ResourceItem[], Multiplier: number, bDropItemsAtOverflow: boolean): boolean
 ---@field AddXP fun(self: Settlement, Amount: integer)
 ---@field ApplyRaidConsequences fun(self: Settlement, Shortfall: number)
+---@field AssignNPCToSlot fun(self: Settlement, NpcId: Guid|{}, SlotTaskId: Guid|{}): boolean
 ---@field AttractVisitor fun(self: Settlement)
 ---@field CalculateDefenseScore fun(self: Settlement): number
 ---@field CalculateRaidStrength fun(self: Settlement, RaidConfig: SettlementRaid|{}): number
 ---@field CanAssignNPCToBuilding fun(self: Settlement, NpcId: Guid|{}, Building: SettlementBuilding?): boolean
+---@field CanAssignNPCToSlot fun(self: Settlement, NpcId: Guid|{}, SlotTaskId: Guid|{}): boolean
 ---@field CanChooseOutcome fun(self: Settlement, OutcomeIndex: integer): boolean
 ---@field CheckStorageContains fun(self: Settlement, Items: CraftingInput[], ItemQueries: QueryInput[], Resources: ResourceItem[]): boolean
 ---@field ClearActivityOverride fun(self: Settlement)
@@ -562,12 +565,14 @@
 ---@field GetActiveEventData fun(self: Settlement, OutData: SettlementEventData|{}): boolean
 ---@field GetAverageMood fun(self: Settlement): integer
 ---@field GetBoundaryAffectingActors fun(self: Settlement, OutActors: Actor[])
+---@field GetBuildingSlots fun(self: Settlement, Building: SettlementBuilding?): SettlementNPCTask[]
 ---@field GetDeviatedOutcome fun(self: Settlement, OutcomeIndex: integer, OutOutcome: SettlementEventOutcomeData|{}): boolean
 ---@field GetEffectiveActivity fun(self: Settlement, NPC: SettlementNPC|{}): ESettlementNPCActivity
 ---@field GetEventWeight fun(self: Settlement, EventRow: SettlementEventsRowHandle|{}, BaseWeight: number): number
 ---@field GetMaxNPCs fun(self: Settlement): integer
 ---@field GetMedicalTreatmentCapacity fun(self: Settlement): integer
 ---@field GetNPCActivitySlotElapsed fun(self: Settlement, DeltaProspectTime: number, ActivitySlot: ESettlementNPCActivity, NPCId: Guid|{}, OutSlotFraction: number): number
+---@field GetNPCData fun(self: Settlement, NpcId: Guid|{}, OutNPC: SettlementNPC|{}): boolean
 ---@field GetNPCSkillLevel fun(self: Settlement, NpcId: Guid|{}, Skill: SettlementNPCSkillsRowHandle|{}): integer
 ---@field GetNPCSpawnTransform fun(self: Settlement, NPC: SettlementNPC|{}): Transform
 ---@field GetNPCsAssignedToBuilding fun(self: Settlement, Building: SettlementBuilding?): SettlementNPC[]
@@ -613,7 +618,10 @@
 ---@field ResolveEventWithChoice fun(self: Settlement, OutcomeIndex: integer): boolean
 ---@field SetActivityOverride fun(self: Settlement, Activity: ESettlementNPCActivity)
 ---@field SetNPCRole fun(self: Settlement, NpcId: Guid|{}, NewRole: SettlementNPCRolesRowHandle|{})
+---@field SetNPCSlotTask fun(self: Settlement, NpcId: Guid|{}, Task: SettlementTasksRowHandle|{}): boolean
 ---@field SetNPCWorkAssignment fun(self: Settlement, NpcId: Guid|{}, Building: SettlementBuilding?): boolean
+---@field SetSlotAutoAssign fun(self: Settlement, SlotTaskId: Guid|{}, bAutoAssign: boolean): boolean
+---@field SetSlotTask fun(self: Settlement, SlotTaskId: Guid|{}, Task: SettlementTasksRowHandle|{}): boolean
 ---@field SetTaskProgress fun(self: Settlement, TaskId: Guid|{}, NewProgress: number, bAutoComplete: boolean)
 ---@field SetXP fun(self: Settlement, Amount: integer)
 ---@field ShouldAutoResolveRaids fun(self: Settlement): boolean
@@ -625,6 +633,7 @@
 ---@field TreatAilment fun(self: Settlement, NPCId: Guid|{})
 ---@field TryApplySurvivalModifiers fun(self: Settlement)
 ---@field TryUpdateTaskProgress fun(self: Settlement, Task: SettlementNPCTask|{}, ProspectTimeDelta: number)
+---@field UnassignNPC fun(self: Settlement, NpcId: Guid|{}): boolean
 ---@field UnregisterBuilding fun(self: Settlement, Building: SettlementBuilding?)
 ---@field UpdateSettlementTalent fun(self: Settlement, Talent: TalentsRowHandle|{}, bState: boolean): boolean
 ---@field UpdateTaskAssignments fun(self: Settlement)
@@ -655,13 +664,20 @@
 ---@field bIsPowered boolean
 ---@field bPendingRepair boolean
 ---@field AddBuildProgress fun(self: SettlementBuilding, Delta: number)
+---@field AssignNPCToSlot fun(self: SettlementBuilding, SlotIndex: integer, NpcId: Guid|{}): boolean
 ---@field CanAffordConstructionCost fun(self: SettlementBuilding): boolean
+---@field CanAssignNPCToSlot fun(self: SettlementBuilding, SlotIndex: integer, NpcId: Guid|{}): boolean
 ---@field CanConstructBuildingAtLocation fun(self: SettlementBuilding, WorldContextObject: Object?, Location: Vector|{}, Rotation: Rotator|{}, FailureReason: string): boolean
 ---@field ConsumeConstructionCost fun(self: SettlementBuilding): boolean
 ---@field Deconstruct fun(self: SettlementBuilding)
 ---@field GetAssignedWorkerCount fun(self: SettlementBuilding): integer
+---@field GetAvailableTasks fun(self: SettlementBuilding): SettlementTaskInfo[]
 ---@field GetGenerationOutputSummary fun(self: SettlementBuilding): string
+---@field GetSlotCount fun(self: SettlementBuilding): integer
+---@field GetSlots fun(self: SettlementBuilding): SettlementSlotInfo[]
 ---@field GetStatusDescription fun(self: SettlementBuilding): string
+---@field GetTaskDisplayName fun(self: SettlementBuilding, Task: SettlementTasksRowHandle|{}): string
+---@field HasTask fun(self: SettlementBuilding, Task: SettlementTasksRowHandle|{}): boolean
 ---@field IsActive fun(self: SettlementBuilding): boolean
 ---@field IsConstructed fun(self: SettlementBuilding): boolean
 ---@field IsPowered fun(self: SettlementBuilding): boolean
@@ -679,7 +695,10 @@
 ---@field RequestRepairTask fun(self: SettlementBuilding)
 ---@field SetBuildState fun(self: SettlementBuilding, NewState: ESettlementBuildState)
 ---@field SetBuildingActive fun(self: SettlementBuilding, bInActive: boolean)
+---@field SetSlotAutoAssign fun(self: SettlementBuilding, SlotIndex: integer, bAutoAssign: boolean): boolean
+---@field SetSlotTask fun(self: SettlementBuilding, SlotIndex: integer, Task: SettlementTasksRowHandle|{}): boolean
 ---@field TickActiveBuilding fun(self: SettlementBuilding, ProspectTimeDelta: number)
+---@field UnassignSlot fun(self: SettlementBuilding, SlotIndex: integer): boolean
 
 ---@class SettlementBuildingData : IcarusTableRowBase
 ---@field BoundaryBuildRule ESettlementBoundsBuildRule
@@ -690,13 +709,14 @@
 ---@field BuildingTags GameplayTagContainer
 ---@field ConstructionExperienceReward ExperienceEventsRowHandle
 ---@field ConstructionTime integer
----@field DefaultTasks SettlementNPCTaskTypesRowHandle[]
----@field Generation SettlementGenerationEntry[]
+---@field DefaultTasks SettlementTasksRowHandle[]
 ---@field ItemConstructionCost CraftingInput[]
 ---@field Mesh StaticMesh
 ---@field QueryItemConstructionCost QueryInput[]
 ---@field RequiredTalent TalentsRowHandle
 ---@field ResourceConstructionCost ResourceItem[]
+---@field SlotCount integer
+---@field Tasks SettlementTasksRowHandle[]
 
 ---@class SettlementBuildingRecorderComponent : ActorStateRecorderComponent
 ---@field BuildProgress number
@@ -849,14 +869,6 @@
 
 ---@class SettlementEventsTable : IcarusDataTable
 
----@class SettlementGenerationEntry
----@field InputItems CraftingInput[]
----@field InputResources ResourceItem[]
----@field OutputUnitsPerInput integer
----@field Outputs SettlementGenerationOutput[]
----@field RateStat StatsEnum
----@field RequiredActivity ESettlementNPCActivity
-
 ---@class SettlementGenerationOutput
 ---@field Chance number
 ---@field Item ItemsStaticRowHandle
@@ -880,6 +892,7 @@
 ---@field LowMoodDays integer
 ---@field NpcId Guid
 ---@field PlayerAssignedBuildingId integer
+---@field PlayerAssignedSlotTaskId Guid
 ---@field Role SettlementNPCRolesRowHandle
 ---@field Seed integer
 ---@field Skills SettlementNPCSkillProgress[]
@@ -900,8 +913,10 @@
 ---@field ReplicatedTaskData SettlementNPCTask
 ---@field AddNPCToSettlement fun(self: SettlementNPCCharacter, Settlement: Settlement?): boolean
 ---@field GetAssignedBuilding fun(self: SettlementNPCCharacter): SettlementBuilding
+---@field GetAvailableTasks fun(self: SettlementNPCCharacter): SettlementTaskInfo[]
 ---@field GetCurrentTask fun(self: SettlementNPCCharacter, OutTask: SettlementNPCTask|{}): boolean
 ---@field GetNPCData fun(self: SettlementNPCCharacter, NPCData: SettlementNPC|{}): boolean
+---@field GetSlotTask fun(self: SettlementNPCCharacter): SettlementTasksRowHandle
 ---@field InitialiseNewNPC fun(self: SettlementNPCCharacter)
 ---@field OnAddedToSettlement fun(self: SettlementNPCCharacter, Settlement: Settlement?)
 ---@field OnCurrentTaskUpdated fun(self: SettlementNPCCharacter)
@@ -912,6 +927,7 @@
 ---@field OnRep_HeldItem fun(self: SettlementNPCCharacter)
 ---@field OnRep_OwningSettlement fun(self: SettlementNPCCharacter)
 ---@field OnRep_ReplicatedTaskData fun(self: SettlementNPCCharacter)
+---@field SetSlotTask fun(self: SettlementNPCCharacter, Task: SettlementTasksRowHandle|{}): boolean
 ---@field TryReplicateTaskUpdates fun(self: SettlementNPCCharacter, ForNPC: Guid|{})
 ---@field UpdateHeldItem fun(self: SettlementNPCCharacter, NewItem: SettlementNPCItemsRowHandle|{})
 
@@ -1020,6 +1036,7 @@
 ---@field LowMoodDays integer
 ---@field NpcId Guid
 ---@field PlayerAssignedBuildingId integer
+---@field PlayerAssignedSlotTaskId Guid
 ---@field RoleRow string
 ---@field Seed integer
 ---@field Skills SettlementNPCSkillRecord[]
@@ -1146,7 +1163,9 @@
 ---@field Progress number
 ---@field Source Actor
 ---@field Target Actor
+---@field Task SettlementTasksRowHandle
 ---@field TaskId Guid
+---@field bAutoAssign boolean
 
 ---@class SettlementNPCTaskTypeData : IcarusTableRowBase
 ---@field Behaviour BehaviorTree
@@ -1310,6 +1329,16 @@
 ---@field bHasInitialised boolean
 ---@field bInitialVisitorGranted boolean
 
+---@class SettlementSlotInfo
+---@field NpcActor SettlementNPCCharacter
+---@field NpcDisplayName string
+---@field NpcId Guid
+---@field SlotIndex integer
+---@field Task SettlementTasksRowHandle
+---@field TaskDisplayName string
+---@field TaskId Guid
+---@field bAutoAssign boolean
+
 ---@class SettlementSubsystem : WorldSubsystem
 ---@field Settlements Settlement[]
 ---@field AddSettlement fun(self: SettlementSubsystem, Settlement: Settlement?)
@@ -1326,6 +1355,29 @@
 ---@field Rank integer
 ---@field RowName string
 
+---@class SettlementTaskData : IcarusTableRowBase
+---@field DisplayName string
+---@field InputItems CraftingInput[]
+---@field InputQueries QueryInput[]
+---@field InputResources ResourceItem[]
+---@field NPCTaskType SettlementNPCTaskTypesRowHandle
+---@field OutputMode ESettlementGenerationOutputMode
+---@field OutputUnitsPerInput integer
+---@field Outputs SettlementGenerationOutput[]
+---@field RateStat StatsEnum
+---@field RequiredActivity ESettlementNPCActivity
+---@field bRequiresWorker boolean
+
+---@class SettlementTaskInfo
+---@field AssignedWorkers integer
+---@field DisplayName string
+---@field Outputs SettlementGenerationOutput[]
+---@field Task SettlementTasksRowHandle
+---@field bInputsAvailable boolean
+---@field bIsProduction boolean
+---@field bRequiresInputs boolean
+---@field bRequiresWorker boolean
+
 ---@class SettlementTaskRecord
 ---@field AssignedNpcId Guid
 ---@field Priority integer
@@ -1335,7 +1387,41 @@
 ---@field TargetClassName string
 ---@field TargetUID integer
 ---@field TaskId Guid
+---@field TaskRow string
 ---@field TaskTypeRow string
+---@field bAutoAssign boolean
+
+---@class SettlementTasksEnum : RowEnum
+
+---@class SettlementTasksLibrary : RowLibrary
+---@field AddRowToSettlementTasksTable fun(self: SettlementTasksLibrary, Name: string, Data: SettlementTaskData|{}, NewRow: SettlementTasksRowHandle|{}, bOverrideExistingRow: boolean)
+---@field BreakSettlementTasksEnum fun(self: SettlementTasksLibrary, Enum: SettlementTasksEnum|{}, Name: string, Index: integer)
+---@field CastToSettlementTasksRowHandle fun(self: SettlementTasksLibrary, RowHandle: RowHandle|{}, Paths: EValid): SettlementTasksRowHandle
+---@field EqualEqual_EnumEnum fun(self: SettlementTasksLibrary, A: SettlementTasksEnum|{}, B: SettlementTasksEnum|{}): boolean
+---@field EqualEqual_FSettlementTasksRowHandleFSettlementTasksRowHandle fun(self: SettlementTasksLibrary, RowHandleA: SettlementTasksRowHandle|{}, RowHandleB: SettlementTasksRowHandle|{}): boolean
+---@field GetSettlementTasksStruct fun(self: SettlementTasksLibrary, RowHandle: SettlementTasksRowHandle|{}, SettlementTasks: SettlementTaskData|{}, Paths: EValid)
+---@field IntToName fun(self: SettlementTasksLibrary, IntValue: integer): string
+---@field IntToStruct fun(self: SettlementTasksLibrary, IntValue: integer): SettlementTasksEnum
+---@field IsValidName fun(self: SettlementTasksLibrary, NameValue: string): boolean
+---@field MakeLiteralSettlementTasks fun(self: SettlementTasksLibrary, RowHandle: SettlementTasksRowHandle|{}): SettlementTasksRowHandle
+---@field MakeSettlementTasks fun(self: SettlementTasksLibrary, RowName: string): SettlementTasksRowHandle
+---@field MakeSettlementTasksEnum fun(self: SettlementTasksLibrary, Enum: SettlementTasksEnum|{}): SettlementTasksEnum
+---@field MakeSettlementTasksFromIndex fun(self: SettlementTasksLibrary, Index: integer): SettlementTasksRowHandle
+---@field NameToInt fun(self: SettlementTasksLibrary, NameValue: string): integer
+---@field NameToStruct fun(self: SettlementTasksLibrary, NameValue: string): SettlementTasksEnum
+---@field NotEqual_EnumEnum fun(self: SettlementTasksLibrary, A: SettlementTasksEnum|{}, B: SettlementTasksEnum|{}): boolean
+---@field NotEqual_EnumName fun(self: SettlementTasksLibrary, A: SettlementTasksEnum|{}, B: string): boolean
+---@field NumRows fun(self: SettlementTasksLibrary): integer
+---@field RefreshConstants fun(self: SettlementTasksLibrary)
+---@field RemoveRowFromSettlementTasksTable fun(self: SettlementTasksLibrary, Name: string)
+---@field RowHandleToStruct fun(self: SettlementTasksLibrary, RowHandle: SettlementTasksRowHandle|{}): SettlementTasksEnum
+---@field StructToInt fun(self: SettlementTasksLibrary, EnumValue: SettlementTasksEnum|{}): integer
+---@field StructToName fun(self: SettlementTasksLibrary, EnumValue: SettlementTasksEnum|{}): string
+---@field StructToRowHandle fun(self: SettlementTasksLibrary, EnumValue: SettlementTasksEnum|{}): SettlementTasksRowHandle
+
+---@class SettlementTasksRowHandle : RowHandle
+
+---@class SettlementTasksTable : IcarusDataTable
 
 ---@class SettlementTimedModifierRecord
 ---@field ModifierRow string

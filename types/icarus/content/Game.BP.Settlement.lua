@@ -5,10 +5,12 @@
 ---@field ActiveDefaultTasks SettlementNPCTask[]
 ---@field BP_UIProjectionLocation BP_UIProjectionLocation_C
 ---@field BuildBlocker BoxComponent
+---@field BuildingMesh StaticMeshComponent
 ---@field ConstructionMarker_01 SceneComponent
 ---@field ConstructionMarker_02 SceneComponent
 ---@field ConstructionMarker_03 SceneComponent
 ---@field ConstructionMarker_04 SceneComponent
+---@field Container SkeletalMeshComponent
 ---@field FoliageBlockingCube StaticMeshComponent
 ---@field Highlightable HighlightableComponent
 ---@field IcarusNavigationDirtier IcarusNavigationDirtier
@@ -427,6 +429,7 @@
 
 ---@class UMG_SettlementLedger_ListEntry_C : UserWidget
 ---@field AssignedNPC ComboBoxText
+---@field BuildingSlots VerticalBox
 ---@field Image Image
 ---@field Image_75 Image
 ---@field Image_BuildingIcon Image
@@ -436,10 +439,12 @@
 ---@field LinkedSettlement Settlement
 ---@field TextBlock_BuildingName TextBlock
 ---@field TextBlock_Status TextBlock
+---@field bBound boolean
 ---@field BP_OnEntryReleased fun(self: UMG_SettlementLedger_ListEntry_C)
 ---@field BP_OnItemExpansionChanged fun(self: UMG_SettlementLedger_ListEntry_C, bIsExpanded: boolean)
 ---@field BP_OnItemSelectionChanged fun(self: UMG_SettlementLedger_ListEntry_C, bIsSelected: boolean)
 ---@field OnListItemObjectSet fun(self: UMG_SettlementLedger_ListEntry_C, ListItemObject: Object?)
+---@field OnNPCTaskingUpdated fun(self: UMG_SettlementLedger_ListEntry_C, NpcId: Guid|{})
 
 ---@class UMG_SettlementNPCSkill_C : UserWidget
 ---@field BoostLevel integer
@@ -476,12 +481,68 @@
 
 ---@class UMG_Settlement_Building_C : UMG_IcarusLinkedActorPanel_C
 ---@field Building SettlementBuilding
+---@field BuildingSlots VerticalBox
 ---@field CloseButton UMG_IconTextButton_C
 ---@field DeconstructButton UMG_IconTextButton_C
+---@field TextBlock_Status TextBlock
 ---@field TitleText TextBlock
 ---@field Construct fun(self: UMG_Settlement_Building_C)
 ---@field DoNothing fun(self: UMG_Settlement_Building_C)
+---@field OnNPCTaskingUpdated fun(self: UMG_Settlement_Building_C, NpcId: Guid|{})
 ---@field PerformDeconstruct fun(self: UMG_Settlement_Building_C)
+---@field Refresh fun(self: UMG_Settlement_Building_C)
+
+---@class UMG_Settlement_Building_Construction_C : UMG_IcarusLinkedActorPanel_C
+---@field Building SettlementBuilding
+---@field CloseButton UMG_IconTextButton_C
+---@field DeconstructButton UMG_IconTextButton_C
+---@field Items UMG_IcarusGrid_C
+---@field PercentText TextBlock
+---@field ProgressBar_170 ProgressBar
+---@field TitleText TextBlock
+---@field Construct fun(self: UMG_Settlement_Building_Construction_C)
+---@field DoNothing fun(self: UMG_Settlement_Building_Construction_C)
+---@field InitialUpdate fun(self: UMG_Settlement_Building_Construction_C)
+---@field ["Initialise Cost"] fun(self: UMG_Settlement_Building_Construction_C)
+---@field PerformDeconstruct fun(self: UMG_Settlement_Building_Construction_C)
+---@field PreConstruct fun(self: UMG_Settlement_Building_Construction_C, IsDesignTime: boolean)
+---@field Tick fun(self: UMG_Settlement_Building_Construction_C, MyGeometry: Geometry|{}, InDeltaTime: number)
+
+---@class UMG_Settlement_Building_Slot_C : UserWidget
+---@field Building SettlementBuilding
+---@field Content Border
+---@field CurrentTask string
+---@field Layout Overlay
+---@field NPCList CustomComboBox
+---@field NPCName string
+---@field NoNPCText TextBlock
+---@field ["Npc Id"] Guid
+---@field Settlement Settlement
+---@field SlotData SettlementSlotInfo
+---@field Task SettlementTasksRowHandle
+---@field TaskList CustomComboBox
+---@field Construct fun(self: UMG_Settlement_Building_Slot_C)
+---@field NPCSelected fun(self: UMG_Settlement_Building_Slot_C, Object: Object?)
+---@field SetupNPCList fun(self: UMG_Settlement_Building_Slot_C, NPCId: Guid|{})
+
+---@class UMG_Settlement_Building_Slot_Fake_C : UMG_Settlement_Building_Slot_C
+---@field NPCOverride SettlementNPC
+---@field TaskOverride SettlementNPCTaskTypesRowHandle
+---@field Construct fun(self: UMG_Settlement_Building_Slot_Fake_C)
+---@field NPCSelected fun(self: UMG_Settlement_Building_Slot_Fake_C, Object: Object?)
+
+---@class UMG_Settlement_Building_Task_C : UserWidget
+---@field Icon Image
+---@field Task SettlementTaskInfo
+---@field TaskInfo TextBlock
+---@field TaskInfoIcon Image
+---@field TaskName TextBlock
+---@field BP_OnEntryReleased fun(self: UMG_Settlement_Building_Task_C)
+---@field BP_OnItemExpansionChanged fun(self: UMG_Settlement_Building_Task_C, bIsExpanded: boolean)
+---@field BP_OnItemSelectionChanged fun(self: UMG_Settlement_Building_Task_C, bIsSelected: boolean)
+---@field Construct fun(self: UMG_Settlement_Building_Task_C)
+---@field NPCTaskOverride fun(self: UMG_Settlement_Building_Task_C, NPCTask: SettlementNPCTaskTypesRowHandle|{})
+---@field OnListItemObjectSet fun(self: UMG_Settlement_Building_Task_C, ListItemObject: Object?)
 
 ---@class UMG_Settlement_Claim_C : UMG_IcarusLinkedActorPanel_C
 ---@field ConfirmButton UMG_IconTextButton_C
@@ -519,6 +580,12 @@
 ---@field CloseUI fun(self: UMG_Settlement_EventPrompt_C)
 ---@field Construct fun(self: UMG_Settlement_EventPrompt_C)
 ---@field OnDecisionMade fun(self: UMG_Settlement_EventPrompt_C, DecisionIndex: integer)
+
+---@class UMG_Settlement_NPC_Info_C : UserWidget
+---@field SettlementNPC SettlementNPC
+---@field SettlerName TextBlock
+---@field Settler_Image Image
+---@field Construct fun(self: UMG_Settlement_NPC_Info_C)
 
 ---@class UMG_Settlement_NPC_Settler_C : UMG_IcarusLinkedActorPanel_C
 ---@field CancelButton UMG_IconTextButton_C

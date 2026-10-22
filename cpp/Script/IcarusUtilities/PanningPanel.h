@@ -23,6 +23,7 @@ protected:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 OverScrollAmount;  // 0x0638, size 0x4
 public:
     UFUNCTION(BlueprintCallable) UOverlaySlot* AddChildToOverlay(UWidget* Content);  // parameters 0x10
+    UFUNCTION(BlueprintCallable) bool CenterOnWidget(UWidget* Widget);  // parameters 0x9
     UFUNCTION(BlueprintCallable) FVector2D GetPosition();  // parameters 0x8
     UFUNCTION(BlueprintCallable) void Refresh();
     UFUNCTION(BlueprintCallable) void SetPositionOverride(FVector2D Position);  // parameters 0x8

@@ -161,6 +161,7 @@ public:
     UFUNCTION(BlueprintCallable) void OnTemperatureUpdated(int32 NewTemperature);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void OnUITimeOfDayUpdated();
     UFUNCTION(BlueprintCallable) void OpenEscapeMenu();
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void OpenTechTreeToTalent(const FTalentsRowHandle& Talent, const FText& SearchText);  // parameters 0x30
     UFUNCTION(BlueprintCallable) void QueueNotification(UUMG_OnProspectNotificationBase_C* NotificationToShow, float DurationToShowFor);  // parameters 0xC
     UFUNCTION(BlueprintCallable) void RemoveRadialMenu(UUserWidget* RadialMenu);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void Reset();

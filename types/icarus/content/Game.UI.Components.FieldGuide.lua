@@ -443,6 +443,17 @@
 ---@field SubItemClicked fun(self: UMG_FieldGuideItemVestigePage_C, CategoryRow: FieldGuideCategoriesRowHandle|{}, ItemRow: ItemsStaticRowHandle|{})
 ---@field SubItemClickedByRef fun(self: UMG_FieldGuideItemVestigePage_C, CategoryRow: FieldGuideCategoriesRowHandle|{}, ItemRow: ItemsStaticRowHandle|{})
 
+---@class UMG_FieldGuideItemWaterFlavour_C : FieldGuidePageWidgetBase
+---@field ItemUses UMG_FieldGuideItem_Uses_C
+---@field Itemable UMG_FieldGuideItem_Itemable_C
+---@field RecipeOrCost UMG_FieldGuideItem_RecipeOrCost_C
+---@field Stats UMG_FieldGuideItem_Stats_C
+---@field Construct fun(self: UMG_FieldGuideItemWaterFlavour_C)
+---@field InitFieldGuideView fun(self: UMG_FieldGuideItemWaterFlavour_C, ItemIn: ItemsStaticRowHandle|{}, CategoryIn: FieldGuideCategoriesRowHandle|{}, SubcategoryIn: FieldGuideSubcategoriesRowHandle|{})
+---@field PopulateResourceDetail fun(self: UMG_FieldGuideItemWaterFlavour_C, ItemRow: ItemsStaticRowHandle|{}, CategoryRow: FieldGuideCategoriesRowHandle|{})
+---@field SubItemClicked fun(self: UMG_FieldGuideItemWaterFlavour_C, CategoryRow: FieldGuideCategoriesRowHandle|{}, ItemRow: ItemsStaticRowHandle|{})
+---@field SubItemClickedByRef fun(self: UMG_FieldGuideItemWaterFlavour_C, CategoryRow: FieldGuideCategoriesRowHandle|{}, ItemRow: ItemsStaticRowHandle|{})
+
 ---@class UMG_FieldGuideItemWorkshopPackPage_C : FieldGuidePageWidgetBase
 ---@field Image_95 Image
 ---@field ItemUses UMG_FieldGuideItem_Uses_C
@@ -471,7 +482,9 @@
 ---@field Border_124 Border
 ---@field Border_3 Border
 ---@field Border_92 Border
+---@field Button_GoToTechTree UMG_ButtonIcon_C
 ---@field FieldGuideHidden Image
+---@field HB_GtTT HorizontalBox
 ---@field HorizontalBox_Variations HorizontalBox
 ---@field HowToObtain UMG_FieldGuideResourceHowToObtain_C
 ---@field Image_52 Image
@@ -479,12 +492,15 @@
 ---@field ItemFlavour TextBlock
 ---@field ItemIcon Image
 ---@field ItemName TextBlock
+---@field SizeBox_GtTT SizeBox
 ---@field StackSizeText TextBlock
 ---@field Target TextBlock
+---@field TechTreeBlueprint TalentsRowHandle
 ---@field UMG_FeatureLevelIcon UMG_FeatureLevelIcon_C
 ---@field UMG_TalentRequiredIcon UMG_TalentRequiredIcon_C
 ---@field VariationText TextBlock
 ---@field WorkshopPurple LinearColor
+---@field Construct fun(self: UMG_FieldGuideItem_Itemable_C)
 ---@field InitFieldGuideView fun(self: UMG_FieldGuideItem_Itemable_C, ItemIn: ItemsStaticRowHandle|{}, CategoryIn: FieldGuideCategoriesRowHandle|{}, SubcategoryIn: FieldGuideSubcategoriesRowHandle|{})
 ---@field ["Populate Itemable Detail"] fun(self: UMG_FieldGuideItem_Itemable_C, ItemRow: ItemsStaticRowHandle|{}, CategoryRow: FieldGuideCategoriesRowHandle|{})
 ---@field UpdateColor fun(self: UMG_FieldGuideItem_Itemable_C)

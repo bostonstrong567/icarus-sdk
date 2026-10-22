@@ -704,6 +704,7 @@
 ---@field ReqLvlPulse WidgetAnimation
 ---@field ["Required Level"] integer
 ---@field RequiredLevelText TextBlock
+---@field SearchHighlight Overlay
 ---@field Selected boolean
 ---@field SelectedBrush SlateBrush
 ---@field SelectedTextColour SlateColor
@@ -718,14 +719,14 @@
 ---@field ["On Model State Changed"] fun(self: UMG_TalentArchetype_Player_C, Model: TalentModelInterface_Const?)
 ---@field Refresh fun(self: UMG_TalentArchetype_Player_C)
 ---@field Select fun(self: UMG_TalentArchetype_Player_C)
+---@field SetSearchHighlighted fun(self: UMG_TalentArchetype_Player_C, bNewHighlighted: boolean)
 ---@field UpdateRequiredLevel fun(self: UMG_TalentArchetype_Player_C)
 
 ---@class UMG_TalentFilter_C : UserWidget
 ---@field SearchBar UMG_SearchBox_C
 ---@field TalentView TalentViewInterface
 ---@field UMG_ButtonIcon UMG_ButtonIcon_C
----@field Construct fun(self: UMG_TalentFilter_C)
----@field HighlightTalents fun(self: UMG_TalentFilter_C)
+---@field HighlightTalents fun(self: UMG_TalentFilter_C, Text: string, bAllowFocus: boolean)
 ---@field Setup fun(self: UMG_TalentFilter_C, View: TalentViewInterface?, ShowClear: boolean)
 ---@field UpdateTextFilter fun(self: UMG_TalentFilter_C, TextIn: string)
 
@@ -733,7 +734,6 @@
 ---@field BackgroundBrush SlateBrush
 ---@field Border_0 Border
 ---@field HideTitle boolean
----@field Panner PanningPanel
 ---@field TalentTreeHorizontalBox HorizontalBox
 ---@field TitleWidgets HorizontalBox
 ---@field OnTalentTreeAdded fun(self: UMG_TalentGraph_C, TalentTree: TalentTreeWidget?)
@@ -950,13 +950,23 @@
 ---@field Pattern_1 Image
 ---@field RefreshBlueprintsButton UMG_BasicButton_2_C
 ---@field RefreshButton UMG_ButtonIcon_C
+---@field SearchCurrentTierMatch TalentsRowHandle
+---@field SearchFocusMode ETalentSearchFocusMode
+---@field SearchMatchedArchetypes TalentArchetypesRowHandle[]
 ---@field TextBlock_92 TextBlock
 ---@field UMG_TalentFilter UMG_TalentFilter_C
 ---@field UMG_TreePoints UMG_TreePoints_C
+---@field bEnableTabHighlighting boolean
+---@field FocusTalent fun(self: UMG_TalentView_Blueprint_C, Talent: TalentsRowHandle|{})
 ---@field GetGraphWidget fun(self: UMG_TalentView_Blueprint_C): TalentGraphWidget
 ---@field GetTalentTreeWidgets fun(self: UMG_TalentView_Blueprint_C): TalentTreeWidget[]
+---@field HandleSearchResults fun(self: UMG_TalentView_Blueprint_C, CurrentTierMatch: TalentsRowHandle|{}, BestMatch: TalentsRowHandle|{}, MatchedArchetypes: TalentArchetypesRowHandle[], bAllowFocus: boolean)
 ---@field OnClick fun(self: UMG_TalentView_Blueprint_C, Archetype: TalentArchetypesRowHandle|{})
 ---@field OnModelViewChanged fun(self: UMG_TalentView_Blueprint_C, InModel: TalentModelInterface?, InView: TalentViewInterface?)
+---@field RefocusSearchOnCurrentTier fun(self: UMG_TalentView_Blueprint_C)
+---@field RefreshTierTabSearchHighlights fun(self: UMG_TalentView_Blueprint_C)
+---@field RequestFocusTalent fun(self: UMG_TalentView_Blueprint_C, Talent: TalentsRowHandle|{})
+---@field SetSearchText fun(self: UMG_TalentView_Blueprint_C, Text: string)
 ---@field Setup fun(self: UMG_TalentView_Blueprint_C)
 
 ---@class UMG_TalentView_Mount_C : TalentViewInterface

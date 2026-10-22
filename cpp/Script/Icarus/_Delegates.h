@@ -360,18 +360,19 @@ DELEGATE() void OnSettlementEventStarted(const FRowHandle& EventRow);  // parame
 DELEGATE() void OnSettlementLevelUpdated(int32 NewLevel);  // parameters 0x4
 DELEGATE() void OnSettlementNPCAdded(FGuid NpcId);  // parameters 0x10
 DELEGATE() void OnSettlementNPCAilmentChanged(FGuid NpcId);  // parameters 0x10
-DELEGATE() void OnSettlementNPCDeparted(const FSettlementNPC& NPC);  // parameters 0x110
+DELEGATE() void OnSettlementNPCDeparted(const FSettlementNPC& NPC);  // parameters 0x120
 DELEGATE() void OnSettlementNPCDepartureWarning(FGuid NpcId);  // parameters 0x10
-DELEGATE() void OnSettlementNPCDied(const FSettlementNPC& NPC);  // parameters 0x110
+DELEGATE() void OnSettlementNPCDied(const FSettlementNPC& NPC);  // parameters 0x120
 DELEGATE() void OnSettlementNPCIncapacitated(FGuid NpcId);  // parameters 0x10
 DELEGATE() void OnSettlementNPCRemoved(FGuid NpcId);  // parameters 0x10
 DELEGATE() void OnSettlementNPCTaskingUpdated(FGuid NpcId);  // parameters 0x10
 DELEGATE() void OnSettlementPendingVisitorsChanged();
 DELEGATE() void OnSettlementRaidReadyToResolve(const FSettlementEventsRowHandle& EventRow);  // parameters 0x18
 DELEGATE() void OnSettlementRaidResolved(float DefenseScore, float RaidStrength, float Shortfall);  // parameters 0xC
-DELEGATE() void OnSettlementTaskCompleted(const FSettlementNPCTask& Task);  // parameters 0x54
-DELEGATE() void OnSettlementVisitorArrived(const FSettlementVisitor& Visitor);  // parameters 0x118
-DELEGATE() void OnSettlementVisitorLeft(const FSettlementVisitor& Visitor, ESettlementVisitorLeaveReason Reason);  // parameters 0x119
+DELEGATE() void OnSettlementSlotTaskChanged(FGuid SlotTaskId, const FSettlementTasksRowHandle& Task);  // parameters 0x28
+DELEGATE() void OnSettlementTaskCompleted(const FSettlementNPCTask& Task);  // parameters 0x70
+DELEGATE() void OnSettlementVisitorArrived(const FSettlementVisitor& Visitor);  // parameters 0x128
+DELEGATE() void OnSettlementVisitorLeft(const FSettlementVisitor& Visitor, ESettlementVisitorLeaveReason Reason);  // parameters 0x129
 DELEGATE() void OnSettlementVisitorRecruited(FGuid NpcId);  // parameters 0x10
 DELEGATE() void OnSettlementXPUpdated();
 DELEGATE() void OnShadingApplied(EShadingSetting Value);  // parameters 0x1

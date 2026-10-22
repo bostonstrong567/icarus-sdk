@@ -13,7 +13,9 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure) UTalentModelInterface_Const* GetModel() const;  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) TArray<UTalentTreeWidget*> GetTalentTreeWidgets();  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) FTalentViewsRowHandle GetViewData() const;  // parameters 0x18
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void HandleSearchResults(const FTalentsRowHandle& CurrentTierMatch, const FTalentsRowHandle& BestMatch, const TArray<FTalentArchetypesRowHandle>& MatchedArchetypes, bool bAllowFocus);  // parameters 0x41
     UFUNCTION(BlueprintImplementableEvent) void OnModelViewChanged(UTalentModelInterface* InModel, UTalentViewInterface* InView);  // parameters 0x10
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void RequestFocusTalent(FTalentsRowHandle Talent);  // parameters 0x18
     UFUNCTION(BlueprintCallable) void SetController(const TScriptInterface<ITalentControllerInterface>& InController);  // parameters 0x10
 
     // Virtual functions that start here:

@@ -2541,6 +2541,8 @@
 ---@field OpenStats WidgetAnimation
 ---@field PlayerPreview BP_PlayerPreview_Survival_C
 ---@field ProspectTimeElapsed TextBlock
+---@field RebreatherCheckbox CheckBox
+---@field RebreatherHorizontalBox HorizontalBox
 ---@field ShowMoreButton Button
 ---@field ShowMoreText TextBlock
 ---@field StatWindowWidget UMG_StatsWindow_C
@@ -2564,6 +2566,8 @@
 ---@field Construct fun(self: UMG_MainInventory_C)
 ---@field Initialise fun(self: UMG_MainInventory_C, BoundInventory: Inventory?, EnvirosuitInventory: Inventory?, EquipmentInventory: Inventory?, UpgradeInventory: Inventory?, VisionInventory: Inventory?, Parent: UMG_UserInterface_C?)
 ---@field IsInventoryVisible fun(self: UMG_MainInventory_C): boolean
+---@field OnFail_7E4F82444CAD642C4E15E5BB620BDD8B fun(self: UMG_MainInventory_C, Response: ResUpdateCosmetics|{})
+---@field OnSuccess_7E4F82444CAD642C4E15E5BB620BDD8B fun(self: UMG_MainInventory_C, Response: ResUpdateCosmetics|{})
 ---@field QuickShiftInventoryHandler fun(self: UMG_MainInventory_C, Location: integer, Inventory: Inventory?)
 ---@field Tick fun(self: UMG_MainInventory_C, MyGeometry: Geometry|{}, InDeltaTime: number)
 ---@field VisibilityChanged fun(self: UMG_MainInventory_C, NewVisbility: ESlateVisibility)

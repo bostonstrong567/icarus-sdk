@@ -3,7 +3,7 @@
 -- "inside": one of its fields holds such a struct by value. A list of either cannot be made longer entry by
 -- entry from Lua, because the new entries are zeroed memory: write the whole list instead.
 -- Keyed by the struct's path as the game's files spell it: look a path up in lower case, on both sides.
--- Build 0679b3f6302a4b8893b7f2ddabe05d56-1: 1447 structs, 1365 own and 82 inside.
+-- Build 44262f3579394d04a7826b5a1a309f89-1: 1448 structs, 1367 own and 81 inside.
 return {
   ["/Game/BP/Objects/World/Items/Deployables/Networks/BPS_FlowMeterData.BPS_FlowMeterData"] = "inside",
   ["/Game/BP/Objects/World/Items/Deployables/ProcessorPreviewData.ProcessorPreviewData"] = "inside",
@@ -1174,7 +1174,6 @@ return {
   ["/Script/Icarus.SettlementEventTypeData"] = "own",
   ["/Script/Icarus.SettlementEventTypesEnum"] = "own",
   ["/Script/Icarus.SettlementEventsEnum"] = "own",
-  ["/Script/Icarus.SettlementGenerationEntry"] = "inside",
   ["/Script/Icarus.SettlementGenerationOutput"] = "inside",
   ["/Script/Icarus.SettlementNPCClothingData"] = "own",
   ["/Script/Icarus.SettlementNPCClothingEnum"] = "own",
@@ -1190,6 +1189,8 @@ return {
   ["/Script/Icarus.SettlementNPCTraitsEnum"] = "own",
   ["/Script/Icarus.SettlementRaid"] = "own",
   ["/Script/Icarus.SettlementRaidsEnum"] = "own",
+  ["/Script/Icarus.SettlementTaskData"] = "own",
+  ["/Script/Icarus.SettlementTasksEnum"] = "own",
   ["/Script/Icarus.SlotableData"] = "own",
   ["/Script/Icarus.SlotableEnum"] = "own",
   ["/Script/Icarus.SortTypePriorityEnum"] = "own",

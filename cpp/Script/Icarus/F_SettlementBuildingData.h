@@ -1,5 +1,5 @@
 // /Script/Icarus.SettlementBuildingData
-// size 0x170, declared in Icarus/Source/Icarus/IcarusGenerated/SettlementBuildings/SettlementBuildingsRowHandle.h
+// size 0x178, declared in Icarus/Source/Icarus/IcarusGenerated/SettlementBuildings/SettlementBuildingsRowHandle.h
 
 USTRUCT()
 struct FSettlementBuildingData : public FIcarusTableRowBase
@@ -18,6 +18,7 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FQueryInput> QueryItemConstructionCost;  // 0x0118, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FResourceItem> ResourceConstructionCost;  // 0x0128, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FExperienceEventsRowHandle ConstructionExperienceReward;  // 0x0138, size 0x18
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FSettlementNPCTaskTypesRowHandle> DefaultTasks;  // 0x0150, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FSettlementGenerationEntry> Generation;  // 0x0160, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 SlotCount;  // 0x0150, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FSettlementTasksRowHandle> Tasks;  // 0x0158, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FSettlementTasksRowHandle> DefaultTasks;  // 0x0168, size 0x10
 };

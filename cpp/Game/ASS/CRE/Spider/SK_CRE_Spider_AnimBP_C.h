@@ -1,6 +1,6 @@
 // /Game/ASS/CRE/Spider/SK_CRE_Spider_AnimBP.SK_CRE_Spider_AnimBP_C
 // Derives from: UIcarusCreatureAnimInstance > UIcarusAnimInstance > UAnimInstance > UObject
-// size 0x14F7, a blueprint class, anim
+// size 0x14F8, a blueprint class, anim
 
 UCLASS(Transient, Config=Engine)
 class USK_CRE_Spider_AnimBP_C : public UIcarusCreatureAnimInstance
@@ -36,6 +36,7 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool HasViewTarget;  // 0x14F4, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool IsAttacking;  // 0x14F5, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool IsAlive;  // 0x14F6, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool Init;  // 0x14F7, size 0x1
 
     UFUNCTION(BlueprintCallable) void AnimGraph(FPoseLink& AnimGraph);  // parameters 0x10
     UFUNCTION(BlueprintImplementableEvent) void BlueprintUpdateAnimation(float DeltaTimeX);  // parameters 0x4

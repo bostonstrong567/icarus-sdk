@@ -7,6 +7,9 @@
 ---@class ABP_CHA_Head_01_C : AnimInstance
 ---@field AnimGraph fun(self: ABP_CHA_Head_01_C, AnimGraph: PoseLink|{})
 
+---@class ABP_CHA_Head_01_InWorld_C : AnimInstance
+---@field AnimGraph fun(self: ABP_CHA_Head_01_InWorld_C, AnimGraph: PoseLink|{})
+
 ---@class Anim_VehicleLayerInterface_C : AnimLayerInterface
 ---@field VehicleLowerBody fun(self: Anim_VehicleLayerInterface_C, LowerInPose: PoseLink|{}, VehicleLowerBody: PoseLink|{})
 ---@field VehicleUpperBody fun(self: Anim_VehicleLayerInterface_C, UpperInPose: PoseLink|{}, VehicleUpperBody: PoseLink|{})

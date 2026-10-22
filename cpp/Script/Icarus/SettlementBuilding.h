@@ -36,13 +36,20 @@ private:
     TArray<bool,TSizedDefaultAllocator<32> > GenerationStarved;  // 0x03C0, not reflected
 public:
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) void AddBuildProgress(float Delta);  // parameters 0x4
+    UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) bool AssignNPCToSlot(int32 SlotIndex, const FGuid& NpcId);  // parameters 0x15
     UFUNCTION(BlueprintCallable, BlueprintPure) bool CanAffordConstructionCost() const;  // parameters 0x1
+    UFUNCTION(BlueprintCallable, BlueprintPure) bool CanAssignNPCToSlot(int32 SlotIndex, const FGuid& NpcId) const;  // parameters 0x15
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool CanConstructBuildingAtLocation(UObject* WorldContextObject, const FVector& Location, const FRotator& Rotation, FText& FailureReason) const;  // parameters 0x39
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) bool ConsumeConstructionCost();  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) void Deconstruct();
     UFUNCTION(BlueprintCallable, BlueprintPure) int32 GetAssignedWorkerCount() const;  // parameters 0x4
+    UFUNCTION(BlueprintCallable, BlueprintPure) TArray<FSettlementTaskInfo> GetAvailableTasks() const;  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) FText GetGenerationOutputSummary() const;  // parameters 0x18
+    UFUNCTION(BlueprintCallable, BlueprintPure) int32 GetSlotCount() const;  // parameters 0x4
+    UFUNCTION(BlueprintCallable, BlueprintPure) TArray<FSettlementSlotInfo> GetSlots() const;  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) FText GetStatusDescription() const;  // parameters 0x18
+    UFUNCTION(BlueprintCallable, BlueprintPure) FText GetTaskDisplayName(const FSettlementTasksRowHandle& Task) const;  // parameters 0x30
+    UFUNCTION(BlueprintCallable, BlueprintPure) bool HasTask(const FSettlementTasksRowHandle& Task) const;  // parameters 0x19
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsActive() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsConstructed() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsPowered() const;  // parameters 0x1
@@ -60,5 +67,8 @@ public:
     UFUNCTION(BlueprintCallable) void RequestRepairTask();
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) void SetBuildState(ESettlementBuildState NewState);  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) void SetBuildingActive(bool bInActive);  // parameters 0x1
+    UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) bool SetSlotAutoAssign(int32 SlotIndex, bool bAutoAssign);  // parameters 0x6
+    UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) bool SetSlotTask(int32 SlotIndex, const FSettlementTasksRowHandle& Task);  // parameters 0x1D
     UFUNCTION(BlueprintNativeEvent) void TickActiveBuilding(float ProspectTimeDelta);  // parameters 0x4
+    UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) bool UnassignSlot(int32 SlotIndex);  // parameters 0x5
 };

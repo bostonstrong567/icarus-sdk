@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ResResetCharacterProspectState
-// size 0x1, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/ResetCharacterProspectStateCallbackProxyGen.generated.h
+// size 0x1, declared in Icarus/Source/IcarusGenerated/Public/Struct/ResResetCharacterProspectState.h
 
 USTRUCT()
 struct FResResetCharacterProspectState

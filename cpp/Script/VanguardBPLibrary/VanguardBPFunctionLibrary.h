@@ -27,6 +27,8 @@ public:
     UFUNCTION(BlueprintCallable) static void GetChildWidgetsOfClass(TSubclassOf<UWidget> WidgetClass, UPanelWidget* InParent, TArray<UWidget*>& ChildWidgets, bool SearchRecursively);  // parameters 0x21
     UFUNCTION(BlueprintCallable) static UObject* GetClassDefaultObject(TSubclassOf<UObject> ObjectClass, bool& IsValid);  // parameters 0x18
     UFUNCTION(BlueprintCallable) static float GetClosestPlayerDistanceFromLocation(UObject* WorldContextObject, FVector Location, EFunctionResult& Result);  // parameters 0x1C
+    UFUNCTION(BlueprintCallable, BlueprintPure) static FName GetFoliageTypeCollisionProfileName(UFoliageType_InstancedStaticMesh* FoliageType);  // parameters 0x10
+    UFUNCTION(BlueprintCallable, BlueprintPure) static EVanguardCustomNavGeometry GetFoliageTypeCustomNavigableGeometry(UFoliageType_InstancedStaticMesh* FoliageType);  // parameters 0x9
     UFUNCTION(BlueprintCallable, BlueprintPure) static int32 GetHashFromString(FString& String);  // parameters 0x14
     UFUNCTION(BlueprintCallable) static FName GetLevelNameFromStreamingAsset(ULevelStreaming* StreamingLevel);  // parameters 0x10
     UFUNCTION(BlueprintCallable) static TArray<TSubclassOf<UObject>> GetLoadedChildClasses(TSubclassOf<UObject> ParentClass);  // parameters 0x18

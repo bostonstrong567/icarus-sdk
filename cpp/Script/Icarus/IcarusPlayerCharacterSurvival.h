@@ -1,54 +1,54 @@
 // /Script/Icarus.IcarusPlayerCharacterSurvival
 // Derives from: AIcarusPlayerCharacter > AIcarusCharacter > ACharacter > APawn > AActor > UObject
-// size 0xD80, declared in Icarus/Source/Icarus/Characters/IcarusPlayerCharacterSurvival.h
+// size 0xD90, declared in Icarus/Source/Icarus/Characters/IcarusPlayerCharacterSurvival.h
 
 UCLASS(Config=Game)
 class AIcarusPlayerCharacterSurvival : public AIcarusPlayerCharacter
 {
     // C++ access is how this was written. A UPROPERTY stays visible to the engine's scripting either way.
 public:
-    UPROPERTY(BlueprintReadOnly) bool bIsHoldingJump;  // 0x0B90, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<UIcarusStatContainer*> NearbyComfortAffectingActors;  // 0x0B98, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 CachedComfortLevel;  // 0x0BA8, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float base_turn_rate;  // 0x0C30, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float base_look_up_rate;  // 0x0C34, size 0x4
-    UPROPERTY(Replicated, BlueprintReadOnly) float PlayerPitch;  // 0x0C38, size 0x4
-    UPROPERTY(Replicated, BlueprintReadOnly) float PlayerYaw;  // 0x0C3C, size 0x4
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UInventory* EnvirosuitInventory;  // 0x0C40, size 0x8
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UInventory* BackpackInventory;  // 0x0C48, size 0x8
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UInventory* QuickbarInventory;  // 0x0C50, size 0x8
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UInventory* UpgradeInventory;  // 0x0C58, size 0x8
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UInventory* VisionInventory;  // 0x0C60, size 0x8
-    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) int32 FocusedQuickbarSlot;  // 0x0C68, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bSmoothMouseInput;  // 0x0C6C, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float InputSmoothSpeed;  // 0x0C70, size 0x4
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UFLODInfluencePlayer* FLODInfluence;  // 0x0C78, size 0x8
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UStomachComponent* StomachComponent;  // 0x0C80, size 0x8
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UPlayerTerrainAnchorComponent* TerrainAnchor;  // 0x0C88, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<ADDGIVolume*> RTXGIVolumes;  // 0x0CE8, size 0x10
-    UPROPERTY(BlueprintAssignable) FOnAttachedSeatChanged OnAttachedSeatChanged;  // 0x0CF8, size 0x10
-    UPROPERTY(BlueprintAssignable) FOnPlayersSlept OnPlayersSlept;  // 0x0D08, size 0x10
-    UPROPERTY(BlueprintAssignable) FOnInventoryWeightChanged OnInventoryWeightChanged;  // 0x0D18, size 0x10
-    UPROPERTY(BlueprintAssignable) FOnPerspectiveUpdated OnPerspectiveUpdated;  // 0x0D28, size 0x10
+    UPROPERTY(BlueprintReadOnly) bool bIsHoldingJump;  // 0x0B98, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<UIcarusStatContainer*> NearbyComfortAffectingActors;  // 0x0BA0, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 CachedComfortLevel;  // 0x0BB0, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float base_turn_rate;  // 0x0C38, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float base_look_up_rate;  // 0x0C3C, size 0x4
+    UPROPERTY(Replicated, BlueprintReadOnly) float PlayerPitch;  // 0x0C40, size 0x4
+    UPROPERTY(Replicated, BlueprintReadOnly) float PlayerYaw;  // 0x0C44, size 0x4
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UInventory* EnvirosuitInventory;  // 0x0C48, size 0x8
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UInventory* BackpackInventory;  // 0x0C50, size 0x8
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UInventory* QuickbarInventory;  // 0x0C58, size 0x8
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UInventory* UpgradeInventory;  // 0x0C60, size 0x8
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UInventory* VisionInventory;  // 0x0C68, size 0x8
+    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) int32 FocusedQuickbarSlot;  // 0x0C70, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bSmoothMouseInput;  // 0x0C74, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float InputSmoothSpeed;  // 0x0C78, size 0x4
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UFLODInfluencePlayer* FLODInfluence;  // 0x0C80, size 0x8
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UStomachComponent* StomachComponent;  // 0x0C88, size 0x8
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UPlayerTerrainAnchorComponent* TerrainAnchor;  // 0x0C90, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<ADDGIVolume*> RTXGIVolumes;  // 0x0CF0, size 0x10
+    UPROPERTY(BlueprintAssignable) FOnAttachedSeatChanged OnAttachedSeatChanged;  // 0x0D00, size 0x10
+    UPROPERTY(BlueprintAssignable) FOnPlayersSlept OnPlayersSlept;  // 0x0D10, size 0x10
+    UPROPERTY(BlueprintAssignable) FOnInventoryWeightChanged OnInventoryWeightChanged;  // 0x0D20, size 0x10
+    UPROPERTY(BlueprintAssignable) FOnPerspectiveUpdated OnPerspectiveUpdated;  // 0x0D30, size 0x10
 protected:
-    UPROPERTY() bool bWantsAutoRun;  // 0x0B91, size 0x1
-    UPROPERTY() bool bHasMovementInputBeenReleased;  // 0x0B92, size 0x1
-    UPROPERTY(EditAnywhere) bool bClientFrozenMovement;  // 0x0C10, size 0x1
-    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing) bool bServerFrozenMovement;  // 0x0C11, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bActualFrozenMovement;  // 0x0C12, size 0x1
-    UPROPERTY(EditAnywhere) UScopedViewportBlocker* FrozenMovementViewportBlocker;  // 0x0C18, size 0x8
-    UPROPERTY() bool bIsSpectateTarget;  // 0x0C20, size 0x1
-    UPROPERTY(Instanced) UInstancedLevelLoadBlocker* InstancedLevelLoadBlocker;  // 0x0C28, size 0x8
-    FBestiaryDataRowHandle LastBestiaryDamageCauser;  // 0x0D38, not reflected
-    UPROPERTY(Replicated, BlueprintReadOnly) FTransform LastInstancedLevelEntry;  // 0x0D50, size 0x30
+    UPROPERTY() bool bWantsAutoRun;  // 0x0B99, size 0x1
+    UPROPERTY() bool bHasMovementInputBeenReleased;  // 0x0B9A, size 0x1
+    UPROPERTY(EditAnywhere) bool bClientFrozenMovement;  // 0x0C18, size 0x1
+    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing) bool bServerFrozenMovement;  // 0x0C19, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadOnly) bool bActualFrozenMovement;  // 0x0C1A, size 0x1
+    UPROPERTY(EditAnywhere) UScopedViewportBlocker* FrozenMovementViewportBlocker;  // 0x0C20, size 0x8
+    UPROPERTY() bool bIsSpectateTarget;  // 0x0C28, size 0x1
+    UPROPERTY(Instanced) UInstancedLevelLoadBlocker* InstancedLevelLoadBlocker;  // 0x0C30, size 0x8
+    FBestiaryDataRowHandle LastBestiaryDamageCauser;  // 0x0D40, not reflected
+    UPROPERTY(Replicated, BlueprintReadOnly) FTransform LastInstancedLevelEntry;  // 0x0D60, size 0x30
 private:
-    FModifierStatesRowHandle CurrentOxygenModifier;  // 0x0BAC, not reflected
-    FModifierStatesRowHandle CurrentFoodModifier;  // 0x0BC4, not reflected
-    FModifierStatesRowHandle CurrentWaterModifier;  // 0x0BDC, not reflected
-    FModifierStatesRowHandle CurrentRadiationModifer;  // 0x0BF4, not reflected
-    int32 OverburdenedModifier;  // 0x0C0C, not reflected
-    TTuple<float,float> DeltaMouseInput;  // 0x0C90, not reflected
-    TMap<FName,FItemStaticData,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,FItemStaticData,0> > MetaCurrencies;  // 0x0C98, not reflected
+    FModifierStatesRowHandle CurrentOxygenModifier;  // 0x0BB4, not reflected
+    FModifierStatesRowHandle CurrentFoodModifier;  // 0x0BCC, not reflected
+    FModifierStatesRowHandle CurrentWaterModifier;  // 0x0BE4, not reflected
+    FModifierStatesRowHandle CurrentRadiationModifer;  // 0x0BFC, not reflected
+    int32 OverburdenedModifier;  // 0x0C14, not reflected
+    TTuple<float,float> DeltaMouseInput;  // 0x0C98, not reflected
+    TMap<FName,FItemStaticData,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FName,FItemStaticData,0> > MetaCurrencies;  // 0x0CA0, not reflected
 public:
     UFUNCTION() void AddPitch(float value);  // parameters 0x4
     UFUNCTION() void AddYaw(float value);  // parameters 0x4

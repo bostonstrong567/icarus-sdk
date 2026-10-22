@@ -16,7 +16,7 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float CleanupLifespan;  // 0x015C, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool IgnoreStatRequirement;  // 0x0160, size 0x1
 
-    UFUNCTION(BlueprintCallable, BlueprintPure) void CheckCampaignCompletion(bool& CanSpawn);  // parameters 0x1
+    UFUNCTION(BlueprintCallable, BlueprintPure) void Check_Campaign_Completion(bool& CanSpawn);  // parameters 0x1, named "Check Campaign Completion"
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void CleanupAI(AActor* AI);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void DoSpawn(UObject* Context, FVector SpawnLocation);  // parameters 0x14
     UFUNCTION() void ExecuteUbergraph_BP_AISpawnBehaviour_AroundPlayers(int32 EntryPoint);  // parameters 0x4

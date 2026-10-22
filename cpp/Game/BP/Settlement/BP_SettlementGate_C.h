@@ -1,6 +1,6 @@
 // /Game/BP/Settlement/BP_SettlementGate.BP_SettlementGate_C
 // Derives from: AIcarusActor > AActor > UObject
-// size 0x3A0, a blueprint class, blueprint
+// size 0x3BC, a blueprint class, blueprint
 
 UCLASS(Config=Engine)
 class ABP_SettlementGate_C : public AIcarusActor, public IAITargetable
@@ -24,7 +24,7 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) UDestructibleMesh* GateDestructibleMesh;  // 0x0340, size 0x8
     UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) bool IsDamaged;  // 0x0348, size 0x1
     UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) uint8 DamagedState;  // 0x0349, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FSettlementNPCTask RepairTask;  // 0x034C, size 0x54
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FSettlementNPCTask RepairTask;  // 0x034C, size 0x70
 
     UFUNCTION() void BndEvt__BP_SettlementGate_TriggerBox_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);  // parameters 0xA8
     UFUNCTION() void BndEvt__BP_SettlementGate_TriggerBox_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);  // parameters 0x1C

@@ -2286,6 +2286,14 @@ enum class ESettlementBuildState : uint8
     Destroyed = 5,
 };
 
+// /Script/Icarus.ESettlementGenerationOutputMode
+UENUM()
+enum class ESettlementGenerationOutputMode : uint8
+{
+    All = 0,
+    PickOne = 1,
+};
+
 // /Script/Icarus.ESettlementNPCActivity
 UENUM()
 enum class ESettlementNPCActivity : uint8
@@ -2601,6 +2609,15 @@ enum class ETalentNodeType : uint8
     Talent = 0,
     Reroute = 1,
     MutuallyExclusive = 2,
+};
+
+// /Script/Icarus.ETalentSearchFocusMode
+UENUM()
+enum class ETalentSearchFocusMode : uint8
+{
+    None = 0,
+    SameTier = 1,
+    Always = 2,
 };
 
 // /Script/Icarus.ETalentState

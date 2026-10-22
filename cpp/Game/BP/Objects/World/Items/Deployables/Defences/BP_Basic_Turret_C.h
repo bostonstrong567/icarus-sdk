@@ -7,8 +7,8 @@ class ABP_Basic_Turret_C : public ABP_Deployable_PowerToggleableBase_C, public I
 {
 public:
     UPROPERTY(Transient) FPointerToUberGraphFrame UberGraphFrame;  // 0x0738, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* RangeDisplay;  // 0x0740, size 0x8
-    UPROPERTY(Instanced, BlueprintReadWrite) UChildActorComponent* PerceptionProxy;  // 0x0748, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UChildActorComponent* PerceptionProxy;  // 0x0740, size 0x8
+    UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* RangeDisplay;  // 0x0748, size 0x8
     UPROPERTY(Instanced, BlueprintReadWrite) USceneComponent* NPCTarget;  // 0x0750, size 0x8
     UPROPERTY(Instanced, BlueprintReadWrite) UBP_IcarusPointLight_C* BP_IcarusPointLight;  // 0x0758, size 0x8
     UPROPERTY(Instanced, BlueprintReadWrite) UStaticMeshComponent* SM_DEP_Top_Light_Basic;  // 0x0760, size 0x8

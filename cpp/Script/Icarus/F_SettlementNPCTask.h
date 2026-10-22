@@ -1,5 +1,5 @@
 // /Script/Icarus.SettlementNPCTask
-// size 0x54, declared in Icarus/Source/Icarus/Settlement/SettlementDataStructs.h
+// size 0x70, declared in Icarus/Source/Icarus/Settlement/SettlementDataStructs.h
 
 USTRUCT()
 struct FSettlementNPCTask
@@ -13,4 +13,6 @@ public:
     UPROPERTY(BlueprintReadWrite) uint8 Priority;  // 0x003C, size 0x1
     UPROPERTY(BlueprintReadWrite) FGuid AssignedNpcId;  // 0x0040, size 0x10
     UPROPERTY(BlueprintReadWrite) ESettlementTaskOrigin Origin;  // 0x0050, size 0x1
+    UPROPERTY(BlueprintReadWrite) FSettlementTasksRowHandle Task;  // 0x0054, size 0x18
+    UPROPERTY(BlueprintReadWrite) bool bAutoAssign;  // 0x006C, size 0x1
 };

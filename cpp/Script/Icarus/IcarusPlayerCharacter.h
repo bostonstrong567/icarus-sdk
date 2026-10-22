@@ -1,6 +1,6 @@
 // /Script/Icarus.IcarusPlayerCharacter
 // Derives from: AIcarusCharacter > ACharacter > APawn > AActor > UObject
-// size 0xB90, declared in Icarus/Source/Icarus/Characters/IcarusPlayerCharacter.h
+// size 0xBA0, declared in Icarus/Source/Icarus/Characters/IcarusPlayerCharacter.h
 
 UCLASS(Config=Game)
 class AIcarusPlayerCharacter : public AIcarusCharacter
@@ -26,30 +26,33 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) float InteractionTraceDistance;  // 0x0980, size 0x4
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FCharacterStartingStatsRowHandle CharacterSetup;  // 0x0984, size 0x18
     UPROPERTY(BlueprintReadOnly) TMap<int32, FArmourComponentData> EquippedArmourData;  // 0x09A0, size 0x50
-    UPROPERTY(BlueprintAssignable) FArmourEquipmentUpdatedSignature OnArmourEquipmentUpdated;  // 0x09F0, size 0x10
-    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) bool IsMale;  // 0x0A00, size 0x1
-    UPROPERTY(Replicated, ReplicatedUsing) FFocusedItemData FocusedItemData;  // 0x0A08, size 0x10
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UAudioContextPlayerComponent* AudioContext;  // 0x0A18, size 0x8
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UPlayerVocalisationComponent* VocalisationComponent;  // 0x0A20, size 0x8
-    UPROPERTY(Instanced) UPlayerModifierAudioComponent* ModifierAudioComponent;  // 0x0A28, size 0x8
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UPlayerFeedbackAudioComponent* PlayerFeedbackAudioComponent;  // 0x0A30, size 0x8
-    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) FCharacterVoicesRowHandle Voice;  // 0x0A38, size 0x18
-    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) int32 RespawnCount;  // 0x0A50, size 0x4
-    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) bool HasGrantedLoadout;  // 0x0A54, size 0x1
-    UPROPERTY(BlueprintAssignable) FPlayerCrouchUpdatedSignature PlayerCrouchUpdated;  // 0x0A58, size 0x10
-    UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) ADeployable* CurrentlyInteractingWithDeployable;  // 0x0A68, size 0x8
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UIcarusMapIconComponent* PlayerMapIcon;  // 0x0A70, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FName EyeSocketName;  // 0x0A78, size 0x8
-    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) TArray<FItemsStaticRowHandle> CosmeticArmourOverrides;  // 0x0A80, size 0x10
-    UPROPERTY(BlueprintReadWrite) bool bPlayerUIHidden;  // 0x0B88, size 0x1
+    bool bEnvirosuitBuiltWithRebreather;  // 0x09F0, not reflected
+    bool bEnvirosuitBuiltReworked;  // 0x09F1, not reflected
+    UPROPERTY(BlueprintAssignable) FArmourEquipmentUpdatedSignature OnArmourEquipmentUpdated;  // 0x09F8, size 0x10
+    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) bool IsMale;  // 0x0A08, size 0x1
+    UPROPERTY(Replicated, ReplicatedUsing, BlueprintReadOnly) bool bIsReworkedCharacter;  // 0x0A09, size 0x1
+    UPROPERTY(Replicated, ReplicatedUsing) FFocusedItemData FocusedItemData;  // 0x0A10, size 0x10
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UAudioContextPlayerComponent* AudioContext;  // 0x0A20, size 0x8
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UPlayerVocalisationComponent* VocalisationComponent;  // 0x0A28, size 0x8
+    UPROPERTY(Instanced) UPlayerModifierAudioComponent* ModifierAudioComponent;  // 0x0A30, size 0x8
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly) UPlayerFeedbackAudioComponent* PlayerFeedbackAudioComponent;  // 0x0A38, size 0x8
+    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadOnly) FCharacterVoicesRowHandle Voice;  // 0x0A40, size 0x18
+    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) int32 RespawnCount;  // 0x0A58, size 0x4
+    UPROPERTY(EditAnywhere, Replicated, BlueprintReadWrite) bool HasGrantedLoadout;  // 0x0A5C, size 0x1
+    UPROPERTY(BlueprintAssignable) FPlayerCrouchUpdatedSignature PlayerCrouchUpdated;  // 0x0A60, size 0x10
+    UPROPERTY(EditAnywhere, Replicated, BlueprintReadOnly) ADeployable* CurrentlyInteractingWithDeployable;  // 0x0A70, size 0x8
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UIcarusMapIconComponent* PlayerMapIcon;  // 0x0A78, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FName EyeSocketName;  // 0x0A80, size 0x8
+    UPROPERTY(EditAnywhere, Replicated, ReplicatedUsing, BlueprintReadWrite) TArray<FItemsStaticRowHandle> CosmeticArmourOverrides;  // 0x0A88, size 0x10
+    UPROPERTY(BlueprintReadWrite) bool bPlayerUIHidden;  // 0x0B90, size 0x1
 private:
     float LastCachedInteractableHitTime;  // 0x074C, not reflected
     float MinTimeBetweenReplicatedHitUpdates;  // 0x0750, not reflected
-    FStreamableManager StreamableManager;  // 0x0A90, not reflected
-    bool HasSetupCosmetics;  // 0x0B78, not reflected
-    bool bNeedsArmourUpdate;  // 0x0B79, not reflected
-    bool bNeedsCosmeticArmourRefresh;  // 0x0B7A, not reflected
-    UPROPERTY() APlayerState* CachedPlayerState;  // 0x0B80, size 0x8
+    FStreamableManager StreamableManager;  // 0x0A98, not reflected
+    bool HasSetupCosmetics;  // 0x0B80, not reflected
+    bool bNeedsArmourUpdate;  // 0x0B81, not reflected
+    bool bNeedsCosmeticArmourRefresh;  // 0x0B82, not reflected
+    UPROPERTY() APlayerState* CachedPlayerState;  // 0x0B88, size 0x8
 public:
     UFUNCTION() void CheckShouldRefreshEquipmentInventory(UInventory* Inventory, int32 UpdatedSlotNum);  // parameters 0xC
     UFUNCTION(BlueprintCallable) void ClearEquipmentInventory();
@@ -60,7 +63,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) void EndMontage(UAnimMontage* Montage, UAnimMontage* FP_Montage, float BleedOutTime);  // parameters 0x14
     UFUNCTION() TArray<USkeletalMeshComponent*> FindOrCreateEquipmentComponent(int32 ForSlot);  // parameters 0x18
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void FocusAndUseItemFromMenu(UInventory* Inventory, int32 Slot, FUsesEnum Use);  // parameters 0x20
-    UFUNCTION(BlueprintCallable) bool GetArmourDataForGFurComponent(UGFurComponent* Component, FArmourData& OutArmourData);  // parameters 0x309
+    UFUNCTION(BlueprintCallable) bool GetArmourDataForGFurComponent(UGFurComponent* Component, FArmourData& OutArmourData);  // parameters 0x321
     UFUNCTION() FArmourRowHandle GetArmourRowForSlot(int32 SlotIndex);  // parameters 0x1C
     UFUNCTION(BlueprintCallable, BlueprintPure) ASeatBase* GetAttachedToSeat() const;  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintImplementableEvent) AIcarusItem* GetCurrentSecondarySlotActor() const;  // parameters 0x8
@@ -83,6 +86,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) USkeletalMeshComponent* GetThirdPersonMesh();  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) FItemData GetUtilityItemData(EDataValidity& Validity);  // parameters 0x1F8
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) USkeletalMeshComponent* GetVisibleCharacterMesh();  // parameters 0x8
+    UFUNCTION(BlueprintCallable, BlueprintPure) static FArmourRowHandle GetVisualArmourRow(const FArmourRowHandle& Row, bool bIsReworked);  // parameters 0x34
     UFUNCTION(BlueprintNativeEvent) bool InitialisationComplete();  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) bool IsClothSimEnabled();  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) bool IsHabCharacter();  // parameters 0x1
@@ -112,6 +116,7 @@ public:
     UFUNCTION() void OnRep_CosmeticArmourOverrides();
     UFUNCTION() void OnRep_FocusedItemDataUpdated();
     UFUNCTION() void OnRep_Gender();
+    UFUNCTION() void OnRep_IsReworkedCharacter();
     UFUNCTION(BlueprintCallable, Server, Reliable, BlueprintNativeEvent) void OnServer_DropItem(UInventory* Inventory, int32 Location, int32 Count);  // parameters 0x10
     UFUNCTION(BlueprintCallable, Server, Reliable, BlueprintNativeEvent) void OnServer_FocusItem(UInventory* Inventory, int32 Location);  // parameters 0xC
     UFUNCTION(BlueprintCallable, Server, Reliable, BlueprintNativeEvent) void OnServer_SetStartingStats(FCharacterStartingStatsRowHandle CharacterStartingStatsRowHandle);  // parameters 0x18

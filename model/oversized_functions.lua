@@ -4,7 +4,7 @@
 -- blueprint one. Keyed by the function's path as the game's files spell it. The running game may show a name
 -- in another letter case or with a space at its end, so whatever reads this looks a path up in lower case
 -- with spaces at the end dropped, on both sides.
--- Build 0679b3f6302a4b8893b7f2ddabe05d56-1: 318 functions (170 native, 145 blueprint, 3 delegate signatures).
+-- Build 44262f3579394d04a7826b5a1a309f89-1: 318 functions (170 native, 145 blueprint, 3 delegate signatures).
 return {
   ["/Script/Icarus.TalentViewsLibrary:AddRowToTalentViewsTable"] = 7144,
   ["/Script/Icarus.TalentViewsLibrary:GetTalentViewsStruct"] = 7136,
@@ -56,7 +56,7 @@ return {
   ["/Game/UI/Spectator/W_PostProcessEntry_Vinette.W_PostProcessEntry_Vinette_C:UpdatePostProcess"] = 1376,
   ["/Game/UI/Spectator/W_SpectatorUI.W_SpectatorUI_C:SettingsUpdated__DelegateSignature"] = 1376,
   ["/Script/Icarus.InventoryItemLibrary:GetFocusableAnimationData"] = 1368,
-  ["/Script/Icarus.InventoryItemLibrary:GetArmourData"] = 1272,
+  ["/Script/Icarus.InventoryItemLibrary:GetArmourData"] = 1296,
   ["/Game/BP/MiscConstructs/IcarusFunctionLibrary.IcarusFunctionLibrary_C:GetItemIcon_Static"] = 1208,
   ["/Script/Icarus.ItemsStaticLibrary:AddRowToItemsStaticTable"] = 1200,
   ["/Game/BP/MiscConstructs/IcarusFunctionLibrary.IcarusFunctionLibrary_C:GetItemName_Static"] = 1192,
@@ -119,18 +119,18 @@ return {
   ["/Game/BP/Behaviours/Focusable/BP_FocusableBehaviour.BP_FocusableBehaviour_C:GetAnimationData"] = 864,
   ["/Game/BP/Systems/BP_IcarusGameModeFunctionLibrary.BP_IcarusGameModeFunctionLibrary_C:GetAvailableMetaSpawns"] = 856,
   ["/Game/BP/Systems/BP_IcarusGameModeFunctionLibrary.BP_IcarusGameModeFunctionLibrary_C:SelectRandomMetaSpawnsForProspect"] = 840,
+  ["/Script/Icarus.ArmourLibrary:AddRowToArmourTable"] = 832,
+  ["/Script/Icarus.ArmourLibrary:GetArmourStruct"] = 824,
+  ["/Game/BP/Player/BP_IcarusPlayerCharacterSurvival.BP_IcarusPlayerCharacterSurvival_C:GetArmourStructWithOverride"] = 817,
   ["/Game/BP/Systems/BP_IcarusGameMode.BP_IcarusGameMode_C:PickProspectMetaSpawns"] = 816,
   ["/Script/Icarus.IcarusJoinSession:IcarusJoinSession"] = 816,
   ["/Script/Icarus.ProcessorRecipesLibrary:AddRowToProcessorRecipesTable"] = 816,
-  ["/Script/Icarus.ArmourLibrary:AddRowToArmourTable"] = 808,
+  ["/Script/Icarus.IcarusPlayerCharacter:GetArmourDataForGFurComponent"] = 808,
+  ["/Script/Icarus.IcarusPreviewCharacter:FindOrCreateEquipmentComponent"] = 808,
+  ["/Script/Icarus.IcarusPreviewCharacter:UpdateEquipmentForSlot"] = 808,
   ["/Script/Icarus.ProcessorRecipesLibrary:GetProcessorRecipesStruct"] = 808,
-  ["/Script/Icarus.ArmourLibrary:GetArmourStruct"] = 800,
-  ["/Game/BP/Player/BP_IcarusPlayerCharacterSurvival.BP_IcarusPlayerCharacterSurvival_C:GetArmourStructWithOverride"] = 793,
-  ["/Script/Icarus.IcarusPlayerCharacter:GetArmourDataForGFurComponent"] = 784,
-  ["/Script/Icarus.IcarusPreviewCharacter:FindOrCreateEquipmentComponent"] = 784,
-  ["/Script/Icarus.IcarusPreviewCharacter:UpdateEquipmentForSlot"] = 784,
+  ["/Script/Icarus.ArmourComponent:GetArmourData"] = 800,
   ["/Script/Icarus.InventoryItemLibrary:GetEquippableData"] = 784,
-  ["/Script/Icarus.ArmourComponent:GetArmourData"] = 776,
   ["/Game/BP/UI/BP_UMGFunctionLibrary.BP_UMGFunctionLibrary_C:Get Prospect Pin State Data"] = 760,
   ["/Script/Icarus.ProspectListLibrary:AddRowToProspectListTable"] = 760,
   ["/Script/Icarus.InventoryItemLibrary:GetItemableData"] = 752,

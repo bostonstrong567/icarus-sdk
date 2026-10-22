@@ -171,19 +171,38 @@
 ---@class ChallengesTable : IcarusDataTable
 
 ---@class CharacterCosmeticsRecorder
+---@field Customization_Age string
 ---@field Customization_Body string
 ---@field Customization_BodyColor string
+---@field Customization_BottomFaceBlendValue number
+---@field Customization_BottomFaceShape integer
 ---@field Customization_CapLogo string
+---@field Customization_Complexion string
 ---@field Customization_EyeColor string
+---@field Customization_Eyebrows string
 ---@field Customization_Hair string
 ---@field Customization_HairColor string
 ---@field Customization_Head string
 ---@field Customization_HeadFacialHair string
 ---@field Customization_HeadScar string
 ---@field Customization_HeadTattoo string
+---@field Customization_Helmet string
+---@field Customization_Hood string
+---@field Customization_LeftFaceBlendValue number
+---@field Customization_LeftFaceShape integer
+---@field Customization_Piercings string
+---@field Customization_Rebreather string
+---@field Customization_RightFaceBlendValue number
+---@field Customization_RightFaceShape integer
+---@field Customization_SkinSaturation_V2 number
+---@field Customization_SkinTint_V2 number
 ---@field Customization_SkinTone string
+---@field Customization_SkinTone_V2 number
+---@field Customization_TopFaceBlendValue number
+---@field Customization_TopFaceShape integer
 ---@field Customization_Voice string
 ---@field IsMale boolean
+---@field IsReworkedCharacter boolean
 
 ---@class CharacterCreationData : IcarusTableRowBase
 ---@field BodyType ECharacterBodyType

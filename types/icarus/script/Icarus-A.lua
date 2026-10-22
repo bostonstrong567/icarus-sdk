@@ -393,6 +393,7 @@
 ---@class AISpawnListItemData
 ---@field AISetup AISetupEnum
 ---@field EpicCreature EpicCreaturesEnum
+---@field GreatHuntCampaignSpawner boolean
 ---@field SpawnWeight integer
 
 ---@class AISpawnRuleData : IcarusTableRowBase
@@ -1212,7 +1213,7 @@
 ---@field Score ArcadeMachineScore
 
 ---@class ArmourComponent : TraitComponent
----@field GetArmourData fun(self: ArmourComponent, OutData: ArmourData|{}): boolean Do not call from Lua: it needs 776 bytes and the call buffer holds 512.
+---@field GetArmourData fun(self: ArmourComponent, OutData: ArmourData|{}): boolean Do not call from Lua: it needs 800 bytes and the call buffer holds 512.
 
 ---@class ArmourComponentData
 ---@field ArmourComponents SkeletalMeshComponent[]
@@ -1236,6 +1237,7 @@
 ---@field FirstPersonMeshVariant SkeletalMesh
 ---@field HabArmourMesh SkeletalMesh
 ---@field ImplicitDefaultArmour ArmourRowHandle[]
+---@field ReworkedVariant ArmourRowHandle
 ---@field TPFurClass Class
 ---@field bHideFirstPersonUndersuit boolean
 ---@field bOverrideDefaultMaterials boolean
@@ -1243,12 +1245,12 @@
 ---@class ArmourEnum : RowEnum
 
 ---@class ArmourLibrary : RowLibrary
----@field AddRowToArmourTable fun(self: ArmourLibrary, Name: string, Data: ArmourData|{}, NewRow: ArmourRowHandle|{}, bOverrideExistingRow: boolean) Do not call from Lua: it needs 808 bytes and the call buffer holds 512.
+---@field AddRowToArmourTable fun(self: ArmourLibrary, Name: string, Data: ArmourData|{}, NewRow: ArmourRowHandle|{}, bOverrideExistingRow: boolean) Do not call from Lua: it needs 832 bytes and the call buffer holds 512.
 ---@field BreakArmourEnum fun(self: ArmourLibrary, Enum: ArmourEnum|{}, Name: string, Index: integer)
 ---@field CastToArmourRowHandle fun(self: ArmourLibrary, RowHandle: RowHandle|{}, Paths: EValid): ArmourRowHandle
 ---@field EqualEqual_EnumEnum fun(self: ArmourLibrary, A: ArmourEnum|{}, B: ArmourEnum|{}): boolean
 ---@field EqualEqual_FArmourRowHandleFArmourRowHandle fun(self: ArmourLibrary, RowHandleA: ArmourRowHandle|{}, RowHandleB: ArmourRowHandle|{}): boolean
----@field GetArmourStruct fun(self: ArmourLibrary, RowHandle: ArmourRowHandle|{}, Armour: ArmourData|{}, Paths: EValid) Do not call from Lua: it needs 800 bytes and the call buffer holds 512.
+---@field GetArmourStruct fun(self: ArmourLibrary, RowHandle: ArmourRowHandle|{}, Armour: ArmourData|{}, Paths: EValid) Do not call from Lua: it needs 824 bytes and the call buffer holds 512.
 ---@field IntToName fun(self: ArmourLibrary, IntValue: integer): string
 ---@field IntToStruct fun(self: ArmourLibrary, IntValue: integer): ArmourEnum
 ---@field IsValidName fun(self: ArmourLibrary, NameValue: string): boolean

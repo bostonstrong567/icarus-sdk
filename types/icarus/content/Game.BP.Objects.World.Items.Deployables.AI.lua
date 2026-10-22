@@ -26,6 +26,8 @@
 ---@field GFur GFurComponent
 ---@field OnSkinnedStateUpdated fun(self: BP_Arctic_Moa_Mount_Corpse_C)
 
+---@class BP_Artillery_Creature_Corpse_C : BP_GOAP_Corpse_C
+
 ---@class BP_Axolotl_Corpse_C : BP_GOAP_Corpse_C
 
 ---@class BP_BabyDeer_Corpse_C : BP_GOAP_Corpse_C
@@ -311,6 +313,8 @@
 
 ---@class BP_Flightless_Tank_Corpse_C : BP_GOAP_Corpse_C
 
+---@class BP_Flightless_Tank_Geothermal_Corpse_C : BP_GOAP_Corpse_C
+
 ---@class BP_Flying_Tank_Corpse_C : BP_GOAP_Corpse_C
 
 ---@class BP_GOAP_Corpse_C : IcarusGOAPCorpseBase
@@ -543,6 +547,11 @@
 ---@field IsSkeletonUpdated fun(self: BP_Juvie_Horse_Corpse_C)
 ---@field OnSkinnedStateUpdated fun(self: BP_Juvie_Horse_Corpse_C)
 ---@field UpdateSkeletalMeshCarryPhysics fun(self: BP_Juvie_Horse_Corpse_C, SkeletalMeshComponent: SkeletalMeshComponent?)
+
+---@class BP_Kangaroo_Jungle_Corpse_C : BP_GOAP_Corpse_C
+---@field GFur GFurComponent
+---@field IsSkeletonUpdated fun(self: BP_Kangaroo_Jungle_Corpse_C)
+---@field OnSkinnedStateUpdated fun(self: BP_Kangaroo_Jungle_Corpse_C)
 
 ---@class BP_Kea_Corpse_C : BP_GOAP_Corpse_C
 ---@field ReceiveBeginPlay fun(self: BP_Kea_Corpse_C)
@@ -874,6 +883,11 @@
 ---@class BP_Stomper_Corpse_C : BP_GOAP_Corpse_C
 ---@field GFur GFurComponent
 ---@field OnSkinnedStateUpdated fun(self: BP_Stomper_Corpse_C)
+
+---@class BP_Stomper_Juvenile_Corpse_C : BP_GOAP_Corpse_C
+---@field GFur GFurComponent
+---@field OnSkinnedStateUpdated fun(self: BP_Stomper_Juvenile_Corpse_C)
+---@field UpdateSkeletalMeshCarryPhysics fun(self: BP_Stomper_Juvenile_Corpse_C, SkeletalMeshComponent: SkeletalMeshComponent?)
 
 ---@class BP_Stomper_Matriarch_Corpse_C : BP_GOAP_Corpse_C
 ---@field GFur GFurComponent

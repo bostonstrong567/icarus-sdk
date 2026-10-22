@@ -6,5 +6,5 @@ UCLASS(Config=Game)
 class AIcarusPlayerCharacterSpace : public AIcarusPlayerCharacter
 {
 public:
-    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UInventory* MainInventory;  // 0x0B90, size 0x8
+    UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UInventory* MainInventory;  // 0x0B98, size 0x8
 };

@@ -1,5 +1,6 @@
 ABP_CHA_Body_Customization_C
 ABP_CHA_Head_01_C
+ABP_CHA_Head_01_InWorld_C
 AIAsyncTaskBlueprintProxy
 AIAudioDataLibrary
 AIAudioDataTable
@@ -2470,11 +2471,13 @@ BP_Ape_Wounded_005_C
 BP_Aquarium_C
 BP_Aquarium_T3_C
 BP_Aquarium_T3_Var2_C
+BP_Arc_Furnace_C
 BP_Arctic_Moa_Corpse_C
 BP_Arctic_Moa_Mount_Corpse_C
 BP_Armor_Bench_C
 BP_ArmourStand_C
 BP_ArmourStand_T4_C
+BP_Artillery_Creature_Corpse_C
 BP_AshlandsOutpost_C
 BP_Ashlands_Blocker_C
 BP_Ashlands_Blocker_Deployable_C
@@ -3970,6 +3973,7 @@ BP_Flammable_Player_C
 BP_Flammable_SpontaneouslyCombustStuff_C
 BP_FlatSolarPanel_C
 BP_Flightless_Tank_Corpse_C
+BP_Flightless_Tank_Geothermal_Corpse_C
 BP_FlowMeter_C
 BP_FlowerPot_A_1_C
 BP_FlowerPot_A_2_C
@@ -4793,6 +4797,7 @@ BP_Juvenile_Ape_Trophy_C
 BP_Juvenile_Rock_Golem_Trophy_C
 BP_Juvenile_Wooly_Zebra_Corpse_C
 BP_Juvie_Horse_Corpse_C
+BP_Kangaroo_Jungle_Corpse_C
 BP_Kea_Corpse_C
 BP_Kitchen_Bench_C
 BP_Kitchen_Corner_C
@@ -6348,6 +6353,7 @@ BP_StaticItem_TreePrimitive_C
 BP_Stationeers_BobbleHead_Orange_C
 BP_Stationeers_BobbleHead_White_C
 BP_Stomper_Corpse_C
+BP_Stomper_Juvenile_Corpse_C
 BP_Stomper_Matriarch_Corpse_C
 BP_StoneBrick_Fireplace_C
 BP_StoneBrick_Fireplace_Cap_C
@@ -6643,6 +6649,10 @@ BP_Tree_HG_Aspen_Var3_RED_C
 BP_Tree_HG_Aspen_Var3_YEL_C
 BP_Tree_JU_Banyan_SML_Var1_Burnt_C
 BP_Tree_JU_Banyan_SML_Var1_C
+BP_Tree_JU_Banyan_SML_Var2_Burnt_C
+BP_Tree_JU_Banyan_SML_Var2_C
+BP_Tree_JU_Banyan_SML_Var3_Burnt_C
+BP_Tree_JU_Banyan_SML_Var3_C
 BP_Tree_JU_Banyan_Var1_Burnt_C
 BP_Tree_JU_Banyan_Var1_C
 BP_Tree_JU_Banyan_Var2_Burnt_C
@@ -9913,6 +9923,8 @@ SettlementRecorderComponent
 SettlementSubsystem
 SettlementTalentControllerComponent
 SettlementTalentModel
+SettlementTasksLibrary
+SettlementTasksTable
 SettlementWallLibrary
 ShapeComponent
 ShatterDamage
@@ -10483,6 +10495,7 @@ UMG_FieldGuideItemResourceQueryIcon_Popup_C
 UMG_FieldGuideItemSearch_C
 UMG_FieldGuideItemToolsPage_C
 UMG_FieldGuideItemVestigePage_C
+UMG_FieldGuideItemWaterFlavour_C
 UMG_FieldGuideItemWorkshopPackPage_C
 UMG_FieldGuideItem_Attachments_C
 UMG_FieldGuideItem_Itemable_C
@@ -10877,6 +10890,7 @@ UMG_RecipeElementTooltipQuery_C
 UMG_RecipeElementTooltipResource_C
 UMG_RecipeElement_C
 UMG_RecipeInputItem_C
+UMG_RecipeInputItem_Settlement_C
 UMG_RecipeInputQuery_C
 UMG_RecipeInputResource_C
 UMG_RecipeItemAmount_C
@@ -10963,9 +10977,14 @@ UMG_SettlementLedger_ListEntry_C
 UMG_SettlementNPCSkill_C
 UMG_SettlementTaskState_C
 UMG_Settlement_Building_C
+UMG_Settlement_Building_Construction_C
+UMG_Settlement_Building_Slot_C
+UMG_Settlement_Building_Slot_Fake_C
+UMG_Settlement_Building_Task_C
 UMG_Settlement_Claim_C
 UMG_Settlement_EventDecision_C
 UMG_Settlement_EventPrompt_C
+UMG_Settlement_NPC_Info_C
 UMG_Settlement_NPC_Settler_C
 UMG_Settlement_NPC_Visitor_C
 UMG_Settlement_TalentTree_C

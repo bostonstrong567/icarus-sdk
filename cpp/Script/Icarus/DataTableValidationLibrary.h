@@ -264,6 +264,7 @@ public:
     UFUNCTION(BlueprintImplementableEvent) void Validate_SettlementNPCTaskTypes_RowHandle(const FSettlementNPCTaskTypesRowHandle& RowHandle);  // parameters 0x18
     UFUNCTION(BlueprintImplementableEvent) void Validate_SettlementNPCTraits_RowHandle(const FSettlementNPCTraitsRowHandle& RowHandle);  // parameters 0x18
     UFUNCTION(BlueprintImplementableEvent) void Validate_SettlementRaids_RowHandle(const FSettlementRaidsRowHandle& RowHandle);  // parameters 0x18
+    UFUNCTION(BlueprintImplementableEvent) void Validate_SettlementTasks_RowHandle(const FSettlementTasksRowHandle& RowHandle);  // parameters 0x18
     UFUNCTION(BlueprintImplementableEvent) void Validate_Slotable_RowHandle(const FSlotableRowHandle& RowHandle);  // parameters 0x18
     UFUNCTION(BlueprintImplementableEvent) void Validate_SortTypePriority_RowHandle(const FSortTypePriorityRowHandle& RowHandle);  // parameters 0x18
     UFUNCTION(BlueprintImplementableEvent) void Validate_StaminaActionCosts_RowHandle(const FStaminaActionCostsRowHandle& RowHandle);  // parameters 0x18
@@ -422,7 +423,7 @@ public:
     //   Generate_SettlementNPCClothing_RowHandle, Generate_SettlementNPCItems_RowHandle
     //   Generate_SettlementNPCRoles_RowHandle, Generate_SettlementNPCSkills_RowHandle
     //   Generate_SettlementNPCTaskTypes_RowHandle, Generate_SettlementNPCTraits_RowHandle
-    //   Generate_SettlementRaids_RowHandle, Generate_Slotable_RowHandle
+    //   Generate_SettlementRaids_RowHandle, Generate_SettlementTasks_RowHandle, Generate_Slotable_RowHandle
     //   Generate_SortTypePriority_RowHandle, Generate_StaminaActionCosts_RowHandle
     //   Generate_StasisBag_RowHandle, Generate_StatAfflictions_RowHandle, Generate_StatCategories_RowHandle
     //   Generate_StatGameplayTags_RowHandle, Generate_Statistics_RowHandle, Generate_Stats_RowHandle

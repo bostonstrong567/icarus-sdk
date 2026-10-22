@@ -1,6 +1,6 @@
 // /Script/Icarus.Settlement
 // Derives from: AIcarusActor > AActor > UObject
-// size 0x7C0, declared in Icarus/Source/Icarus/Settlement/Settlement.h
+// size 0x7D0, declared in Icarus/Source/Icarus/Settlement/Settlement.h
 
 UCLASS(Config=Engine)
 class ASettlement : public AIcarusActor, public ITalentHandler
@@ -95,6 +95,7 @@ public:
     UPROPERTY(BlueprintAssignable) FOnSettlementNPCRemoved OnNPCRemoved;  // 0x0788, size 0x10
     UPROPERTY(BlueprintAssignable) FOnSettlementNPCTaskingUpdated OnNPCTaskingUpdated;  // 0x0798, size 0x10
     UPROPERTY(BlueprintAssignable) FOnSettlementTaskCompleted OnTaskCompletedEvent;  // 0x07A8, size 0x10
+    UPROPERTY(BlueprintAssignable) FOnSettlementSlotTaskChanged OnSlotTaskChanged;  // 0x07B8, size 0x10
 protected:
     TMap<FGuid,TSharedPtr<FStatContainer,0>,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FGuid,TSharedPtr<FStatContainer,0>,0> > NPCStatContainers;  // 0x03F8, not reflected
     UPROPERTY(Transient, Instanced) UTerrainAnchorComponent* SettlementTerrainAnchor;  // 0x0448, size 0x8
@@ -103,8 +104,8 @@ protected:
     TArray<TTuple<FModifierStatesRowHandle,int>,TSizedDefaultAllocator<32> > AppliedActiveEventModifiers;  // 0x0650, not reflected
     TArray<FSettlementTimedModifier,TSizedDefaultAllocator<32> > TimedOutcomeModifiers;  // 0x0660, not reflected
     UPROPERTY() bool bInitialVisitorGranted;  // 0x0750, size 0x1
-    bool bIsPendingSurvivalTick;  // 0x07B8, not reflected
-    UPROPERTY() bool bHasInitialised;  // 0x07B9, size 0x1
+    bool bIsPendingSurvivalTick;  // 0x07C8, not reflected
+    UPROPERTY() bool bHasInitialised;  // 0x07C9, size 0x1
 private:
     FTimerHandle TaskUpdateTimer;  // 0x0468, not reflected
     FTimerHandle TaskProgressTimer;  // 0x0470, not reflected
@@ -117,17 +118,19 @@ private:
 public:
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) bool AcceptVisitor(const FGuid& VisitorId);  // parameters 0x11
     UFUNCTION(BlueprintNativeEvent) void ActiveEventChanged();
-    UFUNCTION(BlueprintCallable) void AddNPC(const FSettlementNPC& NPC);  // parameters 0x110
+    UFUNCTION(BlueprintCallable) void AddNPC(const FSettlementNPC& NPC);  // parameters 0x120
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) bool AddNPCActor(ASettlementNPCCharacter* NPCActor);  // parameters 0x9
-    UFUNCTION(BlueprintCallable) void AddTask(const FSettlementNPCTask& Task);  // parameters 0x54
+    UFUNCTION(BlueprintCallable) void AddTask(const FSettlementNPCTask& Task);  // parameters 0x70
     UFUNCTION(BlueprintCallable) void AddTaskProgress(const FGuid& TaskId, float Delta);  // parameters 0x14
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) bool AddToStorage(const TArray<FCraftingInput>& Items, const TArray<FResourceItem>& Resources, float Multiplier, bool bDropItemsAtOverflow);  // parameters 0x26
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) void AddXP(int32 Amount);  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly, BlueprintNativeEvent) void ApplyRaidConsequences(float Shortfall);  // parameters 0x4
+    UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) bool AssignNPCToSlot(const FGuid& NpcId, const FGuid& SlotTaskId);  // parameters 0x21
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) void AttractVisitor();
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) float CalculateDefenseScore() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) float CalculateRaidStrength(const FSettlementRaid& RaidConfig) const;  // parameters 0x34
     UFUNCTION(BlueprintCallable, BlueprintPure) bool CanAssignNPCToBuilding(const FGuid& NpcId, ASettlementBuilding* Building) const;  // parameters 0x19
+    UFUNCTION(BlueprintCallable, BlueprintPure) bool CanAssignNPCToSlot(const FGuid& NpcId, const FGuid& SlotTaskId) const;  // parameters 0x21
     UFUNCTION(BlueprintCallable) bool CanChooseOutcome(int32 OutcomeIndex);  // parameters 0x5
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) bool CheckStorageContains(const TArray<FCraftingInput>& Items, const TArray<FQueryInput>& ItemQueries, const TArray<FResourceItem>& Resources);  // parameters 0x31
     UFUNCTION(BlueprintCallable) void ClearActivityOverride();
@@ -137,23 +140,25 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) bool ConstructNewBuilding(FSettlementBuildingsRowHandle Building, FTransform WorldTransform, ASettlementBuilding*& OutBuilding, ESettlementBuildState InitialBuildState);  // parameters 0x5A
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) bool ConsumeFromStorage(const TArray<FCraftingInput>& Items, const TArray<FQueryInput>& ItemQueries, const TArray<FResourceItem>& Resources);  // parameters 0x31
     UFUNCTION(BlueprintCallable, BlueprintPure) int32 CountNPCsWithRole(const FSettlementNPCRolesRowHandle& NPCRole) const;  // parameters 0x1C
-    UFUNCTION(BlueprintCallable, BlueprintPure) static FSettlementNPCTask CreateNewTask(FSettlementNPCTaskTypesRowHandle InTaskType);  // parameters 0x6C
+    UFUNCTION(BlueprintCallable, BlueprintPure) static FSettlementNPCTask CreateNewTask(FSettlementNPCTaskTypesRowHandle InTaskType);  // parameters 0x88
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) void DevirtualiseSettlementActors();
     UFUNCTION(BlueprintCallable, BlueprintPure) ASettlementBuilding* FindBuilding(const int32& BuildingInstanceId) const;  // parameters 0x10
-    UFUNCTION(BlueprintCallable, BlueprintPure) bool FindPendingVisitor(const FGuid& VisitorId, FSettlementVisitor& OutVisitor) const;  // parameters 0x129
-    UFUNCTION(BlueprintCallable, BlueprintPure) bool FindTask(const FGuid& TaskId, FSettlementNPCTask& OutTask) const;  // parameters 0x65
+    UFUNCTION(BlueprintCallable, BlueprintPure) bool FindPendingVisitor(const FGuid& VisitorId, FSettlementVisitor& OutVisitor) const;  // parameters 0x139
+    UFUNCTION(BlueprintCallable, BlueprintPure) bool FindTask(const FGuid& TaskId, FSettlementNPCTask& OutTask) const;  // parameters 0x81
     UFUNCTION(BlueprintCallable) void GenerateSettlementWall();
     UFUNCTION(BlueprintCallable, BlueprintPure) bool GetActiveEventData(FSettlementEventData& OutData) const;  // parameters 0xB9
     UFUNCTION(BlueprintCallable, BlueprintPure) int32 GetAverageMood() const;  // parameters 0x4
     UFUNCTION(BlueprintNativeEvent) void GetBoundaryAffectingActors(TArray<AActor*>& OutActors) const;  // parameters 0x10
+    UFUNCTION(BlueprintCallable, BlueprintPure) TArray<FSettlementNPCTask> GetBuildingSlots(ASettlementBuilding* Building) const;  // parameters 0x18
     UFUNCTION(BlueprintCallable, BlueprintPure) bool GetDeviatedOutcome(int32 OutcomeIndex, FSettlementEventOutcomeData& OutOutcome) const;  // parameters 0xF9
-    UFUNCTION(BlueprintCallable, BlueprintPure) ESettlementNPCActivity GetEffectiveActivity(const FSettlementNPC& NPC) const;  // parameters 0x111
+    UFUNCTION(BlueprintCallable, BlueprintPure) ESettlementNPCActivity GetEffectiveActivity(const FSettlementNPC& NPC) const;  // parameters 0x121
     UFUNCTION(BlueprintNativeEvent) float GetEventWeight(const FSettlementEventsRowHandle& EventRow, float BaseWeight) const;  // parameters 0x20
     UFUNCTION(BlueprintCallable, BlueprintPure) int32 GetMaxNPCs() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) int32 GetMedicalTreatmentCapacity() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) float GetNPCActivitySlotElapsed(float DeltaProspectTime, ESettlementNPCActivity ActivitySlot, const FGuid& NPCId, float& OutSlotFraction) const;  // parameters 0x20
+    UFUNCTION(BlueprintCallable, BlueprintPure) bool GetNPCData(const FGuid& NpcId, FSettlementNPC& OutNPC) const;  // parameters 0x131
     UFUNCTION(BlueprintCallable, BlueprintPure) int32 GetNPCSkillLevel(const FGuid& NpcId, const FSettlementNPCSkillsRowHandle& Skill) const;  // parameters 0x2C
-    UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) FTransform GetNPCSpawnTransform(const FSettlementNPC& NPC) const;  // parameters 0x140
+    UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) FTransform GetNPCSpawnTransform(const FSettlementNPC& NPC) const;  // parameters 0x150
     UFUNCTION(BlueprintCallable, BlueprintPure) TArray<FSettlementNPC> GetNPCsAssignedToBuilding(ASettlementBuilding* Building) const;  // parameters 0x18
     UFUNCTION(BlueprintCallable, BlueprintPure) int32 GetNumNPCs() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) FBox GetSettlementBounds() const;  // parameters 0x1C
@@ -170,7 +175,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) void InitialiseSettlement();
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsActorWithinSettlementBounds(AActor* Actor) const;  // parameters 0x9
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsLocationWithinSettlementBounds(const FVector& Location) const;  // parameters 0xD
-    UFUNCTION(BlueprintCallable, BlueprintPure) static bool IsTaskValid(const FSettlementNPCTask& Task);  // parameters 0x55
+    UFUNCTION(BlueprintCallable, BlueprintPure) static bool IsTaskValid(const FSettlementNPCTask& Task);  // parameters 0x71
     UFUNCTION(BlueprintNativeEvent) void OnBuildingRegistered(ASettlementBuilding* Building);  // parameters 0x8
     UFUNCTION(BlueprintNativeEvent) void OnBuildingUnregistered(ASettlementBuilding* Building);  // parameters 0x8
     UFUNCTION(BlueprintNativeEvent) void OnDeceasedNPCActor(ASettlementNPCCharacter* NPCActor);  // parameters 0x8
@@ -182,7 +187,7 @@ public:
     UFUNCTION() void OnRep_XP();
     UFUNCTION() void OnSettlementTerrainAnchorChanged();
     UFUNCTION() void OnTalentControllerModelViewChanged(UTalentControllerComponent* Controller);  // parameters 0x8
-    UFUNCTION(BlueprintNativeEvent) void OnTaskCompleted(const FSettlementNPCTask& Task);  // parameters 0x54
+    UFUNCTION(BlueprintNativeEvent) void OnTaskCompleted(const FSettlementNPCTask& Task);  // parameters 0x70
     UFUNCTION() void OnTimeOfDayDayChanged(int32 NewDay);  // parameters 0x4
     UFUNCTION() void OnTimeOfDayHourChanged(int32 NewHour);  // parameters 0x4
     UFUNCTION() void OnUnlockedSettlementTalent(UTalentModelInterface_Const* Model, const FTalentsRowHandle& Talent, const FTalentModelData& TalentData);  // parameters 0x30
@@ -197,7 +202,10 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) bool ResolveEventWithChoice(int32 OutcomeIndex);  // parameters 0x5
     UFUNCTION(BlueprintCallable) void SetActivityOverride(ESettlementNPCActivity Activity);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void SetNPCRole(const FGuid& NpcId, const FSettlementNPCRolesRowHandle& NewRole);  // parameters 0x28
+    UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) bool SetNPCSlotTask(const FGuid& NpcId, const FSettlementTasksRowHandle& Task);  // parameters 0x29
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) bool SetNPCWorkAssignment(const FGuid& NpcId, ASettlementBuilding* Building);  // parameters 0x19
+    UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) bool SetSlotAutoAssign(const FGuid& SlotTaskId, bool bAutoAssign);  // parameters 0x12
+    UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) bool SetSlotTask(const FGuid& SlotTaskId, const FSettlementTasksRowHandle& Task);  // parameters 0x29
     UFUNCTION(BlueprintCallable) void SetTaskProgress(const FGuid& TaskId, float NewProgress, bool bAutoComplete);  // parameters 0x15
     UFUNCTION(BlueprintCallable) void SetXP(int32 Amount);  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) bool ShouldAutoResolveRaids() const;  // parameters 0x1
@@ -208,7 +216,8 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) void TickPopulation();
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) void TreatAilment(const FGuid& NPCId);  // parameters 0x10
     UFUNCTION(BlueprintNativeEvent) void TryApplySurvivalModifiers();
-    UFUNCTION(BlueprintNativeEvent) void TryUpdateTaskProgress(const FSettlementNPCTask& Task, float ProspectTimeDelta);  // parameters 0x58
+    UFUNCTION(BlueprintNativeEvent) void TryUpdateTaskProgress(const FSettlementNPCTask& Task, float ProspectTimeDelta);  // parameters 0x74
+    UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) bool UnassignNPC(const FGuid& NpcId);  // parameters 0x11
     UFUNCTION(BlueprintCallable) void UnregisterBuilding(ASettlementBuilding* Building);  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) bool UpdateSettlementTalent(const FTalentsRowHandle& Talent, bool bState);  // parameters 0x1A
     UFUNCTION(BlueprintNativeEvent) void UpdateTaskAssignments();

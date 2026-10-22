@@ -120,8 +120,10 @@
 ---@field HeadSelection UMG_CharacterSetting_Visual_C
 ---@field HeadSelectionGrid GridPanel
 ---@field HeadSelection_V2 UMG_CharacterSetting_Visual_C
----@field HelmetSelection UMG_CharacterSetting_ToggleBase_C
----@field HoodSelection UMG_CharacterSetting_ToggleBase_C
+---@field HelmetSelection_1 UMG_CharacterSetting_ToggleBase_C
+---@field HoodActive boolean
+---@field HoodSelection_1 UMG_CharacterSetting_ToggleBase_C
+---@field InitialBodyApplied boolean
 ---@field InitialCosmetics CharacterCosmetics
 ---@field IsGeneratingCustomisationOptions boolean
 ---@field IsSwappingOption boolean
@@ -142,7 +144,8 @@
 ---@field Preset_3 UMG_BasicButton_2_C
 ---@field Preset_4 UMG_BasicButton_2_C
 ---@field Preset_5 UMG_BasicButton_2_C
----@field RebreatherSelection UMG_CharacterSetting_ToggleBase_C
+---@field RebreatherActive boolean
+---@field RebreatherSelection_1 UMG_CharacterSetting_ToggleBase_C
 ---@field RequestCosmeticsUpdate GameDelegate
 ---@field RightDropBox UMG_CharacterBlending_DropBox_C
 ---@field ScarSelection UMG_CharacterSetting_Visual_C
@@ -165,6 +168,7 @@
 ---@field angle_1 Image
 ---@field angle_10 Image
 ---@field angle_11 Image
+---@field angle_12 Image
 ---@field angle_2 Image
 ---@field angle_3 Image
 ---@field angle_4 Image
@@ -198,6 +202,7 @@
 ---@field OnRightItemChanged fun(self: UMG_CharacterCreation_C, NameString: string, Widget: UserWidget?)
 ---@field OnTopItemChanged fun(self: UMG_CharacterCreation_C, NameString: string, Widget: UserWidget?)
 ---@field PreConstruct fun(self: UMG_CharacterCreation_C, IsDesignTime: boolean)
+---@field RebreatherSelected fun(self: UMG_CharacterCreation_C, Index: integer, NewFocus: PreviewCameraSettingsEnum|{})
 ---@field RightItemChanged fun(self: UMG_CharacterCreation_C, Object: UserWidget?)
 ---@field RightSwapCheck fun(self: UMG_CharacterCreation_C, ChosenFaceShape: EFaceShapes)
 ---@field SelectionUpdated fun(self: UMG_CharacterCreation_C, Index: integer, NewFocus: PreviewCameraSettingsEnum|{})
@@ -206,6 +211,7 @@
 ---@field SetControlSelect fun(self: UMG_CharacterCreation_C)
 ---@field SetInitialCosmetics fun(self: UMG_CharacterCreation_C, InitialCosmetics: CharacterCosmetics|{})
 ---@field SliderUpdate fun(self: UMG_CharacterCreation_C)
+---@field SwapCustomizationUI fun(self: UMG_CharacterCreation_C, IsReworkCharacter: boolean)
 ---@field TopItemChanged fun(self: UMG_CharacterCreation_C, Object: UserWidget?)
 ---@field TopSwapCheck fun(self: UMG_CharacterCreation_C, ChosenFaceShape: EFaceShapes)
 ---@field UpdateBodyType fun(self: UMG_CharacterCreation_C)
@@ -1331,6 +1337,7 @@
 ---@field OnTemperatureUpdated fun(self: UMG_UserInterface_C, NewTemperature: integer)
 ---@field OnUITimeOfDayUpdated fun(self: UMG_UserInterface_C)
 ---@field OpenEscapeMenu fun(self: UMG_UserInterface_C)
+---@field OpenTechTreeToTalent fun(self: UMG_UserInterface_C, Talent: TalentsRowHandle|{}, SearchText: string)
 ---@field QueueNotification fun(self: UMG_UserInterface_C, NotificationToShow: UMG_OnProspectNotificationBase_C?, DurationToShowFor: number)
 ---@field RemoveRadialMenu fun(self: UMG_UserInterface_C, RadialMenu: UserWidget?)
 ---@field Reset fun(self: UMG_UserInterface_C)

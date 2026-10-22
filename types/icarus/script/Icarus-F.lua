@@ -893,6 +893,7 @@
 ---@field GetArmorSetFromItem fun(self: FieldGuideFunctionLibrary, Item: ItemsStaticRowHandle|{}, ArmorSetOut: ItemsStaticRowHandle[])
 ---@field GetAttachments fun(self: FieldGuideFunctionLibrary, Item: ItemsStaticRowHandle|{}): ItemsStaticRowHandle[]
 ---@field GetBeastFromVestige fun(self: FieldGuideFunctionLibrary, Item: ItemsStaticRowHandle|{}): BestiaryDataRowHandle
+---@field GetBlueprintTalentForItem fun(self: FieldGuideFunctionLibrary, Item: ItemsStaticRowHandle|{}, OutTalent: TalentsRowHandle|{}): boolean
 ---@field GetCategoryForItem fun(self: FieldGuideFunctionLibrary, Item: ItemsStaticRowHandle|{}): FieldGuideCategoriesRowHandle
 ---@field GetCorpseFromVestige fun(self: FieldGuideFunctionLibrary, Item: ItemsStaticRowHandle|{}): ItemsStaticRowHandle
 ---@field GetCorpseSkinningBenchRewards fun(self: FieldGuideFunctionLibrary, Item: ItemsStaticRowHandle|{}): ItemsStaticRowHandle[]

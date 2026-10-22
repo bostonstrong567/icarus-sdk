@@ -9,6 +9,7 @@ public:
     UFUNCTION(BlueprintImplementableEvent) void DisplayIcarusError(FErrorCodesEnum OutgoingError, FString ErrorInfo);  // parameters 0x20
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void FocusDynamicWidget(UUserWidget* DynamicWidget);  // parameters 0x8
     UFUNCTION(BlueprintImplementableEvent) UConfirmationPopupBase* GetConfirmationPopup();  // parameters 0x8
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void OpenTechTreeToTalent(const FTalentsRowHandle& Talent, const FText& SearchText);  // parameters 0x30
     UFUNCTION(BlueprintImplementableEvent) void WidgetFocusGained(UIcarusWidget* Widget);  // parameters 0x8
     UFUNCTION(BlueprintImplementableEvent) void WidgetFocusLost(UIcarusWidget* Widget);  // parameters 0x8
 };

@@ -97,6 +97,7 @@
 ---@field bAllowScroll boolean
 ---@field bHideScrollbar boolean
 ---@field AddChildToOverlay fun(self: PanningPanel, Content: Widget?): OverlaySlot
+---@field CenterOnWidget fun(self: PanningPanel, Widget: Widget?): boolean
 ---@field GetPosition fun(self: PanningPanel): Vector2D
 ---@field Refresh fun(self: PanningPanel)
 ---@field SetPositionOverride fun(self: PanningPanel, Position: Vector2D|{})

@@ -18,11 +18,11 @@ private:
     TArray<TSharedPtr<FStreamableHandle,0>,TSizedDefaultAllocator<32> > EquipmentStreamingHandles;  // 0x05F0, not reflected
     bool HasSetupCosmetics;  // 0x0600, not reflected
 public:
-    UFUNCTION() USkeletalMeshComponent* FindOrCreateEquipmentComponent(int32 ForSlot, const FArmourData& WithData);  // parameters 0x310
+    UFUNCTION() USkeletalMeshComponent* FindOrCreateEquipmentComponent(int32 ForSlot, const FArmourData& WithData);  // parameters 0x328
     UFUNCTION() void OnEquipmentInventoryUpdated(UInventory* Inventory, int32 UpdatedSlot);  // parameters 0xC
     UFUNCTION(BlueprintNativeEvent) void SetupCharacterCosmetics();
     UFUNCTION(BlueprintCallable) void UpdateAllEquipment();
-    UFUNCTION(BlueprintCallable) bool UpdateEquipmentForSlot(int32 SlotNum, const FArmourData& Data);  // parameters 0x309
+    UFUNCTION(BlueprintCallable) bool UpdateEquipmentForSlot(int32 SlotNum, const FArmourData& Data);  // parameters 0x321
 
     // Virtual functions that start here:
     //   SetupCharacterCosmetics_Implementation

@@ -1570,6 +1570,11 @@
 ---| 5 # Destroyed
 ---| integer
 
+---@alias ESettlementGenerationOutputMode
+---| 0 # All
+---| 1 # PickOne
+---| integer
+
 ---@alias ESettlementNPCActivity
 ---| 0 # Work
 ---| 1 # Eat
@@ -1801,6 +1806,12 @@
 ---| 0 # Talent
 ---| 1 # Reroute
 ---| 2 # MutuallyExclusive
+---| integer
+
+---@alias ETalentSearchFocusMode
+---| 0 # None
+---| 1 # SameTier
+---| 2 # Always
 ---| integer
 
 ---@alias ETalentState

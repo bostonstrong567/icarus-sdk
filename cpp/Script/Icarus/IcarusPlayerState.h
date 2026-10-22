@@ -55,6 +55,7 @@ public:
     UFUNCTION(BlueprintCallable) void SetAccountFlag(const FAccountFlagsRowHandle& Flag, bool State);  // parameters 0x19
     UFUNCTION(BlueprintCallable) void SetAccountFlags(const TMap<FAccountFlagsRowHandle, bool>& FlagMap);  // parameters 0x50
     UFUNCTION() void SetActiveCharacter(const FOnlineProfileCharacter& InActiveCharacter);  // parameters 0xF0
+    UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) void SetActiveCharacterCosmetics(const FCharacterCosmetics& InCosmetics);  // parameters 0x80
     UFUNCTION() void SetActiveUserProfile(const FOnlineProfileUser& InProfileUser);  // parameters 0x48
     UFUNCTION(BlueprintCallable) void SetCharacterFlag(const FCharacterFlagsRowHandle& Flag, bool State);  // parameters 0x19
     UFUNCTION(BlueprintCallable) void SetCharacterFlags(const TMap<FCharacterFlagsRowHandle, bool>& FlagMap);  // parameters 0x50

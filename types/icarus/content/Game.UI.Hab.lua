@@ -1184,9 +1184,9 @@
 ---@field MainButton Button
 ---@field PasswordRequired Image
 ---@field Ping integer
+---@field PingBox SizeBox
 ---@field PingText TextBlock
 ---@field PlayerCount TextBlock
----@field Privacy SizeBox
 ---@field ["Prospect Pin State Text Colour"] table<E_ButtonState, SlateColor>
 ---@field ["Prospect State"] E_ProspectState
 ---@field ProspectDifficulty TextBlock

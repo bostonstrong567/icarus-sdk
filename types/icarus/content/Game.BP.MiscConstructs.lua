@@ -73,6 +73,7 @@
 ---@field ["Find Face Morph"] fun(self: BP_PlayerCosmeticsFunctionLibrary_C, Mesh: SkinnedMeshComponent?, HeadMorph: string, __WorldContext: Object?, Morph: string)
 ---@field FindFaceShapeKey fun(self: BP_PlayerCosmeticsFunctionLibrary_C, NameHash: integer, __WorldContext: Object?, Key: string)
 ---@field GetFaceShapeData fun(self: BP_PlayerCosmeticsFunctionLibrary_C, Key: string, IsMale: boolean, __WorldContext: Object?, HeadShapeName: string, Normal: Texture?)
+---@field GetFaceTagForArmourRow fun(self: BP_PlayerCosmeticsFunctionLibrary_C, RowName: string, __WorldContext: Object?, Tag: string)
 ---@field GetMasterMaterial fun(self: BP_PlayerCosmeticsFunctionLibrary_C, Material: MaterialInterface?, __WorldContext: Object?, Parent: Material?)
 ---@field MakeCharacterCreationDataArray fun(self: BP_PlayerCosmeticsFunctionLibrary_C, CharacterCosmetics: CharacterCosmetics|{}, __WorldContext: Object?, OutData: CharacterCreationDataRowHandle[])
 ---@field UpdateSkinTone fun(self: BP_PlayerCosmeticsFunctionLibrary_C, Tone: number, Tint: number, Saturation: number, MatHead: MaterialInstanceDynamic?, __WorldContext: Object?)

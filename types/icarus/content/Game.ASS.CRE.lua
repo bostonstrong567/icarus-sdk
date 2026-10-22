@@ -1269,6 +1269,7 @@
 
 ---@class SK_CRE_Spider_AnimBP_C : IcarusCreatureAnimInstance
 ---@field HasViewTarget boolean
+---@field Init boolean
 ---@field IsAlive boolean
 ---@field IsAttacking boolean
 ---@field ViewTargetLocation Vector

@@ -1,0 +1,256 @@
+Old: the model of build 0679b3f6302a4b8893b7f2ddabe05d56-1 written 2026-10-16 23:19
+New: the model of build 44262f3579394d04a7826b5a1a309f89-1 written 2026-10-22 20:31
+Classes: 19 added, 0 removed, 0 renamed, 46 changed
+Structs: 5 added, 1 removed, 0 renamed, 8 changed
+Enums: 3 added, 0 removed, 0 renamed, 0 changed
++ class /Game/ASS/CHA/Head/New_Heads/ABP_CHA_Head_01_InWorld.ABP_CHA_Head_01_InWorld_C : AnimInstance
++ class /Game/BP/Objects/World/Items/Deployables/AI/BP_Artillery_Creature_Corpse.BP_Artillery_Creature_Corpse_C : BP_GOAP_Corpse_C
++ class /Game/BP/Objects/World/Items/Deployables/AI/BP_Flightless_Tank_Geothermal_Corpse.BP_Flightless_Tank_Geothermal_Corpse_C : BP_GOAP_Corpse_C
++ class /Game/BP/Objects/World/Items/Deployables/AI/BP_Kangaroo_Jungle_Corpse.BP_Kangaroo_Jungle_Corpse_C : BP_GOAP_Corpse_C
++ class /Game/BP/Objects/World/Items/Deployables/AI/BP_Stomper_Juvenile_Corpse.BP_Stomper_Juvenile_Corpse_C : BP_GOAP_Corpse_C
++ class /Game/BP/Objects/World/Items/Deployables/Furnaces/BP_Arc_Furnace.BP_Arc_Furnace_C : BP_ResourceNetworkProcessor_C
++ class /Game/BP/Objects/World/Resources/Trees/BP_Tree_JU_Banyan_SML_Var2.BP_Tree_JU_Banyan_SML_Var2_C : BP_TreePrefab_Moss_C
++ class /Game/BP/Objects/World/Resources/Trees/BP_Tree_JU_Banyan_SML_Var2_Burnt.BP_Tree_JU_Banyan_SML_Var2_Burnt_C : BP_TreePrefab_Burnt_C
++ class /Game/BP/Objects/World/Resources/Trees/BP_Tree_JU_Banyan_SML_Var3.BP_Tree_JU_Banyan_SML_Var3_C : BP_TreePrefab_Moss_C
++ class /Game/BP/Objects/World/Resources/Trees/BP_Tree_JU_Banyan_SML_Var3_Burnt.BP_Tree_JU_Banyan_SML_Var3_Burnt_C : BP_TreePrefab_Burnt_C
++ class /Game/BP/Settlement/UMG/UMG_Settlement_Building_Construction.UMG_Settlement_Building_Construction_C : UMG_IcarusLinkedActorPanel_C
++ class /Game/BP/Settlement/UMG/UMG_Settlement_Building_Slot.UMG_Settlement_Building_Slot_C : UserWidget
++ class /Game/BP/Settlement/UMG/UMG_Settlement_Building_Slot_Fake.UMG_Settlement_Building_Slot_Fake_C : UMG_Settlement_Building_Slot_C
++ class /Game/BP/Settlement/UMG/UMG_Settlement_Building_Task.UMG_Settlement_Building_Task_C : UserWidget
++ class /Game/BP/Settlement/UMG/UMG_Settlement_NPC_Info.UMG_Settlement_NPC_Info_C : UserWidget
++ class /Game/UI/Components/FieldGuide/UMG_FieldGuideItemWaterFlavour.UMG_FieldGuideItemWaterFlavour_C : FieldGuidePageWidgetBase
++ class /Game/UI/Components/UMG_RecipeInputItem_Settlement.UMG_RecipeInputItem_Settlement_C : UMG_RecipeInputItem_C
++ class /Script/Icarus.SettlementTasksLibrary : RowLibrary
++ class /Script/Icarus.SettlementTasksTable : IcarusDataTable
+~ class /Game/ASS/CRE/Spider/SK_CRE_Spider_AnimBP.SK_CRE_Spider_AnimBP_C
+    + property Init: Bool
+~ class /Game/BP/AI/BP_AISpawner.BP_AISpawner_C
+    + function Check Campaign Completion(Completed: Bool)
+~ class /Game/BP/AI/GOAP/AI/BP_NPC_Horse_Juvenile_Character.BP_NPC_Horse_Juvenile_Character_C
+    - property ViewTargetActor_0: Object<Actor>
+    - function GetCurrentAnimationTarget_0(): Object<Actor>
+    - function IsPointWithinFOV_0(TargetLocation: Struct<Vector>, DotLimit: Float): Bool
+~ class /Game/BP/AI/GOAP/AI/BP_NPC_Lamb_Juvenile_Character.BP_NPC_Lamb_Juvenile_Character_C
+    - property ViewTargetActor_0: Object<Actor>
+    - function GetCurrentAnimationTarget_0(): Object<Actor>
+    - function IsPointWithinFOV_0(TargetLocation: Struct<Vector>, DotLimit: Float): Bool
+~ class /Game/BP/AI/GOAP/AI/BP_NPC_Moa_Juvenile_Character.BP_NPC_Moa_Juvenile_Character_C
+    - property ViewTargetActor_0: Object<Actor>
+    - function GetCurrentAnimationTarget_0(): Object<Actor>
+    - function IsPointWithinFOV_0(TargetLocation: Struct<Vector>, DotLimit: Float): Bool
+~ class /Game/BP/AI/GOAP/AI/BP_NPC_Raptor_Juvenile_Character.BP_NPC_Raptor_Juvenile_Character_C
+    + property Alert: Object<SceneComponent>
+    - property BP_UIProjectionLocation: Object<BP_UIProjectionLocation_C>
+    - property ViewTargetActor_0: Object<Actor>
+~ class /Game/BP/AI/GOAP/AI/BP_NPC_RockDog_Character.BP_NPC_RockDog_Character_C
+    - property CritArea_Right_Leg: Object<CapsuleComponent>
+    - property CritArea_Left_Leg: Object<CapsuleComponent>
+~ class /Game/BP/AI/GOAP/AI/BP_NPC_SandScuttle_Character.BP_NPC_SandScuttle_Character_C
+    - property CriticalArea_LegL_Weak: Object<SphereComponent>
+    - property CriticalArea_LegR_Weak: Object<SphereComponent>
+    - property CriticalArea_Body_Strong: Object<SphereComponent>
+    - property CriticalArea_Tail_Weak: Object<SphereComponent>
+    - function GetCriticalHitAreas(): Map<Object<PrimitiveComponent>, Struct<CriticalHitAreasEnum>>
+~ class /Game/BP/AI/GOAP/AI/BP_NPC_Slinker_Juvenile_Character.BP_NPC_Slinker_Juvenile_Character_C
+    - property ViewTargetActor_0: Object<Actor>
+~ class /Game/BP/AI/GOAP/AI/BP_NPC_Snow_Wolf_Juvenile.BP_NPC_Snow_Wolf_Juvenile_C
+    - property ViewTargetActor_0: Object<Actor>
+~ class /Game/BP/AI/GOAP/AI/BP_NPC_SwampBird_Juvenile_Character.BP_NPC_SwampBird_Juvenile_Character_C
+    - property ViewTargetActor_0: Object<Actor>
+    - function GetCurrentAnimationTarget_0(): Object<Actor>
+    - function IsPointWithinFOV_0(TargetLocation: Struct<Vector>, DotLimit: Float): Bool
+~ class /Game/BP/AI/GOAP/AI/BP_NPC_Tundra_Monkey_Juvenile.BP_NPC_Tundra_Monkey_Juvenile_C
+    - property ViewTargetActor_0: Object<Actor>
+~ class /Game/BP/AI/GOAP/AI/BP_NPC_Tusker_Juvenile_Character.BP_NPC_Tusker_Juvenile_Character_C
+    - property ViewTargetActor_0: Object<Actor>
+    - function GetCurrentAnimationTarget_0(): Object<Actor>
+    - function IsPointWithinFOV_0(TargetLocation: Struct<Vector>, DotLimit: Float): Bool
+~ class /Game/BP/AI/GOAP/AI/BP_NPC_Wolf_Conifier_Juvenile.BP_NPC_Wolf_Conifier_Juvenile_C
+    - property ViewTargetActor_0: Object<Actor>
+~ class /Game/BP/AI/GOAP/AI/BP_NPC_Wooly_Zebra_Juvenile_Character.BP_NPC_Wooly_Zebra_Juvenile_Character_C
+    - property ViewTargetActor_0: Object<Actor>
+    - function GetCurrentAnimationTarget_0(): Object<Actor>
+    - function IsPointWithinFOV_0(TargetLocation: Struct<Vector>, DotLimit: Float): Bool
+~ class /Game/BP/AI/SpawnBehaviours/BP_AISpawnBehaviour_AroundPlayers.BP_AISpawnBehaviour_AroundPlayers_C
+    > function CheckCampaignCompletion -> Check Campaign Completion(CanSpawn: Bool) (similar name)
+~ class /Game/BP/MiscConstructs/BP_PlayerCosmeticsFunctionLibrary.BP_PlayerCosmeticsFunctionLibrary_C
+    + function GetFaceTagForArmourRow(RowName: Name, __WorldContext: Object<Object>, Tag: Name)
+~ class /Game/BP/Objects/World/Items/Deployables/BP_Gravestone.BP_Gravestone_C
+    + function MorphHead(Cosmetics: Struct<CharacterCosmetics>)
+~ class /Game/BP/Objects/World/Items/Deployables/Containers/BP_ArmourStand_T4.BP_ArmourStand_T4_C
+    + property Repairing: Bool
+    + function AttemptArmorRepair()
+    + function OnRep_CaseOpen()
+    + function OnRep_IsInteracting()
+    + function CanRepair(CanRepair: Bool)
+~ class /Game/BP/Player/BP_IcarusPlayerCharacterSurvival.BP_IcarusPlayerCharacterSurvival_C
+    + function Server_SetRebreather(RebreatherHash: Int)
+    + function ApplyCosmeticComponentTags(Mesh: Object<ActorComponent>, ArmorRow: Struct<RowHandle>)
+    + function LinkFacePiecesToHead()
+    + function IsHelmetShowing(HelmetShowing: Bool)
+    + function SwapFacePiecesForHelmet(CharacterCosmetic: Struct<CharacterCosmetics>)
+~ class /Game/BP/Player/BP_NetworkProxyComponent.BP_NetworkProxyComponent_C
+    + function Proxy_SetNPCTaskAssignment(Settlment: Object<Settlement>, Building: Object<SettlementBuilding>, NpcId: Struct<Guid>)
+    + function Proxy_BuildingSetNPC(Building: Object<SettlementBuilding>, SlotIndex: Int, NpcId: Struct<Guid>)
+    + function Proxy_BuildingSetTask(Building: Object<SettlementBuilding>, Slot: Int, Task: Struct<SettlementTasksRowHandle>)
+    + function Proxy_DestroyConstruction(Buidling: Object<SettlementBuilding>)
+~ class /Game/BP/Settlement/Buildings/BP_SettlementBuilding.BP_SettlementBuilding_C
+    + property Container: Object<SkeletalMeshComponent>
+    + property BuildingMesh: Object<StaticMeshComponent>
+~ class /Game/BP/Settlement/UMG/UMG_SettlementLedger_ListEntry.UMG_SettlementLedger_ListEntry_C
+    + property BuildingSlots: Object<VerticalBox>
+    + property bBound: Bool
+    + function OnNPCTaskingUpdated(NpcId: Struct<Guid>)
+~ class /Game/BP/Settlement/UMG/UMG_Settlement_Building.UMG_Settlement_Building_C
+    + property BuildingSlots: Object<VerticalBox>
+    + property TextBlock_Status: Object<TextBlock>
+    + function OnNPCTaskingUpdated(NpcId: Struct<Guid>)
+    + function Refresh()
+~ class /Game/BP/UI/Talents/Base/UMG_TalentFilter.UMG_TalentFilter_C
+    - function Construct()
+    ~ function HighlightTalents() -> (Text: Text, bAllowFocus: Bool)
+~ class /Game/BP/UI/Talents/Base/UMG_TalentGraph.UMG_TalentGraph_C
+    - property Panner: Object<PanningPanel>
+~ class /Game/BP/UI/Talents/Blueprint/UMG_TalentView_Blueprint.UMG_TalentView_Blueprint_C
+    + property SearchFocusMode: Enum<ETalentSearchFocusMode>
+    + property SearchMatchedArchetypes: Array<Struct<TalentArchetypesRowHandle>>
+    + property SearchCurrentTierMatch: Struct<TalentsRowHandle>
+    + property bEnableTabHighlighting: Bool
+    + function HandleSearchResults(CurrentTierMatch: Struct<TalentsRowHandle>, BestMatch: Struct<TalentsRowHandle>, MatchedArchetypes: Array<Struct<TalentArchetypesRowHandle>>, bAllowFocus: Bool)
+    + function RequestFocusTalent(Talent: Struct<TalentsRowHandle>)
+    + function FocusTalent(Talent: Struct<TalentsRowHandle>)
+    + function SetSearchText(Text: Text)
+    + function RefreshTierTabSearchHighlights()
+    + function RefocusSearchOnCurrentTier()
+~ class /Game/BP/UI/Talents/Player/UMG_TalentArchetype_Player.UMG_TalentArchetype_Player_C
+    + property SearchHighlight: Object<Overlay>
+    + function SetSearchHighlighted(bNewHighlighted: Bool)
+~ class /Game/UI/Components/FieldGuide/UMG_FieldGuideItem_Itemable.UMG_FieldGuideItem_Itemable_C
+    + property Button_GoToTechTree: Object<UMG_ButtonIcon_C>
+    + property HB_GtTT: Object<HorizontalBox>
+    + property SizeBox_GtTT: Object<SizeBox>
+    + property TechTreeBlueprint: Struct<TalentsRowHandle>
+    + function Construct()
+    + function BndEvt__UMG_FieldGuideItem_Itemable_Button_GoToTechTree_1_K2Node_ComponentBoundEvent_1_Clicked__DelegateSignature()
+~ class /Game/UI/Hab/DropTerminal/UMG_Prospect.UMG_Prospect_C
+    + property PingBox: Object<SizeBox>
+    - property Privacy: Object<SizeBox>
+~ class /Game/UI/UMG_CharacterCreation.UMG_CharacterCreation_C
+    + property angle_12: Object<Image>
+    + property InitialBodyApplied: Bool
+    + property HoodActive: Bool
+    + property RebreatherActive: Bool
+    > property HelmetSelection -> HelmetSelection_1: Object<UMG_CharacterSetting_ToggleBase_C> (similar name)
+    > property HoodSelection -> HoodSelection_1: Object<UMG_CharacterSetting_ToggleBase_C> (similar name)
+    > property RebreatherSelection -> RebreatherSelection_1: Object<UMG_CharacterSetting_ToggleBase_C> (similar name)
+    + function RebreatherSelected(Index: Int, NewFocus: Struct<PreviewCameraSettingsEnum>)
+    + function SwapCustomizationUI(IsReworkCharacter: Bool)
+~ class /Game/UI/UMG_UserInterface.UMG_UserInterface_C
+    + function OpenTechTreeToTalent(Talent: Struct<TalentsRowHandle>, SearchText: Text)
+~ class /Game/UI/Windows/UMG_MainInventory.UMG_MainInventory_C
+    + property RebreatherCheckbox: Object<CheckBox>
+    + property RebreatherHorizontalBox: Object<HorizontalBox>
+    + function BndEvt__UMG_MainInventory_RebreatherCheckbox_K2Node_ComponentBoundEvent_2_OnCheckBoxComponentStateChanged__DelegateSignature(bIsChecked: Bool)
+    + function OnSuccess_7E4F82444CAD642C4E15E5BB620BDD8B(Response: Struct<ResUpdateCosmetics>)
+    + function OnFail_7E4F82444CAD642C4E15E5BB620BDD8B(Response: Struct<ResUpdateCosmetics>)
+~ class /Script/Icarus.DataTableValidationLibrary
+    + function Validate_SettlementTasks_RowHandle(RowHandle: Struct<SettlementTasksRowHandle>)
+~ class /Script/Icarus.FieldGuideFunctionLibrary
+    + function GetBlueprintTalentForItem(Item: Struct<ItemsStaticRowHandle>, OutTalent: Struct<TalentsRowHandle>): Bool
+~ class /Script/Icarus.IcarusPlayerCharacter
+    + property bIsReworkedCharacter: Bool
+    + function GetVisualArmourRow(Row: Struct<ArmourRowHandle>, bIsReworked: Bool): Struct<ArmourRowHandle>
+    + function OnRep_IsReworkedCharacter()
+~ class /Script/Icarus.IcarusPlayerState
+    + function SetActiveCharacterCosmetics(InCosmetics: Struct<CharacterCosmetics>)
+~ class /Script/Icarus.IcarusUIFunctionLibrary
+    + function OpenTechTreeToTalent(WorldContextObject: Object<Object>, Talent: Struct<TalentsRowHandle>, SearchText: Text)
+    ~ function HighlightTalents(TalentTree: Object<TalentTreeWidget>, FilterQuery: Str) -> (TalentTree: Object<TalentTreeWidget>, FilterQuery: Str): Struct<TalentsRowHandle>
+~ class /Script/Icarus.Settlement
+    + property OnSlotTaskChanged: MulticastInlineDelegate<OnSettlementSlotTaskChanged__DelegateSignature>
+    + function AssignNPCToSlot(NpcId: Struct<Guid>, SlotTaskId: Struct<Guid>): Bool
+    + function CanAssignNPCToSlot(NpcId: Struct<Guid>, SlotTaskId: Struct<Guid>): Bool
+    + function GetBuildingSlots(Building: Object<SettlementBuilding>): Array<Struct<SettlementNPCTask>>
+    + function GetNPCData(NpcId: Struct<Guid>, OutNPC: Struct<SettlementNPC>): Bool
+    + function SetNPCSlotTask(NpcId: Struct<Guid>, Task: Struct<SettlementTasksRowHandle>): Bool
+    + function SetSlotAutoAssign(SlotTaskId: Struct<Guid>, bAutoAssign: Bool): Bool
+    + function SetSlotTask(SlotTaskId: Struct<Guid>, Task: Struct<SettlementTasksRowHandle>): Bool
+    + function UnassignNPC(NpcId: Struct<Guid>): Bool
+~ class /Script/Icarus.SettlementBuilding
+    + function AssignNPCToSlot(SlotIndex: Int, NpcId: Struct<Guid>): Bool
+    + function CanAssignNPCToSlot(SlotIndex: Int, NpcId: Struct<Guid>): Bool
+    + function GetAvailableTasks(): Array<Struct<SettlementTaskInfo>>
+    + function GetSlotCount(): Int
+    + function GetSlots(): Array<Struct<SettlementSlotInfo>>
+    + function GetTaskDisplayName(Task: Struct<SettlementTasksRowHandle>): Text
+    + function HasTask(Task: Struct<SettlementTasksRowHandle>): Bool
+    + function SetSlotAutoAssign(SlotIndex: Int, bAutoAssign: Bool): Bool
+    + function SetSlotTask(SlotIndex: Int, Task: Struct<SettlementTasksRowHandle>): Bool
+    + function UnassignSlot(SlotIndex: Int): Bool
+~ class /Script/Icarus.SettlementNPCCharacter
+    + function GetAvailableTasks(): Array<Struct<SettlementTaskInfo>>
+    + function GetSlotTask(): Struct<SettlementTasksRowHandle>
+    + function SetSlotTask(Task: Struct<SettlementTasksRowHandle>): Bool
+~ class /Script/Icarus.TalentGraphWidget
+    + property Panner: Object<PanningPanel>
+    + function FindTalentWidget(Talent: Struct<TalentsRowHandle>): Object<TalentWidget>
+    + function FocusTalent(Talent: Struct<TalentsRowHandle>)
+    + function GetTalentArchetype(): Struct<TalentArchetypesRowHandle>
+~ class /Script/Icarus.TalentViewInterface
+    + function HandleSearchResults(CurrentTierMatch: Struct<TalentsRowHandle>, BestMatch: Struct<TalentsRowHandle>, MatchedArchetypes: Array<Struct<TalentArchetypesRowHandle>>, bAllowFocus: Bool)
+    + function RequestFocusTalent(Talent: Struct<TalentsRowHandle>)
+~ class /Script/Icarus.UserInterfaceBase
+    + function OpenTechTreeToTalent(Talent: Struct<TalentsRowHandle>, SearchText: Text)
+~ class /Script/IcarusUtilities.PanningPanel
+    + function CenterOnWidget(Widget: Object<Widget>): Bool
+~ class /Script/VanguardBPLibrary.VanguardBPFunctionLibrary
+    + function GetFoliageTypeCollisionProfileName(FoliageType: Object<FoliageType_InstancedStaticMesh>): Name
+    + function GetFoliageTypeCustomNavigableGeometry(FoliageType: Object<FoliageType_InstancedStaticMesh>): Enum<EVanguardCustomNavGeometry>
++ struct /Script/Icarus.SettlementSlotInfo
++ struct /Script/Icarus.SettlementTaskData : IcarusTableRowBase
++ struct /Script/Icarus.SettlementTaskInfo
++ struct /Script/Icarus.SettlementTasksEnum : RowEnum
++ struct /Script/Icarus.SettlementTasksRowHandle : RowHandle
+- struct /Script/Icarus.SettlementGenerationEntry
+~ struct /Script/Icarus.AISpawnListItemData
+    + property GreatHuntCampaignSpawner: Bool
+~ struct /Script/Icarus.ArmourData
+    + property ReworkedVariant: Struct<ArmourRowHandle>
+~ struct /Script/Icarus.CharacterCosmeticsRecorder
+    + property Customization_Complexion: Str
+    + property Customization_Eyebrows: Str
+    + property Customization_Piercings: Str
+    + property IsReworkedCharacter: Bool
+    + property Customization_Age: Str
+    + property Customization_SkinTone_V2: Float
+    + property Customization_SkinTint_V2: Float
+    + property Customization_SkinSaturation_V2: Float
+    + property Customization_Rebreather: Str
+    + property Customization_Helmet: Str
+    + property Customization_Hood: Str
+    + property Customization_TopFaceShape: Int
+    + property Customization_BottomFaceShape: Int
+    + property Customization_LeftFaceShape: Int
+    + property Customization_RightFaceShape: Int
+    + property Customization_TopFaceBlendValue: Float
+    + property Customization_BottomFaceBlendValue: Float
+    + property Customization_LeftFaceBlendValue: Float
+    + property Customization_RightFaceBlendValue: Float
+~ struct /Script/Icarus.SettlementBuildingData
+    + property SlotCount: Int
+    + property Tasks: Array<Struct<SettlementTasksRowHandle>>
+    - property Generation: Array<Struct<SettlementGenerationEntry>>
+    ~ property DefaultTasks: Array<Struct<SettlementNPCTaskTypesRowHandle>> -> Array<Struct<SettlementTasksRowHandle>>
+~ struct /Script/Icarus.SettlementNPC
+    + property PlayerAssignedSlotTaskId: Struct<Guid>
+~ struct /Script/Icarus.SettlementNPCRecord
+    + property PlayerAssignedSlotTaskId: Struct<Guid>
+~ struct /Script/Icarus.SettlementNPCTask
+    + property Task: Struct<SettlementTasksRowHandle>
+    + property bAutoAssign: Bool
+~ struct /Script/Icarus.SettlementTaskRecord
+    + property TaskRow: Name
+    + property bAutoAssign: Bool
++ enum /Script/Icarus.ESettlementGenerationOutputMode
++ enum /Script/Icarus.ETalentSearchFocusMode
++ enum /Script/VanguardBPLibrary.EVanguardCustomNavGeometry

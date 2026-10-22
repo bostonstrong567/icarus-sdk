@@ -55,6 +55,7 @@ public:
     UFUNCTION(BlueprintCallable) void InitMeshes(AIcarusPlayerCharacter* Player);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void Interaction_Loot(AActor* Instigator);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void Interaction_Revive(AActor* Instigator);  // parameters 0x8
+    UFUNCTION(BlueprintCallable) void MorphHead(const FCharacterCosmetics& Cosmetics);  // parameters 0x80
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable) void NetMulticast_Unstuck(FVector NewLocation);  // parameters 0xC
     UFUNCTION(BlueprintCallable) void OnConnectedPlayerInitialised(const FConnectedPlayer& ConnectedPlayer);  // parameters 0x38
     UFUNCTION(BlueprintCallable) void OnReloadAssignedPlayerKill();

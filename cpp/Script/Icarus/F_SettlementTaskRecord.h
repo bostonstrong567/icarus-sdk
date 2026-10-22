@@ -1,5 +1,5 @@
 // /Script/Icarus.SettlementTaskRecord
-// size 0x60, declared in Icarus/Source/Icarus/Settlement/SettlementRecorderComponent.h
+// size 0x70, declared in Icarus/Source/Icarus/Settlement/SettlementRecorderComponent.h
 
 USTRUCT()
 struct FSettlementTaskRecord
@@ -14,4 +14,6 @@ public:
     UPROPERTY(SaveGame) FString TargetClassName;  // 0x0038, size 0x10
     UPROPERTY(SaveGame) int32 SourceUID;  // 0x0048, size 0x4
     UPROPERTY(SaveGame) FString SourceClassName;  // 0x0050, size 0x10
+    UPROPERTY(SaveGame) FName TaskRow;  // 0x0060, size 0x8
+    UPROPERTY(SaveGame) bool bAutoAssign;  // 0x0068, size 0x1
 };

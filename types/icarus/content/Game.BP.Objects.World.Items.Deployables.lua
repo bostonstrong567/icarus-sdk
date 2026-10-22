@@ -204,6 +204,7 @@
 ---@field InitMeshes fun(self: BP_Gravestone_C, Player: IcarusPlayerCharacter?)
 ---@field Interaction_Loot fun(self: BP_Gravestone_C, Instigator: Actor?)
 ---@field Interaction_Revive fun(self: BP_Gravestone_C, Instigator: Actor?)
+---@field MorphHead fun(self: BP_Gravestone_C, Cosmetics: CharacterCosmetics|{})
 ---@field NetMulticast_Unstuck fun(self: BP_Gravestone_C, NewLocation: Vector|{})
 ---@field OnConnectedPlayerInitialised fun(self: BP_Gravestone_C, ConnectedPlayer: ConnectedPlayer|{})
 ---@field OnReloadAssignedPlayerKill fun(self: BP_Gravestone_C)

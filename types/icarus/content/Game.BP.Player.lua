@@ -419,6 +419,7 @@
 ---@field WaterEnterPPMaterial MaterialInstanceDynamic
 ---@field WaterPPMaterial MaterialInstanceDynamic
 ---@field WeightCollider SphereComponent
+---@field ApplyCosmeticComponentTags fun(self: BP_IcarusPlayerCharacterSurvival_C, Mesh: ActorComponent?, ArmorRow: RowHandle|{})
 ---@field AutoEquipShield fun(self: BP_IcarusPlayerCharacterSurvival_C) Wax refuses this call from Lua.
 ---@field Backpack_OnDroppingOverflowItem fun(self: BP_IcarusPlayerCharacterSurvival_C, Item: ItemData|{})
 ---@field ["Can Equip with Off Hand"] fun(self: BP_IcarusPlayerCharacterSurvival_C, ItemData: ItemData|{}, IsLHWep: boolean)
@@ -447,7 +448,7 @@
 ---@field FocusedItemCheck fun(self: BP_IcarusPlayerCharacterSurvival_C, Inventory: Inventory?, Location: integer)
 ---@field ForceSyncFocusedItem fun(self: BP_IcarusPlayerCharacterSurvival_C) Wax refuses this call from Lua.
 ---@field ["Get Underwater PP Settings Component"] fun(self: BP_IcarusPlayerCharacterSurvival_C, WaterActor: Actor?, Component: PostProcessComponent?)
----@field GetArmourStructWithOverride fun(self: BP_IcarusPlayerCharacterSurvival_C, InArmourRow: ArmourRowHandle|{}, Armour: ArmourData|{}, Success: boolean) Do not call from Lua: it needs 793 bytes and the call buffer holds 512.
+---@field GetArmourStructWithOverride fun(self: BP_IcarusPlayerCharacterSurvival_C, InArmourRow: ArmourRowHandle|{}, Armour: ArmourData|{}, Success: boolean) Do not call from Lua: it needs 817 bytes and the call buffer holds 512.
 ---@field GetBPIcarusPlayerController fun(self: BP_IcarusPlayerCharacterSurvival_C): BP_IcarusPlayerControllerSurvival_C
 ---@field GetCurrentInventoryWeight fun(self: BP_IcarusPlayerCharacterSurvival_C): integer
 ---@field GetCurrentProspectLocation fun(self: BP_IcarusPlayerCharacterSurvival_C): EProspectLocation
@@ -526,9 +527,11 @@
 ---@field Inventory_BeginPlay fun(self: BP_IcarusPlayerCharacterSurvival_C)
 ---@field ["Is Night Time"] fun(self: BP_IcarusPlayerCharacterSurvival_C, NightTime: boolean)
 ---@field IsClothSimEnabled fun(self: BP_IcarusPlayerCharacterSurvival_C): boolean
+---@field IsHelmetShowing fun(self: BP_IcarusPlayerCharacterSurvival_C, HelmetShowing: boolean)
 ---@field IsPlayerCovered fun(self: BP_IcarusPlayerCharacterSurvival_C, Covered: boolean)
 ---@field IsSlotValidForItem fun(self: BP_IcarusPlayerCharacterSurvival_C, Inventory: InventoryComponent?, InventoryID: InventoryIDEnum|{}, Item: ItemData|{}, SlotIndex: integer): boolean Do not call from Lua: it needs 525 bytes and the call buffer holds 512.
 ---@field K2_OnMovementModeChanged fun(self: BP_IcarusPlayerCharacterSurvival_C, PrevMovementMode: EMovementMode, NewMovementMode: EMovementMode, PrevCustomMode: integer, NewCustomMode: integer)
+---@field LinkFacePiecesToHead fun(self: BP_IcarusPlayerCharacterSurvival_C)
 ---@field MULTI_OnFocusedItemBroken fun(self: BP_IcarusPlayerCharacterSurvival_C)
 ---@field MULTI_OnPlayersSlept fun(self: BP_IcarusPlayerCharacterSurvival_C)
 ---@field MULTI_PlayItemDroppedSound fun(self: BP_IcarusPlayerCharacterSurvival_C, ItemAudio: ItemAudioDataRowHandle|{}, DropLocation: Vector|{})
@@ -634,6 +637,7 @@
 ---@field Server_FocusAndUseItemFromMenu fun(self: BP_IcarusPlayerCharacterSurvival_C, Inventory: Inventory?, Slot: integer, Use: UsesEnum|{})
 ---@field Server_PlayWaveAnim fun(self: BP_IcarusPlayerCharacterSurvival_C)
 ---@field Server_SetCaveState fun(self: BP_IcarusPlayerCharacterSurvival_C, IsInCave: boolean)
+---@field Server_SetRebreather fun(self: BP_IcarusPlayerCharacterSurvival_C, RebreatherHash: integer)
 ---@field ["Set Post Process Visibility"] fun(self: BP_IcarusPlayerCharacterSurvival_C, Block: boolean)
 ---@field SetADSOffset fun(self: BP_IcarusPlayerCharacterSurvival_C, NewOffset: Transform|{})
 ---@field SetAimVignetteIntensity fun(self: BP_IcarusPlayerCharacterSurvival_C, NewIntensityTarget: number, InterpSpeed: number)
@@ -657,6 +661,7 @@
 ---@field StatsUpdated fun(self: BP_IcarusPlayerCharacterSurvival_C)
 ---@field StripItemTags fun(self: BP_IcarusPlayerCharacterSurvival_C, Inventory: InventoryComponent?, InventoryID: InventoryIDEnum|{}, Item: ItemData|{}, SlotIndex: integer, ItemTags: GameplayTagContainer|{}): boolean Do not call from Lua: it needs 561 bytes and the call buffer holds 512.
 ---@field SurfaceIsLiquid fun(self: BP_IcarusPlayerCharacterSurvival_C, Surface: EPhysicalSurface, IsLiquid: boolean)
+---@field SwapFacePiecesForHelmet fun(self: BP_IcarusPlayerCharacterSurvival_C, CharacterCosmetic: CharacterCosmetics|{})
 ---@field TickDamageIndicators fun(self: BP_IcarusPlayerCharacterSurvival_C)
 ---@field TickExposurePostProcess fun(self: BP_IcarusPlayerCharacterSurvival_C)
 ---@field TickPostProcessing fun(self: BP_IcarusPlayerCharacterSurvival_C, DeltaTime: number)
@@ -1224,6 +1229,8 @@
 ---@field Proxy_ArcadeMachineEndAction fun(self: BP_NetworkProxyComponent_C, ArcadeMachineActor: BP_Colony_Arcade_Machine_C?, ScoreResult: ArcadeMachineScore|{})
 ---@field Proxy_ArmourStandBackpackToggle fun(self: BP_NetworkProxyComponent_C, ArmourStand: Deployable?, SwapBackpacks: boolean)
 ---@field Proxy_ArmourStandSwap fun(self: BP_NetworkProxyComponent_C, ArmourStand: Deployable?, Character: IcarusCharacter?)
+---@field Proxy_BuildingSetNPC fun(self: BP_NetworkProxyComponent_C, Building: SettlementBuilding?, SlotIndex: integer, NpcId: Guid|{})
+---@field Proxy_BuildingSetTask fun(self: BP_NetworkProxyComponent_C, Building: SettlementBuilding?, Slot: integer, Task: SettlementTasksRowHandle|{})
 ---@field Proxy_CatchFishCheat fun(self: BP_NetworkProxyComponent_C, Controller: IcarusPlayerController?, Character: IcarusPlayerCharacter?)
 ---@field Proxy_CatchFishInZoneCheat fun(self: BP_NetworkProxyComponent_C, Controller: IcarusPlayerController?, Character: IcarusPlayerCharacter?, Zone: FishSpawnZonesRowHandle|{})
 ---@field Proxy_Cheat_AddItemSet fun(self: BP_NetworkProxyComponent_C, Controller: IcarusPlayerController?, Name: string)
@@ -1231,6 +1238,7 @@
 ---@field Proxy_ClaimSettlement fun(self: BP_NetworkProxyComponent_C, StarterActor: Actor?, SettlementName: string)
 ---@field Proxy_ClientDropshipReady fun(self: BP_NetworkProxyComponent_C, Dropship: IcarusRocket?)
 ---@field Proxy_DeconstructBuilding fun(self: BP_NetworkProxyComponent_C, Building: SettlementBuilding?)
+---@field Proxy_DestroyConstruction fun(self: BP_NetworkProxyComponent_C, Buidling: SettlementBuilding?)
 ---@field Proxy_DestroyInventoryStack fun(self: BP_NetworkProxyComponent_C, Inventory: Inventory?, Location: integer, Player: IcarusPlayerController?, bRefundPartCost: boolean)
 ---@field Proxy_DestroyMountActors fun(self: BP_NetworkProxyComponent_C, Mounts: IcarusMountCharacter[])
 ---@field Proxy_DropAllInventoryStacks fun(self: BP_NetworkProxyComponent_C, Inventory: Inventory?, Location: integer, FromPlayer: IcarusPlayerCharacter?)
@@ -1256,6 +1264,7 @@
 ---@field Proxy_SetMountGrazingState fun(self: BP_NetworkProxyComponent_C, Mount: IcarusMountCharacter?, NewState: EMountGrazingBehaviourState)
 ---@field Proxy_SetMountMovementState fun(self: BP_NetworkProxyComponent_C, Mount: IcarusMountCharacter?, NewState: EMountMovementBehaviourState)
 ---@field Proxy_SetMountName fun(self: BP_NetworkProxyComponent_C, Mount: IcarusMountCharacter?, Name: string)
+---@field Proxy_SetNPCTaskAssignment fun(self: BP_NetworkProxyComponent_C, Settlment: Settlement?, Building: SettlementBuilding?, NpcId: Guid|{})
 ---@field Proxy_SetNearbyCreaturesCombatBehaviour fun(self: BP_NetworkProxyComponent_C, NewCombatBehaviour: EMountCombatBehaviourState, NearbyRadius: integer)
 ---@field Proxy_SetNearbyCreaturesMovementBehaviour fun(self: BP_NetworkProxyComponent_C, NewMovementBehaviour: EMountMovementBehaviourState, NearbyRadius: integer)
 ---@field Proxy_SetResourceComponentState fun(self: BP_NetworkProxyComponent_C, Component: ResourceComponent?, ResourceType: IcarusResourcesEnum|{}, State: boolean)

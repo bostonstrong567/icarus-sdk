@@ -130,12 +130,16 @@
 ---@field UnlockNextTalentRank fun(self: TalentControllerInterface, Talent: TalentsRowHandle|{}, bForceUnlock: boolean): boolean
 
 ---@class TalentGraphWidget : UserWidget
+---@field Panner PanningPanel
 ---@field TalentArchetype TalentArchetypesRowHandle
 ---@field TalentTreeWidgets TalentTreeWidget[]
 ---@field TalentView TalentViewInterface
 ---@field TooltipWidgetClass Class
 ---@field TooltipWidgets TalentTooltipWidget[]
 ---@field Zoom integer
+---@field FindTalentWidget fun(self: TalentGraphWidget, Talent: TalentsRowHandle|{}): TalentWidget
+---@field FocusTalent fun(self: TalentGraphWidget, Talent: TalentsRowHandle|{})
+---@field GetTalentArchetype fun(self: TalentGraphWidget): TalentArchetypesRowHandle
 ---@field InitializeGraph fun(self: TalentGraphWidget, View: TalentViewInterface?, Archetype: TalentArchetypesRowHandle|{})
 ---@field OnZoomChanged fun(self: TalentGraphWidget, Level: integer, Scale: number)
 ---@field PostSetup fun(self: TalentGraphWidget)
@@ -428,7 +432,9 @@
 ---@field GetModel fun(self: TalentViewInterface): TalentModelInterface_Const
 ---@field GetTalentTreeWidgets fun(self: TalentViewInterface): TalentTreeWidget[]
 ---@field GetViewData fun(self: TalentViewInterface): TalentViewsRowHandle
+---@field HandleSearchResults fun(self: TalentViewInterface, CurrentTierMatch: TalentsRowHandle|{}, BestMatch: TalentsRowHandle|{}, MatchedArchetypes: TalentArchetypesRowHandle[], bAllowFocus: boolean)
 ---@field OnModelViewChanged fun(self: TalentViewInterface, InModel: TalentModelInterface?, InView: TalentViewInterface?)
+---@field RequestFocusTalent fun(self: TalentViewInterface, Talent: TalentsRowHandle|{})
 ---@field SetController fun(self: TalentViewInterface, InController: TalentControllerInterface?)
 
 ---@class TalentViewsEnum : RowEnum

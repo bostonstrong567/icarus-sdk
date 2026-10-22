@@ -14,9 +14,8 @@ public:
     UFUNCTION() void BndEvt__UMG_TalentFilter_SearchBar_K2Node_ComponentBoundEvent_4_OnSearchBoxChangedEvent__DelegateSignature(const FText& Text);  // parameters 0x18
     UFUNCTION() void BndEvt__UMG_TalentFilter_SearchBar_K2Node_ComponentBoundEvent_5_OnSearchBoxCommittedEvent__DelegateSignature(const FText& Text, TEnumAsByte<ETextCommit> CommitMethod);  // parameters 0x19
     UFUNCTION() void BndEvt__UMG_TalentFilter_UMG_ButtonIcon_K2Node_ComponentBoundEvent_0_Clicked__DelegateSignature();
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent) void Construct();
     UFUNCTION() void ExecuteUbergraph_UMG_TalentFilter(int32 EntryPoint);  // parameters 0x4
-    UFUNCTION(BlueprintCallable) void HighlightTalents();
+    UFUNCTION(BlueprintCallable) void HighlightTalents(FText Text, bool bAllowFocus);  // parameters 0x19
     UFUNCTION(BlueprintCallable) void Setup(UTalentViewInterface* View, bool ShowClear);  // parameters 0x9
     UFUNCTION(BlueprintCallable) void UpdateTextFilter(FText TextIn);  // parameters 0x18
 };

@@ -3327,6 +3327,9 @@
 ---@field UpdateBackgroundImage fun(self: UMG_RecipeInputItem_C, Texture: Texture2D?, Selected: ProcessorPreview)
 ---@field UpdateTooltip fun(self: UMG_RecipeInputItem_C, State: ProcessorPreview)
 
+---@class UMG_RecipeInputItem_Settlement_C : UMG_RecipeInputItem_C
+---@field CheckElement fun(self: UMG_RecipeInputItem_Settlement_C, bCanSatisfy: boolean)
+
 ---@class UMG_RecipeInputQuery_C : UMG_RecipeElementBase_C
 ---@field BackgroundImage Image
 ---@field IconImage Image

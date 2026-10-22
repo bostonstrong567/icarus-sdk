@@ -18,6 +18,7 @@ public:
     UFUNCTION(BlueprintCallable) static void GetArmorSetFromItem(FItemsStaticRowHandle Item, TArray<FItemsStaticRowHandle>& ArmorSetOut);  // parameters 0x28
     UFUNCTION(BlueprintCallable) static TArray<FItemsStaticRowHandle> GetAttachments(FItemsStaticRowHandle Item);  // parameters 0x28
     UFUNCTION(BlueprintCallable) static FBestiaryDataRowHandle GetBeastFromVestige(FItemsStaticRowHandle Item);  // parameters 0x30
+    UFUNCTION(BlueprintCallable, BlueprintPure) static bool GetBlueprintTalentForItem(FItemsStaticRowHandle Item, FTalentsRowHandle& OutTalent);  // parameters 0x31
     UFUNCTION(BlueprintCallable) static FFieldGuideCategoriesRowHandle GetCategoryForItem(FItemsStaticRowHandle Item);  // parameters 0x30
     UFUNCTION(BlueprintCallable) static FItemsStaticRowHandle GetCorpseFromVestige(FItemsStaticRowHandle Item);  // parameters 0x30
     UFUNCTION(BlueprintCallable) static TArray<FItemsStaticRowHandle> GetCorpseSkinningBenchRewards(FItemsStaticRowHandle Item);  // parameters 0x28

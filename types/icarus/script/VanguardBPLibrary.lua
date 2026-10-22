@@ -16,6 +16,14 @@
 ---| 1 # NotFound
 ---| integer
 
+---@alias EVanguardCustomNavGeometry
+---| 0 # No
+---| 1 # Yes
+---| 2 # EvenIfNotCollidable
+---| 3 # DontExport
+---| 4 # Error
+---| integer
+
 ---@class VanguardBPFunctionLibrary : BlueprintFunctionLibrary
 ---@field ActorLineTraceSingle fun(self: VanguardBPFunctionLibrary, WorldContextObject: Object?, TargetActor: Actor?, Start: Vector|{}, End: Vector|{}, TraceChannel: ETraceTypeQuery, bTraceComplex: boolean, DrawDebugType: EDrawDebugTrace, OutHit: HitResult|{}, TraceColor: LinearColor|{}, TraceHitColor: LinearColor|{}, DrawTime: number): boolean
 ---@field AddActorComponent fun(self: VanguardBPFunctionLibrary, Owner: Actor?, ActorComponentClass: Class?, OutComponent: ActorComponent?)
@@ -38,6 +46,8 @@
 ---@field GetChildWidgetsOfClass fun(self: VanguardBPFunctionLibrary, WidgetClass: Class?, InParent: PanelWidget?, ChildWidgets: Widget[], SearchRecursively: boolean)
 ---@field GetClassDefaultObject fun(self: VanguardBPFunctionLibrary, ObjectClass: Class?, IsValid: boolean): Object
 ---@field GetClosestPlayerDistanceFromLocation fun(self: VanguardBPFunctionLibrary, WorldContextObject: Object?, Location: Vector|{}, Result: EFunctionResult): number
+---@field GetFoliageTypeCollisionProfileName fun(self: VanguardBPFunctionLibrary, FoliageType: FoliageType_InstancedStaticMesh?): string
+---@field GetFoliageTypeCustomNavigableGeometry fun(self: VanguardBPFunctionLibrary, FoliageType: FoliageType_InstancedStaticMesh?): EVanguardCustomNavGeometry
 ---@field GetHashFromString fun(self: VanguardBPFunctionLibrary, String: string): integer
 ---@field GetLevelNameFromStreamingAsset fun(self: VanguardBPFunctionLibrary, StreamingLevel: LevelStreaming?): string
 ---@field GetLoadedChildClasses fun(self: VanguardBPFunctionLibrary, ParentClass: Class?): Class[]
