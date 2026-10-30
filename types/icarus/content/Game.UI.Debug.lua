@@ -83,7 +83,8 @@
 ---@field FoundCreatureClasses table<Class, AISetupRowHandle>
 ---@field RowRef StringRow_C
 ---@field SpawnZoneName string
----@field VerticalBox VerticalBox
+---@field VerticalBox_Header VerticalBox
+---@field VerticalBox_Main VerticalBox
 ---@field Construct fun(self: UMG_GOAPWorldStats_C)
 ---@field GetBiomeSpawnDensity fun(self: UMG_GOAPWorldStats_C)
 ---@field UpdateBiomeInfo fun(self: UMG_GOAPWorldStats_C)

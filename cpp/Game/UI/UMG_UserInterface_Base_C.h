@@ -31,6 +31,7 @@ public:
     UFUNCTION() void ExecuteUbergraph_UMG_UserInterface_Base(int32 EntryPoint);  // parameters 0x4
     UFUNCTION(BlueprintCallable) void FixFocus();
     UFUNCTION(BlueprintCallable) void FocusStaticWidget(TEnumAsByte<EStaticUIWidgets> Panel);  // parameters 0x1
+    UFUNCTION(BlueprintCallable) void FocusTechTreeTalent(FTalentsRowHandle Talent, FText InputPin);  // parameters 0x30
     UFUNCTION(BlueprintCallable) void GetCheatContext(TEnumAsByte<ECheatContext>& Context);  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) void GetCheatOverlay(UUMG_CheatOverlay_C*& Overlay);  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure) void GetConfirmationOverlay(UOverlay*& Overlay);  // parameters 0x8

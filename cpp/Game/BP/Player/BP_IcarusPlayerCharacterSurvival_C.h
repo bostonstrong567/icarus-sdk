@@ -212,7 +212,7 @@ public:
     UFUNCTION(BlueprintCallable) void FocusedItemUpdated__DelegateSignature(AIcarusItem* FocusedItem);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void ForceSyncFocusedItem();
     UFUNCTION(BlueprintCallable) void Get_Underwater_PP_Settings_Component(AActor* WaterActor, UPostProcessComponent*& Component);  // parameters 0x10, named "Get Underwater PP Settings Component"
-    UFUNCTION(BlueprintCallable) void GetArmourStructWithOverride(FArmourRowHandle InArmourRow, FArmourData& Armour, bool& Success);  // parameters 0x331
+    UFUNCTION(BlueprintCallable) void GetArmourStructWithOverride(FArmourRowHandle InArmourRow, FArmourData& Armour, bool& Success);  // parameters 0x349
     UFUNCTION(BlueprintCallable, BlueprintPure) ABP_IcarusPlayerControllerSurvival_C* GetBPIcarusPlayerController();  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintImplementableEvent) int32 GetCurrentInventoryWeight() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintImplementableEvent) EProspectLocation GetCurrentProspectLocation() const;  // parameters 0x1

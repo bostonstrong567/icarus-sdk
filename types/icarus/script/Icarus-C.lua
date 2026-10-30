@@ -959,6 +959,9 @@
 ---@field MoveActorArrowsToCorpseInventory fun(self: CorpseFunctionLibrary, Deadin: Actor?, InventoryID: InventoryIDEnum|{})
 
 ---@class CosmeticsFunctionLibrary : BlueprintFunctionLibrary
+---@field CountFaceShapes fun(self: CosmeticsFunctionLibrary, Top: EFaceTypes, Bottom: EFaceTypes, Left: EFaceTypes, Right: EFaceTypes): integer
+---@field FaceBlendToPickerPosition fun(self: CosmeticsFunctionLibrary, Top: number, Bottom: number, Left: number, Right: number, Scaled: number, AbsClamp: number, Baseline: number): Vector2D
+---@field FindFaceShapeDirection fun(self: CosmeticsFunctionLibrary, Shape: EFaceTypes, Direction: EFaceDirection, Top: EFaceTypes, Bottom: EFaceTypes, Left: EFaceTypes, Right: EFaceTypes, OtherDirection: EFaceDirection): boolean
 ---@field IsDLCPackageInstalled fun(self: CosmeticsFunctionLibrary, DLCPackage: DLCPackageDataRowHandle|{}): boolean
 ---@field LogDLCInfo fun(self: CosmeticsFunctionLibrary)
 

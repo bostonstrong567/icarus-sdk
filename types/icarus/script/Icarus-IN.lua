@@ -541,7 +541,7 @@
 ---@field GetAmmoItem fun(self: InventoryItemLibrary, WorldContextObject: Object?, ItemData: ItemData|{}, Ammo: ItemData|{}, Paths: EDataValid) Do not call from Lua: it needs 1008 bytes and the call buffer holds 512.
 ---@field GetAmmoTypeData fun(self: InventoryItemLibrary, Item: ItemData|{}, AmmoTypeData: AmmoTypeData|{}, Paths: EDataValid) Do not call from Lua: it needs 624 bytes and the call buffer holds 512.
 ---@field GetAnyCookingModifications fun(self: InventoryItemLibrary, CraftingActor: IcarusPlayerCharacter?, Item: ItemData|{}, AdditionalStats: IcarusStatReplicated[]) Do not call from Lua: it needs 520 bytes and the call buffer holds 512.
----@field GetArmourData fun(self: InventoryItemLibrary, Item: ItemData|{}, ArmourData: ArmourData|{}, Paths: EDataValid) Do not call from Lua: it needs 1296 bytes and the call buffer holds 512.
+---@field GetArmourData fun(self: InventoryItemLibrary, Item: ItemData|{}, ArmourData: ArmourData|{}, Paths: EDataValid) Do not call from Lua: it needs 1320 bytes and the call buffer holds 512.
 ---@field GetArmourSet fun(self: InventoryItemLibrary, Item: ItemData|{}): ArmourSetsEnum
 ---@field GetAttachmentSlot fun(self: InventoryItemLibrary, WorldContextObject: Object?, ItemData: ItemData|{}, Inventory: Inventory?, Slot: integer, Paths: EDataValid) Do not call from Lua: it needs 520 bytes and the call buffer holds 512.
 ---@field GetAttachmentSlotActor fun(self: InventoryItemLibrary, Item: Actor?, Inventory: Inventory?, Slot: integer, Paths: EDataValid)

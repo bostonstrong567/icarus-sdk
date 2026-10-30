@@ -5,10 +5,10 @@
 ---@field AnimGraph fun(self: ABP_CHA_Body_Customization_C, AnimGraph: PoseLink|{})
 
 ---@class ABP_CHA_Head_01_C : AnimInstance
+---@field IsAlive boolean
 ---@field AnimGraph fun(self: ABP_CHA_Head_01_C, AnimGraph: PoseLink|{})
-
----@class ABP_CHA_Head_01_InWorld_C : AnimInstance
----@field AnimGraph fun(self: ABP_CHA_Head_01_InWorld_C, AnimGraph: PoseLink|{})
+---@field BlueprintUpdateAnimation fun(self: ABP_CHA_Head_01_C, DeltaTimeX: number)
+---@field EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_CHA_Head_01_AnimGraphNode_TwoWayBlend_A729D015492191C80151B9A6641D10B9 fun(self: ABP_CHA_Head_01_C)
 
 ---@class Anim_VehicleLayerInterface_C : AnimLayerInterface
 ---@field VehicleLowerBody fun(self: Anim_VehicleLayerInterface_C, LowerInPose: PoseLink|{}, VehicleLowerBody: PoseLink|{})
@@ -457,6 +457,7 @@
 ---@field OnMouseButtonDown fun(self: WB_ChaCustom_Shape_C, MyGeometry: Geometry|{}, MouseEvent: PointerEvent|{}): EventReply Wax refuses this call from Lua.
 ---@field OnMouseButtonUp fun(self: WB_ChaCustom_Shape_C, MyGeometry: Geometry|{}, MouseEvent: PointerEvent|{}): EventReply Wax refuses this call from Lua.
 ---@field OnMouseMove fun(self: WB_ChaCustom_Shape_C, MyGeometry: Geometry|{}, MouseEvent: PointerEvent|{}): EventReply Wax refuses this call from Lua.
+---@field SyncCursorToValues fun(self: WB_ChaCustom_Shape_C)
 ---@field Tick fun(self: WB_ChaCustom_Shape_C, MyGeometry: Geometry|{}, InDeltaTime: number)
 
 ---@class WB_ChaCustom_UI_C : UserWidget

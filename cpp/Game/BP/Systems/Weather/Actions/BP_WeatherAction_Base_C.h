@@ -1,28 +1,28 @@
 // /Game/BP/Systems/Weather/Actions/BP_WeatherAction_Base.BP_WeatherAction_Base_C
 // Derives from: UIcarusWeatherAction > UActorComponent > UObject
-// size 0x8CC, a blueprint class, blueprint
+// size 0x8D4, a blueprint class, blueprint
 
 UCLASS(Config=Engine)
 class UBP_WeatherAction_Base_C : public UIcarusWeatherAction
 {
 public:
-    UPROPERTY(Transient) FPointerToUberGraphFrame UberGraphFrame;  // 0x07C8, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FText ActiveWarningMessage;  // 0x07D0, size 0x18
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<ABP_Building_Base_C*> WindDamagedBuildings;  // 0x07E8, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) ABP_WeatherController_C* WeatherControllerRef;  // 0x07F8, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimerHandle DamageDeployablesRef;  // 0x0800, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimerHandle DamagePlayerRef;  // 0x0808, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<UObject*> LoadedSoftObjects;  // 0x0810, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<AIcarusPlayerCharacter*, int32> AppliedExposureModifiers;  // 0x0820, size 0x50
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimerHandle DamageTaggedRef;  // 0x0870, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimerHandle ClogProcessorsRef;  // 0x0878, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimerHandle DamagePlayerTaggedRef;  // 0x0880, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<ABP_Building_Base_C*> TaggedBuildings;  // 0x0888, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<ADeployable*> TaggedDeployables;  // 0x0898, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<ABP_Building_Base_C*> TaggedBuildingsDamaged;  // 0x08A8, size 0x10
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 TaggedBuildingMaxPiecesToDamage;  // 0x08B8, size 0x4
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimerHandle NetworkUpdateRef;  // 0x08C0, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) float ColorAmount;  // 0x08C8, size 0x4
+    UPROPERTY(Transient) FPointerToUberGraphFrame UberGraphFrame;  // 0x07D0, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FText ActiveWarningMessage;  // 0x07D8, size 0x18
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<ABP_Building_Base_C*> WindDamagedBuildings;  // 0x07F0, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) ABP_WeatherController_C* WeatherControllerRef;  // 0x0800, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimerHandle DamageDeployablesRef;  // 0x0808, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimerHandle DamagePlayerRef;  // 0x0810, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<UObject*> LoadedSoftObjects;  // 0x0818, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<AIcarusPlayerCharacter*, int32> AppliedExposureModifiers;  // 0x0828, size 0x50
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimerHandle DamageTaggedRef;  // 0x0878, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimerHandle ClogProcessorsRef;  // 0x0880, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimerHandle DamagePlayerTaggedRef;  // 0x0888, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<ABP_Building_Base_C*> TaggedBuildings;  // 0x0890, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<ADeployable*> TaggedDeployables;  // 0x08A0, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<ABP_Building_Base_C*> TaggedBuildingsDamaged;  // 0x08B0, size 0x10
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 TaggedBuildingMaxPiecesToDamage;  // 0x08C0, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FTimerHandle NetworkUpdateRef;  // 0x08C8, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) float ColorAmount;  // 0x08D0, size 0x4
 
     UFUNCTION(BlueprintCallable) void Action_AIPerception();
     UFUNCTION(BlueprintCallable) void Action_AshBuildUp();

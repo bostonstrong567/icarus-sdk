@@ -103,6 +103,7 @@ public:
     UFUNCTION(BlueprintCallable) void OnItemRemoved_Event_0(UInventory* Inventory, int32 Location);  // parameters 0xC
     UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent) FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);  // parameters 0x160
     UFUNCTION(BlueprintCallable) void OnSessionInviteAccepted(FIcarusSession IcarusSession);  // parameters 0x1C0
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void OpenTechTreeToTalent(const FTalentsRowHandle& Talent, const FText& SearchText);  // parameters 0x30
     UFUNCTION(BlueprintCallable) void PasswordCheck();
     UFUNCTION(BlueprintCallable) void RemoveCustomPopup(UUserWidget* PopupWidget);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void Reset();

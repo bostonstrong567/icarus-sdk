@@ -342,6 +342,7 @@
 ---@field SpawnData AutonomousSpawnData
 ---@field SpawnedAI Actor[]
 ---@field SpawnsRowHandle AutonomousSpawnsRowHandle
+---@field ApplySpawnDataGameplayTags fun(self: AISpawnBehaviour, SpawnedActor: Actor?)
 ---@field CanCleanupAI fun(self: AISpawnBehaviour, AI: Actor?): boolean
 ---@field CleanupAI fun(self: AISpawnBehaviour, AI: Actor?)
 ---@field GetNextAIToSpawn fun(self: AISpawnBehaviour, AISetup: AISetupEnum|{}, ActorClass: Class?): boolean
@@ -499,6 +500,7 @@
 ---@field ClearLatentNPCDeaths fun(self: AISpawner)
 ---@field GenerateCachedSpawnPoints fun(self: AISpawner)
 ---@field GenerateSingleTileSpawnPoints fun(self: AISpawner)
+---@field GetAutonomousSpawnTagsForActor fun(self: AISpawner, SpawnedActor: Actor?, OutTags: GameplayTagContainer|{}): boolean
 ---@field GetDebugSpawnBlockers fun(self: AISpawner): boolean
 ---@field GetLastAISetupDeathTime fun(self: AISpawner, AISetup: AISetupRowHandle|{}): number
 ---@field GetLastAISetupSpawnTime fun(self: AISpawner, AISetup: AISetupRowHandle|{}): number
@@ -1213,7 +1215,7 @@
 ---@field Score ArcadeMachineScore
 
 ---@class ArmourComponent : TraitComponent
----@field GetArmourData fun(self: ArmourComponent, OutData: ArmourData|{}): boolean Do not call from Lua: it needs 800 bytes and the call buffer holds 512.
+---@field GetArmourData fun(self: ArmourComponent, OutData: ArmourData|{}): boolean Do not call from Lua: it needs 824 bytes and the call buffer holds 512.
 
 ---@class ArmourComponentData
 ---@field ArmourComponents SkeletalMeshComponent[]
@@ -1238,6 +1240,7 @@
 ---@field HabArmourMesh SkeletalMesh
 ---@field ImplicitDefaultArmour ArmourRowHandle[]
 ---@field ReworkedVariant ArmourRowHandle
+---@field ReworkedVariantHelmOff ArmourRowHandle
 ---@field TPFurClass Class
 ---@field bHideFirstPersonUndersuit boolean
 ---@field bOverrideDefaultMaterials boolean
@@ -1245,12 +1248,12 @@
 ---@class ArmourEnum : RowEnum
 
 ---@class ArmourLibrary : RowLibrary
----@field AddRowToArmourTable fun(self: ArmourLibrary, Name: string, Data: ArmourData|{}, NewRow: ArmourRowHandle|{}, bOverrideExistingRow: boolean) Do not call from Lua: it needs 832 bytes and the call buffer holds 512.
+---@field AddRowToArmourTable fun(self: ArmourLibrary, Name: string, Data: ArmourData|{}, NewRow: ArmourRowHandle|{}, bOverrideExistingRow: boolean) Do not call from Lua: it needs 856 bytes and the call buffer holds 512.
 ---@field BreakArmourEnum fun(self: ArmourLibrary, Enum: ArmourEnum|{}, Name: string, Index: integer)
 ---@field CastToArmourRowHandle fun(self: ArmourLibrary, RowHandle: RowHandle|{}, Paths: EValid): ArmourRowHandle
 ---@field EqualEqual_EnumEnum fun(self: ArmourLibrary, A: ArmourEnum|{}, B: ArmourEnum|{}): boolean
 ---@field EqualEqual_FArmourRowHandleFArmourRowHandle fun(self: ArmourLibrary, RowHandleA: ArmourRowHandle|{}, RowHandleB: ArmourRowHandle|{}): boolean
----@field GetArmourStruct fun(self: ArmourLibrary, RowHandle: ArmourRowHandle|{}, Armour: ArmourData|{}, Paths: EValid) Do not call from Lua: it needs 824 bytes and the call buffer holds 512.
+---@field GetArmourStruct fun(self: ArmourLibrary, RowHandle: ArmourRowHandle|{}, Armour: ArmourData|{}, Paths: EValid) Do not call from Lua: it needs 848 bytes and the call buffer holds 512.
 ---@field IntToName fun(self: ArmourLibrary, IntValue: integer): string
 ---@field IntToStruct fun(self: ArmourLibrary, IntValue: integer): ArmourEnum
 ---@field IsValidName fun(self: ArmourLibrary, NameValue: string): boolean

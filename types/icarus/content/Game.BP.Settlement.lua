@@ -214,9 +214,10 @@
 ---@field ActiveRaidStrength number
 ---@field ActiveRaidWave ScaledAISpawnWaveData
 ---@field ActiveTaskWidgets table<Guid, WidgetComponent>
+---@field BP_IcarusPointLight BP_IcarusPointLight_C
+---@field BP_IcarusPointLight1 BP_IcarusPointLight_C
 ---@field BP_UIProjectionComponent_Settlement BP_UIProjectionComponent_Settlement_C
 ---@field BP_UIProjectionLocation BP_UIProjectionLocation_C
----@field Collision_Interact BoxComponent
 ---@field CompletedRaidSpawns table<AISetupRowHandle, integer>
 ---@field CurrentWaveIndex integer
 ---@field CurrentWaveSpawnCountTarget integer
@@ -231,10 +232,14 @@
 ---@field InstancedStaticMesh_Walls InstancedStaticMeshComponent
 ---@field Interactable InteractableComponent
 ---@field LastRaidSpawnTime table<AISetupRowHandle, number>
+---@field Monitor StaticMeshComponent
+---@field NPCSpawn SceneComponent
 ---@field NavModifier NavModifierComponent
 ---@field NextRaidSpawn ScaledSpawnWaveUnit
 ---@field NumTotalRaidAIKilled integer
 ---@field NumTotalRaidAISpawned integer
+---@field PointLight_Fill PointLightComponent
+---@field PointLight_Fill1 PointLightComponent
 ---@field PreviewWallTypeEnum integer
 ---@field PreviousSettlementRange integer
 ---@field RaidEQS EnvQuery
@@ -243,6 +248,8 @@
 ---@field RaidSpawnRadius number
 ---@field RaidStartTime number
 ---@field RaidTickTimer TimerHandle
+---@field Scene SceneComponent
+---@field Scene1 SceneComponent
 ---@field StaticMesh StaticMeshComponent
 ---@field WallNeedsUpdate boolean
 ---@field Widget_Status WidgetComponent
@@ -423,6 +430,7 @@
 ---@field GetBadColour fun(self: UMG_SettlementInfo_InWorld_C, Color: SlateColor|{})
 ---@field GetGoodColour fun(self: UMG_SettlementInfo_InWorld_C, Color: SlateColor|{})
 ---@field GetWarningColour fun(self: UMG_SettlementInfo_InWorld_C, Color: SlateColor|{})
+---@field Initalise fun(self: UMG_SettlementInfo_InWorld_C, LinkedSettlement: Settlement?)
 ---@field Tick fun(self: UMG_SettlementInfo_InWorld_C, MyGeometry: Geometry|{}, InDeltaTime: number)
 ---@field UpdateResources fun(self: UMG_SettlementInfo_InWorld_C)
 ---@field UpdateStatus fun(self: UMG_SettlementInfo_InWorld_C) Wax refuses this call from Lua.
@@ -484,8 +492,10 @@
 ---@field BuildingSlots VerticalBox
 ---@field CloseButton UMG_IconTextButton_C
 ---@field DeconstructButton UMG_IconTextButton_C
+---@field Target SettlementBuildingsRowHandle
 ---@field TextBlock_Status TextBlock
 ---@field TitleText TextBlock
+---@field UMG_Settlement_Building_Upgrade UMG_Settlement_Building_Upgrade_C
 ---@field Construct fun(self: UMG_Settlement_Building_C)
 ---@field DoNothing fun(self: UMG_Settlement_Building_C)
 ---@field OnNPCTaskingUpdated fun(self: UMG_Settlement_Building_C, NpcId: Guid|{})
@@ -543,6 +553,17 @@
 ---@field Construct fun(self: UMG_Settlement_Building_Task_C)
 ---@field NPCTaskOverride fun(self: UMG_Settlement_Building_Task_C, NPCTask: SettlementNPCTaskTypesRowHandle|{})
 ---@field OnListItemObjectSet fun(self: UMG_Settlement_Building_Task_C, ListItemObject: Object?)
+
+---@class UMG_Settlement_Building_Upgrade_C : UserWidget
+---@field Building SettlementBuilding
+---@field Items UMG_IcarusGrid_C
+---@field Overlay_17 Overlay
+---@field UMG_BasicButton_2 UMG_BasicButton_2_C
+---@field UpgradeText TextBlock
+---@field Upgraded SettlementBuildingsRowHandle
+---@field Initialise fun(self: UMG_Settlement_Building_Upgrade_C, Building: SettlementBuilding?)
+---@field ["Initialise Cost"] fun(self: UMG_Settlement_Building_Upgrade_C)
+---@field PreConstruct fun(self: UMG_Settlement_Building_Upgrade_C, IsDesignTime: boolean)
 
 ---@class UMG_Settlement_Claim_C : UMG_IcarusLinkedActorPanel_C
 ---@field ConfirmButton UMG_IconTextButton_C
@@ -612,19 +633,29 @@
 ---@field Construct fun(self: UMG_Settlement_NPC_Visitor_C)
 
 ---@class UMG_Settlement_TalentTree_C : UMG_IcarusLinkedActorPanel_C
----@field CloseButton UMG_IconTextButton_C
+---@field CloseButton UMG_CloseButton_2_C
 ---@field Image Image
 ---@field Image_118 Image
 ---@field Image_75 Image
+---@field LedgerButton UMG_BasicButton_2_C
+---@field LedgerWidget SizeBox
 ---@field ListDataObjects BP_SettlementLedger_Data_C[]
 ---@field ListView_BuildingLedger ListView
 ---@field NearestSettlement Settlement
 ---@field NewVar_0 boolean
+---@field OverviewWidget SizeBox
+---@field Status_Button UMG_BasicButton_2_C
+---@field StorageButton UMG_BasicButton_2_C
+---@field StorageWidget SizeBox
 ---@field TalentMenuSlot NamedSlot
+---@field TalentWidget SizeBox
+---@field Talent_Button UMG_BasicButton_2_C
 ---@field TextBlock_BuildingName TextBlock
 ---@field TextBlock_BuildingName_1 TextBlock
 ---@field TextBlock_Status TextBlock
 ---@field TitleText TextBlock
----@field UMG_ButtonIcon UMG_ButtonIcon_C
+---@field UMG_DeviceInventory UMG_DeviceInventory_C
+---@field UMG_PlayerInventory UMG_PlayerInventory_C
+---@field UMG_SettlementInfo_InWorld UMG_SettlementInfo_InWorld_C
 ---@field WidgetSwitcher_Settlement WidgetSwitcher
 ---@field Construct fun(self: UMG_Settlement_TalentTree_C)

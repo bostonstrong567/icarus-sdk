@@ -548,6 +548,7 @@
 ---@field CanAssignNPCToBuilding fun(self: Settlement, NpcId: Guid|{}, Building: SettlementBuilding?): boolean
 ---@field CanAssignNPCToSlot fun(self: Settlement, NpcId: Guid|{}, SlotTaskId: Guid|{}): boolean
 ---@field CanChooseOutcome fun(self: Settlement, OutcomeIndex: integer): boolean
+---@field CanUpgradeBuilding fun(self: Settlement, Building: SettlementBuilding?, Target: SettlementBuildingsRowHandle|{}, FailureReason: string): boolean
 ---@field CheckStorageContains fun(self: Settlement, Items: CraftingInput[], ItemQueries: QueryInput[], Resources: ResourceItem[]): boolean
 ---@field ClearActivityOverride fun(self: Settlement)
 ---@field ClearBehaviourOverride fun(self: Settlement, NpcId: Guid|{})
@@ -637,6 +638,7 @@
 ---@field UnregisterBuilding fun(self: Settlement, Building: SettlementBuilding?)
 ---@field UpdateSettlementTalent fun(self: Settlement, Talent: TalentsRowHandle|{}, bState: boolean): boolean
 ---@field UpdateTaskAssignments fun(self: Settlement)
+---@field UpgradeBuilding fun(self: Settlement, Building: SettlementBuilding?, Target: SettlementBuildingsRowHandle|{}, OutBuilding: SettlementBuilding?): boolean
 ---@field VirtualiseSettlementActors fun(self: Settlement)
 
 ---@class SettlementBuilding : IcarusActor
@@ -660,6 +662,7 @@
 ---@field OwningSettlement Settlement
 ---@field PowerDrawAccumulator number
 ---@field RepairTaskType SettlementNPCTaskTypesRowHandle
+---@field UpgradedFrom SettlementBuildingsRowHandle
 ---@field bIsBuildingActive boolean
 ---@field bIsPowered boolean
 ---@field bPendingRepair boolean
@@ -668,10 +671,12 @@
 ---@field CanAffordConstructionCost fun(self: SettlementBuilding): boolean
 ---@field CanAssignNPCToSlot fun(self: SettlementBuilding, SlotIndex: integer, NpcId: Guid|{}): boolean
 ---@field CanConstructBuildingAtLocation fun(self: SettlementBuilding, WorldContextObject: Object?, Location: Vector|{}, Rotation: Rotator|{}, FailureReason: string): boolean
+---@field CanUpgradeTo fun(self: SettlementBuilding, Target: SettlementBuildingsRowHandle|{}, FailureReason: string): boolean
 ---@field ConsumeConstructionCost fun(self: SettlementBuilding): boolean
 ---@field Deconstruct fun(self: SettlementBuilding)
 ---@field GetAssignedWorkerCount fun(self: SettlementBuilding): integer
 ---@field GetAvailableTasks fun(self: SettlementBuilding): SettlementTaskInfo[]
+---@field GetAvailableUpgrades fun(self: SettlementBuilding): SettlementBuildingUpgradeInfo[]
 ---@field GetGenerationOutputSummary fun(self: SettlementBuilding): string
 ---@field GetSlotCount fun(self: SettlementBuilding): integer
 ---@field GetSlots fun(self: SettlementBuilding): SettlementSlotInfo[]
@@ -681,6 +686,7 @@
 ---@field IsActive fun(self: SettlementBuilding): boolean
 ---@field IsConstructed fun(self: SettlementBuilding): boolean
 ---@field IsPowered fun(self: SettlementBuilding): boolean
+---@field IsUpgradeInProgress fun(self: SettlementBuilding): boolean
 ---@field Multicast_GenerationDepositFailed fun(self: SettlementBuilding)
 ---@field Multicast_GenerationInputsMissing fun(self: SettlementBuilding)
 ---@field OnBuildStateUpdated fun(self: SettlementBuilding)
@@ -699,6 +705,7 @@
 ---@field SetSlotTask fun(self: SettlementBuilding, SlotIndex: integer, Task: SettlementTasksRowHandle|{}): boolean
 ---@field TickActiveBuilding fun(self: SettlementBuilding, ProspectTimeDelta: number)
 ---@field UnassignSlot fun(self: SettlementBuilding, SlotIndex: integer): boolean
+---@field UpgradeTo fun(self: SettlementBuilding, Target: SettlementBuildingsRowHandle|{}): SettlementBuilding
 
 ---@class SettlementBuildingData : IcarusTableRowBase
 ---@field BoundaryBuildRule ESettlementBoundsBuildRule
@@ -717,6 +724,7 @@
 ---@field ResourceConstructionCost ResourceItem[]
 ---@field SlotCount integer
 ---@field Tasks SettlementTasksRowHandle[]
+---@field UpgradesTo SettlementBuildingsRowHandle[]
 
 ---@class SettlementBuildingRecorderComponent : ActorStateRecorderComponent
 ---@field BuildProgress number
@@ -731,9 +739,19 @@
 ---@field OwningSettlementUID integer
 ---@field PowerDrawAccumulator number
 ---@field SettlementBuildingRecorderVersion integer
+---@field UpgradedFromRow string
 ---@field bIsBuildingActive boolean
 ---@field bIsPowered boolean
 ---@field bPendingRepair boolean
+
+---@class SettlementBuildingUpgradeInfo
+---@field Description string
+---@field DisplayName string
+---@field FailureReason string
+---@field Row SettlementBuildingsRowHandle
+---@field bAffordable boolean
+---@field bCanUpgrade boolean
+---@field bTalentUnlocked boolean
 
 ---@class SettlementBuildingsEnum : RowEnum
 

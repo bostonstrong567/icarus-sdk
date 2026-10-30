@@ -6,5 +6,5 @@ UCLASS(EditInlineNew, Config=Engine)
 class UArmourComponent : public UTraitComponent
 {
 public:
-    UFUNCTION(BlueprintCallable, BlueprintPure) bool GetArmourData(FArmourData& OutData) const;  // parameters 0x319
+    UFUNCTION(BlueprintCallable, BlueprintPure) bool GetArmourData(FArmourData& OutData) const;  // parameters 0x331
 };

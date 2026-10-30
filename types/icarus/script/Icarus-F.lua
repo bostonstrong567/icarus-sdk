@@ -577,6 +577,48 @@
 ---@field SetGlobalVolumeMusicParameter fun(self: FMODParameterFunctionLibrary, FloatValue: number)
 ---@field SetGlobalVolumeSoundeffectsParameter fun(self: FMODParameterFunctionLibrary, FloatValue: number)
 
+---@class FacePresetData : IcarusTableRowBase
+---@field BottomFaceBlendValue number
+---@field BottomFaceShape EFaceTypes
+---@field LeftFaceBlendValue number
+---@field LeftFaceShape EFaceTypes
+---@field RightFaceBlendValue number
+---@field RightFaceShape EFaceTypes
+---@field TopFaceBlendValue number
+---@field TopFaceShape EFaceTypes
+
+---@class FacePresetsEnum : RowEnum
+
+---@class FacePresetsLibrary : RowLibrary
+---@field AddRowToFacePresetsTable fun(self: FacePresetsLibrary, Name: string, Data: FacePresetData|{}, NewRow: FacePresetsRowHandle|{}, bOverrideExistingRow: boolean)
+---@field BreakFacePresetsEnum fun(self: FacePresetsLibrary, Enum: FacePresetsEnum|{}, Name: string, Index: integer)
+---@field CastToFacePresetsRowHandle fun(self: FacePresetsLibrary, RowHandle: RowHandle|{}, Paths: EValid): FacePresetsRowHandle
+---@field EqualEqual_EnumEnum fun(self: FacePresetsLibrary, A: FacePresetsEnum|{}, B: FacePresetsEnum|{}): boolean
+---@field EqualEqual_FFacePresetsRowHandleFFacePresetsRowHandle fun(self: FacePresetsLibrary, RowHandleA: FacePresetsRowHandle|{}, RowHandleB: FacePresetsRowHandle|{}): boolean
+---@field GetFacePresetsStruct fun(self: FacePresetsLibrary, RowHandle: FacePresetsRowHandle|{}, FacePresets: FacePresetData|{}, Paths: EValid)
+---@field IntToName fun(self: FacePresetsLibrary, IntValue: integer): string
+---@field IntToStruct fun(self: FacePresetsLibrary, IntValue: integer): FacePresetsEnum
+---@field IsValidName fun(self: FacePresetsLibrary, NameValue: string): boolean
+---@field MakeFacePresets fun(self: FacePresetsLibrary, RowName: string): FacePresetsRowHandle
+---@field MakeFacePresetsEnum fun(self: FacePresetsLibrary, Enum: FacePresetsEnum|{}): FacePresetsEnum
+---@field MakeFacePresetsFromIndex fun(self: FacePresetsLibrary, Index: integer): FacePresetsRowHandle
+---@field MakeLiteralFacePresets fun(self: FacePresetsLibrary, RowHandle: FacePresetsRowHandle|{}): FacePresetsRowHandle
+---@field NameToInt fun(self: FacePresetsLibrary, NameValue: string): integer
+---@field NameToStruct fun(self: FacePresetsLibrary, NameValue: string): FacePresetsEnum
+---@field NotEqual_EnumEnum fun(self: FacePresetsLibrary, A: FacePresetsEnum|{}, B: FacePresetsEnum|{}): boolean
+---@field NotEqual_EnumName fun(self: FacePresetsLibrary, A: FacePresetsEnum|{}, B: string): boolean
+---@field NumRows fun(self: FacePresetsLibrary): integer
+---@field RefreshConstants fun(self: FacePresetsLibrary)
+---@field RemoveRowFromFacePresetsTable fun(self: FacePresetsLibrary, Name: string)
+---@field RowHandleToStruct fun(self: FacePresetsLibrary, RowHandle: FacePresetsRowHandle|{}): FacePresetsEnum
+---@field StructToInt fun(self: FacePresetsLibrary, EnumValue: FacePresetsEnum|{}): integer
+---@field StructToName fun(self: FacePresetsLibrary, EnumValue: FacePresetsEnum|{}): string
+---@field StructToRowHandle fun(self: FacePresetsLibrary, EnumValue: FacePresetsEnum|{}): FacePresetsRowHandle
+
+---@class FacePresetsRowHandle : RowHandle
+
+---@class FacePresetsTable : IcarusDataTable
+
 ---@class FactionInfo : IcarusTableRowBase
 ---@field BriefingPool DialoguePoolRowHandle
 ---@field Description string
@@ -900,8 +942,10 @@
 ---@field GetCorpseSkinningKnifeRewards fun(self: FieldGuideFunctionLibrary, Item: ItemsStaticRowHandle|{}): ItemsStaticRowHandle[]
 ---@field GetCorpseVestige fun(self: FieldGuideFunctionLibrary, Item: ItemsStaticRowHandle|{}): ItemsStaticRowHandle[]
 ---@field GetCorpsesProvidingReward fun(self: FieldGuideFunctionLibrary, Item: ItemsStaticRowHandle|{}): ItemsStaticRowHandle[]
+---@field GetDetailViewForItem fun(self: FieldGuideFunctionLibrary, Item: ItemsStaticRowHandle|{}): Class
 ---@field GetFirearmsThatCanUseAmmo fun(self: FieldGuideFunctionLibrary, Item: ItemsStaticRowHandle|{}): ItemsStaticRowHandle[]
 ---@field GetFishData fun(self: FieldGuideFunctionLibrary, Item: ItemsStaticRowHandle|{}): FishDataRowHandle
+---@field GetIndexView fun(self: FieldGuideFunctionLibrary, Category: FieldGuideCategoriesRowHandle|{}, Subcategory: FieldGuideSubcategoriesRowHandle|{}): Class
 ---@field GetIsFish fun(self: FieldGuideFunctionLibrary, Item: ItemsStaticRowHandle|{}): boolean
 ---@field GetItemFromItemPack fun(self: FieldGuideFunctionLibrary, Item: ItemsStaticRowHandle|{}, StackCountOut: integer): ItemsStaticRowHandle
 ---@field GetItemHowToObtain fun(self: FieldGuideFunctionLibrary, Item: ItemsStaticRowHandle|{}): EFieldGuideItemHotToObtain
@@ -919,6 +963,7 @@
 ---@field GetRecipesThatProduceOutput fun(self: FieldGuideFunctionLibrary, IngredientRow: ItemsStaticRowHandle|{}, RecipesOut: FieldGuideRecipeInfo[])
 ---@field GetSeedDescriptionForPlant fun(self: FieldGuideFunctionLibrary, Item: ItemsStaticRowHandle|{}): ItemableRowHandle
 ---@field GetSeedDescriptionFromPack fun(self: FieldGuideFunctionLibrary, Item: ItemsStaticRowHandle|{}, CountOut: integer): ItemableRowHandle
+---@field GetSubcategoryForItem fun(self: FieldGuideFunctionLibrary, Item: ItemsStaticRowHandle|{}): FieldGuideSubcategoriesRowHandle
 ---@field GetSubcategoryInfoForCategory fun(self: FieldGuideFunctionLibrary, Category: FieldGuideCategoriesRowHandle|{}): FieldGuideCategorySubcategoryInfo
 ---@field GetTrophyKnives fun(self: FieldGuideFunctionLibrary): ItemsStaticRowHandle[]
 ---@field GetWorkshopItem fun(self: FieldGuideFunctionLibrary, Item: ItemsStaticRowHandle|{}): WorkshopItemsRowHandle

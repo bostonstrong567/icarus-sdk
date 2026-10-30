@@ -955,12 +955,9 @@
 
 ---@class UMG_DamageVariation_C : UserWidget
 ---@field Description TextBlock
----@field IsSetBonus boolean
----@field IsSetBonusActive boolean
 ---@field BP_OnEntryReleased fun(self: UMG_DamageVariation_C)
 ---@field BP_OnItemExpansionChanged fun(self: UMG_DamageVariation_C, bIsExpanded: boolean)
 ---@field BP_OnItemSelectionChanged fun(self: UMG_DamageVariation_C, bIsSelected: boolean)
----@field Construct fun(self: UMG_DamageVariation_C)
 ---@field Initialise fun(self: UMG_DamageVariation_C, Min: integer, Max: integer, Type: string)
 
 ---@class UMG_DangerLevel_C : UserWidget
@@ -1511,8 +1508,8 @@
 ---@field UpdateRecipeFrame fun(self: UMG_ExtractionElement_Resource_C): SlateBrush
 
 ---@class UMG_FaceIcon_C : UserWidget
----@field ChosenFace EFaceShapes
----@field FaceToIcon table<EFaceShapes, Texture2D>
+---@field ChosenFace EFaceTypes
+---@field FaceToShape table<EFaceTypes, Texture2D>
 ---@field Icon Image
 ---@field Construct fun(self: UMG_FaceIcon_C)
 
@@ -1794,6 +1791,8 @@
 ---@field ItemSlot_Pressed MaterialInterface
 ---@field ItemSlot_Quest MaterialInterface
 ---@field ItemSlot_Quest_Hovered MaterialInterface
+---@field ItemSlot_Settlement MaterialInterface
+---@field ItemSlot_Settlement_Hovered MaterialInterface
 ---@field ItemSlot_Valid MaterialInterface
 ---@field LastItem Border
 ---@field LastItemIcon Image
@@ -1860,6 +1859,7 @@
 ---@field IsExoticItem fun(self: UMG_InventoryItem_C): boolean
 ---@field IsLivingWeapon fun(self: UMG_InventoryItem_C): boolean
 ---@field IsQuestItem fun(self: UMG_InventoryItem_C): boolean
+---@field IsSettlementItem fun(self: UMG_InventoryItem_C): boolean
 ---@field LightSlotStyle fun(self: UMG_InventoryItem_C, IsEquipped: boolean)
 ---@field OnContextMenuDestroyItemClicked fun(self: UMG_InventoryItem_C, Id: string, Payload: integer) Wax refuses this call from Lua.
 ---@field OnContextMenuDropAllClicked fun(self: UMG_InventoryItem_C, Id: string, Payload: integer)
@@ -1881,7 +1881,7 @@
 ---@field SetCursorInfo fun(self: UMG_InventoryItem_C, CurrentInventory: Inventory?, Location: integer)
 ---@field SetDropShipMode fun(self: UMG_InventoryItem_C)
 ---@field SetForceLocked fun(self: UMG_InventoryItem_C, IsLocked: boolean)
----@field SetItemStyle fun(self: UMG_InventoryItem_C, IsExotic: boolean, IsQuest: boolean, IsLegendary: boolean)
+---@field SetItemStyle fun(self: UMG_InventoryItem_C, IsExotic: boolean, IsQuest: boolean, IsLegendary: boolean, IsSettlement: boolean)
 ---@field ShouldShowHighlight fun(self: UMG_InventoryItem_C, Inventory: Inventory?, Show: boolean) Wax refuses this call from Lua.
 ---@field SpaceRepairClicked fun(self: UMG_InventoryItem_C, Identifier: string, Payload: integer)
 ---@field ["Trigger Hover"] fun(self: UMG_InventoryItem_C)
@@ -2022,7 +2022,6 @@
 ---@field RegularItemColour SlateColor
 ---@field ScaleBox_Itemname ScaleBox
 ---@field SlotHelperIcon Image
----@field Spacer_FeatureLevelMargin Spacer
 ---@field SpoilText TextBlock
 ---@field SpoilTimer Border
 ---@field Stack TextBlock

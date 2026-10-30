@@ -34,6 +34,7 @@ public:
     UFUNCTION() void ClearLatentNPCDeaths();
     UFUNCTION(BlueprintCallable) void GenerateCachedSpawnPoints();
     UFUNCTION(BlueprintCallable) void GenerateSingleTileSpawnPoints();
+    UFUNCTION(BlueprintCallable, BlueprintPure) bool GetAutonomousSpawnTagsForActor(AActor* SpawnedActor, FGameplayTagContainer& OutTags) const;  // parameters 0x29
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintImplementableEvent) bool GetDebugSpawnBlockers() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable) float GetLastAISetupDeathTime(FAISetupRowHandle AISetup);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) float GetLastAISetupSpawnTime(FAISetupRowHandle AISetup);  // parameters 0x1C

@@ -1,6 +1,6 @@
 // /Script/Icarus.SettlementBuilding
 // Derives from: AIcarusActor > AActor > UObject
-// size 0x3F8, declared in Icarus/Source/Icarus/Settlement/SettlementBuilding.h
+// size 0x418, declared in Icarus/Source/Icarus/Settlement/SettlementBuilding.h
 
 UCLASS(Config=Engine)
 class ASettlementBuilding : public AIcarusActor
@@ -21,29 +21,32 @@ public:
     UPROPERTY(BlueprintReadOnly) FGuid ConstructionTaskId;  // 0x0348, size 0x10
     UPROPERTY(BlueprintReadOnly) FGuid DeconstructionTaskId;  // 0x0358, size 0x10
     UPROPERTY() bool bPendingRepair;  // 0x0368, size 0x1
-    UPROPERTY(Replicated, ReplicatedUsing, BlueprintReadOnly) bool bIsBuildingActive;  // 0x0369, size 0x1
-    UPROPERTY(Replicated, ReplicatedUsing, BlueprintReadOnly) bool bIsPowered;  // 0x036A, size 0x1
-    UPROPERTY(BlueprintAssignable) FOnGenerationDepositFailed OnGenerationDepositFailed;  // 0x0370, size 0x10
-    UPROPERTY(BlueprintAssignable) FOnGenerationInputsMissing OnGenerationInputsMissing;  // 0x0380, size 0x10
-    UPROPERTY(EditAnywhere, Replicated, Instanced, BlueprintReadOnly) UInventoryComponent* Inventory;  // 0x03D0, size 0x8
-    UPROPERTY(BlueprintAssignable) FOnBuildStateChanged OnBuildStateChanged;  // 0x03D8, size 0x10
-    UPROPERTY(BlueprintAssignable) FOnBuildProgressChanged OnBuildProgressChanged;  // 0x03E8, size 0x10
+    UPROPERTY(Replicated, BlueprintReadOnly) FSettlementBuildingsRowHandle UpgradedFrom;  // 0x036C, size 0x18
+    UPROPERTY(Replicated, ReplicatedUsing, BlueprintReadOnly) bool bIsBuildingActive;  // 0x0384, size 0x1
+    UPROPERTY(Replicated, ReplicatedUsing, BlueprintReadOnly) bool bIsPowered;  // 0x0385, size 0x1
+    UPROPERTY(BlueprintAssignable) FOnGenerationDepositFailed OnGenerationDepositFailed;  // 0x0390, size 0x10
+    UPROPERTY(BlueprintAssignable) FOnGenerationInputsMissing OnGenerationInputsMissing;  // 0x03A0, size 0x10
+    UPROPERTY(EditAnywhere, Replicated, Instanced, BlueprintReadOnly) UInventoryComponent* Inventory;  // 0x03F0, size 0x8
+    UPROPERTY(BlueprintAssignable) FOnBuildStateChanged OnBuildStateChanged;  // 0x03F8, size 0x10
+    UPROPERTY(BlueprintAssignable) FOnBuildProgressChanged OnBuildProgressChanged;  // 0x0408, size 0x10
 private:
-    UPROPERTY() float PowerDrawAccumulator;  // 0x036C, size 0x4
-    UPROPERTY() TArray<float> GenerationAccumulators;  // 0x0390, size 0x10
-    UPROPERTY() TArray<int32> GenerationInputCredits;  // 0x03A0, size 0x10
-    TArray<bool,TSizedDefaultAllocator<32> > GenerationBlocked;  // 0x03B0, not reflected
-    TArray<bool,TSizedDefaultAllocator<32> > GenerationStarved;  // 0x03C0, not reflected
+    UPROPERTY() float PowerDrawAccumulator;  // 0x0388, size 0x4
+    UPROPERTY() TArray<float> GenerationAccumulators;  // 0x03B0, size 0x10
+    UPROPERTY() TArray<int32> GenerationInputCredits;  // 0x03C0, size 0x10
+    TArray<bool,TSizedDefaultAllocator<32> > GenerationBlocked;  // 0x03D0, not reflected
+    TArray<bool,TSizedDefaultAllocator<32> > GenerationStarved;  // 0x03E0, not reflected
 public:
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) void AddBuildProgress(float Delta);  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) bool AssignNPCToSlot(int32 SlotIndex, const FGuid& NpcId);  // parameters 0x15
     UFUNCTION(BlueprintCallable, BlueprintPure) bool CanAffordConstructionCost() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) bool CanAssignNPCToSlot(int32 SlotIndex, const FGuid& NpcId) const;  // parameters 0x15
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) bool CanConstructBuildingAtLocation(UObject* WorldContextObject, const FVector& Location, const FRotator& Rotation, FText& FailureReason) const;  // parameters 0x39
+    UFUNCTION(BlueprintCallable, BlueprintPure) bool CanUpgradeTo(const FSettlementBuildingsRowHandle& Target, FText& FailureReason) const;  // parameters 0x31
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) bool ConsumeConstructionCost();  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) void Deconstruct();
     UFUNCTION(BlueprintCallable, BlueprintPure) int32 GetAssignedWorkerCount() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) TArray<FSettlementTaskInfo> GetAvailableTasks() const;  // parameters 0x10
+    UFUNCTION(BlueprintCallable, BlueprintPure) TArray<FSettlementBuildingUpgradeInfo> GetAvailableUpgrades() const;  // parameters 0x10
     UFUNCTION(BlueprintCallable, BlueprintPure) FText GetGenerationOutputSummary() const;  // parameters 0x18
     UFUNCTION(BlueprintCallable, BlueprintPure) int32 GetSlotCount() const;  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) TArray<FSettlementSlotInfo> GetSlots() const;  // parameters 0x10
@@ -53,6 +56,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsActive() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsConstructed() const;  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsPowered() const;  // parameters 0x1
+    UFUNCTION(BlueprintCallable, BlueprintPure) bool IsUpgradeInProgress() const;  // parameters 0x1
     UFUNCTION(NetMulticast, BlueprintNativeEvent) void Multicast_GenerationDepositFailed();
     UFUNCTION(NetMulticast, BlueprintNativeEvent) void Multicast_GenerationInputsMissing();
     UFUNCTION(BlueprintNativeEvent) void OnBuildStateUpdated();
@@ -71,4 +75,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) bool SetSlotTask(int32 SlotIndex, const FSettlementTasksRowHandle& Task);  // parameters 0x1D
     UFUNCTION(BlueprintNativeEvent) void TickActiveBuilding(float ProspectTimeDelta);  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) bool UnassignSlot(int32 SlotIndex);  // parameters 0x5
+    UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) ASettlementBuilding* UpgradeTo(const FSettlementBuildingsRowHandle& Target);  // parameters 0x20
 };

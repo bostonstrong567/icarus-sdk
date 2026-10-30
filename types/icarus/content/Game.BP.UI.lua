@@ -704,6 +704,7 @@
 ---@field ReqLvlPulse WidgetAnimation
 ---@field ["Required Level"] integer
 ---@field RequiredLevelText TextBlock
+---@field SearchBorder WidgetAnimation
 ---@field SearchHighlight Overlay
 ---@field Selected boolean
 ---@field SelectedBrush SlateBrush

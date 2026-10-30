@@ -3,7 +3,7 @@
 -- "inside": one of its fields holds such a struct by value. A list of either cannot be made longer entry by
 -- entry from Lua, because the new entries are zeroed memory: write the whole list instead.
 -- Keyed by the struct's path as the game's files spell it: look a path up in lower case, on both sides.
--- Build 44262f3579394d04a7826b5a1a309f89-1: 1448 structs, 1367 own and 81 inside.
+-- Build 57b7e817e2aa4282813d34f543f0df8e-1: 1450 structs, 1369 own and 81 inside.
 return {
   ["/Game/BP/Objects/World/Items/Deployables/Networks/BPS_FlowMeterData.BPS_FlowMeterData"] = "inside",
   ["/Game/BP/Objects/World/Items/Deployables/ProcessorPreviewData.ProcessorPreviewData"] = "inside",
@@ -844,6 +844,8 @@ return {
   ["/Script/Icarus.ExperienceEventsEnum"] = "own",
   ["/Script/Icarus.FLODDescription"] = "own",
   ["/Script/Icarus.FLODDescriptionsEnum"] = "own",
+  ["/Script/Icarus.FacePresetData"] = "own",
+  ["/Script/Icarus.FacePresetsEnum"] = "own",
   ["/Script/Icarus.FactionInfo"] = "own",
   ["/Script/Icarus.FactionInfoEnum"] = "own",
   ["/Script/Icarus.FactionMission"] = "own",

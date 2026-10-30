@@ -144,12 +144,12 @@
 ---@class WeatherActionsEnum : RowEnum
 
 ---@class WeatherActionsLibrary : RowLibrary
----@field AddRowToWeatherActionsTable fun(self: WeatherActionsLibrary, Name: string, Data: IcarusWeatherActionData|{}, NewRow: WeatherActionsRowHandle|{}, bOverrideExistingRow: boolean) Do not call from Lua: it needs 1752 bytes and the call buffer holds 512.
+---@field AddRowToWeatherActionsTable fun(self: WeatherActionsLibrary, Name: string, Data: IcarusWeatherActionData|{}, NewRow: WeatherActionsRowHandle|{}, bOverrideExistingRow: boolean) Do not call from Lua: it needs 1760 bytes and the call buffer holds 512.
 ---@field BreakWeatherActionsEnum fun(self: WeatherActionsLibrary, Enum: WeatherActionsEnum|{}, Name: string, Index: integer)
 ---@field CastToWeatherActionsRowHandle fun(self: WeatherActionsLibrary, RowHandle: RowHandle|{}, Paths: EValid): WeatherActionsRowHandle
 ---@field EqualEqual_EnumEnum fun(self: WeatherActionsLibrary, A: WeatherActionsEnum|{}, B: WeatherActionsEnum|{}): boolean
 ---@field EqualEqual_FWeatherActionsRowHandleFWeatherActionsRowHandle fun(self: WeatherActionsLibrary, RowHandleA: WeatherActionsRowHandle|{}, RowHandleB: WeatherActionsRowHandle|{}): boolean
----@field GetWeatherActionsStruct fun(self: WeatherActionsLibrary, RowHandle: WeatherActionsRowHandle|{}, WeatherActions: IcarusWeatherActionData|{}, Paths: EValid) Do not call from Lua: it needs 1744 bytes and the call buffer holds 512.
+---@field GetWeatherActionsStruct fun(self: WeatherActionsLibrary, RowHandle: WeatherActionsRowHandle|{}, WeatherActions: IcarusWeatherActionData|{}, Paths: EValid) Do not call from Lua: it needs 1752 bytes and the call buffer holds 512.
 ---@field IntToName fun(self: WeatherActionsLibrary, IntValue: integer): string
 ---@field IntToStruct fun(self: WeatherActionsLibrary, IntValue: integer): WeatherActionsEnum
 ---@field IsValidName fun(self: WeatherActionsLibrary, NameValue: string): boolean

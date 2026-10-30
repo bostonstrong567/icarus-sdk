@@ -448,7 +448,7 @@
 ---@field FocusedItemCheck fun(self: BP_IcarusPlayerCharacterSurvival_C, Inventory: Inventory?, Location: integer)
 ---@field ForceSyncFocusedItem fun(self: BP_IcarusPlayerCharacterSurvival_C) Wax refuses this call from Lua.
 ---@field ["Get Underwater PP Settings Component"] fun(self: BP_IcarusPlayerCharacterSurvival_C, WaterActor: Actor?, Component: PostProcessComponent?)
----@field GetArmourStructWithOverride fun(self: BP_IcarusPlayerCharacterSurvival_C, InArmourRow: ArmourRowHandle|{}, Armour: ArmourData|{}, Success: boolean) Do not call from Lua: it needs 817 bytes and the call buffer holds 512.
+---@field GetArmourStructWithOverride fun(self: BP_IcarusPlayerCharacterSurvival_C, InArmourRow: ArmourRowHandle|{}, Armour: ArmourData|{}, Success: boolean) Do not call from Lua: it needs 841 bytes and the call buffer holds 512.
 ---@field GetBPIcarusPlayerController fun(self: BP_IcarusPlayerCharacterSurvival_C): BP_IcarusPlayerControllerSurvival_C
 ---@field GetCurrentInventoryWeight fun(self: BP_IcarusPlayerCharacterSurvival_C): integer
 ---@field GetCurrentProspectLocation fun(self: BP_IcarusPlayerCharacterSurvival_C): EProspectLocation
@@ -1270,6 +1270,7 @@
 ---@field Proxy_SetResourceComponentState fun(self: BP_NetworkProxyComponent_C, Component: ResourceComponent?, ResourceType: IcarusResourcesEnum|{}, State: boolean)
 ---@field Proxy_SetSettlerRole fun(self: BP_NetworkProxyComponent_C, Settlement: Settlement?, NPCId: Guid|{}, NewRole: SettlementNPCRolesRowHandle|{})
 ---@field Proxy_SettlementRespontToVisitor fun(self: BP_NetworkProxyComponent_C, Settlement: Settlement?, VisitorId: Guid|{}, Accept: boolean)
+---@field Proxy_Settlement_UnlockTalent fun(self: BP_NetworkProxyComponent_C, Settlement: Settlement?, Talent: TalentsRowHandle|{})
 ---@field Proxy_SplitInventoryStack fun(self: BP_NetworkProxyComponent_C, Inventory: Inventory?, Location: integer, FromPlayer: IcarusPlayerCharacter?)
 ---@field Proxy_TriggerAffliction fun(self: BP_NetworkProxyComponent_C, Player: IcarusPlayerCharacter?, AfflictionChance: AfflictionChanceRowHandle|{})
 ---@field Proxy_TriggerSettlementEvent fun(self: BP_NetworkProxyComponent_C, NewEvent: SettlementEventsRowHandle|{})
@@ -1283,6 +1284,7 @@
 ---@field Proxy_UpdatePainting fun(self: BP_NetworkProxyComponent_C, PaintingDeployable: Deployable?, PaintingRowHandle: PaintingsRowHandle|{})
 ---@field Proxy_UpdateRepairBench fun(self: BP_NetworkProxyComponent_C, RepairBench: Deployable?, Threshold: number)
 ---@field Proxy_UpdateSignText fun(self: BP_NetworkProxyComponent_C, Text: string, Color: LinearColor|{}, SignDeployable: Deployable?, IconRowHandle: ItemableRowHandle|{})
+---@field Proxy_UpgradeStructure fun(self: BP_NetworkProxyComponent_C, Settlement: Settlement?, Building: SettlementBuilding?, Target: SettlementBuildingsRowHandle|{})
 ---@field Proxy_ValidateItemsToReturn fun(self: BP_NetworkProxyComponent_C)
 ---@field ResetCharacter fun(self: BP_NetworkProxyComponent_C, Controller: IcarusPlayerController?)
 ---@field Server_RetrieveRecordersFromCave fun(self: BP_NetworkProxyComponent_C, TeleportActor: BaseLevelTeleport?, TargetLocation: Vector|{})

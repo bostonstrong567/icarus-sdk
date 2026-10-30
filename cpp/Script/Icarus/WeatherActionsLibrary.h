@@ -6,12 +6,12 @@ UCLASS()
 class UWeatherActionsLibrary : public URowLibrary
 {
 public:
-    UFUNCTION(BlueprintCallable) static void AddRowToWeatherActionsTable(FName Name, FIcarusWeatherActionData Data, FWeatherActionsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x6D1
+    UFUNCTION(BlueprintCallable) static void AddRowToWeatherActionsTable(FName Name, FIcarusWeatherActionData Data, FWeatherActionsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x6D9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakWeatherActionsEnum(FWeatherActionsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FWeatherActionsRowHandle CastToWeatherActionsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool EqualEqual_EnumEnum(FWeatherActionsEnum A, FWeatherActionsEnum B);  // parameters 0x21
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool EqualEqual_FWeatherActionsRowHandleFWeatherActionsRowHandle(FWeatherActionsRowHandle RowHandleA, FWeatherActionsRowHandle RowHandleB);  // parameters 0x31
-    UFUNCTION(BlueprintCallable) static void GetWeatherActionsStruct(FWeatherActionsRowHandle RowHandle, FIcarusWeatherActionData& WeatherActions, EValid& Paths);  // parameters 0x6C9
+    UFUNCTION(BlueprintCallable) static void GetWeatherActionsStruct(FWeatherActionsRowHandle RowHandle, FIcarusWeatherActionData& WeatherActions, EValid& Paths);  // parameters 0x6D1
     UFUNCTION() static FName IntToName(int32 IntValue);  // parameters 0xC
     UFUNCTION(BlueprintCallable, BlueprintPure) static FWeatherActionsEnum IntToStruct(int32 IntValue);  // parameters 0x18
     UFUNCTION() static bool IsValidName(FName NameValue);  // parameters 0x9

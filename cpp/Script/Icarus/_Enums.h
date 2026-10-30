@@ -814,6 +814,29 @@ enum class EFSRModeSetting : uint8
     Custom = 255,
 };
 
+// /Script/Icarus.EFaceDirection
+UENUM()
+enum class EFaceDirection : uint8
+{
+    Top = 0,
+    Bottom = 1,
+    Left = 2,
+    Right = 3,
+};
+
+// /Script/Icarus.EFaceTypes
+UENUM()
+enum class EFaceTypes : uint8
+{
+    FaceShape_Round = 0,
+    FaceShape_Heart = 1,
+    FaceShape_Square = 2,
+    FaceShape_Narrow = 3,
+    FaceShape_Pear = 4,
+    FaceShape_Triangle = 5,
+    None = 6,
+};
+
 // /Script/Icarus.EFeatureLevelCheckResult
 UENUM()
 enum class EFeatureLevelCheckResult : uint8

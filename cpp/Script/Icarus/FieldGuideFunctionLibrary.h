@@ -25,8 +25,10 @@ public:
     UFUNCTION(BlueprintCallable) static TArray<FItemsStaticRowHandle> GetCorpseSkinningKnifeRewards(FItemsStaticRowHandle Item);  // parameters 0x28
     UFUNCTION(BlueprintCallable) static TArray<FItemsStaticRowHandle> GetCorpseVestige(FItemsStaticRowHandle Item);  // parameters 0x28
     UFUNCTION(BlueprintCallable) static TArray<FItemsStaticRowHandle> GetCorpsesProvidingReward(FItemsStaticRowHandle Item);  // parameters 0x28
+    UFUNCTION(BlueprintCallable, BlueprintPure) static TSubclassOf<UFieldGuidePageWidgetBase> GetDetailViewForItem(FItemsStaticRowHandle Item);  // parameters 0x20
     UFUNCTION(BlueprintCallable) static TArray<FItemsStaticRowHandle> GetFirearmsThatCanUseAmmo(FItemsStaticRowHandle Item);  // parameters 0x28
     UFUNCTION(BlueprintCallable) static FFishDataRowHandle GetFishData(FItemsStaticRowHandle Item);  // parameters 0x30
+    UFUNCTION(BlueprintCallable, BlueprintPure) static TSubclassOf<UFieldGuidePageWidgetBase> GetIndexView(FFieldGuideCategoriesRowHandle Category, FFieldGuideSubcategoriesRowHandle Subcategory);  // parameters 0x38
     UFUNCTION(BlueprintCallable) static bool GetIsFish(FItemsStaticRowHandle Item);  // parameters 0x19
     UFUNCTION(BlueprintCallable) static FItemsStaticRowHandle GetItemFromItemPack(FItemsStaticRowHandle Item, int32& StackCountOut);  // parameters 0x34
     UFUNCTION(BlueprintCallable) static EFieldGuideItemHotToObtain GetItemHowToObtain(FItemsStaticRowHandle Item);  // parameters 0x19
@@ -44,6 +46,7 @@ public:
     UFUNCTION(BlueprintCallable) static void GetRecipesThatProduceOutput(FItemsStaticRowHandle IngredientRow, TArray<FFieldGuideRecipeInfo>& RecipesOut);  // parameters 0x28
     UFUNCTION(BlueprintCallable) static FItemableRowHandle GetSeedDescriptionForPlant(FItemsStaticRowHandle Item);  // parameters 0x30
     UFUNCTION(BlueprintCallable) static FItemableRowHandle GetSeedDescriptionFromPack(FItemsStaticRowHandle Item, int32& CountOut);  // parameters 0x34
+    UFUNCTION(BlueprintCallable, BlueprintPure) static FFieldGuideSubcategoriesRowHandle GetSubcategoryForItem(FItemsStaticRowHandle Item);  // parameters 0x30
     UFUNCTION(BlueprintCallable) static FFieldGuideCategorySubcategoryInfo GetSubcategoryInfoForCategory(FFieldGuideCategoriesRowHandle Category);  // parameters 0x38
     UFUNCTION(BlueprintCallable) static TArray<FItemsStaticRowHandle> GetTrophyKnives();  // parameters 0x10
     UFUNCTION(BlueprintCallable) static FWorkshopItemsRowHandle GetWorkshopItem(FItemsStaticRowHandle Item);  // parameters 0x30

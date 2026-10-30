@@ -16,16 +16,6 @@
 ---| 2 # NewEnumerator2
 ---| integer
 
----@alias EFaceShapes
----| 0 # NewEnumerator8
----| 1 # NewEnumerator0
----| 2 # NewEnumerator4
----| 3 # NewEnumerator3
----| 4 # NewEnumerator5
----| 5 # NewEnumerator6
----| 6 # NewEnumerator7
----| integer
-
 ---@alias EModifierKeys
 ---| 0 # NewEnumerator0
 ---| 1 # NewEnumerator1
@@ -66,11 +56,11 @@
 
 ---@class UMG_CharacterBlending_DropBox_C : UserWidget
 ---@field ComboBox CustomComboBox
----@field DefaultFaceShape EFaceShapes
+---@field DefaultFaceShape EFaceTypes
 ---@field FaceIcon UMG_FaceIcon_C
 ---@field Construct fun(self: UMG_CharacterBlending_DropBox_C)
 ---@field PreConstruct fun(self: UMG_CharacterBlending_DropBox_C, IsDesignTime: boolean)
----@field SetSelectedOption fun(self: UMG_CharacterBlending_DropBox_C, FaceShape: EFaceShapes)
+---@field SetSelectedOption fun(self: UMG_CharacterBlending_DropBox_C, FaceShape: EFaceTypes)
 ---@field Tick fun(self: UMG_CharacterBlending_DropBox_C, MyGeometry: Geometry|{}, InDeltaTime: number)
 
 ---@class UMG_CharacterCreation_C : UserWidget
@@ -100,6 +90,7 @@
 ---@field CustomizationOptions_1 WidgetSwitcher
 ---@field CustomizationOptions_2 WidgetSwitcher
 ---@field DecalSelection UMG_CharacterSetting_Visual_C
+---@field DevPrintValues UMG_BasicButton_2_C
 ---@field Divider Image
 ---@field Divider_1 Image
 ---@field Divider_2 Image
@@ -112,6 +103,7 @@
 ---@field EyeColourSelectionGrid UMG_CharacterSetting_GridBase_C
 ---@field EyeColourSelectionGrid_V2 UMG_CharacterSetting_GridBase_C
 ---@field EyebrowsSelection_V2 UMG_CharacterSetting_Visual_C
+---@field FacePresetGrid UMG_IcarusGrid_C
 ---@field FacialHairSelection UMG_CharacterSetting_Visual_C
 ---@field FacialHairSelection_V2 UMG_CharacterSetting_Visual_C
 ---@field HairColourSelectionGrid_V2 UMG_CharacterSetting_GridBase_C
@@ -131,19 +123,14 @@
 ---@field NameLengthLimit integer
 ---@field NewFace boolean
 ---@field NewFaceButton UMG_BasicButton_2_C
----@field OldBottomFaceShape EFaceShapes
----@field OldLeftFaceShape EFaceShapes
----@field OldRightFaceShape EFaceShapes
----@field OldTopFaceShape EFaceShapes
+---@field OldBottomFaceShape EFaceTypes
+---@field OldLeftFaceShape EFaceTypes
+---@field OldRightFaceShape EFaceTypes
+---@field OldTopFaceShape EFaceTypes
 ---@field Overlay_V2 Overlay
 ---@field Overlay_V2_Head Overlay
 ---@field PiercingSelection_V2 UMG_CharacterSetting_Visual_C
 ---@field PlayerPreviewManager BP_PlayerPreviewManager_C
----@field Preset_1 UMG_BasicButton_2_C
----@field Preset_2 UMG_BasicButton_2_C
----@field Preset_3 UMG_BasicButton_2_C
----@field Preset_4 UMG_BasicButton_2_C
----@field Preset_5 UMG_BasicButton_2_C
 ---@field RebreatherActive boolean
 ---@field RebreatherSelection_1 UMG_CharacterSetting_ToggleBase_C
 ---@field RequestCosmeticsUpdate GameDelegate
@@ -156,12 +143,13 @@
 ---@field SkinToneSelectionGrid UMG_CharacterSetting_GridBase_C
 ---@field ["Struct Ref"] CharacterCosmetics
 ---@field SuitColorSelectionGrid UMG_CharacterSetting_GridBase_C
----@field SuitColorSelectionGrid_V2 UMG_CharacterSetting_GridBase_C
+---@field SuitColorSelectionGridV2 UMG_CharacterSetting_GridBase_C
 ---@field SuitImage Image
 ---@field TattooSelection UMG_CharacterSetting_Visual_C
 ---@field TattooSelection_V2 UMG_CharacterSetting_Visual_C
 ---@field TopDropBox UMG_CharacterBlending_DropBox_C
 ---@field TypedText string
+---@field Visualize_Box ScaleBox
 ---@field VoiceSelection UMG_CharacterSetting_Voice_C
 ---@field VoiceSelection_V2 UMG_CharacterSetting_Voice_C
 ---@field angle Image
@@ -177,10 +165,9 @@
 ---@field angle_7 Image
 ---@field angle_8 Image
 ---@field angle_9 Image
----@field BotItemChanged fun(self: UMG_CharacterCreation_C, Object: UserWidget?)
----@field BottomSwapCheck fun(self: UMG_CharacterCreation_C, ChosenFaceShape: EFaceShapes)
 ---@field Construct fun(self: UMG_CharacterCreation_C)
 ---@field CreateCharacterResult fun(self: UMG_CharacterCreation_C, Success: boolean)
+---@field FaceShapeChanged fun(self: UMG_CharacterCreation_C, Direction: EFaceDirection, FaceIcon: UserWidget?)
 ---@field GenerateCustomisationOptions fun(self: UMG_CharacterCreation_C) Wax refuses this call from Lua.
 ---@field GetCameraFocus fun(self: UMG_CharacterCreation_C, CameraFocus: PreviewCameraSettingsEnum|{})
 ---@field GetCharacterResult fun(self: UMG_CharacterCreation_C): ReqCreateCharacter Wax refuses this call from Lua.
@@ -191,8 +178,6 @@
 ---@field GridSelectionUpdated fun(self: UMG_CharacterCreation_C, ToggleButton: UMG_ToggleButtonBase_C?)
 ---@field HelmetSelected fun(self: UMG_CharacterCreation_C, Index: integer, NewFocus: PreviewCameraSettingsEnum|{})
 ---@field HoodSelected fun(self: UMG_CharacterCreation_C, Index: integer, NewFocus: PreviewCameraSettingsEnum|{})
----@field LeftItemChanged fun(self: UMG_CharacterCreation_C, Object: UserWidget?)
----@field LeftSwapCheck fun(self: UMG_CharacterCreation_C, ChosenFaceShape: EFaceShapes)
 ---@field LevelLoaded fun(self: UMG_CharacterCreation_C)
 ---@field NameChanged fun(self: UMG_CharacterCreation_C, Text: string)
 ---@field OnBotItemChanged fun(self: UMG_CharacterCreation_C, NameString: string, Widget: UserWidget?)
@@ -202,20 +187,19 @@
 ---@field OnRightItemChanged fun(self: UMG_CharacterCreation_C, NameString: string, Widget: UserWidget?)
 ---@field OnTopItemChanged fun(self: UMG_CharacterCreation_C, NameString: string, Widget: UserWidget?)
 ---@field PreConstruct fun(self: UMG_CharacterCreation_C, IsDesignTime: boolean)
+---@field PresetClicked fun(self: UMG_CharacterCreation_C, FacePresetRow: FacePresetsRowHandle|{})
 ---@field RebreatherSelected fun(self: UMG_CharacterCreation_C, Index: integer, NewFocus: PreviewCameraSettingsEnum|{})
----@field RightItemChanged fun(self: UMG_CharacterCreation_C, Object: UserWidget?)
----@field RightSwapCheck fun(self: UMG_CharacterCreation_C, ChosenFaceShape: EFaceShapes)
 ---@field SelectionUpdated fun(self: UMG_CharacterCreation_C, Index: integer, NewFocus: PreviewCameraSettingsEnum|{})
 ---@field SendCharacterCreationRequest fun(self: UMG_CharacterCreation_C)
 ---@field SendCosmeticUpdateRequest fun(self: UMG_CharacterCreation_C)
+---@field ["Set Face Shape"] fun(self: UMG_CharacterCreation_C, Direction: EFaceDirection, Shape: EFaceTypes)
 ---@field SetControlSelect fun(self: UMG_CharacterCreation_C)
 ---@field SetInitialCosmetics fun(self: UMG_CharacterCreation_C, InitialCosmetics: CharacterCosmetics|{})
 ---@field SliderUpdate fun(self: UMG_CharacterCreation_C)
 ---@field SwapCustomizationUI fun(self: UMG_CharacterCreation_C, IsReworkCharacter: boolean)
----@field TopItemChanged fun(self: UMG_CharacterCreation_C, Object: UserWidget?)
----@field TopSwapCheck fun(self: UMG_CharacterCreation_C, ChosenFaceShape: EFaceShapes)
 ---@field UpdateBodyType fun(self: UMG_CharacterCreation_C)
 ---@field UpdateDefaultSelections fun(self: UMG_CharacterCreation_C) Wax refuses this call from Lua.
+---@field UpdateFaceBlendFromRow fun(self: UMG_CharacterCreation_C, FacePresetRow: FacePresetsRowHandle|{})
 ---@field VerifyCustomisationOptionContexts fun(self: UMG_CharacterCreation_C)
 
 ---@class UMG_CharacterCustomisationContainer_C : UserWidget
@@ -765,6 +749,12 @@
 ---@field UpdateDLSSMode fun(self: UMG_EscapeMenu_C, Enabled: boolean)
 ---@field UpdateProspectSettingsButton fun(self: UMG_EscapeMenu_C)
 
+---@class UMG_FacePreset_C : UserWidget
+---@field FacePresetRow FacePresetsRowHandle
+---@field PresetClicked GameDelegate
+---@field Preset_1 UMG_BasicButton_2_C
+---@field Construct fun(self: UMG_FacePreset_C)
+
 ---@class UMG_FunctionLibrary_C : BlueprintFunctionLibrary
 ---@field GetButtonState fun(self: UMG_FunctionLibrary_C, Button: Button?, __WorldContext: Object?, State: E_ButtonState)
 
@@ -1096,6 +1086,7 @@
 ---@field OnItemRemoved_Event_0 fun(self: UMG_UserInterfaceSpace_C, Inventory: Inventory?, Location: integer)
 ---@field OnMouseButtonUp fun(self: UMG_UserInterfaceSpace_C, MyGeometry: Geometry|{}, MouseEvent: PointerEvent|{}): EventReply Wax refuses this call from Lua.
 ---@field OnSessionInviteAccepted fun(self: UMG_UserInterfaceSpace_C, IcarusSession: IcarusSession|{}) Wax refuses this call from Lua.
+---@field OpenTechTreeToTalent fun(self: UMG_UserInterfaceSpace_C, Talent: TalentsRowHandle|{}, SearchText: string)
 ---@field PasswordCheck fun(self: UMG_UserInterfaceSpace_C)
 ---@field RemoveCustomPopup fun(self: UMG_UserInterfaceSpace_C, PopupWidget: UserWidget?)
 ---@field Reset fun(self: UMG_UserInterfaceSpace_C)
@@ -1139,6 +1130,7 @@
 ---@field EscapeKeyPressed fun(self: UMG_UserInterface_Base_C)
 ---@field FixFocus fun(self: UMG_UserInterface_Base_C)
 ---@field FocusStaticWidget fun(self: UMG_UserInterface_Base_C, Panel: EStaticUIWidgets)
+---@field FocusTechTreeTalent fun(self: UMG_UserInterface_Base_C, Talent: TalentsRowHandle|{}, InputPin: string)
 ---@field GetCheatContext fun(self: UMG_UserInterface_Base_C, Context: ECheatContext)
 ---@field GetCheatOverlay fun(self: UMG_UserInterface_Base_C, Overlay: UMG_CheatOverlay_C?)
 ---@field GetConfirmationOverlay fun(self: UMG_UserInterface_Base_C, Overlay: Overlay?)

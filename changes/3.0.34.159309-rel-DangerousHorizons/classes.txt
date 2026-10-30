@@ -1,0 +1,189 @@
+Old: the model of build 44262f3579394d04a7826b5a1a309f89-1 written 2026-10-22 20:31
+New: the model of build 57b7e817e2aa4282813d34f543f0df8e-1 written 2026-10-30 03:47
+Classes: 30 added, 1 removed, 0 renamed, 30 changed
+Structs: 4 added, 0 removed, 0 renamed, 2 changed
+Enums: 2 added, 0 removed, 0 renamed, 0 changed
++ class /Game/ASS/WEP/SK_GUN_Flamethrower_SML/SK_GUN_Legendary_Launcher_AnimBP.SK_GUN_Legendary_Launcher_AnimBP_C : AnimInstance
++ class /Game/BP/AI/SpawnFilters/BP_SpawnFilter_PopulationCheck_Storca_Jungle.BP_SpawnFilter_PopulationCheck_Storca_Jungle_C : BP_SpawnFilter_PopulationCheck_C
++ class /Game/BP/Objects/World/Items/Deployables/AI/BP_Jungle_Monkey_Corpse.BP_Jungle_Monkey_Corpse_C : BP_GOAP_Corpse_C
++ class /Game/BP/Objects/World/Items/Deployables/AI/BP_Kangaroo_Arctic_Corpse.BP_Kangaroo_Arctic_Corpse_C : BP_GOAP_Corpse_C
++ class /Game/BP/Objects/World/Items/WorldObjects/Missions/BP_Mission_Iron_Voxel.BP_Mission_Iron_Voxel_C : BP_VoxelRock_C
++ class /Game/BP/Quests/Olympus/Forest/WSStockpile/BPQ_OLY_Forest_WS_Cave_Umbrella.BPQ_OLY_Forest_WS_Cave_Umbrella_C : Quest
++ class /Game/BP/Quests/Olympus/Forest/WSStockpile/BPQ_OLY_Forest_WS_Stockpile_Collect_Silica.BPQ_OLY_Forest_WS_Stockpile_Collect_Silica_C : BPQ_Collect_Item_C
++ class /Game/BP/Quests/Olympus/Forest/WSStockpile/BPQ_OLY_Forest_WS_Stockpile_Collect_Stone.BPQ_OLY_Forest_WS_Stockpile_Collect_Stone_C : BPQ_Collect_Item_C
++ class /Game/BP/Quests/Olympus/Forest/WSStockpile/BPQ_OLY_Forest_WS_Stockpile_Collect_Sulfur.BPQ_OLY_Forest_WS_Stockpile_Collect_Sulfur_C : BPQ_Collect_Item_C
++ class /Game/BP/Quests/Olympus/Forest/WSStockpile/BPQ_OLY_Forest_WS_Stockpile_Deposit_Copper_Ingot.BPQ_OLY_Forest_WS_Stockpile_Deposit_Copper_Ingot_C : BPQ_Stockpile_Deposit_Item_C
++ class /Game/BP/Quests/Olympus/Forest/WSStockpile/BPQ_OLY_Forest_WS_Stockpile_Deposit_Iron_Ingot.BPQ_OLY_Forest_WS_Stockpile_Deposit_Iron_Ingot_C : BPQ_Stockpile_Deposit_Item_C
++ class /Game/BP/Quests/Olympus/Forest/WSStockpile/BPQ_OLY_Forest_WS_Stockpile_Find_Hut_New.BPQ_OLY_Forest_WS_Stockpile_Find_Hut_New_C : BPQ_Travel_Medium_C
++ class /Game/BP/Quests/Olympus/Forest/WSStockpile/BPQ_OLY_Forest_WS_Stockpile_Repair_Hut.BPQ_OLY_Forest_WS_Stockpile_Repair_Hut_C : Quest
++ class /Game/BP/Quests/Olympus/Forest/WSStockpile/BPQ_OLY_Forest_WS_Stockpile_Save_Hut.BPQ_OLY_Forest_WS_Stockpile_Save_Hut_C : Quest
++ class /Game/BP/Quests/Olympus/Forest/WSStockpile/BPQ_OLY_Forest_WS_Stockpile_TravelToHut.BPQ_OLY_Forest_WS_Stockpile_TravelToHut_C : BPQ_Travel_Medium_C
++ class /Game/BP/Quests/Olympus/Forest/WSStockpile/BPQ_OLY_Forest_WS_Stockpile_Travel_Cave_Bottom.BPQ_OLY_Forest_WS_Stockpile_Travel_Cave_Bottom_C : BPQ_Travel_Medium_C
++ class /Game/BP/Quests/Olympus/Forest/WSStockpile/BPQ_Oly_Forest_WS_Stockpile_Collect.BPQ_Oly_Forest_WS_Stockpile_Collect_C : Quest
++ class /Game/BP/Quests/Olympus/Forest/WSStockpile/BPQ_Oly_Forest_WS_Stockpile_Collect_Firewhacker.BPQ_Oly_Forest_WS_Stockpile_Collect_Firewhacker_C : BPQ_Collect_Item_WithName_C
++ class /Game/BP/Quests/Olympus/Forest/WSStockpile/BPQ_Oly_Forest_WS_Stockpile_Collect_Hammer.BPQ_Oly_Forest_WS_Stockpile_Collect_Hammer_C : BPQ_Collect_Item_With_Tag_C
++ class /Game/BP/Quests/Olympus/Forest/WSStockpile/BPQ_Oly_Forest_WS_Stockpile_Collect_OptionalItems.BPQ_Oly_Forest_WS_Stockpile_Collect_OptionalItems_C : BPQ_Collect_Item_C
++ class /Game/BP/Quests/Olympus/Forest/WSStockpile/BPQ_Oly_Forest_WS_Stockpile_Collect_Pickaxes.BPQ_Oly_Forest_WS_Stockpile_Collect_Pickaxes_C : BPQ_Collect_Item_With_Tag_C
++ class /Game/BP/Quests/Olympus/Forest/WSStockpile/BPQ_Oly_Forest_WS_Stockpile_Collect_Surface_Ore.BPQ_Oly_Forest_WS_Stockpile_Collect_Surface_Ore_C : Quest
++ class /Game/BP/Quests/Olympus/Forest/WSStockpile/BPQ_Oly_Forest_WS_Stockpile_Craft.BPQ_Oly_Forest_WS_Stockpile_Craft_C : Quest
++ class /Game/BP/Quests/Olympus/Forest/WSStockpile/BPQ_Oly_Forest_WS_Stockpile_Craft_Pickaxe.BPQ_Oly_Forest_WS_Stockpile_Craft_Pickaxe_C : BPQ_Collect_Item_With_Tag_C
++ class /Game/BP/Quests/Olympus/Forest/WSStockpile/BPQ_Oly_Forest_WS_Stockpile_Craft_Torch.BPQ_Oly_Forest_WS_Stockpile_Craft_Torch_C : BPQ_Collect_Item_C
++ class /Game/BP/Quests/Olympus/Forest/WSStockpile/BPQ_Oly_Forest_WS_Stockpile_Craft_Weapon.BPQ_Oly_Forest_WS_Stockpile_Craft_Weapon_C : BPQ_Collect_Item_With_Tag_C
++ class /Game/BP/Settlement/UMG/UMG_Settlement_Building_Upgrade.UMG_Settlement_Building_Upgrade_C : UserWidget
++ class /Game/UI/UMG_FacePreset.UMG_FacePreset_C : UserWidget
++ class /Script/Icarus.FacePresetsLibrary : RowLibrary
++ class /Script/Icarus.FacePresetsTable : IcarusDataTable
+- class /Game/ASS/CHA/Head/New_Heads/ABP_CHA_Head_01_InWorld.ABP_CHA_Head_01_InWorld_C
+~ class /Game/ASS/CHA/Head/New_Heads/ABP_CHA_Head_01.ABP_CHA_Head_01_C
+    + property AnimGraphNode_CopyPoseFromMesh_1: Struct<AnimNode_CopyPoseFromMesh>
+    + property AnimGraphNode_TwoWayBlend: Struct<AnimNode_TwoWayBlend>
+    + property IsAlive: Bool
+    + function BlueprintUpdateAnimation(DeltaTimeX: Float)
+    + function EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_CHA_Head_01_AnimGraphNode_TwoWayBlend_A729D015492191C80151B9A6641D10B9()
+~ class /Game/ASS/CHA/PHX/Customization/WB_ChaCustom_Shape.WB_ChaCustom_Shape_C
+    + function SyncCursorToValues()
+~ class /Game/BP/Objects/World/Items/Deployables/BP_Gravestone.BP_Gravestone_C
+    + function IsHelmetShowing(HelmetShowing: Bool)
+    + function SwapFacePiecesForHelmet()
+~ class /Game/BP/Player/BP_NetworkProxyComponent.BP_NetworkProxyComponent_C
+    + function Proxy_Settlement_UnlockTalent(Settlement: Object<Settlement>, Talent: Struct<TalentsRowHandle>)
+    + function Proxy_UpgradeStructure(Settlement: Object<Settlement>, Building: Object<SettlementBuilding>, Target: Struct<SettlementBuildingsRowHandle>)
+~ class /Game/BP/Settlement/BP_Settlement.BP_Settlement_C
+    + property NPCSpawn: Object<SceneComponent>
+    + property Monitor: Object<StaticMeshComponent>
+    + property PointLight_Fill1: Object<PointLightComponent>
+    + property BP_IcarusPointLight1: Object<BP_IcarusPointLight_C>
+    + property Scene1: Object<SceneComponent>
+    + property BP_IcarusPointLight: Object<BP_IcarusPointLight_C>
+    + property PointLight_Fill: Object<PointLightComponent>
+    + property Scene: Object<SceneComponent>
+    - property Collision_Interact: Object<BoxComponent>
+~ class /Game/BP/Settlement/UMG/UMG_SettlementInfo_InWorld.UMG_SettlementInfo_InWorld_C
+    + function Initalise(LinkedSettlement: Object<Settlement>)
+~ class /Game/BP/Settlement/UMG/UMG_Settlement_Building.UMG_Settlement_Building_C
+    + property UMG_Settlement_Building_Upgrade: Object<UMG_Settlement_Building_Upgrade_C>
+    + property Target: Struct<SettlementBuildingsRowHandle>
+~ class /Game/BP/Settlement/UMG/UMG_Settlement_TalentTree.UMG_Settlement_TalentTree_C
+    + property LedgerButton: Object<UMG_BasicButton_2_C>
+    + property LedgerWidget: Object<SizeBox>
+    + property OverviewWidget: Object<SizeBox>
+    + property Status_Button: Object<UMG_BasicButton_2_C>
+    + property StorageButton: Object<UMG_BasicButton_2_C>
+    + property StorageWidget: Object<SizeBox>
+    + property Talent_Button: Object<UMG_BasicButton_2_C>
+    + property TalentWidget: Object<SizeBox>
+    + property UMG_DeviceInventory: Object<UMG_DeviceInventory_C>
+    + property UMG_PlayerInventory: Object<UMG_PlayerInventory_C>
+    + property UMG_SettlementInfo_InWorld: Object<UMG_SettlementInfo_InWorld_C>
+    - property UMG_ButtonIcon: Object<UMG_ButtonIcon_C>
+    ~ property CloseButton: Object<UMG_IconTextButton_C> -> Object<UMG_CloseButton_2_C>
+    + function BndEvt__UMG_Settlement_TalentTree_Status_Button_K2Node_ComponentBoundEvent_5_Clicked__DelegateSignature(Button: Object<UMG_ButtonBase_C>)
+    + function BndEvt__UMG_Settlement_TalentTree_StorageButton_K2Node_ComponentBoundEvent_4_Clicked__DelegateSignature(Button: Object<UMG_ButtonBase_C>)
+    + function BndEvt__UMG_Settlement_TalentTree_LedgerButton_K2Node_ComponentBoundEvent_3_Clicked__DelegateSignature(Button: Object<UMG_ButtonBase_C>)
+    + function BndEvt__UMG_Settlement_TalentTree_Talent_Button_K2Node_ComponentBoundEvent_2_Clicked__DelegateSignature(Button: Object<UMG_ButtonBase_C>)
+    - function BndEvt__UMG_Settlement_TalentTree_UMG_ButtonIcon_K2Node_ComponentBoundEvent_1_Clicked__DelegateSignature()
+~ class /Game/BP/UI/Talents/Player/UMG_TalentArchetype_Player.UMG_TalentArchetype_Player_C
+    + property SearchBorder: Object<WidgetAnimation>
+~ class /Game/UI/Components/FieldGuide/UMG_FieldGuideItems_DamageVariationLarge.UMG_FieldGuideItems_DamageVariationLarge_C
+    - property IsSetBonus: Bool
+    - property IsSetBonusActive: Bool
+    - function Construct()
+~ class /Game/UI/Components/FieldGuide/UMG_FieldGuide_List_Button_Item.UMG_FieldGuide_List_Button_Item_C
+    + property SubcategoryRow: Struct<FieldGuideSubcategoriesRowHandle>
+~ class /Game/UI/Components/UMG_DamageVariation.UMG_DamageVariation_C
+    - property IsSetBonus: Bool
+    - property IsSetBonusActive: Bool
+    - function Construct()
+~ class /Game/UI/Components/UMG_FaceIcon.UMG_FaceIcon_C
+    + property FaceToShape: Map<Enum<EFaceTypes>, SoftObject<Texture2D>>
+    - property FaceToIcon: Map<Byte<EFaceShapes>, SoftObject<Texture2D>>
+    ~ property ChosenFace: Byte<EFaceShapes> -> Enum<EFaceTypes>
+~ class /Game/UI/Components/UMG_InventoryItem.UMG_InventoryItem_C
+    + property ItemSlot_Settlement: Object<MaterialInterface>
+    + property ItemSlot_Settlement_Hovered: Object<MaterialInterface>
+    + function IsSettlementItem(): Bool
+    ~ function SetItemStyle(IsExotic: Bool, IsQuest: Bool, IsLegendary: Bool) -> (IsExotic: Bool, IsQuest: Bool, IsLegendary: Bool, IsSettlement: Bool)
+~ class /Game/UI/Components/UMG_ItemPopup.UMG_ItemPopup_C
+    - property Spacer_FeatureLevelMargin: Object<Spacer>
+~ class /Game/UI/Debug/UMG_GOAPWorldStats.UMG_GOAPWorldStats_C
+    + property VerticalBox_Main: Object<VerticalBox>
+    > property VerticalBox -> VerticalBox_Header: Object<VerticalBox> (same position)
+~ class /Game/UI/UMG_CharacterBlending_DropBox.UMG_CharacterBlending_DropBox_C
+    ~ property DefaultFaceShape: Byte<EFaceShapes> -> Enum<EFaceTypes>
+    ~ function SetSelectedOption(FaceShape: Byte<EFaceShapes>) -> (FaceShape: Enum<EFaceTypes>)
+~ class /Game/UI/UMG_CharacterCreation.UMG_CharacterCreation_C
+    + property DevPrintValues: Object<UMG_BasicButton_2_C>
+    + property FacePresetGrid: Object<UMG_IcarusGrid_C>
+    + property Visualize_Box: Object<ScaleBox>
+    - property Preset_1: Object<UMG_BasicButton_2_C>
+    - property Preset_2: Object<UMG_BasicButton_2_C>
+    - property Preset_3: Object<UMG_BasicButton_2_C>
+    - property Preset_4: Object<UMG_BasicButton_2_C>
+    - property Preset_5: Object<UMG_BasicButton_2_C>
+    > property SuitColorSelectionGrid_V2 -> SuitColorSelectionGridV2: Object<UMG_CharacterSetting_GridBase_C> (similar name)
+    ~ property OldTopFaceShape: Byte<EFaceShapes> -> Enum<EFaceTypes>
+    ~ property OldBottomFaceShape: Byte<EFaceShapes> -> Enum<EFaceTypes>
+    ~ property OldLeftFaceShape: Byte<EFaceShapes> -> Enum<EFaceTypes>
+    ~ property OldRightFaceShape: Byte<EFaceShapes> -> Enum<EFaceTypes>
+    + function PresetClicked(FacePresetRow: Struct<FacePresetsRowHandle>)
+    + function Set Face Shape(Direction: Enum<EFaceDirection>, Shape: Enum<EFaceTypes>)
+    + function FaceShapeChanged(Direction: Enum<EFaceDirection>, FaceIcon: Object<UserWidget>)
+    + function UpdateFaceBlendFromRow(FacePresetRow: Struct<FacePresetsRowHandle>)
+    - function BndEvt__UMG_CharacterCreation_Preset_4_K2Node_ComponentBoundEvent_6_Clicked__DelegateSignature(Button: Object<UMG_ButtonBase_C>)
+    - function BndEvt__UMG_CharacterCreation_Preset_3_K2Node_ComponentBoundEvent_5_Clicked__DelegateSignature(Button: Object<UMG_ButtonBase_C>)
+    - function BndEvt__UMG_CharacterCreation_Preset_2_K2Node_ComponentBoundEvent_4_Clicked__DelegateSignature(Button: Object<UMG_ButtonBase_C>)
+    - function BndEvt__UMG_CharacterCreation_Preset_1_K2Node_ComponentBoundEvent_3_Clicked__DelegateSignature(Button: Object<UMG_ButtonBase_C>)
+    - function TopItemChanged(Object: Object<UserWidget>)
+    - function BotItemChanged(Object: Object<UserWidget>)
+    - function LeftItemChanged(Object: Object<UserWidget>)
+    - function RightItemChanged(Object: Object<UserWidget>)
+    - function TopSwapCheck(ChosenFaceShape: Byte<EFaceShapes>)
+    - function BottomSwapCheck(ChosenFaceShape: Byte<EFaceShapes>)
+    - function LeftSwapCheck(ChosenFaceShape: Byte<EFaceShapes>)
+    - function RightSwapCheck(ChosenFaceShape: Byte<EFaceShapes>)
+    > function BndEvt__UMG_CharacterCreation_Preset_5_K2Node_ComponentBoundEvent_7_Clicked__DelegateSignature -> BndEvt__UMG_CharacterCreation_UMG_BasicButton_2_K2Node_ComponentBoundEvent_3_Clicked__DelegateSignature(Button: Object<UMG_ButtonBase_C>) (similar name)
+~ class /Game/UI/UMG_UserInterfaceSpace.UMG_UserInterfaceSpace_C
+    + function OpenTechTreeToTalent(Talent: Struct<TalentsRowHandle>, SearchText: Text)
+~ class /Game/UI/UMG_UserInterface_Base.UMG_UserInterface_Base_C
+    + function FocusTechTreeTalent(Talent: Struct<TalentsRowHandle>, InputPin: Text)
+~ class /Game/UI/Windows/UMG_SpaceMenus_TopLevel.UMG_SpaceMenus_TopLevel_C
+    + function ShowTechTree()
+    + function ShowTalentTree()
+    + function ShowAccolades()
+~ class /Script/Icarus.AISpawnBehaviour
+    + function ApplySpawnDataGameplayTags(SpawnedActor: Object<Actor>)
+~ class /Script/Icarus.AISpawner
+    + function GetAutonomousSpawnTagsForActor(SpawnedActor: Object<Actor>, OutTags: Struct<GameplayTagContainer>): Bool
+~ class /Script/Icarus.CosmeticsFunctionLibrary
+    + function CountFaceShapes(Top: Enum<EFaceTypes>, Bottom: Enum<EFaceTypes>, Left: Enum<EFaceTypes>, Right: Enum<EFaceTypes>): Int
+    + function FaceBlendToPickerPosition(Top: Float, Bottom: Float, Left: Float, Right: Float, Scaled: Float, AbsClamp: Float, Baseline: Float): Struct<Vector2D>
+    + function FindFaceShapeDirection(Shape: Enum<EFaceTypes>, Direction: Enum<EFaceDirection>, Top: Enum<EFaceTypes>, Bottom: Enum<EFaceTypes>, Left: Enum<EFaceTypes>, Right: Enum<EFaceTypes>, OtherDirection: Enum<EFaceDirection>): Bool
+~ class /Script/Icarus.DataTableValidationLibrary
+    + function Validate_FacePresets_RowHandle(RowHandle: Struct<FacePresetsRowHandle>)
+~ class /Script/Icarus.FieldGuideFunctionLibrary
+    + function GetDetailViewForItem(Item: Struct<ItemsStaticRowHandle>): Class<FieldGuidePageWidgetBase>
+    + function GetIndexView(Category: Struct<FieldGuideCategoriesRowHandle>, Subcategory: Struct<FieldGuideSubcategoriesRowHandle>): Class<FieldGuidePageWidgetBase>
+    + function GetSubcategoryForItem(Item: Struct<ItemsStaticRowHandle>): Struct<FieldGuideSubcategoriesRowHandle>
+~ class /Script/Icarus.IcarusPlayerCharacter
+    ~ function GetVisualArmourRow(Row: Struct<ArmourRowHandle>, bIsReworked: Bool): Struct<ArmourRowHandle> -> (Row: Struct<ArmourRowHandle>, bIsReworked: Bool, bRebreatherEquipped: Bool): Struct<ArmourRowHandle>
+~ class /Script/Icarus.Settlement
+    + function CanUpgradeBuilding(Building: Object<SettlementBuilding>, Target: Struct<SettlementBuildingsRowHandle>, FailureReason: Text): Bool
+    + function UpgradeBuilding(Building: Object<SettlementBuilding>, Target: Struct<SettlementBuildingsRowHandle>, OutBuilding: Object<SettlementBuilding>): Bool
+~ class /Script/Icarus.SettlementBuilding
+    + property UpgradedFrom: Struct<SettlementBuildingsRowHandle>
+    + function CanUpgradeTo(Target: Struct<SettlementBuildingsRowHandle>, FailureReason: Text): Bool
+    + function GetAvailableUpgrades(): Array<Struct<SettlementBuildingUpgradeInfo>>
+    + function IsUpgradeInProgress(): Bool
+    + function UpgradeTo(Target: Struct<SettlementBuildingsRowHandle>): Object<SettlementBuilding>
+~ class /Script/Icarus.SettlementBuildingRecorderComponent
+    + property UpgradedFromRow: Name
++ struct /Script/Icarus.FacePresetData : IcarusTableRowBase
++ struct /Script/Icarus.FacePresetsEnum : RowEnum
++ struct /Script/Icarus.FacePresetsRowHandle : RowHandle
++ struct /Script/Icarus.SettlementBuildingUpgradeInfo
+~ struct /Script/Icarus.ArmourData
+    + property ReworkedVariantHelmOff: Struct<ArmourRowHandle>
+~ struct /Script/Icarus.SettlementBuildingData
+    + property UpgradesTo: Array<Struct<SettlementBuildingsRowHandle>>
++ enum /Script/Icarus.EFaceDirection
++ enum /Script/Icarus.EFaceTypes

@@ -174,6 +174,7 @@ public:
     UFUNCTION(BlueprintCallable, Server, Reliable) void Proxy_SetResourceComponentState(UResourceComponent* Component, FIcarusResourcesEnum ResourceType, bool State);  // parameters 0x19
     UFUNCTION(BlueprintCallable, Server, Reliable) void Proxy_SetSettlerRole(ASettlement* Settlement, const FGuid& NPCId, FSettlementNPCRolesRowHandle NewRole);  // parameters 0x30
     UFUNCTION(BlueprintCallable, Server, Reliable) void Proxy_SettlementRespontToVisitor(ASettlement* Settlement, const FGuid& VisitorId, bool Accept);  // parameters 0x19
+    UFUNCTION(BlueprintCallable, Server) void Proxy_Settlement_UnlockTalent(ASettlement* Settlement, const FTalentsRowHandle& Talent);  // parameters 0x20
     UFUNCTION(BlueprintCallable, Server, Reliable) void Proxy_SplitInventoryStack(UInventory* Inventory, int32 Location, AIcarusPlayerCharacter* FromPlayer);  // parameters 0x18
     UFUNCTION(BlueprintCallable, Server, Reliable) void Proxy_TriggerAffliction(AIcarusPlayerCharacter* Player, FAfflictionChanceRowHandle AfflictionChance);  // parameters 0x20
     UFUNCTION(BlueprintCallable, Server, Reliable) void Proxy_TriggerSettlementEvent(FSettlementEventsRowHandle NewEvent);  // parameters 0x18
@@ -187,6 +188,7 @@ public:
     UFUNCTION(BlueprintCallable, Server, Reliable) void Proxy_UpdatePainting(ADeployable* PaintingDeployable, FPaintingsRowHandle PaintingRowHandle);  // parameters 0x20
     UFUNCTION(BlueprintCallable, Server, Reliable) void Proxy_UpdateRepairBench(ADeployable* RepairBench, float Threshold);  // parameters 0xC
     UFUNCTION(BlueprintCallable, Server, Reliable) void Proxy_UpdateSignText(FText Text, FLinearColor Color, ADeployable* SignDeployable, FItemableRowHandle IconRowHandle);  // parameters 0x48
+    UFUNCTION(BlueprintCallable, Server) void Proxy_UpgradeStructure(ASettlement* Settlement, ASettlementBuilding* Building, const FSettlementBuildingsRowHandle& Target);  // parameters 0x28
     UFUNCTION(BlueprintCallable, Server, Reliable) void Proxy_ValidateItemsToReturn();
     UFUNCTION(BlueprintCallable, Server, Reliable) void ResetCharacter(AIcarusPlayerController* Controller);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void SelectedFLODTileChanged__DelegateSignature();

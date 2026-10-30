@@ -748,12 +748,9 @@
 
 ---@class UMG_FieldGuideItems_DamageVariationLarge_C : UserWidget
 ---@field Description TextBlock
----@field IsSetBonus boolean
----@field IsSetBonusActive boolean
 ---@field BP_OnEntryReleased fun(self: UMG_FieldGuideItems_DamageVariationLarge_C)
 ---@field BP_OnItemExpansionChanged fun(self: UMG_FieldGuideItems_DamageVariationLarge_C, bIsExpanded: boolean)
 ---@field BP_OnItemSelectionChanged fun(self: UMG_FieldGuideItems_DamageVariationLarge_C, bIsSelected: boolean)
----@field Construct fun(self: UMG_FieldGuideItems_DamageVariationLarge_C)
 ---@field Initialise fun(self: UMG_FieldGuideItems_DamageVariationLarge_C, Min: integer, Max: integer, Type: string)
 
 ---@class UMG_FieldGuideItems_NAText_C : UserWidget
@@ -1065,6 +1062,7 @@
 ---@field ItemRow ItemsStaticRowHandle
 ---@field Selected boolean
 ---@field SelectedItem GameDelegate
+---@field SubcategoryRow FieldGuideSubcategoriesRowHandle
 ---@field Construct fun(self: UMG_FieldGuide_List_Button_Item_C)
 ---@field PreConstruct fun(self: UMG_FieldGuide_List_Button_Item_C, IsDesignTime: boolean)
 ---@field SetSelected fun(self: UMG_FieldGuide_List_Button_Item_C, Selected: boolean)

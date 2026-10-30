@@ -204,6 +204,7 @@
 ---@field InitMeshes fun(self: BP_Gravestone_C, Player: IcarusPlayerCharacter?)
 ---@field Interaction_Loot fun(self: BP_Gravestone_C, Instigator: Actor?)
 ---@field Interaction_Revive fun(self: BP_Gravestone_C, Instigator: Actor?)
+---@field IsHelmetShowing fun(self: BP_Gravestone_C, HelmetShowing: boolean)
 ---@field MorphHead fun(self: BP_Gravestone_C, Cosmetics: CharacterCosmetics|{})
 ---@field NetMulticast_Unstuck fun(self: BP_Gravestone_C, NewLocation: Vector|{})
 ---@field OnConnectedPlayerInitialised fun(self: BP_Gravestone_C, ConnectedPlayer: ConnectedPlayer|{})
@@ -220,6 +221,7 @@
 ---@field ServerHandleAssignedPlayer fun(self: BP_Gravestone_C)
 ---@field SetPlayerGravestone fun(self: BP_Gravestone_C, PlayerController: BP_IcarusPlayerControllerSurvival_C?, DeathPose: PoseSnapshot|{}, DeathVelocity: Vector|{}) Wax refuses this call from Lua.
 ---@field StopRagdollAudio fun(self: BP_Gravestone_C)
+---@field SwapFacePiecesForHelmet fun(self: BP_Gravestone_C)
 ---@field TerrainAnchorChanged fun(self: BP_Gravestone_C)
 ---@field UpdateHighlightMeshes fun(self: BP_Gravestone_C, Highlightable: HighlightableComponent?, Component: PrimitiveComponent?, bHighlighted: boolean)
 ---@field UpdatePlayerArmour fun(self: BP_Gravestone_C) Wax refuses this call from Lua.

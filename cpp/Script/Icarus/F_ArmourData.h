@@ -1,5 +1,5 @@
 // /Script/Icarus.ArmourData
-// size 0x318, declared in Icarus/Source/Icarus/Traits/Behaviours/ArmourData.h
+// size 0x330, declared in Icarus/Source/Icarus/Traits/Behaviours/ArmourData.h
 
 USTRUCT()
 struct FArmourData : public FIcarusTableRowBase
@@ -20,8 +20,9 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FArmourSetsRowHandle ArmourSet;  // 0x01DC, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FArmourRowHandle> ImplicitDefaultArmour;  // 0x01F8, size 0x10
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FArmourRowHandle ReworkedVariant;  // 0x0208, size 0x18
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bOverrideDefaultMaterials;  // 0x0220, size 0x1
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<int32, TSoftObjectPtr<UMaterialInterface>> ArmourMeshMaterialOverrides;  // 0x0228, size 0x50
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<int32, TSoftObjectPtr<UMaterialInterface>> FemaleArmourMeshMaterialOverrides;  // 0x0278, size 0x50
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<int32, TSoftObjectPtr<UMaterialInterface>> FPArmourMeshMaterialOverrides;  // 0x02C8, size 0x50
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FArmourRowHandle ReworkedVariantHelmOff;  // 0x0220, size 0x18
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bOverrideDefaultMaterials;  // 0x0238, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<int32, TSoftObjectPtr<UMaterialInterface>> ArmourMeshMaterialOverrides;  // 0x0240, size 0x50
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<int32, TSoftObjectPtr<UMaterialInterface>> FemaleArmourMeshMaterialOverrides;  // 0x0290, size 0x50
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<int32, TSoftObjectPtr<UMaterialInterface>> FPArmourMeshMaterialOverrides;  // 0x02E0, size 0x50
 };

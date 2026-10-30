@@ -1,5 +1,5 @@
 // /Script/IcarusGenerated.ResReplicateWorkshopItem
-// size 0x30, declared in Icarus/Intermediate/Build/Win64/IcarusServer/Inc/OnlineSubsystemIcarus/ReplicateWorkshopItemCallbackProxyGen.generated.h
+// size 0x30, declared in Icarus/Source/IcarusGenerated/Public/Struct/ResReplicateWorkshopItem.h
 
 USTRUCT()
 struct FResReplicateWorkshopItem

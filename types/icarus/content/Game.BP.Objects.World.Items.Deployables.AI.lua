@@ -538,6 +538,10 @@
 ---@field GFur GFurComponent
 ---@field OnSkinnedStateUpdated fun(self: BP_Jungle_Hunter_Corpse_C)
 
+---@class BP_Jungle_Monkey_Corpse_C : BP_GOAP_Corpse_C
+---@field GFur GFurComponent
+---@field OnSkinnedStateUpdated fun(self: BP_Jungle_Monkey_Corpse_C)
+
 ---@class BP_Juvenile_Wooly_Zebra_Corpse_C : BP_GOAP_Corpse_C
 ---@field GFur GFurComponent
 ---@field OnSkinnedStateUpdated fun(self: BP_Juvenile_Wooly_Zebra_Corpse_C)
@@ -547,6 +551,11 @@
 ---@field IsSkeletonUpdated fun(self: BP_Juvie_Horse_Corpse_C)
 ---@field OnSkinnedStateUpdated fun(self: BP_Juvie_Horse_Corpse_C)
 ---@field UpdateSkeletalMeshCarryPhysics fun(self: BP_Juvie_Horse_Corpse_C, SkeletalMeshComponent: SkeletalMeshComponent?)
+
+---@class BP_Kangaroo_Arctic_Corpse_C : BP_GOAP_Corpse_C
+---@field GFur GFurComponent
+---@field IsSkeletonUpdated fun(self: BP_Kangaroo_Arctic_Corpse_C)
+---@field OnSkinnedStateUpdated fun(self: BP_Kangaroo_Arctic_Corpse_C)
 
 ---@class BP_Kangaroo_Jungle_Corpse_C : BP_GOAP_Corpse_C
 ---@field GFur GFurComponent

@@ -3896,8 +3896,11 @@
 ---@field OnClose fun(self: UMG_SpaceMenus_TopLevel_C)
 ---@field OnConnectedPlayerInitialised fun(self: UMG_SpaceMenus_TopLevel_C, ConnectedPlayer: ConnectedPlayer|{})
 ---@field ShouldShowNewGameTutorialPrompt fun(self: UMG_SpaceMenus_TopLevel_C, ShouldShow: boolean)
+---@field ShowAccolades fun(self: UMG_SpaceMenus_TopLevel_C)
 ---@field ShowFieldGuide fun(self: UMG_SpaceMenus_TopLevel_C)
 ---@field ShowFieldGuideItem fun(self: UMG_SpaceMenus_TopLevel_C, Category: FieldGuideCategoriesRowHandle|{}, Item: ItemsStaticRowHandle|{}, ForceShowNone: boolean)
+---@field ShowTalentTree fun(self: UMG_SpaceMenus_TopLevel_C)
+---@field ShowTechTree fun(self: UMG_SpaceMenus_TopLevel_C)
 ---@field SwitchTalents fun(self: UMG_SpaceMenus_TopLevel_C, Solo: boolean)
 
 ---@class UMG_Spawnblocker_C : UMG_IcarusLinkedActorPanel_C

@@ -14,6 +14,7 @@ public:
 private:
     UPROPERTY() TSubclassOf<AIcarusActor> CachedActorSpawnClass;  // 0x0120, size 0x8
 public:
+    UFUNCTION(BlueprintCallable) void ApplySpawnDataGameplayTags(AActor* SpawnedActor) const;  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) bool CanCleanupAI(AActor* AI);  // parameters 0x9
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) void CleanupAI(AActor* AI);  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) bool GetNextAIToSpawn(FAISetupEnum& AISetup, TSoftClassPtr<AIcarusActor>& ActorClass) const;  // parameters 0x39

@@ -1918,6 +1918,8 @@
 ---@field SM_Extermination_SandwormClue_3 StaticMeshComponent
 ---@field ReceiveBeginPlay fun(self: BP_Mission_Interactable_Den_C)
 
+---@class BP_Mission_Iron_Voxel_C : BP_VoxelRock_C
+
 ---@class BP_Mission_Lootable_Radar_C : BP_WorldObject_C
 ---@field WorldObject_Interact fun(self: BP_Mission_Lootable_Radar_C, Instigator: Actor?)
 

@@ -97,7 +97,10 @@ public:
     UFUNCTION(BlueprintCallable) void OnClose();
     UFUNCTION(BlueprintCallable) void OnConnectedPlayerInitialised(const FConnectedPlayer& ConnectedPlayer);  // parameters 0x38
     UFUNCTION(BlueprintCallable, BlueprintPure) void ShouldShowNewGameTutorialPrompt(bool& ShouldShow) const;  // parameters 0x1
+    UFUNCTION(BlueprintCallable) void ShowAccolades();
     UFUNCTION(BlueprintCallable) void ShowFieldGuide();
     UFUNCTION(BlueprintCallable) void ShowFieldGuideItem(FFieldGuideCategoriesRowHandle Category, FItemsStaticRowHandle Item, bool ForceShowNone);  // parameters 0x31
+    UFUNCTION(BlueprintCallable) void ShowTalentTree();
+    UFUNCTION(BlueprintCallable) void ShowTechTree();
     UFUNCTION(BlueprintCallable) void SwitchTalents(bool Solo);  // parameters 0x1
 };

@@ -571,6 +571,23 @@
 ---| 255 # Custom
 ---| integer
 
+---@alias EFaceDirection
+---| 0 # Top
+---| 1 # Bottom
+---| 2 # Left
+---| 3 # Right
+---| integer
+
+---@alias EFaceTypes
+---| 0 # FaceShape_Round
+---| 1 # FaceShape_Heart
+---| 2 # FaceShape_Square
+---| 3 # FaceShape_Narrow
+---| 4 # FaceShape_Pear
+---| 5 # FaceShape_Triangle
+---| 6 # None
+---| integer
+
 ---@alias EFeatureLevelCheckResult
 ---| 0 # Unchecked
 ---| 1 # Fail_FeatureLevel

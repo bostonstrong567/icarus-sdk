@@ -2201,7 +2201,7 @@
 ---@field EndMontage fun(self: IcarusPlayerCharacter, Montage: AnimMontage?, FP_Montage: AnimMontage?, BleedOutTime: number)
 ---@field FindOrCreateEquipmentComponent fun(self: IcarusPlayerCharacter, ForSlot: integer): SkeletalMeshComponent[]
 ---@field FocusAndUseItemFromMenu fun(self: IcarusPlayerCharacter, Inventory: Inventory?, Slot: integer, Use: UsesEnum|{})
----@field GetArmourDataForGFurComponent fun(self: IcarusPlayerCharacter, Component: GFurComponent?, OutArmourData: ArmourData|{}): boolean Do not call from Lua: it needs 808 bytes and the call buffer holds 512.
+---@field GetArmourDataForGFurComponent fun(self: IcarusPlayerCharacter, Component: GFurComponent?, OutArmourData: ArmourData|{}): boolean Do not call from Lua: it needs 832 bytes and the call buffer holds 512.
 ---@field GetArmourRowForSlot fun(self: IcarusPlayerCharacter, SlotIndex: integer): ArmourRowHandle
 ---@field GetAttachedToSeat fun(self: IcarusPlayerCharacter): SeatBase
 ---@field GetCurrentSecondarySlotActor fun(self: IcarusPlayerCharacter): IcarusItem
@@ -2224,7 +2224,7 @@
 ---@field GetThirdPersonMesh fun(self: IcarusPlayerCharacter): SkeletalMeshComponent
 ---@field GetUtilityItemData fun(self: IcarusPlayerCharacter, Validity: EDataValidity): ItemData
 ---@field GetVisibleCharacterMesh fun(self: IcarusPlayerCharacter): SkeletalMeshComponent
----@field GetVisualArmourRow fun(self: IcarusPlayerCharacter, Row: ArmourRowHandle|{}, bIsReworked: boolean): ArmourRowHandle
+---@field GetVisualArmourRow fun(self: IcarusPlayerCharacter, Row: ArmourRowHandle|{}, bIsReworked: boolean, bRebreatherEquipped: boolean): ArmourRowHandle
 ---@field InitialisationComplete fun(self: IcarusPlayerCharacter): boolean
 ---@field IsClothSimEnabled fun(self: IcarusPlayerCharacter): boolean
 ---@field IsHabCharacter fun(self: IcarusPlayerCharacter): boolean
@@ -2784,11 +2784,11 @@
 ---@field InventoryComponent InventoryComponent
 ---@field IsMale boolean
 ---@field QuickbarInventory Inventory
----@field FindOrCreateEquipmentComponent fun(self: IcarusPreviewCharacter, ForSlot: integer, WithData: ArmourData|{}): SkeletalMeshComponent Do not call from Lua: it needs 808 bytes and the call buffer holds 512.
+---@field FindOrCreateEquipmentComponent fun(self: IcarusPreviewCharacter, ForSlot: integer, WithData: ArmourData|{}): SkeletalMeshComponent Do not call from Lua: it needs 832 bytes and the call buffer holds 512.
 ---@field OnEquipmentInventoryUpdated fun(self: IcarusPreviewCharacter, Inventory: Inventory?, UpdatedSlot: integer)
 ---@field SetupCharacterCosmetics fun(self: IcarusPreviewCharacter)
 ---@field UpdateAllEquipment fun(self: IcarusPreviewCharacter)
----@field UpdateEquipmentForSlot fun(self: IcarusPreviewCharacter, SlotNum: integer, Data: ArmourData|{}): boolean Do not call from Lua: it needs 808 bytes and the call buffer holds 512.
+---@field UpdateEquipmentForSlot fun(self: IcarusPreviewCharacter, SlotNum: integer, Data: ArmourData|{}): boolean Do not call from Lua: it needs 832 bytes and the call buffer holds 512.
 
 ---@class IcarusProjectileComponent : ProjectileMovementComponent
 ---@field AngularRotation Rotator

@@ -6,12 +6,12 @@ UCLASS()
 class USettlementBuildingsLibrary : public URowLibrary
 {
 public:
-    UFUNCTION(BlueprintCallable) static void AddRowToSettlementBuildingsTable(FName Name, FSettlementBuildingData Data, FSettlementBuildingsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x199
+    UFUNCTION(BlueprintCallable) static void AddRowToSettlementBuildingsTable(FName Name, FSettlementBuildingData Data, FSettlementBuildingsRowHandle& NewRow, bool bOverrideExistingRow);  // parameters 0x1A9
     UFUNCTION(BlueprintCallable, BlueprintPure) static void BreakSettlementBuildingsEnum(FSettlementBuildingsEnum Enum, FName& Name, int32& Index);  // parameters 0x1C
     UFUNCTION(BlueprintCallable) static FSettlementBuildingsRowHandle CastToSettlementBuildingsRowHandle(FRowHandle RowHandle, EValid& Paths);  // parameters 0x34
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool EqualEqual_EnumEnum(FSettlementBuildingsEnum A, FSettlementBuildingsEnum B);  // parameters 0x21
     UFUNCTION(BlueprintCallable, BlueprintPure) static bool EqualEqual_FSettlementBuildingsRowHandleFSettlementBuildingsRowHandle(FSettlementBuildingsRowHandle RowHandleA, FSettlementBuildingsRowHandle RowHandleB);  // parameters 0x31
-    UFUNCTION(BlueprintCallable) static void GetSettlementBuildingsStruct(FSettlementBuildingsRowHandle RowHandle, FSettlementBuildingData& SettlementBuildings, EValid& Paths);  // parameters 0x191
+    UFUNCTION(BlueprintCallable) static void GetSettlementBuildingsStruct(FSettlementBuildingsRowHandle RowHandle, FSettlementBuildingData& SettlementBuildings, EValid& Paths);  // parameters 0x1A1
     UFUNCTION() static FName IntToName(int32 IntValue);  // parameters 0xC
     UFUNCTION(BlueprintCallable, BlueprintPure) static FSettlementBuildingsEnum IntToStruct(int32 IntValue);  // parameters 0x18
     UFUNCTION() static bool IsValidName(FName NameValue);  // parameters 0x9

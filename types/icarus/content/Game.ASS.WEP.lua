@@ -350,6 +350,11 @@
 ---@class SK_GUN_HuntingRifle_Bolt_Action_AnimBP_C : AnimInstance
 ---@field AnimGraph fun(self: SK_GUN_HuntingRifle_Bolt_Action_AnimBP_C, AnimGraph: PoseLink|{})
 
+---@class SK_GUN_Legendary_Launcher_AnimBP_C : AnimInstance
+---@field IsADS boolean
+---@field AnimGraph fun(self: SK_GUN_Legendary_Launcher_AnimBP_C, AnimGraph: PoseLink|{})
+---@field BlueprintUpdateAnimation fun(self: SK_GUN_Legendary_Launcher_AnimBP_C, DeltaTimeX: number)
+
 ---@class SK_GUN_MiningLaser_AnimBP_C : AnimInstance
 ---@field ["Heat Value"] number
 ---@field AnimGraph fun(self: SK_GUN_MiningLaser_AnimBP_C, AnimGraph: PoseLink|{})

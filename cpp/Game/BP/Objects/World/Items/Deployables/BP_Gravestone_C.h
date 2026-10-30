@@ -55,6 +55,7 @@ public:
     UFUNCTION(BlueprintCallable) void InitMeshes(AIcarusPlayerCharacter* Player);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void Interaction_Loot(AActor* Instigator);  // parameters 0x8
     UFUNCTION(BlueprintCallable) void Interaction_Revive(AActor* Instigator);  // parameters 0x8
+    UFUNCTION(BlueprintCallable) void IsHelmetShowing(bool& HelmetShowing);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void MorphHead(const FCharacterCosmetics& Cosmetics);  // parameters 0x80
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable) void NetMulticast_Unstuck(FVector NewLocation);  // parameters 0xC
     UFUNCTION(BlueprintCallable) void OnConnectedPlayerInitialised(const FConnectedPlayer& ConnectedPlayer);  // parameters 0x38
@@ -72,6 +73,7 @@ public:
     UFUNCTION(BlueprintCallable) void ServerHandleAssignedPlayer();
     UFUNCTION(BlueprintCallable) void SetPlayerGravestone(ABP_IcarusPlayerControllerSurvival_C* PlayerController, FPoseSnapshot DeathPose, FVector DeathVelocity);  // parameters 0x4C
     UFUNCTION(BlueprintCallable) void StopRagdollAudio();
+    UFUNCTION(BlueprintCallable) void SwapFacePiecesForHelmet();
     UFUNCTION(BlueprintCallable) void TerrainAnchorChanged();
     UFUNCTION(BlueprintCallable) void UpdateHighlightMeshes(UHighlightableComponent* Highlightable, UPrimitiveComponent* Component, bool bHighlighted);  // parameters 0x11
     UFUNCTION(BlueprintCallable) void UpdatePlayerArmour();

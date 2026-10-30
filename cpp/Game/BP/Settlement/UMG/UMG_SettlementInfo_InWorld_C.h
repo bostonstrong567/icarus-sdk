@@ -27,6 +27,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure) void GetBadColour(FSlateColor& Color) const;  // parameters 0x28
     UFUNCTION(BlueprintCallable, BlueprintPure) void GetGoodColour(FSlateColor& Color) const;  // parameters 0x28
     UFUNCTION(BlueprintCallable, BlueprintPure) void GetWarningColour(FSlateColor& Color) const;  // parameters 0x28
+    UFUNCTION(BlueprintCallable) void Initalise(ASettlement* LinkedSettlement);  // parameters 0x8
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent) void Tick(FGeometry MyGeometry, float InDeltaTime);  // parameters 0x3C
     UFUNCTION(BlueprintCallable) void UpdateResources();
     UFUNCTION(BlueprintCallable) void UpdateStatus();

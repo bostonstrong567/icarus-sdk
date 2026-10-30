@@ -113,6 +113,7 @@ public:
     UFUNCTION(BlueprintImplementableEvent) void Validate_ExperienceEvents_RowHandle(const FExperienceEventsRowHandle& RowHandle);  // parameters 0x18
     UFUNCTION(BlueprintImplementableEvent) void Validate_Experience_RowHandle(const FExperienceRowHandle& RowHandle);  // parameters 0x18
     UFUNCTION(BlueprintImplementableEvent) void Validate_FLODDescriptions_RowHandle(const FFLODDescriptionsRowHandle& RowHandle);  // parameters 0x18
+    UFUNCTION(BlueprintImplementableEvent) void Validate_FacePresets_RowHandle(const FFacePresetsRowHandle& RowHandle);  // parameters 0x18
     UFUNCTION(BlueprintImplementableEvent) void Validate_FactionInfo_RowHandle(const FFactionInfoRowHandle& RowHandle);  // parameters 0x18
     UFUNCTION(BlueprintImplementableEvent) void Validate_FactionMissions_RowHandle(const FFactionMissionsRowHandle& RowHandle);  // parameters 0x18
     UFUNCTION(BlueprintImplementableEvent) void Validate_Farmable_RowHandle(const FFarmableRowHandle& RowHandle);  // parameters 0x18
@@ -358,7 +359,7 @@ public:
     //   Generate_DynamicQuestRewards_RowHandle, Generate_DynamicQuests_RowHandle, Generate_Energy_RowHandle
     //   Generate_EpicCreatures_RowHandle, Generate_Equippable_RowHandle, Generate_ErrorCodes_RowHandle
     //   Generate_ExoticSpawn_RowHandle, Generate_ExperienceEvents_RowHandle, Generate_Experience_RowHandle
-    //   Generate_FLODDescriptions_RowHandle, Generate_FactionInfo_RowHandle
+    //   Generate_FLODDescriptions_RowHandle, Generate_FacePresets_RowHandle, Generate_FactionInfo_RowHandle
     //   Generate_FactionMissions_RowHandle, Generate_Farmable_RowHandle
     //   Generate_FarmingGrowthStates_RowHandle, Generate_FarmingSeeds_RowHandle
     //   Generate_FeatureLevels_RowHandle, Generate_FieldGuideCategories_RowHandle

@@ -132,6 +132,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure) bool CanAssignNPCToBuilding(const FGuid& NpcId, ASettlementBuilding* Building) const;  // parameters 0x19
     UFUNCTION(BlueprintCallable, BlueprintPure) bool CanAssignNPCToSlot(const FGuid& NpcId, const FGuid& SlotTaskId) const;  // parameters 0x21
     UFUNCTION(BlueprintCallable) bool CanChooseOutcome(int32 OutcomeIndex);  // parameters 0x5
+    UFUNCTION(BlueprintCallable) bool CanUpgradeBuilding(ASettlementBuilding* Building, const FSettlementBuildingsRowHandle& Target, FText& FailureReason);  // parameters 0x39
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) bool CheckStorageContains(const TArray<FCraftingInput>& Items, const TArray<FQueryInput>& ItemQueries, const TArray<FResourceItem>& Resources);  // parameters 0x31
     UFUNCTION(BlueprintCallable) void ClearActivityOverride();
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) void ClearBehaviourOverride(const FGuid& NpcId);  // parameters 0x10
@@ -221,6 +222,7 @@ public:
     UFUNCTION(BlueprintCallable) void UnregisterBuilding(ASettlementBuilding* Building);  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) bool UpdateSettlementTalent(const FTalentsRowHandle& Talent, bool bState);  // parameters 0x1A
     UFUNCTION(BlueprintNativeEvent) void UpdateTaskAssignments();
+    UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly) bool UpgradeBuilding(ASettlementBuilding* Building, const FSettlementBuildingsRowHandle& Target, ASettlementBuilding*& OutBuilding);  // parameters 0x29
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) void VirtualiseSettlementActors();
 
     // Virtual functions that start here:

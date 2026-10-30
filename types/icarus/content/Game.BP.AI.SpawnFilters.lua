@@ -46,6 +46,8 @@
 
 ---@class BP_SpawnFilter_PopulationCheck_Slinker_C : BP_SpawnFilter_PopulationCheck_C
 
+---@class BP_SpawnFilter_PopulationCheck_Storca_Jungle_C : BP_SpawnFilter_PopulationCheck_C
+
 ---@class BP_SpawnFilter_PopulationCheck_SwampSlug_C : BP_SpawnFilter_PopulationCheck_C
 
 ---@class BP_SpawnFilter_PopulationCheck_Yeti_C : BP_SpawnFilter_PopulationCheck_C

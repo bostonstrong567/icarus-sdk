@@ -1376,18 +1376,37 @@
 ---@field IcarusMapIcon IcarusMapIconComponent
 ---@field GetDescription fun(self: BPQ_OLY_Forest_WS_Cave_C, InDescription: string, OutDescription: string, bOutComplete: boolean)
 
+---@class BPQ_OLY_Forest_WS_Cave_Umbrella_C : Quest
+---@field DefaultSceneRoot SceneComponent
+---@field IcarusMapIcon IcarusMapIconComponent
+---@field Check fun(self: BPQ_OLY_Forest_WS_Cave_Umbrella_C): boolean
+---@field RunFlow fun(self: BPQ_OLY_Forest_WS_Cave_Umbrella_C)
+
 ---@class BPQ_OLY_Forest_WS_Stockpile_C : Quest
 ---@field DefaultSceneRoot SceneComponent
 ---@field Check fun(self: BPQ_OLY_Forest_WS_Stockpile_C): boolean
 ---@field RunFlow fun(self: BPQ_OLY_Forest_WS_Stockpile_C)
 
+---@class BPQ_OLY_Forest_WS_Stockpile_Collect_Silica_C : BPQ_Collect_Item_C
+---@field Setup fun(self: BPQ_OLY_Forest_WS_Stockpile_Collect_Silica_C, bFirstTime: boolean)
+
+---@class BPQ_OLY_Forest_WS_Stockpile_Collect_Stone_C : BPQ_Collect_Item_C
+---@field Setup fun(self: BPQ_OLY_Forest_WS_Stockpile_Collect_Stone_C, bFirstTime: boolean)
+
+---@class BPQ_OLY_Forest_WS_Stockpile_Collect_Sulfur_C : BPQ_Collect_Item_C
+---@field Setup fun(self: BPQ_OLY_Forest_WS_Stockpile_Collect_Sulfur_C, bFirstTime: boolean)
+
 ---@class BPQ_OLY_Forest_WS_Stockpile_Deposit_Bauxite_C : BPQ_Stockpile_Deposit_Item_C
 
 ---@class BPQ_OLY_Forest_WS_Stockpile_Deposit_CopperOre_C : BPQ_Stockpile_Deposit_Item_C
 
+---@class BPQ_OLY_Forest_WS_Stockpile_Deposit_Copper_Ingot_C : BPQ_Stockpile_Deposit_Item_C
+
 ---@class BPQ_OLY_Forest_WS_Stockpile_Deposit_GoldOre_C : BPQ_Stockpile_Deposit_Item_C
 
 ---@class BPQ_OLY_Forest_WS_Stockpile_Deposit_IronOre_C : BPQ_Stockpile_Deposit_Item_C
+
+---@class BPQ_OLY_Forest_WS_Stockpile_Deposit_Iron_Ingot_C : BPQ_Stockpile_Deposit_Item_C
 
 ---@class BPQ_OLY_Forest_WS_Stockpile_Deposit_PlatinumOre_C : BPQ_Stockpile_Deposit_Item_C
 
@@ -1399,15 +1418,47 @@
 
 ---@class BPQ_OLY_Forest_WS_Stockpile_Deposit_TitaniumOre_C : BPQ_Stockpile_Deposit_Item_C
 
+---@class BPQ_OLY_Forest_WS_Stockpile_Find_Hut_New_C : BPQ_Travel_Medium_C
+---@field Setup fun(self: BPQ_OLY_Forest_WS_Stockpile_Find_Hut_New_C, bFirstTime: boolean)
+
 ---@class BPQ_OLY_Forest_WS_Stockpile_List_C : Quest
 ---@field DefaultSceneRoot SceneComponent
 ---@field Check fun(self: BPQ_OLY_Forest_WS_Stockpile_List_C): boolean
 ---@field RunFlow fun(self: BPQ_OLY_Forest_WS_Stockpile_List_C)
 
+---@class BPQ_OLY_Forest_WS_Stockpile_Repair_Hut_C : Quest
+---@field Current Actor[]
+---@field DefaultSceneRoot SceneComponent
+---@field Fixed boolean
+---@field Repaired integer
+---@field Unique integer
+---@field Check fun(self: BPQ_OLY_Forest_WS_Stockpile_Repair_Hut_C): boolean
+---@field GetDescription fun(self: BPQ_OLY_Forest_WS_Stockpile_Repair_Hut_C, InDescription: string, OutDescription: string, bOutComplete: boolean)
+---@field MULTI_LightningStrikeTarget fun(self: BPQ_OLY_Forest_WS_Stockpile_Repair_Hut_C, Location: Vector|{}, Target: Actor?)
+---@field RunOperations fun(self: BPQ_OLY_Forest_WS_Stockpile_Repair_Hut_C, DeltaSeconds: number)
+---@field Setup fun(self: BPQ_OLY_Forest_WS_Stockpile_Repair_Hut_C, bFirstTime: boolean)
+
+---@class BPQ_OLY_Forest_WS_Stockpile_Save_Hut_C : Quest
+---@field Current Actor[]
+---@field DefaultSceneRoot SceneComponent
+---@field FireStarted boolean
+---@field Fixed boolean
+---@field Repaired integer
+---@field Unique integer
+---@field Check fun(self: BPQ_OLY_Forest_WS_Stockpile_Save_Hut_C): boolean
+---@field GetDescription fun(self: BPQ_OLY_Forest_WS_Stockpile_Save_Hut_C, InDescription: string, OutDescription: string, bOutComplete: boolean)
+---@field RunOperations fun(self: BPQ_OLY_Forest_WS_Stockpile_Save_Hut_C, DeltaSeconds: number)
+---@field Setup fun(self: BPQ_OLY_Forest_WS_Stockpile_Save_Hut_C, bFirstTime: boolean)
+
 ---@class BPQ_OLY_Forest_WS_Stockpile_Ship_C : BPQ_Stockpile_ShipContainer_C
 ---@field RunFlow fun(self: BPQ_OLY_Forest_WS_Stockpile_Ship_C)
 
 ---@class BPQ_OLY_Forest_WS_Stockpile_Support_C : BPQ_Retrieve_Item_And_Spawn_Crate_C
+
+---@class BPQ_OLY_Forest_WS_Stockpile_TravelToHut_C : BPQ_Travel_Medium_C
+
+---@class BPQ_OLY_Forest_WS_Stockpile_Travel_Cave_Bottom_C : BPQ_Travel_Medium_C
+---@field Setup fun(self: BPQ_OLY_Forest_WS_Stockpile_Travel_Cave_Bottom_C, bFirstTime: boolean)
 
 ---@class BPQ_OLY_Glacier_Construction_Barracks_C : Quest
 ---@field DefaultSceneRoot SceneComponent
@@ -2390,6 +2441,43 @@
 ---@class BPQ_Oly_Forest_Stockpile_Craft_WaterPurifier_C : BPQ_Collect_Item_C
 
 ---@class BPQ_Oly_Forest_Stockpile_Deploy_WaterPurifier_C : BPQ_Deploy_Count_C
+
+---@class BPQ_Oly_Forest_WS_Stockpile_Collect_C : Quest
+---@field A boolean
+---@field B boolean
+---@field C boolean
+---@field DefaultSceneRoot SceneComponent
+---@field Check fun(self: BPQ_Oly_Forest_WS_Stockpile_Collect_C): boolean
+---@field RunFlow fun(self: BPQ_Oly_Forest_WS_Stockpile_Collect_C)
+
+---@class BPQ_Oly_Forest_WS_Stockpile_Collect_Firewhacker_C : BPQ_Collect_Item_WithName_C
+
+---@class BPQ_Oly_Forest_WS_Stockpile_Collect_Hammer_C : BPQ_Collect_Item_With_Tag_C
+
+---@class BPQ_Oly_Forest_WS_Stockpile_Collect_OptionalItems_C : BPQ_Collect_Item_C
+
+---@class BPQ_Oly_Forest_WS_Stockpile_Collect_Pickaxes_C : BPQ_Collect_Item_With_Tag_C
+
+---@class BPQ_Oly_Forest_WS_Stockpile_Collect_Surface_Ore_C : Quest
+---@field A boolean
+---@field B boolean
+---@field C boolean
+---@field DefaultSceneRoot SceneComponent
+---@field Check fun(self: BPQ_Oly_Forest_WS_Stockpile_Collect_Surface_Ore_C): boolean
+---@field RunFlow fun(self: BPQ_Oly_Forest_WS_Stockpile_Collect_Surface_Ore_C)
+
+---@class BPQ_Oly_Forest_WS_Stockpile_Craft_C : Quest
+---@field A boolean
+---@field B boolean
+---@field DefaultSceneRoot SceneComponent
+---@field Check fun(self: BPQ_Oly_Forest_WS_Stockpile_Craft_C): boolean
+---@field RunFlow fun(self: BPQ_Oly_Forest_WS_Stockpile_Craft_C)
+
+---@class BPQ_Oly_Forest_WS_Stockpile_Craft_Pickaxe_C : BPQ_Collect_Item_With_Tag_C
+
+---@class BPQ_Oly_Forest_WS_Stockpile_Craft_Torch_C : BPQ_Collect_Item_C
+
+---@class BPQ_Oly_Forest_WS_Stockpile_Craft_Weapon_C : BPQ_Collect_Item_With_Tag_C
 
 ---@class BPQ_Omni_OLY_Expedition_C : Quest
 ---@field DefaultSceneRoot SceneComponent

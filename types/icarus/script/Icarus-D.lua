@@ -241,6 +241,7 @@
 ---@field Validate_ExperienceEvents_RowHandle fun(self: DataTableValidationLibrary, RowHandle: ExperienceEventsRowHandle|{})
 ---@field Validate_Experience_RowHandle fun(self: DataTableValidationLibrary, RowHandle: ExperienceRowHandle|{})
 ---@field Validate_FLODDescriptions_RowHandle fun(self: DataTableValidationLibrary, RowHandle: FLODDescriptionsRowHandle|{})
+---@field Validate_FacePresets_RowHandle fun(self: DataTableValidationLibrary, RowHandle: FacePresetsRowHandle|{})
 ---@field Validate_FactionInfo_RowHandle fun(self: DataTableValidationLibrary, RowHandle: FactionInfoRowHandle|{})
 ---@field Validate_FactionMissions_RowHandle fun(self: DataTableValidationLibrary, RowHandle: FactionMissionsRowHandle|{})
 ---@field Validate_Farmable_RowHandle fun(self: DataTableValidationLibrary, RowHandle: FarmableRowHandle|{})

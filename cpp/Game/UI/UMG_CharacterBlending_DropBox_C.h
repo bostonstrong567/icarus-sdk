@@ -8,12 +8,12 @@ class UUMG_CharacterBlending_DropBox_C : public UUserWidget
 public:
     UPROPERTY(Transient) FPointerToUberGraphFrame UberGraphFrame;  // 0x0260, size 0x8
     UPROPERTY(Instanced, BlueprintReadWrite) UCustomComboBox* ComboBox;  // 0x0268, size 0x8
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) TEnumAsByte<EFaceShapes> DefaultFaceShape;  // 0x0270, size 0x1
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) EFaceTypes DefaultFaceShape;  // 0x0270, size 0x1
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UUMG_FaceIcon_C* FaceIcon;  // 0x0278, size 0x8
 
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent) void Construct();
     UFUNCTION() void ExecuteUbergraph_UMG_CharacterBlending_DropBox(int32 EntryPoint);  // parameters 0x4
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent) void PreConstruct(bool IsDesignTime);  // parameters 0x1
-    UFUNCTION(BlueprintCallable) void SetSelectedOption(TEnumAsByte<EFaceShapes> FaceShape);  // parameters 0x1
+    UFUNCTION(BlueprintCallable) void SetSelectedOption(EFaceTypes FaceShape);  // parameters 0x1
     UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent) void Tick(FGeometry MyGeometry, float InDeltaTime);  // parameters 0x3C
 };

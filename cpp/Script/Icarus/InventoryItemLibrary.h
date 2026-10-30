@@ -39,7 +39,7 @@ public:
     UFUNCTION(BlueprintCallable) static void GetAmmoItem(UObject* WorldContextObject, const FItemData& ItemData, FItemData& Ammo, EDataValid& Paths);  // parameters 0x3E9
     UFUNCTION(BlueprintCallable) static void GetAmmoTypeData(const FItemData& Item, FAmmoTypeData& AmmoTypeData, EDataValid& Paths);  // parameters 0x269
     UFUNCTION(BlueprintCallable) static void GetAnyCookingModifications(AIcarusPlayerCharacter* CraftingActor, const FItemData& Item, TArray<FIcarusStatReplicated>& AdditionalStats);  // parameters 0x208
-    UFUNCTION(BlueprintCallable) static void GetArmourData(const FItemData& Item, FArmourData& ArmourData, EDataValid& Paths);  // parameters 0x509
+    UFUNCTION(BlueprintCallable) static void GetArmourData(const FItemData& Item, FArmourData& ArmourData, EDataValid& Paths);  // parameters 0x521
     UFUNCTION(BlueprintCallable) static FArmourSetsEnum GetArmourSet(const FItemData& Item);  // parameters 0x200
     UFUNCTION(BlueprintCallable) static void GetAttachmentSlot(UObject* WorldContextObject, const FItemData& ItemData, UInventory*& Inventory, int32& Slot, EDataValid& Paths);  // parameters 0x205
     UFUNCTION(BlueprintCallable) static void GetAttachmentSlotActor(AActor* Item, UInventory*& Inventory, int32& Slot, EDataValid& Paths);  // parameters 0x15

@@ -63,7 +63,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) void EndMontage(UAnimMontage* Montage, UAnimMontage* FP_Montage, float BleedOutTime);  // parameters 0x14
     UFUNCTION() TArray<USkeletalMeshComponent*> FindOrCreateEquipmentComponent(int32 ForSlot);  // parameters 0x18
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) void FocusAndUseItemFromMenu(UInventory* Inventory, int32 Slot, FUsesEnum Use);  // parameters 0x20
-    UFUNCTION(BlueprintCallable) bool GetArmourDataForGFurComponent(UGFurComponent* Component, FArmourData& OutArmourData);  // parameters 0x321
+    UFUNCTION(BlueprintCallable) bool GetArmourDataForGFurComponent(UGFurComponent* Component, FArmourData& OutArmourData);  // parameters 0x339
     UFUNCTION() FArmourRowHandle GetArmourRowForSlot(int32 SlotIndex);  // parameters 0x1C
     UFUNCTION(BlueprintCallable, BlueprintPure) ASeatBase* GetAttachedToSeat() const;  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintImplementableEvent) AIcarusItem* GetCurrentSecondarySlotActor() const;  // parameters 0x8
@@ -86,7 +86,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) USkeletalMeshComponent* GetThirdPersonMesh();  // parameters 0x8
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent) FItemData GetUtilityItemData(EDataValidity& Validity);  // parameters 0x1F8
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) USkeletalMeshComponent* GetVisibleCharacterMesh();  // parameters 0x8
-    UFUNCTION(BlueprintCallable, BlueprintPure) static FArmourRowHandle GetVisualArmourRow(const FArmourRowHandle& Row, bool bIsReworked);  // parameters 0x34
+    UFUNCTION(BlueprintCallable, BlueprintPure) static FArmourRowHandle GetVisualArmourRow(const FArmourRowHandle& Row, bool bIsReworked, bool bRebreatherEquipped);  // parameters 0x34
     UFUNCTION(BlueprintNativeEvent) bool InitialisationComplete();  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure, BlueprintNativeEvent) bool IsClothSimEnabled();  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent) bool IsHabCharacter();  // parameters 0x1

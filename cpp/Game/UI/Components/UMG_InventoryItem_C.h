@@ -1,6 +1,6 @@
 // /Game/UI/Components/UMG_InventoryItem.UMG_InventoryItem_C
 // Derives from: UInventoryItemWidgetBase > UUserWidget > UWidget > UVisual > UObject
-// size 0xA64, a blueprint class, widget
+// size 0xA78, a blueprint class, widget
 
 UCLASS(EditInlineNew, Config=Engine)
 class UUMG_InventoryItem_C : public UInventoryItemWidgetBase
@@ -95,6 +95,8 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool ItemHovered;  // 0x0A51, size 0x1
     UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite) UInventory* CachedInventory;  // 0x0A58, size 0x8
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 CachedLocation;  // 0x0A60, size 0x4
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) UMaterialInterface* ItemSlot_Settlement;  // 0x0A68, size 0x8
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) UMaterialInterface* ItemSlot_Settlement_Hovered;  // 0x0A70, size 0x8
 
     UFUNCTION(BlueprintCallable, BlueprintPure) void CanDestroyItem(FItemData Item, bool& CanDestroy);  // parameters 0x1F1
     UFUNCTION(BlueprintCallable) void ClearDragValues();
@@ -121,6 +123,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsExoticItem();  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsLivingWeapon();  // parameters 0x1
     UFUNCTION(BlueprintCallable, BlueprintPure) bool IsQuestItem();  // parameters 0x1
+    UFUNCTION(BlueprintCallable, BlueprintPure) bool IsSettlementItem();  // parameters 0x1
     UFUNCTION(BlueprintCallable) void LightSlotStyle(bool IsEquipped);  // parameters 0x1
     UFUNCTION(BlueprintCallable) void OnContextMenuDestroyItemClicked(FName Id, int32 Payload);  // parameters 0xC
     UFUNCTION(BlueprintCallable) void OnContextMenuDropAllClicked(FName Id, int32 Payload);  // parameters 0xC
@@ -143,7 +146,7 @@ public:
     UFUNCTION(BlueprintCallable) void SetCursorInfo(UInventory* CurrentInventory, int32 Location);  // parameters 0xC
     UFUNCTION(BlueprintCallable) void SetDropShipMode();
     UFUNCTION(BlueprintCallable) void SetForceLocked(bool IsLocked);  // parameters 0x1
-    UFUNCTION(BlueprintCallable) void SetItemStyle(bool IsExotic, bool IsQuest, bool IsLegendary);  // parameters 0x3
+    UFUNCTION(BlueprintCallable) void SetItemStyle(bool IsExotic, bool IsQuest, bool IsLegendary, bool IsSettlement);  // parameters 0x4
     UFUNCTION(BlueprintCallable, BlueprintPure) void ShouldShowHighlight(UInventory* Inventory, bool& Show);  // parameters 0x9
     UFUNCTION(BlueprintCallable) void SpaceRepairClicked(FName Identifier, int32 Payload);  // parameters 0xC
     UFUNCTION(BlueprintCallable) void Trigger_Hover();  // named "Trigger Hover"

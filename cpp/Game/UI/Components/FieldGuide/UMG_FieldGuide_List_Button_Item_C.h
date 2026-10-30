@@ -1,6 +1,6 @@
 // /Game/UI/Components/FieldGuide/UMG_FieldGuide_List_Button_Item.UMG_FieldGuide_List_Button_Item_C
 // Derives from: UUserWidget > UWidget > UVisual > UObject
-// size 0x2C4, a blueprint class, widget
+// size 0x2DC, a blueprint class, widget
 
 UCLASS(EditInlineNew, Config=Engine)
 class UUMG_FieldGuide_List_Button_Item_C : public UUserWidget
@@ -14,6 +14,7 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool Selected;  // 0x0290, size 0x1
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FItemsStaticRowHandle ItemRow;  // 0x0294, size 0x18
     UPROPERTY(EditAnywhere, BlueprintReadWrite) FFieldGuideCategoriesRowHandle CategoryRow;  // 0x02AC, size 0x18
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) FFieldGuideSubcategoriesRowHandle SubcategoryRow;  // 0x02C4, size 0x18
 
     UFUNCTION() void BndEvt__UMG_Bestiary_Creature_Button_Button_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature();
     UFUNCTION() void BndEvt__UMG_Bestiary_Creature_Button_Button_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature();
